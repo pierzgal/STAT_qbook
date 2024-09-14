@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT101_qbook - 6&nbsp; Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./chapter3.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial3.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">STAT101_qbook</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science and Statistics for Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding Data Types in Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zrozumienie Typów Danych w Naukach Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#zrozumienie-wartości-odstających" id="toc-zrozumienie-wartości-odstających" class="nav-link active" data-scroll-target="#zrozumienie-wartości-odstających"><span class="header-section-number">6.1</span> Zrozumienie wartości odstających</a></li>
+  <li><a href="#miary-tendencji-centralnej" id="toc-miary-tendencji-centralnej" class="nav-link" data-scroll-target="#miary-tendencji-centralnej"><span class="header-section-number">7</span> Miary tendencji centralnej</a>
+  <ul class="collapse">
+  <li><a href="#średnia-arytmetyczna" id="toc-średnia-arytmetyczna" class="nav-link" data-scroll-target="#średnia-arytmetyczna"><span class="header-section-number">7.1</span> Średnia arytmetyczna</a></li>
+  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">7.2</span> Mediana</a></li>
+  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">7.3</span> Moda</a></li>
+  <li><a href="#średnia-ważona" id="toc-średnia-ważona" class="nav-link" data-scroll-target="#średnia-ważona"><span class="header-section-number">7.4</span> Średnia ważona</a>
+  <ul class="collapse">
+  <li><a href="#średnia-ważona-z-wagami-nienormalizowanymi" id="toc-średnia-ważona-z-wagami-nienormalizowanymi" class="nav-link" data-scroll-target="#średnia-ważona-z-wagami-nienormalizowanymi"><span class="header-section-number">7.4.1</span> Średnia ważona z wagami nienormalizowanymi</a></li>
+  <li><a href="#średnia-ważona-z-wagami-znormalizowanymi-ułamkami" id="toc-średnia-ważona-z-wagami-znormalizowanymi-ułamkami" class="nav-link" data-scroll-target="#średnia-ważona-z-wagami-znormalizowanymi-ułamkami"><span class="header-section-number">7.4.2</span> Średnia ważona z wagami znormalizowanymi (ułamkami)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#miary-zmienności" id="toc-miary-zmienności" class="nav-link" data-scroll-target="#miary-zmienności"><span class="header-section-number">8</span> Miary zmienności</a>
+  <ul class="collapse">
+  <li><a href="#rozstęp" id="toc-rozstęp" class="nav-link" data-scroll-target="#rozstęp"><span class="header-section-number">8.1</span> Rozstęp</a></li>
+  <li><a href="#rozstęp-międzykwartylowy-iqr" id="toc-rozstęp-międzykwartylowy-iqr" class="nav-link" data-scroll-target="#rozstęp-międzykwartylowy-iqr"><span class="header-section-number">8.2</span> Rozstęp międzykwartylowy (IQR)</a></li>
+  <li><a href="#wariancja" id="toc-wariancja" class="nav-link" data-scroll-target="#wariancja"><span class="header-section-number">8.3</span> Wariancja</a></li>
+  <li><a href="#odchylenie-standardowe" id="toc-odchylenie-standardowe" class="nav-link" data-scroll-target="#odchylenie-standardowe"><span class="header-section-number">8.4</span> Odchylenie standardowe</a></li>
+  <li><a href="#współczynnik-zmienności" id="toc-współczynnik-zmienności" class="nav-link" data-scroll-target="#współczynnik-zmienności"><span class="header-section-number">8.5</span> Współczynnik zmienności</a></li>
+  </ul></li>
+  <li><a href="#miary-położenia-względnego" id="toc-miary-położenia-względnego" class="nav-link" data-scroll-target="#miary-położenia-względnego"><span class="header-section-number">9</span> Miary położenia względnego</a>
+  <ul class="collapse">
+  <li><a href="#percentyle" id="toc-percentyle" class="nav-link" data-scroll-target="#percentyle"><span class="header-section-number">9.1</span> Percentyle</a></li>
+  <li><a href="#kwartyle" id="toc-kwartyle" class="nav-link" data-scroll-target="#kwartyle"><span class="header-section-number">9.2</span> Kwartyle</a></li>
+  </ul></li>
+  <li><a href="#miary-kształtu" id="toc-miary-kształtu" class="nav-link" data-scroll-target="#miary-kształtu"><span class="header-section-number">10</span> Miary kształtu</a>
+  <ul class="collapse">
+  <li><a href="#skośność" id="toc-skośność" class="nav-link" data-scroll-target="#skośność"><span class="header-section-number">10.1</span> Skośność</a></li>
+  <li><a href="#kurtoza" id="toc-kurtoza" class="nav-link" data-scroll-target="#kurtoza"><span class="header-section-number">10.2</span> Kurtoza</a></li>
+  </ul></li>
+  <li><a href="#wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" id="toc-wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" class="nav-link" data-scroll-target="#wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych"><span class="header-section-number">11</span> Wprowadzenie do dwuwymiarowych i wielowymiarowych statystyk opisowych</a>
+  <ul class="collapse">
+  <li><a href="#statystyki-dwuwymiarowe" id="toc-statystyki-dwuwymiarowe" class="nav-link" data-scroll-target="#statystyki-dwuwymiarowe"><span class="header-section-number">11.1</span> Statystyki dwuwymiarowe</a>
+  <ul class="collapse">
+  <li><a href="#korelacja" id="toc-korelacja" class="nav-link" data-scroll-target="#korelacja"><span class="header-section-number">11.1.1</span> Korelacja</a></li>
+  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">11.1.2</span> Kowariancja</a></li>
+  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">11.1.3</span> Tabela krzyżowa</a></li>
+  </ul></li>
+  <li><a href="#statystyki-wielowymiarowe" id="toc-statystyki-wielowymiarowe" class="nav-link" data-scroll-target="#statystyki-wielowymiarowe"><span class="header-section-number">11.2</span> Statystyki wielowymiarowe</a></li>
+  </ul></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">12</span> Podsumowanie</a></li>
+  <li><a href="#bibliografia" id="toc-bibliografia" class="nav-link" data-scroll-target="#bibliografia"><span class="header-section-number">13</span> Bibliografia</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Statystyki opisowe są fundamentalnymi narzędziami w badaniach nauk społecznych, zapewniającymi zwięzłe podsumowanie charakterystyk danych. Służą kilku kluczowym funkcjom:</p>
+<ul>
+<li>Podsumowanie dużych zbiorów danych do łatwych do zarządzania informacji</li>
+<li>Identyfikacja wzorców i trendów w danych</li>
+<li>Wykrywanie potencjalnych anomalii lub wartości odstających</li>
+<li>Zapewnienie podstawy do dalszej analizy statystycznej</li>
+</ul>
+<p>W tym rozdziale zbadamy różne statystyki opisowe, ich obliczenia, interpretacje i ograniczenia.</p>
+<section id="zrozumienie-wartości-odstających" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="zrozumienie-wartości-odstających"><span class="header-section-number">6.1</span> Zrozumienie wartości odstających</h2>
+<p>Zanim zagłębimy się w konkretne miary, kluczowe jest zrozumienie koncepcji wartości odstających, ponieważ mogą one znacząco wpływać na wiele statystyk opisowych.</p>
+<p>Wartości odstające to punkty danych, które znacznie różnią się od innych obserwacji w zbiorze danych. Mogą wystąpić z powodu:</p>
+<ul>
+<li>Błędów pomiaru lub rejestracji</li>
+<li>Prawdziwych skrajnych wartości w populacji</li>
+<li>Próbkowania z innej populacji</li>
+</ul>
+<p>Wartości odstające mogą mieć istotny wpływ na wiele miar statystycznych, szczególnie tych opartych na średnich lub sumach kwadratów odchyleń. Dlatego ważne jest, aby:</p>
+<ol type="1">
+<li>Identyfikować wartości odstające zarówno poprzez metody statystyczne, jak i wiedzę dziedzinową</li>
+<li>Badać przyczyny występowania wartości odstających</li>
+<li>Podejmować świadome decyzje o tym, czy włączyć je do analiz, czy nie</li>
+</ol>
+<p>W trakcie tego rozdziału omówimy, jak różne miary opisowe są dotknięte przez wartości odstające.</p>
+</section>
+<section id="miary-tendencji-centralnej" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Miary tendencji centralnej</h1>
+<p>Miary tendencji centralnej mają na celu identyfikację “typowej” lub “centralnej” wartości w zbiorze danych. Trzy podstawowe miary to średnia, mediana i moda.</p>
+<section id="średnia-arytmetyczna" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="średnia-arytmetyczna"><span class="header-section-number">7.1</span> Średnia arytmetyczna</h2>
+<p>Średnia arytmetyczna to suma wszystkich wartości podzielona przez liczbę wartości.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.142857</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Łatwa do obliczenia i zrozumienia</li>
+<li>Wykorzystuje wszystkie punkty danych</li>
+<li>Przydatna do dalszych obliczeń statystycznych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Wrażliwa na wartości odstające</li>
+<li>Nieidealna dla rozkładów skośnych</li>
+</ul>
+<p><strong>Przykład z wartością odstającą:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dane_z_odstajaca <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">100</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dane_z_odstajaca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18.14286</code></pre>
+</div>
+</div>
+<p>Jak widać, wartość odstająca (100) drastycznie wpływa na średnią.</p>
+</section>
+<section id="mediana" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="mediana"><span class="header-section-number">7.2</span> Mediana</h2>
+<p>Mediana to środkowa wartość, gdy dane są uporządkowane.</p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane_z_odstajaca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Nie jest dotknięta przez skrajne wartości odstające</li>
+<li>Lepsza dla rozkładów skośnych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nie wykorzystuje wszystkich punktów danych</li>
+<li>Mniej przydatna do dalszych obliczeń statystycznych</li>
+</ul>
+</section>
+<section id="moda" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="moda"><span class="header-section-number">7.3</span> Moda</h2>
+<p>Moda to najczęściej występująca wartość.</p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modeest)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mfv</span>(dane)  <span class="co"># Najczęściej występująca wartość</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 5</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Jedyna miara tendencji centralnej dla danych nominalnych</li>
+<li>Może identyfikować wiele szczytów w danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nie zawsze jednoznacznie zdefiniowana</li>
+<li>Nieprzydatna dla danych ciągłych</li>
+</ul>
+</section>
+<section id="średnia-ważona" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="średnia-ważona"><span class="header-section-number">7.4</span> Średnia ważona</h2>
+<p>Średnia ważona jest używana, gdy niektóre punkty danych są ważniejsze od innych. Rozróżniamy dwa typy średnich ważonych: z wagami nienormalizowanymi i z wagami znormalizowanymi.</p>
+<section id="średnia-ważona-z-wagami-nienormalizowanymi" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="średnia-ważona-z-wagami-nienormalizowanymi"><span class="header-section-number">7.4.1</span> Średnia ważona z wagami nienormalizowanymi</h3>
+<p>Jest to standardowa forma średniej ważonej, gdzie wagi mogą być dowolnymi liczbami dodatnimi reprezentującymi ważność każdego punktu danych.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(x, w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.571429</code></pre>
+</div>
+</div>
+</section>
+<section id="średnia-ważona-z-wagami-znormalizowanymi-ułamkami" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="średnia-ważona-z-wagami-znormalizowanymi-ułamkami"><span class="header-section-number">7.4.2</span> Średnia ważona z wagami znormalizowanymi (ułamkami)</h3>
+<p>W tym przypadku wagi są ułamkami sumującymi się do 1, reprezentującymi proporcję ważności dla każdego punktu danych.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x}_w = \sum_{i=1}^n w_i x_i\)</span>, gdzie <span class="math inline">\(\sum_{i=1}^n w_i = 1\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>w_znormalizowane <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>)  <span class="co"># Uwaga: te sumują się do 1</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="sc">*</span> w_znormalizowane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.8</code></pre>
+</div>
+</div>
+<p><strong>Zalety średnich ważonych:</strong></p>
+<ul>
+<li>Uwzględniają różną ważność punktów danych</li>
+<li>Przydatne w analizie badań z różnymi wielkościami próby lub poziomami ważności</li>
+<li>Mogą korygować nierówne prawdopodobieństwa w projektach próbkowania</li>
+</ul>
+<p><strong>Wady średnich ważonych:</strong></p>
+<ul>
+<li>Wymagają uzasadnienia dla wag</li>
+<li>Mogą być niewłaściwie użyte do manipulacji wynikami</li>
+<li>Mogą być mniej intuicyjne w interpretacji niż prosta średnia arytmetyczna</li>
+</ul>
+<p><strong>Porównanie:</strong></p>
+<p>Wagi nienormalizowane są często łatwiejsze do przypisania na podstawie rzeczywistej ważności lub wielkości próby, ale wymagają dodatkowego kroku normalizacji w obliczeniach. Wagi znormalizowane (ułamki) upraszczają obliczenia, ale mogą być mniej intuicyjne do bezpośredniego przypisania.</p>
+<p><strong>Przykład w naukach społecznych:</strong></p>
+<p>Załóżmy, że obliczamy średni dochód dla regionu z trzema miastami:</p>
+<p>Miasto A: Średni dochód 50 000 zł, populacja 100 000 Miasto B: Średni dochód 60 000 zł, populacja 200 000 Miasto C: Średni dochód 70 000 zł, populacja 300 000</p>
+<p>Możemy użyć populacji jako wag:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dochody <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>populacje <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100000</span>, <span class="dv">200000</span>, <span class="dv">300000</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Wagi nienormalizowane</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(dochody, populacje)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 63333.33</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wagi znormalizowane</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pop_znormalizowane <span class="ot">&lt;-</span> populacje <span class="sc">/</span> <span class="fu">sum</span>(populacje)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dochody <span class="sc">*</span> pop_znormalizowane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 63333.33</code></pre>
+</div>
+</div>
+<p>Ta średnia ważona daje dokładniejsze przedstawienie średniego dochodu regionu niż prosta średnia arytmetyczna średnich dochodów trzech miast.</p>
+</section>
+</section>
+</section>
+<section id="miary-zmienności" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Miary zmienności</h1>
+<p>Te miary opisują, jak rozproszone są dane. Są kluczowe dla zrozumienia rozproszenia punktów danych wokół tendencji centralnej.</p>
+<section id="rozstęp" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="rozstęp"><span class="header-section-number">8.1</span> Rozstęp</h2>
+<p>Rozstęp to różnica między wartością maksymalną a minimalną.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(R = x_{max} - x_{min}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2 9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(dane) <span class="sc">-</span> <span class="fu">min</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Prosty do obliczenia i zrozumienia</li>
+<li>Daje natychmiastowe poczucie rozpiętości danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Niezwykle wrażliwy na wartości odstające</li>
+<li>Nie dostarcza informacji o rozkładzie między skrajnościami</li>
+</ul>
+</section>
+<section id="rozstęp-międzykwartylowy-iqr" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="rozstęp-międzykwartylowy-iqr"><span class="header-section-number">8.2</span> Rozstęp międzykwartylowy (IQR)</h2>
+<p>IQR to różnica między 75. a 25. percentylem.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(IQR = Q_3 - Q_1\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Odporny na wartości odstające</li>
+<li>Dostarcza informacji o rozpiętości środkowych 50% danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Ignoruje ogony rozkładu</li>
+<li>Mniej efektywny niż odchylenie standardowe dla rozkładów normalnych</li>
+</ul>
+</section>
+<section id="wariancja" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="wariancja"><span class="header-section-number">8.3</span> Wariancja</h2>
+<p>Wariancja mierzy średnie kwadratowe odchylenie od średniej.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.142857</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Wykorzystuje wszystkie punkty danych</li>
+<li>Podstawa dla wielu testów statystycznych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Jednostki są podniesione do kwadratu, co utrudnia interpretację</li>
+<li>Wrażliwa na wartości odstające</li>
+</ul>
+</section>
+<section id="odchylenie-standardowe" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="odchylenie-standardowe"><span class="header-section-number">8.4</span> Odchylenie standardowe</h2>
+<p>Odchylenie standardowe to pierwiastek kwadratowy z wariancji.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(s = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.267787</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>W tych samych jednostkach co oryginalne dane</li>
+<li>Szeroko stosowane i rozumiane</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nadal wrażliwe na wartości odstające</li>
+<li>Zakłada, że dane są w przybliżeniu normalnie rozłożone</li>
+</ul>
+</section>
+<section id="współczynnik-zmienności" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="współczynnik-zmienności"><span class="header-section-number">8.5</span> Współczynnik zmienności</h2>
+<p>Współczynnik zmienności to odchylenie standardowe podzielone przez średnią, często wyrażane jako procent.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sd</span>(dane) <span class="sc">/</span> <span class="fu">mean</span>(dane)) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 44.09586</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Pozwala na porównanie zmienności między zbiorami danych o różnych jednostkach lub średnich</li>
+<li>Przydatny w dziedzinach takich jak finanse do oceny ryzyka</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nie ma sensu dla danych z wartościami zarówno dodatnimi, jak i ujemnymi</li>
+<li>Może być mylący, gdy średnia jest bliska zeru</li>
+</ul>
+</section>
+</section>
+<section id="miary-położenia-względnego" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Miary położenia względnego</h1>
+<p>Te miary pomagają zrozumieć, gdzie konkretna wartość znajduje się w stosunku do całego zbioru danych.</p>
+<section id="percentyle" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="percentyle"><span class="header-section-number">9.1</span> Percentyle</h2>
+<p>Percentyle dzielą dane na 100 równych części.</p>
+<p><strong>Wzór:</strong> Dla k-tego percentyla: <span class="math inline">\(P_k = L + \frac{k(n+1)}{100}\)</span>, gdzie L to dolna granica przedziału</p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dane, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  0%  25%  50%  75% 100% 
+   2    4    5    6    9 </code></pre>
+</div>
+</div>
+</section>
+<section id="kwartyle" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="kwartyle"><span class="header-section-number">9.2</span> Kwartyle</h2>
+<p>Kwartyle dzielą dane na cztery równe części.</p>
+<ul>
+<li>Q1: 25. percentyl</li>
+<li>Q2: Mediana (50. percentyl)</li>
+<li>Q3: 75. percentyl</li>
+</ul>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  2.000   4.000   5.000   5.143   6.000   9.000 </code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Odporne na wartości odstające</li>
+<li>Dostarczają informacji o rozpiętości i skośności danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Mniej precyzyjne niż użycie wszystkich punktów danych</li>
+<li>Różne metody obliczania mogą prowadzić do nieznacznie różnych wyników</li>
+</ul>
+</section>
+</section>
+<section id="miary-kształtu" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Miary kształtu</h1>
+<p>Te miary opisują kształt rozkładu prawdopodobieństwa danych.</p>
+<section id="skośność" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="skośność"><span class="header-section-number">10.1</span> Skośność</h2>
+<p>Skośność mierzy asymetrię rozkładu prawdopodobieństwa.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'moments'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:modeest':
+
+    skewness</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skewness</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4592793</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Skośność dodatnia: prawy ogon jest dłuższy (średnia &gt; mediana)</li>
+<li>Skośność ujemna: lewy ogon jest dłuższy (średnia &lt; mediana)</li>
+<li>Skośność zero: rozkład symetryczny</li>
+</ul>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Dostarcza informacji o kształcie rozkładu</li>
+<li>Przydatna do sprawdzania założeń normalności</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Wrażliwa na wartości odstające</li>
+<li>Może być myląca dla rozkładów wielomodalnych</li>
+</ul>
+</section>
+<section id="kurtoza" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="kurtoza"><span class="header-section-number">10.2</span> Kurtoza</h2>
+<p>Kurtoza mierzy “grubość ogonów” rozkładu prawdopodobieństwa.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kurtosis</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.457047</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Kurtoza dodatnia: ciężkie ogony, rozkład wysmukły</li>
+<li>Kurtoza ujemna: lekkie ogony, rozkład płaski</li>
+<li>Kurtoza zero: rozkład normalny</li>
+</ul>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Dostarcza informacji o wartościach skrajnych w rozkładzie</li>
+<li>Przydatna do modelowania finansowego i oceny ryzyka</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Wrażliwa na wartości odstające</li>
+<li>Może być trudna do praktycznej interpretacji</li>
+</ul>
+</section>
+</section>
+<section id="wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Wprowadzenie do dwuwymiarowych i wielowymiarowych statystyk opisowych</h1>
+<p>Podczas gdy statystyki jednowymiarowe opisują pojedyncze zmienne, statystyki dwuwymiarowe i wielowymiarowe badają relacje między zmiennymi.</p>
+<section id="statystyki-dwuwymiarowe" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="statystyki-dwuwymiarowe"><span class="header-section-number">11.1</span> Statystyki dwuwymiarowe</h2>
+<section id="korelacja" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="korelacja"><span class="header-section-number">11.1.1</span> Korelacja</h3>
+<p>Korelacja mierzy siłę i kierunek liniowego związku między dwiema zmiennymi.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7745967</code></pre>
+</div>
+</div>
+</section>
+<section id="kowariancja" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">11.1.2</span> Kowariancja</h3>
+<p>Kowariancja mierzy, jak dwie zmienne zmieniają się razem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+</section>
+<section id="tabela-krzyżowa" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">11.1.3</span> Tabela krzyżowa</h3>
+<p>Tabela krzyżowa (tabela kontyngencji) pokazuje relację między dwiema zmiennymi kategorialnymi.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">cut</span>(x, <span class="dv">2</span>), <span class="fu">cut</span>(y, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           
+            (2,3.5] (3.5,5]
+  (0.996,3]       1       2
+  (3,5]           0       2</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="statystyki-wielowymiarowe" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="statystyki-wielowymiarowe"><span class="header-section-number">11.2</span> Statystyki wielowymiarowe</h2>
+<ul>
+<li><strong>Korelacja wielokrotna</strong>: Korelacja między zmienną zależną a wieloma zmiennymi niezależnymi.</li>
+<li><strong>Korelacja cząstkowa</strong>: Korelacja między dwiema zmiennymi przy kontrolowaniu innych.</li>
+<li><strong>Analiza czynnikowa</strong>: Technika redukcji wielu zmiennych do kilku podstawowych czynników.</li>
+</ul>
+<p>Te tematy zostaną omówione bardziej szczegółowo w kolejnych rozdziałach.</p>
+</section>
+</section>
+<section id="podsumowanie" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Podsumowanie</h1>
+<p>Statystyki opisowe są niezbędnymi narzędziami do podsumowywania i zrozumienia danych w badaniach nauk społecznych. Jednak ważne jest, aby:</p>
+<ol type="1">
+<li>Wybierać odpowiednie miary w oparciu o typ danych i rozkład</li>
+<li>Być świadomym ograniczeń każdej miary, szczególnie w odniesieniu do wartości odstających</li>
+<li>Używać wielu miar, aby uzyskać kompleksowe zrozumienie</li>
+</ol>
+<p>Pamiętaj, że statystyki opisowe są tylko punktem wyjścia. Stanowią one podstawę dla statystyk inferencyjnych, które pozwalają nam wyciągać wnioski o populacjach na podstawie próbek.</p>
+</section>
+<section id="bibliografia" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Bibliografia</h1>
+<ol type="1">
+<li>Agresti, A., &amp; Finlay, B. (2009). Metody statystyczne dla nauk społecznych (wyd. 4). Pearson Prentice Hall.</li>
+<li>Field, A. (2013). Odkrywanie statystyki z wykorzystaniem IBM SPSS Statistics. Sage.</li>
+<li>Hair, J. F., Black, W. C., Babin, B. J., &amp; Anderson, R. E. (2019). Analiza danych wielowymiarowych (wyd. 8). Cengage Learning.</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter3.html" class="pagination-link" aria-label="Comprehensive Guide to Univariate Descriptive Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

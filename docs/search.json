@@ -4,39 +4,669 @@
     "href": "index.html",
     "title": "STAT101_qbook",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\nThis is a Quarto book.",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "chapter1.html",
+    "href": "chapter1.html",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 What is Data Science?\nData science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
+    "objectID": "chapter1.html#what-is-data-science",
+    "href": "chapter1.html#what-is-data-science",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "Key Point\n\n\n\nIn social sciences, data science combines statistical methods, computational tools, and domain expertise to analyze complex social phenomena and human behavior.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "chapter1.html#the-relationship-between-statistics-and-data-science",
+    "href": "chapter1.html#the-relationship-between-statistics-and-data-science",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.2 The Relationship Between Statistics and Data Science",
+    "text": "1.2 The Relationship Between Statistics and Data Science\nWhile statistics and data science are closely related, they have some distinctions:\n\nStatisticsData Science\n\n\n\nFocuses on mathematical theories and methods for collecting, analyzing, interpreting, and presenting data\nEmphasizes statistical inference, hypothesis testing, and probability theory\nHas a long history in social sciences for analyzing survey data, experimental results, and observational studies\n\n\n\n\nIncorporates statistical methods along with computer science and domain expertise\nEmphasizes big data, machine learning, and predictive modeling\nIn social sciences, often deals with large-scale digital traces, social media data, and complex behavioral datasets\n\n\n\n\nData science can be seen as an evolution and expansion of traditional statistics, incorporating new technologies and methodologies to handle larger and more complex social science datasets.",
     "crumbs": [
-      "References"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#essential-concepts-in-data-science-and-statistics",
+    "href": "chapter1.html#essential-concepts-in-data-science-and-statistics",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.3 Essential Concepts in Data Science and Statistics",
+    "text": "1.3 Essential Concepts in Data Science and Statistics\n\n1.3.1 Statistical Population, Sample, and Data Generating Process\nUnderstanding the relationships between population, sample, and the data generating process (DGP) is crucial in social science research.\n\n\n\n\n\n\nDefinitions\n\n\n\n\nPopulation: The entire group of individuals or objects about which information is sought.\nSample: A subset of the population that is selected for study.\nData Generating Process (DGP): The underlying mechanism or system that produces the observed data.\n\n\n\n\n1.3.1.1 Comparing Population and DGP:\n\nThe population represents the group we want to study, while the DGP is the mechanism producing the characteristics we observe in that population.\nIn social sciences, the DGP often involves complex social, psychological, and economic factors that shape the population’s characteristics.\nUnderstanding the DGP helps us interpret why the population has certain characteristics and how these might change over time or in different contexts.\n\n\n\n\n\n\n\nExample: Voter Behavior Study\n\n\n\n\nPopulation: All eligible voters in a country\nSample: 1000 randomly selected eligible voters\nDGP: The complex interplay of factors influencing voting decisions, such as political beliefs, economic conditions, media exposure, and social networks.\n\nUnderstanding the DGP helps researchers interpret voter behavior and potentially predict future trends.\n\n\nLet’s visualize this concept using R:\n\n\nClick to show/hide R code\nlibrary(ggplot2)\n\n# Simulate a population based on a simple DGP\nset.seed(123)\nage &lt;- rnorm(10000, mean = 45, sd = 15)\nincome &lt;- exp(rnorm(10000, mean = 10, sd = 0.5))\nvoting_prob &lt;- plogis(-5 + 0.05 * age + 0.00003 * income + rnorm(10000, sd = 0.5))\npopulation &lt;- data.frame(age = age, income = income, voting_prob = voting_prob)\n\n# Take a random sample\nsample_indices &lt;- sample(1:nrow(population), 1000)\nsample_data &lt;- population[sample_indices, ]\n\n# Visualize\nggplot(sample_data, aes(x = age, y = income, color = voting_prob)) +\n  geom_point(alpha = 0.6) +\n  scale_color_viridis_c() +\n  labs(title = \"Sample: Age, Income, and Voting Probability\",\n       x = \"Age\", y = \"Income\", color = \"Voting Probability\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nThis visualization demonstrates how age and income (part of the DGP) influence voting probability in our simulated population, based on the sample we’ve drawn.\n\n\n\n1.3.2 Types of Data in Social Sciences\nSocial science research deals with various types of data:\n\nQuantitative Data: Numerical data (e.g., survey responses, economic indicators)\nQualitative Data: Non-numerical data (e.g., interview transcripts, open-ended survey responses)\nBig Data: Large-scale digital traces (e.g., social media posts, online behavior logs)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#core-components-of-data-science-in-social-research",
+    "href": "chapter1.html#core-components-of-data-science-in-social-research",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.4 Core Components of Data Science in Social Research",
+    "text": "1.4 Core Components of Data Science in Social Research\n\nData CollectionData ProcessingExploratory Data Analysis (EDA)Statistical InferenceMachine Learning ApplicationsData Visualization and Communication\n\n\n\nSurveys and questionnaires\nInterviews and focus groups\nDigital data collection (e.g., web scraping, API access)\nEthical considerations in data collection\n\n\n\n\nCleaning and preprocessing data\nHandling missing values and outliers\nCoding qualitative data\nData transformation and normalization\n\n\n\n\nDescriptive statistics\nData visualization\nIdentifying patterns and trends in social phenomena\n\n\n\n\nHypothesis testing in social research\nRegression analysis\nCausal inference techniques\n\n\n\n\nPredictive modeling of social behaviors\nText analysis and sentiment analysis\nNetwork analysis in social contexts\n\n\n\n\nCreating effective visualizations for social science data\nCommunicating research findings to diverse audiences\nData-driven storytelling",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#tools-for-data-science-in-social-sciences",
+    "href": "chapter1.html#tools-for-data-science-in-social-sciences",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.5 Tools for Data Science in Social Sciences",
+    "text": "1.5 Tools for Data Science in Social Sciences\nIn this course, we’ll primarily use R for our data analysis, as it’s widely used in social science research.\n\n1.5.1 R for Social Science Data Analysis\nR offers powerful capabilities for social science research, from data manipulation to advanced statistical modeling.\n\n\nClick to show/hide R code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nClick to show/hide R code\n# Generate some example social science data\nset.seed(456)\nn &lt;- 500\ndata &lt;- tibble(\n  age = rnorm(n, mean = 35, sd = 12),\n  education_years = rpois(n, lambda = 13),\n  income = exp(rnorm(n, mean = 10, sd = 0.5)),\n  job_satisfaction = runif(n, min = 1, max = 5)\n)\n\n# Basic data summary\nsummary(data)\n\n\n      age        education_years     income      job_satisfaction\n Min.   : 6.42   Min.   : 4.00   Min.   : 4984   Min.   :1.002   \n 1st Qu.:27.77   1st Qu.:11.00   1st Qu.:15777   1st Qu.:2.017   \n Median :36.02   Median :13.00   Median :21799   Median :3.075   \n Mean   :36.18   Mean   :13.11   Mean   :24407   Mean   :3.049   \n 3rd Qu.:44.77   3rd Qu.:15.25   3rd Qu.:30653   3rd Qu.:4.033   \n Max.   :71.11   Max.   :25.00   Max.   :85257   Max.   :4.975   \n\n\nClick to show/hide R code\n# Correlation analysis\ncor(data)\n\n\n                          age education_years       income job_satisfaction\nage               1.000000000     0.001720991 -0.006960666     -0.044538735\neducation_years   0.001720991     1.000000000  0.038952942      0.002780209\nincome           -0.006960666     0.038952942  1.000000000      0.000761065\njob_satisfaction -0.044538735     0.002780209  0.000761065      1.000000000\n\n\nClick to show/hide R code\n# Visualization\nggplot(data, aes(x = education_years, y = income)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  labs(title = \"Relationship between Education and Income\",\n       x = \"Years of Education\", y = \"Income\") +\n  theme_minimal()\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThis example demonstrates basic data manipulation, summary statistics, and visualization using R, which are common tasks in social science research.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#ethical-considerations-in-social-science-data-analysis",
+    "href": "chapter1.html#ethical-considerations-in-social-science-data-analysis",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.6 Ethical Considerations in Social Science Data Analysis",
+    "text": "1.6 Ethical Considerations in Social Science Data Analysis\nEthics play a crucial role in social science research:\n\nPrivacy and Consent: Ensuring participant privacy and informed consent\nData Protection: Securely storing and managing sensitive personal data\nBias and Representation: Addressing sampling bias and ensuring diverse representation\nTransparency: Clearly communicating research methods and limitations\nSocial Impact: Considering the potential societal implications of research findings\n\n\n\n\n\n\n\nImportant\n\n\n\nSocial scientists must carefully consider the ethical implications of their data collection, analysis, and dissemination practices.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#key-takeaways",
+    "href": "chapter1.html#key-takeaways",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.7 Key Takeaways",
+    "text": "1.7 Key Takeaways\n\nData science in social sciences builds upon traditional statistical methods, incorporating new technologies to analyze complex social phenomena.\nUnderstanding concepts like population, sample, and data generating processes is crucial for valid social science research.\nThe data science process in social research involves multiple steps from ethical data collection to the communication of insights.\nR is a powerful tool for social science data analysis, offering a wide range of capabilities.\nEthical considerations should be at the forefront of any social science data project.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#next-steps",
+    "href": "chapter1.html#next-steps",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.8 Next Steps",
+    "text": "1.8 Next Steps\nIn the following chapters, we’ll dive deeper into each component of the data science process, exploring statistical concepts, R programming techniques, and real-world applications in social science research.\n\n\n\n\n\n\nPractice Exercise\n\n\n\nUsing the concepts learned in this chapter, design a small-scale study on a social science topic of your choice. Identify the population, consider how you would draw a sample, and reflect on the potential data generating process. What ethical considerations would you need to address?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html",
+    "href": "rozdzial1.html",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "",
+    "text": "2.1 Czym jest Nauka o Danych?\nNauka o danych to interdyscyplinarna dziedzina, która wykorzystuje metody naukowe, procesy, algorytmy i systemy do wydobywania wiedzy i wglądów ze strukturalnych i niestrukturalnych danych.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#czym-jest-nauka-o-danych",
+    "href": "rozdzial1.html#czym-jest-nauka-o-danych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "",
+    "text": "Kluczowy Punkt\n\n\n\nW naukach społecznych nauka o danych łączy metody statystyczne, narzędzia obliczeniowe i wiedzę dziedzinową do analizy złożonych zjawisk społecznych i zachowań ludzkich.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#związek-między-statystyką-a-nauką-o-danych",
+    "href": "rozdzial1.html#związek-między-statystyką-a-nauką-o-danych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.2 Związek Między Statystyką a Nauką o Danych",
+    "text": "2.2 Związek Między Statystyką a Nauką o Danych\nChociaż statystyka i nauka o danych są ściśle powiązane, mają pewne różnice:\n\nStatystykaNauka o Danych\n\n\n\nKoncentruje się na teoriach matematycznych i metodach zbierania, analizowania, interpretowania i prezentowania danych\nKładzie nacisk na wnioskowanie statystyczne, testowanie hipotez i teorię prawdopodobieństwa\nMa długą historię w naukach społecznych w analizie danych ankietowych, wyników eksperymentalnych i badań obserwacyjnych\n\n\n\n\nŁączy metody statystyczne z informatyką i wiedzą dziedzinową\nKładzie nacisk na big data, uczenie maszynowe i modelowanie predykcyjne\nW naukach społecznych często zajmuje się danymi cyfrowymi na dużą skalę, danymi z mediów społecznościowych i złożonymi zbiorami danych behawioralnych\n\n\n\n\nNauka o danych może być postrzegana jako ewolucja i rozszerzenie tradycyjnej statystyki, włączając nowe technologie i metodologie do obsługi większych i bardziej złożonych zbiorów danych w naukach społecznych.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#podstawowe-koncepcje-w-nauce-o-danych-i-statystyce",
+    "href": "rozdzial1.html#podstawowe-koncepcje-w-nauce-o-danych-i-statystyce",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.3 Podstawowe Koncepcje w Nauce o Danych i Statystyce",
+    "text": "2.3 Podstawowe Koncepcje w Nauce o Danych i Statystyce\n\n2.3.1 Populacja Statystyczna, Próba i Proces Generowania Danych\nZrozumienie relacji między populacją, próbą i procesem generowania danych (PGD) jest kluczowe w badaniach nauk społecznych.\n\n\n\n\n\n\nDefinicje\n\n\n\n\nPopulacja: Cała grupa osób lub obiektów, o których poszukuje się informacji.\nPróba: Podzbiór populacji, który jest wybierany do badania.\nProces Generowania Danych (PGD): Podstawowy mechanizm lub system, który produkuje obserwowane dane.\n\n\n\n\n2.3.1.1 Porównanie Populacji i PGD:\n\nPopulacja reprezentuje grupę, którą chcemy badać, podczas gdy PGD jest mechanizmem produkującym cechy, które obserwujemy w tej populacji.\nW naukach społecznych PGD często obejmuje złożone czynniki społeczne, psychologiczne i ekonomiczne, które kształtują cechy populacji.\nZrozumienie PGD pomaga nam interpretować, dlaczego populacja ma pewne cechy i jak mogą się one zmieniać w czasie lub w różnych kontekstach.\n\n\n\n\n\n\n\nPrzykład: Badanie Zachowań Wyborczych\n\n\n\n\nPopulacja: Wszyscy uprawnieni wyborcy w kraju\nPróba: 1000 losowo wybranych uprawnionych wyborców\nPGD: Złożone współdziałanie czynników wpływających na decyzje wyborcze, takich jak przekonania polityczne, warunki ekonomiczne, ekspozycja na media i sieci społeczne.\n\nZrozumienie PGD pomaga badaczom interpretować zachowania wyborcze i potencjalnie przewidywać przyszłe trendy.\n\n\nZobrazujmy tę koncepcję za pomocą R:\n\n\nKliknij, aby pokazać/ukryć kod R\nlibrary(ggplot2)\n\n# Symulacja populacji na podstawie prostego PGD\nset.seed(123)\nwiek &lt;- rnorm(10000, mean = 45, sd = 15)\ndochod &lt;- exp(rnorm(10000, mean = 10, sd = 0.5))\nprawdopodobienstwo_glosowania &lt;- plogis(-5 + 0.05 * wiek + 0.00003 * dochod + rnorm(10000, sd = 0.5))\npopulacja &lt;- data.frame(wiek = wiek, dochod = dochod, prawdopodobienstwo_glosowania = prawdopodobienstwo_glosowania)\n\n# Wybór losowej próby\nindeksy_proby &lt;- sample(1:nrow(populacja), 1000)\ndane_proby &lt;- populacja[indeksy_proby, ]\n\n# Wizualizacja\nggplot(dane_proby, aes(x = wiek, y = dochod, color = prawdopodobienstwo_glosowania)) +\n  geom_point(alpha = 0.6) +\n  scale_color_viridis_c() +\n  labs(title = \"Próba: Wiek, Dochód i Prawdopodobieństwo Głosowania\",\n       x = \"Wiek\", y = \"Dochód\", color = \"Prawdopodobieństwo Głosowania\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nTa wizualizacja pokazuje, jak wiek i dochód (część PGD) wpływają na prawdopodobieństwo głosowania w naszej symulowanej populacji, na podstawie wybranej próby.\n\n\n\n2.3.2 Rodzaje Danych w Naukach Społecznych\nBadania w naukach społecznych zajmują się różnymi rodzajami danych:\n\nDane Ilościowe: Dane liczbowe (np. odpowiedzi z ankiet, wskaźniki ekonomiczne)\nDane Jakościowe: Dane nieliczbowe (np. transkrypcje wywiadów, odpowiedzi na pytania otwarte w ankietach)\nBig Data: Dane cyfrowe na dużą skalę (np. posty w mediach społecznościowych, logi zachowań online)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#główne-komponenty-nauki-o-danych-w-badaniach-społecznych",
+    "href": "rozdzial1.html#główne-komponenty-nauki-o-danych-w-badaniach-społecznych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.4 Główne Komponenty Nauki o Danych w Badaniach Społecznych",
+    "text": "2.4 Główne Komponenty Nauki o Danych w Badaniach Społecznych\n\nZbieranie DanychPrzetwarzanie DanychEksploracyjna Analiza Danych (EDA)Wnioskowanie StatystyczneZastosowania Uczenia MaszynowegoWizualizacja Danych i Komunikacja\n\n\n\nAnkiety i kwestionariusze\nWywiady i grupy fokusowe\nZbieranie danych cyfrowych (np. web scraping, dostęp do API)\nEtyczne aspekty zbierania danych\n\n\n\n\nCzyszczenie i wstępne przetwarzanie danych\nObsługa brakujących wartości i wartości odstających\nKodowanie danych jakościowych\nTransformacja i normalizacja danych\n\n\n\n\nStatystyki opisowe\nWizualizacja danych\nIdentyfikacja wzorców i trendów w zjawiskach społecznych\n\n\n\n\nTestowanie hipotez w badaniach społecznych\nAnaliza regresji\nTechniki wnioskowania przyczynowego\n\n\n\n\nModelowanie predykcyjne zachowań społecznych\nAnaliza tekstu i analiza sentymentu\nAnaliza sieci w kontekstach społecznych\n\n\n\n\nTworzenie efektywnych wizualizacji dla danych z nauk społecznych\nKomunikowanie wyników badań różnym odbiorcom\nStorytelling oparty na danych",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#narzędzia-do-nauki-o-danych-w-naukach-społecznych",
+    "href": "rozdzial1.html#narzędzia-do-nauki-o-danych-w-naukach-społecznych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.5 Narzędzia do Nauki o Danych w Naukach Społecznych",
+    "text": "2.5 Narzędzia do Nauki o Danych w Naukach Społecznych\nW tym kursie będziemy głównie używać R do naszej analizy danych, ponieważ jest on szeroko stosowany w badaniach nauk społecznych.\n\n2.5.1 R w Analizie Danych Nauk Społecznych\nR oferuje potężne możliwości dla badań w naukach społecznych, od manipulacji danymi po zaawansowane modelowanie statystyczne.\n\n\nKliknij, aby pokazać/ukryć kod R\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nKliknij, aby pokazać/ukryć kod R\n# Generowanie przykładowych danych z nauk społecznych\nset.seed(456)\nn &lt;- 500\ndane &lt;- tibble(\n  wiek = rnorm(n, mean = 35, sd = 12),\n  lata_edukacji = rpois(n, lambda = 13),\n  dochod = exp(rnorm(n, mean = 10, sd = 0.5)),\n  satysfakcja_z_pracy = runif(n, min = 1, max = 5)\n)\n\n# Podstawowe podsumowanie danych\nsummary(dane)\n\n\n      wiek       lata_edukacji       dochod      satysfakcja_z_pracy\n Min.   : 6.42   Min.   : 4.00   Min.   : 4984   Min.   :1.002      \n 1st Qu.:27.77   1st Qu.:11.00   1st Qu.:15777   1st Qu.:2.017      \n Median :36.02   Median :13.00   Median :21799   Median :3.075      \n Mean   :36.18   Mean   :13.11   Mean   :24407   Mean   :3.049      \n 3rd Qu.:44.77   3rd Qu.:15.25   3rd Qu.:30653   3rd Qu.:4.033      \n Max.   :71.11   Max.   :25.00   Max.   :85257   Max.   :4.975      \n\n\nKliknij, aby pokazać/ukryć kod R\n# Analiza korelacji\ncor(dane)\n\n\n                            wiek lata_edukacji       dochod satysfakcja_z_pracy\nwiek                 1.000000000   0.001720991 -0.006960666        -0.044538735\nlata_edukacji        0.001720991   1.000000000  0.038952942         0.002780209\ndochod              -0.006960666   0.038952942  1.000000000         0.000761065\nsatysfakcja_z_pracy -0.044538735   0.002780209  0.000761065         1.000000000\n\n\nKliknij, aby pokazać/ukryć kod R\n# Wizualizacja\nggplot(dane, aes(x = lata_edukacji, y = dochod)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  labs(title = \"Zależność między Edukacją a Dochodem\",\n       x = \"Lata Edukacji\", y = \"Dochód\") +\n  theme_minimal()\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nTen przykład demonstruje podstawową manipulację danymi, statystyki opisowe i wizualizację przy użyciu R, które są powszechnymi zadaniami w badaniach nauk społecznych.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#etyczne-aspekty-w-analizie-danych-nauk-społecznych",
+    "href": "rozdzial1.html#etyczne-aspekty-w-analizie-danych-nauk-społecznych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.6 Etyczne Aspekty w Analizie Danych Nauk Społecznych",
+    "text": "2.6 Etyczne Aspekty w Analizie Danych Nauk Społecznych\nEtyka odgrywa kluczową rolę w badaniach nauk społecznych:\n\nPrywatność i Zgoda: Zapewnienie prywatności uczestników i świadomej zgody\nOchrona Danych: Bezpieczne przechowywanie i zarządzanie wrażliwymi danymi osobowymi\nBłędy i Reprezentacja: Adresowanie błędów próbkowania i zapewnienie różnorodnej reprezentacji\nPrzejrzystość: Jasne komunikowanie metod badawczych i ograniczeń\nWpływ Społeczny: Rozważanie potencjalnych społecznych implikacji wyników badań\n\n\n\n\n\n\n\nWażne\n\n\n\nNaukowcy społeczni muszą starannie rozważyć etyczne implikacje swoich praktyk zbierania, analizy i rozpowszechniania danych.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#kluczowe-wnioski",
+    "href": "rozdzial1.html#kluczowe-wnioski",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.7 Kluczowe Wnioski",
+    "text": "2.7 Kluczowe Wnioski\n\nNauka o danych w naukach społecznych bazuje na tradycyjnych metodach statystycznych, włączając nowe technologie do analizy złożonych zjawisk społecznych.\nZrozumienie koncepcji takich jak populacja, próba i procesy generowania danych jest kluczowe dla prawidłowych badań w naukach społecznych.\nProces nauki o danych w badaniach społecznych obejmuje wiele etapów, od etycznego zbierania danych po komunikację wniosków.\nR jest potężnym narzędziem do analizy danych w naukach społecznych, oferującym szeroki zakres możliwości.\nAspekty etyczne powinny być na pierwszym planie każdego projektu związanego z danymi w naukach społecznych.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#następne-kroki",
+    "href": "rozdzial1.html#następne-kroki",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.8 Następne Kroki",
+    "text": "2.8 Następne Kroki\nW kolejnych rozdziałach zagłębimy się w każdy komponent procesu nauki o danych, badając koncepcje statystyczne, techniki programowania w R i rzeczywiste zastosowania w badaniach nauk społecznych.\n\n\n\n\n\n\nĆwiczenie Praktyczne\n\n\n\nWykorzystując koncepcje poznane w tym rozdziale, zaprojektuj małe badanie na wybrany temat z nauk społecznych. Określ populację, zastanów się, jak wybrałbyś próbę i przemyśl potencjalny proces generowania danych. Jakie aspekty etyczne należałoby uwzględnić?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html",
+    "href": "chapter2.html",
+    "title": "3  Understanding Data Types in Social Sciences",
+    "section": "",
+    "text": "3.1 Introduction\nIn social science research, understanding the nature of our data is crucial for selecting appropriate analysis methods and drawing valid conclusions. This chapter explores fundamental concepts of data types, starting from basic mathematical set theory and progressing to practical applications in social science research.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Understanding Data Types in Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#foundations-in-number-sets",
+    "href": "chapter2.html#foundations-in-number-sets",
+    "title": "3  Understanding Data Types in Social Sciences",
+    "section": "3.2 Foundations in Number Sets",
+    "text": "3.2 Foundations in Number Sets\nBefore diving into data types, it’s essential to understand the basic number sets that form the foundation of our understanding of data.\n\n3.2.1 Basic Number Sets\n\nNatural Numbers (ℕ): The counting numbers {1, 2, 3, …}\nIntegers (ℤ): Includes natural numbers, their negatives, and zero {…, -2, -1, 0, 1, 2, …}\nRational Numbers (ℚ): Numbers that can be expressed as a fraction of two integers\nReal Numbers (ℝ): All numbers on the number line, including rationals and irrationals\n\n\n\n3.2.2 Properties of Sets\n\nCountable Sets: Sets whose elements can be put in a one-to-one correspondence with the natural numbers. For example, the set of integers is countable.\nUncountable Sets: Sets that are not countable. The set of real numbers is uncountable.\nDiscrete Sets: Sets where each element is separated from other elements by a finite gap. The integers form a discrete set.\nDense Sets: Sets where between any two elements, there is always another element of the set. The rational numbers and real numbers are dense sets.\n\n\n\n\n\n\n\nNote\n\n\n\nUnderstanding these set properties is crucial for grasping the nature of different data types in social sciences.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Understanding Data Types in Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#discrete-vs.-continuous-data",
+    "href": "chapter2.html#discrete-vs.-continuous-data",
+    "title": "3  Understanding Data Types in Social Sciences",
+    "section": "3.3 Discrete vs. Continuous Data",
+    "text": "3.3 Discrete vs. Continuous Data\nNow that we have a foundation in number sets, we can better understand the distinction between discrete and continuous data in social science research.\n\n3.3.1 Discrete Data\nDiscrete data corresponds to discrete sets in mathematics. It can only take on specific, separate values, often from a countable set.\nProperties of discrete data:\n\nValues are distinct and separate\nOften (but not always) represented by integers\nTypically counted rather than measured\nCan be finite or infinite\n\n\nExamples of discrete data in social sciences:\n\nNumber of children in a family (ℕ)\nEducational level (e.g., 1 = high school, 2 = bachelor’s, 3 = master’s)\nVoting choices in an election (e.g., 1 = Party A, 2 = Party B, 3 = Party C)\n\n\n\n\n3.3.2 Continuous Data\nContinuous data corresponds to dense sets in mathematics, typically represented by real numbers. It can take any value within a range.\nProperties of continuous data:\n\nValues can be any real number within a range\nRepresented by real numbers (ℝ)\nTypically measured rather than counted\nAlways infinite (in theory, though limited by measurement precision in practice)\n\n\nExamples of continuous data in social sciences:\n\nAge (can be any real number ≥ 0)\nIncome (can be any non-negative real number)\nTime spent on a task (can be any non-negative real number)\n\n\n\n\n3.3.3 Visualization of Discrete vs. Continuous Data\nLet’s visualize the difference using R:\n\n\nClick to show/hide R code\nlibrary(ggplot2)\nlibrary(patchwork)\n\n# Generate sample data\nset.seed(123)\ndiscrete_data &lt;- sample(1:5, 1000, replace = TRUE)\ncontinuous_data &lt;- rnorm(1000, mean = 3, sd = 1)\n\n# Create data frames\ndiscrete_df &lt;- data.frame(value = discrete_data, type = \"Discrete\")\ncontinuous_df &lt;- data.frame(value = continuous_data, type = \"Continuous\")\n\n# Discrete plot\np1 &lt;- ggplot(discrete_df, aes(x = value)) +\n  geom_bar() +\n  scale_x_continuous(breaks = 1:5) +\n  labs(title = \"Discrete Data\", x = \"Value\", y = \"Count\") +\n  theme_minimal()\n\n# Continuous plot\np2 &lt;- ggplot(continuous_df, aes(x = value)) +\n  geom_histogram(bins = 30, fill = \"skyblue\", color = \"black\") +\n  labs(title = \"Continuous Data\", x = \"Value\", y = \"Count\") +\n  theme_minimal()\n\n# Display plots side by side\np1 + p2\n\n\n\n\n\n\n\n\n\n\n\n3.3.4 The Continuum Between Discrete and Continuous\nIn practice, the distinction between discrete and continuous data can sometimes blur:\n\nDiscretized Continuous Data: Continuous variables that are rounded or grouped into categories (e.g., age groups, income brackets).\nHigh-Cardinality Discrete Data: Discrete variables with many possible values can approximate continuous data (e.g., ZIP codes, detailed occupation codes).\nLimited Precision Measurements: Continuous variables measured with limited precision appear discrete (e.g., temperature measured to the nearest degree).\n\n\n\n\n\n\n\nImportant\n\n\n\nThe choice to treat data as discrete or continuous often depends on the research context, measurement precision, and analytical goals.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Understanding Data Types in Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#implications-for-social-science-research",
+    "href": "chapter2.html#implications-for-social-science-research",
+    "title": "3  Understanding Data Types in Social Sciences",
+    "section": "3.4 Implications for Social Science Research",
+    "text": "3.4 Implications for Social Science Research\nUnderstanding the nature of data as discrete or continuous, and their relationship to mathematical sets, has important implications for social science research:\n\nMeasurement and Operationalization: How we define and measure variables can influence whether they are treated as discrete or continuous.\nStatistical Analysis: Different statistical techniques are appropriate for discrete vs. continuous data. For example:\n\nDiscrete: Chi-square tests, logistic regression\nContinuous: t-tests, linear regression\n\nData Visualization: The choice of visualization technique depends on whether data is discrete or continuous (e.g., bar plots vs. histograms).\nInterpretation of Results: Understanding the discrete or continuous nature of data is crucial for correctly interpreting research findings and their implications.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Understanding Data Types in Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#practical-exercise",
+    "href": "chapter2.html#practical-exercise",
+    "title": "3  Understanding Data Types in Social Sciences",
+    "section": "3.5 Practical Exercise",
+    "text": "3.5 Practical Exercise\nLet’s create a dataset that includes both discrete and continuous variables, and explore how their properties influence our analysis:\n\n\nClick to show/hide R code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nClick to show/hide R code\n# Create sample dataset\nset.seed(456)\nn &lt;- 200\n\ndata &lt;- tibble(\n  id = 1:n,\n  age = round(runif(n, 18, 65), 1),  # Continuous\n  income = round(rlnorm(n, meanlog = 10.5, sdlog = 0.5), 2),  # Continuous\n  education_years = sample(10:22, n, replace = TRUE),  # Discrete\n  job_satisfaction = sample(1:5, n, replace = TRUE)  # Discrete (Likert-type)\n)\n\n# Summary statistics\nsummary(data)\n\n\n       id              age            income       education_years\n Min.   :  1.00   Min.   :18.10   Min.   : 11039   Min.   :10.00  \n 1st Qu.: 50.75   1st Qu.:32.67   1st Qu.: 24964   1st Qu.:13.00  \n Median :100.50   Median :43.75   Median : 36294   Median :17.00  \n Mean   :100.50   Mean   :43.52   Mean   : 40536   Mean   :16.02  \n 3rd Qu.:150.25   3rd Qu.:55.42   3rd Qu.: 53754   3rd Qu.:19.00  \n Max.   :200.00   Max.   :64.70   Max.   :140046   Max.   :22.00  \n job_satisfaction\n Min.   :1.000   \n 1st Qu.:2.000   \n Median :3.000   \n Mean   :3.305   \n 3rd Qu.:4.000   \n Max.   :5.000   \n\n\nClick to show/hide R code\n# Visualizations\np1 &lt;- ggplot(data, aes(x = age)) +\n  geom_histogram(bins = 20, fill = \"skyblue\", color = \"black\") +\n  labs(title = \"Age Distribution (Continuous)\", x = \"Age\", y = \"Count\")\n\np2 &lt;- ggplot(data, aes(x = education_years)) +\n  geom_bar(fill = \"lightgreen\", color = \"black\") +\n  labs(title = \"Education Years (Discrete)\", x = \"Years of Education\", y = \"Count\")\n\np3 &lt;- ggplot(data, aes(x = income)) +\n  geom_histogram(bins = 30, fill = \"pink\", color = \"black\") +\n  labs(title = \"Income Distribution (Continuous)\", x = \"Income\", y = \"Count\")\n\np4 &lt;- ggplot(data, aes(x = factor(job_satisfaction))) +\n  geom_bar(fill = \"lightyellow\", color = \"black\") +\n  labs(title = \"Job Satisfaction (Discrete)\", x = \"Satisfaction Level\", y = \"Count\")\n\n# Arrange plots\n(p1 + p2) / (p3 + p4)\n\n\n\n\n\n\n\n\n\nClick to show/hide R code\n# Correlation analysis (appropriate for continuous variables)\ncor(data$age, data$income)\n\n\n[1] 0.03168301\n\n\nClick to show/hide R code\n# Chi-square test (appropriate for discrete variables)\nchisq.test(table(data$education_years, data$job_satisfaction))\n\n\nWarning in chisq.test(table(data$education_years, data$job_satisfaction)):\nChi-squared approximation may be incorrect\n\n\n\n    Pearson's Chi-squared test\n\ndata:  table(data$education_years, data$job_satisfaction)\nX-squared = 51.754, df = 48, p-value = 0.3295",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Understanding Data Types in Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#conclusion",
+    "href": "chapter2.html#conclusion",
+    "title": "3  Understanding Data Types in Social Sciences",
+    "section": "3.6 Conclusion",
+    "text": "3.6 Conclusion\nUnderstanding the fundamental properties of number sets and how they relate to discrete and continuous data is crucial in social science research. This knowledge informs our choices in measurement, analysis, and interpretation of data. As we’ve seen, while the mathematical distinction between discrete and continuous is clear, real-world data often exists on a continuum between these two types. Researchers must carefully consider the nature of their data when designing studies, choosing analytical methods, and drawing conclusions.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Understanding Data Types in Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter2.html#references",
+    "href": "chapter2.html#references",
+    "title": "3  Understanding Data Types in Social Sciences",
+    "section": "3.7 References",
+    "text": "3.7 References\n\nGentle, J. E. (2009). Computational statistics (Vol. 308). New York: Springer.\nStevens, S. S. (1946). On the theory of scales of measurement. Science, 103(2684), 677-680.\nAgresti, A. (2018). Statistical methods for the social sciences. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Understanding Data Types in Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial2.html",
+    "href": "rozdzial2.html",
+    "title": "4  Zrozumienie Typów Danych w Naukach Społecznych",
+    "section": "",
+    "text": "4.1 Wprowadzenie\nW badaniach nauk społecznych zrozumienie natury naszych danych jest kluczowe dla wyboru odpowiednich metod analizy i wyciągania prawidłowych wniosków. Ten rozdział bada fundamentalne koncepcje typów danych, zaczynając od podstawowej teorii zbiorów matematycznych i przechodząc do praktycznych zastosowań w badaniach nauk społecznych.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Zrozumienie Typów Danych w Naukach Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial2.html#podstawy-zbiorów-liczbowych",
+    "href": "rozdzial2.html#podstawy-zbiorów-liczbowych",
+    "title": "4  Zrozumienie Typów Danych w Naukach Społecznych",
+    "section": "4.2 Podstawy Zbiorów Liczbowych",
+    "text": "4.2 Podstawy Zbiorów Liczbowych\nZanim zagłębimy się w typy danych, istotne jest zrozumienie podstawowych zbiorów liczbowych, które tworzą fundament naszego rozumienia danych.\n\n4.2.1 Podstawowe Zbiory Liczbowe\n\nLiczby Naturalne (ℕ): Liczby do liczenia {1, 2, 3, …}\nLiczby Całkowite (ℤ): Obejmują liczby naturalne, ich przeciwne i zero {…, -2, -1, 0, 1, 2, …}\nLiczby Wymierne (ℚ): Liczby, które można wyrazić jako iloraz dwóch liczb całkowitych\nLiczby Rzeczywiste (ℝ): Wszystkie liczby na osi liczbowej, włączając wymierne i niewymierne\n\n\n\n4.2.2 Właściwości Zbiorów\n\nZbiory Przeliczalne: Zbiory, których elementy można ustawić w odpowiedniości jeden-do-jednego z liczbami naturalnymi. Na przykład, zbiór liczb całkowitych jest przeliczalny.\nZbiory Nieprzeliczalne: Zbiory, które nie są przeliczalne. Zbiór liczb rzeczywistych jest nieprzeliczalny.\nZbiory Dyskretne: Zbiory, w których każdy element jest oddzielony od innych elementów skończoną przerwą. Liczby całkowite tworzą zbiór dyskretny.\nZbiory Gęste: Zbiory, w których między dowolnymi dwoma elementami zawsze znajduje się inny element tego zbioru. Liczby wymierne i rzeczywiste są zbiorami gęstymi.\n\n\n\n\n\n\n\nNote\n\n\n\nZrozumienie tych właściwości zbiorów jest kluczowe dla uchwycenia natury różnych typów danych w naukach społecznych.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Zrozumienie Typów Danych w Naukach Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial2.html#dane-dyskretne-vs.-dane-ciągłe",
+    "href": "rozdzial2.html#dane-dyskretne-vs.-dane-ciągłe",
+    "title": "4  Zrozumienie Typów Danych w Naukach Społecznych",
+    "section": "4.3 Dane Dyskretne vs. Dane Ciągłe",
+    "text": "4.3 Dane Dyskretne vs. Dane Ciągłe\nTeraz, gdy mamy podstawy w zbiorach liczbowych, możemy lepiej zrozumieć rozróżnienie między danymi dyskretnymi a ciągłymi w badaniach nauk społecznych.\n\n4.3.1 Dane Dyskretne\nDane dyskretne odpowiadają zbiorom dyskretnym w matematyce. Mogą przyjmować tylko określone, oddzielne wartości, często z przeliczalnego zbioru.\nWłaściwości danych dyskretnych:\n\nWartości są odrębne i oddzielne\nCzęsto (ale nie zawsze) reprezentowane przez liczby całkowite\nZazwyczaj liczone, a nie mierzone\nMogą być skończone lub nieskończone\n\n\nPrzykłady danych dyskretnych w naukach społecznych:\n\nLiczba dzieci w rodzinie (ℕ)\nPoziom wykształcenia (np. 1 = szkoła średnia, 2 = licencjat, 3 = magisterium)\nWybory wyborcze (np. 1 = Partia A, 2 = Partia B, 3 = Partia C)\n\n\n\n\n4.3.2 Dane Ciągłe\nDane ciągłe odpowiadają zbiorom gęstym w matematyce, typowo reprezentowanym przez liczby rzeczywiste. Mogą przyjmować dowolną wartość w danym zakresie.\nWłaściwości danych ciągłych:\n\nWartości mogą być dowolną liczbą rzeczywistą w danym zakresie\nReprezentowane przez liczby rzeczywiste (ℝ)\nZazwyczaj mierzone, a nie liczone\nZawsze nieskończone (w teorii, choć ograniczone precyzją pomiaru w praktyce)\n\n\nPrzykłady danych ciągłych w naukach społecznych:\n\nWiek (może być dowolną liczbą rzeczywistą ≥ 0)\nDochód (może być dowolną nieujemną liczbą rzeczywistą)\nCzas spędzony na zadaniu (może być dowolną nieujemną liczbą rzeczywistą)\n\n\n\n\n4.3.3 Wizualizacja Danych Dyskretnych vs. Ciągłych\nZobrazujmy różnicę przy użyciu R:\n\n\nKliknij, aby pokazać/ukryć kod R\nlibrary(ggplot2)\nlibrary(patchwork)\n\n# Generowanie przykładowych danych\nset.seed(123)\ndane_dyskretne &lt;- sample(1:5, 1000, replace = TRUE)\ndane_ciągłe &lt;- rnorm(1000, mean = 3, sd = 1)\n\n# Tworzenie ramek danych\ndf_dyskretne &lt;- data.frame(wartość = dane_dyskretne, typ = \"Dyskretne\")\ndf_ciągłe &lt;- data.frame(wartość = dane_ciągłe, typ = \"Ciągłe\")\n\n# Wykres dla danych dyskretnych\np1 &lt;- ggplot(df_dyskretne, aes(x = wartość)) +\n  geom_bar() +\n  scale_x_continuous(breaks = 1:5) +\n  labs(title = \"Dane Dyskretne\", x = \"Wartość\", y = \"Liczba\") +\n  theme_minimal()\n\n# Wykres dla danych ciągłych\np2 &lt;- ggplot(df_ciągłe, aes(x = wartość)) +\n  geom_histogram(bins = 30, fill = \"skyblue\", color = \"black\") +\n  labs(title = \"Dane Ciągłe\", x = \"Wartość\", y = \"Liczba\") +\n  theme_minimal()\n\n# Wyświetlanie wykresów obok siebie\np1 + p2\n\n\n\n\n\n\n\n\n\n\n\n4.3.4 Kontinuum Między Danymi Dyskretnymi a Ciągłymi\nW praktyce rozróżnienie między danymi dyskretnymi a ciągłymi może się czasami zacierać:\n\nDane Ciągłe Zdyskretyzowane: Zmienne ciągłe, które są zaokrąglone lub pogrupowane w kategorie (np. grupy wiekowe, przedziały dochodów).\nDane Dyskretne o Wysokiej Liczności: Zmienne dyskretne z wieloma możliwymi wartościami mogą przybliżać dane ciągłe (np. kody pocztowe, szczegółowe kody zawodów).\nPomiary o Ograniczonej Precyzji: Zmienne ciągłe mierzone z ograniczoną precyzją wydają się dyskretne (np. temperatura mierzona do najbliższego stopnia).\n\n\n\n\n\n\n\nImportant\n\n\n\nWybór traktowania danych jako dyskretnych lub ciągłych często zależy od kontekstu badawczego, precyzji pomiaru i celów analitycznych.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Zrozumienie Typów Danych w Naukach Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial2.html#implikacje-dla-badań-w-naukach-społecznych",
+    "href": "rozdzial2.html#implikacje-dla-badań-w-naukach-społecznych",
+    "title": "4  Zrozumienie Typów Danych w Naukach Społecznych",
+    "section": "4.4 Implikacje dla Badań w Naukach Społecznych",
+    "text": "4.4 Implikacje dla Badań w Naukach Społecznych\nZrozumienie natury danych jako dyskretnych lub ciągłych oraz ich związku ze zbiorami matematycznymi ma ważne implikacje dla badań w naukach społecznych:\n\nPomiar i Operacjonalizacja: Sposób, w jaki definiujemy i mierzymy zmienne, może wpływać na to, czy są one traktowane jako dyskretne czy ciągłe.\nAnaliza Statystyczna: Różne techniki statystyczne są odpowiednie dla danych dyskretnych vs. ciągłych. Na przykład:\n\nDyskretne: Testy chi-kwadrat, regresja logistyczna\nCiągłe: Testy t, regresja liniowa\n\nWizualizacja Danych: Wybór techniki wizualizacji zależy od tego, czy dane są dyskretne czy ciągłe (np. wykresy słupkowe vs. histogramy).\nInterpretacja Wyników: Zrozumienie dyskretnej lub ciągłej natury danych jest kluczowe dla prawidłowej interpretacji wyników badań i ich implikacji.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Zrozumienie Typów Danych w Naukach Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial2.html#ćwiczenie-praktyczne",
+    "href": "rozdzial2.html#ćwiczenie-praktyczne",
+    "title": "4  Zrozumienie Typów Danych w Naukach Społecznych",
+    "section": "4.5 Ćwiczenie Praktyczne",
+    "text": "4.5 Ćwiczenie Praktyczne\nStwórzmy zbiór danych, który zawiera zarówno zmienne dyskretne, jak i ciągłe, i zbadajmy, jak ich właściwości wpływają na naszą analizę:\n\n\nKliknij, aby pokazać/ukryć kod R\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nKliknij, aby pokazać/ukryć kod R\n# Tworzenie przykładowego zbioru danych\nset.seed(456)\nn &lt;- 200\n\ndane &lt;- tibble(\n  id = 1:n,\n  wiek = round(runif(n, 18, 65), 1),  # Ciągłe\n  dochód = round(rlnorm(n, meanlog = 10.5, sdlog = 0.5), 2),  # Ciągłe\n  lata_edukacji = sample(10:22, n, replace = TRUE),  # Dyskretne\n  satysfakcja_z_pracy = sample(1:5, n, replace = TRUE)  # Dyskretne (typu Likerta)\n)\n\n# Statystyki opisowe\nsummary(dane)\n\n\n       id              wiek           dochód       lata_edukacji  \n Min.   :  1.00   Min.   :18.10   Min.   : 11039   Min.   :10.00  \n 1st Qu.: 50.75   1st Qu.:32.67   1st Qu.: 24964   1st Qu.:13.00  \n Median :100.50   Median :43.75   Median : 36294   Median :17.00  \n Mean   :100.50   Mean   :43.52   Mean   : 40536   Mean   :16.02  \n 3rd Qu.:150.25   3rd Qu.:55.42   3rd Qu.: 53754   3rd Qu.:19.00  \n Max.   :200.00   Max.   :64.70   Max.   :140046   Max.   :22.00  \n satysfakcja_z_pracy\n Min.   :1.000      \n 1st Qu.:2.000      \n Median :3.000      \n Mean   :3.305      \n 3rd Qu.:4.000      \n Max.   :5.000      \n\n\nKliknij, aby pokazać/ukryć kod R\n# Wizualizacje\np1 &lt;- ggplot(dane, aes(x = wiek)) +\n  geom_histogram(bins = 20, fill = \"skyblue\", color = \"black\") +\n  labs(title = \"Rozkład Wieku (Ciągłe)\", x = \"Wiek\", y = \"Liczba\")\n\np2 &lt;- ggplot(dane, aes(x = lata_edukacji)) +\n  geom_bar(fill = \"lightgreen\", color = \"black\") +\n  labs(title = \"Lata Edukacji (Dyskretne)\", x = \"Lata Edukacji\", y = \"Liczba\")\n\np3 &lt;- ggplot(dane, aes(x = dochód)) +\n  geom_histogram(bins = 30, fill = \"pink\", color = \"black\") +\n  labs(title = \"Rozkład Dochodów (Ciągłe)\", x = \"Dochód\", y = \"Liczba\")\n\np4 &lt;- ggplot(dane, aes(x = factor(satysfakcja_z_pracy))) +\n  geom_bar(fill = \"lightyellow\", color = \"black\") +\n  labs(title = \"Satysfakcja z Pracy (Dyskretne)\", x = \"Poziom Satysfakcji\", y = \"Liczba\")\n\n# Układanie wykresów\n(p1 + p2) / (p3 + p4)\n\n\n\n\n\n\n\n\n\nKliknij, aby pokazać/ukryć kod R\n# Analiza korelacji (odpowiednia dla zmiennych ciągłych)\ncor(dane$wiek, dane$dochód)\n\n\n[1] 0.03168301\n\n\nKliknij, aby pokazać/ukryć kod R\n# Test chi-kwadrat (odpowiedni dla zmiennych dyskretnych)\nchisq.test(table(dane$lata_edukacji, dane$satysfakcja_z_pracy))\n\n\nWarning in chisq.test(table(dane$lata_edukacji, dane$satysfakcja_z_pracy)):\nChi-squared approximation may be incorrect\n\n\n\n    Pearson's Chi-squared test\n\ndata:  table(dane$lata_edukacji, dane$satysfakcja_z_pracy)\nX-squared = 51.754, df = 48, p-value = 0.3295",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Zrozumienie Typów Danych w Naukach Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial2.html#podsumowanie",
+    "href": "rozdzial2.html#podsumowanie",
+    "title": "4  Zrozumienie Typów Danych w Naukach Społecznych",
+    "section": "4.6 Podsumowanie",
+    "text": "4.6 Podsumowanie\nZrozumienie fundamentalnych właściwości zbiorów liczbowych i ich związku z danymi dyskretnymi i ciągłymi jest kluczowe w badaniach nauk społecznych. Ta wiedza wpływa na nasze wybory w zakresie pomiaru, analizy i interpretacji danych. Jak widzieliśmy, podczas gdy matematyczne rozróżnienie między dyskretnym a ciągłym jest jasne, dane ze świata rzeczywistego często istnieją na kontinuum między tymi dwoma typami. Badacze muszą starannie rozważyć naturę swoich danych podczas projektowania badań, wyboru metod analitycznych i wyciągania wniosków.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Zrozumienie Typów Danych w Naukach Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial2.html#bibliografia",
+    "href": "rozdzial2.html#bibliografia",
+    "title": "4  Zrozumienie Typów Danych w Naukach Społecznych",
+    "section": "4.7 Bibliografia",
+    "text": "4.7 Bibliografia\n\nGentle, J. E. (2009). Computational statistics (Vol. 308). New York: Springer.\nStevens, S. S. (1946). On the theory of scales of measurement. Science, 103(2684), 677-680.\nAgresti, A. (2018). Statistical methods for the social sciences. Pearson.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Zrozumienie Typów Danych w Naukach Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html",
+    "href": "chapter3.html",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "",
+    "text": "5.1 Understanding Outliers\nBefore diving into specific measures, it’s crucial to understand the concept of outliers, as they can significantly impact many descriptive statistics.\nOutliers are data points that differ significantly from other observations in the dataset. They can occur due to:\nOutliers can have a substantial effect on many statistical measures, especially those based on means or sums of squared deviations. Therefore, it’s essential to:\nThroughout this chapter, we’ll discuss how different descriptive measures are affected by outliers.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#understanding-outliers",
+    "href": "chapter3.html#understanding-outliers",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "",
+    "text": "Measurement or recording errors\nGenuine extreme values in the population\nSampling from a different population\n\n\n\nIdentify outliers through both statistical methods and domain knowledge\nInvestigate the cause of outliers\nMake informed decisions about whether to include or exclude them in analyses",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#arithmetic-mean",
+    "href": "chapter3.html#arithmetic-mean",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "6.1 Arithmetic Mean",
+    "text": "6.1 Arithmetic Mean\nThe arithmetic mean is the sum of all values divided by the number of values.\nFormula: \\(\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i\\)\nR calculation:\n\ndata &lt;- c(2, 4, 4, 5, 5, 7, 9)\nmean(data)\n\n[1] 5.142857\n\n\nPros:\n\nEasy to calculate and understand\nUses all data points\nUseful for further statistical calculations\n\nCons:\n\nSensitive to outliers\nNot ideal for skewed distributions\n\nExample with outlier:\n\ndata_with_outlier &lt;- c(2, 4, 4, 5, 5, 7, 100)\nmean(data_with_outlier)\n\n[1] 18.14286\n\n\nAs we can see, the outlier (100) drastically affects the mean.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#median",
+    "href": "chapter3.html#median",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "6.2 Median",
+    "text": "6.2 Median\nThe median is the middle value when the data is ordered.\nR calculation:\n\nmedian(data)\n\n[1] 5\n\nmedian(data_with_outlier)\n\n[1] 5\n\n\nPros:\n\nNot affected by extreme outliers\nBetter for skewed distributions\n\nCons:\n\nDoesn’t use all data points\nLess useful for further statistical calculations",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#mode",
+    "href": "chapter3.html#mode",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "6.3 Mode",
+    "text": "6.3 Mode\nThe mode is the most frequently occurring value.\nR calculation:\n\nlibrary(modeest)\nmfv(data)  # Most frequent value\n\n[1] 4 5\n\n\nPros:\n\nOnly measure of central tendency for nominal data\nCan identify multiple peaks in the data\n\nCons:\n\nNot always uniquely defined\nNot useful for continuous data",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#weighted-mean",
+    "href": "chapter3.html#weighted-mean",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "6.4 Weighted Mean",
+    "text": "6.4 Weighted Mean\nThe weighted mean is used when some data points are more important than others. There are two types of weighted means: with not normalized weights and with normalized weights.\n\n6.4.1 Weighted Mean with Not Normalized Weights\nThis is the standard form of the weighted mean, where weights can be any positive numbers representing the importance of each data point.\nFormula: \\(\\bar{x}_w = \\frac{\\sum_{i=1}^n w_i x_i}{\\sum_{i=1}^n w_i}\\)\nR calculation:\n\nx &lt;- c(2, 4, 5, 7)\nw &lt;- c(1, 2, 3, 1)\nweighted.mean(x, w)\n\n[1] 4.571429\n\n\n\n\n6.4.2 Weighted Mean with Normalized Weights (Fractions)\nIn this case, the weights are fractions that sum to 1, representing the proportion of importance for each data point.\nFormula: \\(\\bar{x}_w = \\sum_{i=1}^n w_i x_i\\), where \\(\\sum_{i=1}^n w_i = 1\\)\nR calculation:\n\nx &lt;- c(2, 4, 5, 7)\nw_normalized &lt;- c(0.1, 0.3, 0.4, 0.2)  # Note: these sum to 1\nsum(x * w_normalized)\n\n[1] 4.8\n\n\nPros of Weighted Means:\n\nAccount for varying importance of data points\nUseful in survey analysis with different sample sizes or importance levels\nCan adjust for unequal probabilities in sampling designs\n\nCons of Weighted Means:\n\nRequire justification for weights\nCan be misused to manipulate results\nMay be less intuitive to interpret than simple arithmetic mean\n\nComparison:\nThe not normalized weights are often easier to assign based on real-world importance or sample sizes, but require the additional step of normalization in the calculation. Normalized weights (fractions) make the calculation simpler but may be less intuitive to assign directly.\nExample in Social Science:\nSuppose we’re calculating the average income for a region with three cities:\nCity A: Average income $50,000, population 100,000 City B: Average income $60,000, population 200,000 City C: Average income $70,000, population 300,000\nWe can use population as weights:\n\nincomes &lt;- c(50000, 60000, 70000)\npopulations &lt;- c(100000, 200000, 300000)\n\n# Not normalized weights\nweighted.mean(incomes, populations)\n\n[1] 63333.33\n\n# Normalized weights\npop_normalized &lt;- populations / sum(populations)\nsum(incomes * pop_normalized)\n\n[1] 63333.33\n\n\nThis weighted average gives a more accurate representation of the region’s average income than a simple arithmetic mean of the three city averages would.\nPros:\n\nAccounts for varying importance of data points\nUseful in survey analysis with different sample sizes\n\nCons:\n\nRequires justification for weights\nCan be misused to manipulate results",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#range",
+    "href": "chapter3.html#range",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "7.1 Range",
+    "text": "7.1 Range\nThe range is the difference between the maximum and minimum values.\nFormula: \\(R = x_{max} - x_{min}\\)\nR calculation:\n\nrange(data)\n\n[1] 2 9\n\nmax(data) - min(data)\n\n[1] 7\n\n\nPros:\n\nSimple to calculate and understand\nGives an immediate sense of data spread\n\nCons:\n\nExtremely sensitive to outliers\nDoesn’t provide information about the distribution between extremes",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#interquartile-range-iqr",
+    "href": "chapter3.html#interquartile-range-iqr",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "7.2 Interquartile Range (IQR)",
+    "text": "7.2 Interquartile Range (IQR)\nThe IQR is the difference between the 75th and 25th percentiles.\nFormula: \\(IQR = Q_3 - Q_1\\)\nR calculation:\n\nIQR(data)\n\n[1] 2\n\n\nPros:\n\nRobust to outliers\nProvides information about the spread of the middle 50% of the data\n\nCons:\n\nIgnores the tails of the distribution\nLess efficient than standard deviation for normal distributions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#variance",
+    "href": "chapter3.html#variance",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "7.3 Variance",
+    "text": "7.3 Variance\nVariance measures the average squared deviation from the mean.\nFormula: \\(s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1}\\)\nR calculation:\n\nvar(data)\n\n[1] 5.142857\n\n\nPros:\n\nUses all data points\nFoundation for many statistical tests\n\nCons:\n\nUnits are squared, making interpretation less intuitive\nSensitive to outliers",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#standard-deviation",
+    "href": "chapter3.html#standard-deviation",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "7.4 Standard Deviation",
+    "text": "7.4 Standard Deviation\nThe standard deviation is the square root of the variance.\nFormula: \\(s = \\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1}}\\)\nR calculation:\n\nsd(data)\n\n[1] 2.267787\n\n\nPros:\n\nIn same units as original data\nWidely used and understood\n\nCons:\n\nStill sensitive to outliers\nAssumes data is roughly normally distributed",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#coefficient-of-variation",
+    "href": "chapter3.html#coefficient-of-variation",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "7.5 Coefficient of Variation",
+    "text": "7.5 Coefficient of Variation\nThe coefficient of variation is the standard deviation divided by the mean, often expressed as a percentage.\nFormula: \\(CV = \\frac{s}{\\bar{x}} \\times 100\\%\\)\nR calculation:\n\n(sd(data) / mean(data)) * 100\n\n[1] 44.09586\n\n\nPros:\n\nAllows comparison of variability between datasets with different units or means\nUseful in fields like finance for risk assessment\n\nCons:\n\nNot meaningful for data with both positive and negative values\nCan be misleading when mean is close to zero",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#percentiles",
+    "href": "chapter3.html#percentiles",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "8.1 Percentiles",
+    "text": "8.1 Percentiles\nPercentiles divide the data into 100 equal parts.\nFormula: For the kth percentile: \\(P_k = L + \\frac{k(n+1)}{100}\\), where L is the lower limit of the interval\nR calculation:\n\nquantile(data, probs = seq(0, 1, 0.25))\n\n  0%  25%  50%  75% 100% \n   2    4    5    6    9",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#quartiles",
+    "href": "chapter3.html#quartiles",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "8.2 Quartiles",
+    "text": "8.2 Quartiles\nQuartiles divide the data into four equal parts.\n\nQ1: 25th percentile\nQ2: Median (50th percentile)\nQ3: 75th percentile\n\nR calculation:\n\nsummary(data)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  2.000   4.000   5.000   5.143   6.000   9.000 \n\n\nPros:\n\nRobust to outliers\nProvide information about data spread and skewness\n\nCons:\n\nLess precise than using all data points\nMultiple methods of calculation can lead to slightly different results",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#skewness",
+    "href": "chapter3.html#skewness",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "9.1 Skewness",
+    "text": "9.1 Skewness\nSkewness measures the asymmetry of the probability distribution.\nFormula: \\(SK = \\frac{n}{(n-1)(n-2)} \\sum_{i=1}^n (\\frac{x_i - \\bar{x}}{s})^3\\)\nR calculation:\n\nlibrary(moments)\n\n\nAttaching package: 'moments'\n\n\nThe following object is masked from 'package:modeest':\n\n    skewness\n\nskewness(data)\n\n[1] 0.4592793\n\n\nInterpretation:\n\nPositive skewness: right tail is longer (mean &gt; median)\nNegative skewness: left tail is longer (mean &lt; median)\nZero skewness: symmetrical distribution\n\nPros:\n\nProvides information about distribution shape\nUseful for checking assumptions of normality\n\nCons:\n\nSensitive to outliers\nCan be misleading for multimodal distributions",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#kurtosis",
+    "href": "chapter3.html#kurtosis",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "9.2 Kurtosis",
+    "text": "9.2 Kurtosis\nKurtosis measures the “tailedness” of the probability distribution.\nFormula: \\(K = \\frac{n(n+1)}{(n-1)(n-2)(n-3)} \\sum_{i=1}^n (\\frac{x_i - \\bar{x}}{s})^4 - \\frac{3(n-1)^2}{(n-2)(n-3)}\\)\nR calculation:\n\nkurtosis(data)\n\n[1] 2.457047\n\n\nInterpretation:\n\nPositive kurtosis: heavy tails, peaked distribution\nNegative kurtosis: light tails, flat distribution\nZero kurtosis: normal distribution\n\nPros:\n\nProvides information about extreme values in the distribution\nUseful for financial modeling and risk assessment\n\nCons:\n\nSensitive to outliers\nCan be difficult to interpret practically",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#bivariate-statistics",
+    "href": "chapter3.html#bivariate-statistics",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "10.1 Bivariate Statistics",
+    "text": "10.1 Bivariate Statistics\n\n10.1.1 Correlation\nCorrelation measures the strength and direction of the linear relationship between two variables.\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(2, 4, 5, 4, 5)\ncor(x, y)\n\n[1] 0.7745967\n\n\n\n\n10.1.2 Covariance\nCovariance measures how two variables vary together.\n\ncov(x, y)\n\n[1] 1.5\n\n\n\n\n10.1.3 Cross-tabulation\nCross-tabulation (contingency table) shows the relationship between two categorical variables.\n\ntable(cut(x, 2), cut(y, 2))\n\n           \n            (2,3.5] (3.5,5]\n  (0.996,3]       1       2\n  (3,5]           0       2",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "chapter3.html#multivariate-statistics",
+    "href": "chapter3.html#multivariate-statistics",
+    "title": "5  Comprehensive Guide to Univariate Descriptive Statistics",
+    "section": "10.2 Multivariate Statistics",
+    "text": "10.2 Multivariate Statistics\n\nMultiple Correlation: Correlation between a dependent variable and multiple independent variables.\nPartial Correlation: Correlation between two variables while controlling for others.\nFactor Analysis: Technique to reduce many variables to a few underlying factors.\n\nThese topics will be covered in more detail in later chapters.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Comprehensive Guide to Univariate Descriptive Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html",
+    "href": "rozdzial3.html",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "",
+    "text": "6.1 Zrozumienie wartości odstających\nZanim zagłębimy się w konkretne miary, kluczowe jest zrozumienie koncepcji wartości odstających, ponieważ mogą one znacząco wpływać na wiele statystyk opisowych.\nWartości odstające to punkty danych, które znacznie różnią się od innych obserwacji w zbiorze danych. Mogą wystąpić z powodu:\nWartości odstające mogą mieć istotny wpływ na wiele miar statystycznych, szczególnie tych opartych na średnich lub sumach kwadratów odchyleń. Dlatego ważne jest, aby:\nW trakcie tego rozdziału omówimy, jak różne miary opisowe są dotknięte przez wartości odstające.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#zrozumienie-wartości-odstających",
+    "href": "rozdzial3.html#zrozumienie-wartości-odstających",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "",
+    "text": "Błędów pomiaru lub rejestracji\nPrawdziwych skrajnych wartości w populacji\nPróbkowania z innej populacji\n\n\n\nIdentyfikować wartości odstające zarówno poprzez metody statystyczne, jak i wiedzę dziedzinową\nBadać przyczyny występowania wartości odstających\nPodejmować świadome decyzje o tym, czy włączyć je do analiz, czy nie",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#średnia-arytmetyczna",
+    "href": "rozdzial3.html#średnia-arytmetyczna",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "7.1 Średnia arytmetyczna",
+    "text": "7.1 Średnia arytmetyczna\nŚrednia arytmetyczna to suma wszystkich wartości podzielona przez liczbę wartości.\nWzór: \\(\\bar{x} = \\frac{1}{n}\\sum_{i=1}^n x_i\\)\nObliczenie w R:\n\ndane &lt;- c(2, 4, 4, 5, 5, 7, 9)\nmean(dane)\n\n[1] 5.142857\n\n\nZalety:\n\nŁatwa do obliczenia i zrozumienia\nWykorzystuje wszystkie punkty danych\nPrzydatna do dalszych obliczeń statystycznych\n\nWady:\n\nWrażliwa na wartości odstające\nNieidealna dla rozkładów skośnych\n\nPrzykład z wartością odstającą:\n\ndane_z_odstajaca &lt;- c(2, 4, 4, 5, 5, 7, 100)\nmean(dane_z_odstajaca)\n\n[1] 18.14286\n\n\nJak widać, wartość odstająca (100) drastycznie wpływa na średnią.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#mediana",
+    "href": "rozdzial3.html#mediana",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "7.2 Mediana",
+    "text": "7.2 Mediana\nMediana to środkowa wartość, gdy dane są uporządkowane.\nObliczenie w R:\n\nmedian(dane)\n\n[1] 5\n\nmedian(dane_z_odstajaca)\n\n[1] 5\n\n\nZalety:\n\nNie jest dotknięta przez skrajne wartości odstające\nLepsza dla rozkładów skośnych\n\nWady:\n\nNie wykorzystuje wszystkich punktów danych\nMniej przydatna do dalszych obliczeń statystycznych",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#moda",
+    "href": "rozdzial3.html#moda",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "7.3 Moda",
+    "text": "7.3 Moda\nModa to najczęściej występująca wartość.\nObliczenie w R:\n\nlibrary(modeest)\nmfv(dane)  # Najczęściej występująca wartość\n\n[1] 4 5\n\n\nZalety:\n\nJedyna miara tendencji centralnej dla danych nominalnych\nMoże identyfikować wiele szczytów w danych\n\nWady:\n\nNie zawsze jednoznacznie zdefiniowana\nNieprzydatna dla danych ciągłych",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#średnia-ważona",
+    "href": "rozdzial3.html#średnia-ważona",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "7.4 Średnia ważona",
+    "text": "7.4 Średnia ważona\nŚrednia ważona jest używana, gdy niektóre punkty danych są ważniejsze od innych. Rozróżniamy dwa typy średnich ważonych: z wagami nienormalizowanymi i z wagami znormalizowanymi.\n\n7.4.1 Średnia ważona z wagami nienormalizowanymi\nJest to standardowa forma średniej ważonej, gdzie wagi mogą być dowolnymi liczbami dodatnimi reprezentującymi ważność każdego punktu danych.\nWzór: \\(\\bar{x}_w = \\frac{\\sum_{i=1}^n w_i x_i}{\\sum_{i=1}^n w_i}\\)\nObliczenie w R:\n\nx &lt;- c(2, 4, 5, 7)\nw &lt;- c(1, 2, 3, 1)\nweighted.mean(x, w)\n\n[1] 4.571429\n\n\n\n\n7.4.2 Średnia ważona z wagami znormalizowanymi (ułamkami)\nW tym przypadku wagi są ułamkami sumującymi się do 1, reprezentującymi proporcję ważności dla każdego punktu danych.\nWzór: \\(\\bar{x}_w = \\sum_{i=1}^n w_i x_i\\), gdzie \\(\\sum_{i=1}^n w_i = 1\\)\nObliczenie w R:\n\nx &lt;- c(2, 4, 5, 7)\nw_znormalizowane &lt;- c(0.1, 0.3, 0.4, 0.2)  # Uwaga: te sumują się do 1\nsum(x * w_znormalizowane)\n\n[1] 4.8\n\n\nZalety średnich ważonych:\n\nUwzględniają różną ważność punktów danych\nPrzydatne w analizie badań z różnymi wielkościami próby lub poziomami ważności\nMogą korygować nierówne prawdopodobieństwa w projektach próbkowania\n\nWady średnich ważonych:\n\nWymagają uzasadnienia dla wag\nMogą być niewłaściwie użyte do manipulacji wynikami\nMogą być mniej intuicyjne w interpretacji niż prosta średnia arytmetyczna\n\nPorównanie:\nWagi nienormalizowane są często łatwiejsze do przypisania na podstawie rzeczywistej ważności lub wielkości próby, ale wymagają dodatkowego kroku normalizacji w obliczeniach. Wagi znormalizowane (ułamki) upraszczają obliczenia, ale mogą być mniej intuicyjne do bezpośredniego przypisania.\nPrzykład w naukach społecznych:\nZałóżmy, że obliczamy średni dochód dla regionu z trzema miastami:\nMiasto A: Średni dochód 50 000 zł, populacja 100 000 Miasto B: Średni dochód 60 000 zł, populacja 200 000 Miasto C: Średni dochód 70 000 zł, populacja 300 000\nMożemy użyć populacji jako wag:\n\ndochody &lt;- c(50000, 60000, 70000)\npopulacje &lt;- c(100000, 200000, 300000)\n\n# Wagi nienormalizowane\nweighted.mean(dochody, populacje)\n\n[1] 63333.33\n\n# Wagi znormalizowane\npop_znormalizowane &lt;- populacje / sum(populacje)\nsum(dochody * pop_znormalizowane)\n\n[1] 63333.33\n\n\nTa średnia ważona daje dokładniejsze przedstawienie średniego dochodu regionu niż prosta średnia arytmetyczna średnich dochodów trzech miast.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#rozstęp",
+    "href": "rozdzial3.html#rozstęp",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "8.1 Rozstęp",
+    "text": "8.1 Rozstęp\nRozstęp to różnica między wartością maksymalną a minimalną.\nWzór: \\(R = x_{max} - x_{min}\\)\nObliczenie w R:\n\nrange(dane)\n\n[1] 2 9\n\nmax(dane) - min(dane)\n\n[1] 7\n\n\nZalety:\n\nProsty do obliczenia i zrozumienia\nDaje natychmiastowe poczucie rozpiętości danych\n\nWady:\n\nNiezwykle wrażliwy na wartości odstające\nNie dostarcza informacji o rozkładzie między skrajnościami",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#rozstęp-międzykwartylowy-iqr",
+    "href": "rozdzial3.html#rozstęp-międzykwartylowy-iqr",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "8.2 Rozstęp międzykwartylowy (IQR)",
+    "text": "8.2 Rozstęp międzykwartylowy (IQR)\nIQR to różnica między 75. a 25. percentylem.\nWzór: \\(IQR = Q_3 - Q_1\\)\nObliczenie w R:\n\nIQR(dane)\n\n[1] 2\n\n\nZalety:\n\nOdporny na wartości odstające\nDostarcza informacji o rozpiętości środkowych 50% danych\n\nWady:\n\nIgnoruje ogony rozkładu\nMniej efektywny niż odchylenie standardowe dla rozkładów normalnych",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#wariancja",
+    "href": "rozdzial3.html#wariancja",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "8.3 Wariancja",
+    "text": "8.3 Wariancja\nWariancja mierzy średnie kwadratowe odchylenie od średniej.\nWzór: \\(s^2 = \\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1}\\)\nObliczenie w R:\n\nvar(dane)\n\n[1] 5.142857\n\n\nZalety:\n\nWykorzystuje wszystkie punkty danych\nPodstawa dla wielu testów statystycznych\n\nWady:\n\nJednostki są podniesione do kwadratu, co utrudnia interpretację\nWrażliwa na wartości odstające",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#odchylenie-standardowe",
+    "href": "rozdzial3.html#odchylenie-standardowe",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "8.4 Odchylenie standardowe",
+    "text": "8.4 Odchylenie standardowe\nOdchylenie standardowe to pierwiastek kwadratowy z wariancji.\nWzór: \\(s = \\sqrt{\\frac{\\sum_{i=1}^n (x_i - \\bar{x})^2}{n - 1}}\\)\nObliczenie w R:\n\nsd(dane)\n\n[1] 2.267787\n\n\nZalety:\n\nW tych samych jednostkach co oryginalne dane\nSzeroko stosowane i rozumiane\n\nWady:\n\nNadal wrażliwe na wartości odstające\nZakłada, że dane są w przybliżeniu normalnie rozłożone",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#współczynnik-zmienności",
+    "href": "rozdzial3.html#współczynnik-zmienności",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "8.5 Współczynnik zmienności",
+    "text": "8.5 Współczynnik zmienności\nWspółczynnik zmienności to odchylenie standardowe podzielone przez średnią, często wyrażane jako procent.\nWzór: \\(CV = \\frac{s}{\\bar{x}} \\times 100\\%\\)\nObliczenie w R:\n\n(sd(dane) / mean(dane)) * 100\n\n[1] 44.09586\n\n\nZalety:\n\nPozwala na porównanie zmienności między zbiorami danych o różnych jednostkach lub średnich\nPrzydatny w dziedzinach takich jak finanse do oceny ryzyka\n\nWady:\n\nNie ma sensu dla danych z wartościami zarówno dodatnimi, jak i ujemnymi\nMoże być mylący, gdy średnia jest bliska zeru",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#percentyle",
+    "href": "rozdzial3.html#percentyle",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "9.1 Percentyle",
+    "text": "9.1 Percentyle\nPercentyle dzielą dane na 100 równych części.\nWzór: Dla k-tego percentyla: \\(P_k = L + \\frac{k(n+1)}{100}\\), gdzie L to dolna granica przedziału\nObliczenie w R:\n\nquantile(dane, probs = seq(0, 1, 0.25))\n\n  0%  25%  50%  75% 100% \n   2    4    5    6    9",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#kwartyle",
+    "href": "rozdzial3.html#kwartyle",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "9.2 Kwartyle",
+    "text": "9.2 Kwartyle\nKwartyle dzielą dane na cztery równe części.\n\nQ1: 25. percentyl\nQ2: Mediana (50. percentyl)\nQ3: 75. percentyl\n\nObliczenie w R:\n\nsummary(dane)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  2.000   4.000   5.000   5.143   6.000   9.000 \n\n\nZalety:\n\nOdporne na wartości odstające\nDostarczają informacji o rozpiętości i skośności danych\n\nWady:\n\nMniej precyzyjne niż użycie wszystkich punktów danych\nRóżne metody obliczania mogą prowadzić do nieznacznie różnych wyników",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#skośność",
+    "href": "rozdzial3.html#skośność",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "10.1 Skośność",
+    "text": "10.1 Skośność\nSkośność mierzy asymetrię rozkładu prawdopodobieństwa.\nWzór: \\(SK = \\frac{n}{(n-1)(n-2)} \\sum_{i=1}^n (\\frac{x_i - \\bar{x}}{s})^3\\)\nObliczenie w R:\n\nlibrary(moments)\n\n\nAttaching package: 'moments'\n\n\nThe following object is masked from 'package:modeest':\n\n    skewness\n\nskewness(dane)\n\n[1] 0.4592793\n\n\nInterpretacja:\n\nSkośność dodatnia: prawy ogon jest dłuższy (średnia &gt; mediana)\nSkośność ujemna: lewy ogon jest dłuższy (średnia &lt; mediana)\nSkośność zero: rozkład symetryczny\n\nZalety:\n\nDostarcza informacji o kształcie rozkładu\nPrzydatna do sprawdzania założeń normalności\n\nWady:\n\nWrażliwa na wartości odstające\nMoże być myląca dla rozkładów wielomodalnych",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#kurtoza",
+    "href": "rozdzial3.html#kurtoza",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "10.2 Kurtoza",
+    "text": "10.2 Kurtoza\nKurtoza mierzy “grubość ogonów” rozkładu prawdopodobieństwa.\nWzór: \\(K = \\frac{n(n+1)}{(n-1)(n-2)(n-3)} \\sum_{i=1}^n (\\frac{x_i - \\bar{x}}{s})^4 - \\frac{3(n-1)^2}{(n-2)(n-3)}\\)\nObliczenie w R:\n\nkurtosis(dane)\n\n[1] 2.457047\n\n\nInterpretacja:\n\nKurtoza dodatnia: ciężkie ogony, rozkład wysmukły\nKurtoza ujemna: lekkie ogony, rozkład płaski\nKurtoza zero: rozkład normalny\n\nZalety:\n\nDostarcza informacji o wartościach skrajnych w rozkładzie\nPrzydatna do modelowania finansowego i oceny ryzyka\n\nWady:\n\nWrażliwa na wartości odstające\nMoże być trudna do praktycznej interpretacji",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#statystyki-dwuwymiarowe",
+    "href": "rozdzial3.html#statystyki-dwuwymiarowe",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "11.1 Statystyki dwuwymiarowe",
+    "text": "11.1 Statystyki dwuwymiarowe\n\n11.1.1 Korelacja\nKorelacja mierzy siłę i kierunek liniowego związku między dwiema zmiennymi.\n\nx &lt;- c(1, 2, 3, 4, 5)\ny &lt;- c(2, 4, 5, 4, 5)\ncor(x, y)\n\n[1] 0.7745967\n\n\n\n\n11.1.2 Kowariancja\nKowariancja mierzy, jak dwie zmienne zmieniają się razem.\n\ncov(x, y)\n\n[1] 1.5\n\n\n\n\n11.1.3 Tabela krzyżowa\nTabela krzyżowa (tabela kontyngencji) pokazuje relację między dwiema zmiennymi kategorialnymi.\n\ntable(cut(x, 2), cut(y, 2))\n\n           \n            (2,3.5] (3.5,5]\n  (0.996,3]       1       2\n  (3,5]           0       2",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3.html#statystyki-wielowymiarowe",
+    "href": "rozdzial3.html#statystyki-wielowymiarowe",
+    "title": "6  Kompleksowy przewodnik po jednowymiarowych statystykach opisowych",
+    "section": "11.2 Statystyki wielowymiarowe",
+    "text": "11.2 Statystyki wielowymiarowe\n\nKorelacja wielokrotna: Korelacja między zmienną zależną a wieloma zmiennymi niezależnymi.\nKorelacja cząstkowa: Korelacja między dwiema zmiennymi przy kontrolowaniu innych.\nAnaliza czynnikowa: Technika redukcji wielu zmiennych do kilku podstawowych czynników.\n\nTe tematy zostaną omówione bardziej szczegółowo w kolejnych rozdziałach.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span>"
     ]
   }
 ]
