@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Michał Pierzgalski">
-<meta name="dcterms.date" content="2024-09-14">
 
-<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 7&nbsp; From Sample to Population - Understanding Randomness, Sampling, and Inference</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./chapter1.html" rel="next">
+<link href="./rozdzial4.html" rel="next">
+<link href="./rozdzial3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter4.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -109,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -151,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
   </div>
 </li>
@@ -159,18 +158,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./rozdzial4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./rozdzial5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trafność, Rzetelność i Typy Badań w Naukach Społecznych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,7 +176,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#introduction-to-randomness" id="toc-introduction-to-randomness" class="nav-link active" data-scroll-target="#introduction-to-randomness"><span class="header-section-number">7.1</span> Introduction to Randomness</a></li>
+  <li><a href="#sampling-bridging-sample-and-population" id="toc-sampling-bridging-sample-and-population" class="nav-link" data-scroll-target="#sampling-bridging-sample-and-population"><span class="header-section-number">7.2</span> Sampling: Bridging Sample and Population</a></li>
+  <li><a href="#sampling-methods" id="toc-sampling-methods" class="nav-link" data-scroll-target="#sampling-methods"><span class="header-section-number">7.3</span> Sampling Methods</a>
+  <ul class="collapse">
+  <li><a href="#probability-sampling" id="toc-probability-sampling" class="nav-link" data-scroll-target="#probability-sampling"><span class="header-section-number">7.3.1</span> Probability Sampling</a></li>
+  <li><a href="#non-probability-sampling" id="toc-non-probability-sampling" class="nav-link" data-scroll-target="#non-probability-sampling"><span class="header-section-number">7.3.2</span> Non-probability Sampling</a></li>
+  </ul></li>
+  <li><a href="#making-inferences-from-samples" id="toc-making-inferences-from-samples" class="nav-link" data-scroll-target="#making-inferences-from-samples"><span class="header-section-number">7.4</span> Making Inferences from Samples</a></li>
+  <li><a href="#sampling-and-non-sampling-errors" id="toc-sampling-and-non-sampling-errors" class="nav-link" data-scroll-target="#sampling-and-non-sampling-errors"><span class="header-section-number">7.5</span> Sampling and Non-sampling Errors</a></li>
+  <li><a href="#sample-size-and-power" id="toc-sample-size-and-power" class="nav-link" data-scroll-target="#sample-size-and-power"><span class="header-section-number">7.6</span> Sample Size and Power</a></li>
+  <li><a href="#sampling-in-the-digital-age" id="toc-sampling-in-the-digital-age" class="nav-link" data-scroll-target="#sampling-in-the-digital-age"><span class="header-section-number">7.7</span> Sampling in the Digital Age</a></li>
+  <li><a href="#ethical-considerations-in-sampling" id="toc-ethical-considerations-in-sampling" class="nav-link" data-scroll-target="#ethical-considerations-in-sampling"><span class="header-section-number">7.8</span> Ethical Considerations in Sampling</a></li>
+  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies"><span class="header-section-number">7.9</span> Case Studies</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7.10</span> Conclusion</a></li>
+  <li><a href="#review-questions-and-exercises" id="toc-review-questions-and-exercises" class="nav-link" data-scroll-target="#review-questions-and-exercises"><span class="header-section-number">7.11</span> Review Questions and Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7.12</span> Further Reading</a></li>
   </ul>
 </nav>
     </div>
@@ -198,26 +200,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Michał Pierzgalski </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 14, 2024</p>
-    </div>
-  </div>
   
     
   </div>
@@ -227,9 +217,137 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book.</p>
+<section id="introduction-to-randomness" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="introduction-to-randomness"><span class="header-section-number">7.1</span> Introduction to Randomness</h2>
+<p>Randomness is a cornerstone concept in statistics and scientific research. It refers to the unpredictability of individual outcomes, even when the overall pattern may be predictable. In the social sciences, understanding randomness is crucial for designing studies, collecting data, and interpreting results.</p>
+<p>Consider flipping a fair coin. While we know that the probability of getting heads is 50%, we can’t predict with certainty the outcome of any single flip. This unpredictability is the essence of randomness.</p>
+<p>Examples of random phenomena in social sciences include:</p>
+<ol type="1">
+<li><p><strong>Participant Selection</strong>: In a psychology experiment studying reaction times, the order in which participants arrive at the lab may be random.</p></li>
+<li><p><strong>Economic Behavior</strong>: The daily fluctuations in stock prices often exhibit random patterns, influenced by countless unpredictable factors.</p></li>
+<li><p><strong>Social Interactions</strong>: The occurrence of chance encounters between individuals in a community can be considered random events.</p></li>
+</ol>
+<p>Understanding randomness helps researchers distinguish between genuine effects and chance occurrences. For instance, if we observe a slight difference in test scores between two groups, randomness helps us determine whether this difference is likely due to a real effect or just chance variation.</p>
+</section>
+<section id="sampling-bridging-sample-and-population" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sampling-bridging-sample-and-population"><span class="header-section-number">7.2</span> Sampling: Bridging Sample and Population</h2>
+<p>Sampling is the process of selecting a subset (sample) from a larger group (population) to make inferences about the population. It’s a critical skill in social science research, as studying entire populations is often impractical, too expensive, or sometimes impossible.</p>
+<p><strong>Key Terms:</strong></p>
+<ul>
+<li><strong>Population</strong>: The entire group about which we want to draw conclusions.</li>
+<li><strong>Sample</strong>: A subset of the population that we actually study.</li>
+<li><strong>Sampling Frame</strong>: The list or procedure used to identify all members of the population.</li>
+</ul>
+<p><strong>Example:</strong> Suppose we want to study the job satisfaction of all teachers in the United States (the population). Instead of surveying millions of teachers, we might select a sample of 5,000 teachers from various states, school districts, and grade levels.</p>
+<p>Randomness in sampling helps ensure that the sample is representative of the population, reducing bias and allowing for more accurate inferences. This is why probability sampling methods, which we’ll discuss next, are often preferred in scientific research.</p>
+</section>
+<section id="sampling-methods" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sampling-methods"><span class="header-section-number">7.3</span> Sampling Methods</h2>
+<section id="probability-sampling" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="probability-sampling"><span class="header-section-number">7.3.1</span> Probability Sampling</h3>
+<p>Probability sampling methods involve random selection, giving each member of the population a known, non-zero chance of being selected.</p>
+<ol type="1">
+<li><p><strong>Simple Random Sampling</strong>: Each member of the population has an equal chance of being selected.</p>
+<p>Example: To select 100 students from a university with 10,000 students, you could assign each student a number from 1 to 10,000, then use a random number generator to select 100 numbers.</p></li>
+<li><p><strong>Stratified Random Sampling</strong>: The population is divided into subgroups (strata) based on shared characteristics, then samples are randomly selected from each stratum.</p>
+<p>Example: In a national political survey, you might divide the population into strata based on geographic regions (Northeast, Midwest, South, West) and then randomly sample from each region. This ensures representation from all areas of the country.</p></li>
+<li><p><strong>Cluster Sampling</strong>: The population is divided into clusters (usually geographic), some clusters are randomly selected, and all members within those clusters are studied.</p>
+<p>Example: To study high school students’ study habits, you might randomly select 20 high schools from across the country and then survey all students in those schools.</p></li>
+<li><p><strong>Systematic Sampling</strong>: Selecting every kth item from a list after a random start.</p>
+<p>Example: At a busy shopping mall, you might survey every 20th person who enters the mall, starting with a randomly chosen number between 1 and 20.</p></li>
+</ol>
+</section>
+<section id="non-probability-sampling" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="non-probability-sampling"><span class="header-section-number">7.3.2</span> Non-probability Sampling</h3>
+<p>Non-probability sampling doesn’t involve random selection. While it can introduce bias, it may be necessary in certain situations, especially when dealing with hard-to-reach populations or when resources are limited.</p>
+<ol type="1">
+<li><p><strong>Convenience Sampling</strong>: Selecting easily accessible subjects.</p>
+<p>Example: A researcher studying college students’ sleep patterns might survey students in their own classes or around campus.</p></li>
+<li><p><strong>Purposive Sampling</strong>: Selecting subjects based on specific characteristics.</p>
+<p>Example: For a study on the experiences of CEOs in the tech industry, a researcher might intentionally seek out and interview CEOs from various tech companies.</p></li>
+<li><p><strong>Snowball Sampling</strong>: Participants recruit other participants.</p>
+<p>Example: In a study of undocumented immigrants’ access to healthcare, researchers might ask initial participants to refer other potential participants from their community.</p></li>
+<li><p><strong>Quota Sampling</strong>: Selecting participants to meet specific quotas for certain characteristics.</p>
+<p>Example: In a market research study, researchers might ensure they interview a specific number of people from different age groups, genders, and income levels to match the demographics of the target market.</p></li>
+</ol>
+</section>
+</section>
+<section id="making-inferences-from-samples" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="making-inferences-from-samples"><span class="header-section-number">7.4</span> Making Inferences from Samples</h2>
+<p>Statistical inference is the process of drawing conclusions about a population based on a sample. This allows researchers to estimate characteristics of the entire population (parameters) using characteristics of the sample (statistics).</p>
+<p><strong>Key Concepts:</strong></p>
+<ol type="1">
+<li><p><strong>Point Estimates</strong>: A single value used to estimate a population parameter.</p>
+<p>Example: The mean income of a sample of 1000 workers might be used to estimate the mean income of all workers in a country.</p></li>
+<li><p><strong>Confidence Intervals</strong>: A range of values likely to contain the true population parameter.</p>
+<p>Example: We might say, “We are 95% confident that the true population mean income falls between $45,000 and $55,000.”</p></li>
+<li><p><strong>Margin of Error</strong>: The range of values above and below the sample statistic in a confidence interval.</p>
+<p>Example: In political polling, you might see a statement like “Candidate A is preferred by 52% of voters, with a margin of error of ±3%.”</p></li>
+<li><p><strong>Hypothesis Testing</strong>: A method for making decisions about population parameters based on sample data.</p>
+<p>Example: A researcher might test whether there’s a significant difference in test scores between students who study with music and those who study in silence.</p></li>
+</ol>
+</section>
+<section id="sampling-and-non-sampling-errors" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sampling-and-non-sampling-errors"><span class="header-section-number">7.5</span> Sampling and Non-sampling Errors</h2>
+<p>Understanding potential errors in research is crucial for interpreting results accurately.</p>
+<p><strong>Sampling Error</strong>: The difference between a sample statistic and the true population parameter, occurring due to chance variations in the selection of sample members.</p>
+<p>Example: If we estimate the average height of all adult males in a country based on a sample, our estimate will likely differ somewhat from the true average due to sampling error.</p>
+<p><strong>Non-sampling Errors</strong>: Errors not due to chance, which can occur in both sample surveys and censuses.</p>
+<ol type="1">
+<li><p><strong>Coverage Error</strong>: When the sampling frame doesn’t accurately represent the population.</p>
+<p>Example: A telephone survey that only calls landlines would miss people who only have cell phones, potentially biasing the results.</p></li>
+<li><p><strong>Non-response Error</strong>: When selected participants fail to respond, potentially introducing bias.</p>
+<p>Example: In a survey about job satisfaction, highly satisfied or highly dissatisfied employees might be more likely to respond, skewing the results.</p></li>
+<li><p><strong>Measurement Error</strong>: Inaccuracies in the data collected.</p>
+<p>Example: A poorly worded survey question might be interpreted differently by different respondents, leading to inconsistent data.</p></li>
+<li><p><strong>Processing Error</strong>: Mistakes made during data entry, coding, or analysis.</p>
+<p>Example: Accidentally entering “99” instead of “9” for a participant’s response could significantly skew the results.</p></li>
+</ol>
+</section>
+<section id="sample-size-and-power" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sample-size-and-power"><span class="header-section-number">7.6</span> Sample Size and Power</h2>
+<p>Determining the appropriate sample size involves balancing the need for precision with available resources.</p>
+<p><strong>Sample Size Considerations:</strong> - Larger samples generally provide more precise estimates but are more costly and time-consuming to obtain. - The required sample size depends on factors such as the desired level of precision, the variability in the population, and the type of analysis planned.</p>
+<p><strong>Example:</strong> To estimate the proportion of voters who support a particular policy with a margin of error of ±3% at a 95% confidence level, you would need a sample size of about 1067 voters (assuming maximum variability).</p>
+<p><strong>Statistical Power:</strong> The probability that a study will detect an effect when there is an effect to be detected.</p>
+<p>Factors affecting power: 1. Sample size 2. Effect size (the magnitude of the difference or relationship you’re trying to detect) 3. Chosen significance level (usually 0.05)</p>
+<p><strong>Example:</strong> In a study comparing two teaching methods, having a larger sample size would increase the likelihood of detecting a significant difference between the methods, if such a difference exists.</p>
+</section>
+<section id="sampling-in-the-digital-age" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="sampling-in-the-digital-age"><span class="header-section-number">7.7</span> Sampling in the Digital Age</h2>
+<p>The advent of big data and digital technologies has transformed sampling practices in many fields.</p>
+<p><strong>Big Data Opportunities and Challenges:</strong> - Unprecedented volumes of information available - Potential lack of representativeness - Data quality concerns - Privacy and ethical issues</p>
+<p><strong>Example:</strong> Social media data can provide real-time insights into public opinion, but users of a particular platform may not be representative of the general population.</p>
+<p><strong>Web-based Surveys:</strong> - Offer new opportunities for data collection - Face challenges such as coverage bias (not everyone has internet access) and self-selection bias</p>
+<p><strong>Example:</strong> An online survey about internet usage habits would inherently exclude people without internet access, potentially biasing the results.</p>
+</section>
+<section id="ethical-considerations-in-sampling" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="ethical-considerations-in-sampling"><span class="header-section-number">7.8</span> Ethical Considerations in Sampling</h2>
+<p>Ethical sampling practices are crucial in social science research:</p>
+<ol type="1">
+<li><p><strong>Informed Consent</strong>: Participants should understand the study’s purpose and agree to participate.</p>
+<p>Example: Before conducting interviews about sensitive topics like mental health, researchers must clearly explain the study’s aims and potential risks to participants.</p></li>
+<li><p><strong>Privacy and Confidentiality</strong>: Researchers must protect participants’ personal information.</p>
+<p>Example: In a study on workplace harassment, researchers might use code numbers instead of names to protect participants’ identities.</p></li>
+<li><p><strong>Representativeness and Inclusivity</strong>: Samples should fairly represent diverse populations, including marginalized groups.</p>
+<p>Example: A study on urban housing should make efforts to include participants from various socioeconomic backgrounds, ethnicities, and housing situations.</p></li>
+</ol>
+</section>
+<section id="case-studies" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="case-studies"><span class="header-section-number">7.9</span> Case Studies</h2>
+<p>[This section would include detailed examples of sampling in practice, such as: 1. How polling organizations predict election outcomes 2. How companies use market research to understand consumer preferences 3. How public health researchers study disease prevalence in populations]</p>
+</section>
+<section id="conclusion" class="level2" data-number="7.10">
+<h2 data-number="7.10" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.10</span> Conclusion</h2>
+<p>Sampling remains a cornerstone of social science research, even in the era of big data. Understanding sampling principles helps researchers design studies, interpret results, and make valid inferences about populations. As we’ve seen, the journey from sample to population involves careful consideration of sampling methods, potential errors, ethical issues, and the ever-evolving landscape of data collection in the digital age.</p>
+</section>
+<section id="review-questions-and-exercises" class="level2" data-number="7.11">
+<h2 data-number="7.11" class="anchored" data-anchor-id="review-questions-and-exercises"><span class="header-section-number">7.11</span> Review Questions and Exercises</h2>
+<p>[This section would include a mix of multiple-choice questions, short answer prompts, and practical exercises to reinforce key concepts]</p>
+</section>
+<section id="further-reading" class="level2" data-number="7.12">
+<h2 data-number="7.12" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7.12</span> Further Reading</h2>
+<p>[This section would list additional resources for students interested in deepening their understanding of sampling and related topics]</p>
 
 
 </section>
@@ -646,10 +764,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./rozdzial3.html" class="pagination-link" aria-label="Kompleksowy przewodnik po jednowymiarowych statystykach opisowych">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter1.html" class="pagination-link" aria-label="Introduction to Data Science and Statistics for Social Sciences">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science and Statistics for Social Sciences</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./rozdzial4.html" class="pagination-link" aria-label="Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

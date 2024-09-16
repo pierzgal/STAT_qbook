@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 8&nbsp; Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter5.html" rel="next">
+<link href="./chapter4.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial4.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science and Statistics for Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding Data Types in Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zrozumienie Typów Danych w Naukach Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trafność, Rzetelność i Typy Badań w Naukach Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#wprowadzenie-do-losowości" id="toc-wprowadzenie-do-losowości" class="nav-link active" data-scroll-target="#wprowadzenie-do-losowości"><span class="header-section-number">8.1</span> Wprowadzenie do Losowości</a></li>
+  <li><a href="#próbkowanie-łączenie-próby-i-populacji" id="toc-próbkowanie-łączenie-próby-i-populacji" class="nav-link" data-scroll-target="#próbkowanie-łączenie-próby-i-populacji"><span class="header-section-number">8.2</span> Próbkowanie: Łączenie Próby i Populacji</a></li>
+  <li><a href="#metody-próbkowania" id="toc-metody-próbkowania" class="nav-link" data-scroll-target="#metody-próbkowania"><span class="header-section-number">8.3</span> Metody Próbkowania</a>
+  <ul class="collapse">
+  <li><a href="#próbkowanie-probabilistyczne" id="toc-próbkowanie-probabilistyczne" class="nav-link" data-scroll-target="#próbkowanie-probabilistyczne"><span class="header-section-number">8.3.1</span> Próbkowanie Probabilistyczne</a></li>
+  <li><a href="#próbkowanie-nieprobabilistyczne" id="toc-próbkowanie-nieprobabilistyczne" class="nav-link" data-scroll-target="#próbkowanie-nieprobabilistyczne"><span class="header-section-number">8.3.2</span> Próbkowanie Nieprobabilistyczne</a></li>
+  </ul></li>
+  <li><a href="#wnioskowanie-z-prób" id="toc-wnioskowanie-z-prób" class="nav-link" data-scroll-target="#wnioskowanie-z-prób"><span class="header-section-number">8.4</span> Wnioskowanie z Prób</a></li>
+  <li><a href="#błędy-próbkowania-i-błędy-niepróbkowe" id="toc-błędy-próbkowania-i-błędy-niepróbkowe" class="nav-link" data-scroll-target="#błędy-próbkowania-i-błędy-niepróbkowe"><span class="header-section-number">8.5</span> Błędy Próbkowania i Błędy Niepróbkowe</a></li>
+  <li><a href="#wielkość-próby-i-moc-statystyczna" id="toc-wielkość-próby-i-moc-statystyczna" class="nav-link" data-scroll-target="#wielkość-próby-i-moc-statystyczna"><span class="header-section-number">8.6</span> Wielkość Próby i Moc Statystyczna</a></li>
+  <li><a href="#próbkowanie-w-erze-cyfrowej" id="toc-próbkowanie-w-erze-cyfrowej" class="nav-link" data-scroll-target="#próbkowanie-w-erze-cyfrowej"><span class="header-section-number">8.7</span> Próbkowanie w Erze Cyfrowej</a></li>
+  <li><a href="#etyczne-aspekty-próbkowania" id="toc-etyczne-aspekty-próbkowania" class="nav-link" data-scroll-target="#etyczne-aspekty-próbkowania"><span class="header-section-number">8.8</span> Etyczne Aspekty Próbkowania</a></li>
+  <li><a href="#studia-przypadków" id="toc-studia-przypadków" class="nav-link" data-scroll-target="#studia-przypadków"><span class="header-section-number">8.9</span> Studia Przypadków</a></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">8.10</span> Podsumowanie</a></li>
+  <li><a href="#pytania-kontrolne-i-ćwiczenia" id="toc-pytania-kontrolne-i-ćwiczenia" class="nav-link" data-scroll-target="#pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">8.11</span> Pytania Kontrolne i Ćwiczenia</a></li>
+  <li><a href="#dalsza-lektura" id="toc-dalsza-lektura" class="nav-link" data-scroll-target="#dalsza-lektura"><span class="header-section-number">8.12</span> Dalsza Lektura</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="wprowadzenie-do-losowości" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="wprowadzenie-do-losowości"><span class="header-section-number">8.1</span> Wprowadzenie do Losowości</h2>
+<p>Losowość jest fundamentalnym pojęciem w statystyce i badaniach naukowych. Odnosi się do nieprzewidywalności indywidualnych wyników, nawet gdy ogólny wzorzec może być przewidywalny. W naukach społecznych zrozumienie losowości jest kluczowe dla projektowania badań, zbierania danych i interpretacji wyników.</p>
+<p>Rozważmy rzut uczciwą monetą. Chociaż wiemy, że prawdopodobieństwo wypadnięcia orła wynosi 50%, nie możemy z pewnością przewidzieć wyniku pojedynczego rzutu. Ta nieprzewidywalność jest istotą losowości.</p>
+<p>Przykłady losowych zjawisk w naukach społecznych obejmują:</p>
+<ol type="1">
+<li><p><strong>Wybór uczestników</strong>: W eksperymencie psychologicznym badającym czasy reakcji, kolejność, w jakiej uczestnicy przybywają do laboratorium, może być losowa.</p></li>
+<li><p><strong>Zachowania ekonomiczne</strong>: Codzienne wahania cen akcji często wykazują losowe wzorce, na które wpływa niezliczona ilość nieprzewidywalnych czynników.</p></li>
+<li><p><strong>Interakcje społeczne</strong>: Występowanie przypadkowych spotkań między osobami w społeczności można uznać za zdarzenia losowe.</p></li>
+</ol>
+<p>Zrozumienie losowości pomaga badaczom odróżnić rzeczywiste efekty od przypadkowych zdarzeń. Na przykład, jeśli zaobserwujemy niewielką różnicę w wynikach testów między dwiema grupami, losowość pomaga nam określić, czy ta różnica jest prawdopodobnie spowodowana rzeczywistym efektem, czy tylko przypadkową zmiennością.</p>
+</section>
+<section id="próbkowanie-łączenie-próby-i-populacji" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="próbkowanie-łączenie-próby-i-populacji"><span class="header-section-number">8.2</span> Próbkowanie: Łączenie Próby i Populacji</h2>
+<p>Próbkowanie to proces wybierania podzbioru (próby) z większej grupy (populacji) w celu wyciągnięcia wniosków o populacji. Jest to kluczowa umiejętność w badaniach nauk społecznych, ponieważ badanie całych populacji jest często niepraktyczne, zbyt kosztowne lub czasami niemożliwe.</p>
+<p><strong>Kluczowe pojęcia:</strong></p>
+<ul>
+<li><strong>Populacja</strong>: Cała grupa, o której chcemy wyciągnąć wnioski.</li>
+<li><strong>Próba</strong>: Podzbiór populacji, który faktycznie badamy.</li>
+<li><strong>Operat losowania</strong>: Lista lub procedura używana do identyfikacji wszystkich członków populacji.</li>
+</ul>
+<p><strong>Przykład:</strong> Załóżmy, że chcemy zbadać satysfakcję z pracy wszystkich nauczycieli w Polsce (populacja). Zamiast ankietować setki tysięcy nauczycieli, możemy wybrać próbę 5000 nauczycieli z różnych województw, powiatów i poziomów nauczania.</p>
+<p>Losowość w próbkowaniu pomaga zapewnić, że próba jest reprezentatywna dla populacji, zmniejszając błędy systematyczne i umożliwiając dokładniejsze wnioskowanie. Dlatego metody próbkowania probabilistycznego, które omówimy dalej, są często preferowane w badaniach naukowych.</p>
+</section>
+<section id="metody-próbkowania" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="metody-próbkowania"><span class="header-section-number">8.3</span> Metody Próbkowania</h2>
+<section id="próbkowanie-probabilistyczne" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="próbkowanie-probabilistyczne"><span class="header-section-number">8.3.1</span> Próbkowanie Probabilistyczne</h3>
+<p>Metody próbkowania probabilistycznego obejmują losowy wybór, dając każdemu członkowi populacji znaną, niezerową szansę na wybór.</p>
+<ol type="1">
+<li><p><strong>Prosty Dobór Losowy</strong>: Każdy członek populacji ma równą szansę na wybór.</p>
+<p>Przykład: Aby wybrać 100 studentów z uniwersytetu liczącego 10 000 studentów, można przypisać każdemu studentowi numer od 1 do 10 000, a następnie użyć generatora liczb losowych do wybrania 100 numerów.</p></li>
+<li><p><strong>Dobór Losowy Warstwowy</strong>: Populacja jest podzielona na podgrupy (warstwy) na podstawie wspólnych cech, a następnie próbki są losowo wybierane z każdej warstwy.</p>
+<p>Przykład: W ogólnopolskim badaniu politycznym można podzielić populację na warstwy na podstawie regionów geograficznych (np. Polska Zachodnia, Centralna, Wschodnia) i losowo pobierać próbki z każdego regionu. Zapewnia to reprezentację ze wszystkich obszarów kraju.</p></li>
+<li><p><strong>Dobór Losowy Grupowy</strong>: Populacja jest podzielona na skupiska (zwykle geograficzne), niektóre skupiska są losowo wybierane, a wszyscy członkowie w tych skupiskach są badani.</p>
+<p>Przykład: Aby zbadać nawyki uczenia się uczniów szkół średnich, można losowo wybrać 20 szkół z całego kraju, a następnie przeprowadzić ankietę wśród wszystkich uczniów w tych szkołach.</p></li>
+<li><p><strong>Dobór Systematyczny</strong>: Wybieranie co k-tego elementu z listy po losowym starcie.</p>
+<p>Przykład: W ruchliwym centrum handlowym można ankietować co 20. osobę wchodzącą do centrum, zaczynając od losowo wybranej liczby między 1 a 20.</p></li>
+</ol>
+</section>
+<section id="próbkowanie-nieprobabilistyczne" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="próbkowanie-nieprobabilistyczne"><span class="header-section-number">8.3.2</span> Próbkowanie Nieprobabilistyczne</h3>
+<p>Próbkowanie nieprobabilistyczne nie obejmuje losowego wyboru. Chociaż może wprowadzać błędy systematyczne, może być konieczne w niektórych sytuacjach, zwłaszcza w przypadku trudno dostępnych populacji lub gdy zasoby są ograniczone.</p>
+<ol type="1">
+<li><p><strong>Dobór Wygodny</strong>: Wybieranie łatwo dostępnych podmiotów.</p>
+<p>Przykład: Badacz studiujący wzorce snu studentów może przeprowadzić ankietę wśród studentów na własnych zajęciach lub na terenie kampusu.</p></li>
+<li><p><strong>Dobór Celowy</strong>: Wybieranie podmiotów na podstawie określonych cech.</p>
+<p>Przykład: W badaniu doświadczeń prezesów w branży technologicznej badacz może celowo szukać i przeprowadzać wywiady z prezesami różnych firm technologicznych.</p></li>
+<li><p><strong>Dobór Metodą Kuli Śnieżnej</strong>: Uczestnicy rekrutują innych uczestników.</p>
+<p>Przykład: W badaniu dostępu imigrantów bez dokumentów do opieki zdrowotnej, badacze mogą poprosić początkowych uczestników o polecenie innych potencjalnych uczestników z ich społeczności.</p></li>
+<li><p><strong>Dobór Kwotowy</strong>: Wybieranie uczestników w celu spełnienia określonych kwot dla pewnych cech.</p>
+<p>Przykład: W badaniu rynku badacze mogą zapewnić, że przeprowadzają wywiady z określoną liczbą osób z różnych grup wiekowych, płci i poziomów dochodów, aby dopasować się do demografii rynku docelowego.</p></li>
+</ol>
+</section>
+</section>
+<section id="wnioskowanie-z-prób" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="wnioskowanie-z-prób"><span class="header-section-number">8.4</span> Wnioskowanie z Prób</h2>
+<p>Wnioskowanie statystyczne to proces wyciągania wniosków o populacji na podstawie próby. Pozwala to badaczom oszacować charakterystyki całej populacji (parametry) przy użyciu charakterystyk próby (statystyk).</p>
+<p><strong>Kluczowe pojęcia:</strong></p>
+<ol type="1">
+<li><p><strong>Estymatory punktowe</strong>: Pojedyncza wartość używana do oszacowania parametru populacji.</p>
+<p>Przykład: Średni dochód z próby 1000 pracowników może być użyty do oszacowania średniego dochodu wszystkich pracowników w kraju.</p></li>
+<li><p><strong>Przedziały ufności</strong>: Zakres wartości, który prawdopodobnie zawiera prawdziwy parametr populacji.</p>
+<p>Przykład: Możemy powiedzieć: “Jesteśmy w 95% pewni, że prawdziwy średni dochód populacji mieści się między 4500 a 5500 złotych”.</p></li>
+<li><p><strong>Margines błędu</strong>: Zakres wartości powyżej i poniżej statystyki próby w przedziale ufności.</p>
+<p>Przykład: W sondażach politycznych można zobaczyć stwierdzenie: “Kandydat A jest preferowany przez 52% wyborców, z marginesem błędu ±3%”.</p></li>
+<li><p><strong>Testowanie hipotez</strong>: Metoda podejmowania decyzji o parametrach populacji na podstawie danych z próby.</p>
+<p>Przykład: Badacz może testować, czy istnieje istotna różnica w wynikach testów między uczniami, którzy uczą się przy muzyce, a tymi, którzy uczą się w ciszy.</p></li>
+</ol>
+</section>
+<section id="błędy-próbkowania-i-błędy-niepróbkowe" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="błędy-próbkowania-i-błędy-niepróbkowe"><span class="header-section-number">8.5</span> Błędy Próbkowania i Błędy Niepróbkowe</h2>
+<p>Zrozumienie potencjalnych błędów w badaniach jest kluczowe dla dokładnej interpretacji wyników.</p>
+<p><strong>Błąd próbkowania</strong>: Różnica między statystyką próby a prawdziwym parametrem populacji, występująca z powodu przypadkowych wahań w wyborze członków próby.</p>
+<p>Przykład: Jeśli oszacujemy średni wzrost wszystkich dorosłych mężczyzn w kraju na podstawie próby, nasze oszacowanie prawdopodobnie będzie się nieco różnić od prawdziwej średniej z powodu błędu próbkowania.</p>
+<p><strong>Błędy niepróbkowe</strong>: Błędy nie wynikające z przypadku, które mogą wystąpić zarówno w badaniach próbkowych, jak i spisach.</p>
+<ol type="1">
+<li><p><strong>Błąd pokrycia</strong>: Gdy operat losowania nie reprezentuje dokładnie populacji.</p>
+<p>Przykład: Badanie telefoniczne, które dzwoni tylko na telefony stacjonarne, pominęłoby osoby posiadające tylko telefony komórkowe, potencjalnie wypaczając wyniki.</p></li>
+<li><p><strong>Błąd braku odpowiedzi</strong>: Gdy wybrani uczestnicy nie odpowiadają, potencjalnie wprowadzając błąd systematyczny.</p>
+<p>Przykład: W badaniu satysfakcji z pracy, bardzo zadowoleni lub bardzo niezadowoleni pracownicy mogą być bardziej skłonni do odpowiedzi, wypaczając wyniki.</p></li>
+<li><p><strong>Błąd pomiaru</strong>: Niedokładności w zebranych danych.</p>
+<p>Przykład: Źle sformułowane pytanie ankietowe może być różnie interpretowane przez różnych respondentów, prowadząc do niespójnych danych.</p></li>
+<li><p><strong>Błąd przetwarzania</strong>: Błędy popełnione podczas wprowadzania danych, kodowania lub analizy.</p>
+<p>Przykład: Przypadkowe wprowadzenie “99” zamiast “9” dla odpowiedzi uczestnika mogłoby znacząco wypaczyć wyniki.</p></li>
+</ol>
+</section>
+<section id="wielkość-próby-i-moc-statystyczna" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="wielkość-próby-i-moc-statystyczna"><span class="header-section-number">8.6</span> Wielkość Próby i Moc Statystyczna</h2>
+<p>Określenie odpowiedniej wielkości próby wymaga zrównoważenia potrzeby precyzji z dostępnymi zasobami.</p>
+<p><strong>Rozważania dotyczące wielkości próby:</strong> - Większe próby generalnie zapewniają bardziej precyzyjne oszacowania, ale są bardziej kosztowne i czasochłonne do uzyskania. - Wymagana wielkość próby zależy od czynników takich jak pożądany poziom precyzji, zmienność w populacji i rodzaj planowanej analizy.</p>
+<p><strong>Przykład:</strong> Aby oszacować proporcję wyborców popierających konkretną politykę z marginesem błędu ±3% na poziomie ufności 95%, potrzebna byłaby próba około 1067 wyborców (zakładając maksymalną zmienność).</p>
+<p><strong>Moc statystyczna:</strong> Prawdopodobieństwo, że badanie wykryje efekt, gdy taki efekt istnieje.</p>
+<p>Czynniki wpływające na moc: 1. Wielkość próby 2. Wielkość efektu (wielkość różnicy lub związku, który próbujemy wykryć) 3. Wybrany poziom istotności (zwykle 0,05)</p>
+<p><strong>Przykład:</strong> W badaniu porównującym dwie metody nauczania, większa wielkość próby zwiększyłaby prawdopodobieństwo wykrycia istotnej różnicy między metodami, jeśli taka różnica istnieje.</p>
+</section>
+<section id="próbkowanie-w-erze-cyfrowej" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="próbkowanie-w-erze-cyfrowej"><span class="header-section-number">8.7</span> Próbkowanie w Erze Cyfrowej</h2>
+<p>Pojawienie się big data i technologii cyfrowych zmieniło praktyki próbkowania w wielu dziedzinach.</p>
+<p><strong>Możliwości i wyzwania Big Data:</strong> - Bezprecedensowe ilości dostępnych informacji - Potencjalny brak reprezentatywności - Problemy z jakością danych - Kwestie prywatności i etyki</p>
+<p><strong>Przykład:</strong> Dane z mediów społecznościowych mogą dostarczyć wglądu w opinię publiczną w czasie rzeczywistym, ale użytkownicy konkretnej platformy mogą nie być reprezentatywni dla ogólnej populacji.</p>
+<p><strong>Badania internetowe:</strong> - Oferują nowe możliwości zbierania danych - Stają przed wyzwaniami takimi jak błąd pokrycia (nie każdy ma dostęp do internetu) i błąd samoselekcji</p>
+<p><strong>Przykład:</strong> Ankieta online na temat nawyków korzystania z internetu z natury wykluczałaby osoby bez dostępu do internetu, potencjalnie wypaczając wyniki.</p>
+</section>
+<section id="etyczne-aspekty-próbkowania" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="etyczne-aspekty-próbkowania"><span class="header-section-number">8.8</span> Etyczne Aspekty Próbkowania</h2>
+<p>Etyczne praktyki próbkowania są kluczowe w badaniach nauk społecznych:</p>
+<ol type="1">
+<li><p><strong>Świadoma zgoda</strong>: Uczestnicy powinni rozumieć cel badania i zgodzić się na udział.</p>
+<p>Przykład: Przed przeprowadzeniem wywiadów na temat wrażliwych tematów, takich jak zdrowie psychiczne, badacze muszą jasno wyjaśnić cele badania i potencjalne ryzyko uczestnikom.</p></li>
+<li><p><strong>Prywatność i poufność</strong>: Badacze muszą chronić dane osobowe uczestników.</p>
+<p>Przykład: W badaniu dotyczącym mobbingu w miejscu pracy, badacze mogą używać kodów numerycznych zamiast nazwisk, aby chronić tożsamość uczestników.</p></li>
+<li><p><strong>Reprezentatywność i inkluzywność</strong>: Próby powinny sprawiedliwie reprezentować zróżnicowane populacje, w tym grupy marginalizowane.</p></li>
+</ol>
+<p>Przykład: Badanie dotyczące mieszkalnictwa miejskiego powinno dołożyć starań, aby uwzględnić uczestników z różnych środowisk społeczno-ekonomicznych, grup etnicznych i sytuacji mieszkaniowych.</p>
+</section>
+<section id="studia-przypadków" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="studia-przypadków"><span class="header-section-number">8.9</span> Studia Przypadków</h2>
+<p>[Ta sekcja zawierałaby szczegółowe przykłady zastosowania próbkowania w praktyce, takie jak:]</p>
+<ol type="1">
+<li><p><strong>Jak organizacje badania opinii publicznej przewidują wyniki wyborów</strong></p>
+<p>Przykład: Wyobraźmy sobie, że chcemy przewidzieć wynik wyborów prezydenckich w Polsce. Ośrodek badania opinii publicznej mógłby zastosować następującą metodologię:</p>
+<ul>
+<li>Zastosowanie próbkowania warstwowego, dzieląc populację na warstwy według województw.</li>
+<li>Losowy wybór respondentów z każdej warstwy, proporcjonalnie do liczby mieszkańców.</li>
+<li>Przeprowadzenie wywiadów telefonicznych z wybranymi osobami, pytając o ich preferencje wyborcze.</li>
+<li>Ważenie wyników, aby skorygować ewentualne nadreprezentacje lub niedoreprezentacje pewnych grup demograficznych.</li>
+<li>Obliczenie marginesu błędu i przedziałów ufności dla otrzymanych wyników.</li>
+</ul></li>
+<li><p><strong>Jak firmy wykorzystują badania rynku do zrozumienia preferencji konsumentów</strong></p>
+<p>Przykład: Firma produkująca napoje chce wprowadzić nowy smak na rynek polski. Mogłaby przeprowadzić badanie w następujący sposób:</p>
+<ul>
+<li>Wykorzystanie próbkowania kwotowego, aby zapewnić reprezentację różnych grup wiekowych i regionów.</li>
+<li>Organizacja degustacji w centrach handlowych w różnych miastach.</li>
+<li>Przeprowadzenie ankiet online wśród członków panelu konsumenckiego.</li>
+<li>Analiza danych z uwzględnieniem różnic demograficznych i geograficznych.</li>
+<li>Wykorzystanie wyników do dostosowania produktu i strategii marketingowej.</li>
+</ul></li>
+<li><p><strong>Jak badacze zdrowia publicznego badają występowanie chorób w populacjach</strong></p>
+<p>Przykład: Badanie częstości występowania cukrzycy typu 2 w Polsce:</p>
+<ul>
+<li>Zastosowanie próbkowania dwustopniowego: najpierw losowy wybór gmin, potem losowy wybór mieszkańców w tych gminach.</li>
+<li>Przeprowadzenie badań przesiewowych wśród wybranych osób (pomiary poziomu cukru we krwi, BMI, itp.).</li>
+<li>Zbieranie dodatkowych danych o stylu życia i historii medycznej.</li>
+<li>Analiza danych z uwzględnieniem czynników demograficznych i środowiskowych.</li>
+<li>Oszacowanie częstości występowania cukrzycy w całej populacji na podstawie wyników próby.</li>
+</ul></li>
+</ol>
+</section>
+<section id="podsumowanie" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">8.10</span> Podsumowanie</h2>
+<p>Próbkowanie pozostaje fundamentem badań w naukach społecznych, nawet w erze big data. Zrozumienie zasad próbkowania pomaga badaczom projektować badania, interpretować wyniki i wyciągać trafne wnioski o populacjach. Jak widzieliśmy, droga od próby do populacji wymaga starannego rozważenia metod próbkowania, potencjalnych błędów, kwestii etycznych i stale ewoluującego krajobrazu gromadzenia danych w erze cyfrowej.</p>
+<p>Kluczowe punkty do zapamiętania:</p>
+<ol type="1">
+<li>Losowość jest podstawą wielu metod próbkowania i pomaga zapewnić reprezentatywność próby.</li>
+<li>Istnieją różne metody próbkowania, zarówno probabilistyczne, jak i nieprobabilistyczne, każda z własnymi zaletami i ograniczeniami.</li>
+<li>Wnioskowanie statystyczne pozwala nam wyciągać wnioski o populacji na podstawie danych z próby.</li>
+<li>Błędy próbkowania i niepróbkowe mogą wpływać na jakość naszych wniosków, dlatego ważne jest ich zrozumienie i minimalizowanie.</li>
+<li>Wielkość próby i moc statystyczna są kluczowe dla zapewnienia wiarygodności wyników badań.</li>
+<li>Era cyfrowa przynosi nowe możliwości i wyzwania w zakresie próbkowania i gromadzenia danych.</li>
+<li>Etyczne aspekty próbkowania, w tym świadoma zgoda, prywatność i reprezentatywność, są nieodłączną częścią procesu badawczego.</li>
+</ol>
+</section>
+<section id="pytania-kontrolne-i-ćwiczenia" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">8.11</span> Pytania Kontrolne i Ćwiczenia</h2>
+<ol type="1">
+<li><p>Jakie są główne różnice między próbkowaniem probabilistycznym a nieprobabilistycznym? Podaj przykłady sytuacji, w których każde z nich mogłoby być odpowiednie.</p></li>
+<li><p>Wyobraź sobie, że prowadzisz badanie dotyczące opinii studentów na temat nauczania zdalnego. Zaproponuj odpowiednią metodę próbkowania i uzasadnij swój wybór.</p></li>
+<li><p>Jakie potencjalne błędy próbkowania i niepróbkowe mogłyby wystąpić w badaniu opisanym w pytaniu 2? Jak można by je zminimalizować?</p></li>
+<li><p>Oblicz wymaganą wielkość próby dla badania opinii publicznej, zakładając poziom ufności 95%, margines błędu 3% i maksymalną zmienność (p = 0,5).</p></li>
+<li><p>Omów etyczne aspekty próbkowania w kontekście badania wrażliwych grup społecznych, takich jak osoby bezdomne lub nieletni.</p></li>
+<li><p>Jak era big data wpływa na tradycyjne metody próbkowania? Omów zarówno możliwości, jak i wyzwania.</p></li>
+</ol>
+</section>
+<section id="dalsza-lektura" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="dalsza-lektura"><span class="header-section-number">8.12</span> Dalsza Lektura</h2>
+<ol type="1">
+<li>Babbie, E. (2020). “Badania społeczne w praktyce”. Warszawa: Wydawnictwo Naukowe PWN.</li>
+<li>Frankfort-Nachmias, C., &amp; Nachmias, D. (2001). “Metody badawcze w naukach społecznych”. Poznań: Zysk i S-ka.</li>
+<li>Gruszczyński, L. A. (2003). “Kwestionariusze w socjologii: budowa narzędzi do badań surveyowych”. Katowice: Wydawnictwo Uniwersytetu Śląskiego.</li>
+<li>Szreder, M. (2010). “Metody i techniki sondażowych badań opinii”. Warszawa: Polskie Wydawnictwo Ekonomiczne.</li>
+<li>Brzeziński, J. (2019). “Metodologia badań psychologicznych”. Warszawa: Wydawnictwo Naukowe PWN.</li>
+</ol>
+<p>Te źródła zapewniają dogłębne omówienie tematów związanych z próbkowaniem i metodologią badań w naukach społecznych w kontekście polskim.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter4.html" class="pagination-link" aria-label="From Sample to Population - Understanding Randomness, Sampling, and Inference">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter5.html" class="pagination-link" aria-label="Validity, Reliability, and Study Types in Social Sciences">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
