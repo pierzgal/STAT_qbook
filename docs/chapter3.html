@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT101_qbook - 5&nbsp; Comprehensive Guide to Univariate Descriptive Statistics</title>
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 5&nbsp; From Sample to Population - Understanding Randomness, Sampling, and Inference</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,35 +69,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -144,7 +81,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter3.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter3.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -159,7 +96,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">STAT101_qbook</a> 
+      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -202,13 +139,37 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Trafność, Rzetelność i Typy Badań w Naukach Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -227,48 +188,22 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#understanding-outliers" id="toc-understanding-outliers" class="nav-link active" data-scroll-target="#understanding-outliers"><span class="header-section-number">5.1</span> Understanding Outliers</a></li>
-  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">6</span> Measures of Central Tendency</a>
+  <li><a href="#introduction-to-randomness" id="toc-introduction-to-randomness" class="nav-link active" data-scroll-target="#introduction-to-randomness"><span class="header-section-number">5.1</span> Introduction to Randomness</a></li>
+  <li><a href="#sampling-bridging-sample-and-population" id="toc-sampling-bridging-sample-and-population" class="nav-link" data-scroll-target="#sampling-bridging-sample-and-population"><span class="header-section-number">5.2</span> Sampling: Bridging Sample and Population</a></li>
+  <li><a href="#sampling-methods" id="toc-sampling-methods" class="nav-link" data-scroll-target="#sampling-methods"><span class="header-section-number">5.3</span> Sampling Methods</a>
   <ul class="collapse">
-  <li><a href="#arithmetic-mean" id="toc-arithmetic-mean" class="nav-link" data-scroll-target="#arithmetic-mean"><span class="header-section-number">6.1</span> Arithmetic Mean</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">6.2</span> Median</a></li>
-  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">6.3</span> Mode</a></li>
-  <li><a href="#weighted-mean" id="toc-weighted-mean" class="nav-link" data-scroll-target="#weighted-mean"><span class="header-section-number">6.4</span> Weighted Mean</a>
-  <ul class="collapse">
-  <li><a href="#weighted-mean-with-not-normalized-weights" id="toc-weighted-mean-with-not-normalized-weights" class="nav-link" data-scroll-target="#weighted-mean-with-not-normalized-weights"><span class="header-section-number">6.4.1</span> Weighted Mean with Not Normalized Weights</a></li>
-  <li><a href="#weighted-mean-with-normalized-weights-fractions" id="toc-weighted-mean-with-normalized-weights-fractions" class="nav-link" data-scroll-target="#weighted-mean-with-normalized-weights-fractions"><span class="header-section-number">6.4.2</span> Weighted Mean with Normalized Weights (Fractions)</a></li>
+  <li><a href="#probability-sampling" id="toc-probability-sampling" class="nav-link" data-scroll-target="#probability-sampling"><span class="header-section-number">5.3.1</span> Probability Sampling</a></li>
+  <li><a href="#non-probability-sampling" id="toc-non-probability-sampling" class="nav-link" data-scroll-target="#non-probability-sampling"><span class="header-section-number">5.3.2</span> Non-probability Sampling</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#measures-of-variability" id="toc-measures-of-variability" class="nav-link" data-scroll-target="#measures-of-variability"><span class="header-section-number">7</span> Measures of Variability</a>
-  <ul class="collapse">
-  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">7.1</span> Range</a></li>
-  <li><a href="#interquartile-range-iqr" id="toc-interquartile-range-iqr" class="nav-link" data-scroll-target="#interquartile-range-iqr"><span class="header-section-number">7.2</span> Interquartile Range (IQR)</a></li>
-  <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"><span class="header-section-number">7.3</span> Variance</a></li>
-  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">7.4</span> Standard Deviation</a></li>
-  <li><a href="#coefficient-of-variation" id="toc-coefficient-of-variation" class="nav-link" data-scroll-target="#coefficient-of-variation"><span class="header-section-number">7.5</span> Coefficient of Variation</a></li>
-  </ul></li>
-  <li><a href="#measures-of-relative-position" id="toc-measures-of-relative-position" class="nav-link" data-scroll-target="#measures-of-relative-position"><span class="header-section-number">8</span> Measures of Relative Position</a>
-  <ul class="collapse">
-  <li><a href="#percentiles" id="toc-percentiles" class="nav-link" data-scroll-target="#percentiles"><span class="header-section-number">8.1</span> Percentiles</a></li>
-  <li><a href="#quartiles" id="toc-quartiles" class="nav-link" data-scroll-target="#quartiles"><span class="header-section-number">8.2</span> Quartiles</a></li>
-  </ul></li>
-  <li><a href="#measures-of-shape" id="toc-measures-of-shape" class="nav-link" data-scroll-target="#measures-of-shape"><span class="header-section-number">9</span> Measures of Shape</a>
-  <ul class="collapse">
-  <li><a href="#skewness" id="toc-skewness" class="nav-link" data-scroll-target="#skewness"><span class="header-section-number">9.1</span> Skewness</a></li>
-  <li><a href="#kurtosis" id="toc-kurtosis" class="nav-link" data-scroll-target="#kurtosis"><span class="header-section-number">9.2</span> Kurtosis</a></li>
-  </ul></li>
-  <li><a href="#introduction-to-bivariate-and-multivariate-descriptive-statistics" id="toc-introduction-to-bivariate-and-multivariate-descriptive-statistics" class="nav-link" data-scroll-target="#introduction-to-bivariate-and-multivariate-descriptive-statistics"><span class="header-section-number">10</span> Introduction to Bivariate and Multivariate Descriptive Statistics</a>
-  <ul class="collapse">
-  <li><a href="#bivariate-statistics" id="toc-bivariate-statistics" class="nav-link" data-scroll-target="#bivariate-statistics"><span class="header-section-number">10.1</span> Bivariate Statistics</a>
-  <ul class="collapse">
-  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation"><span class="header-section-number">10.1.1</span> Correlation</a></li>
-  <li><a href="#covariance" id="toc-covariance" class="nav-link" data-scroll-target="#covariance"><span class="header-section-number">10.1.2</span> Covariance</a></li>
-  <li><a href="#cross-tabulation" id="toc-cross-tabulation" class="nav-link" data-scroll-target="#cross-tabulation"><span class="header-section-number">10.1.3</span> Cross-tabulation</a></li>
-  </ul></li>
-  <li><a href="#multivariate-statistics" id="toc-multivariate-statistics" class="nav-link" data-scroll-target="#multivariate-statistics"><span class="header-section-number">10.2</span> Multivariate Statistics</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11</span> Conclusion</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">12</span> References</a></li>
+  <li><a href="#making-inferences-from-samples" id="toc-making-inferences-from-samples" class="nav-link" data-scroll-target="#making-inferences-from-samples"><span class="header-section-number">5.4</span> Making Inferences from Samples</a></li>
+  <li><a href="#sampling-and-non-sampling-errors" id="toc-sampling-and-non-sampling-errors" class="nav-link" data-scroll-target="#sampling-and-non-sampling-errors"><span class="header-section-number">5.5</span> Sampling and Non-sampling Errors</a></li>
+  <li><a href="#sample-size-and-power" id="toc-sample-size-and-power" class="nav-link" data-scroll-target="#sample-size-and-power"><span class="header-section-number">5.6</span> Sample Size and Power</a></li>
+  <li><a href="#sampling-in-the-digital-age" id="toc-sampling-in-the-digital-age" class="nav-link" data-scroll-target="#sampling-in-the-digital-age"><span class="header-section-number">5.7</span> Sampling in the Digital Age</a></li>
+  <li><a href="#ethical-considerations-in-sampling" id="toc-ethical-considerations-in-sampling" class="nav-link" data-scroll-target="#ethical-considerations-in-sampling"><span class="header-section-number">5.8</span> Ethical Considerations in Sampling</a></li>
+  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies"><span class="header-section-number">5.9</span> Case Studies</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5.10</span> Conclusion</a></li>
+  <li><a href="#review-questions-and-exercises" id="toc-review-questions-and-exercises" class="nav-link" data-scroll-target="#review-questions-and-exercises"><span class="header-section-number">5.11</span> Review Questions and Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5.12</span> Further Reading</a></li>
   </ul>
 </nav>
     </div>
@@ -277,7 +212,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></h1>
 </div>
 
 
@@ -294,492 +229,137 @@ window.Quarto = {
 </header>
 
 
-<p>Descriptive statistics are fundamental tools in social science research, providing a concise summary of data characteristics. They serve several crucial functions:</p>
-<ul>
-<li>Summarizing large datasets into manageable information</li>
-<li>Identifying patterns and trends in data</li>
-<li>Detecting potential anomalies or outliers</li>
-<li>Providing a foundation for further statistical analysis</li>
-</ul>
-<p>In this chapter, we’ll explore various descriptive statistics, their calculations, interpretations, and limitations.</p>
-<section id="understanding-outliers" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="understanding-outliers"><span class="header-section-number">5.1</span> Understanding Outliers</h2>
-<p>Before diving into specific measures, it’s crucial to understand the concept of outliers, as they can significantly impact many descriptive statistics.</p>
-<p>Outliers are data points that differ significantly from other observations in the dataset. They can occur due to:</p>
-<ul>
-<li>Measurement or recording errors</li>
-<li>Genuine extreme values in the population</li>
-<li>Sampling from a different population</li>
-</ul>
-<p>Outliers can have a substantial effect on many statistical measures, especially those based on means or sums of squared deviations. Therefore, it’s essential to:</p>
+<section id="introduction-to-randomness" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="introduction-to-randomness"><span class="header-section-number">5.1</span> Introduction to Randomness</h2>
+<p>Randomness is a cornerstone concept in statistics and scientific research. It refers to the unpredictability of individual outcomes, even when the overall pattern may be predictable. In the social sciences, understanding randomness is crucial for designing studies, collecting data, and interpreting results.</p>
+<p>Consider flipping a fair coin. While we know that the probability of getting heads is 50%, we can’t predict with certainty the outcome of any single flip. This unpredictability is the essence of randomness.</p>
+<p>Examples of random phenomena in social sciences include:</p>
 <ol type="1">
-<li>Identify outliers through both statistical methods and domain knowledge</li>
-<li>Investigate the cause of outliers</li>
-<li>Make informed decisions about whether to include or exclude them in analyses</li>
+<li><p><strong>Participant Selection</strong>: In a psychology experiment studying reaction times, the order in which participants arrive at the lab may be random.</p></li>
+<li><p><strong>Economic Behavior</strong>: The daily fluctuations in stock prices often exhibit random patterns, influenced by countless unpredictable factors.</p></li>
+<li><p><strong>Social Interactions</strong>: The occurrence of chance encounters between individuals in a community can be considered random events.</p></li>
 </ol>
-<p>Throughout this chapter, we’ll discuss how different descriptive measures are affected by outliers.</p>
+<p>Understanding randomness helps researchers distinguish between genuine effects and chance occurrences. For instance, if we observe a slight difference in test scores between two groups, randomness helps us determine whether this difference is likely due to a real effect or just chance variation.</p>
 </section>
-<section id="measures-of-central-tendency" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Measures of Central Tendency</h1>
-<p>Measures of central tendency aim to identify the “typical” or “central” value in a dataset. The three primary measures are mean, median, and mode.</p>
-<section id="arithmetic-mean" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="arithmetic-mean"><span class="header-section-number">6.1</span> Arithmetic Mean</h2>
-<p>The arithmetic mean is the sum of all values divided by the number of values.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.142857</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
+<section id="sampling-bridging-sample-and-population" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sampling-bridging-sample-and-population"><span class="header-section-number">5.2</span> Sampling: Bridging Sample and Population</h2>
+<p>Sampling is the process of selecting a subset (sample) from a larger group (population) to make inferences about the population. It’s a critical skill in social science research, as studying entire populations is often impractical, too expensive, or sometimes impossible.</p>
+<p><strong>Key Terms:</strong></p>
 <ul>
-<li>Easy to calculate and understand</li>
-<li>Uses all data points</li>
-<li>Useful for further statistical calculations</li>
+<li><strong>Population</strong>: The entire group about which we want to draw conclusions.</li>
+<li><strong>Sample</strong>: A subset of the population that we actually study.</li>
+<li><strong>Sampling Frame</strong>: The list or procedure used to identify all members of the population.</li>
 </ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Sensitive to outliers</li>
-<li>Not ideal for skewed distributions</li>
-</ul>
-<p><strong>Example with outlier:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_with_outlier <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">100</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data_with_outlier)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 18.14286</code></pre>
-</div>
-</div>
-<p>As we can see, the outlier (100) drastically affects the mean.</p>
+<p><strong>Example:</strong> Suppose we want to study the job satisfaction of all teachers in the United States (the population). Instead of surveying millions of teachers, we might select a sample of 5,000 teachers from various states, school districts, and grade levels.</p>
+<p>Randomness in sampling helps ensure that the sample is representative of the population, reducing bias and allowing for more accurate inferences. This is why probability sampling methods, which we’ll discuss next, are often preferred in scientific research.</p>
 </section>
-<section id="median" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="median"><span class="header-section-number">6.2</span> Median</h2>
-<p>The median is the middle value when the data is ordered.</p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(data_with_outlier)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Not affected by extreme outliers</li>
-<li>Better for skewed distributions</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Doesn’t use all data points</li>
-<li>Less useful for further statistical calculations</li>
-</ul>
-</section>
-<section id="mode" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">6.3</span> Mode</h2>
-<p>The mode is the most frequently occurring value.</p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modeest)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mfv</span>(data)  <span class="co"># Most frequent value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4 5</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Only measure of central tendency for nominal data</li>
-<li>Can identify multiple peaks in the data</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Not always uniquely defined</li>
-<li>Not useful for continuous data</li>
-</ul>
-</section>
-<section id="weighted-mean" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="weighted-mean"><span class="header-section-number">6.4</span> Weighted Mean</h2>
-<p>The weighted mean is used when some data points are more important than others. There are two types of weighted means: with not normalized weights and with normalized weights.</p>
-<section id="weighted-mean-with-not-normalized-weights" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="weighted-mean-with-not-normalized-weights"><span class="header-section-number">6.4.1</span> Weighted Mean with Not Normalized Weights</h3>
-<p>This is the standard form of the weighted mean, where weights can be any positive numbers representing the importance of each data point.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(x, w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.571429</code></pre>
-</div>
-</div>
-</section>
-<section id="weighted-mean-with-normalized-weights-fractions" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="weighted-mean-with-normalized-weights-fractions"><span class="header-section-number">6.4.2</span> Weighted Mean with Normalized Weights (Fractions)</h3>
-<p>In this case, the weights are fractions that sum to 1, representing the proportion of importance for each data point.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \sum_{i=1}^n w_i x_i\)</span>, where <span class="math inline">\(\sum_{i=1}^n w_i = 1\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>w_normalized <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>)  <span class="co"># Note: these sum to 1</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="sc">*</span> w_normalized)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.8</code></pre>
-</div>
-</div>
-<p><strong>Pros of Weighted Means:</strong></p>
-<ul>
-<li>Account for varying importance of data points</li>
-<li>Useful in survey analysis with different sample sizes or importance levels</li>
-<li>Can adjust for unequal probabilities in sampling designs</li>
-</ul>
-<p><strong>Cons of Weighted Means:</strong></p>
-<ul>
-<li>Require justification for weights</li>
-<li>Can be misused to manipulate results</li>
-<li>May be less intuitive to interpret than simple arithmetic mean</li>
-</ul>
-<p><strong>Comparison:</strong></p>
-<p>The not normalized weights are often easier to assign based on real-world importance or sample sizes, but require the additional step of normalization in the calculation. Normalized weights (fractions) make the calculation simpler but may be less intuitive to assign directly.</p>
-<p><strong>Example in Social Science:</strong></p>
-<p>Suppose we’re calculating the average income for a region with three cities:</p>
-<p>City A: Average income $50,000, population 100,000 City B: Average income $60,000, population 200,000 City C: Average income $70,000, population 300,000</p>
-<p>We can use population as weights:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>incomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>populations <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100000</span>, <span class="dv">200000</span>, <span class="dv">300000</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Not normalized weights</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(incomes, populations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 63333.33</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalized weights</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pop_normalized <span class="ot">&lt;-</span> populations <span class="sc">/</span> <span class="fu">sum</span>(populations)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(incomes <span class="sc">*</span> pop_normalized)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 63333.33</code></pre>
-</div>
-</div>
-<p>This weighted average gives a more accurate representation of the region’s average income than a simple arithmetic mean of the three city averages would.</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Accounts for varying importance of data points</li>
-<li>Useful in survey analysis with different sample sizes</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Requires justification for weights</li>
-<li>Can be misused to manipulate results</li>
-</ul>
-</section>
-</section>
-</section>
-<section id="measures-of-variability" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Measures of Variability</h1>
-<p>These measures describe how spread out the data is. They are crucial for understanding the dispersion of data points around the central tendency.</p>
-<section id="range" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="range"><span class="header-section-number">7.1</span> Range</h2>
-<p>The range is the difference between the maximum and minimum values.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(R = x_{max} - x_{min}\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 9</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(data) <span class="sc">-</span> <span class="fu">min</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Simple to calculate and understand</li>
-<li>Gives an immediate sense of data spread</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Extremely sensitive to outliers</li>
-<li>Doesn’t provide information about the distribution between extremes</li>
-</ul>
-</section>
-<section id="interquartile-range-iqr" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="interquartile-range-iqr"><span class="header-section-number">7.2</span> Interquartile Range (IQR)</h2>
-<p>The IQR is the difference between the 75th and 25th percentiles.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(IQR = Q_3 - Q_1\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Robust to outliers</li>
-<li>Provides information about the spread of the middle 50% of the data</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Ignores the tails of the distribution</li>
-<li>Less efficient than standard deviation for normal distributions</li>
-</ul>
-</section>
-<section id="variance" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="variance"><span class="header-section-number">7.3</span> Variance</h2>
-<p>Variance measures the average squared deviation from the mean.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.142857</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Uses all data points</li>
-<li>Foundation for many statistical tests</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Units are squared, making interpretation less intuitive</li>
-<li>Sensitive to outliers</li>
-</ul>
-</section>
-<section id="standard-deviation" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">7.4</span> Standard Deviation</h2>
-<p>The standard deviation is the square root of the variance.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(s = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.267787</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>In same units as original data</li>
-<li>Widely used and understood</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Still sensitive to outliers</li>
-<li>Assumes data is roughly normally distributed</li>
-</ul>
-</section>
-<section id="coefficient-of-variation" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="coefficient-of-variation"><span class="header-section-number">7.5</span> Coefficient of Variation</h2>
-<p>The coefficient of variation is the standard deviation divided by the mean, often expressed as a percentage.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sd</span>(data) <span class="sc">/</span> <span class="fu">mean</span>(data)) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 44.09586</code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Allows comparison of variability between datasets with different units or means</li>
-<li>Useful in fields like finance for risk assessment</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Not meaningful for data with both positive and negative values</li>
-<li>Can be misleading when mean is close to zero</li>
-</ul>
-</section>
-</section>
-<section id="measures-of-relative-position" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Measures of Relative Position</h1>
-<p>These measures help us understand where a particular value falls in relation to the entire dataset.</p>
-<section id="percentiles" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">8.1</span> Percentiles</h2>
-<p>Percentiles divide the data into 100 equal parts.</p>
-<p><strong>Formula:</strong> For the kth percentile: <span class="math inline">\(P_k = L + \frac{k(n+1)}{100}\)</span>, where L is the lower limit of the interval</p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(data, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  0%  25%  50%  75% 100% 
-   2    4    5    6    9 </code></pre>
-</div>
-</div>
-</section>
-<section id="quartiles" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="quartiles"><span class="header-section-number">8.2</span> Quartiles</h2>
-<p>Quartiles divide the data into four equal parts.</p>
-<ul>
-<li>Q1: 25th percentile</li>
-<li>Q2: Median (50th percentile)</li>
-<li>Q3: 75th percentile</li>
-</ul>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  2.000   4.000   5.000   5.143   6.000   9.000 </code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Robust to outliers</li>
-<li>Provide information about data spread and skewness</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Less precise than using all data points</li>
-<li>Multiple methods of calculation can lead to slightly different results</li>
-</ul>
-</section>
-</section>
-<section id="measures-of-shape" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Measures of Shape</h1>
-<p>These measures describe the shape of the probability distribution of the data.</p>
-<section id="skewness" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="skewness"><span class="header-section-number">9.1</span> Skewness</h2>
-<p>Skewness measures the asymmetry of the probability distribution.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'moments'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:modeest':
-
-    skewness</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skewness</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4592793</code></pre>
-</div>
-</div>
-<p><strong>Interpretation:</strong></p>
-<ul>
-<li>Positive skewness: right tail is longer (mean &gt; median)</li>
-<li>Negative skewness: left tail is longer (mean &lt; median)</li>
-<li>Zero skewness: symmetrical distribution</li>
-</ul>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Provides information about distribution shape</li>
-<li>Useful for checking assumptions of normality</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Sensitive to outliers</li>
-<li>Can be misleading for multimodal distributions</li>
-</ul>
-</section>
-<section id="kurtosis" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="kurtosis"><span class="header-section-number">9.2</span> Kurtosis</h2>
-<p>Kurtosis measures the “tailedness” of the probability distribution.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}\)</span></p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kurtosis</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.457047</code></pre>
-</div>
-</div>
-<p><strong>Interpretation:</strong></p>
-<ul>
-<li>Positive kurtosis: heavy tails, peaked distribution</li>
-<li>Negative kurtosis: light tails, flat distribution</li>
-<li>Zero kurtosis: normal distribution</li>
-</ul>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Provides information about extreme values in the distribution</li>
-<li>Useful for financial modeling and risk assessment</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Sensitive to outliers</li>
-<li>Can be difficult to interpret practically</li>
-</ul>
-</section>
-</section>
-<section id="introduction-to-bivariate-and-multivariate-descriptive-statistics" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Introduction to Bivariate and Multivariate Descriptive Statistics</h1>
-<p>While univariate statistics describe single variables, bivariate and multivariate statistics explore relationships between variables.</p>
-<section id="bivariate-statistics" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="bivariate-statistics"><span class="header-section-number">10.1</span> Bivariate Statistics</h2>
-<section id="correlation" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="correlation"><span class="header-section-number">10.1.1</span> Correlation</h3>
-<p>Correlation measures the strength and direction of the linear relationship between two variables.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7745967</code></pre>
-</div>
-</div>
-</section>
-<section id="covariance" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="covariance"><span class="header-section-number">10.1.2</span> Covariance</h3>
-<p>Covariance measures how two variables vary together.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.5</code></pre>
-</div>
-</div>
-</section>
-<section id="cross-tabulation" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">10.1.3</span> Cross-tabulation</h3>
-<p>Cross-tabulation (contingency table) shows the relationship between two categorical variables.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">cut</span>(x, <span class="dv">2</span>), <span class="fu">cut</span>(y, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>           
-            (2,3.5] (3.5,5]
-  (0.996,3]       1       2
-  (3,5]           0       2</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="multivariate-statistics" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="multivariate-statistics"><span class="header-section-number">10.2</span> Multivariate Statistics</h2>
-<ul>
-<li><strong>Multiple Correlation</strong>: Correlation between a dependent variable and multiple independent variables.</li>
-<li><strong>Partial Correlation</strong>: Correlation between two variables while controlling for others.</li>
-<li><strong>Factor Analysis</strong>: Technique to reduce many variables to a few underlying factors.</li>
-</ul>
-<p>These topics will be covered in more detail in later chapters.</p>
-</section>
-</section>
-<section id="conclusion" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Conclusion</h1>
-<p>Descriptive statistics are essential tools for summarizing and understanding data in social science research. However, it’s crucial to:</p>
+<section id="sampling-methods" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sampling-methods"><span class="header-section-number">5.3</span> Sampling Methods</h2>
+<section id="probability-sampling" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="probability-sampling"><span class="header-section-number">5.3.1</span> Probability Sampling</h3>
+<p>Probability sampling methods involve random selection, giving each member of the population a known, non-zero chance of being selected.</p>
 <ol type="1">
-<li>Choose appropriate measures based on data type and distribution</li>
-<li>Be aware of the limitations of each measure, especially regarding outliers</li>
-<li>Use multiple measures to gain a comprehensive understanding</li>
+<li><p><strong>Simple Random Sampling</strong>: Each member of the population has an equal chance of being selected.</p>
+<p>Example: To select 100 students from a university with 10,000 students, you could assign each student a number from 1 to 10,000, then use a random number generator to select 100 numbers.</p></li>
+<li><p><strong>Stratified Random Sampling</strong>: The population is divided into subgroups (strata) based on shared characteristics, then samples are randomly selected from each stratum.</p>
+<p>Example: In a national political survey, you might divide the population into strata based on geographic regions (Northeast, Midwest, South, West) and then randomly sample from each region. This ensures representation from all areas of the country.</p></li>
+<li><p><strong>Cluster Sampling</strong>: The population is divided into clusters (usually geographic), some clusters are randomly selected, and all members within those clusters are studied.</p>
+<p>Example: To study high school students’ study habits, you might randomly select 20 high schools from across the country and then survey all students in those schools.</p></li>
+<li><p><strong>Systematic Sampling</strong>: Selecting every kth item from a list after a random start.</p>
+<p>Example: At a busy shopping mall, you might survey every 20th person who enters the mall, starting with a randomly chosen number between 1 and 20.</p></li>
 </ol>
-<p>Remember, descriptive statistics are just the starting point. They provide the foundation for inferential statistics, which allow us to draw conclusions about populations based on samples.</p>
 </section>
-<section id="references" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> References</h1>
+<section id="non-probability-sampling" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="non-probability-sampling"><span class="header-section-number">5.3.2</span> Non-probability Sampling</h3>
+<p>Non-probability sampling doesn’t involve random selection. While it can introduce bias, it may be necessary in certain situations, especially when dealing with hard-to-reach populations or when resources are limited.</p>
 <ol type="1">
-<li>Agresti, A., &amp; Finlay, B. (2009). Statistical methods for the social sciences (4th ed.). Pearson Prentice Hall.</li>
-<li>Field, A. (2013). Discovering statistics using IBM SPSS statistics. Sage.</li>
-<li>Hair, J. F., Black, W. C., Babin, B. J., &amp; Anderson, R. E. (2019). Multivariate data analysis (8th ed.). Cengage Learning.</li>
+<li><p><strong>Convenience Sampling</strong>: Selecting easily accessible subjects.</p>
+<p>Example: A researcher studying college students’ sleep patterns might survey students in their own classes or around campus.</p></li>
+<li><p><strong>Purposive Sampling</strong>: Selecting subjects based on specific characteristics.</p>
+<p>Example: For a study on the experiences of CEOs in the tech industry, a researcher might intentionally seek out and interview CEOs from various tech companies.</p></li>
+<li><p><strong>Snowball Sampling</strong>: Participants recruit other participants.</p>
+<p>Example: In a study of undocumented immigrants’ access to healthcare, researchers might ask initial participants to refer other potential participants from their community.</p></li>
+<li><p><strong>Quota Sampling</strong>: Selecting participants to meet specific quotas for certain characteristics.</p>
+<p>Example: In a market research study, researchers might ensure they interview a specific number of people from different age groups, genders, and income levels to match the demographics of the target market.</p></li>
 </ol>
+</section>
+</section>
+<section id="making-inferences-from-samples" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="making-inferences-from-samples"><span class="header-section-number">5.4</span> Making Inferences from Samples</h2>
+<p>Statistical inference is the process of drawing conclusions about a population based on a sample. This allows researchers to estimate characteristics of the entire population (parameters) using characteristics of the sample (statistics).</p>
+<p><strong>Key Concepts:</strong></p>
+<ol type="1">
+<li><p><strong>Point Estimates</strong>: A single value used to estimate a population parameter.</p>
+<p>Example: The mean income of a sample of 1000 workers might be used to estimate the mean income of all workers in a country.</p></li>
+<li><p><strong>Confidence Intervals</strong>: A range of values likely to contain the true population parameter.</p>
+<p>Example: We might say, “We are 95% confident that the true population mean income falls between $45,000 and $55,000.”</p></li>
+<li><p><strong>Margin of Error</strong>: The range of values above and below the sample statistic in a confidence interval.</p>
+<p>Example: In political polling, you might see a statement like “Candidate A is preferred by 52% of voters, with a margin of error of ±3%.”</p></li>
+<li><p><strong>Hypothesis Testing</strong>: A method for making decisions about population parameters based on sample data.</p>
+<p>Example: A researcher might test whether there’s a significant difference in test scores between students who study with music and those who study in silence.</p></li>
+</ol>
+</section>
+<section id="sampling-and-non-sampling-errors" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sampling-and-non-sampling-errors"><span class="header-section-number">5.5</span> Sampling and Non-sampling Errors</h2>
+<p>Understanding potential errors in research is crucial for interpreting results accurately.</p>
+<p><strong>Sampling Error</strong>: The difference between a sample statistic and the true population parameter, occurring due to chance variations in the selection of sample members.</p>
+<p>Example: If we estimate the average height of all adult males in a country based on a sample, our estimate will likely differ somewhat from the true average due to sampling error.</p>
+<p><strong>Non-sampling Errors</strong>: Errors not due to chance, which can occur in both sample surveys and censuses.</p>
+<ol type="1">
+<li><p><strong>Coverage Error</strong>: When the sampling frame doesn’t accurately represent the population.</p>
+<p>Example: A telephone survey that only calls landlines would miss people who only have cell phones, potentially biasing the results.</p></li>
+<li><p><strong>Non-response Error</strong>: When selected participants fail to respond, potentially introducing bias.</p>
+<p>Example: In a survey about job satisfaction, highly satisfied or highly dissatisfied employees might be more likely to respond, skewing the results.</p></li>
+<li><p><strong>Measurement Error</strong>: Inaccuracies in the data collected.</p>
+<p>Example: A poorly worded survey question might be interpreted differently by different respondents, leading to inconsistent data.</p></li>
+<li><p><strong>Processing Error</strong>: Mistakes made during data entry, coding, or analysis.</p>
+<p>Example: Accidentally entering “99” instead of “9” for a participant’s response could significantly skew the results.</p></li>
+</ol>
+</section>
+<section id="sample-size-and-power" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="sample-size-and-power"><span class="header-section-number">5.6</span> Sample Size and Power</h2>
+<p>Determining the appropriate sample size involves balancing the need for precision with available resources.</p>
+<p><strong>Sample Size Considerations:</strong> - Larger samples generally provide more precise estimates but are more costly and time-consuming to obtain. - The required sample size depends on factors such as the desired level of precision, the variability in the population, and the type of analysis planned.</p>
+<p><strong>Example:</strong> To estimate the proportion of voters who support a particular policy with a margin of error of ±3% at a 95% confidence level, you would need a sample size of about 1067 voters (assuming maximum variability).</p>
+<p><strong>Statistical Power:</strong> The probability that a study will detect an effect when there is an effect to be detected.</p>
+<p>Factors affecting power: 1. Sample size 2. Effect size (the magnitude of the difference or relationship you’re trying to detect) 3. Chosen significance level (usually 0.05)</p>
+<p><strong>Example:</strong> In a study comparing two teaching methods, having a larger sample size would increase the likelihood of detecting a significant difference between the methods, if such a difference exists.</p>
+</section>
+<section id="sampling-in-the-digital-age" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="sampling-in-the-digital-age"><span class="header-section-number">5.7</span> Sampling in the Digital Age</h2>
+<p>The advent of big data and digital technologies has transformed sampling practices in many fields.</p>
+<p><strong>Big Data Opportunities and Challenges:</strong> - Unprecedented volumes of information available - Potential lack of representativeness - Data quality concerns - Privacy and ethical issues</p>
+<p><strong>Example:</strong> Social media data can provide real-time insights into public opinion, but users of a particular platform may not be representative of the general population.</p>
+<p><strong>Web-based Surveys:</strong> - Offer new opportunities for data collection - Face challenges such as coverage bias (not everyone has internet access) and self-selection bias</p>
+<p><strong>Example:</strong> An online survey about internet usage habits would inherently exclude people without internet access, potentially biasing the results.</p>
+</section>
+<section id="ethical-considerations-in-sampling" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="ethical-considerations-in-sampling"><span class="header-section-number">5.8</span> Ethical Considerations in Sampling</h2>
+<p>Ethical sampling practices are crucial in social science research:</p>
+<ol type="1">
+<li><p><strong>Informed Consent</strong>: Participants should understand the study’s purpose and agree to participate.</p>
+<p>Example: Before conducting interviews about sensitive topics like mental health, researchers must clearly explain the study’s aims and potential risks to participants.</p></li>
+<li><p><strong>Privacy and Confidentiality</strong>: Researchers must protect participants’ personal information.</p>
+<p>Example: In a study on workplace harassment, researchers might use code numbers instead of names to protect participants’ identities.</p></li>
+<li><p><strong>Representativeness and Inclusivity</strong>: Samples should fairly represent diverse populations, including marginalized groups.</p>
+<p>Example: A study on urban housing should make efforts to include participants from various socioeconomic backgrounds, ethnicities, and housing situations.</p></li>
+</ol>
+</section>
+<section id="case-studies" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="case-studies"><span class="header-section-number">5.9</span> Case Studies</h2>
+<p>[This section would include detailed examples of sampling in practice, such as: 1. How polling organizations predict election outcomes 2. How companies use market research to understand consumer preferences 3. How public health researchers study disease prevalence in populations]</p>
+</section>
+<section id="conclusion" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.10</span> Conclusion</h2>
+<p>Sampling remains a cornerstone of social science research, even in the era of big data. Understanding sampling principles helps researchers design studies, interpret results, and make valid inferences about populations. As we’ve seen, the journey from sample to population involves careful consideration of sampling methods, potential errors, ethical issues, and the ever-evolving landscape of data collection in the digital age.</p>
+</section>
+<section id="review-questions-and-exercises" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="review-questions-and-exercises"><span class="header-section-number">5.11</span> Review Questions and Exercises</h2>
+<p>[This section would include a mix of multiple-choice questions, short answer prompts, and practical exercises to reinforce key concepts]</p>
+</section>
+<section id="further-reading" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5.12</span> Further Reading</h2>
+<p>[This section would list additional resources for students interested in deepening their understanding of sampling and related topics]</p>
 
 
 </section>
@@ -1201,8 +781,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./rozdzial3.html" class="pagination-link" aria-label="Kompleksowy przewodnik po jednowymiarowych statystykach opisowych">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./rozdzial3.html" class="pagination-link" aria-label="Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

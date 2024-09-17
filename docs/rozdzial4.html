@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 8&nbsp; Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</title>
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 8&nbsp; Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial4.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial4.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,37 +202,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Designs: Experimental and Non-Experimental Approaches</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trafność, Rzetelność i Typy Badań w Naukach Społecznych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -188,22 +251,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#wprowadzenie-do-losowości" id="toc-wprowadzenie-do-losowości" class="nav-link active" data-scroll-target="#wprowadzenie-do-losowości"><span class="header-section-number">8.1</span> Wprowadzenie do Losowości</a></li>
-  <li><a href="#próbkowanie-łączenie-próby-i-populacji" id="toc-próbkowanie-łączenie-próby-i-populacji" class="nav-link" data-scroll-target="#próbkowanie-łączenie-próby-i-populacji"><span class="header-section-number">8.2</span> Próbkowanie: Łączenie Próby i Populacji</a></li>
-  <li><a href="#metody-próbkowania" id="toc-metody-próbkowania" class="nav-link" data-scroll-target="#metody-próbkowania"><span class="header-section-number">8.3</span> Metody Próbkowania</a>
+  <li><a href="#wstęp" id="toc-wstęp" class="nav-link active" data-scroll-target="#wstęp"><span class="header-section-number">8.1</span> Wstęp</a></li>
+  <li><a href="#projekty-eksperymentalne" id="toc-projekty-eksperymentalne" class="nav-link" data-scroll-target="#projekty-eksperymentalne"><span class="header-section-number">8.2</span> Projekty Eksperymentalne</a>
   <ul class="collapse">
-  <li><a href="#próbkowanie-probabilistyczne" id="toc-próbkowanie-probabilistyczne" class="nav-link" data-scroll-target="#próbkowanie-probabilistyczne"><span class="header-section-number">8.3.1</span> Próbkowanie Probabilistyczne</a></li>
-  <li><a href="#próbkowanie-nieprobabilistyczne" id="toc-próbkowanie-nieprobabilistyczne" class="nav-link" data-scroll-target="#próbkowanie-nieprobabilistyczne"><span class="header-section-number">8.3.2</span> Próbkowanie Nieprobabilistyczne</a></li>
+  <li><a href="#randomizowane-badania-kontrolowane-rct" id="toc-randomizowane-badania-kontrolowane-rct" class="nav-link" data-scroll-target="#randomizowane-badania-kontrolowane-rct"><span class="header-section-number">8.2.1</span> Randomizowane Badania Kontrolowane (RCT)</a></li>
   </ul></li>
-  <li><a href="#wnioskowanie-z-prób" id="toc-wnioskowanie-z-prób" class="nav-link" data-scroll-target="#wnioskowanie-z-prób"><span class="header-section-number">8.4</span> Wnioskowanie z Prób</a></li>
-  <li><a href="#błędy-próbkowania-i-błędy-niepróbkowe" id="toc-błędy-próbkowania-i-błędy-niepróbkowe" class="nav-link" data-scroll-target="#błędy-próbkowania-i-błędy-niepróbkowe"><span class="header-section-number">8.5</span> Błędy Próbkowania i Błędy Niepróbkowe</a></li>
-  <li><a href="#wielkość-próby-i-moc-statystyczna" id="toc-wielkość-próby-i-moc-statystyczna" class="nav-link" data-scroll-target="#wielkość-próby-i-moc-statystyczna"><span class="header-section-number">8.6</span> Wielkość Próby i Moc Statystyczna</a></li>
-  <li><a href="#próbkowanie-w-erze-cyfrowej" id="toc-próbkowanie-w-erze-cyfrowej" class="nav-link" data-scroll-target="#próbkowanie-w-erze-cyfrowej"><span class="header-section-number">8.7</span> Próbkowanie w Erze Cyfrowej</a></li>
-  <li><a href="#etyczne-aspekty-próbkowania" id="toc-etyczne-aspekty-próbkowania" class="nav-link" data-scroll-target="#etyczne-aspekty-próbkowania"><span class="header-section-number">8.8</span> Etyczne Aspekty Próbkowania</a></li>
-  <li><a href="#studia-przypadków" id="toc-studia-przypadków" class="nav-link" data-scroll-target="#studia-przypadków"><span class="header-section-number">8.9</span> Studia Przypadków</a></li>
-  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">8.10</span> Podsumowanie</a></li>
-  <li><a href="#pytania-kontrolne-i-ćwiczenia" id="toc-pytania-kontrolne-i-ćwiczenia" class="nav-link" data-scroll-target="#pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">8.11</span> Pytania Kontrolne i Ćwiczenia</a></li>
-  <li><a href="#dalsza-lektura" id="toc-dalsza-lektura" class="nav-link" data-scroll-target="#dalsza-lektura"><span class="header-section-number">8.12</span> Dalsza Lektura</a></li>
+  <li><a href="#testy-ab-przykład-i-porównanie-z-rct" id="toc-testy-ab-przykład-i-porównanie-z-rct" class="nav-link" data-scroll-target="#testy-ab-przykład-i-porównanie-z-rct"><span class="header-section-number">8.3</span> Testy A/B: Przykład i Porównanie z RCT</a>
+  <ul class="collapse">
+  <li><a href="#przykład-współczynnik-konwersji-strony-docelowej" id="toc-przykład-współczynnik-konwersji-strony-docelowej" class="nav-link" data-scroll-target="#przykład-współczynnik-konwersji-strony-docelowej"><span class="header-section-number">8.3.1</span> Przykład: Współczynnik Konwersji Strony Docelowej</a></li>
+  <li><a href="#metodologia-testów-ab" id="toc-metodologia-testów-ab" class="nav-link" data-scroll-target="#metodologia-testów-ab"><span class="header-section-number">8.3.2</span> Metodologia Testów A/B</a></li>
+  <li><a href="#różnice-między-testami-ab-a-rct" id="toc-różnice-między-testami-ab-a-rct" class="nav-link" data-scroll-target="#różnice-między-testami-ab-a-rct"><span class="header-section-number">8.3.3</span> Różnice między Testami A/B a RCT</a></li>
+  <li><a href="#przykład-1-wpływ-długości-snu-na-wydajność-poznawczą" id="toc-przykład-1-wpływ-długości-snu-na-wydajność-poznawczą" class="nav-link" data-scroll-target="#przykład-1-wpływ-długości-snu-na-wydajność-poznawczą"><span class="header-section-number">8.3.4</span> Przykład 1: Wpływ Długości Snu na Wydajność Poznawczą</a></li>
+  <li><a href="#przykład-2-wpływ-treningu-uważności-na-poziom-stresu" id="toc-przykład-2-wpływ-treningu-uważności-na-poziom-stresu" class="nav-link" data-scroll-target="#przykład-2-wpływ-treningu-uważności-na-poziom-stresu"><span class="header-section-number">8.3.5</span> Przykład 2: Wpływ Treningu Uważności na Poziom Stresu</a></li>
+  <li><a href="#projekty-czynnikowe" id="toc-projekty-czynnikowe" class="nav-link" data-scroll-target="#projekty-czynnikowe"><span class="header-section-number">8.3.6</span> Projekty Czynnikowe</a></li>
+  </ul></li>
+  <li><a href="#projekty-nieeksperymentalne" id="toc-projekty-nieeksperymentalne" class="nav-link" data-scroll-target="#projekty-nieeksperymentalne"><span class="header-section-number">8.4</span> Projekty Nieeksperymentalne</a>
+  <ul class="collapse">
+  <li><a href="#badania-obserwacyjne" id="toc-badania-obserwacyjne" class="nav-link" data-scroll-target="#badania-obserwacyjne"><span class="header-section-number">8.4.1</span> Badania Obserwacyjne</a></li>
+  <li><a href="#projekty-quasi-eksperymentalne" id="toc-projekty-quasi-eksperymentalne" class="nav-link" data-scroll-target="#projekty-quasi-eksperymentalne"><span class="header-section-number">8.4.2</span> Projekty Quasi-Eksperymentalne</a></li>
+  </ul></li>
+  <li><a href="#model-potencjalnych-wyników-neymana-rubina" id="toc-model-potencjalnych-wyników-neymana-rubina" class="nav-link" data-scroll-target="#model-potencjalnych-wyników-neymana-rubina"><span class="header-section-number">8.5</span> Model Potencjalnych Wyników Neymana-Rubina</a>
+  <ul class="collapse">
+  <li><a href="#przykład-szacowanie-ate-w-rct" id="toc-przykład-szacowanie-ate-w-rct" class="nav-link" data-scroll-target="#przykład-szacowanie-ate-w-rct"><span class="header-section-number">8.5.1</span> Przykład: Szacowanie ATE w RCT</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -212,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne</span></h1>
 </div>
 
 
@@ -229,192 +299,552 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="wprowadzenie-do-losowości" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="wprowadzenie-do-losowości"><span class="header-section-number">8.1</span> Wprowadzenie do Losowości</h2>
-<p>Losowość jest fundamentalnym pojęciem w statystyce i badaniach naukowych. Odnosi się do nieprzewidywalności indywidualnych wyników, nawet gdy ogólny wzorzec może być przewidywalny. W naukach społecznych zrozumienie losowości jest kluczowe dla projektowania badań, zbierania danych i interpretacji wyników.</p>
-<p>Rozważmy rzut uczciwą monetą. Chociaż wiemy, że prawdopodobieństwo wypadnięcia orła wynosi 50%, nie możemy z pewnością przewidzieć wyniku pojedynczego rzutu. Ta nieprzewidywalność jest istotą losowości.</p>
-<p>Przykłady losowych zjawisk w naukach społecznych obejmują:</p>
-<ol type="1">
-<li><p><strong>Wybór uczestników</strong>: W eksperymencie psychologicznym badającym czasy reakcji, kolejność, w jakiej uczestnicy przybywają do laboratorium, może być losowa.</p></li>
-<li><p><strong>Zachowania ekonomiczne</strong>: Codzienne wahania cen akcji często wykazują losowe wzorce, na które wpływa niezliczona ilość nieprzewidywalnych czynników.</p></li>
-<li><p><strong>Interakcje społeczne</strong>: Występowanie przypadkowych spotkań między osobami w społeczności można uznać za zdarzenia losowe.</p></li>
-</ol>
-<p>Zrozumienie losowości pomaga badaczom odróżnić rzeczywiste efekty od przypadkowych zdarzeń. Na przykład, jeśli zaobserwujemy niewielką różnicę w wynikach testów między dwiema grupami, losowość pomaga nam określić, czy ta różnica jest prawdopodobnie spowodowana rzeczywistym efektem, czy tylko przypadkową zmiennością.</p>
+<section id="wstęp" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="wstęp"><span class="header-section-number">8.1</span> Wstęp</h2>
+<p>Projekty badawcze stanowią fundament procesu naukowego, zapewniając ustrukturyzowane podejście do badania hipotez i odpowiadania na pytania badawcze. Ten rozdział analizuje dwie główne kategorie projektów badawczych: eksperymentalne i nieeksperymentalne, ze szczególnym uwzględnieniem modelu potencjalnych wyników Neymana-Rubina. Zagłębimy się w różne typy projektów, ich charakterystykę i przedstawimy praktyczne przykłady wykorzystania R do analizy danych i wizualizacji.</p>
 </section>
-<section id="próbkowanie-łączenie-próby-i-populacji" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="próbkowanie-łączenie-próby-i-populacji"><span class="header-section-number">8.2</span> Próbkowanie: Łączenie Próby i Populacji</h2>
-<p>Próbkowanie to proces wybierania podzbioru (próby) z większej grupy (populacji) w celu wyciągnięcia wniosków o populacji. Jest to kluczowa umiejętność w badaniach nauk społecznych, ponieważ badanie całych populacji jest często niepraktyczne, zbyt kosztowne lub czasami niemożliwe.</p>
-<p><strong>Kluczowe pojęcia:</strong></p>
+<section id="projekty-eksperymentalne" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="projekty-eksperymentalne"><span class="header-section-number">8.2</span> Projekty Eksperymentalne</h2>
+<p>Projekty eksperymentalne charakteryzują się kontrolą badacza nad zmienną(ymi) niezależną(ymi) oraz losowym przydziałem uczestników do różnych warunków. Te projekty są uważane za złoty standard w ustalaniu związków przyczynowych.</p>
+<section id="randomizowane-badania-kontrolowane-rct" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="randomizowane-badania-kontrolowane-rct"><span class="header-section-number">8.2.1</span> Randomizowane Badania Kontrolowane (RCT)</h3>
+<p>RCT są najbardziej rygorystyczną formą projektu eksperymentalnego. Obejmują one:</p>
+<ol type="1">
+<li>Losowy przydział uczestników do grup eksperymentalnej i kontrolnej</li>
+<li>Manipulację zmienną niezależną</li>
+<li>Pomiar zmiennej zależnej</li>
+</ol>
+<p>Zobaczmy wizualizację prostego projektu RCT:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie przykładowych danych</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">grupa =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Kontrolna"</span>, <span class="st">"Eksperymentalna"</span>), <span class="at">each =</span> n<span class="sc">/</span><span class="dv">2</span>)),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">pre_test =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">post_test =</span> <span class="cn">NA</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Symulacja efektu leczenia</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>post_test <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(data<span class="sc">$</span>grupa <span class="sc">==</span> <span class="st">"Eksperymentalna"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                         data<span class="sc">$</span>pre_test <span class="sc">+</span> <span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                         data<span class="sc">$</span>pre_test <span class="sc">+</span> <span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Przekształcenie danych do formatu długiego</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(data, <span class="at">cols =</span> <span class="fu">c</span>(pre_test, post_test),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">names_to =</span> <span class="st">"czas"</span>, <span class="at">values_to =</span> <span class="st">"wynik"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long, <span class="fu">aes</span>(<span class="at">x =</span> czas, <span class="at">y =</span> wynik, <span class="at">color =</span> grupa, <span class="at">group =</span> <span class="fu">interaction</span>(id, grupa))) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="fu">aes</span>(<span class="at">group =</span> grupa), <span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Wyniki Pre-test i Post-test w RCT"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Czas"</span>, <span class="at">y =</span> <span class="st">"Wynik"</span>, <span class="at">color =</span> <span class="st">"Grupa"</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"pre_test"</span> <span class="ot">=</span> <span class="st">"Pre-test"</span>, <span class="st">"post_test"</span> <span class="ot">=</span> <span class="st">"Post-test"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial4_files/figure-html/rct-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Projekt Randomizowanego Badania Kontrolowanego</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ten wykres pokazuje indywidualne trajektorie i średnie grupowe dla wyników pre-test i post-test w hipotetycznym RCT. Grupa eksperymentalna wykazuje wyraźny wzrost wyników w porównaniu do grupy kontrolnej.</p>
+</section>
+</section>
+<section id="testy-ab-przykład-i-porównanie-z-rct" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="testy-ab-przykład-i-porównanie-z-rct"><span class="header-section-number">8.3</span> Testy A/B: Przykład i Porównanie z RCT</h2>
+<p>Testy A/B to szeroko stosowana metoda eksperymentalna w marketingu cyfrowym, projektowaniu doświadczeń użytkownika i rozwoju produktów. Ten rozdział przedstawi przykład testu A/B, wyjaśni jego metodologię i omówi, czym różni się od Randomizowanych Badań Kontrolowanych (RCT).</p>
+<section id="przykład-współczynnik-konwersji-strony-docelowej" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="przykład-współczynnik-konwersji-strony-docelowej"><span class="header-section-number">8.3.1</span> Przykład: Współczynnik Konwersji Strony Docelowej</h3>
+<p>Rozważmy przykład, w którym firma e-commerce chce poprawić współczynnik konwersji swojej strony docelowej. Decydują się przetestować dwa różne układy: obecny układ (A) i nowy układ (B).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Symulacja danych</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>n_odwiedzajacych <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Wersja =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), n_odwiedzajacych, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Konwersja =</span> <span class="fu">rbinom</span>(n_odwiedzajacych, <span class="dv">1</span>, <span class="fu">ifelse</span>(<span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), n_odwiedzajacych, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">==</span> <span class="st">"A"</span>, <span class="fl">0.10</span>, <span class="fl">0.12</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczenie współczynników konwersji</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>wspolczynniki_konwersji <span class="ot">&lt;-</span> dane <span class="sc">%&gt;%</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Wersja) <span class="sc">%&gt;%</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Odwiedzajacy =</span> <span class="fu">n</span>(),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Konwersje =</span> <span class="fu">sum</span>(Konwersja),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">WspolczynnikKonwersji =</span> <span class="fu">mean</span>(Konwersja)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Wizualizacja wyników</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wspolczynniki_konwersji, <span class="fu">aes</span>(<span class="at">x =</span> Wersja, <span class="at">y =</span> WspolczynnikKonwersji, <span class="at">fill =</span> Wersja)) <span class="sc">+</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"%.2f%%"</span>, WspolczynnikKonwersji <span class="sc">*</span> <span class="dv">100</span>)), </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Test A/B: Współczynniki Konwersji Strony Docelowej"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Wersja Strony"</span>, <span class="at">y =</span> <span class="st">"Współczynnik Konwersji"</span>) <span class="sc">+</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.15</span>)) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-test-ab" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-test-ab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rozdzial4_files/figure-html/fig-test-ab-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-test-ab-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Wyniki Testu A/B: Współczynniki Konwersji Strony Docelowej
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>W tym przykładzie zasymulowaliśmy dane dla 10 000 odwiedzających losowo przypisanych do wersji A lub B strony docelowej. Wyniki pokazują, że wersja B ma nieco wyższy współczynnik konwersji (12,02%) w porównaniu do wersji A (10,08%).</p>
+</section>
+<section id="metodologia-testów-ab" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="metodologia-testów-ab"><span class="header-section-number">8.3.2</span> Metodologia Testów A/B</h3>
+<p>Testy A/B zazwyczaj przebiegają według następujących kroków:</p>
+<ol type="1">
+<li>Zidentyfikowanie elementu do przetestowania (np. układ strony docelowej).</li>
+<li>Stworzenie dwóch wersji: kontrolnej (A) i wariantu (B).</li>
+<li>Losowe przypisanie odwiedzających do jednej z wersji.</li>
+<li>Zbieranie danych o interesującej nas metryce (np. współczynniku konwersji).</li>
+<li>Analiza wyników przy użyciu metod statystycznych.</li>
+<li>Podjęcie decyzji na podstawie wyników.</li>
+</ol>
+</section>
+<section id="różnice-między-testami-ab-a-rct" class="level3" data-number="8.3.3">
+<h3 data-number="8.3.3" class="anchored" data-anchor-id="różnice-między-testami-ab-a-rct"><span class="header-section-number">8.3.3</span> Różnice między Testami A/B a RCT</h3>
+<p>Choć testy A/B i Randomizowane Badania Kontrolowane (RCT) mają pewne podobieństwa, istnieje kilka kluczowych różnic:</p>
+<ol type="1">
+<li><strong>Zakres i Kontekst:</strong>
 <ul>
-<li><strong>Populacja</strong>: Cała grupa, o której chcemy wyciągnąć wnioski.</li>
-<li><strong>Próba</strong>: Podzbiór populacji, który faktycznie badamy.</li>
-<li><strong>Operat losowania</strong>: Lista lub procedura używana do identyfikacji wszystkich członków populacji.</li>
-</ul>
-<p><strong>Przykład:</strong> Załóżmy, że chcemy zbadać satysfakcję z pracy wszystkich nauczycieli w Polsce (populacja). Zamiast ankietować setki tysięcy nauczycieli, możemy wybrać próbę 5000 nauczycieli z różnych województw, powiatów i poziomów nauczania.</p>
-<p>Losowość w próbkowaniu pomaga zapewnić, że próba jest reprezentatywna dla populacji, zmniejszając błędy systematyczne i umożliwiając dokładniejsze wnioskowanie. Dlatego metody próbkowania probabilistycznego, które omówimy dalej, są często preferowane w badaniach naukowych.</p>
-</section>
-<section id="metody-próbkowania" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="metody-próbkowania"><span class="header-section-number">8.3</span> Metody Próbkowania</h2>
-<section id="próbkowanie-probabilistyczne" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="próbkowanie-probabilistyczne"><span class="header-section-number">8.3.1</span> Próbkowanie Probabilistyczne</h3>
-<p>Metody próbkowania probabilistycznego obejmują losowy wybór, dając każdemu członkowi populacji znaną, niezerową szansę na wybór.</p>
-<ol type="1">
-<li><p><strong>Prosty Dobór Losowy</strong>: Każdy członek populacji ma równą szansę na wybór.</p>
-<p>Przykład: Aby wybrać 100 studentów z uniwersytetu liczącego 10 000 studentów, można przypisać każdemu studentowi numer od 1 do 10 000, a następnie użyć generatora liczb losowych do wybrania 100 numerów.</p></li>
-<li><p><strong>Dobór Losowy Warstwowy</strong>: Populacja jest podzielona na podgrupy (warstwy) na podstawie wspólnych cech, a następnie próbki są losowo wybierane z każdej warstwy.</p>
-<p>Przykład: W ogólnopolskim badaniu politycznym można podzielić populację na warstwy na podstawie regionów geograficznych (np. Polska Zachodnia, Centralna, Wschodnia) i losowo pobierać próbki z każdego regionu. Zapewnia to reprezentację ze wszystkich obszarów kraju.</p></li>
-<li><p><strong>Dobór Losowy Grupowy</strong>: Populacja jest podzielona na skupiska (zwykle geograficzne), niektóre skupiska są losowo wybierane, a wszyscy członkowie w tych skupiskach są badani.</p>
-<p>Przykład: Aby zbadać nawyki uczenia się uczniów szkół średnich, można losowo wybrać 20 szkół z całego kraju, a następnie przeprowadzić ankietę wśród wszystkich uczniów w tych szkołach.</p></li>
-<li><p><strong>Dobór Systematyczny</strong>: Wybieranie co k-tego elementu z listy po losowym starcie.</p>
-<p>Przykład: W ruchliwym centrum handlowym można ankietować co 20. osobę wchodzącą do centrum, zaczynając od losowo wybranej liczby między 1 a 20.</p></li>
-</ol>
-</section>
-<section id="próbkowanie-nieprobabilistyczne" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="próbkowanie-nieprobabilistyczne"><span class="header-section-number">8.3.2</span> Próbkowanie Nieprobabilistyczne</h3>
-<p>Próbkowanie nieprobabilistyczne nie obejmuje losowego wyboru. Chociaż może wprowadzać błędy systematyczne, może być konieczne w niektórych sytuacjach, zwłaszcza w przypadku trudno dostępnych populacji lub gdy zasoby są ograniczone.</p>
-<ol type="1">
-<li><p><strong>Dobór Wygodny</strong>: Wybieranie łatwo dostępnych podmiotów.</p>
-<p>Przykład: Badacz studiujący wzorce snu studentów może przeprowadzić ankietę wśród studentów na własnych zajęciach lub na terenie kampusu.</p></li>
-<li><p><strong>Dobór Celowy</strong>: Wybieranie podmiotów na podstawie określonych cech.</p>
-<p>Przykład: W badaniu doświadczeń prezesów w branży technologicznej badacz może celowo szukać i przeprowadzać wywiady z prezesami różnych firm technologicznych.</p></li>
-<li><p><strong>Dobór Metodą Kuli Śnieżnej</strong>: Uczestnicy rekrutują innych uczestników.</p>
-<p>Przykład: W badaniu dostępu imigrantów bez dokumentów do opieki zdrowotnej, badacze mogą poprosić początkowych uczestników o polecenie innych potencjalnych uczestników z ich społeczności.</p></li>
-<li><p><strong>Dobór Kwotowy</strong>: Wybieranie uczestników w celu spełnienia określonych kwot dla pewnych cech.</p>
-<p>Przykład: W badaniu rynku badacze mogą zapewnić, że przeprowadzają wywiady z określoną liczbą osób z różnych grup wiekowych, płci i poziomów dochodów, aby dopasować się do demografii rynku docelowego.</p></li>
-</ol>
-</section>
-</section>
-<section id="wnioskowanie-z-prób" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="wnioskowanie-z-prób"><span class="header-section-number">8.4</span> Wnioskowanie z Prób</h2>
-<p>Wnioskowanie statystyczne to proces wyciągania wniosków o populacji na podstawie próby. Pozwala to badaczom oszacować charakterystyki całej populacji (parametry) przy użyciu charakterystyk próby (statystyk).</p>
-<p><strong>Kluczowe pojęcia:</strong></p>
-<ol type="1">
-<li><p><strong>Estymatory punktowe</strong>: Pojedyncza wartość używana do oszacowania parametru populacji.</p>
-<p>Przykład: Średni dochód z próby 1000 pracowników może być użyty do oszacowania średniego dochodu wszystkich pracowników w kraju.</p></li>
-<li><p><strong>Przedziały ufności</strong>: Zakres wartości, który prawdopodobnie zawiera prawdziwy parametr populacji.</p>
-<p>Przykład: Możemy powiedzieć: “Jesteśmy w 95% pewni, że prawdziwy średni dochód populacji mieści się między 4500 a 5500 złotych”.</p></li>
-<li><p><strong>Margines błędu</strong>: Zakres wartości powyżej i poniżej statystyki próby w przedziale ufności.</p>
-<p>Przykład: W sondażach politycznych można zobaczyć stwierdzenie: “Kandydat A jest preferowany przez 52% wyborców, z marginesem błędu ±3%”.</p></li>
-<li><p><strong>Testowanie hipotez</strong>: Metoda podejmowania decyzji o parametrach populacji na podstawie danych z próby.</p>
-<p>Przykład: Badacz może testować, czy istnieje istotna różnica w wynikach testów między uczniami, którzy uczą się przy muzyce, a tymi, którzy uczą się w ciszy.</p></li>
-</ol>
-</section>
-<section id="błędy-próbkowania-i-błędy-niepróbkowe" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="błędy-próbkowania-i-błędy-niepróbkowe"><span class="header-section-number">8.5</span> Błędy Próbkowania i Błędy Niepróbkowe</h2>
-<p>Zrozumienie potencjalnych błędów w badaniach jest kluczowe dla dokładnej interpretacji wyników.</p>
-<p><strong>Błąd próbkowania</strong>: Różnica między statystyką próby a prawdziwym parametrem populacji, występująca z powodu przypadkowych wahań w wyborze członków próby.</p>
-<p>Przykład: Jeśli oszacujemy średni wzrost wszystkich dorosłych mężczyzn w kraju na podstawie próby, nasze oszacowanie prawdopodobnie będzie się nieco różnić od prawdziwej średniej z powodu błędu próbkowania.</p>
-<p><strong>Błędy niepróbkowe</strong>: Błędy nie wynikające z przypadku, które mogą wystąpić zarówno w badaniach próbkowych, jak i spisach.</p>
-<ol type="1">
-<li><p><strong>Błąd pokrycia</strong>: Gdy operat losowania nie reprezentuje dokładnie populacji.</p>
-<p>Przykład: Badanie telefoniczne, które dzwoni tylko na telefony stacjonarne, pominęłoby osoby posiadające tylko telefony komórkowe, potencjalnie wypaczając wyniki.</p></li>
-<li><p><strong>Błąd braku odpowiedzi</strong>: Gdy wybrani uczestnicy nie odpowiadają, potencjalnie wprowadzając błąd systematyczny.</p>
-<p>Przykład: W badaniu satysfakcji z pracy, bardzo zadowoleni lub bardzo niezadowoleni pracownicy mogą być bardziej skłonni do odpowiedzi, wypaczając wyniki.</p></li>
-<li><p><strong>Błąd pomiaru</strong>: Niedokładności w zebranych danych.</p>
-<p>Przykład: Źle sformułowane pytanie ankietowe może być różnie interpretowane przez różnych respondentów, prowadząc do niespójnych danych.</p></li>
-<li><p><strong>Błąd przetwarzania</strong>: Błędy popełnione podczas wprowadzania danych, kodowania lub analizy.</p>
-<p>Przykład: Przypadkowe wprowadzenie “99” zamiast “9” dla odpowiedzi uczestnika mogłoby znacząco wypaczyć wyniki.</p></li>
-</ol>
-</section>
-<section id="wielkość-próby-i-moc-statystyczna" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="wielkość-próby-i-moc-statystyczna"><span class="header-section-number">8.6</span> Wielkość Próby i Moc Statystyczna</h2>
-<p>Określenie odpowiedniej wielkości próby wymaga zrównoważenia potrzeby precyzji z dostępnymi zasobami.</p>
-<p><strong>Rozważania dotyczące wielkości próby:</strong> - Większe próby generalnie zapewniają bardziej precyzyjne oszacowania, ale są bardziej kosztowne i czasochłonne do uzyskania. - Wymagana wielkość próby zależy od czynników takich jak pożądany poziom precyzji, zmienność w populacji i rodzaj planowanej analizy.</p>
-<p><strong>Przykład:</strong> Aby oszacować proporcję wyborców popierających konkretną politykę z marginesem błędu ±3% na poziomie ufności 95%, potrzebna byłaby próba około 1067 wyborców (zakładając maksymalną zmienność).</p>
-<p><strong>Moc statystyczna:</strong> Prawdopodobieństwo, że badanie wykryje efekt, gdy taki efekt istnieje.</p>
-<p>Czynniki wpływające na moc: 1. Wielkość próby 2. Wielkość efektu (wielkość różnicy lub związku, który próbujemy wykryć) 3. Wybrany poziom istotności (zwykle 0,05)</p>
-<p><strong>Przykład:</strong> W badaniu porównującym dwie metody nauczania, większa wielkość próby zwiększyłaby prawdopodobieństwo wykrycia istotnej różnicy między metodami, jeśli taka różnica istnieje.</p>
-</section>
-<section id="próbkowanie-w-erze-cyfrowej" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="próbkowanie-w-erze-cyfrowej"><span class="header-section-number">8.7</span> Próbkowanie w Erze Cyfrowej</h2>
-<p>Pojawienie się big data i technologii cyfrowych zmieniło praktyki próbkowania w wielu dziedzinach.</p>
-<p><strong>Możliwości i wyzwania Big Data:</strong> - Bezprecedensowe ilości dostępnych informacji - Potencjalny brak reprezentatywności - Problemy z jakością danych - Kwestie prywatności i etyki</p>
-<p><strong>Przykład:</strong> Dane z mediów społecznościowych mogą dostarczyć wglądu w opinię publiczną w czasie rzeczywistym, ale użytkownicy konkretnej platformy mogą nie być reprezentatywni dla ogólnej populacji.</p>
-<p><strong>Badania internetowe:</strong> - Oferują nowe możliwości zbierania danych - Stają przed wyzwaniami takimi jak błąd pokrycia (nie każdy ma dostęp do internetu) i błąd samoselekcji</p>
-<p><strong>Przykład:</strong> Ankieta online na temat nawyków korzystania z internetu z natury wykluczałaby osoby bez dostępu do internetu, potencjalnie wypaczając wyniki.</p>
-</section>
-<section id="etyczne-aspekty-próbkowania" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="etyczne-aspekty-próbkowania"><span class="header-section-number">8.8</span> Etyczne Aspekty Próbkowania</h2>
-<p>Etyczne praktyki próbkowania są kluczowe w badaniach nauk społecznych:</p>
-<ol type="1">
-<li><p><strong>Świadoma zgoda</strong>: Uczestnicy powinni rozumieć cel badania i zgodzić się na udział.</p>
-<p>Przykład: Przed przeprowadzeniem wywiadów na temat wrażliwych tematów, takich jak zdrowie psychiczne, badacze muszą jasno wyjaśnić cele badania i potencjalne ryzyko uczestnikom.</p></li>
-<li><p><strong>Prywatność i poufność</strong>: Badacze muszą chronić dane osobowe uczestników.</p>
-<p>Przykład: W badaniu dotyczącym mobbingu w miejscu pracy, badacze mogą używać kodów numerycznych zamiast nazwisk, aby chronić tożsamość uczestników.</p></li>
-<li><p><strong>Reprezentatywność i inkluzywność</strong>: Próby powinny sprawiedliwie reprezentować zróżnicowane populacje, w tym grupy marginalizowane.</p></li>
-</ol>
-<p>Przykład: Badanie dotyczące mieszkalnictwa miejskiego powinno dołożyć starań, aby uwzględnić uczestników z różnych środowisk społeczno-ekonomicznych, grup etnicznych i sytuacji mieszkaniowych.</p>
-</section>
-<section id="studia-przypadków" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="studia-przypadków"><span class="header-section-number">8.9</span> Studia Przypadków</h2>
-<p>[Ta sekcja zawierałaby szczegółowe przykłady zastosowania próbkowania w praktyce, takie jak:]</p>
-<ol type="1">
-<li><p><strong>Jak organizacje badania opinii publicznej przewidują wyniki wyborów</strong></p>
-<p>Przykład: Wyobraźmy sobie, że chcemy przewidzieć wynik wyborów prezydenckich w Polsce. Ośrodek badania opinii publicznej mógłby zastosować następującą metodologię:</p>
-<ul>
-<li>Zastosowanie próbkowania warstwowego, dzieląc populację na warstwy według województw.</li>
-<li>Losowy wybór respondentów z każdej warstwy, proporcjonalnie do liczby mieszkańców.</li>
-<li>Przeprowadzenie wywiadów telefonicznych z wybranymi osobami, pytając o ich preferencje wyborcze.</li>
-<li>Ważenie wyników, aby skorygować ewentualne nadreprezentacje lub niedoreprezentacje pewnych grup demograficznych.</li>
-<li>Obliczenie marginesu błędu i przedziałów ufności dla otrzymanych wyników.</li>
+<li>Testy A/B: Zazwyczaj stosowane w środowiskach cyfrowych do szybkich, iteracyjnych ulepszeń.</li>
+<li>RCT: Stosowane w różnych dziedzinach, w tym medycynie, psychologii i naukach społecznych, często dla bardziej złożonych interwencji.</li>
 </ul></li>
-<li><p><strong>Jak firmy wykorzystują badania rynku do zrozumienia preferencji konsumentów</strong></p>
-<p>Przykład: Firma produkująca napoje chce wprowadzić nowy smak na rynek polski. Mogłaby przeprowadzić badanie w następujący sposób:</p>
+<li><strong>Czas Trwania:</strong>
 <ul>
-<li>Wykorzystanie próbkowania kwotowego, aby zapewnić reprezentację różnych grup wiekowych i regionów.</li>
-<li>Organizacja degustacji w centrach handlowych w różnych miastach.</li>
-<li>Przeprowadzenie ankiet online wśród członków panelu konsumenckiego.</li>
-<li>Analiza danych z uwzględnieniem różnic demograficznych i geograficznych.</li>
-<li>Wykorzystanie wyników do dostosowania produktu i strategii marketingowej.</li>
+<li>Testy A/B: Zwykle krótsze, często trwające dni lub tygodnie.</li>
+<li>RCT: Mogą trwać miesiące lub lata, szczególnie w badaniach medycznych.</li>
 </ul></li>
-<li><p><strong>Jak badacze zdrowia publicznego badają występowanie chorób w populacjach</strong></p>
-<p>Przykład: Badanie częstości występowania cukrzycy typu 2 w Polsce:</p>
+<li><strong>Wielkość Próby:</strong>
 <ul>
-<li>Zastosowanie próbkowania dwustopniowego: najpierw losowy wybór gmin, potem losowy wybór mieszkańców w tych gminach.</li>
-<li>Przeprowadzenie badań przesiewowych wśród wybranych osób (pomiary poziomu cukru we krwi, BMI, itp.).</li>
-<li>Zbieranie dodatkowych danych o stylu życia i historii medycznej.</li>
-<li>Analiza danych z uwzględnieniem czynników demograficznych i środowiskowych.</li>
-<li>Oszacowanie częstości występowania cukrzycy w całej populacji na podstawie wyników próby.</li>
+<li>Testy A/B: Mogą obejmować bardzo duże próby ze względu na łatwość implementacji na platformach cyfrowych.</li>
+<li>RCT: Wielkości prób są często mniejsze ze względu na praktyczne i kosztowe ograniczenia.</li>
+</ul></li>
+<li><strong>Zaślepienie:</strong>
+<ul>
+<li>Testy A/B: Uczestnicy zazwyczaj nie są świadomi, że biorą udział w teście.</li>
+<li>RCT: Mogą obejmować pojedyncze, podwójne lub potrójne zaślepienie w celu zmniejszenia błędu systematycznego.</li>
+</ul></li>
+<li><strong>Względy Etyczne:</strong>
+<ul>
+<li>Testy A/B: Generalnie obejmują zmiany niskiego ryzyka z minimalnymi obawami etycznymi.</li>
+<li>RCT: Często wymagają obszernej oceny etycznej, szczególnie w kontekście medycznym.</li>
+</ul></li>
+<li><strong>Miary Wyników:</strong>
+<ul>
+<li>Testy A/B: Zazwyczaj skupiają się na pojedynczym, łatwo mierzalnym wyniku (np. współczynnik klikalności).</li>
+<li>RCT: Często mierzą wiele wyników, w tym potencjalne skutki uboczne lub długoterminowe efekty.</li>
+</ul></li>
+<li><strong>Możliwość Uogólnienia:</strong>
+<ul>
+<li>Testy A/B: Wyniki są często specyficzne dla testowanej platformy lub kontekstu.</li>
+<li>RCT: Dążą do szerszej możliwości uogólnienia, choć może to się różnić.</li>
+</ul></li>
+<li><strong>Złożoność Analizy:</strong>
+<ul>
+<li>Testy A/B: Często wykorzystują prostsze analizy statystyczne.</li>
+<li>RCT: Mogą obejmować bardziej złożone metody statystyczne, aby uwzględnić różne czynniki.</li>
 </ul></li>
 </ol>
+<p>Testy A/B są potężnym narzędziem do podejmowania decyzji opartych na danych w środowiskach cyfrowych. Choć dzielą podstawową zasadę randomizacji z RCT, są zazwyczaj prostsze, szybsze i bardziej skoncentrowane na konkretnych, mierzalnych wynikach w kontekstach cyfrowych. Zrozumienie tych różnic pomaga badaczom i praktykom wybrać najbardziej odpowiednią metodę do ich konkretnych potrzeb i ograniczeń.</p>
+<p>Testy A/B są szczególnie przydatne w optymalizacji stron internetowych, aplikacji mobilnych i kampanii marketingowych, gdzie szybkie iteracje i ciągłe ulepszenia są kluczowe. Z kolei RCT pozostają złotym standardem w badaniach naukowych, szczególnie w dziedzinach takich jak medycyna, gdzie rygorystyczna kontrola i długoterminowa obserwacja są niezbędne.</p>
+<p>Niezależnie od wybranej metody, kluczowe jest staranne planowanie, precyzyjne wykonanie i ostrożna interpretacja wyników. Zarówno testy A/B, jak i RCT, gdy są odpowiednio stosowane, mogą dostarczyć cennych informacji i przyczynić się do podejmowania lepszych decyzji opartych na danych.</p>
 </section>
-<section id="podsumowanie" class="level2" data-number="8.10">
-<h2 data-number="8.10" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">8.10</span> Podsumowanie</h2>
-<p>Próbkowanie pozostaje fundamentem badań w naukach społecznych, nawet w erze big data. Zrozumienie zasad próbkowania pomaga badaczom projektować badania, interpretować wyniki i wyciągać trafne wnioski o populacjach. Jak widzieliśmy, droga od próby do populacji wymaga starannego rozważenia metod próbkowania, potencjalnych błędów, kwestii etycznych i stale ewoluującego krajobrazu gromadzenia danych w erze cyfrowej.</p>
-<p>Kluczowe punkty do zapamiętania:</p>
-<ol type="1">
-<li>Losowość jest podstawą wielu metod próbkowania i pomaga zapewnić reprezentatywność próby.</li>
-<li>Istnieją różne metody próbkowania, zarówno probabilistyczne, jak i nieprobabilistyczne, każda z własnymi zaletami i ograniczeniami.</li>
-<li>Wnioskowanie statystyczne pozwala nam wyciągać wnioski o populacji na podstawie danych z próby.</li>
-<li>Błędy próbkowania i niepróbkowe mogą wpływać na jakość naszych wniosków, dlatego ważne jest ich zrozumienie i minimalizowanie.</li>
-<li>Wielkość próby i moc statystyczna są kluczowe dla zapewnienia wiarygodności wyników badań.</li>
-<li>Era cyfrowa przynosi nowe możliwości i wyzwania w zakresie próbkowania i gromadzenia danych.</li>
-<li>Etyczne aspekty próbkowania, w tym świadoma zgoda, prywatność i reprezentatywność, są nieodłączną częścią procesu badawczego.</li>
-</ol>
+<section id="przykład-1-wpływ-długości-snu-na-wydajność-poznawczą" class="level3" data-number="8.3.4">
+<h3 data-number="8.3.4" class="anchored" data-anchor-id="przykład-1-wpływ-długości-snu-na-wydajność-poznawczą"><span class="header-section-number">8.3.4</span> Przykład 1: Wpływ Długości Snu na Wydajność Poznawczą</h3>
+<p><strong>Pytanie Badawcze:</strong> Czy zwiększenie długości snu poprawia wydajność poznawczą u studentów?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych danych</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>pre_eksperymentalna <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>post_eksperymentalna <span class="ot">&lt;-</span> pre_eksperymentalna <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>pre_kontrolna <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>post_kontrolna <span class="ot">&lt;-</span> pre_kontrolna <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">1</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Grupa =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Eksperymentalna"</span>, <span class="st">"Kontrolna"</span>), <span class="at">each =</span> n<span class="sc">*</span><span class="dv">2</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Czas =</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Przed"</span>, <span class="st">"Po"</span>), <span class="at">each =</span> n), <span class="dv">2</span>),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Wynik =</span> <span class="fu">c</span>(pre_eksperymentalna, post_eksperymentalna, pre_kontrolna, post_kontrolna)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Czas, <span class="at">y =</span> Wynik, <span class="at">color =</span> Grupa, <span class="at">group =</span> Grupa)) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>) <span class="sc">+</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Wpływ Zwiększonej Długości Snu na Wydajność Poznawczą"</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Czas"</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Wynik Wydajności Poznawczej"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-eksperyment-sen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eksperyment-sen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rozdzial4_files/figure-html/fig-eksperyment-sen-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eksperyment-sen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Wpływ Długości Snu na Wydajność Poznawczą
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretacja" class="level4" data-number="8.3.4.1">
+<h4 data-number="8.3.4.1" class="anchored" data-anchor-id="interpretacja"><span class="header-section-number">8.3.4.1</span> Interpretacja</h4>
+<p>Ten wykres pokazuje wpływ zwiększonej długości snu na wydajność poznawczą. Grupa eksperymentalna, która zwiększyła długość snu, wykazuje znacznie większą poprawę w wydajności poznawczej w porównaniu do grupy kontrolnej. Sugeruje to, że zwiększenie długości snu może pozytywnie wpływać na zdolności poznawcze studentów.</p>
 </section>
-<section id="pytania-kontrolne-i-ćwiczenia" class="level2" data-number="8.11">
-<h2 data-number="8.11" class="anchored" data-anchor-id="pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">8.11</span> Pytania Kontrolne i Ćwiczenia</h2>
-<ol type="1">
-<li><p>Jakie są główne różnice między próbkowaniem probabilistycznym a nieprobabilistycznym? Podaj przykłady sytuacji, w których każde z nich mogłoby być odpowiednie.</p></li>
-<li><p>Wyobraź sobie, że prowadzisz badanie dotyczące opinii studentów na temat nauczania zdalnego. Zaproponuj odpowiednią metodę próbkowania i uzasadnij swój wybór.</p></li>
-<li><p>Jakie potencjalne błędy próbkowania i niepróbkowe mogłyby wystąpić w badaniu opisanym w pytaniu 2? Jak można by je zminimalizować?</p></li>
-<li><p>Oblicz wymaganą wielkość próby dla badania opinii publicznej, zakładając poziom ufności 95%, margines błędu 3% i maksymalną zmienność (p = 0,5).</p></li>
-<li><p>Omów etyczne aspekty próbkowania w kontekście badania wrażliwych grup społecznych, takich jak osoby bezdomne lub nieletni.</p></li>
-<li><p>Jak era big data wpływa na tradycyjne metody próbkowania? Omów zarówno możliwości, jak i wyzwania.</p></li>
-</ol>
 </section>
-<section id="dalsza-lektura" class="level2" data-number="8.12">
-<h2 data-number="8.12" class="anchored" data-anchor-id="dalsza-lektura"><span class="header-section-number">8.12</span> Dalsza Lektura</h2>
+<section id="przykład-2-wpływ-treningu-uważności-na-poziom-stresu" class="level3" data-number="8.3.5">
+<h3 data-number="8.3.5" class="anchored" data-anchor-id="przykład-2-wpływ-treningu-uważności-na-poziom-stresu"><span class="header-section-number">8.3.5</span> Przykład 2: Wpływ Treningu Uważności na Poziom Stresu</h3>
+<p><strong>Pytanie Badawcze:</strong> Czy krótkoterminowy program treningu uważności może obniżyć poziom stresu u pracowników służby zdrowia?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych danych</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>pre_eksperymentalna <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>post_eksperymentalna <span class="ot">&lt;-</span> pre_eksperymentalna <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">12</span>, <span class="at">sd =</span> <span class="dv">8</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>pre_kontrolna <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>post_kontrolna <span class="ot">&lt;-</span> pre_kontrolna <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">sd =</span> <span class="dv">6</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Grupa =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Uważność"</span>, <span class="st">"Kontrolna"</span>), <span class="at">each =</span> n<span class="sc">*</span><span class="dv">2</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Czas =</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Przed"</span>, <span class="st">"Po"</span>), <span class="at">each =</span> n), <span class="dv">2</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">PoziomStresu =</span> <span class="fu">c</span>(pre_eksperymentalna, post_eksperymentalna, pre_kontrolna, post_kontrolna)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Czas, <span class="at">y =</span> PoziomStresu, <span class="at">color =</span> Grupa, <span class="at">group =</span> Grupa)) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Wpływ Treningu Uważności na Poziom Stresu"</span>) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Czas"</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Poziom Stresu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-eksperyment-uwaznosc" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eksperyment-uwaznosc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rozdzial4_files/figure-html/fig-eksperyment-uwaznosc-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eksperyment-uwaznosc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: Wpływ Treningu Uważności na Poziom Stresu
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretacja-1" class="level4" data-number="8.3.5.1">
+<h4 data-number="8.3.5.1" class="anchored" data-anchor-id="interpretacja-1"><span class="header-section-number">8.3.5.1</span> Interpretacja</h4>
+<p>Ta wizualizacja ilustruje wpływ programu treningu uważności na poziom stresu u pracowników służby zdrowia. Grupa uważności wykazuje znacznie większy spadek poziomu stresu w porównaniu do grupy kontrolnej. Sugeruje to, że program treningu uważności może być skuteczny w redukcji poziomu stresu wśród pracowników służby zdrowia.</p>
+</section>
+</section>
+<section id="projekty-czynnikowe" class="level3" data-number="8.3.6">
+<h3 data-number="8.3.6" class="anchored" data-anchor-id="projekty-czynnikowe"><span class="header-section-number">8.3.6</span> Projekty Czynnikowe</h3>
+<p>Projekty czynnikowe pozwalają badaczom na jednoczesne badanie efektów wielu zmiennych niezależnych. Są one efektywne i mogą ujawniać efekty interakcji między zmiennymi.</p>
+<p>Przykład projektu czynnikowego 2x2:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie przykładowych danych dla projektu czynnikowego 2x2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>n_per_group <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>factorial_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">czynnik_a =</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Niski"</span>, <span class="st">"Wysoki"</span>), <span class="at">each =</span> n_per_group), <span class="dv">2</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">czynnik_b =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Kontrola"</span>, <span class="st">"Interwencja"</span>), <span class="at">each =</span> n_per_group <span class="sc">*</span> <span class="dv">2</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">wynik =</span> <span class="cn">NA</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie wyników</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>factorial_data<span class="sc">$</span>wynik <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(factorial_data<span class="sc">$</span>czynnik_a <span class="sc">==</span> <span class="st">"Niski"</span> <span class="sc">&amp;</span> factorial_data<span class="sc">$</span>czynnik_b <span class="sc">==</span> <span class="st">"Kontrola"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">rnorm</span>(n_per_group, <span class="dv">40</span>, <span class="dv">5</span>),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                               <span class="fu">ifelse</span>(factorial_data<span class="sc">$</span>czynnik_a <span class="sc">==</span> <span class="st">"Niski"</span> <span class="sc">&amp;</span> factorial_data<span class="sc">$</span>czynnik_b <span class="sc">==</span> <span class="st">"Interwencja"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">rnorm</span>(n_per_group, <span class="dv">45</span>, <span class="dv">5</span>),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">ifelse</span>(factorial_data<span class="sc">$</span>czynnik_a <span class="sc">==</span> <span class="st">"Wysoki"</span> <span class="sc">&amp;</span> factorial_data<span class="sc">$</span>czynnik_b <span class="sc">==</span> <span class="st">"Kontrola"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                                             <span class="fu">rnorm</span>(n_per_group, <span class="dv">50</span>, <span class="dv">5</span>),</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                                             <span class="fu">rnorm</span>(n_per_group, <span class="dv">60</span>, <span class="dv">5</span>))))</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(factorial_data, <span class="fu">aes</span>(<span class="at">x =</span> czynnik_b, <span class="at">y =</span> wynik, <span class="at">fill =</span> czynnik_a)) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>czynnik_a, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Projekt Czynnikowy 2x2"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Czynnik B"</span>, <span class="at">y =</span> <span class="st">"Wynik"</span>, <span class="at">fill =</span> <span class="st">"Czynnik A"</span>) <span class="sc">+</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial4_files/figure-html/factorial-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Projekt Czynnikowy 2x2</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ten wykres ilustruje projekt czynnikowy 2x2, pokazując efekty dwóch czynników (A i B) na zmienną wynikową. Możemy zaobserwować główne efekty dla obu czynników oraz potencjalny efekt interakcji.</p>
+</section>
+</section>
+<section id="projekty-nieeksperymentalne" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="projekty-nieeksperymentalne"><span class="header-section-number">8.4</span> Projekty Nieeksperymentalne</h2>
+<p>Projekty nieeksperymentalne są stosowane, gdy randomizacja lub manipulacja zmiennymi nie jest możliwa lub etyczna. Obejmują one badania obserwacyjne/opisowe i quasi-eksperymentalne.</p>
+<section id="badania-obserwacyjne" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="badania-obserwacyjne"><span class="header-section-number">8.4.1</span> Badania Obserwacyjne</h3>
+<p>Badania obserwacyjne polegają na zbieraniu danych bez manipulowania zmiennymi. Są one przydatne do eksploracji relacji i generowania hipotez.</p>
+<p>Przykład: Badanie korelacyjne</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>czas_nauki <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>wynik_egzaminu <span class="ot">&lt;-</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> czas_nauki <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>correlation_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(czas_nauki, wynik_egzaminu)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(correlation_data, <span class="fu">aes</span>(<span class="at">x =</span> czas_nauki, <span class="at">y =</span> wynik_egzaminu)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Korelacja między Czasem Nauki a Wynikiem Egzaminu"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Czas Nauki (godziny)"</span>, <span class="at">y =</span> <span class="st">"Wynik Egzaminu"</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial4_files/figure-html/correlation-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Korelacja między Czasem Nauki a Wynikiem Egzaminu</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ten wykres punktowy pokazuje relację między czasem nauki a wynikami egzaminu, ilustrując pozytywną korelację typową dla badań obserwacyjnych.</p>
+</section>
+<section id="projekty-quasi-eksperymentalne" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="projekty-quasi-eksperymentalne"><span class="header-section-number">8.4.2</span> Projekty Quasi-Eksperymentalne</h3>
+<p>Projekty quasi-eksperymentalne nie mają losowego przydziału, ale próbują ustalić związki przyczynowe. Popularne typy to:</p>
 <ol type="1">
-<li>Babbie, E. (2020). “Badania społeczne w praktyce”. Warszawa: Wydawnictwo Naukowe PWN.</li>
-<li>Frankfort-Nachmias, C., &amp; Nachmias, D. (2001). “Metody badawcze w naukach społecznych”. Poznań: Zysk i S-ka.</li>
-<li>Gruszczyński, L. A. (2003). “Kwestionariusze w socjologii: budowa narzędzi do badań surveyowych”. Katowice: Wydawnictwo Uniwersytetu Śląskiego.</li>
-<li>Szreder, M. (2010). “Metody i techniki sondażowych badań opinii”. Warszawa: Polskie Wydawnictwo Ekonomiczne.</li>
-<li>Brzeziński, J. (2019). “Metodologia badań psychologicznych”. Warszawa: Wydawnictwo Naukowe PWN.</li>
+<li>Różnica w Różnicach (DiD)</li>
+<li>Regresja Nieciągła (RDD)</li>
 </ol>
-<p>Te źródła zapewniają dogłębne omówienie tematów związanych z próbkowaniem i metodologią badań w naukach społecznych w kontekście polskim.</p>
+<section id="różnica-w-różnicach-did" class="level4" data-number="8.4.2.1">
+<h4 data-number="8.4.2.1" class="anchored" data-anchor-id="różnica-w-różnicach-did"><span class="header-section-number">8.4.2.1</span> Różnica w Różnicach (DiD)</h4>
+<p>DiD jest używana do oszacowania efektów interwencji poprzez porównanie średniej zmiany w czasie w zmiennej wynikowej dla grupy eksperymentalnej ze średnią zmianą w czasie dla grupy kontrolnej.</p>
+<p>Przeprowadźmy symulację analizy DiD przy użyciu pakietu <code>plm</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'plm'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dplyr':
+
+    between, lag, lead</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie syntetycznych danych panelowych</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>okresy_czasu <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>panel_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n, <span class="at">each =</span> okresy_czasu),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">czas =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>okresy_czasu, <span class="at">times =</span> n),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">interwencja =</span> <span class="fu">rep</span>(<span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="at">each =</span> okresy_czasu),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">wynik =</span> <span class="cn">NA</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie wyników</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>panel_data<span class="sc">$</span>wynik <span class="ot">&lt;-</span> <span class="fu">with</span>(panel_data,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> czas <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> interwencja <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> (czas <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;</span> interwencja <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n <span class="sc">*</span> okresy_czasu, <span class="dv">0</span>, <span class="dv">2</span>))</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Estymacja modelu DiD</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>did_model <span class="ot">&lt;-</span> <span class="fu">plm</span>(wynik <span class="sc">~</span> interwencja <span class="sc">*</span> <span class="fu">factor</span>(czas), </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> panel_data, </span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>                 <span class="at">index =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"czas"</span>), </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>                 <span class="at">model =</span> <span class="st">"within"</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Podsumowanie wyników</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(did_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Oneway (individual) effect Within Model
+
+Call:
+plm(formula = wynik ~ interwencja * factor(czas), data = panel_data, 
+    model = "within", index = c("id", "czas"))
+
+Balanced Panel: n = 1000, T = 5, N = 5000
+
+Residuals:
+     Min.   1st Qu.    Median   3rd Qu.      Max. 
+-5.932194 -1.200686 -0.033411  1.236533  6.439693 
+
+Coefficients:
+                           Estimate Std. Error t-value Pr(&gt;|t|)    
+factor(czas)2              2.077222   0.124505 16.6838   &lt;2e-16 ***
+factor(czas)3              4.161871   0.124505 33.4273   &lt;2e-16 ***
+factor(czas)4              5.960653   0.124505 47.8748   &lt;2e-16 ***
+factor(czas)5              8.164066   0.124505 65.5722   &lt;2e-16 ***
+interwencja:factor(czas)2 -0.020059   0.180272 -0.1113   0.9114    
+interwencja:factor(czas)3  2.688227   0.180272 14.9121   &lt;2e-16 ***
+interwencja:factor(czas)4  3.084521   0.180272 17.1104   &lt;2e-16 ***
+interwencja:factor(czas)5  2.867242   0.180272 15.9051   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Total Sum of Squares:    78894
+Residual Sum of Squares: 16182
+R-Squared:      0.79489
+Adj. R-Squared: 0.74315
+F-statistic: 1933.82 on 8 and 3992 DF, p-value: &lt; 2.22e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wizualizacja DiD</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(panel_data, <span class="fu">aes</span>(<span class="at">x =</span> czas, <span class="at">y =</span> wynik, <span class="at">color =</span> <span class="fu">factor</span>(interwencja), <span class="at">group =</span> interwencja)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Analiza Różnicy w Różnicach"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Czas"</span>, <span class="at">y =</span> <span class="st">"Wynik"</span>, <span class="at">color =</span> <span class="st">"Interwencja"</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Kontrola"</span>, <span class="st">"Interwencja"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial4_files/figure-html/did-analysis-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Analiza Różnicy w Różnicach</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Wykres pokazuje średnie wyniki dla grup interwencji i kontrolnej w czasie. Pionowa przerywana linia wskazuje punkt interwencji. Oszacowanie DiD to różnica między zmianami obu grup od okresu przed do po interwencji.</p>
+</section>
+<section id="regresja-nieciągła-rdd" class="level4" data-number="8.4.2.2">
+<h4 data-number="8.4.2.2" class="anchored" data-anchor-id="regresja-nieciągła-rdd"><span class="header-section-number">8.4.2.2</span> Regresja Nieciągła (RDD)</h4>
+<p>RDD jest stosowana, gdy przydział do interwencji jest określony przez wartość graniczną na ciągłej zmiennej. Porównuje obserwacje tuż powyżej i poniżej punktu granicznego, aby oszacować efekt interwencji.</p>
+<p>Przeprowadźmy analizę RDD przy użyciu pakietu <code>rdrobust</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rdrobust)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie syntetycznych danych RDD</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> (x <span class="sc">&gt;=</span> <span class="dv">0</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>rdd_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Analiza RDD</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>rdd_result <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(y, x, <span class="at">c =</span> <span class="dv">0</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdd_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sharp RD estimates using local polynomial regression.
+
+Number of Obs.                 1000
+BW type                       mserd
+Kernel                   Triangular
+VCE method                       NN
+
+Number of Obs.                  499          501
+Eff. Number of Obs.             182          175
+Order est. (p)                    1            1
+Order bias  (q)                   2            2
+BW est. (h)                   0.362        0.362
+BW bias (b)                   0.575        0.575
+rho (h/b)                     0.630        0.630
+Unique Obs.                     499          501
+
+=============================================================================
+        Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
+=============================================================================
+  Conventional     4.092     0.231    17.723     0.000     [3.640 , 4.545]     
+        Robust         -         -    15.013     0.000     [3.600 , 4.680]     
+=============================================================================</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wizualizacja RDD</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rdd_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> <span class="fu">subset</span>(rdd_data, x <span class="sc">&lt;</span> <span class="dv">0</span>), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> <span class="fu">subset</span>(rdd_data, x <span class="sc">&gt;=</span> <span class="dv">0</span>), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Regresja Nieciągła"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Zmienna Bieżąca"</span>, <span class="at">y =</span> <span class="st">"Wynik"</span>) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial4_files/figure-html/rdd-analysis-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Analiza Regresji Nieciągłej</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Wykres pokazuje nieciągłość w punkcie granicznym (x = 0), z oddzielnymi liniami regresji dopasowanymi po obu stronach. Efekt interwencji jest szacowany przez różnicę między tymi liniami w punkcie granicznym.</p>
+</section>
+</section>
+</section>
+<section id="model-potencjalnych-wyników-neymana-rubina" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="model-potencjalnych-wyników-neymana-rubina"><span class="header-section-number">8.5</span> Model Potencjalnych Wyników Neymana-Rubina</h2>
+<p>Model potencjalnych wyników Neymana-Rubina zapewnia formalne podejście do wnioskowania przyczynowego. Wprowadza on koncepcję potencjalnych wyników: dla każdej jednostki rozważamy wynik w warunkach interwencji i w warunkach kontrolnych, mimo że w rzeczywistości możemy zaobserwować tylko jeden z nich.</p>
+<p>Kluczowe pojęcia:</p>
+<ol type="1">
+<li><strong>Potencjalne Wyniki</strong>: <span class="math inline">\(Y_i(1)\)</span> i <span class="math inline">\(Y_i(0)\)</span> odpowiednio dla interwencji i kontroli.</li>
+<li><strong>Obserwowany Wynik</strong>: <span class="math inline">\(Y_i = Y_i(1)T_i + Y_i(0)(1-T_i)\)</span>, gdzie <span class="math inline">\(T_i\)</span> to wskaźnik interwencji.</li>
+<li><strong>Indywidualny Efekt Interwencji</strong>: <span class="math inline">\(\tau_i = Y_i(1) - Y_i(0)\)</span></li>
+<li><strong>Przeciętny Efekt Interwencji (ATE)</strong>: <span class="math inline">\(E[\tau_i] = E[Y_i(1) - Y_i(0)]\)</span></li>
+</ol>
+<p>Model podkreśla “fundamentalny problem wnioskowania przyczynowego”: nigdy nie możemy zaobserwować obu potencjalnych wyników dla pojedynczej jednostki jednocześnie.</p>
+<section id="przykład-szacowanie-ate-w-rct" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="przykład-szacowanie-ate-w-rct"><span class="header-section-number">8.5.1</span> Przykład: Szacowanie ATE w RCT</h3>
+<p>W RCT, losowy przydział zapewnia, że interwencja jest niezależna od potencjalnych wyników, umożliwiając nieobciążone oszacowanie ATE:</p>
+<p><span class="math display">\[
+\hat{ATE} = \frac{1}{n_1} \sum_{i:T_i=1} Y_i - \frac{1}{n_0} \sum_{i:T_i=0} Y_i
+\]</span></p>
+<p>Gdzie <span class="math inline">\(n_1\)</span> i <span class="math inline">\(n_0\)</span> to odpowiednio liczby jednostek w grupie interwencji i kontrolnej.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Używając danych RCT z wcześniejszego przykładu</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>ate_estimate <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>post_test[data<span class="sc">$</span>grupa <span class="sc">==</span> <span class="st">"Eksperymentalna"</span>]) <span class="sc">-</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                <span class="fu">mean</span>(data<span class="sc">$</span>post_test[data<span class="sc">$</span>grupa <span class="sc">==</span> <span class="st">"Kontrolna"</span>])</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Oszacowany Przeciętny Efekt Interwencji:"</span>, <span class="fu">round</span>(ate_estimate, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Oszacowany Przeciętny Efekt Interwencji: 9.66</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -829,13 +1259,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter4.html" class="pagination-link" aria-label="From Sample to Population - Understanding Randomness, Sampling, and Inference">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span>
+      <a href="./chapter4.html" class="pagination-link" aria-label="Research Designs: Experimental and Non-Experimental Approaches">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Designs: Experimental and Non-Experimental Approaches</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter5.html" class="pagination-link" aria-label="Validity, Reliability, and Study Types in Social Sciences">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter5.html" class="pagination-link" aria-label="Comprehensive Guide to Univariate Descriptive Statistics">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

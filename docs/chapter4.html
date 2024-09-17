@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 7&nbsp; From Sample to Population - Understanding Randomness, Sampling, and Inference</title>
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 9&nbsp; Research Designs: Experimental and Non-Experimental Approaches</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./rozdzial4.html" rel="next">
-<link href="./rozdzial3.html" rel="prev">
+<link href="./rozdzial3b.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter4.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter4.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Research Designs: Experimental and Non-Experimental Approaches</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,25 +202,49 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reliability and Validity in Research</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial3b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">rozdzial3b.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Research Designs: Experimental and Non-Experimental Approaches</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -176,22 +263,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-randomness" id="toc-introduction-to-randomness" class="nav-link active" data-scroll-target="#introduction-to-randomness"><span class="header-section-number">7.1</span> Introduction to Randomness</a></li>
-  <li><a href="#sampling-bridging-sample-and-population" id="toc-sampling-bridging-sample-and-population" class="nav-link" data-scroll-target="#sampling-bridging-sample-and-population"><span class="header-section-number">7.2</span> Sampling: Bridging Sample and Population</a></li>
-  <li><a href="#sampling-methods" id="toc-sampling-methods" class="nav-link" data-scroll-target="#sampling-methods"><span class="header-section-number">7.3</span> Sampling Methods</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">9.1</span> Introduction</a></li>
+  <li><a href="#experimental-designs" id="toc-experimental-designs" class="nav-link" data-scroll-target="#experimental-designs"><span class="header-section-number">9.2</span> Experimental Designs</a>
   <ul class="collapse">
-  <li><a href="#probability-sampling" id="toc-probability-sampling" class="nav-link" data-scroll-target="#probability-sampling"><span class="header-section-number">7.3.1</span> Probability Sampling</a></li>
-  <li><a href="#non-probability-sampling" id="toc-non-probability-sampling" class="nav-link" data-scroll-target="#non-probability-sampling"><span class="header-section-number">7.3.2</span> Non-probability Sampling</a></li>
+  <li><a href="#randomized-controlled-trials-rcts" id="toc-randomized-controlled-trials-rcts" class="nav-link" data-scroll-target="#randomized-controlled-trials-rcts"><span class="header-section-number">9.2.1</span> Randomized Controlled Trials (RCTs)</a></li>
   </ul></li>
-  <li><a href="#making-inferences-from-samples" id="toc-making-inferences-from-samples" class="nav-link" data-scroll-target="#making-inferences-from-samples"><span class="header-section-number">7.4</span> Making Inferences from Samples</a></li>
-  <li><a href="#sampling-and-non-sampling-errors" id="toc-sampling-and-non-sampling-errors" class="nav-link" data-scroll-target="#sampling-and-non-sampling-errors"><span class="header-section-number">7.5</span> Sampling and Non-sampling Errors</a></li>
-  <li><a href="#sample-size-and-power" id="toc-sample-size-and-power" class="nav-link" data-scroll-target="#sample-size-and-power"><span class="header-section-number">7.6</span> Sample Size and Power</a></li>
-  <li><a href="#sampling-in-the-digital-age" id="toc-sampling-in-the-digital-age" class="nav-link" data-scroll-target="#sampling-in-the-digital-age"><span class="header-section-number">7.7</span> Sampling in the Digital Age</a></li>
-  <li><a href="#ethical-considerations-in-sampling" id="toc-ethical-considerations-in-sampling" class="nav-link" data-scroll-target="#ethical-considerations-in-sampling"><span class="header-section-number">7.8</span> Ethical Considerations in Sampling</a></li>
-  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies"><span class="header-section-number">7.9</span> Case Studies</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">7.10</span> Conclusion</a></li>
-  <li><a href="#review-questions-and-exercises" id="toc-review-questions-and-exercises" class="nav-link" data-scroll-target="#review-questions-and-exercises"><span class="header-section-number">7.11</span> Review Questions and Exercises</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">7.12</span> Further Reading</a></li>
+  <li><a href="#ab-testing-an-example-and-comparison-with-rcts" id="toc-ab-testing-an-example-and-comparison-with-rcts" class="nav-link" data-scroll-target="#ab-testing-an-example-and-comparison-with-rcts"><span class="header-section-number">9.3</span> A/B Testing: An Example and Comparison with RCTs</a>
+  <ul class="collapse">
+  <li><a href="#example-website-landing-page-conversion-rate" id="toc-example-website-landing-page-conversion-rate" class="nav-link" data-scroll-target="#example-website-landing-page-conversion-rate"><span class="header-section-number">9.3.1</span> Example: Website Landing Page Conversion Rate</a></li>
+  <li><a href="#ab-testing-methodology" id="toc-ab-testing-methodology" class="nav-link" data-scroll-target="#ab-testing-methodology"><span class="header-section-number">9.3.2</span> A/B Testing Methodology</a></li>
+  <li><a href="#differences-between-ab-testing-and-rcts" id="toc-differences-between-ab-testing-and-rcts" class="nav-link" data-scroll-target="#differences-between-ab-testing-and-rcts"><span class="header-section-number">9.3.3</span> Differences between A/B Testing and RCTs</a></li>
+  <li><a href="#example-1-effect-of-sleep-duration-on-cognitive-performance" id="toc-example-1-effect-of-sleep-duration-on-cognitive-performance" class="nav-link" data-scroll-target="#example-1-effect-of-sleep-duration-on-cognitive-performance"><span class="header-section-number">9.3.4</span> Example 1: Effect of Sleep Duration on Cognitive Performance</a></li>
+  <li><a href="#example-2-impact-of-mindfulness-training-on-stress-levels" id="toc-example-2-impact-of-mindfulness-training-on-stress-levels" class="nav-link" data-scroll-target="#example-2-impact-of-mindfulness-training-on-stress-levels"><span class="header-section-number">9.3.5</span> Example 2: Impact of Mindfulness Training on Stress Levels</a></li>
+  <li><a href="#factorial-designs" id="toc-factorial-designs" class="nav-link" data-scroll-target="#factorial-designs"><span class="header-section-number">9.3.6</span> Factorial Designs</a></li>
+  </ul></li>
+  <li><a href="#non-experimental-designs" id="toc-non-experimental-designs" class="nav-link" data-scroll-target="#non-experimental-designs"><span class="header-section-number">9.4</span> Non-Experimental Designs</a>
+  <ul class="collapse">
+  <li><a href="#observational-studies" id="toc-observational-studies" class="nav-link" data-scroll-target="#observational-studies"><span class="header-section-number">9.4.1</span> Observational Studies</a></li>
+  <li><a href="#quasi-experimental-designs" id="toc-quasi-experimental-designs" class="nav-link" data-scroll-target="#quasi-experimental-designs"><span class="header-section-number">9.4.2</span> Quasi-Experimental Designs</a></li>
+  </ul></li>
+  <li><a href="#the-neyman-rubin-potential-outcome-framework" id="toc-the-neyman-rubin-potential-outcome-framework" class="nav-link" data-scroll-target="#the-neyman-rubin-potential-outcome-framework"><span class="header-section-number">9.5</span> The Neyman-Rubin Potential Outcome Framework</a>
+  <ul class="collapse">
+  <li><a href="#example-estimating-ate-in-an-rct" id="toc-example-estimating-ate-in-an-rct" class="nav-link" data-scroll-target="#example-estimating-ate-in-an-rct"><span class="header-section-number">9.5.1</span> Example: Estimating ATE in an RCT</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">9.6</span> Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">9.7</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -200,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Research Designs: Experimental and Non-Experimental Approaches</span></h1>
 </div>
 
 
@@ -217,137 +313,577 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction-to-randomness" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introduction-to-randomness"><span class="header-section-number">7.1</span> Introduction to Randomness</h2>
-<p>Randomness is a cornerstone concept in statistics and scientific research. It refers to the unpredictability of individual outcomes, even when the overall pattern may be predictable. In the social sciences, understanding randomness is crucial for designing studies, collecting data, and interpreting results.</p>
-<p>Consider flipping a fair coin. While we know that the probability of getting heads is 50%, we can’t predict with certainty the outcome of any single flip. This unpredictability is the essence of randomness.</p>
-<p>Examples of random phenomena in social sciences include:</p>
-<ol type="1">
-<li><p><strong>Participant Selection</strong>: In a psychology experiment studying reaction times, the order in which participants arrive at the lab may be random.</p></li>
-<li><p><strong>Economic Behavior</strong>: The daily fluctuations in stock prices often exhibit random patterns, influenced by countless unpredictable factors.</p></li>
-<li><p><strong>Social Interactions</strong>: The occurrence of chance encounters between individuals in a community can be considered random events.</p></li>
-</ol>
-<p>Understanding randomness helps researchers distinguish between genuine effects and chance occurrences. For instance, if we observe a slight difference in test scores between two groups, randomness helps us determine whether this difference is likely due to a real effect or just chance variation.</p>
+<section id="introduction" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">9.1</span> Introduction</h2>
+<p>Research designs are fundamental to the scientific process, providing structured approaches to investigate hypotheses and answer research questions. This chapter explores two main categories of research designs: experimental and non-experimental, with a focus on the Neyman-Rubin potential outcome framework. We’ll delve into various design types, their characteristics, and provide practical examples using R for data analysis and visualization.</p>
 </section>
-<section id="sampling-bridging-sample-and-population" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="sampling-bridging-sample-and-population"><span class="header-section-number">7.2</span> Sampling: Bridging Sample and Population</h2>
-<p>Sampling is the process of selecting a subset (sample) from a larger group (population) to make inferences about the population. It’s a critical skill in social science research, as studying entire populations is often impractical, too expensive, or sometimes impossible.</p>
-<p><strong>Key Terms:</strong></p>
+<section id="experimental-designs" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="experimental-designs"><span class="header-section-number">9.2</span> Experimental Designs</h2>
+<p>Experimental designs are characterized by the researcher’s control over the independent variable(s) and random assignment of subjects to different conditions. These designs are considered the gold standard for establishing causal relationships.</p>
+<section id="randomized-controlled-trials-rcts" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="randomized-controlled-trials-rcts"><span class="header-section-number">9.2.1</span> Randomized Controlled Trials (RCTs)</h3>
+<p>RCTs are the most rigorous form of experimental design. They involve:</p>
+<ol type="1">
+<li>Random assignment of subjects to treatment and control groups</li>
+<li>Manipulation of the independent variable</li>
+<li>Measurement of the dependent variable</li>
+</ol>
+<p>Let’s visualize a simple RCT design:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample data</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Treatment"</span>), <span class="at">each =</span> n<span class="sc">/</span><span class="dv">2</span>)),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">pre_test =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">post_test =</span> <span class="cn">NA</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate treatment effect</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>post_test <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(data<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"Treatment"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                         data<span class="sc">$</span>pre_test <span class="sc">+</span> <span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                         data<span class="sc">$</span>pre_test <span class="sc">+</span> <span class="fu">rnorm</span>(n<span class="sc">/</span><span class="dv">2</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data for plotting</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>data_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(data, <span class="at">cols =</span> <span class="fu">c</span>(pre_test, post_test),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">names_to =</span> <span class="st">"time"</span>, <span class="at">values_to =</span> <span class="st">"score"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_long, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> score, <span class="at">color =</span> group, <span class="at">group =</span> <span class="fu">interaction</span>(id, group))) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="fu">aes</span>(<span class="at">group =</span> group), <span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Pre-test and Post-test Scores in RCT"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Time"</span>, <span class="at">y =</span> <span class="st">"Score"</span>, <span class="at">color =</span> <span class="st">"Group"</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter4_files/figure-html/rct-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Randomized Controlled Trial Design</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot shows individual trajectories and group means for pre-test and post-test scores in a hypothetical RCT. The treatment group shows a clear increase in scores compared to the control group.</p>
+</section>
+</section>
+<section id="ab-testing-an-example-and-comparison-with-rcts" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="ab-testing-an-example-and-comparison-with-rcts"><span class="header-section-number">9.3</span> A/B Testing: An Example and Comparison with RCTs</h2>
+<p>A/B testing is a widely used experimental method in digital marketing, user experience design, and product development. This chapter will present an example of A/B testing, explain its methodology, and discuss how it differs from Randomized Controlled Trials (RCTs).</p>
+<section id="example-website-landing-page-conversion-rate" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="example-website-landing-page-conversion-rate"><span class="header-section-number">9.3.1</span> Example: Website Landing Page Conversion Rate</h3>
+<p>Let’s consider an example where an e-commerce company wants to improve the conversion rate of their landing page. They decide to test two different layouts: the current layout (A) and a new layout (B).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>n_visitors <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Version =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), n_visitors, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Converted =</span> <span class="fu">rbinom</span>(n_visitors, <span class="dv">1</span>, <span class="fu">ifelse</span>(<span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), n_visitors, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">==</span> <span class="st">"A"</span>, <span class="fl">0.10</span>, <span class="fl">0.12</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate conversion rates</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>conversion_rates <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Version) <span class="sc">%&gt;%</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Visitors =</span> <span class="fu">n</span>(),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Conversions =</span> <span class="fu">sum</span>(Converted),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">ConversionRate =</span> <span class="fu">mean</span>(Converted)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize results</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(conversion_rates, <span class="fu">aes</span>(<span class="at">x =</span> Version, <span class="at">y =</span> ConversionRate, <span class="at">fill =</span> Version)) <span class="sc">+</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"%.2f%%"</span>, ConversionRate <span class="sc">*</span> <span class="dv">100</span>)), </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"A/B Test: Landing Page Conversion Rates"</span>,</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Page Version"</span>, <span class="at">y =</span> <span class="st">"Conversion Rate"</span>) <span class="sc">+</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.15</span>)) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-ab-test" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ab-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter4_files/figure-html/fig-ab-test-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ab-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: A/B Test Results: Landing Page Conversion Rates
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In this example, we simulated data for 10,000 visitors randomly assigned to either version A or B of the landing page. The results show that version B has a slightly higher conversion rate (12.02%) compared to version A (10.08%).</p>
+</section>
+<section id="ab-testing-methodology" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="ab-testing-methodology"><span class="header-section-number">9.3.2</span> A/B Testing Methodology</h3>
+<p>A/B testing typically follows these steps:</p>
+<ol type="1">
+<li>Identify the element to be tested (e.g., landing page layout).</li>
+<li>Create two versions: the control (A) and the variant (B).</li>
+<li>Randomly assign visitors to either version.</li>
+<li>Collect data on the metric of interest (e.g., conversion rate).</li>
+<li>Analyze the results using statistical methods.</li>
+<li>Make a decision based on the results.</li>
+</ol>
+</section>
+<section id="differences-between-ab-testing-and-rcts" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="differences-between-ab-testing-and-rcts"><span class="header-section-number">9.3.3</span> Differences between A/B Testing and RCTs</h3>
+<p>While A/B testing and Randomized Controlled Trials (RCTs) share some similarities, they have several key differences:</p>
+<ol type="1">
+<li><strong>Scope and Context:</strong>
 <ul>
-<li><strong>Population</strong>: The entire group about which we want to draw conclusions.</li>
-<li><strong>Sample</strong>: A subset of the population that we actually study.</li>
-<li><strong>Sampling Frame</strong>: The list or procedure used to identify all members of the population.</li>
-</ul>
-<p><strong>Example:</strong> Suppose we want to study the job satisfaction of all teachers in the United States (the population). Instead of surveying millions of teachers, we might select a sample of 5,000 teachers from various states, school districts, and grade levels.</p>
-<p>Randomness in sampling helps ensure that the sample is representative of the population, reducing bias and allowing for more accurate inferences. This is why probability sampling methods, which we’ll discuss next, are often preferred in scientific research.</p>
-</section>
-<section id="sampling-methods" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="sampling-methods"><span class="header-section-number">7.3</span> Sampling Methods</h2>
-<section id="probability-sampling" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="probability-sampling"><span class="header-section-number">7.3.1</span> Probability Sampling</h3>
-<p>Probability sampling methods involve random selection, giving each member of the population a known, non-zero chance of being selected.</p>
-<ol type="1">
-<li><p><strong>Simple Random Sampling</strong>: Each member of the population has an equal chance of being selected.</p>
-<p>Example: To select 100 students from a university with 10,000 students, you could assign each student a number from 1 to 10,000, then use a random number generator to select 100 numbers.</p></li>
-<li><p><strong>Stratified Random Sampling</strong>: The population is divided into subgroups (strata) based on shared characteristics, then samples are randomly selected from each stratum.</p>
-<p>Example: In a national political survey, you might divide the population into strata based on geographic regions (Northeast, Midwest, South, West) and then randomly sample from each region. This ensures representation from all areas of the country.</p></li>
-<li><p><strong>Cluster Sampling</strong>: The population is divided into clusters (usually geographic), some clusters are randomly selected, and all members within those clusters are studied.</p>
-<p>Example: To study high school students’ study habits, you might randomly select 20 high schools from across the country and then survey all students in those schools.</p></li>
-<li><p><strong>Systematic Sampling</strong>: Selecting every kth item from a list after a random start.</p>
-<p>Example: At a busy shopping mall, you might survey every 20th person who enters the mall, starting with a randomly chosen number between 1 and 20.</p></li>
+<li>A/B Testing: Typically used in digital environments for quick, iterative improvements.</li>
+<li>RCTs: Used in various fields, including medicine, psychology, and social sciences, often for more complex interventions.</li>
+</ul></li>
+<li><strong>Duration:</strong>
+<ul>
+<li>A/B Testing: Usually shorter, often running for days or weeks.</li>
+<li>RCTs: Can last months or years, especially in medical research.</li>
+</ul></li>
+<li><strong>Sample Size:</strong>
+<ul>
+<li>A/B Testing: Can involve very large sample sizes due to ease of implementation in digital platforms.</li>
+<li>RCTs: Sample sizes are often smaller due to practical and cost constraints.</li>
+</ul></li>
+<li><strong>Blinding:</strong>
+<ul>
+<li>A/B Testing: Participants are usually unaware they’re part of a test.</li>
+<li>RCTs: May involve single, double, or triple blinding to reduce bias.</li>
+</ul></li>
+<li><strong>Ethical Considerations:</strong>
+<ul>
+<li>A/B Testing: Generally involves low-risk changes with minimal ethical concerns.</li>
+<li>RCTs: Often require extensive ethical review, especially in medical contexts.</li>
+</ul></li>
+<li><strong>Outcome Measures:</strong>
+<ul>
+<li>A/B Testing: Typically focuses on a single, easily measurable outcome (e.g., click-through rate).</li>
+<li>RCTs: Often measure multiple outcomes, including potential side effects or long-term impacts.</li>
+</ul></li>
+<li><strong>Generalizability:</strong>
+<ul>
+<li>A/B Testing: Results are often specific to the platform or context tested.</li>
+<li>RCTs: Aim for broader generalizability, though this can vary.</li>
+</ul></li>
+<li><strong>Analysis Complexity:</strong>
+<ul>
+<li>A/B Testing: Often uses simpler statistical analyses.</li>
+<li>RCTs: May involve more complex statistical methods to account for various factors.</li>
+</ul></li>
 </ol>
+<p>A/B testing is a powerful tool for making data-driven decisions in digital environments. While it shares the fundamental principle of randomization with RCTs, it is typically simpler, faster, and more focused on specific, measurable outcomes in digital contexts. Understanding these differences helps researchers and practitioners choose the most appropriate method for their specific needs and constraints.</p>
 </section>
-<section id="non-probability-sampling" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="non-probability-sampling"><span class="header-section-number">7.3.2</span> Non-probability Sampling</h3>
-<p>Non-probability sampling doesn’t involve random selection. While it can introduce bias, it may be necessary in certain situations, especially when dealing with hard-to-reach populations or when resources are limited.</p>
+<section id="example-1-effect-of-sleep-duration-on-cognitive-performance" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="example-1-effect-of-sleep-duration-on-cognitive-performance"><span class="header-section-number">9.3.4</span> Example 1: Effect of Sleep Duration on Cognitive Performance</h3>
+<p><strong>Research Question:</strong> Does increasing sleep duration improve cognitive performance in college students?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generating sample data</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>pre_experimental <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>post_experimental <span class="ot">&lt;-</span> pre_experimental <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">8</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>pre_control <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>post_control <span class="ot">&lt;-</span> pre_control <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">1</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Experimental"</span>, <span class="st">"Control"</span>), <span class="at">each =</span> n<span class="sc">*</span><span class="dv">2</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Time =</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Pre"</span>, <span class="st">"Post"</span>), <span class="at">each =</span> n), <span class="dv">2</span>),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">c</span>(pre_experimental, post_experimental, pre_control, post_control)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the plot</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> Score, <span class="at">color =</span> Group, <span class="at">group =</span> Group)) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>) <span class="sc">+</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Effect of Increased Sleep Duration on Cognitive Performance"</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Cognitive Performance Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-sleep-experiment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sleep-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter4_files/figure-html/fig-sleep-experiment-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sleep-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: Effect of Sleep Duration on Cognitive Performance
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretation" class="level4" data-number="9.3.4.1">
+<h4 data-number="9.3.4.1" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">9.3.4.1</span> Interpretation</h4>
+<p>This plot demonstrates the effect of increased sleep duration on cognitive performance. The experimental group, which increased their sleep duration, shows a more substantial improvement in cognitive performance compared to the control group. This suggests that increasing sleep duration may positively impact cognitive abilities in college students.</p>
+</section>
+</section>
+<section id="example-2-impact-of-mindfulness-training-on-stress-levels" class="level3" data-number="9.3.5">
+<h3 data-number="9.3.5" class="anchored" data-anchor-id="example-2-impact-of-mindfulness-training-on-stress-levels"><span class="header-section-number">9.3.5</span> Example 2: Impact of Mindfulness Training on Stress Levels</h3>
+<p><strong>Research Question:</strong> Can a short-term mindfulness training program reduce stress levels in healthcare workers?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generating sample data</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>pre_experimental <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>post_experimental <span class="ot">&lt;-</span> pre_experimental <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">12</span>, <span class="at">sd =</span> <span class="dv">8</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>pre_control <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>post_control <span class="ot">&lt;-</span> pre_control <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">sd =</span> <span class="dv">6</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Mindfulness"</span>, <span class="st">"Control"</span>), <span class="at">each =</span> n<span class="sc">*</span><span class="dv">2</span>),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Time =</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Pre"</span>, <span class="st">"Post"</span>), <span class="at">each =</span> n), <span class="dv">2</span>),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">StressScore =</span> <span class="fu">c</span>(pre_experimental, post_experimental, pre_control, post_control)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the plot</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> StressScore, <span class="at">color =</span> Group, <span class="at">group =</span> Group)) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Impact of Mindfulness Training on Stress Levels"</span>) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Time"</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Stress Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-mindfulness-experiment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mindfulness-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter4_files/figure-html/fig-mindfulness-experiment-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mindfulness-experiment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.3: Impact of Mindfulness Training on Stress Levels
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretation-1" class="level4" data-number="9.3.5.1">
+<h4 data-number="9.3.5.1" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">9.3.5.1</span> Interpretation</h4>
+<p>This visualization illustrates the impact of a mindfulness training program on stress levels in healthcare workers. The mindfulness group shows a more significant decrease in stress scores compared to the control group. This suggests that the mindfulness training program may be effective in reducing stress levels among healthcare workers.</p>
+<p>When interpreting such results, it’s important to consider:</p>
 <ol type="1">
-<li><p><strong>Convenience Sampling</strong>: Selecting easily accessible subjects.</p>
-<p>Example: A researcher studying college students’ sleep patterns might survey students in their own classes or around campus.</p></li>
-<li><p><strong>Purposive Sampling</strong>: Selecting subjects based on specific characteristics.</p>
-<p>Example: For a study on the experiences of CEOs in the tech industry, a researcher might intentionally seek out and interview CEOs from various tech companies.</p></li>
-<li><p><strong>Snowball Sampling</strong>: Participants recruit other participants.</p>
-<p>Example: In a study of undocumented immigrants’ access to healthcare, researchers might ask initial participants to refer other potential participants from their community.</p></li>
-<li><p><strong>Quota Sampling</strong>: Selecting participants to meet specific quotas for certain characteristics.</p>
-<p>Example: In a market research study, researchers might ensure they interview a specific number of people from different age groups, genders, and income levels to match the demographics of the target market.</p></li>
+<li>The magnitude of the change in each group</li>
+<li>The difference in change between the experimental and control groups</li>
+<li>The variability within each group</li>
+<li>Any potential confounding factors not accounted for in the experimental design</li>
 </ol>
+<p>These examples provide a template for visualizing and interpreting similar experimental designs across different research contexts.</p>
 </section>
 </section>
-<section id="making-inferences-from-samples" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="making-inferences-from-samples"><span class="header-section-number">7.4</span> Making Inferences from Samples</h2>
-<p>Statistical inference is the process of drawing conclusions about a population based on a sample. This allows researchers to estimate characteristics of the entire population (parameters) using characteristics of the sample (statistics).</p>
-<p><strong>Key Concepts:</strong></p>
+<section id="factorial-designs" class="level3" data-number="9.3.6">
+<h3 data-number="9.3.6" class="anchored" data-anchor-id="factorial-designs"><span class="header-section-number">9.3.6</span> Factorial Designs</h3>
+<p>Factorial designs allow researchers to study the effects of multiple independent variables simultaneously. They are efficient and can reveal interaction effects between variables.</p>
+<p>Example of a 2x2 factorial design:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample data for 2x2 factorial design</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>n_per_group <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>factorial_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">factor_a =</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Low"</span>, <span class="st">"High"</span>), <span class="at">each =</span> n_per_group), <span class="dv">2</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">factor_b =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Treatment"</span>), <span class="at">each =</span> n_per_group <span class="sc">*</span> <span class="dv">2</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="cn">NA</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate outcomes</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>factorial_data<span class="sc">$</span>outcome <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(factorial_data<span class="sc">$</span>factor_a <span class="sc">==</span> <span class="st">"Low"</span> <span class="sc">&amp;</span> factorial_data<span class="sc">$</span>factor_b <span class="sc">==</span> <span class="st">"Control"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">rnorm</span>(n_per_group, <span class="dv">40</span>, <span class="dv">5</span>),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">ifelse</span>(factorial_data<span class="sc">$</span>factor_a <span class="sc">==</span> <span class="st">"Low"</span> <span class="sc">&amp;</span> factorial_data<span class="sc">$</span>factor_b <span class="sc">==</span> <span class="st">"Treatment"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">rnorm</span>(n_per_group, <span class="dv">45</span>, <span class="dv">5</span>),</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                                        <span class="fu">ifelse</span>(factorial_data<span class="sc">$</span>factor_a <span class="sc">==</span> <span class="st">"High"</span> <span class="sc">&amp;</span> factorial_data<span class="sc">$</span>factor_b <span class="sc">==</span> <span class="st">"Control"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                                               <span class="fu">rnorm</span>(n_per_group, <span class="dv">50</span>, <span class="dv">5</span>),</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                                               <span class="fu">rnorm</span>(n_per_group, <span class="dv">60</span>, <span class="dv">5</span>))))</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plot</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(factorial_data, <span class="fu">aes</span>(<span class="at">x =</span> factor_b, <span class="at">y =</span> outcome, <span class="at">fill =</span> factor_a)) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>factor_a, <span class="at">scales =</span> <span class="st">"free_x"</span>) <span class="sc">+</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2x2 Factorial Design"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Factor B"</span>, <span class="at">y =</span> <span class="st">"Outcome"</span>, <span class="at">fill =</span> <span class="st">"Factor A"</span>) <span class="sc">+</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter4_files/figure-html/factorial-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>2x2 Factorial Design</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot illustrates a 2x2 factorial design, showing the effects of two factors (A and B) on the outcome variable. We can observe main effects for both factors and a potential interaction effect.</p>
+</section>
+</section>
+<section id="non-experimental-designs" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="non-experimental-designs"><span class="header-section-number">9.4</span> Non-Experimental Designs</h2>
+<p>Non-experimental designs are used when randomization or manipulation of variables is not possible or ethical. They include observational/descriptive studies and quasi-experimental designs.</p>
+<section id="observational-studies" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="observational-studies"><span class="header-section-number">9.4.1</span> Observational Studies</h3>
+<p>Observational studies involve collecting data without manipulating variables. They are useful for exploring relationships and generating hypotheses.</p>
+<p>Example: Correlation study</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>study_time <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>exam_score <span class="ot">&lt;-</span> <span class="dv">50</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> study_time <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>correlation_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(study_time, exam_score)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(correlation_data, <span class="fu">aes</span>(<span class="at">x =</span> study_time, <span class="at">y =</span> exam_score)) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Correlation between Study Time and Exam Score"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Study Time (hours)"</span>, <span class="at">y =</span> <span class="st">"Exam Score"</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter4_files/figure-html/correlation-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Correlation between Study Time and Exam Score</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This scatter plot shows the relationship between study time and exam scores, illustrating a positive correlation typical in observational studies.</p>
+</section>
+<section id="quasi-experimental-designs" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="quasi-experimental-designs"><span class="header-section-number">9.4.2</span> Quasi-Experimental Designs</h3>
+<p>Quasi-experimental designs lack random assignment but attempt to establish causal relationships. Common types include:</p>
 <ol type="1">
-<li><p><strong>Point Estimates</strong>: A single value used to estimate a population parameter.</p>
-<p>Example: The mean income of a sample of 1000 workers might be used to estimate the mean income of all workers in a country.</p></li>
-<li><p><strong>Confidence Intervals</strong>: A range of values likely to contain the true population parameter.</p>
-<p>Example: We might say, “We are 95% confident that the true population mean income falls between $45,000 and $55,000.”</p></li>
-<li><p><strong>Margin of Error</strong>: The range of values above and below the sample statistic in a confidence interval.</p>
-<p>Example: In political polling, you might see a statement like “Candidate A is preferred by 52% of voters, with a margin of error of ±3%.”</p></li>
-<li><p><strong>Hypothesis Testing</strong>: A method for making decisions about population parameters based on sample data.</p>
-<p>Example: A researcher might test whether there’s a significant difference in test scores between students who study with music and those who study in silence.</p></li>
+<li>Difference-in-Differences (DiD)</li>
+<li>Regression Discontinuity Design (RDD)</li>
 </ol>
+<section id="difference-in-differences-did" class="level4" data-number="9.4.2.1">
+<h4 data-number="9.4.2.1" class="anchored" data-anchor-id="difference-in-differences-did"><span class="header-section-number">9.4.2.1</span> Difference-in-Differences (DiD)</h4>
+<p>DiD is used to estimate treatment effects by comparing the average change over time in the outcome variable for the treatment group to the average change over time for the control group.</p>
+<p>Let’s simulate a DiD analysis using the <code>plm</code> package:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'plm'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dplyr':
+
+    between, lag, lead</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate synthetic panel data</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>time_periods <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>panel_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>n, <span class="at">each =</span> time_periods),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">time =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span>time_periods, <span class="at">times =</span> n),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">treatment =</span> <span class="fu">rep</span>(<span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="at">each =</span> time_periods),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="cn">NA</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate outcomes</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>panel_data<span class="sc">$</span>outcome <span class="ot">&lt;-</span> <span class="fu">with</span>(panel_data,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                           <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> time <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> treatment <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> (time <span class="sc">&gt;=</span> <span class="dv">3</span> <span class="sc">&amp;</span> treatment <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n <span class="sc">*</span> time_periods, <span class="dv">0</span>, <span class="dv">2</span>))</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate DiD model</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>did_model <span class="ot">&lt;-</span> <span class="fu">plm</span>(outcome <span class="sc">~</span> treatment <span class="sc">*</span> <span class="fu">factor</span>(time), </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> panel_data, </span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>                 <span class="at">index =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"time"</span>), </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>                 <span class="at">model =</span> <span class="st">"within"</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Summarize results</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(did_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Oneway (individual) effect Within Model
+
+Call:
+plm(formula = outcome ~ treatment * factor(time), data = panel_data, 
+    model = "within", index = c("id", "time"))
+
+Balanced Panel: n = 1000, T = 5, N = 5000
+
+Residuals:
+     Min.   1st Qu.    Median   3rd Qu.      Max. 
+-5.932194 -1.200686 -0.033411  1.236533  6.439693 
+
+Coefficients:
+                         Estimate Std. Error t-value Pr(&gt;|t|)    
+factor(time)2            2.077222   0.124505 16.6838   &lt;2e-16 ***
+factor(time)3            4.161871   0.124505 33.4273   &lt;2e-16 ***
+factor(time)4            5.960653   0.124505 47.8748   &lt;2e-16 ***
+factor(time)5            8.164066   0.124505 65.5722   &lt;2e-16 ***
+treatment:factor(time)2 -0.020059   0.180272 -0.1113   0.9114    
+treatment:factor(time)3  2.688227   0.180272 14.9121   &lt;2e-16 ***
+treatment:factor(time)4  3.084521   0.180272 17.1104   &lt;2e-16 ***
+treatment:factor(time)5  2.867242   0.180272 15.9051   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Total Sum of Squares:    78894
+Residual Sum of Squares: 16182
+R-Squared:      0.79489
+Adj. R-Squared: 0.74315
+F-statistic: 1933.82 on 8 and 3992 DF, p-value: &lt; 2.22e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize DiD</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(panel_data, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> outcome, <span class="at">color =</span> <span class="fu">factor</span>(treatment), <span class="at">group =</span> treatment)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">3</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray50"</span>) <span class="sc">+</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Difference-in-Differences Analysis"</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Time"</span>, <span class="at">y =</span> <span class="st">"Outcome"</span>, <span class="at">color =</span> <span class="st">"Treatment"</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter4_files/figure-html/did-analysis-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Difference-in-Differences Analysis</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot shows the average outcomes for treatment and control groups over time. The vertical dashed line indicates the intervention point. The DiD estimate is the difference between the two groups’ changes from pre- to post-intervention periods.</p>
 </section>
-<section id="sampling-and-non-sampling-errors" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="sampling-and-non-sampling-errors"><span class="header-section-number">7.5</span> Sampling and Non-sampling Errors</h2>
-<p>Understanding potential errors in research is crucial for interpreting results accurately.</p>
-<p><strong>Sampling Error</strong>: The difference between a sample statistic and the true population parameter, occurring due to chance variations in the selection of sample members.</p>
-<p>Example: If we estimate the average height of all adult males in a country based on a sample, our estimate will likely differ somewhat from the true average due to sampling error.</p>
-<p><strong>Non-sampling Errors</strong>: Errors not due to chance, which can occur in both sample surveys and censuses.</p>
+<section id="regression-discontinuity-design-rdd" class="level4" data-number="9.4.2.2">
+<h4 data-number="9.4.2.2" class="anchored" data-anchor-id="regression-discontinuity-design-rdd"><span class="header-section-number">9.4.2.2</span> Regression Discontinuity Design (RDD)</h4>
+<p>RDD is used when treatment assignment is determined by a cutoff value on a continuous variable. It compares observations just above and below the cutoff to estimate the treatment effect.</p>
+<p>Let’s implement an RDD analysis using the <code>rdrobust</code> package:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rdrobust)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate synthetic RDD data</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">202</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> (x <span class="sc">&gt;=</span> <span class="dv">0</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>rdd_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># RDD analysis</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>rdd_result <span class="ot">&lt;-</span> <span class="fu">rdrobust</span>(y, x, <span class="at">c =</span> <span class="dv">0</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(rdd_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sharp RD estimates using local polynomial regression.
+
+Number of Obs.                 1000
+BW type                       mserd
+Kernel                   Triangular
+VCE method                       NN
+
+Number of Obs.                  499          501
+Eff. Number of Obs.             182          175
+Order est. (p)                    1            1
+Order bias  (q)                   2            2
+BW est. (h)                   0.362        0.362
+BW bias (b)                   0.575        0.575
+rho (h/b)                     0.630        0.630
+Unique Obs.                     499          501
+
+=============================================================================
+        Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
+=============================================================================
+  Conventional     4.092     0.231    17.723     0.000     [3.640 , 4.545]     
+        Robust         -         -    15.013     0.000     [3.600 , 4.680]     
+=============================================================================</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize RDD</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(rdd_data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> <span class="fu">subset</span>(rdd_data, x <span class="sc">&lt;</span> <span class="dv">0</span>), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> <span class="fu">subset</span>(rdd_data, x <span class="sc">&gt;=</span> <span class="dv">0</span>), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"green"</span>) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Regression Discontinuity Design"</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Running Variable"</span>, <span class="at">y =</span> <span class="st">"Outcome"</span>) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter4_files/figure-html/rdd-analysis-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Regression Discontinuity Design Analysis</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot shows the discontinuity at the cutoff point (x = 0), with separate regression lines fitted on either side. The treatment effect is estimated by the gap between these lines at the cutoff.</p>
+</section>
+</section>
+</section>
+<section id="the-neyman-rubin-potential-outcome-framework" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="the-neyman-rubin-potential-outcome-framework"><span class="header-section-number">9.5</span> The Neyman-Rubin Potential Outcome Framework</h2>
+<p>The Neyman-Rubin potential outcome framework provides a formal approach to causal inference. It introduces the concept of potential outcomes: for each unit, we consider the outcome under treatment and the outcome under control, even though we can only observe one in reality.</p>
+<p>Key concepts:</p>
 <ol type="1">
-<li><p><strong>Coverage Error</strong>: When the sampling frame doesn’t accurately represent the population.</p>
-<p>Example: A telephone survey that only calls landlines would miss people who only have cell phones, potentially biasing the results.</p></li>
-<li><p><strong>Non-response Error</strong>: When selected participants fail to respond, potentially introducing bias.</p>
-<p>Example: In a survey about job satisfaction, highly satisfied or highly dissatisfied employees might be more likely to respond, skewing the results.</p></li>
-<li><p><strong>Measurement Error</strong>: Inaccuracies in the data collected.</p>
-<p>Example: A poorly worded survey question might be interpreted differently by different respondents, leading to inconsistent data.</p></li>
-<li><p><strong>Processing Error</strong>: Mistakes made during data entry, coding, or analysis.</p>
-<p>Example: Accidentally entering “99” instead of “9” for a participant’s response could significantly skew the results.</p></li>
+<li><strong>Potential Outcomes</strong>: <span class="math inline">\(Y_i(1)\)</span> and <span class="math inline">\(Y_i(0)\)</span> for treatment and control, respectively.</li>
+<li><strong>Observed Outcome</strong>: <span class="math inline">\(Y_i = Y_i(1)T_i + Y_i(0)(1-T_i)\)</span>, where <span class="math inline">\(T_i\)</span> is the treatment indicator.</li>
+<li><strong>Individual Treatment Effect</strong>: <span class="math inline">\(\tau_i = Y_i(1) - Y_i(0)\)</span></li>
+<li><strong>Average Treatment Effect (ATE)</strong>: <span class="math inline">\(E[\tau_i] = E[Y_i(1) - Y_i(0)]\)</span></li>
 </ol>
+<p>The framework emphasizes the “fundamental problem of causal inference”: we can never observe both potential outcomes for a single unit simultaneously.</p>
+<section id="example-estimating-ate-in-an-rct" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="example-estimating-ate-in-an-rct"><span class="header-section-number">9.5.1</span> Example: Estimating ATE in an RCT</h3>
+<p>In an RCT, random assignment ensures that treatment is independent of potential outcomes, allowing unbiased estimation of the ATE:</p>
+<p><span class="math display">\[
+\hat{ATE} = \frac{1}{n_1} \sum_{i:T_i=1} Y_i - \frac{1}{n_0} \sum_{i:T_i=0} Y_i
+\]</span></p>
+<p>Where <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_0\)</span> are the numbers of treated and control units, respectively.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using the RCT data from earlier</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>ate_estimate <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>post_test[data<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"Treatment"</span>]) <span class="sc">-</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                <span class="fu">mean</span>(data<span class="sc">$</span>post_test[data<span class="sc">$</span>group <span class="sc">==</span> <span class="st">"Control"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(data$post_test[data$group == "Treatment"]): argument is
+not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(data$post_test[data$group == "Control"]): argument is
+not numeric or logical: returning NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Estimated Average Treatment Effect:"</span>, <span class="fu">round</span>(ate_estimate, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimated Average Treatment Effect: NA</code></pre>
+</div>
+</div>
+<p>This estimate represents the causal effect of the treatment under the assumptions of the potential outcome framework.</p>
 </section>
-<section id="sample-size-and-power" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="sample-size-and-power"><span class="header-section-number">7.6</span> Sample Size and Power</h2>
-<p>Determining the appropriate sample size involves balancing the need for precision with available resources.</p>
-<p><strong>Sample Size Considerations:</strong> - Larger samples generally provide more precise estimates but are more costly and time-consuming to obtain. - The required sample size depends on factors such as the desired level of precision, the variability in the population, and the type of analysis planned.</p>
-<p><strong>Example:</strong> To estimate the proportion of voters who support a particular policy with a margin of error of ±3% at a 95% confidence level, you would need a sample size of about 1067 voters (assuming maximum variability).</p>
-<p><strong>Statistical Power:</strong> The probability that a study will detect an effect when there is an effect to be detected.</p>
-<p>Factors affecting power: 1. Sample size 2. Effect size (the magnitude of the difference or relationship you’re trying to detect) 3. Chosen significance level (usually 0.05)</p>
-<p><strong>Example:</strong> In a study comparing two teaching methods, having a larger sample size would increase the likelihood of detecting a significant difference between the methods, if such a difference exists.</p>
 </section>
-<section id="sampling-in-the-digital-age" class="level2" data-number="7.7">
-<h2 data-number="7.7" class="anchored" data-anchor-id="sampling-in-the-digital-age"><span class="header-section-number">7.7</span> Sampling in the Digital Age</h2>
-<p>The advent of big data and digital technologies has transformed sampling practices in many fields.</p>
-<p><strong>Big Data Opportunities and Challenges:</strong> - Unprecedented volumes of information available - Potential lack of representativeness - Data quality concerns - Privacy and ethical issues</p>
-<p><strong>Example:</strong> Social media data can provide real-time insights into public opinion, but users of a particular platform may not be representative of the general population.</p>
-<p><strong>Web-based Surveys:</strong> - Offer new opportunities for data collection - Face challenges such as coverage bias (not everyone has internet access) and self-selection bias</p>
-<p><strong>Example:</strong> An online survey about internet usage habits would inherently exclude people without internet access, potentially biasing the results.</p>
+<section id="conclusion" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">9.6</span> Conclusion</h2>
+<p>This chapter has explored various research designs, from experimental approaches like RCTs and factorial designs to non-experimental methods such as observational studies and quasi-experimental designs. We’ve demonstrated how to implement and visualize these designs using R, and introduced the Neyman-Rubin potential outcome framework for causal inference.</p>
+<p>Understanding these designs and their appropriate use is crucial for conducting rigorous research and drawing valid causal conclusions. Each design has its strengths and limitations, and the choice of design should be guided by the research question, ethical considerations, and practical constraints.</p>
 </section>
-<section id="ethical-considerations-in-sampling" class="level2" data-number="7.8">
-<h2 data-number="7.8" class="anchored" data-anchor-id="ethical-considerations-in-sampling"><span class="header-section-number">7.8</span> Ethical Considerations in Sampling</h2>
-<p>Ethical sampling practices are crucial in social science research:</p>
+<section id="references" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="references"><span class="header-section-number">9.7</span> References</h2>
 <ol type="1">
-<li><p><strong>Informed Consent</strong>: Participants should understand the study’s purpose and agree to participate.</p>
-<p>Example: Before conducting interviews about sensitive topics like mental health, researchers must clearly explain the study’s aims and potential risks to participants.</p></li>
-<li><p><strong>Privacy and Confidentiality</strong>: Researchers must protect participants’ personal information.</p>
-<p>Example: In a study on workplace harassment, researchers might use code numbers instead of names to protect participants’ identities.</p></li>
-<li><p><strong>Representativeness and Inclusivity</strong>: Samples should fairly represent diverse populations, including marginalized groups.</p>
-<p>Example: A study on urban housing should make efforts to include participants from various socioeconomic backgrounds, ethnicities, and housing situations.</p></li>
+<li><p>Imbens, G. W., &amp; Rubin, D. B. (2015). Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction. Cambridge University Press.</p></li>
+<li><p>Angrist, J. D., &amp; Pischke, J. S. (2008). Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton University Press.</p></li>
+<li><p>Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). Experimental and Quasi-Experimental Designs for Generalized Causal Inference. Houghton Mifflin.</p></li>
+<li><p>Cunningham, S. (2021). Causal Inference: The Mixtape. Yale University Press.</p></li>
 </ol>
-</section>
-<section id="case-studies" class="level2" data-number="7.9">
-<h2 data-number="7.9" class="anchored" data-anchor-id="case-studies"><span class="header-section-number">7.9</span> Case Studies</h2>
-<p>[This section would include detailed examples of sampling in practice, such as: 1. How polling organizations predict election outcomes 2. How companies use market research to understand consumer preferences 3. How public health researchers study disease prevalence in populations]</p>
-</section>
-<section id="conclusion" class="level2" data-number="7.10">
-<h2 data-number="7.10" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">7.10</span> Conclusion</h2>
-<p>Sampling remains a cornerstone of social science research, even in the era of big data. Understanding sampling principles helps researchers design studies, interpret results, and make valid inferences about populations. As we’ve seen, the journey from sample to population involves careful consideration of sampling methods, potential errors, ethical issues, and the ever-evolving landscape of data collection in the digital age.</p>
-</section>
-<section id="review-questions-and-exercises" class="level2" data-number="7.11">
-<h2 data-number="7.11" class="anchored" data-anchor-id="review-questions-and-exercises"><span class="header-section-number">7.11</span> Review Questions and Exercises</h2>
-<p>[This section would include a mix of multiple-choice questions, short answer prompts, and practical exercises to reinforce key concepts]</p>
-</section>
-<section id="further-reading" class="level2" data-number="7.12">
-<h2 data-number="7.12" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">7.12</span> Further Reading</h2>
-<p>[This section would list additional resources for students interested in deepening their understanding of sampling and related topics]</p>
 
 
 </section>
@@ -764,13 +1300,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rozdzial3.html" class="pagination-link" aria-label="Kompleksowy przewodnik po jednowymiarowych statystykach opisowych">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span>
+      <a href="./rozdzial3b.html" class="pagination-link" aria-label="rozdzial3b.html">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">rozdzial3b.html</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./rozdzial4.html" class="pagination-link" aria-label="Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./rozdzial4.html" class="pagination-link" aria-label="Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

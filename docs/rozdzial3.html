@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT101_qbook - 6&nbsp; Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</title>
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 6&nbsp; Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,7 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./chapter4.html" rel="next">
 <link href="./chapter3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -103,35 +69,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -144,7 +81,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial3.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial3.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -159,7 +96,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">STAT101_qbook</a> 
+      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -202,13 +139,37 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Trafność, Rzetelność i Typy Badań w Naukach Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -227,48 +188,22 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#zrozumienie-wartości-odstających" id="toc-zrozumienie-wartości-odstających" class="nav-link active" data-scroll-target="#zrozumienie-wartości-odstających"><span class="header-section-number">6.1</span> Zrozumienie wartości odstających</a></li>
-  <li><a href="#miary-tendencji-centralnej" id="toc-miary-tendencji-centralnej" class="nav-link" data-scroll-target="#miary-tendencji-centralnej"><span class="header-section-number">7</span> Miary tendencji centralnej</a>
+  <li><a href="#wprowadzenie-do-losowości" id="toc-wprowadzenie-do-losowości" class="nav-link active" data-scroll-target="#wprowadzenie-do-losowości"><span class="header-section-number">6.1</span> Wprowadzenie do Losowości</a></li>
+  <li><a href="#próbkowanie-łączenie-próby-i-populacji" id="toc-próbkowanie-łączenie-próby-i-populacji" class="nav-link" data-scroll-target="#próbkowanie-łączenie-próby-i-populacji"><span class="header-section-number">6.2</span> Próbkowanie: Łączenie Próby i Populacji</a></li>
+  <li><a href="#metody-próbkowania" id="toc-metody-próbkowania" class="nav-link" data-scroll-target="#metody-próbkowania"><span class="header-section-number">6.3</span> Metody Próbkowania</a>
   <ul class="collapse">
-  <li><a href="#średnia-arytmetyczna" id="toc-średnia-arytmetyczna" class="nav-link" data-scroll-target="#średnia-arytmetyczna"><span class="header-section-number">7.1</span> Średnia arytmetyczna</a></li>
-  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">7.2</span> Mediana</a></li>
-  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">7.3</span> Moda</a></li>
-  <li><a href="#średnia-ważona" id="toc-średnia-ważona" class="nav-link" data-scroll-target="#średnia-ważona"><span class="header-section-number">7.4</span> Średnia ważona</a>
-  <ul class="collapse">
-  <li><a href="#średnia-ważona-z-wagami-nienormalizowanymi" id="toc-średnia-ważona-z-wagami-nienormalizowanymi" class="nav-link" data-scroll-target="#średnia-ważona-z-wagami-nienormalizowanymi"><span class="header-section-number">7.4.1</span> Średnia ważona z wagami nienormalizowanymi</a></li>
-  <li><a href="#średnia-ważona-z-wagami-znormalizowanymi-ułamkami" id="toc-średnia-ważona-z-wagami-znormalizowanymi-ułamkami" class="nav-link" data-scroll-target="#średnia-ważona-z-wagami-znormalizowanymi-ułamkami"><span class="header-section-number">7.4.2</span> Średnia ważona z wagami znormalizowanymi (ułamkami)</a></li>
+  <li><a href="#próbkowanie-probabilistyczne" id="toc-próbkowanie-probabilistyczne" class="nav-link" data-scroll-target="#próbkowanie-probabilistyczne"><span class="header-section-number">6.3.1</span> Próbkowanie Probabilistyczne</a></li>
+  <li><a href="#próbkowanie-nieprobabilistyczne" id="toc-próbkowanie-nieprobabilistyczne" class="nav-link" data-scroll-target="#próbkowanie-nieprobabilistyczne"><span class="header-section-number">6.3.2</span> Próbkowanie Nieprobabilistyczne</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#miary-zmienności" id="toc-miary-zmienności" class="nav-link" data-scroll-target="#miary-zmienności"><span class="header-section-number">8</span> Miary zmienności</a>
-  <ul class="collapse">
-  <li><a href="#rozstęp" id="toc-rozstęp" class="nav-link" data-scroll-target="#rozstęp"><span class="header-section-number">8.1</span> Rozstęp</a></li>
-  <li><a href="#rozstęp-międzykwartylowy-iqr" id="toc-rozstęp-międzykwartylowy-iqr" class="nav-link" data-scroll-target="#rozstęp-międzykwartylowy-iqr"><span class="header-section-number">8.2</span> Rozstęp międzykwartylowy (IQR)</a></li>
-  <li><a href="#wariancja" id="toc-wariancja" class="nav-link" data-scroll-target="#wariancja"><span class="header-section-number">8.3</span> Wariancja</a></li>
-  <li><a href="#odchylenie-standardowe" id="toc-odchylenie-standardowe" class="nav-link" data-scroll-target="#odchylenie-standardowe"><span class="header-section-number">8.4</span> Odchylenie standardowe</a></li>
-  <li><a href="#współczynnik-zmienności" id="toc-współczynnik-zmienności" class="nav-link" data-scroll-target="#współczynnik-zmienności"><span class="header-section-number">8.5</span> Współczynnik zmienności</a></li>
-  </ul></li>
-  <li><a href="#miary-położenia-względnego" id="toc-miary-położenia-względnego" class="nav-link" data-scroll-target="#miary-położenia-względnego"><span class="header-section-number">9</span> Miary położenia względnego</a>
-  <ul class="collapse">
-  <li><a href="#percentyle" id="toc-percentyle" class="nav-link" data-scroll-target="#percentyle"><span class="header-section-number">9.1</span> Percentyle</a></li>
-  <li><a href="#kwartyle" id="toc-kwartyle" class="nav-link" data-scroll-target="#kwartyle"><span class="header-section-number">9.2</span> Kwartyle</a></li>
-  </ul></li>
-  <li><a href="#miary-kształtu" id="toc-miary-kształtu" class="nav-link" data-scroll-target="#miary-kształtu"><span class="header-section-number">10</span> Miary kształtu</a>
-  <ul class="collapse">
-  <li><a href="#skośność" id="toc-skośność" class="nav-link" data-scroll-target="#skośność"><span class="header-section-number">10.1</span> Skośność</a></li>
-  <li><a href="#kurtoza" id="toc-kurtoza" class="nav-link" data-scroll-target="#kurtoza"><span class="header-section-number">10.2</span> Kurtoza</a></li>
-  </ul></li>
-  <li><a href="#wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" id="toc-wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" class="nav-link" data-scroll-target="#wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych"><span class="header-section-number">11</span> Wprowadzenie do dwuwymiarowych i wielowymiarowych statystyk opisowych</a>
-  <ul class="collapse">
-  <li><a href="#statystyki-dwuwymiarowe" id="toc-statystyki-dwuwymiarowe" class="nav-link" data-scroll-target="#statystyki-dwuwymiarowe"><span class="header-section-number">11.1</span> Statystyki dwuwymiarowe</a>
-  <ul class="collapse">
-  <li><a href="#korelacja" id="toc-korelacja" class="nav-link" data-scroll-target="#korelacja"><span class="header-section-number">11.1.1</span> Korelacja</a></li>
-  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">11.1.2</span> Kowariancja</a></li>
-  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">11.1.3</span> Tabela krzyżowa</a></li>
-  </ul></li>
-  <li><a href="#statystyki-wielowymiarowe" id="toc-statystyki-wielowymiarowe" class="nav-link" data-scroll-target="#statystyki-wielowymiarowe"><span class="header-section-number">11.2</span> Statystyki wielowymiarowe</a></li>
-  </ul></li>
-  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">12</span> Podsumowanie</a></li>
-  <li><a href="#bibliografia" id="toc-bibliografia" class="nav-link" data-scroll-target="#bibliografia"><span class="header-section-number">13</span> Bibliografia</a></li>
+  <li><a href="#wnioskowanie-z-prób" id="toc-wnioskowanie-z-prób" class="nav-link" data-scroll-target="#wnioskowanie-z-prób"><span class="header-section-number">6.4</span> Wnioskowanie z Prób</a></li>
+  <li><a href="#błędy-próbkowania-i-błędy-niepróbkowe" id="toc-błędy-próbkowania-i-błędy-niepróbkowe" class="nav-link" data-scroll-target="#błędy-próbkowania-i-błędy-niepróbkowe"><span class="header-section-number">6.5</span> Błędy Próbkowania i Błędy Niepróbkowe</a></li>
+  <li><a href="#wielkość-próby-i-moc-statystyczna" id="toc-wielkość-próby-i-moc-statystyczna" class="nav-link" data-scroll-target="#wielkość-próby-i-moc-statystyczna"><span class="header-section-number">6.6</span> Wielkość Próby i Moc Statystyczna</a></li>
+  <li><a href="#próbkowanie-w-erze-cyfrowej" id="toc-próbkowanie-w-erze-cyfrowej" class="nav-link" data-scroll-target="#próbkowanie-w-erze-cyfrowej"><span class="header-section-number">6.7</span> Próbkowanie w Erze Cyfrowej</a></li>
+  <li><a href="#etyczne-aspekty-próbkowania" id="toc-etyczne-aspekty-próbkowania" class="nav-link" data-scroll-target="#etyczne-aspekty-próbkowania"><span class="header-section-number">6.8</span> Etyczne Aspekty Próbkowania</a></li>
+  <li><a href="#studia-przypadków" id="toc-studia-przypadków" class="nav-link" data-scroll-target="#studia-przypadków"><span class="header-section-number">6.9</span> Studia Przypadków</a></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">6.10</span> Podsumowanie</a></li>
+  <li><a href="#pytania-kontrolne-i-ćwiczenia" id="toc-pytania-kontrolne-i-ćwiczenia" class="nav-link" data-scroll-target="#pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.11</span> Pytania Kontrolne i Ćwiczenia</a></li>
+  <li><a href="#dalsza-lektura" id="toc-dalsza-lektura" class="nav-link" data-scroll-target="#dalsza-lektura"><span class="header-section-number">6.12</span> Dalsza Lektura</a></li>
   </ul>
 </nav>
     </div>
@@ -277,7 +212,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></h1>
 </div>
 
 
@@ -294,482 +229,190 @@ window.Quarto = {
 </header>
 
 
-<p>Statystyki opisowe są fundamentalnymi narzędziami w badaniach nauk społecznych, zapewniającymi zwięzłe podsumowanie charakterystyk danych. Służą kilku kluczowym funkcjom:</p>
-<ul>
-<li>Podsumowanie dużych zbiorów danych do łatwych do zarządzania informacji</li>
-<li>Identyfikacja wzorców i trendów w danych</li>
-<li>Wykrywanie potencjalnych anomalii lub wartości odstających</li>
-<li>Zapewnienie podstawy do dalszej analizy statystycznej</li>
-</ul>
-<p>W tym rozdziale zbadamy różne statystyki opisowe, ich obliczenia, interpretacje i ograniczenia.</p>
-<section id="zrozumienie-wartości-odstających" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="zrozumienie-wartości-odstających"><span class="header-section-number">6.1</span> Zrozumienie wartości odstających</h2>
-<p>Zanim zagłębimy się w konkretne miary, kluczowe jest zrozumienie koncepcji wartości odstających, ponieważ mogą one znacząco wpływać na wiele statystyk opisowych.</p>
-<p>Wartości odstające to punkty danych, które znacznie różnią się od innych obserwacji w zbiorze danych. Mogą wystąpić z powodu:</p>
-<ul>
-<li>Błędów pomiaru lub rejestracji</li>
-<li>Prawdziwych skrajnych wartości w populacji</li>
-<li>Próbkowania z innej populacji</li>
-</ul>
-<p>Wartości odstające mogą mieć istotny wpływ na wiele miar statystycznych, szczególnie tych opartych na średnich lub sumach kwadratów odchyleń. Dlatego ważne jest, aby:</p>
+<section id="wprowadzenie-do-losowości" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="wprowadzenie-do-losowości"><span class="header-section-number">6.1</span> Wprowadzenie do Losowości</h2>
+<p>Losowość jest fundamentalnym pojęciem w statystyce i badaniach naukowych. Odnosi się do nieprzewidywalności indywidualnych wyników, nawet gdy ogólny wzorzec może być przewidywalny. W naukach społecznych zrozumienie losowości jest kluczowe dla projektowania badań, zbierania danych i interpretacji wyników.</p>
+<p>Rozważmy rzut uczciwą monetą. Chociaż wiemy, że prawdopodobieństwo wypadnięcia orła wynosi 50%, nie możemy z pewnością przewidzieć wyniku pojedynczego rzutu. Ta nieprzewidywalność jest istotą losowości.</p>
+<p>Przykłady losowych zjawisk w naukach społecznych obejmują:</p>
 <ol type="1">
-<li>Identyfikować wartości odstające zarówno poprzez metody statystyczne, jak i wiedzę dziedzinową</li>
-<li>Badać przyczyny występowania wartości odstających</li>
-<li>Podejmować świadome decyzje o tym, czy włączyć je do analiz, czy nie</li>
+<li><p><strong>Wybór uczestników</strong>: W eksperymencie psychologicznym badającym czasy reakcji, kolejność, w jakiej uczestnicy przybywają do laboratorium, może być losowa.</p></li>
+<li><p><strong>Zachowania ekonomiczne</strong>: Codzienne wahania cen akcji często wykazują losowe wzorce, na które wpływa niezliczona ilość nieprzewidywalnych czynników.</p></li>
+<li><p><strong>Interakcje społeczne</strong>: Występowanie przypadkowych spotkań między osobami w społeczności można uznać za zdarzenia losowe.</p></li>
 </ol>
-<p>W trakcie tego rozdziału omówimy, jak różne miary opisowe są dotknięte przez wartości odstające.</p>
+<p>Zrozumienie losowości pomaga badaczom odróżnić rzeczywiste efekty od przypadkowych zdarzeń. Na przykład, jeśli zaobserwujemy niewielką różnicę w wynikach testów między dwiema grupami, losowość pomaga nam określić, czy ta różnica jest prawdopodobnie spowodowana rzeczywistym efektem, czy tylko przypadkową zmiennością.</p>
 </section>
-<section id="miary-tendencji-centralnej" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Miary tendencji centralnej</h1>
-<p>Miary tendencji centralnej mają na celu identyfikację “typowej” lub “centralnej” wartości w zbiorze danych. Trzy podstawowe miary to średnia, mediana i moda.</p>
-<section id="średnia-arytmetyczna" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="średnia-arytmetyczna"><span class="header-section-number">7.1</span> Średnia arytmetyczna</h2>
-<p>Średnia arytmetyczna to suma wszystkich wartości podzielona przez liczbę wartości.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.142857</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
+<section id="próbkowanie-łączenie-próby-i-populacji" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="próbkowanie-łączenie-próby-i-populacji"><span class="header-section-number">6.2</span> Próbkowanie: Łączenie Próby i Populacji</h2>
+<p>Próbkowanie to proces wybierania podzbioru (próby) z większej grupy (populacji) w celu wyciągnięcia wniosków o populacji. Jest to kluczowa umiejętność w badaniach nauk społecznych, ponieważ badanie całych populacji jest często niepraktyczne, zbyt kosztowne lub czasami niemożliwe.</p>
+<p><strong>Kluczowe pojęcia:</strong></p>
 <ul>
-<li>Łatwa do obliczenia i zrozumienia</li>
-<li>Wykorzystuje wszystkie punkty danych</li>
-<li>Przydatna do dalszych obliczeń statystycznych</li>
+<li><strong>Populacja</strong>: Cała grupa, o której chcemy wyciągnąć wnioski.</li>
+<li><strong>Próba</strong>: Podzbiór populacji, który faktycznie badamy.</li>
+<li><strong>Operat losowania</strong>: Lista lub procedura używana do identyfikacji wszystkich członków populacji.</li>
 </ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Wrażliwa na wartości odstające</li>
-<li>Nieidealna dla rozkładów skośnych</li>
-</ul>
-<p><strong>Przykład z wartością odstającą:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dane_z_odstajaca <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">100</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dane_z_odstajaca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 18.14286</code></pre>
-</div>
-</div>
-<p>Jak widać, wartość odstająca (100) drastycznie wpływa na średnią.</p>
+<p><strong>Przykład:</strong> Załóżmy, że chcemy zbadać satysfakcję z pracy wszystkich nauczycieli w Polsce (populacja). Zamiast ankietować setki tysięcy nauczycieli, możemy wybrać próbę 5000 nauczycieli z różnych województw, powiatów i poziomów nauczania.</p>
+<p>Losowość w próbkowaniu pomaga zapewnić, że próba jest reprezentatywna dla populacji, zmniejszając błędy systematyczne i umożliwiając dokładniejsze wnioskowanie. Dlatego metody próbkowania probabilistycznego, które omówimy dalej, są często preferowane w badaniach naukowych.</p>
 </section>
-<section id="mediana" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="mediana"><span class="header-section-number">7.2</span> Mediana</h2>
-<p>Mediana to środkowa wartość, gdy dane są uporządkowane.</p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane_z_odstajaca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Nie jest dotknięta przez skrajne wartości odstające</li>
-<li>Lepsza dla rozkładów skośnych</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Nie wykorzystuje wszystkich punktów danych</li>
-<li>Mniej przydatna do dalszych obliczeń statystycznych</li>
-</ul>
-</section>
-<section id="moda" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="moda"><span class="header-section-number">7.3</span> Moda</h2>
-<p>Moda to najczęściej występująca wartość.</p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modeest)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mfv</span>(dane)  <span class="co"># Najczęściej występująca wartość</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4 5</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Jedyna miara tendencji centralnej dla danych nominalnych</li>
-<li>Może identyfikować wiele szczytów w danych</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Nie zawsze jednoznacznie zdefiniowana</li>
-<li>Nieprzydatna dla danych ciągłych</li>
-</ul>
-</section>
-<section id="średnia-ważona" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="średnia-ważona"><span class="header-section-number">7.4</span> Średnia ważona</h2>
-<p>Średnia ważona jest używana, gdy niektóre punkty danych są ważniejsze od innych. Rozróżniamy dwa typy średnich ważonych: z wagami nienormalizowanymi i z wagami znormalizowanymi.</p>
-<section id="średnia-ważona-z-wagami-nienormalizowanymi" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="średnia-ważona-z-wagami-nienormalizowanymi"><span class="header-section-number">7.4.1</span> Średnia ważona z wagami nienormalizowanymi</h3>
-<p>Jest to standardowa forma średniej ważonej, gdzie wagi mogą być dowolnymi liczbami dodatnimi reprezentującymi ważność każdego punktu danych.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(x, w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.571429</code></pre>
-</div>
-</div>
-</section>
-<section id="średnia-ważona-z-wagami-znormalizowanymi-ułamkami" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="średnia-ważona-z-wagami-znormalizowanymi-ułamkami"><span class="header-section-number">7.4.2</span> Średnia ważona z wagami znormalizowanymi (ułamkami)</h3>
-<p>W tym przypadku wagi są ułamkami sumującymi się do 1, reprezentującymi proporcję ważności dla każdego punktu danych.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x}_w = \sum_{i=1}^n w_i x_i\)</span>, gdzie <span class="math inline">\(\sum_{i=1}^n w_i = 1\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>w_znormalizowane <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>)  <span class="co"># Uwaga: te sumują się do 1</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="sc">*</span> w_znormalizowane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.8</code></pre>
-</div>
-</div>
-<p><strong>Zalety średnich ważonych:</strong></p>
-<ul>
-<li>Uwzględniają różną ważność punktów danych</li>
-<li>Przydatne w analizie badań z różnymi wielkościami próby lub poziomami ważności</li>
-<li>Mogą korygować nierówne prawdopodobieństwa w projektach próbkowania</li>
-</ul>
-<p><strong>Wady średnich ważonych:</strong></p>
-<ul>
-<li>Wymagają uzasadnienia dla wag</li>
-<li>Mogą być niewłaściwie użyte do manipulacji wynikami</li>
-<li>Mogą być mniej intuicyjne w interpretacji niż prosta średnia arytmetyczna</li>
-</ul>
-<p><strong>Porównanie:</strong></p>
-<p>Wagi nienormalizowane są często łatwiejsze do przypisania na podstawie rzeczywistej ważności lub wielkości próby, ale wymagają dodatkowego kroku normalizacji w obliczeniach. Wagi znormalizowane (ułamki) upraszczają obliczenia, ale mogą być mniej intuicyjne do bezpośredniego przypisania.</p>
-<p><strong>Przykład w naukach społecznych:</strong></p>
-<p>Załóżmy, że obliczamy średni dochód dla regionu z trzema miastami:</p>
-<p>Miasto A: Średni dochód 50 000 zł, populacja 100 000 Miasto B: Średni dochód 60 000 zł, populacja 200 000 Miasto C: Średni dochód 70 000 zł, populacja 300 000</p>
-<p>Możemy użyć populacji jako wag:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dochody <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>populacje <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100000</span>, <span class="dv">200000</span>, <span class="dv">300000</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Wagi nienormalizowane</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(dochody, populacje)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 63333.33</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wagi znormalizowane</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pop_znormalizowane <span class="ot">&lt;-</span> populacje <span class="sc">/</span> <span class="fu">sum</span>(populacje)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dochody <span class="sc">*</span> pop_znormalizowane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 63333.33</code></pre>
-</div>
-</div>
-<p>Ta średnia ważona daje dokładniejsze przedstawienie średniego dochodu regionu niż prosta średnia arytmetyczna średnich dochodów trzech miast.</p>
-</section>
-</section>
-</section>
-<section id="miary-zmienności" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Miary zmienności</h1>
-<p>Te miary opisują, jak rozproszone są dane. Są kluczowe dla zrozumienia rozproszenia punktów danych wokół tendencji centralnej.</p>
-<section id="rozstęp" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="rozstęp"><span class="header-section-number">8.1</span> Rozstęp</h2>
-<p>Rozstęp to różnica między wartością maksymalną a minimalną.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(R = x_{max} - x_{min}\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2 9</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(dane) <span class="sc">-</span> <span class="fu">min</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Prosty do obliczenia i zrozumienia</li>
-<li>Daje natychmiastowe poczucie rozpiętości danych</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Niezwykle wrażliwy na wartości odstające</li>
-<li>Nie dostarcza informacji o rozkładzie między skrajnościami</li>
-</ul>
-</section>
-<section id="rozstęp-międzykwartylowy-iqr" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="rozstęp-międzykwartylowy-iqr"><span class="header-section-number">8.2</span> Rozstęp międzykwartylowy (IQR)</h2>
-<p>IQR to różnica między 75. a 25. percentylem.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(IQR = Q_3 - Q_1\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Odporny na wartości odstające</li>
-<li>Dostarcza informacji o rozpiętości środkowych 50% danych</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Ignoruje ogony rozkładu</li>
-<li>Mniej efektywny niż odchylenie standardowe dla rozkładów normalnych</li>
-</ul>
-</section>
-<section id="wariancja" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="wariancja"><span class="header-section-number">8.3</span> Wariancja</h2>
-<p>Wariancja mierzy średnie kwadratowe odchylenie od średniej.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.142857</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Wykorzystuje wszystkie punkty danych</li>
-<li>Podstawa dla wielu testów statystycznych</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Jednostki są podniesione do kwadratu, co utrudnia interpretację</li>
-<li>Wrażliwa na wartości odstające</li>
-</ul>
-</section>
-<section id="odchylenie-standardowe" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="odchylenie-standardowe"><span class="header-section-number">8.4</span> Odchylenie standardowe</h2>
-<p>Odchylenie standardowe to pierwiastek kwadratowy z wariancji.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(s = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.267787</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>W tych samych jednostkach co oryginalne dane</li>
-<li>Szeroko stosowane i rozumiane</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Nadal wrażliwe na wartości odstające</li>
-<li>Zakłada, że dane są w przybliżeniu normalnie rozłożone</li>
-</ul>
-</section>
-<section id="współczynnik-zmienności" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="współczynnik-zmienności"><span class="header-section-number">8.5</span> Współczynnik zmienności</h2>
-<p>Współczynnik zmienności to odchylenie standardowe podzielone przez średnią, często wyrażane jako procent.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sd</span>(dane) <span class="sc">/</span> <span class="fu">mean</span>(dane)) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 44.09586</code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Pozwala na porównanie zmienności między zbiorami danych o różnych jednostkach lub średnich</li>
-<li>Przydatny w dziedzinach takich jak finanse do oceny ryzyka</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Nie ma sensu dla danych z wartościami zarówno dodatnimi, jak i ujemnymi</li>
-<li>Może być mylący, gdy średnia jest bliska zeru</li>
-</ul>
-</section>
-</section>
-<section id="miary-położenia-względnego" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Miary położenia względnego</h1>
-<p>Te miary pomagają zrozumieć, gdzie konkretna wartość znajduje się w stosunku do całego zbioru danych.</p>
-<section id="percentyle" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="percentyle"><span class="header-section-number">9.1</span> Percentyle</h2>
-<p>Percentyle dzielą dane na 100 równych części.</p>
-<p><strong>Wzór:</strong> Dla k-tego percentyla: <span class="math inline">\(P_k = L + \frac{k(n+1)}{100}\)</span>, gdzie L to dolna granica przedziału</p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dane, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  0%  25%  50%  75% 100% 
-   2    4    5    6    9 </code></pre>
-</div>
-</div>
-</section>
-<section id="kwartyle" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="kwartyle"><span class="header-section-number">9.2</span> Kwartyle</h2>
-<p>Kwartyle dzielą dane na cztery równe części.</p>
-<ul>
-<li>Q1: 25. percentyl</li>
-<li>Q2: Mediana (50. percentyl)</li>
-<li>Q3: 75. percentyl</li>
-</ul>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  2.000   4.000   5.000   5.143   6.000   9.000 </code></pre>
-</div>
-</div>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Odporne na wartości odstające</li>
-<li>Dostarczają informacji o rozpiętości i skośności danych</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Mniej precyzyjne niż użycie wszystkich punktów danych</li>
-<li>Różne metody obliczania mogą prowadzić do nieznacznie różnych wyników</li>
-</ul>
-</section>
-</section>
-<section id="miary-kształtu" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Miary kształtu</h1>
-<p>Te miary opisują kształt rozkładu prawdopodobieństwa danych.</p>
-<section id="skośność" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="skośność"><span class="header-section-number">10.1</span> Skośność</h2>
-<p>Skośność mierzy asymetrię rozkładu prawdopodobieństwa.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'moments'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:modeest':
-
-    skewness</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skewness</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4592793</code></pre>
-</div>
-</div>
-<p><strong>Interpretacja:</strong></p>
-<ul>
-<li>Skośność dodatnia: prawy ogon jest dłuższy (średnia &gt; mediana)</li>
-<li>Skośność ujemna: lewy ogon jest dłuższy (średnia &lt; mediana)</li>
-<li>Skośność zero: rozkład symetryczny</li>
-</ul>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Dostarcza informacji o kształcie rozkładu</li>
-<li>Przydatna do sprawdzania założeń normalności</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Wrażliwa na wartości odstające</li>
-<li>Może być myląca dla rozkładów wielomodalnych</li>
-</ul>
-</section>
-<section id="kurtoza" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="kurtoza"><span class="header-section-number">10.2</span> Kurtoza</h2>
-<p>Kurtoza mierzy “grubość ogonów” rozkładu prawdopodobieństwa.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}\)</span></p>
-<p><strong>Obliczenie w R:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kurtosis</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.457047</code></pre>
-</div>
-</div>
-<p><strong>Interpretacja:</strong></p>
-<ul>
-<li>Kurtoza dodatnia: ciężkie ogony, rozkład wysmukły</li>
-<li>Kurtoza ujemna: lekkie ogony, rozkład płaski</li>
-<li>Kurtoza zero: rozkład normalny</li>
-</ul>
-<p><strong>Zalety:</strong></p>
-<ul>
-<li>Dostarcza informacji o wartościach skrajnych w rozkładzie</li>
-<li>Przydatna do modelowania finansowego i oceny ryzyka</li>
-</ul>
-<p><strong>Wady:</strong></p>
-<ul>
-<li>Wrażliwa na wartości odstające</li>
-<li>Może być trudna do praktycznej interpretacji</li>
-</ul>
-</section>
-</section>
-<section id="wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Wprowadzenie do dwuwymiarowych i wielowymiarowych statystyk opisowych</h1>
-<p>Podczas gdy statystyki jednowymiarowe opisują pojedyncze zmienne, statystyki dwuwymiarowe i wielowymiarowe badają relacje między zmiennymi.</p>
-<section id="statystyki-dwuwymiarowe" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="statystyki-dwuwymiarowe"><span class="header-section-number">11.1</span> Statystyki dwuwymiarowe</h2>
-<section id="korelacja" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="korelacja"><span class="header-section-number">11.1.1</span> Korelacja</h3>
-<p>Korelacja mierzy siłę i kierunek liniowego związku między dwiema zmiennymi.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7745967</code></pre>
-</div>
-</div>
-</section>
-<section id="kowariancja" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">11.1.2</span> Kowariancja</h3>
-<p>Kowariancja mierzy, jak dwie zmienne zmieniają się razem.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.5</code></pre>
-</div>
-</div>
-</section>
-<section id="tabela-krzyżowa" class="level3" data-number="11.1.3">
-<h3 data-number="11.1.3" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">11.1.3</span> Tabela krzyżowa</h3>
-<p>Tabela krzyżowa (tabela kontyngencji) pokazuje relację między dwiema zmiennymi kategorialnymi.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">cut</span>(x, <span class="dv">2</span>), <span class="fu">cut</span>(y, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>           
-            (2,3.5] (3.5,5]
-  (0.996,3]       1       2
-  (3,5]           0       2</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="statystyki-wielowymiarowe" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="statystyki-wielowymiarowe"><span class="header-section-number">11.2</span> Statystyki wielowymiarowe</h2>
-<ul>
-<li><strong>Korelacja wielokrotna</strong>: Korelacja między zmienną zależną a wieloma zmiennymi niezależnymi.</li>
-<li><strong>Korelacja cząstkowa</strong>: Korelacja między dwiema zmiennymi przy kontrolowaniu innych.</li>
-<li><strong>Analiza czynnikowa</strong>: Technika redukcji wielu zmiennych do kilku podstawowych czynników.</li>
-</ul>
-<p>Te tematy zostaną omówione bardziej szczegółowo w kolejnych rozdziałach.</p>
-</section>
-</section>
-<section id="podsumowanie" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Podsumowanie</h1>
-<p>Statystyki opisowe są niezbędnymi narzędziami do podsumowywania i zrozumienia danych w badaniach nauk społecznych. Jednak ważne jest, aby:</p>
+<section id="metody-próbkowania" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="metody-próbkowania"><span class="header-section-number">6.3</span> Metody Próbkowania</h2>
+<section id="próbkowanie-probabilistyczne" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="próbkowanie-probabilistyczne"><span class="header-section-number">6.3.1</span> Próbkowanie Probabilistyczne</h3>
+<p>Metody próbkowania probabilistycznego obejmują losowy wybór, dając każdemu członkowi populacji znaną, niezerową szansę na wybór.</p>
 <ol type="1">
-<li>Wybierać odpowiednie miary w oparciu o typ danych i rozkład</li>
-<li>Być świadomym ograniczeń każdej miary, szczególnie w odniesieniu do wartości odstających</li>
-<li>Używać wielu miar, aby uzyskać kompleksowe zrozumienie</li>
+<li><p><strong>Prosty Dobór Losowy</strong>: Każdy członek populacji ma równą szansę na wybór.</p>
+<p>Przykład: Aby wybrać 100 studentów z uniwersytetu liczącego 10 000 studentów, można przypisać każdemu studentowi numer od 1 do 10 000, a następnie użyć generatora liczb losowych do wybrania 100 numerów.</p></li>
+<li><p><strong>Dobór Losowy Warstwowy</strong>: Populacja jest podzielona na podgrupy (warstwy) na podstawie wspólnych cech, a następnie próbki są losowo wybierane z każdej warstwy.</p>
+<p>Przykład: W ogólnopolskim badaniu politycznym można podzielić populację na warstwy na podstawie regionów geograficznych (np. Polska Zachodnia, Centralna, Wschodnia) i losowo pobierać próbki z każdego regionu. Zapewnia to reprezentację ze wszystkich obszarów kraju.</p></li>
+<li><p><strong>Dobór Losowy Grupowy</strong>: Populacja jest podzielona na skupiska (zwykle geograficzne), niektóre skupiska są losowo wybierane, a wszyscy członkowie w tych skupiskach są badani.</p>
+<p>Przykład: Aby zbadać nawyki uczenia się uczniów szkół średnich, można losowo wybrać 20 szkół z całego kraju, a następnie przeprowadzić ankietę wśród wszystkich uczniów w tych szkołach.</p></li>
+<li><p><strong>Dobór Systematyczny</strong>: Wybieranie co k-tego elementu z listy po losowym starcie.</p>
+<p>Przykład: W ruchliwym centrum handlowym można ankietować co 20. osobę wchodzącą do centrum, zaczynając od losowo wybranej liczby między 1 a 20.</p></li>
 </ol>
-<p>Pamiętaj, że statystyki opisowe są tylko punktem wyjścia. Stanowią one podstawę dla statystyk inferencyjnych, które pozwalają nam wyciągać wnioski o populacjach na podstawie próbek.</p>
 </section>
-<section id="bibliografia" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Bibliografia</h1>
+<section id="próbkowanie-nieprobabilistyczne" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="próbkowanie-nieprobabilistyczne"><span class="header-section-number">6.3.2</span> Próbkowanie Nieprobabilistyczne</h3>
+<p>Próbkowanie nieprobabilistyczne nie obejmuje losowego wyboru. Chociaż może wprowadzać błędy systematyczne, może być konieczne w niektórych sytuacjach, zwłaszcza w przypadku trudno dostępnych populacji lub gdy zasoby są ograniczone.</p>
 <ol type="1">
-<li>Agresti, A., &amp; Finlay, B. (2009). Metody statystyczne dla nauk społecznych (wyd. 4). Pearson Prentice Hall.</li>
-<li>Field, A. (2013). Odkrywanie statystyki z wykorzystaniem IBM SPSS Statistics. Sage.</li>
-<li>Hair, J. F., Black, W. C., Babin, B. J., &amp; Anderson, R. E. (2019). Analiza danych wielowymiarowych (wyd. 8). Cengage Learning.</li>
+<li><p><strong>Dobór Wygodny</strong>: Wybieranie łatwo dostępnych podmiotów.</p>
+<p>Przykład: Badacz studiujący wzorce snu studentów może przeprowadzić ankietę wśród studentów na własnych zajęciach lub na terenie kampusu.</p></li>
+<li><p><strong>Dobór Celowy</strong>: Wybieranie podmiotów na podstawie określonych cech.</p>
+<p>Przykład: W badaniu doświadczeń prezesów w branży technologicznej badacz może celowo szukać i przeprowadzać wywiady z prezesami różnych firm technologicznych.</p></li>
+<li><p><strong>Dobór Metodą Kuli Śnieżnej</strong>: Uczestnicy rekrutują innych uczestników.</p>
+<p>Przykład: W badaniu dostępu imigrantów bez dokumentów do opieki zdrowotnej, badacze mogą poprosić początkowych uczestników o polecenie innych potencjalnych uczestników z ich społeczności.</p></li>
+<li><p><strong>Dobór Kwotowy</strong>: Wybieranie uczestników w celu spełnienia określonych kwot dla pewnych cech.</p>
+<p>Przykład: W badaniu rynku badacze mogą zapewnić, że przeprowadzają wywiady z określoną liczbą osób z różnych grup wiekowych, płci i poziomów dochodów, aby dopasować się do demografii rynku docelowego.</p></li>
 </ol>
+</section>
+</section>
+<section id="wnioskowanie-z-prób" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="wnioskowanie-z-prób"><span class="header-section-number">6.4</span> Wnioskowanie z Prób</h2>
+<p>Wnioskowanie statystyczne to proces wyciągania wniosków o populacji na podstawie próby. Pozwala to badaczom oszacować charakterystyki całej populacji (parametry) przy użyciu charakterystyk próby (statystyk).</p>
+<p><strong>Kluczowe pojęcia:</strong></p>
+<ol type="1">
+<li><p><strong>Estymatory punktowe</strong>: Pojedyncza wartość używana do oszacowania parametru populacji.</p>
+<p>Przykład: Średni dochód z próby 1000 pracowników może być użyty do oszacowania średniego dochodu wszystkich pracowników w kraju.</p></li>
+<li><p><strong>Przedziały ufności</strong>: Zakres wartości, który prawdopodobnie zawiera prawdziwy parametr populacji.</p>
+<p>Przykład: Możemy powiedzieć: “Jesteśmy w 95% pewni, że prawdziwy średni dochód populacji mieści się między 4500 a 5500 złotych”.</p></li>
+<li><p><strong>Margines błędu</strong>: Zakres wartości powyżej i poniżej statystyki próby w przedziale ufności.</p>
+<p>Przykład: W sondażach politycznych można zobaczyć stwierdzenie: “Kandydat A jest preferowany przez 52% wyborców, z marginesem błędu ±3%”.</p></li>
+<li><p><strong>Testowanie hipotez</strong>: Metoda podejmowania decyzji o parametrach populacji na podstawie danych z próby.</p>
+<p>Przykład: Badacz może testować, czy istnieje istotna różnica w wynikach testów między uczniami, którzy uczą się przy muzyce, a tymi, którzy uczą się w ciszy.</p></li>
+</ol>
+</section>
+<section id="błędy-próbkowania-i-błędy-niepróbkowe" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="błędy-próbkowania-i-błędy-niepróbkowe"><span class="header-section-number">6.5</span> Błędy Próbkowania i Błędy Niepróbkowe</h2>
+<p>Zrozumienie potencjalnych błędów w badaniach jest kluczowe dla dokładnej interpretacji wyników.</p>
+<p><strong>Błąd próbkowania</strong>: Różnica między statystyką próby a prawdziwym parametrem populacji, występująca z powodu przypadkowych wahań w wyborze członków próby.</p>
+<p>Przykład: Jeśli oszacujemy średni wzrost wszystkich dorosłych mężczyzn w kraju na podstawie próby, nasze oszacowanie prawdopodobnie będzie się nieco różnić od prawdziwej średniej z powodu błędu próbkowania.</p>
+<p><strong>Błędy niepróbkowe</strong>: Błędy nie wynikające z przypadku, które mogą wystąpić zarówno w badaniach próbkowych, jak i spisach.</p>
+<ol type="1">
+<li><p><strong>Błąd pokrycia</strong>: Gdy operat losowania nie reprezentuje dokładnie populacji.</p>
+<p>Przykład: Badanie telefoniczne, które dzwoni tylko na telefony stacjonarne, pominęłoby osoby posiadające tylko telefony komórkowe, potencjalnie wypaczając wyniki.</p></li>
+<li><p><strong>Błąd braku odpowiedzi</strong>: Gdy wybrani uczestnicy nie odpowiadają, potencjalnie wprowadzając błąd systematyczny.</p>
+<p>Przykład: W badaniu satysfakcji z pracy, bardzo zadowoleni lub bardzo niezadowoleni pracownicy mogą być bardziej skłonni do odpowiedzi, wypaczając wyniki.</p></li>
+<li><p><strong>Błąd pomiaru</strong>: Niedokładności w zebranych danych.</p>
+<p>Przykład: Źle sformułowane pytanie ankietowe może być różnie interpretowane przez różnych respondentów, prowadząc do niespójnych danych.</p></li>
+<li><p><strong>Błąd przetwarzania</strong>: Błędy popełnione podczas wprowadzania danych, kodowania lub analizy.</p>
+<p>Przykład: Przypadkowe wprowadzenie “99” zamiast “9” dla odpowiedzi uczestnika mogłoby znacząco wypaczyć wyniki.</p></li>
+</ol>
+</section>
+<section id="wielkość-próby-i-moc-statystyczna" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="wielkość-próby-i-moc-statystyczna"><span class="header-section-number">6.6</span> Wielkość Próby i Moc Statystyczna</h2>
+<p>Określenie odpowiedniej wielkości próby wymaga zrównoważenia potrzeby precyzji z dostępnymi zasobami.</p>
+<p><strong>Rozważania dotyczące wielkości próby:</strong> - Większe próby generalnie zapewniają bardziej precyzyjne oszacowania, ale są bardziej kosztowne i czasochłonne do uzyskania. - Wymagana wielkość próby zależy od czynników takich jak pożądany poziom precyzji, zmienność w populacji i rodzaj planowanej analizy.</p>
+<p><strong>Przykład:</strong> Aby oszacować proporcję wyborców popierających konkretną politykę z marginesem błędu ±3% na poziomie ufności 95%, potrzebna byłaby próba około 1067 wyborców (zakładając maksymalną zmienność).</p>
+<p><strong>Moc statystyczna:</strong> Prawdopodobieństwo, że badanie wykryje efekt, gdy taki efekt istnieje.</p>
+<p>Czynniki wpływające na moc: 1. Wielkość próby 2. Wielkość efektu (wielkość różnicy lub związku, który próbujemy wykryć) 3. Wybrany poziom istotności (zwykle 0,05)</p>
+<p><strong>Przykład:</strong> W badaniu porównującym dwie metody nauczania, większa wielkość próby zwiększyłaby prawdopodobieństwo wykrycia istotnej różnicy między metodami, jeśli taka różnica istnieje.</p>
+</section>
+<section id="próbkowanie-w-erze-cyfrowej" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="próbkowanie-w-erze-cyfrowej"><span class="header-section-number">6.7</span> Próbkowanie w Erze Cyfrowej</h2>
+<p>Pojawienie się big data i technologii cyfrowych zmieniło praktyki próbkowania w wielu dziedzinach.</p>
+<p><strong>Możliwości i wyzwania Big Data:</strong> - Bezprecedensowe ilości dostępnych informacji - Potencjalny brak reprezentatywności - Problemy z jakością danych - Kwestie prywatności i etyki</p>
+<p><strong>Przykład:</strong> Dane z mediów społecznościowych mogą dostarczyć wglądu w opinię publiczną w czasie rzeczywistym, ale użytkownicy konkretnej platformy mogą nie być reprezentatywni dla ogólnej populacji.</p>
+<p><strong>Badania internetowe:</strong> - Oferują nowe możliwości zbierania danych - Stają przed wyzwaniami takimi jak błąd pokrycia (nie każdy ma dostęp do internetu) i błąd samoselekcji</p>
+<p><strong>Przykład:</strong> Ankieta online na temat nawyków korzystania z internetu z natury wykluczałaby osoby bez dostępu do internetu, potencjalnie wypaczając wyniki.</p>
+</section>
+<section id="etyczne-aspekty-próbkowania" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="etyczne-aspekty-próbkowania"><span class="header-section-number">6.8</span> Etyczne Aspekty Próbkowania</h2>
+<p>Etyczne praktyki próbkowania są kluczowe w badaniach nauk społecznych:</p>
+<ol type="1">
+<li><p><strong>Świadoma zgoda</strong>: Uczestnicy powinni rozumieć cel badania i zgodzić się na udział.</p>
+<p>Przykład: Przed przeprowadzeniem wywiadów na temat wrażliwych tematów, takich jak zdrowie psychiczne, badacze muszą jasno wyjaśnić cele badania i potencjalne ryzyko uczestnikom.</p></li>
+<li><p><strong>Prywatność i poufność</strong>: Badacze muszą chronić dane osobowe uczestników.</p>
+<p>Przykład: W badaniu dotyczącym mobbingu w miejscu pracy, badacze mogą używać kodów numerycznych zamiast nazwisk, aby chronić tożsamość uczestników.</p></li>
+<li><p><strong>Reprezentatywność i inkluzywność</strong>: Próby powinny sprawiedliwie reprezentować zróżnicowane populacje, w tym grupy marginalizowane.</p></li>
+</ol>
+<p>Przykład: Badanie dotyczące mieszkalnictwa miejskiego powinno dołożyć starań, aby uwzględnić uczestników z różnych środowisk społeczno-ekonomicznych, grup etnicznych i sytuacji mieszkaniowych.</p>
+</section>
+<section id="studia-przypadków" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="studia-przypadków"><span class="header-section-number">6.9</span> Studia Przypadków</h2>
+<p>[Ta sekcja zawierałaby szczegółowe przykłady zastosowania próbkowania w praktyce, takie jak:]</p>
+<ol type="1">
+<li><p><strong>Jak organizacje badania opinii publicznej przewidują wyniki wyborów</strong></p>
+<p>Przykład: Wyobraźmy sobie, że chcemy przewidzieć wynik wyborów prezydenckich w Polsce. Ośrodek badania opinii publicznej mógłby zastosować następującą metodologię:</p>
+<ul>
+<li>Zastosowanie próbkowania warstwowego, dzieląc populację na warstwy według województw.</li>
+<li>Losowy wybór respondentów z każdej warstwy, proporcjonalnie do liczby mieszkańców.</li>
+<li>Przeprowadzenie wywiadów telefonicznych z wybranymi osobami, pytając o ich preferencje wyborcze.</li>
+<li>Ważenie wyników, aby skorygować ewentualne nadreprezentacje lub niedoreprezentacje pewnych grup demograficznych.</li>
+<li>Obliczenie marginesu błędu i przedziałów ufności dla otrzymanych wyników.</li>
+</ul></li>
+<li><p><strong>Jak firmy wykorzystują badania rynku do zrozumienia preferencji konsumentów</strong></p>
+<p>Przykład: Firma produkująca napoje chce wprowadzić nowy smak na rynek polski. Mogłaby przeprowadzić badanie w następujący sposób:</p>
+<ul>
+<li>Wykorzystanie próbkowania kwotowego, aby zapewnić reprezentację różnych grup wiekowych i regionów.</li>
+<li>Organizacja degustacji w centrach handlowych w różnych miastach.</li>
+<li>Przeprowadzenie ankiet online wśród członków panelu konsumenckiego.</li>
+<li>Analiza danych z uwzględnieniem różnic demograficznych i geograficznych.</li>
+<li>Wykorzystanie wyników do dostosowania produktu i strategii marketingowej.</li>
+</ul></li>
+<li><p><strong>Jak badacze zdrowia publicznego badają występowanie chorób w populacjach</strong></p>
+<p>Przykład: Badanie częstości występowania cukrzycy typu 2 w Polsce:</p>
+<ul>
+<li>Zastosowanie próbkowania dwustopniowego: najpierw losowy wybór gmin, potem losowy wybór mieszkańców w tych gminach.</li>
+<li>Przeprowadzenie badań przesiewowych wśród wybranych osób (pomiary poziomu cukru we krwi, BMI, itp.).</li>
+<li>Zbieranie dodatkowych danych o stylu życia i historii medycznej.</li>
+<li>Analiza danych z uwzględnieniem czynników demograficznych i środowiskowych.</li>
+<li>Oszacowanie częstości występowania cukrzycy w całej populacji na podstawie wyników próby.</li>
+</ul></li>
+</ol>
+</section>
+<section id="podsumowanie" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">6.10</span> Podsumowanie</h2>
+<p>Próbkowanie pozostaje fundamentem badań w naukach społecznych, nawet w erze big data. Zrozumienie zasad próbkowania pomaga badaczom projektować badania, interpretować wyniki i wyciągać trafne wnioski o populacjach. Jak widzieliśmy, droga od próby do populacji wymaga starannego rozważenia metod próbkowania, potencjalnych błędów, kwestii etycznych i stale ewoluującego krajobrazu gromadzenia danych w erze cyfrowej.</p>
+<p>Kluczowe punkty do zapamiętania:</p>
+<ol type="1">
+<li>Losowość jest podstawą wielu metod próbkowania i pomaga zapewnić reprezentatywność próby.</li>
+<li>Istnieją różne metody próbkowania, zarówno probabilistyczne, jak i nieprobabilistyczne, każda z własnymi zaletami i ograniczeniami.</li>
+<li>Wnioskowanie statystyczne pozwala nam wyciągać wnioski o populacji na podstawie danych z próby.</li>
+<li>Błędy próbkowania i niepróbkowe mogą wpływać na jakość naszych wniosków, dlatego ważne jest ich zrozumienie i minimalizowanie.</li>
+<li>Wielkość próby i moc statystyczna są kluczowe dla zapewnienia wiarygodności wyników badań.</li>
+<li>Era cyfrowa przynosi nowe możliwości i wyzwania w zakresie próbkowania i gromadzenia danych.</li>
+<li>Etyczne aspekty próbkowania, w tym świadoma zgoda, prywatność i reprezentatywność, są nieodłączną częścią procesu badawczego.</li>
+</ol>
+</section>
+<section id="pytania-kontrolne-i-ćwiczenia" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.11</span> Pytania Kontrolne i Ćwiczenia</h2>
+<ol type="1">
+<li><p>Jakie są główne różnice między próbkowaniem probabilistycznym a nieprobabilistycznym? Podaj przykłady sytuacji, w których każde z nich mogłoby być odpowiednie.</p></li>
+<li><p>Wyobraź sobie, że prowadzisz badanie dotyczące opinii studentów na temat nauczania zdalnego. Zaproponuj odpowiednią metodę próbkowania i uzasadnij swój wybór.</p></li>
+<li><p>Jakie potencjalne błędy próbkowania i niepróbkowe mogłyby wystąpić w badaniu opisanym w pytaniu 2? Jak można by je zminimalizować?</p></li>
+<li><p>Oblicz wymaganą wielkość próby dla badania opinii publicznej, zakładając poziom ufności 95%, margines błędu 3% i maksymalną zmienność (p = 0,5).</p></li>
+<li><p>Omów etyczne aspekty próbkowania w kontekście badania wrażliwych grup społecznych, takich jak osoby bezdomne lub nieletni.</p></li>
+<li><p>Jak era big data wpływa na tradycyjne metody próbkowania? Omów zarówno możliwości, jak i wyzwania.</p></li>
+</ol>
+</section>
+<section id="dalsza-lektura" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="dalsza-lektura"><span class="header-section-number">6.12</span> Dalsza Lektura</h2>
+<ol type="1">
+<li>Babbie, E. (2020). “Badania społeczne w praktyce”. Warszawa: Wydawnictwo Naukowe PWN.</li>
+<li>Frankfort-Nachmias, C., &amp; Nachmias, D. (2001). “Metody badawcze w naukach społecznych”. Poznań: Zysk i S-ka.</li>
+<li>Gruszczyński, L. A. (2003). “Kwestionariusze w socjologii: budowa narzędzi do badań surveyowych”. Katowice: Wydawnictwo Uniwersytetu Śląskiego.</li>
+<li>Szreder, M. (2010). “Metody i techniki sondażowych badań opinii”. Warszawa: Polskie Wydawnictwo Ekonomiczne.</li>
+<li>Brzeziński, J. (2019). “Metodologia badań psychologicznych”. Warszawa: Wydawnictwo Naukowe PWN.</li>
+</ol>
+<p>Te źródła zapewniają dogłębne omówienie tematów związanych z próbkowaniem i metodologią badań w naukach społecznych w kontekście polskim.</p>
 
 
 </section>
@@ -1186,13 +829,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./chapter3.html" class="pagination-link" aria-label="Comprehensive Guide to Univariate Descriptive Statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Comprehensive Guide to Univariate Descriptive Statistics</span></span>
+      <a href="./chapter3.html" class="pagination-link" aria-label="From Sample to Population - Understanding Randomness, Sampling, and Inference">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter4.html" class="pagination-link" aria-label="Validity, Reliability, and Study Types in Social Sciences">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Validity, Reliability, and Study Types in Social Sciences</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

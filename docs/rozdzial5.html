@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 10&nbsp; Trafność, Rzetelność i Typy Badań w Naukach Społecznych</title>
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 10&nbsp; Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -222,21 +251,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#wprowadzenie-do-trafności-rzetelności-i-powiązanych-pojęć" id="toc-wprowadzenie-do-trafności-rzetelności-i-powiązanych-pojęć" class="nav-link active" data-scroll-target="#wprowadzenie-do-trafności-rzetelności-i-powiązanych-pojęć"><span class="header-section-number">10.1</span> Wprowadzenie do Trafności, Rzetelności i Powiązanych Pojęć</a>
+  <li><a href="#zrozumienie-wartości-odstających" id="toc-zrozumienie-wartości-odstających" class="nav-link active" data-scroll-target="#zrozumienie-wartości-odstających"><span class="header-section-number">10.1</span> Zrozumienie wartości odstających</a></li>
+  <li><a href="#miary-tendencji-centralnej" id="toc-miary-tendencji-centralnej" class="nav-link" data-scroll-target="#miary-tendencji-centralnej"><span class="header-section-number">11</span> Miary tendencji centralnej</a>
   <ul class="collapse">
-  <li><a href="#trafność" id="toc-trafność" class="nav-link" data-scroll-target="#trafność"><span class="header-section-number">10.1.1</span> Trafność</a></li>
-  <li><a href="#rzetelność" id="toc-rzetelność" class="nav-link" data-scroll-target="#rzetelność"><span class="header-section-number">10.1.2</span> Rzetelność</a></li>
-  <li><a href="#błąd-systematyczny-wariancja-dokładność-i-precyzja-związek-z-trafnością-i-rzetelnością" id="toc-błąd-systematyczny-wariancja-dokładność-i-precyzja-związek-z-trafnością-i-rzetelnością" class="nav-link" data-scroll-target="#błąd-systematyczny-wariancja-dokładność-i-precyzja-związek-z-trafnością-i-rzetelnością"><span class="header-section-number">10.1.3</span> Błąd Systematyczny, Wariancja, Dokładność i Precyzja: Związek z Trafnością i Rzetelnością</a></li>
-  </ul></li>
-  <li><a href="#typy-badań-w-naukach-społecznych" id="toc-typy-badań-w-naukach-społecznych" class="nav-link" data-scroll-target="#typy-badań-w-naukach-społecznych"><span class="header-section-number">10.2</span> Typy Badań w Naukach Społecznych</a>
+  <li><a href="#średnia-arytmetyczna" id="toc-średnia-arytmetyczna" class="nav-link" data-scroll-target="#średnia-arytmetyczna"><span class="header-section-number">11.1</span> Średnia arytmetyczna</a></li>
+  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">11.2</span> Mediana</a></li>
+  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">11.3</span> Moda</a></li>
+  <li><a href="#średnia-ważona" id="toc-średnia-ważona" class="nav-link" data-scroll-target="#średnia-ważona"><span class="header-section-number">11.4</span> Średnia ważona</a>
   <ul class="collapse">
-  <li><a href="#badania-eksperymentalne" id="toc-badania-eksperymentalne" class="nav-link" data-scroll-target="#badania-eksperymentalne"><span class="header-section-number">10.2.1</span> Badania Eksperymentalne</a></li>
-  <li><a href="#badania-nieeksperymentalne-badania-obserwacyjne" id="toc-badania-nieeksperymentalne-badania-obserwacyjne" class="nav-link" data-scroll-target="#badania-nieeksperymentalne-badania-obserwacyjne"><span class="header-section-number">10.2.2</span> Badania Nieeksperymentalne: Badania Obserwacyjne</a></li>
-  <li><a href="#badania-quasi-eksperymentalne" id="toc-badania-quasi-eksperymentalne" class="nav-link" data-scroll-target="#badania-quasi-eksperymentalne"><span class="header-section-number">10.2.3</span> Badania Quasi-eksperymentalne</a></li>
+  <li><a href="#średnia-ważona-z-wagami-nienormalizowanymi" id="toc-średnia-ważona-z-wagami-nienormalizowanymi" class="nav-link" data-scroll-target="#średnia-ważona-z-wagami-nienormalizowanymi"><span class="header-section-number">11.4.1</span> Średnia ważona z wagami nienormalizowanymi</a></li>
+  <li><a href="#średnia-ważona-z-wagami-znormalizowanymi-ułamkami" id="toc-średnia-ważona-z-wagami-znormalizowanymi-ułamkami" class="nav-link" data-scroll-target="#średnia-ważona-z-wagami-znormalizowanymi-ułamkami"><span class="header-section-number">11.4.2</span> Średnia ważona z wagami znormalizowanymi (ułamkami)</a></li>
   </ul></li>
-  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">10.3</span> Podsumowanie</a></li>
-  <li><a href="#pytania-do-dyskusji" id="toc-pytania-do-dyskusji" class="nav-link" data-scroll-target="#pytania-do-dyskusji"><span class="header-section-number">10.4</span> Pytania do Dyskusji</a></li>
-  <li><a href="#dalsze-czytanie" id="toc-dalsze-czytanie" class="nav-link" data-scroll-target="#dalsze-czytanie"><span class="header-section-number">10.5</span> Dalsze Czytanie</a></li>
+  </ul></li>
+  <li><a href="#miary-zmienności" id="toc-miary-zmienności" class="nav-link" data-scroll-target="#miary-zmienności"><span class="header-section-number">12</span> Miary zmienności</a>
+  <ul class="collapse">
+  <li><a href="#rozstęp" id="toc-rozstęp" class="nav-link" data-scroll-target="#rozstęp"><span class="header-section-number">12.1</span> Rozstęp</a></li>
+  <li><a href="#rozstęp-międzykwartylowy-iqr" id="toc-rozstęp-międzykwartylowy-iqr" class="nav-link" data-scroll-target="#rozstęp-międzykwartylowy-iqr"><span class="header-section-number">12.2</span> Rozstęp międzykwartylowy (IQR)</a></li>
+  <li><a href="#wariancja" id="toc-wariancja" class="nav-link" data-scroll-target="#wariancja"><span class="header-section-number">12.3</span> Wariancja</a></li>
+  <li><a href="#odchylenie-standardowe" id="toc-odchylenie-standardowe" class="nav-link" data-scroll-target="#odchylenie-standardowe"><span class="header-section-number">12.4</span> Odchylenie standardowe</a></li>
+  <li><a href="#współczynnik-zmienności" id="toc-współczynnik-zmienności" class="nav-link" data-scroll-target="#współczynnik-zmienności"><span class="header-section-number">12.5</span> Współczynnik zmienności</a></li>
+  </ul></li>
+  <li><a href="#miary-położenia-względnego" id="toc-miary-położenia-względnego" class="nav-link" data-scroll-target="#miary-położenia-względnego"><span class="header-section-number">13</span> Miary położenia względnego</a>
+  <ul class="collapse">
+  <li><a href="#percentyle" id="toc-percentyle" class="nav-link" data-scroll-target="#percentyle"><span class="header-section-number">13.1</span> Percentyle</a></li>
+  <li><a href="#kwartyle" id="toc-kwartyle" class="nav-link" data-scroll-target="#kwartyle"><span class="header-section-number">13.2</span> Kwartyle</a></li>
+  </ul></li>
+  <li><a href="#miary-kształtu" id="toc-miary-kształtu" class="nav-link" data-scroll-target="#miary-kształtu"><span class="header-section-number">14</span> Miary kształtu</a>
+  <ul class="collapse">
+  <li><a href="#skośność" id="toc-skośność" class="nav-link" data-scroll-target="#skośność"><span class="header-section-number">14.1</span> Skośność</a></li>
+  <li><a href="#kurtoza" id="toc-kurtoza" class="nav-link" data-scroll-target="#kurtoza"><span class="header-section-number">14.2</span> Kurtoza</a></li>
+  </ul></li>
+  <li><a href="#wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" id="toc-wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" class="nav-link" data-scroll-target="#wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych"><span class="header-section-number">15</span> Wprowadzenie do dwuwymiarowych i wielowymiarowych statystyk opisowych</a>
+  <ul class="collapse">
+  <li><a href="#statystyki-dwuwymiarowe" id="toc-statystyki-dwuwymiarowe" class="nav-link" data-scroll-target="#statystyki-dwuwymiarowe"><span class="header-section-number">15.1</span> Statystyki dwuwymiarowe</a>
+  <ul class="collapse">
+  <li><a href="#korelacja" id="toc-korelacja" class="nav-link" data-scroll-target="#korelacja"><span class="header-section-number">15.1.1</span> Korelacja</a></li>
+  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">15.1.2</span> Kowariancja</a></li>
+  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">15.1.3</span> Tabela krzyżowa</a></li>
+  </ul></li>
+  <li><a href="#statystyki-wielowymiarowe" id="toc-statystyki-wielowymiarowe" class="nav-link" data-scroll-target="#statystyki-wielowymiarowe"><span class="header-section-number">15.2</span> Statystyki wielowymiarowe</a></li>
+  </ul></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">16</span> Podsumowanie</a></li>
+  <li><a href="#bibliografia" id="toc-bibliografia" class="nav-link" data-scroll-target="#bibliografia"><span class="header-section-number">17</span> Bibliografia</a></li>
   </ul>
 </nav>
     </div>
@@ -245,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Trafność, Rzetelność i Typy Badań w Naukach Społecznych</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Kompleksowy przewodnik po jednowymiarowych statystykach opisowych</span></h1>
 </div>
 
 
@@ -262,268 +318,482 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="wprowadzenie-do-trafności-rzetelności-i-powiązanych-pojęć" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="wprowadzenie-do-trafności-rzetelności-i-powiązanych-pojęć"><span class="header-section-number">10.1</span> Wprowadzenie do Trafności, Rzetelności i Powiązanych Pojęć</h2>
-<p>Przed zagłębieniem się w konkretne typy badań, kluczowe jest zrozumienie fundamentalnych pojęć, które stanowią podstawę rzetelnych badań naukowych. Ta sekcja omówi trafność, rzetelność, błąd systematyczny, wariancję, dokładność i precyzję.</p>
-<section id="trafność" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="trafność"><span class="header-section-number">10.1.1</span> Trafność</h3>
-<p>Trafność odnosi się do stopnia, w jakim pomiar lub badanie dokładnie odzwierciedla lub ocenia konkretną koncepcję, którą badacz próbuje zmierzyć.</p>
-<p>Typy Trafności:</p>
+<p>Statystyki opisowe są fundamentalnymi narzędziami w badaniach nauk społecznych, zapewniającymi zwięzłe podsumowanie charakterystyk danych. Służą kilku kluczowym funkcjom:</p>
 <ul>
-<li>Trafność Wewnętrzna: Stopień, w jakim badanie ustanawia związek przyczynowy między zmiennymi niezależnymi a zależnymi.</li>
-<li>Trafność Zewnętrzna: Stopień, w jakim wyniki badania można uogólnić na inne sytuacje i inne osoby.</li>
-<li>Trafność Konstruktu: Stopień, w jakim test mierzy pojęcie lub konstrukt, który ma mierzyć.</li>
-<li>Trafność Treściowa: Stopień, w jakim pomiar reprezentuje wszystkie aspekty danego konstruktu.</li>
+<li>Podsumowanie dużych zbiorów danych do łatwych do zarządzania informacji</li>
+<li>Identyfikacja wzorców i trendów w danych</li>
+<li>Wykrywanie potencjalnych anomalii lub wartości odstających</li>
+<li>Zapewnienie podstawy do dalszej analizy statystycznej</li>
 </ul>
-</section>
-<section id="rzetelność" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="rzetelność"><span class="header-section-number">10.1.2</span> Rzetelność</h3>
-<p>Rzetelność odnosi się do spójności pomiaru. Pomiar jest uważany za rzetelny, jeśli daje podobne wyniki w spójnych warunkach.</p>
-<p>Typy Rzetelności:</p>
+<p>W tym rozdziale zbadamy różne statystyki opisowe, ich obliczenia, interpretacje i ograniczenia.</p>
+<section id="zrozumienie-wartości-odstających" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="zrozumienie-wartości-odstających"><span class="header-section-number">10.1</span> Zrozumienie wartości odstających</h2>
+<p>Zanim zagłębimy się w konkretne miary, kluczowe jest zrozumienie koncepcji wartości odstających, ponieważ mogą one znacząco wpływać na wiele statystyk opisowych.</p>
+<p>Wartości odstające to punkty danych, które znacznie różnią się od innych obserwacji w zbiorze danych. Mogą wystąpić z powodu:</p>
 <ul>
-<li>Rzetelność Test-Retest: Stopień, w jakim wyniki testu są spójne między jednym a drugim podejściem do testu.</li>
-<li>Rzetelność Międzyoceniająca: Stopień zgodności między oceniającymi.</li>
-<li>Spójność Wewnętrzna: Spójność wyników między pozycjami w ramach testu.</li>
+<li>Błędów pomiaru lub rejestracji</li>
+<li>Prawdziwych skrajnych wartości w populacji</li>
+<li>Próbkowania z innej populacji</li>
 </ul>
-</section>
-<section id="błąd-systematyczny-wariancja-dokładność-i-precyzja-związek-z-trafnością-i-rzetelnością" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="błąd-systematyczny-wariancja-dokładność-i-precyzja-związek-z-trafnością-i-rzetelnością"><span class="header-section-number">10.1.3</span> Błąd Systematyczny, Wariancja, Dokładność i Precyzja: Związek z Trafnością i Rzetelnością</h3>
-<p>Te pojęcia są często używane w dyskusjach o pomiarze i projektowaniu badań i mają ważne związki z trafnością i rzetelnością:</p>
-<ul>
-<li><p>Błąd Systematyczny: Systematyczny błąd prowadzący do odchylenia od prawdziwej wartości. Jest ściśle związany z trafnością, szczególnie trafnością konstruktu.</p></li>
-<li><p>Wariancja: Rozrzut punktów danych wokół średniej. Wariancja jest związana z rzetelnością; wysoka wariancja w powtarzanych pomiarach sugeruje niską rzetelność.</p></li>
-<li><p>Dokładność: Bliskość zmierzonej wartości do rzeczywistej wartości. Jest ściśle powiązana z trafnością.</p></li>
-<li><p>Precyzja: Bliskość dwóch lub więcej pomiarów względem siebie. Precyzja jest związana z rzetelnością.</p></li>
-</ul>
-<p>Zobrazujmy te pojęcia za pomocą R:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Funkcja do generowania danych</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>generuj_dane <span class="ot">&lt;-</span> <span class="cf">function</span>(n, prawdziwa_srednia, blad, sd) {</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  dane <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> prawdziwa_srednia <span class="sc">+</span> blad, <span class="at">sd =</span> sd)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(dane)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie zbiorów danych</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>dokladne_precyzyjne <span class="ot">&lt;-</span> <span class="fu">generuj_dane</span>(<span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>obciazene_precyzyjne <span class="ot">&lt;-</span> <span class="fu">generuj_dane</span>(<span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>dokladne_nieprecyzyjne <span class="ot">&lt;-</span> <span class="fu">generuj_dane</span>(<span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">3</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>obciazene_nieprecyzyjne <span class="ot">&lt;-</span> <span class="fu">generuj_dane</span>(<span class="dv">100</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresów</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>rysuj_wykres <span class="ot">&lt;-</span> <span class="cf">function</span>(dane, tytul) {</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> dane), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(tytul) <span class="sc">+</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">label =</span> <span class="st">"Prawdziwa Wartość"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">rysuj_wykres</span>(dokladne_precyzyjne, <span class="st">"Trafne i Rzetelne</span><span class="sc">\n</span><span class="st">(Dokładne i Precyzyjne)"</span>)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">rysuj_wykres</span>(obciazene_precyzyjne, <span class="st">"Nietrafne, ale Rzetelne</span><span class="sc">\n</span><span class="st">(Obciążone, ale Precyzyjne)"</span>)</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">rysuj_wykres</span>(dokladne_nieprecyzyjne, <span class="st">"Trafne, ale Nierzetelne</span><span class="sc">\n</span><span class="st">(Dokładne, ale Nieprecyzyjne)"</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">rysuj_wykres</span>(obciazene_nieprecyzyjne, <span class="st">"Ani Trafne, ani Rzetelne</span><span class="sc">\n</span><span class="st">(Obciążone i Nieprecyzyjne)"</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Łączenie wykresów</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>(p1 <span class="sc">+</span> p2) <span class="sc">/</span> (p3 <span class="sc">+</span> p4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-trafnosc-rzetelnosc" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-trafnosc-rzetelnosc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="rozdzial5_files/figure-html/fig-trafnosc-rzetelnosc-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trafnosc-rzetelnosc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: Ilustracja trafności i rzetelności
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Powyższy wykres ilustruje różne kombinacje trafności (dokładności) i rzetelności (precyzji). Czerwona przerywana linia reprezentuje prawdziwą wartość.</p>
-</section>
-</section>
-<section id="typy-badań-w-naukach-społecznych" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="typy-badań-w-naukach-społecznych"><span class="header-section-number">10.2</span> Typy Badań w Naukach Społecznych</h2>
-<p>W naukach społecznych badacze wykorzystują różne projekty badań do badania zjawisk, testowania hipotez i wyciągania wniosków. Ten rozdział omówi trzy główne kategorie typów badań:</p>
+<p>Wartości odstające mogą mieć istotny wpływ na wiele miar statystycznych, szczególnie tych opartych na średnich lub sumach kwadratów odchyleń. Dlatego ważne jest, aby:</p>
 <ol type="1">
-<li>Badania Eksperymentalne</li>
-<li>Badania Nieeksperymentalne: Badania Obserwacyjne</li>
-<li>Badania Quasi-eksperymentalne</li>
+<li>Identyfikować wartości odstające zarówno poprzez metody statystyczne, jak i wiedzę dziedzinową</li>
+<li>Badać przyczyny występowania wartości odstających</li>
+<li>Podejmować świadome decyzje o tym, czy włączyć je do analiz, czy nie</li>
 </ol>
-<section id="badania-eksperymentalne" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="badania-eksperymentalne"><span class="header-section-number">10.2.1</span> Badania Eksperymentalne</h3>
-<p>Kluczowe cechy badań eksperymentalnych:</p>
+<p>W trakcie tego rozdziału omówimy, jak różne miary opisowe są dotknięte przez wartości odstające.</p>
+</section>
+<section id="miary-tendencji-centralnej" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Miary tendencji centralnej</h1>
+<p>Miary tendencji centralnej mają na celu identyfikację “typowej” lub “centralnej” wartości w zbiorze danych. Trzy podstawowe miary to średnia, mediana i moda.</p>
+<section id="średnia-arytmetyczna" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="średnia-arytmetyczna"><span class="header-section-number">11.1</span> Średnia arytmetyczna</h2>
+<p>Średnia arytmetyczna to suma wszystkich wartości podzielona przez liczbę wartości.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.142857</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
 <ul>
-<li>Losowy przydział uczestników do grup</li>
-<li>Manipulacja zmienną(ymi) niezależną(ymi)</li>
-<li>Kontrola zmiennych zakłócających</li>
+<li>Łatwa do obliczenia i zrozumienia</li>
+<li>Wykorzystuje wszystkie punkty danych</li>
+<li>Przydatna do dalszych obliczeń statystycznych</li>
 </ul>
-<section id="przykład-wpływ-korzystania-z-mediów-społecznościowych-na-samoocenę" class="level4" data-number="10.2.1.1">
-<h4 data-number="10.2.1.1" class="anchored" data-anchor-id="przykład-wpływ-korzystania-z-mediów-społecznościowych-na-samoocenę"><span class="header-section-number">10.2.1.1</span> Przykład: Wpływ Korzystania z Mediów Społecznościowych na Samoocenę</h4>
-<p><strong>Pytanie Badawcze:</strong> Czy zwiększone korzystanie z mediów społecznościowych prowadzi do niższej samooceny u nastolatków?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych danych</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>przed_eksperymentalna <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>po_eksperymentalna <span class="ot">&lt;-</span> przed_eksperymentalna <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>przed_kontrolna <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>po_kontrolna <span class="ot">&lt;-</span> przed_kontrolna <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Grupa =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Eksperymentalna"</span>, <span class="st">"Kontrolna"</span>), <span class="at">each =</span> n<span class="sc">*</span><span class="dv">2</span>),</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Czas =</span> <span class="fu">rep</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Przed"</span>, <span class="st">"Po"</span>), <span class="at">each =</span> n), <span class="dv">2</span>),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Wynik =</span> <span class="fu">c</span>(przed_eksperymentalna, po_eksperymentalna, </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            przed_kontrolna, po_kontrolna)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Czas, <span class="at">y =</span> Wynik, <span class="at">color =</span> Grupa, <span class="at">group =</span> Grupa)) <span class="sc">+</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>) <span class="sc">+</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Wpływ Korzystania z Mediów Społecznościowych na Samoocenę"</span>) <span class="sc">+</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Czas"</span>) <span class="sc">+</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Wynik Samooceny"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-eksperyment" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-eksperyment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="rozdzial5_files/figure-html/fig-eksperyment-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eksperyment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.2: Wpływ korzystania z mediów społecznościowych na samoocenę
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="badania-nieeksperymentalne-badania-obserwacyjne" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="badania-nieeksperymentalne-badania-obserwacyjne"><span class="header-section-number">10.2.2</span> Badania Nieeksperymentalne: Badania Obserwacyjne</h3>
-<p>Kluczowe cechy badań obserwacyjnych:</p>
+<p><strong>Wady:</strong></p>
 <ul>
-<li>Brak manipulacji zmiennymi</li>
-<li>Podmioty są obserwowane w ich naturalnym środowisku</li>
-<li>Mogą być przekrojowe lub podłużne</li>
+<li>Wrażliwa na wartości odstające</li>
+<li>Nieidealna dla rozkładów skośnych</li>
 </ul>
-<section id="przykład-związek-między-poziomem-wykształcenia-a-dochodem" class="level4" data-number="10.2.2.1">
-<h4 data-number="10.2.2.1" class="anchored" data-anchor-id="przykład-związek-między-poziomem-wykształcenia-a-dochodem"><span class="header-section-number">10.2.2.1</span> Przykład: Związek Między Poziomem Wykształcenia a Dochodem</h4>
-<p><strong>Pytanie Badawcze:</strong> Czy istnieje korelacja między poziomem wykształcenia a dochodem?</p>
+<p><strong>Przykład z wartością odstającą:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych danych</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>wyksztalcenie <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Średnie"</span>, <span class="st">"Licencjat"</span>, <span class="st">"Magister"</span>, <span class="st">"Doktorat"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>))</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>dochod <span class="ot">&lt;-</span> <span class="fu">case_when</span>(</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  wyksztalcenie <span class="sc">==</span> <span class="st">"Średnie"</span> <span class="sc">~</span> <span class="fu">rnorm</span>(n, <span class="dv">3000</span>, <span class="dv">500</span>),</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  wyksztalcenie <span class="sc">==</span> <span class="st">"Licencjat"</span> <span class="sc">~</span> <span class="fu">rnorm</span>(n, <span class="dv">5000</span>, <span class="dv">1000</span>),</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  wyksztalcenie <span class="sc">==</span> <span class="st">"Magister"</span> <span class="sc">~</span> <span class="fu">rnorm</span>(n, <span class="dv">7000</span>, <span class="dv">1500</span>),</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  wyksztalcenie <span class="sc">==</span> <span class="st">"Doktorat"</span> <span class="sc">~</span> <span class="fu">rnorm</span>(n, <span class="dv">9000</span>, <span class="dv">2000</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Wyksztalcenie =</span> wyksztalcenie, <span class="at">Dochod =</span> dochod)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Wyksztalcenie, <span class="at">y =</span> Dochod)) <span class="sc">+</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Związek Między Poziomem Wykształcenia a Dochodem"</span>) <span class="sc">+</span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Poziom Wykształcenia"</span>) <span class="sc">+</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Dochód (PLN)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-obserwacyjne" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-obserwacyjne-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="rozdzial5_files/figure-html/fig-obserwacyjne-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-obserwacyjne-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.3: Związek między poziomem wykształcenia a dochodem
-</figcaption>
-</figure>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dane_z_odstajaca <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">100</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dane_z_odstajaca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18.14286</code></pre>
 </div>
 </div>
-</div>
+<p>Jak widać, wartość odstająca (100) drastycznie wpływa na średnią.</p>
 </section>
-</section>
-<section id="badania-quasi-eksperymentalne" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="badania-quasi-eksperymentalne"><span class="header-section-number">10.2.3</span> Badania Quasi-eksperymentalne</h3>
-<p>Badania quasi-eksperymentalne łączą cechy badań eksperymentalnych i obserwacyjnych. Często wykorzystują naturalne eksperymenty lub zmiany polityk do badania związków przyczynowych.</p>
-<section id="przykład-metoda-różnicy-w-różnicach-did" class="level4" data-number="10.2.3.1">
-<h4 data-number="10.2.3.1" class="anchored" data-anchor-id="przykład-metoda-różnicy-w-różnicach-did"><span class="header-section-number">10.2.3.1</span> Przykład: Metoda Różnicy w Różnicach (DiD)</h4>
-<p><strong>Pytanie Badawcze:</strong> Czy podniesienie płacy minimalnej wpływa na poziom zatrudnienia?</p>
+<section id="mediana" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="mediana"><span class="header-section-number">11.2</span> Mediana</h2>
+<p>Mediana to środkowa wartość, gdy dane są uporządkowane.</p>
+<p><strong>Obliczenie w R:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych danych</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>czas <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Przed"</span>, <span class="st">"Po"</span>), <span class="at">each =</span> <span class="dv">100</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>wojewodztwo <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Woj. A (Eksperymentalne)"</span>, <span class="st">"Woj. B (Kontrolne)"</span>), <span class="at">each =</span> <span class="dv">50</span>, <span class="at">times =</span> <span class="dv">2</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>stopa_zatrudnienia <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.6</span>, <span class="fl">0.05</span>), <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.61</span>, <span class="fl">0.05</span>),  <span class="co"># Woj. A Przed</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.59</span>, <span class="fl">0.05</span>), <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.62</span>, <span class="fl">0.05</span>), <span class="co"># Woj. B Przed</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.58</span>, <span class="fl">0.05</span>), <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.59</span>, <span class="fl">0.05</span>), <span class="co"># Woj. A Po (spadek)</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.61</span>, <span class="fl">0.05</span>), <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="fl">0.64</span>, <span class="fl">0.05</span>)  <span class="co"># Woj. B Po (wzrost)</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Czas =</span> czas, <span class="at">Wojewodztwo =</span> wojewodztwo, <span class="at">StopaZatrudnienia =</span> stopa_zatrudnienia)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Czas, <span class="at">y =</span> StopaZatrudnienia, <span class="at">color =</span> Wojewodztwo, <span class="at">group =</span> Wojewodztwo)) <span class="sc">+</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"line"</span>) <span class="sc">+</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Różnica w Różnicach: Wpływ Podniesienia Płacy Minimalnej na Zatrudnienie"</span>) <span class="sc">+</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Czas"</span>) <span class="sc">+</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Stopa Zatrudnienia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-did" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-did-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="rozdzial5_files/figure-html/fig-did-1.png" class="img-fluid figure-img" width="672">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-did-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.4: Analiza DiD: Wpływ podniesienia płacy minimalnej na zatrudnienie
-</figcaption>
-</figure>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(dane_z_odstajaca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
 </div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Nie jest dotknięta przez skrajne wartości odstające</li>
+<li>Lepsza dla rozkładów skośnych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nie wykorzystuje wszystkich punktów danych</li>
+<li>Mniej przydatna do dalszych obliczeń statystycznych</li>
+</ul>
+</section>
+<section id="moda" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="moda"><span class="header-section-number">11.3</span> Moda</h2>
+<p>Moda to najczęściej występująca wartość.</p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modeest)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mfv</span>(dane)  <span class="co"># Najczęściej występująca wartość</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 5</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Jedyna miara tendencji centralnej dla danych nominalnych</li>
+<li>Może identyfikować wiele szczytów w danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nie zawsze jednoznacznie zdefiniowana</li>
+<li>Nieprzydatna dla danych ciągłych</li>
+</ul>
+</section>
+<section id="średnia-ważona" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="średnia-ważona"><span class="header-section-number">11.4</span> Średnia ważona</h2>
+<p>Średnia ważona jest używana, gdy niektóre punkty danych są ważniejsze od innych. Rozróżniamy dwa typy średnich ważonych: z wagami nienormalizowanymi i z wagami znormalizowanymi.</p>
+<section id="średnia-ważona-z-wagami-nienormalizowanymi" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="średnia-ważona-z-wagami-nienormalizowanymi"><span class="header-section-number">11.4.1</span> Średnia ważona z wagami nienormalizowanymi</h3>
+<p>Jest to standardowa forma średniej ważonej, gdzie wagi mogą być dowolnymi liczbami dodatnimi reprezentującymi ważność każdego punktu danych.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(x, w)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.571429</code></pre>
+</div>
+</div>
+</section>
+<section id="średnia-ważona-z-wagami-znormalizowanymi-ułamkami" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="średnia-ważona-z-wagami-znormalizowanymi-ułamkami"><span class="header-section-number">11.4.2</span> Średnia ważona z wagami znormalizowanymi (ułamkami)</h3>
+<p>W tym przypadku wagi są ułamkami sumującymi się do 1, reprezentującymi proporcję ważności dla każdego punktu danych.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(\bar{x}_w = \sum_{i=1}^n w_i x_i\)</span>, gdzie <span class="math inline">\(\sum_{i=1}^n w_i = 1\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>w_znormalizowane <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>)  <span class="co"># Uwaga: te sumują się do 1</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x <span class="sc">*</span> w_znormalizowane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.8</code></pre>
+</div>
+</div>
+<p><strong>Zalety średnich ważonych:</strong></p>
+<ul>
+<li>Uwzględniają różną ważność punktów danych</li>
+<li>Przydatne w analizie badań z różnymi wielkościami próby lub poziomami ważności</li>
+<li>Mogą korygować nierówne prawdopodobieństwa w projektach próbkowania</li>
+</ul>
+<p><strong>Wady średnich ważonych:</strong></p>
+<ul>
+<li>Wymagają uzasadnienia dla wag</li>
+<li>Mogą być niewłaściwie użyte do manipulacji wynikami</li>
+<li>Mogą być mniej intuicyjne w interpretacji niż prosta średnia arytmetyczna</li>
+</ul>
+<p><strong>Porównanie:</strong></p>
+<p>Wagi nienormalizowane są często łatwiejsze do przypisania na podstawie rzeczywistej ważności lub wielkości próby, ale wymagają dodatkowego kroku normalizacji w obliczeniach. Wagi znormalizowane (ułamki) upraszczają obliczenia, ale mogą być mniej intuicyjne do bezpośredniego przypisania.</p>
+<p><strong>Przykład w naukach społecznych:</strong></p>
+<p>Załóżmy, że obliczamy średni dochód dla regionu z trzema miastami:</p>
+<p>Miasto A: Średni dochód 50 000 zł, populacja 100 000 Miasto B: Średni dochód 60 000 zł, populacja 200 000 Miasto C: Średni dochód 70 000 zł, populacja 300 000</p>
+<p>Możemy użyć populacji jako wag:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dochody <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>populacje <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100000</span>, <span class="dv">200000</span>, <span class="dv">300000</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Wagi nienormalizowane</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">weighted.mean</span>(dochody, populacje)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 63333.33</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wagi znormalizowane</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pop_znormalizowane <span class="ot">&lt;-</span> populacje <span class="sc">/</span> <span class="fu">sum</span>(populacje)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(dochody <span class="sc">*</span> pop_znormalizowane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 63333.33</code></pre>
+</div>
+</div>
+<p>Ta średnia ważona daje dokładniejsze przedstawienie średniego dochodu regionu niż prosta średnia arytmetyczna średnich dochodów trzech miast.</p>
+</section>
+</section>
+</section>
+<section id="miary-zmienności" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Miary zmienności</h1>
+<p>Te miary opisują, jak rozproszone są dane. Są kluczowe dla zrozumienia rozproszenia punktów danych wokół tendencji centralnej.</p>
+<section id="rozstęp" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="rozstęp"><span class="header-section-number">12.1</span> Rozstęp</h2>
+<p>Rozstęp to różnica między wartością maksymalną a minimalną.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(R = x_{max} - x_{min}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2 9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(dane) <span class="sc">-</span> <span class="fu">min</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Prosty do obliczenia i zrozumienia</li>
+<li>Daje natychmiastowe poczucie rozpiętości danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Niezwykle wrażliwy na wartości odstające</li>
+<li>Nie dostarcza informacji o rozkładzie między skrajnościami</li>
+</ul>
+</section>
+<section id="rozstęp-międzykwartylowy-iqr" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="rozstęp-międzykwartylowy-iqr"><span class="header-section-number">12.2</span> Rozstęp międzykwartylowy (IQR)</h2>
+<p>IQR to różnica między 75. a 25. percentylem.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(IQR = Q_3 - Q_1\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Odporny na wartości odstające</li>
+<li>Dostarcza informacji o rozpiętości środkowych 50% danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Ignoruje ogony rozkładu</li>
+<li>Mniej efektywny niż odchylenie standardowe dla rozkładów normalnych</li>
+</ul>
+</section>
+<section id="wariancja" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="wariancja"><span class="header-section-number">12.3</span> Wariancja</h2>
+<p>Wariancja mierzy średnie kwadratowe odchylenie od średniej.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.142857</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Wykorzystuje wszystkie punkty danych</li>
+<li>Podstawa dla wielu testów statystycznych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Jednostki są podniesione do kwadratu, co utrudnia interpretację</li>
+<li>Wrażliwa na wartości odstające</li>
+</ul>
+</section>
+<section id="odchylenie-standardowe" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="odchylenie-standardowe"><span class="header-section-number">12.4</span> Odchylenie standardowe</h2>
+<p>Odchylenie standardowe to pierwiastek kwadratowy z wariancji.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(s = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.267787</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>W tych samych jednostkach co oryginalne dane</li>
+<li>Szeroko stosowane i rozumiane</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nadal wrażliwe na wartości odstające</li>
+<li>Zakłada, że dane są w przybliżeniu normalnie rozłożone</li>
+</ul>
+</section>
+<section id="współczynnik-zmienności" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="współczynnik-zmienności"><span class="header-section-number">12.5</span> Współczynnik zmienności</h2>
+<p>Współczynnik zmienności to odchylenie standardowe podzielone przez średnią, często wyrażane jako procent.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sd</span>(dane) <span class="sc">/</span> <span class="fu">mean</span>(dane)) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 44.09586</code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Pozwala na porównanie zmienności między zbiorami danych o różnych jednostkach lub średnich</li>
+<li>Przydatny w dziedzinach takich jak finanse do oceny ryzyka</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Nie ma sensu dla danych z wartościami zarówno dodatnimi, jak i ujemnymi</li>
+<li>Może być mylący, gdy średnia jest bliska zeru</li>
+</ul>
+</section>
+</section>
+<section id="miary-położenia-względnego" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Miary położenia względnego</h1>
+<p>Te miary pomagają zrozumieć, gdzie konkretna wartość znajduje się w stosunku do całego zbioru danych.</p>
+<section id="percentyle" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="percentyle"><span class="header-section-number">13.1</span> Percentyle</h2>
+<p>Percentyle dzielą dane na 100 równych części.</p>
+<p><strong>Wzór:</strong> Dla k-tego percentyla: <span class="math inline">\(P_k = L + \frac{k(n+1)}{100}\)</span>, gdzie L to dolna granica przedziału</p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(dane, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  0%  25%  50%  75% 100% 
+   2    4    5    6    9 </code></pre>
+</div>
+</div>
+</section>
+<section id="kwartyle" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="kwartyle"><span class="header-section-number">13.2</span> Kwartyle</h2>
+<p>Kwartyle dzielą dane na cztery równe części.</p>
+<ul>
+<li>Q1: 25. percentyl</li>
+<li>Q2: Mediana (50. percentyl)</li>
+<li>Q3: 75. percentyl</li>
+</ul>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  2.000   4.000   5.000   5.143   6.000   9.000 </code></pre>
+</div>
+</div>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Odporne na wartości odstające</li>
+<li>Dostarczają informacji o rozpiętości i skośności danych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Mniej precyzyjne niż użycie wszystkich punktów danych</li>
+<li>Różne metody obliczania mogą prowadzić do nieznacznie różnych wyników</li>
+</ul>
+</section>
+</section>
+<section id="miary-kształtu" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Miary kształtu</h1>
+<p>Te miary opisują kształt rozkładu prawdopodobieństwa danych.</p>
+<section id="skośność" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="skośność"><span class="header-section-number">14.1</span> Skośność</h2>
+<p>Skośność mierzy asymetrię rozkładu prawdopodobieństwa.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'moments'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:modeest':
+
+    skewness</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skewness</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4592793</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Skośność dodatnia: prawy ogon jest dłuższy (średnia &gt; mediana)</li>
+<li>Skośność ujemna: lewy ogon jest dłuższy (średnia &lt; mediana)</li>
+<li>Skośność zero: rozkład symetryczny</li>
+</ul>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Dostarcza informacji o kształcie rozkładu</li>
+<li>Przydatna do sprawdzania założeń normalności</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Wrażliwa na wartości odstające</li>
+<li>Może być myląca dla rozkładów wielomodalnych</li>
+</ul>
+</section>
+<section id="kurtoza" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="kurtoza"><span class="header-section-number">14.2</span> Kurtoza</h2>
+<p>Kurtoza mierzy “grubość ogonów” rozkładu prawdopodobieństwa.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}\)</span></p>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kurtosis</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.457047</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Kurtoza dodatnia: ciężkie ogony, rozkład wysmukły</li>
+<li>Kurtoza ujemna: lekkie ogony, rozkład płaski</li>
+<li>Kurtoza zero: rozkład normalny</li>
+</ul>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Dostarcza informacji o wartościach skrajnych w rozkładzie</li>
+<li>Przydatna do modelowania finansowego i oceny ryzyka</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Wrażliwa na wartości odstające</li>
+<li>Może być trudna do praktycznej interpretacji</li>
+</ul>
+</section>
+</section>
+<section id="wprowadzenie-do-dwuwymiarowych-i-wielowymiarowych-statystyk-opisowych" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Wprowadzenie do dwuwymiarowych i wielowymiarowych statystyk opisowych</h1>
+<p>Podczas gdy statystyki jednowymiarowe opisują pojedyncze zmienne, statystyki dwuwymiarowe i wielowymiarowe badają relacje między zmiennymi.</p>
+<section id="statystyki-dwuwymiarowe" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="statystyki-dwuwymiarowe"><span class="header-section-number">15.1</span> Statystyki dwuwymiarowe</h2>
+<section id="korelacja" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="korelacja"><span class="header-section-number">15.1.1</span> Korelacja</h3>
+<p>Korelacja mierzy siłę i kierunek liniowego związku między dwiema zmiennymi.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7745967</code></pre>
+</div>
+</div>
+</section>
+<section id="kowariancja" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">15.1.2</span> Kowariancja</h3>
+<p>Kowariancja mierzy, jak dwie zmienne zmieniają się razem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+</section>
+<section id="tabela-krzyżowa" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">15.1.3</span> Tabela krzyżowa</h3>
+<p>Tabela krzyżowa (tabela kontyngencji) pokazuje relację między dwiema zmiennymi kategorialnymi.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">cut</span>(x, <span class="dv">2</span>), <span class="fu">cut</span>(y, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           
+            (2,3.5] (3.5,5]
+  (0.996,3]       1       2
+  (3,5]           0       2</code></pre>
 </div>
 </div>
 </section>
 </section>
+<section id="statystyki-wielowymiarowe" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="statystyki-wielowymiarowe"><span class="header-section-number">15.2</span> Statystyki wielowymiarowe</h2>
+<ul>
+<li><strong>Korelacja wielokrotna</strong>: Korelacja między zmienną zależną a wieloma zmiennymi niezależnymi.</li>
+<li><strong>Korelacja cząstkowa</strong>: Korelacja między dwiema zmiennymi przy kontrolowaniu innych.</li>
+<li><strong>Analiza czynnikowa</strong>: Technika redukcji wielu zmiennych do kilku podstawowych czynników.</li>
+</ul>
+<p>Te tematy zostaną omówione bardziej szczegółowo w kolejnych rozdziałach.</p>
 </section>
-<section id="podsumowanie" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">10.3</span> Podsumowanie</h2>
-<p>Zrozumienie różnych typów badań, wraz z kluczowymi pojęciami trafności i rzetelności, jest niezbędne do projektowania efektywnych badań i interpretacji wyników. Każdy typ badania ma swoje mocne strony i ograniczenia, a wybór odpowiedniej metody zależy od pytania badawczego, dostępnych zasobów i względów etycznych.</p>
 </section>
-<section id="pytania-do-dyskusji" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="pytania-do-dyskusji"><span class="header-section-number">10.4</span> Pytania do Dyskusji</h2>
+<section id="podsumowanie" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Podsumowanie</h1>
+<p>Statystyki opisowe są niezbędnymi narzędziami do podsumowywania i zrozumienia danych w badaniach nauk społecznych. Jednak ważne jest, aby:</p>
 <ol type="1">
-<li>Jakie są główne różnice między badaniami eksperymentalnymi, quasi-eksperymentalnymi i obserwacyjnymi?</li>
-<li>W jakich sytuacjach badacz może wybrać projekt quasi-eksperymentalny zamiast prawdziwego eksperymentu?</li>
-<li>Jak metoda różnicy w różnicach (DiD) pozwala na wnioskowanie przyczynowe?</li>
-<li>Zaprojektuj hipotetyczne badanie wykorzystujące jedną z omówionych metod do zbadania wybranego przez siebie zagadnienia z zakresu nauk społecznych.</li>
+<li>Wybierać odpowiednie miary w oparciu o typ danych i rozkład</li>
+<li>Być świadomym ograniczeń każdej miary, szczególnie w odniesieniu do wartości odstających</li>
+<li>Używać wielu miar, aby uzyskać kompleksowe zrozumienie</li>
 </ol>
+<p>Pamiętaj, że statystyki opisowe są tylko punktem wyjścia. Stanowią one podstawę dla statystyk inferencyjnych, które pozwalają nam wyciągać wnioski o populacjach na podstawie próbek.</p>
 </section>
-<section id="dalsze-czytanie" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="dalsze-czytanie"><span class="header-section-number">10.5</span> Dalsze Czytanie</h2>
-<ul>
-<li>Babbie, E. (2020). “Badania społeczne w praktyce”. Warszawa: Wydawnictwo Naukowe PWN.</li>
-<li>Brzeziński, J. (2019). “Metodologia badań psychologicznych”. Warszawa: Wydawnictwo Naukowe PWN.</li>
-<li>Angrist, J. D., &amp; Pischke, J. S. (2014). “Mastering ’Metrics: The Path from Cause to Effect”. Princeton University Press.</li>
-</ul>
+<section id="bibliografia" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Bibliografia</h1>
+<ol type="1">
+<li>Agresti, A., &amp; Finlay, B. (2009). Metody statystyczne dla nauk społecznych (wyd. 4). Pearson Prentice Hall.</li>
+<li>Field, A. (2013). Odkrywanie statystyki z wykorzystaniem IBM SPSS Statistics. Sage.</li>
+<li>Hair, J. F., Black, W. C., Babin, B. J., &amp; Anderson, R. E. (2019). Analiza danych wielowymiarowych (wyd. 8). Cengage Learning.</li>
+</ol>
 
 
 </section>
