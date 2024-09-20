@@ -1328,5 +1328,105 @@
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Reliability and Validity in Data Science Research</span>"
     ]
+  },
+  {
+    "objectID": "rozdzial3b.html",
+    "href": "rozdzial3b.html",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "",
+    "text": "8.1 Definiowanie Rzetelności i Trafności\nRzetelność odnosi się do spójności pomiaru. Rzetelny pomiar lub badanie daje podobne wyniki w spójnych warunkach.\nTrafność odnosi się do dokładności pomiaru. Trafny pomiar lub badanie dokładnie reprezentuje to, co twierdzi, że mierzy.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#cztery-kombinacje-rzetelności-i-trafności",
+    "href": "rozdzial3b.html#cztery-kombinacje-rzetelności-i-trafności",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.2 Cztery Kombinacje Rzetelności i Trafności",
+    "text": "8.2 Cztery Kombinacje Rzetelności i Trafności\nIstnieją cztery możliwe kombinacje rzetelności i trafności:\n\nWysoka Rzetelność, Wysoka Trafność\nWysoka Rzetelność, Niska Trafność\nNiska Rzetelność, Wysoka Trafność\nNiska Rzetelność, Niska Trafność\n\nPrzyjrzyjmy się każdej z tych kombinacji z przykładami i wizualizacjami.\n\n8.2.1 1. Wysoka Rzetelność, Wysoka Trafność\nTo idealny scenariusz w badaniach. Pomiary są zarówno spójne, jak i dokładne.\nPrzykład: Dobrze skalibrowana waga cyfrowa używana do pomiaru wagi. Konsekwentnie daje ten sam odczyt dla tego samego obiektu i dokładnie reprezentuje prawdziwą wagę.\n\n\n8.2.2 2. Wysoka Rzetelność, Niska Trafność\nW tym przypadku pomiary są spójne, ale niedokładne.\nPrzykład: Źle skalibrowana waga, która zawsze mierzy 5 kg za ciężko. Daje spójne wyniki (wysoka rzetelność), ale nie reprezentuje prawdziwej wagi (niska trafność).\n\n\n8.2.3 3. Niska Rzetelność, Wysoka Trafność\nTutaj pomiary są dokładne średnio, ale niespójne.\nPrzykład: Waga, która waha się wokół prawdziwej wagi. Czasami pokazuje trochę więcej, czasami trochę mniej, ale średnio jest poprawna.\n\n\n8.2.4 4. Niska Rzetelność, Niska Trafność\nTo najgorszy scenariusz, gdzie pomiary nie są ani spójne, ani dokładne.\nPrzykład: Zepsuta waga, która daje losowe odczyty niezwiązane z prawdziwą wagą.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#wizualizacja-rzetelności-i-trafności",
+    "href": "rozdzial3b.html#wizualizacja-rzetelności-i-trafności",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.3 Wizualizacja Rzetelności i Trafności",
+    "text": "8.3 Wizualizacja Rzetelności i Trafności\nAby lepiej zrozumieć te pojęcia, stwórzmy wizualizacje przy użyciu ggplot2 w R. Zasymulujemy dane pomiarowe dla każdego scenariusza i narysujemy je.\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(patchwork)\n\nset.seed(123)\n\n# Generowanie danych dla każdego scenariusza\nn &lt;- 100\nprawdziwa_wartosc &lt;- 50\n\ndane &lt;- tibble(\n  wysoka_rz_wysoka_tr = rnorm(n, mean = prawdziwa_wartosc, sd = 1),\n  wysoka_rz_niska_tr = rnorm(n, mean = prawdziwa_wartosc + 5, sd = 1),\n  niska_rz_wysoka_tr = rnorm(n, mean = prawdziwa_wartosc, sd = 5),\n  niska_rz_niska_tr = runif(n, min = 0, max = 100)\n) %&gt;%\n  mutate(id = row_number()) %&gt;%\n  pivot_longer(cols = -id, names_to = \"scenariusz\", values_to = \"pomiar\")\n\n# Tworzenie wykresu punktowego\nwykres_punktowy &lt;- ggplot(dane, aes(x = id, y = pomiar, color = scenariusz)) +\n  geom_point(alpha = 0.6, size = 2) +\n  geom_hline(yintercept = prawdziwa_wartosc, linetype = \"dashed\", color = \"black\", size = 1) +\n  facet_wrap(~ scenariusz, ncol = 2, scales = \"free_y\",\n             labeller = labeller(scenariusz = c(\n               \"wysoka_rz_wysoka_tr\" = \"Wysoka Rzetelność, Wysoka Trafność\",\n               \"wysoka_rz_niska_tr\" = \"Wysoka Rzetelność, Niska Trafność\",\n               \"niska_rz_wysoka_tr\" = \"Niska Rzetelność, Wysoka Trafność\",\n               \"niska_rz_niska_tr\" = \"Niska Rzetelność, Niska Trafność\"\n             ))) +\n  labs(title = \"Wykresy punktowe pomiarów\",\n       subtitle = \"Przerywana linia reprezentuje prawdziwą wartość\",\n       x = \"ID pomiaru\",\n       y = \"Zmierzona wartość\") +\n  theme_minimal(base_size = 14) +\n  theme(legend.position = \"none\",\n        strip.text = element_text(size = 16, face = \"bold\"),\n        plot.title = element_text(size = 20, face = \"bold\"),\n        plot.subtitle = element_text(size = 16))\n\n# Tworzenie histogramu\nwykres_hist &lt;- ggplot(dane, aes(x = pomiar, fill = scenariusz)) +\n  geom_histogram(bins = 20, alpha = 0.7) +\n  geom_vline(xintercept = prawdziwa_wartosc, color = \"red\", linetype = \"dashed\", size = 1) +\n  facet_wrap(~ scenariusz, ncol = 2, scales = \"free\",\n             labeller = labeller(scenariusz = c(\n               \"wysoka_rz_wysoka_tr\" = \"Wysoka Rzetelność, Wysoka Trafność\",\n               \"wysoka_rz_niska_tr\" = \"Wysoka Rzetelność, Niska Trafność\",\n               \"niska_rz_wysoka_tr\" = \"Niska Rzetelność, Wysoka Trafność\",\n               \"niska_rz_niska_tr\" = \"Niska Rzetelność, Niska Trafność\"\n             ))) +\n  labs(title = \"Histogramy pomiarów\",\n       subtitle = \"Czerwona przerywana linia reprezentuje prawdziwą wartość\",\n       x = \"Zmierzona wartość\",\n       y = \"Liczba\") +\n  theme_minimal(base_size = 14) +\n  theme(legend.position = \"none\",\n        strip.text = element_text(size = 16, face = \"bold\"),\n        plot.title = element_text(size = 20, face = \"bold\"),\n        plot.subtitle = element_text(size = 16))\n\n# Łączenie wykresów\nwykres_polaczony &lt;- wykres_punktowy / wykres_hist +\n  plot_layout(heights = c(1, 1)) +\n  plot_annotation(\n    title = \"Rzetelność i Trafność w Pomiarach\",\n    theme = theme(plot.title = element_text(hjust = 0.5, size = 24, face = \"bold\"))\n  )\n\n# Wyświetlanie połączonego wykresu\nwykres_polaczony\n\n\n\n\n\n\n\n\n\n8.3.1 Interpretacja Wizualizacji\n\nWysoka Rzetelność, Wysoka Trafność: Punkty grupują się ciasno wokół prawdziwej wartości (przerywana linia).\nWysoka Rzetelność, Niska Trafność: Punkty grupują się ciasno, ale konsekwentnie powyżej prawdziwej wartości.\nNiska Rzetelność, Wysoka Trafność: Punkty rozpraszają się szeroko, ale centrują się wokół prawdziwej wartości.\nNiska Rzetelność, Niska Trafność: Punkty rozpraszają się losowo bez wyraźnego wzoru lub relacji do prawdziwej wartości.\n\nZrozumienie rzetelności i trafności jest kluczowe w naukach o danych i badaniach. Wysoka rzetelność zapewnia spójne pomiary, podczas gdy wysoka trafność zapewnia dokładne reprezentacje tego, co zamierzamy zmierzyć. Biorąc pod uwagę oba aspekty, badacze mogą projektować bardziej solidne badania i wyciągać bardziej znaczące wnioski ze swoich danych.\nProwadząc własne badania lub analizując pracę innych, zawsze należy rozważyć: - Jak rzetelne są pomiary? - Jak trafne jest podejście do pomiaru zamierzonego pojęcia? - Czy stosowane metody wspierają zarówno rzetelność, jak i trafność?\nMając na uwadze te pytania, będziesz lepiej przygotowany do prowadzenia i interpretowania wysokiej jakości badań w naukach o danych.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#rodzaje-rzetelności",
+    "href": "rozdzial3b.html#rodzaje-rzetelności",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.4 Rodzaje Rzetelności",
+    "text": "8.4 Rodzaje Rzetelności\nRzetelność można oceniać na kilka sposobów, każdy skupiający się na innym aspekcie spójności:\n\nRzetelność test-retest: Mierzy spójność testu w czasie. Polega na przeprowadzeniu tego samego testu na tej samej grupie uczestników w różnych momentach i porównaniu wyników.\nRzetelność między oceniającymi: Ocenia stopień zgodności między różnymi oceniającymi lub obserwatorami. Jest kluczowa, gdy w zbieraniu danych biorą udział subiektywne osądy.\nSpójność wewnętrzna: Ocenia, jak dobrze różne elementy testu lub skali mierzą ten sam konstrukt. Alfa Cronbacha jest powszechną miarą spójności wewnętrznej.\nRzetelność form równoległych: Polega na stworzeniu dwóch równoważnych form testu i przeprowadzeniu ich na tej samej grupie. Korelacja między dwoma zestawami wyników wskazuje na rzetelność.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#rodzaje-trafności",
+    "href": "rozdzial3b.html#rodzaje-trafności",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.5 Rodzaje Trafności",
+    "text": "8.5 Rodzaje Trafności\nTrafność jest pojęciem wieloaspektowym, z kilkoma rodzajami, które badacze muszą wziąć pod uwagę:\n\nTrafność treściowa: Zapewnia, że pomiar obejmuje wszystkie aspekty konstruktu, który ma mierzyć. Często jest oceniana przez osąd ekspertów.\nTrafność konstrukcyjna: Ocenia, czy test mierzy zamierzony konstrukt teoretyczny. Obejmuje:\n\nTrafność zbieżną: Stopień, w jakim pomiar koreluje z innymi pomiarami tego samego konstruktu.\nTrafność różnicową: Zakres, w jakim pomiar nie koreluje z pomiarami różnych konstruktów.\n\nTrafność kryterialną: Ocenia, jak dobrze pomiar przewiduje wynik. Obejmuje:\n\nTrafność współbieżną: Jak dobrze pomiar koreluje z innymi pomiarami tego samego konstruktu w tym samym czasie.\nTrafność predykcyjną: Jak dobrze pomiar przewiduje przyszłe wyniki.\n\nTrafność fasadowa: Odnosi się do tego, czy test wydaje się mierzyć to, co twierdzi, że mierzy. Choć nie jest to naukowa miara, może być ważna dla zaangażowania uczestników.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#trafność-wewnętrzna-vs-zewnętrzna",
+    "href": "rozdzial3b.html#trafność-wewnętrzna-vs-zewnętrzna",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.6 Trafność Wewnętrzna vs Zewnętrzna",
+    "text": "8.6 Trafność Wewnętrzna vs Zewnętrzna\nTe pojęcia są kluczowe w projektowaniu eksperymentów i możliwości uogólniania wyników badań:\n\n8.6.1 Trafność Wewnętrzna\nTrafność wewnętrzna odnosi się do zakresu, w jakim badanie ustanawia związek przyczynowy między zmiennymi niezależnymi a zależnymi. Odpowiada na pytanie: “Czy eksperymentalne traktowanie rzeczywiście spowodowało zaobserwowane efekty?”\nCzynniki, które mogą zagrażać trafności wewnętrznej, obejmują: - Historia: Zewnętrzne wydarzenia występujące między pre-testem a post-testem - Dojrzewanie: Naturalne zmiany u uczestników w czasie - Efekty testowania: Zmiany wynikające z przeprowadzenia pre-testu - Instrumentacja: Zmiany w narzędziu pomiarowym lub obserwatorach - Błąd selekcji: Nielosowy przydział do grup - Utrata: Utrata uczestników podczas badania\n\n\n8.6.2 Trafność Zewnętrzna\nTrafność zewnętrzna odnosi się do zakresu, w jakim wyniki badania mogą być uogólnione na inne sytuacje, populacje lub ustawienia. Odpowiada na pytanie: “W jakim stopniu wyniki mogą być zastosowane poza konkretnym kontekstem badania?”\nCzynniki, które mogą wpływać na trafność zewnętrzną, obejmują: - Trafność populacyjna: Jak dobrze próba reprezentuje szerszą populację - Trafność ekologiczna: Jak dobrze ustawienie badania reprezentuje warunki świata rzeczywistego - Trafność czasowa: Czy wyniki pozostają prawdziwe w czasie",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#spójność-w-badaniach",
+    "href": "rozdzial3b.html#spójność-w-badaniach",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.7 Spójność w Badaniach",
+    "text": "8.7 Spójność w Badaniach\nSpójność jest ściśle związana z rzetelnością, ale wykracza poza sam pomiar. W badaniach spójność odnosi się do ogólnej koherencji i stabilności wyników w różnych kontekstach, metodach lub badaniach.\nKluczowe aspekty spójności w badaniach obejmują:\n\nReplikowalność: Zdolność do odtworzenia wyników badania przy użyciu tych samych metod i danych.\nOdporność: Stabilność wyników w różnych podejściach analitycznych lub niewielkich zmianach w metodologii.\nKonwergencja: Zbieżność wyników z różnych badań lub metod badających to samo zjawisko.\nSpójność długoterminowa: Stabilność wyników w czasie, szczególnie ważna w badaniach długoterminowych.\n\n[Continuation of the previous content…]\nZapewnienie spójności w badaniach obejmuje: - Stosowanie standaryzowanych procedur i miar - Dokładne dokumentowanie metod i decyzji analitycznych - Przeprowadzanie badań replikacyjnych - Meta-analizy w celu syntezy wyników z wielu badań",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#równoważenie-rzetelności-trafności-i-spójności",
+    "href": "rozdzial3b.html#równoważenie-rzetelności-trafności-i-spójności",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.8 Równoważenie Rzetelności, Trafności i Spójności",
+    "text": "8.8 Równoważenie Rzetelności, Trafności i Spójności\nChociaż rzetelność, trafność i spójność są kluczowe dla wysokiej jakości badań, czasami wiążą się z kompromisami:\n\nWysoce rzetelna miara może nie mieć trafności, jeśli konsekwentnie mierzy niewłaściwą rzecz.\nDążenie do idealnej trafności wewnętrznej (np. w ściśle kontrolowanych eksperymentach laboratoryjnych) może zmniejszyć trafność zewnętrzną.\nZapewnienie wysokiej spójności w różnych kontekstach może wymagać poświęcenia pewnego stopnia precyzji lub głębi w konkretnych sytuacjach.\n\nBadacze muszą starannie równoważyć te aspekty w oparciu o swoje pytania badawcze i charakter badania. Kompleksowe zrozumienie rzetelności, trafności i spójności pomaga w projektowaniu solidnych badań, dokładnej interpretacji wyników i znaczącym wkładzie do korpusu wiedzy naukowej.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#kompromis-między-obciążeniem-a-wariancją",
+    "href": "rozdzial3b.html#kompromis-między-obciążeniem-a-wariancją",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.9 Kompromis między Obciążeniem a Wariancją",
+    "text": "8.9 Kompromis między Obciążeniem a Wariancją\nPojęcia rzetelności i trafności są ściśle związane ze statystycznym pojęciem kompromisu między obciążeniem a wariancją. Ten kompromis jest fundamentalny w uczeniu maszynowym i modelowaniu statystycznym.\n\nObciążenie odnosi się do błędu wprowadzonego przez przybliżenie problemu ze świata rzeczywistego uproszczonym modelem. Wysokie obciążenie może prowadzić do niedopasowania.\nWariancja odnosi się do błędu wprowadzonego przez wrażliwość modelu na małe fluktuacje w zbiorze treningowym. Wysoka wariancja może prowadzić do przeuczenia.\n\nZobrazujmy to pojęcie za pomocą uproszczonego wykresu:\n\nx &lt;- seq(0, 10, length.out = 100)\ny_prawdziwa &lt;- sin(x)\ny_niskie_obciazenie_wysoka_wariancja &lt;- y_prawdziwa + rnorm(100, 0, 0.3)\ny_wysokie_obciazenie_niska_wariancja &lt;- 0.5 * x\n\ndf &lt;- data.frame(x = rep(x, 3),\n                 y = c(y_prawdziwa, y_niskie_obciazenie_wysoka_wariancja, y_wysokie_obciazenie_niska_wariancja),\n                 typ = rep(c(\"Prawdziwa Funkcja\", \"Niskie Obciążenie, Wysoka Wariancja\", \"Wysokie Obciążenie, Niska Wariancja\"), each = 100))\n\nggplot(df, aes(x = x, y = y, color = typ)) +\n  geom_line() +\n  geom_point(data = subset(df, typ != \"Prawdziwa Funkcja\"), alpha = 0.5) +\n  scale_color_manual(values = c(\"black\", \"blue\", \"red\")) +\n  labs(title = \"Kompromis między Obciążeniem a Wariancją\",\n       x = \"X\",\n       y = \"Y\",\n       color = \"Typ Modelu\") +\n  theme_minimal()\n\n\n\n\nWizualizacja kompromisu między obciążeniem a wariancją\n\n\n\n\nNa tym wykresie: - Czarna linia reprezentuje prawdziwą funkcję bazową. - Niebieskie punkty reprezentują model z niskim obciążeniem, ale wysoką wariancją. Średnio podąża blisko prawdziwej funkcji, ale ma dużo szumu. - Czerwona linia reprezentuje model z wysokim obciążeniem, ale niską wariancją. Konsekwentnie niedoszacowuje prawdziwej funkcji, ale ma mniej szumu.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial3b.html#dokładność-i-precyzja",
+    "href": "rozdzial3b.html#dokładność-i-precyzja",
+    "title": "8  Rzetelność i Trafność w Badaniach Nauk o Danych",
+    "section": "8.10 Dokładność i Precyzja",
+    "text": "8.10 Dokładność i Precyzja\nPojęcia dokładności i precyzji są ściśle związane z trafnością i rzetelnością:\n\nDokładność odnosi się do tego, jak blisko pomiar jest prawdziwej wartości (podobnie do trafności).\nPrecyzja odnosi się do tego, jak spójne lub powtarzalne są pomiary (podobnie do rzetelności).\n\nMożemy zobrazować te pojęcia za pomocą uproszczonej analogii do tarczy:\n\nlibrary(ggplot2)\nlibrary(ggforce)\n\ncreate_points &lt;- function(n, x_center, y_center, spread) {\n  data.frame(\n    x = rnorm(n, x_center, spread),\n    y = rnorm(n, y_center, spread)\n  )\n}\n\nset.seed(101)\npoints &lt;- rbind(\n  cbind(create_points(20, 0, 0, 0.1), type = \"Wysoka Dokładność\\nWysoka Precyzja\"),\n  cbind(create_points(20, 0.5, 0.5, 0.1), type = \"Niska Dokładność\\nWysoka Precyzja\"),\n  cbind(create_points(20, 0, 0, 0.3), type = \"Wysoka Dokładność\\nNiska Precyzja\"),\n  cbind(create_points(20, 0.5, 0.5, 0.3), type = \"Niska Dokładność\\nNiska Precyzja\")\n)\n\nggplot(points, aes(x, y)) +\n  geom_circle(aes(x0 = 0, y0 = 0, r = 1), color = \"black\", fill = NA) +\n  geom_circle(aes(x0 = 0, y0 = 0, r = 0.5), color = \"black\", fill = NA) +\n  geom_point(color = \"red\", size = 2) +\n  facet_wrap(~type) +\n  coord_fixed(xlim = c(-1.1, 1.1), ylim = c(-1.1, 1.1)) +\n  theme_minimal() +\n  theme(axis.text = element_blank(), axis.title = element_blank()) +\n  labs(title = \"Dokładność vs Precyzja\")\n\n\n\n\nWizualizacja Dokładności vs Precyzji\n\n\n\n\nW tej wizualizacji: - Wysoka dokładność oznacza, że punkty są blisko środka (dziesiątki). - Wysoka precyzja oznacza, że punkty są ściśle zgrupowane. - Każdy panel reprezentuje inną kombinację dokładności i precyzji.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Rzetelność i Trafność w Badaniach Nauk o Danych</span>"
+    ]
   }
 ]

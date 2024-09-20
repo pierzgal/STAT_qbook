@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) - 8&nbsp; Reliability and Validity in Data Science Research</title>
+<title>Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) [working copy] - 8&nbsp; Rzetelność i Trafność w Badaniach Nauk o Danych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -31,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./chapter4.html" rel="next">
-<link href="./rozdzial3.html" rel="prev">
+<link href="./chapter3b.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial3b.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reliability and Validity in Data Science Research</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rozdzial3b.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rzetelność i Trafność w Badaniach Nauk o Danych</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</a> 
+      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) [working copy]</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -144,20 +178,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapter3b.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reliability and Validity in Data Science Research</span></span></a>
+  <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+  <a href="./chapter3b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reliability and Validity in Data Science Research</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./rozdzial3b.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reliability and Validity in Data Science Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rzetelność i Trafność w Badaniach Nauk o Danych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,14 +230,43 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#definiowanie-rzetelności-i-trafności" id="toc-definiowanie-rzetelności-i-trafności" class="nav-link active" data-scroll-target="#definiowanie-rzetelności-i-trafności"><span class="header-section-number">8.1</span> Definiowanie Rzetelności i Trafności</a></li>
+  <li><a href="#cztery-kombinacje-rzetelności-i-trafności" id="toc-cztery-kombinacje-rzetelności-i-trafności" class="nav-link" data-scroll-target="#cztery-kombinacje-rzetelności-i-trafności"><span class="header-section-number">8.2</span> Cztery Kombinacje Rzetelności i Trafności</a>
+  <ul class="collapse">
+  <li><a href="#wysoka-rzetelność-wysoka-trafność" id="toc-wysoka-rzetelność-wysoka-trafność" class="nav-link" data-scroll-target="#wysoka-rzetelność-wysoka-trafność"><span class="header-section-number">8.2.1</span> 1. Wysoka Rzetelność, Wysoka Trafność</a></li>
+  <li><a href="#wysoka-rzetelność-niska-trafność" id="toc-wysoka-rzetelność-niska-trafność" class="nav-link" data-scroll-target="#wysoka-rzetelność-niska-trafność"><span class="header-section-number">8.2.2</span> 2. Wysoka Rzetelność, Niska Trafność</a></li>
+  <li><a href="#niska-rzetelność-wysoka-trafność" id="toc-niska-rzetelność-wysoka-trafność" class="nav-link" data-scroll-target="#niska-rzetelność-wysoka-trafność"><span class="header-section-number">8.2.3</span> 3. Niska Rzetelność, Wysoka Trafność</a></li>
+  <li><a href="#niska-rzetelność-niska-trafność" id="toc-niska-rzetelność-niska-trafność" class="nav-link" data-scroll-target="#niska-rzetelność-niska-trafność"><span class="header-section-number">8.2.4</span> 4. Niska Rzetelność, Niska Trafność</a></li>
+  </ul></li>
+  <li><a href="#wizualizacja-rzetelności-i-trafności" id="toc-wizualizacja-rzetelności-i-trafności" class="nav-link" data-scroll-target="#wizualizacja-rzetelności-i-trafności"><span class="header-section-number">8.3</span> Wizualizacja Rzetelności i Trafności</a>
+  <ul class="collapse">
+  <li><a href="#interpretacja-wizualizacji" id="toc-interpretacja-wizualizacji" class="nav-link" data-scroll-target="#interpretacja-wizualizacji"><span class="header-section-number">8.3.1</span> Interpretacja Wizualizacji</a></li>
+  </ul></li>
+  <li><a href="#rodzaje-rzetelności" id="toc-rodzaje-rzetelności" class="nav-link" data-scroll-target="#rodzaje-rzetelności"><span class="header-section-number">8.4</span> Rodzaje Rzetelności</a></li>
+  <li><a href="#rodzaje-trafności" id="toc-rodzaje-trafności" class="nav-link" data-scroll-target="#rodzaje-trafności"><span class="header-section-number">8.5</span> Rodzaje Trafności</a></li>
+  <li><a href="#trafność-wewnętrzna-vs-zewnętrzna" id="toc-trafność-wewnętrzna-vs-zewnętrzna" class="nav-link" data-scroll-target="#trafność-wewnętrzna-vs-zewnętrzna"><span class="header-section-number">8.6</span> Trafność Wewnętrzna vs Zewnętrzna</a>
+  <ul class="collapse">
+  <li><a href="#trafność-wewnętrzna" id="toc-trafność-wewnętrzna" class="nav-link" data-scroll-target="#trafność-wewnętrzna"><span class="header-section-number">8.6.1</span> Trafność Wewnętrzna</a></li>
+  <li><a href="#trafność-zewnętrzna" id="toc-trafność-zewnętrzna" class="nav-link" data-scroll-target="#trafność-zewnętrzna"><span class="header-section-number">8.6.2</span> Trafność Zewnętrzna</a></li>
+  </ul></li>
+  <li><a href="#spójność-w-badaniach" id="toc-spójność-w-badaniach" class="nav-link" data-scroll-target="#spójność-w-badaniach"><span class="header-section-number">8.7</span> Spójność w Badaniach</a></li>
+  <li><a href="#równoważenie-rzetelności-trafności-i-spójności" id="toc-równoważenie-rzetelności-trafności-i-spójności" class="nav-link" data-scroll-target="#równoważenie-rzetelności-trafności-i-spójności"><span class="header-section-number">8.8</span> Równoważenie Rzetelności, Trafności i Spójności</a></li>
+  <li><a href="#kompromis-między-obciążeniem-a-wariancją" id="toc-kompromis-między-obciążeniem-a-wariancją" class="nav-link" data-scroll-target="#kompromis-między-obciążeniem-a-wariancją"><span class="header-section-number">8.9</span> Kompromis między Obciążeniem a Wariancją</a></li>
+  <li><a href="#dokładność-i-precyzja" id="toc-dokładność-i-precyzja" class="nav-link" data-scroll-target="#dokładność-i-precyzja"><span class="header-section-number">8.10</span> Dokładność i Precyzja</a></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">9</span> Podsumowanie</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reliability and Validity in Data Science Research</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rzetelność i Trafność w Badaniach Nauk o Danych</span></h1>
 </div>
 
 
@@ -220,8 +283,296 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>W naukach o danych i badaniach naukowych, dwa kluczowe pojęcia, które określają jakość pomiarów i badań, to rzetelność i trafność. Zrozumienie tych pojęć jest niezbędne do prowadzenia solidnych badań i wyciągania znaczących wniosków z danych.</p>
+<section id="definiowanie-rzetelności-i-trafności" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="definiowanie-rzetelności-i-trafności"><span class="header-section-number">8.1</span> Definiowanie Rzetelności i Trafności</h2>
+<p><strong>Rzetelność</strong> odnosi się do spójności pomiaru. Rzetelny pomiar lub badanie daje podobne wyniki w spójnych warunkach.</p>
+<p><strong>Trafność</strong> odnosi się do dokładności pomiaru. Trafny pomiar lub badanie dokładnie reprezentuje to, co twierdzi, że mierzy.</p>
+</section>
+<section id="cztery-kombinacje-rzetelności-i-trafności" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="cztery-kombinacje-rzetelności-i-trafności"><span class="header-section-number">8.2</span> Cztery Kombinacje Rzetelności i Trafności</h2>
+<p>Istnieją cztery możliwe kombinacje rzetelności i trafności:</p>
+<ol type="1">
+<li>Wysoka Rzetelność, Wysoka Trafność</li>
+<li>Wysoka Rzetelność, Niska Trafność</li>
+<li>Niska Rzetelność, Wysoka Trafność</li>
+<li>Niska Rzetelność, Niska Trafność</li>
+</ol>
+<p>Przyjrzyjmy się każdej z tych kombinacji z przykładami i wizualizacjami.</p>
+<section id="wysoka-rzetelność-wysoka-trafność" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="wysoka-rzetelność-wysoka-trafność"><span class="header-section-number">8.2.1</span> 1. Wysoka Rzetelność, Wysoka Trafność</h3>
+<p>To idealny scenariusz w badaniach. Pomiary są zarówno spójne, jak i dokładne.</p>
+<p><strong>Przykład</strong>: Dobrze skalibrowana waga cyfrowa używana do pomiaru wagi. Konsekwentnie daje ten sam odczyt dla tego samego obiektu i dokładnie reprezentuje prawdziwą wagę.</p>
+</section>
+<section id="wysoka-rzetelność-niska-trafność" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="wysoka-rzetelność-niska-trafność"><span class="header-section-number">8.2.2</span> 2. Wysoka Rzetelność, Niska Trafność</h3>
+<p>W tym przypadku pomiary są spójne, ale niedokładne.</p>
+<p><strong>Przykład</strong>: Źle skalibrowana waga, która zawsze mierzy 5 kg za ciężko. Daje spójne wyniki (wysoka rzetelność), ale nie reprezentuje prawdziwej wagi (niska trafność).</p>
+</section>
+<section id="niska-rzetelność-wysoka-trafność" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="niska-rzetelność-wysoka-trafność"><span class="header-section-number">8.2.3</span> 3. Niska Rzetelność, Wysoka Trafność</h3>
+<p>Tutaj pomiary są dokładne średnio, ale niespójne.</p>
+<p><strong>Przykład</strong>: Waga, która waha się wokół prawdziwej wagi. Czasami pokazuje trochę więcej, czasami trochę mniej, ale średnio jest poprawna.</p>
+</section>
+<section id="niska-rzetelność-niska-trafność" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="niska-rzetelność-niska-trafność"><span class="header-section-number">8.2.4</span> 4. Niska Rzetelność, Niska Trafność</h3>
+<p>To najgorszy scenariusz, gdzie pomiary nie są ani spójne, ani dokładne.</p>
+<p><strong>Przykład</strong>: Zepsuta waga, która daje losowe odczyty niezwiązane z prawdziwą wagą.</p>
+</section>
+</section>
+<section id="wizualizacja-rzetelności-i-trafności" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="wizualizacja-rzetelności-i-trafności"><span class="header-section-number">8.3</span> Wizualizacja Rzetelności i Trafności</h2>
+<p>Aby lepiej zrozumieć te pojęcia, stwórzmy wizualizacje przy użyciu ggplot2 w R. Zasymulujemy dane pomiarowe dla każdego scenariusza i narysujemy je.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie danych dla każdego scenariusza</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>prawdziwa_wartosc <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">wysoka_rz_wysoka_tr =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> prawdziwa_wartosc, <span class="at">sd =</span> <span class="dv">1</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">wysoka_rz_niska_tr =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> prawdziwa_wartosc <span class="sc">+</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">1</span>),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">niska_rz_wysoka_tr =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> prawdziwa_wartosc, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">niska_rz_niska_tr =</span> <span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>id, <span class="at">names_to =</span> <span class="st">"scenariusz"</span>, <span class="at">values_to =</span> <span class="st">"pomiar"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu punktowego</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>wykres_punktowy <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> id, <span class="at">y =</span> pomiar, <span class="at">color =</span> scenariusz)) <span class="sc">+</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> prawdziwa_wartosc, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> scenariusz, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free_y"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>             <span class="at">labeller =</span> <span class="fu">labeller</span>(<span class="at">scenariusz =</span> <span class="fu">c</span>(</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>               <span class="st">"wysoka_rz_wysoka_tr"</span> <span class="ot">=</span> <span class="st">"Wysoka Rzetelność, Wysoka Trafność"</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>               <span class="st">"wysoka_rz_niska_tr"</span> <span class="ot">=</span> <span class="st">"Wysoka Rzetelność, Niska Trafność"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>               <span class="st">"niska_rz_wysoka_tr"</span> <span class="ot">=</span> <span class="st">"Niska Rzetelność, Wysoka Trafność"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>               <span class="st">"niska_rz_niska_tr"</span> <span class="ot">=</span> <span class="st">"Niska Rzetelność, Niska Trafność"</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>             ))) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Wykresy punktowe pomiarów"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Przerywana linia reprezentuje prawdziwą wartość"</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"ID pomiaru"</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Zmierzona wartość"</span>) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie histogramu</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>wykres_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> pomiar, <span class="at">fill =</span> scenariusz)) <span class="sc">+</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">20</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> prawdziwa_wartosc, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> scenariusz, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">scales =</span> <span class="st">"free"</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>             <span class="at">labeller =</span> <span class="fu">labeller</span>(<span class="at">scenariusz =</span> <span class="fu">c</span>(</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>               <span class="st">"wysoka_rz_wysoka_tr"</span> <span class="ot">=</span> <span class="st">"Wysoka Rzetelność, Wysoka Trafność"</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>               <span class="st">"wysoka_rz_niska_tr"</span> <span class="ot">=</span> <span class="st">"Wysoka Rzetelność, Niska Trafność"</span>,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>               <span class="st">"niska_rz_wysoka_tr"</span> <span class="ot">=</span> <span class="st">"Niska Rzetelność, Wysoka Trafność"</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>               <span class="st">"niska_rz_niska_tr"</span> <span class="ot">=</span> <span class="st">"Niska Rzetelność, Niska Trafność"</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>             ))) <span class="sc">+</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histogramy pomiarów"</span>,</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Czerwona przerywana linia reprezentuje prawdziwą wartość"</span>,</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Zmierzona wartość"</span>,</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Liczba"</span>) <span class="sc">+</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Łączenie wykresów</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>wykres_polaczony <span class="ot">&lt;-</span> wykres_punktowy <span class="sc">/</span> wykres_hist <span class="sc">+</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Rzetelność i Trafność w Pomiarach"</span>,</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">24</span>, <span class="at">face =</span> <span class="st">"bold"</span>))</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlanie połączonego wykresu</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>wykres_polaczony</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial3b_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretacja-wizualizacji" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="interpretacja-wizualizacji"><span class="header-section-number">8.3.1</span> Interpretacja Wizualizacji</h3>
+<ol type="1">
+<li><strong>Wysoka Rzetelność, Wysoka Trafność</strong>: Punkty grupują się ciasno wokół prawdziwej wartości (przerywana linia).</li>
+<li><strong>Wysoka Rzetelność, Niska Trafność</strong>: Punkty grupują się ciasno, ale konsekwentnie powyżej prawdziwej wartości.</li>
+<li><strong>Niska Rzetelność, Wysoka Trafność</strong>: Punkty rozpraszają się szeroko, ale centrują się wokół prawdziwej wartości.</li>
+<li><strong>Niska Rzetelność, Niska Trafność</strong>: Punkty rozpraszają się losowo bez wyraźnego wzoru lub relacji do prawdziwej wartości.</li>
+</ol>
+<p>Zrozumienie rzetelności i trafności jest kluczowe w naukach o danych i badaniach. Wysoka rzetelność zapewnia spójne pomiary, podczas gdy wysoka trafność zapewnia dokładne reprezentacje tego, co zamierzamy zmierzyć. Biorąc pod uwagę oba aspekty, badacze mogą projektować bardziej solidne badania i wyciągać bardziej znaczące wnioski ze swoich danych.</p>
+<p>Prowadząc własne badania lub analizując pracę innych, zawsze należy rozważyć: - Jak rzetelne są pomiary? - Jak trafne jest podejście do pomiaru zamierzonego pojęcia? - Czy stosowane metody wspierają zarówno rzetelność, jak i trafność?</p>
+<p>Mając na uwadze te pytania, będziesz lepiej przygotowany do prowadzenia i interpretowania wysokiej jakości badań w naukach o danych.</p>
+</section>
+</section>
+<section id="rodzaje-rzetelności" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="rodzaje-rzetelności"><span class="header-section-number">8.4</span> Rodzaje Rzetelności</h2>
+<p>Rzetelność można oceniać na kilka sposobów, każdy skupiający się na innym aspekcie spójności:</p>
+<ol type="1">
+<li><p><strong>Rzetelność test-retest</strong>: Mierzy spójność testu w czasie. Polega na przeprowadzeniu tego samego testu na tej samej grupie uczestników w różnych momentach i porównaniu wyników.</p></li>
+<li><p><strong>Rzetelność między oceniającymi</strong>: Ocenia stopień zgodności między różnymi oceniającymi lub obserwatorami. Jest kluczowa, gdy w zbieraniu danych biorą udział subiektywne osądy.</p></li>
+<li><p><strong>Spójność wewnętrzna</strong>: Ocenia, jak dobrze różne elementy testu lub skali mierzą ten sam konstrukt. Alfa Cronbacha jest powszechną miarą spójności wewnętrznej.</p></li>
+<li><p><strong>Rzetelność form równoległych</strong>: Polega na stworzeniu dwóch równoważnych form testu i przeprowadzeniu ich na tej samej grupie. Korelacja między dwoma zestawami wyników wskazuje na rzetelność.</p></li>
+</ol>
+</section>
+<section id="rodzaje-trafności" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="rodzaje-trafności"><span class="header-section-number">8.5</span> Rodzaje Trafności</h2>
+<p>Trafność jest pojęciem wieloaspektowym, z kilkoma rodzajami, które badacze muszą wziąć pod uwagę:</p>
+<ol type="1">
+<li><p><strong>Trafność treściowa</strong>: Zapewnia, że pomiar obejmuje wszystkie aspekty konstruktu, który ma mierzyć. Często jest oceniana przez osąd ekspertów.</p></li>
+<li><p><strong>Trafność konstrukcyjna</strong>: Ocenia, czy test mierzy zamierzony konstrukt teoretyczny. Obejmuje:</p>
+<ul>
+<li><strong>Trafność zbieżną</strong>: Stopień, w jakim pomiar koreluje z innymi pomiarami tego samego konstruktu.</li>
+<li><strong>Trafność różnicową</strong>: Zakres, w jakim pomiar nie koreluje z pomiarami różnych konstruktów.</li>
+</ul></li>
+<li><p><strong>Trafność kryterialną</strong>: Ocenia, jak dobrze pomiar przewiduje wynik. Obejmuje:</p>
+<ul>
+<li><strong>Trafność współbieżną</strong>: Jak dobrze pomiar koreluje z innymi pomiarami tego samego konstruktu w tym samym czasie.</li>
+<li><strong>Trafność predykcyjną</strong>: Jak dobrze pomiar przewiduje przyszłe wyniki.</li>
+</ul></li>
+<li><p><strong>Trafność fasadowa</strong>: Odnosi się do tego, czy test wydaje się mierzyć to, co twierdzi, że mierzy. Choć nie jest to naukowa miara, może być ważna dla zaangażowania uczestników.</p></li>
+</ol>
+</section>
+<section id="trafność-wewnętrzna-vs-zewnętrzna" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="trafność-wewnętrzna-vs-zewnętrzna"><span class="header-section-number">8.6</span> Trafność Wewnętrzna vs Zewnętrzna</h2>
+<p>Te pojęcia są kluczowe w projektowaniu eksperymentów i możliwości uogólniania wyników badań:</p>
+<section id="trafność-wewnętrzna" class="level3" data-number="8.6.1">
+<h3 data-number="8.6.1" class="anchored" data-anchor-id="trafność-wewnętrzna"><span class="header-section-number">8.6.1</span> Trafność Wewnętrzna</h3>
+<p>Trafność wewnętrzna odnosi się do zakresu, w jakim badanie ustanawia związek przyczynowy między zmiennymi niezależnymi a zależnymi. Odpowiada na pytanie: “Czy eksperymentalne traktowanie rzeczywiście spowodowało zaobserwowane efekty?”</p>
+<p>Czynniki, które mogą zagrażać trafności wewnętrznej, obejmują: - Historia: Zewnętrzne wydarzenia występujące między pre-testem a post-testem - Dojrzewanie: Naturalne zmiany u uczestników w czasie - Efekty testowania: Zmiany wynikające z przeprowadzenia pre-testu - Instrumentacja: Zmiany w narzędziu pomiarowym lub obserwatorach - Błąd selekcji: Nielosowy przydział do grup - Utrata: Utrata uczestników podczas badania</p>
+</section>
+<section id="trafność-zewnętrzna" class="level3" data-number="8.6.2">
+<h3 data-number="8.6.2" class="anchored" data-anchor-id="trafność-zewnętrzna"><span class="header-section-number">8.6.2</span> Trafność Zewnętrzna</h3>
+<p>Trafność zewnętrzna odnosi się do zakresu, w jakim wyniki badania mogą być uogólnione na inne sytuacje, populacje lub ustawienia. Odpowiada na pytanie: “W jakim stopniu wyniki mogą być zastosowane poza konkretnym kontekstem badania?”</p>
+<p>Czynniki, które mogą wpływać na trafność zewnętrzną, obejmują: - Trafność populacyjna: Jak dobrze próba reprezentuje szerszą populację - Trafność ekologiczna: Jak dobrze ustawienie badania reprezentuje warunki świata rzeczywistego - Trafność czasowa: Czy wyniki pozostają prawdziwe w czasie</p>
+</section>
+</section>
+<section id="spójność-w-badaniach" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="spójność-w-badaniach"><span class="header-section-number">8.7</span> Spójność w Badaniach</h2>
+<p>Spójność jest ściśle związana z rzetelnością, ale wykracza poza sam pomiar. W badaniach spójność odnosi się do ogólnej koherencji i stabilności wyników w różnych kontekstach, metodach lub badaniach.</p>
+<p>Kluczowe aspekty spójności w badaniach obejmują:</p>
+<ol type="1">
+<li><p><strong>Replikowalność</strong>: Zdolność do odtworzenia wyników badania przy użyciu tych samych metod i danych.</p></li>
+<li><p><strong>Odporność</strong>: Stabilność wyników w różnych podejściach analitycznych lub niewielkich zmianach w metodologii.</p></li>
+<li><p><strong>Konwergencja</strong>: Zbieżność wyników z różnych badań lub metod badających to samo zjawisko.</p></li>
+<li><p><strong>Spójność długoterminowa</strong>: Stabilność wyników w czasie, szczególnie ważna w badaniach długoterminowych.</p></li>
+</ol>
+<p>[Continuation of the previous content…]</p>
+<p>Zapewnienie spójności w badaniach obejmuje: - Stosowanie standaryzowanych procedur i miar - Dokładne dokumentowanie metod i decyzji analitycznych - Przeprowadzanie badań replikacyjnych - Meta-analizy w celu syntezy wyników z wielu badań</p>
+</section>
+<section id="równoważenie-rzetelności-trafności-i-spójności" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="równoważenie-rzetelności-trafności-i-spójności"><span class="header-section-number">8.8</span> Równoważenie Rzetelności, Trafności i Spójności</h2>
+<p>Chociaż rzetelność, trafność i spójność są kluczowe dla wysokiej jakości badań, czasami wiążą się z kompromisami:</p>
+<ul>
+<li>Wysoce rzetelna miara może nie mieć trafności, jeśli konsekwentnie mierzy niewłaściwą rzecz.</li>
+<li>Dążenie do idealnej trafności wewnętrznej (np. w ściśle kontrolowanych eksperymentach laboratoryjnych) może zmniejszyć trafność zewnętrzną.</li>
+<li>Zapewnienie wysokiej spójności w różnych kontekstach może wymagać poświęcenia pewnego stopnia precyzji lub głębi w konkretnych sytuacjach.</li>
+</ul>
+<p>Badacze muszą starannie równoważyć te aspekty w oparciu o swoje pytania badawcze i charakter badania. Kompleksowe zrozumienie rzetelności, trafności i spójności pomaga w projektowaniu solidnych badań, dokładnej interpretacji wyników i znaczącym wkładzie do korpusu wiedzy naukowej.</p>
+</section>
+<section id="kompromis-między-obciążeniem-a-wariancją" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="kompromis-między-obciążeniem-a-wariancją"><span class="header-section-number">8.9</span> Kompromis między Obciążeniem a Wariancją</h2>
+<p>Pojęcia rzetelności i trafności są ściśle związane ze statystycznym pojęciem kompromisu między obciążeniem a wariancją. Ten kompromis jest fundamentalny w uczeniu maszynowym i modelowaniu statystycznym.</p>
+<ul>
+<li>Obciążenie odnosi się do błędu wprowadzonego przez przybliżenie problemu ze świata rzeczywistego uproszczonym modelem. Wysokie obciążenie może prowadzić do niedopasowania.</li>
+<li>Wariancja odnosi się do błędu wprowadzonego przez wrażliwość modelu na małe fluktuacje w zbiorze treningowym. Wysoka wariancja może prowadzić do przeuczenia.</li>
+</ul>
+<p>Zobrazujmy to pojęcie za pomocą uproszczonego wykresu:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y_prawdziwa <span class="ot">&lt;-</span> <span class="fu">sin</span>(x)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y_niskie_obciazenie_wysoka_wariancja <span class="ot">&lt;-</span> y_prawdziwa <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.3</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y_wysokie_obciazenie_niska_wariancja <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> x</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">rep</span>(x, <span class="dv">3</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">y =</span> <span class="fu">c</span>(y_prawdziwa, y_niskie_obciazenie_wysoka_wariancja, y_wysokie_obciazenie_niska_wariancja),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">typ =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Prawdziwa Funkcja"</span>, <span class="st">"Niskie Obciążenie, Wysoka Wariancja"</span>, <span class="st">"Wysokie Obciążenie, Niska Wariancja"</span>), <span class="at">each =</span> <span class="dv">100</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> typ)) <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">subset</span>(df, typ <span class="sc">!=</span> <span class="st">"Prawdziwa Funkcja"</span>), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"blue"</span>, <span class="st">"red"</span>)) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kompromis między Obciążeniem a Wariancją"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Typ Modelu"</span>) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial3b_files/figure-html/bias-variance-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Wizualizacja kompromisu między obciążeniem a wariancją</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Na tym wykresie: - Czarna linia reprezentuje prawdziwą funkcję bazową. - Niebieskie punkty reprezentują model z niskim obciążeniem, ale wysoką wariancją. Średnio podąża blisko prawdziwej funkcji, ale ma dużo szumu. - Czerwona linia reprezentuje model z wysokim obciążeniem, ale niską wariancją. Konsekwentnie niedoszacowuje prawdziwej funkcji, ale ma mniej szumu.</p>
+</section>
+<section id="dokładność-i-precyzja" class="level2" data-number="8.10">
+<h2 data-number="8.10" class="anchored" data-anchor-id="dokładność-i-precyzja"><span class="header-section-number">8.10</span> Dokładność i Precyzja</h2>
+<p>Pojęcia dokładności i precyzji są ściśle związane z trafnością i rzetelnością:</p>
+<ul>
+<li>Dokładność odnosi się do tego, jak blisko pomiar jest prawdziwej wartości (podobnie do trafności).</li>
+<li>Precyzja odnosi się do tego, jak spójne lub powtarzalne są pomiary (podobnie do rzetelności).</li>
+</ul>
+<p>Możemy zobrazować te pojęcia za pomocą uproszczonej analogii do tarczy:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggforce)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>create_points <span class="ot">&lt;-</span> <span class="cf">function</span>(n, x_center, y_center, spread) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">rnorm</span>(n, x_center, spread),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">rnorm</span>(n, y_center, spread)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">101</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>points <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="fu">create_points</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.1</span>), <span class="at">type =</span> <span class="st">"Wysoka Dokładność</span><span class="sc">\n</span><span class="st">Wysoka Precyzja"</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="fu">create_points</span>(<span class="dv">20</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>), <span class="at">type =</span> <span class="st">"Niska Dokładność</span><span class="sc">\n</span><span class="st">Wysoka Precyzja"</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="fu">create_points</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">0.3</span>), <span class="at">type =</span> <span class="st">"Wysoka Dokładność</span><span class="sc">\n</span><span class="st">Niska Precyzja"</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="fu">create_points</span>(<span class="dv">20</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>), <span class="at">type =</span> <span class="st">"Niska Dokładność</span><span class="sc">\n</span><span class="st">Niska Precyzja"</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(points, <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_circle</span>(<span class="fu">aes</span>(<span class="at">x0 =</span> <span class="dv">0</span>, <span class="at">y0 =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="dv">1</span>), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_circle</span>(<span class="fu">aes</span>(<span class="at">x0 =</span> <span class="dv">0</span>, <span class="at">y0 =</span> <span class="dv">0</span>, <span class="at">r =</span> <span class="fl">0.5</span>), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>type) <span class="sc">+</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.1</span>, <span class="fl">1.1</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.1</span>, <span class="fl">1.1</span>)) <span class="sc">+</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_blank</span>(), <span class="at">axis.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Dokładność vs Precyzja"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial3b_files/figure-html/accuracy-precision-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Wizualizacja Dokładności vs Precyzji</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>W tej wizualizacji: - Wysoka dokładność oznacza, że punkty są blisko środka (dziesiątki). - Wysoka precyzja oznacza, że punkty są ściśle zgrupowane. - Każdy panel reprezentuje inną kombinację dokładności i precyzji.</p>
+</section>
+<section id="podsumowanie" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Podsumowanie</h1>
+<p>Zrozumienie rzetelności i trafności jest kluczowe dla prowadzenia solidnych badań. Pojęcia te pomagają nam zapewnić, że nasze pomiary są zarówno spójne, jak i dokładne. Łącząc je z ideami takimi jak kompromis między obciążeniem a wariancją oraz dokładnością i precyzją, zyskujemy głębsze zrozumienie wyzwań związanych z pomiarem i modelowaniem w badaniach naukowych. Jako badacze musimy dążyć do opracowania miar i modeli, które są zarówno rzetelne, jak i trafne, równoważąc kompromisy między obciążeniem a wariancją oraz między dokładnością a precyzją. Wymaga to starannego projektowania metodologii badań, rygorystycznego testowania naszych instrumentów pomiarowych i przemyślanej interpretacji naszych wyników.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -635,8 +986,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rozdzial3.html" class="pagination-link" aria-label="Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span>
+      <a href="./chapter3b.html" class="pagination-link" aria-label="Reliability and Validity in Data Science Research">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reliability and Validity in Data Science Research</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
