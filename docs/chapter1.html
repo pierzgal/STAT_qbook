@@ -830,6 +830,23 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>The core of an LLM can be thought of as a conditional probability distribution:</p>
 <p><span class="math display">\[P(x_t | x_{&lt;t}, \theta)\]</span></p>
 <p>Where: - <span class="math inline">\(x_t\)</span> is the current token - <span class="math inline">\(x_{&lt;t}\)</span> represents all previous tokens - <span class="math inline">\(\theta\)</span> are the model parameters</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tokens in Large Language Models (LLMs) are the basic units of text that the model processes. They can be thought of as pieces of words or punctuation marks. Here are key points about tokens:</p>
+<p>Definition: Tokens are the smallest units of text that an LLM processes. They can be whole words, parts of words, or even individual characters or punctuation marks. Tokenization: The process of breaking text into tokens is called tokenization. LLMs use specific algorithms to perform this task. Examples:</p>
+<p>The word “cat” might be a single token. A longer word like “understanding” might be broken into multiple tokens, e.g., “under” and “standing”. Punctuation marks like “.” or “?” are often individual tokens. Common prefixes or suffixes might be their own tokens.</p>
+<p>Vocabulary: LLMs have a fixed vocabulary of tokens they recognize. This vocabulary typically ranges from tens of thousands to hundreds of thousands of tokens. Significance: The way text is tokenized can affect how the model understands and generates language. It’s particularly important for handling different languages, rare words, or specialized vocabulary. Context: In the equation for LLMs: <span class="math display">\[P(x_t | x_{&lt;t}, \theta)\]</span> Where:</p>
+<p><span class="math inline">\(x_t\)</span> represents the current token <span class="math inline">\(x_{&lt;t}\)</span> represents all previous tokens in the sequence <span class="math inline">\(\theta\)</span> represents the model parameters</p>
+</div>
+</div>
 <p>Unlike deterministic models, LLMs produce different outputs even for the same input due to their stochastic nature.</p>
 </section>
 <section id="conclusion" class="level2" data-number="1.10">
