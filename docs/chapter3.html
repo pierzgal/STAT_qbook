@@ -68,6 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -323,6 +326,48 @@ Note
 <li>For your inference to be valid, the spoonful you tasted (the sample) needs to be representative of the entire pot (the population).</li>
 <li>If the soup is not well stirred (heterogeneous population), it doesn’t matter how large a spoon you have (sample size), it will still not accurately represent the whole. If the soup is well stirred (homogeneous population), even a small spoon will suffice to test the soup.</li>
 </ul>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    DGP[Data Generating Process] --&gt;|Generates| A[Population]
+    A --&gt;|Random Selection| B[Sample]
+    B --&gt;|Statistical Inference| C[Estimates &amp; Conclusions]
+    C --&gt;|Generalize back to| A
+    C -.-&gt;|Attempt to understand| DGP
+
+    style DGP fill:#1E90FF,stroke:#000,stroke-width:4px,color:#FFF
+    style A fill:#DC143C,stroke:#000,stroke-width:4px,color:#FFF
+    style B fill:#228B22,stroke:#000,stroke-width:2px,color:#FFF
+    style C fill:#8B4513,stroke:#000,stroke-width:2px,color:#FFF
+    
+    classDef note fill:#F0F0F0,stroke:#000,stroke-width:1px;
+    D[["DGP:
+    Underlying process
+    that generates data"]]
+    E[["Population:
+    Entire group of interest"]]
+    F[["Sample:
+    Subset of population"]]
+    G[["Inference:
+    Drawing conclusions
+    about population
+    and DGP"]]
+    
+    class D,E,F,G note
+    
+    D --&gt; DGP
+    E --&gt; A
+    F --&gt; B
+    G --&gt; C
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
 </div>
 </div>
 <p><strong>Key Concepts:</strong></p>
