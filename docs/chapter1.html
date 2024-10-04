@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -252,9 +281,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#r-for-social-science-data-analysis" id="toc-r-for-social-science-data-analysis" class="nav-link" data-scroll-target="#r-for-social-science-data-analysis"><span class="header-section-number">1.5.1</span> R for Social Science Data Analysis</a></li>
   </ul></li>
-  <li><a href="#ethical-considerations-in-social-science-data-analysis" id="toc-ethical-considerations-in-social-science-data-analysis" class="nav-link" data-scroll-target="#ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.6</span> Ethical Considerations in Social Science Data Analysis</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">1.7</span> Key Takeaways</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">1.8</span> Next Steps</a></li>
+  <li><a href="#models-in-science-from-deterministic-to-stochastic" id="toc-models-in-science-from-deterministic-to-stochastic" class="nav-link" data-scroll-target="#models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.6</span> Models in Science: From Deterministic to Stochastic</a></li>
+  <li><a href="#deterministic-models" id="toc-deterministic-models" class="nav-link" data-scroll-target="#deterministic-models"><span class="header-section-number">1.7</span> 1. Deterministic Models</a>
+  <ul class="collapse">
+  <li><a href="#example-simple-harmonic-motion" id="toc-example-simple-harmonic-motion" class="nav-link" data-scroll-target="#example-simple-harmonic-motion"><span class="header-section-number">1.7.1</span> Example: Simple Harmonic Motion</a></li>
+  </ul></li>
+  <li><a href="#stochastic-models-in-social-sciences" id="toc-stochastic-models-in-social-sciences" class="nav-link" data-scroll-target="#stochastic-models-in-social-sciences"><span class="header-section-number">1.8</span> 2. Stochastic Models in Social Sciences</a>
+  <ul class="collapse">
+  <li><a href="#example-ordinary-least-squares-ols-regression" id="toc-example-ordinary-least-squares-ols-regression" class="nav-link" data-scroll-target="#example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.8.1</span> Example: Ordinary Least Squares (OLS) Regression</a></li>
+  </ul></li>
+  <li><a href="#advanced-stochastic-models-large-language-models" id="toc-advanced-stochastic-models-large-language-models" class="nav-link" data-scroll-target="#advanced-stochastic-models-large-language-models"><span class="header-section-number">1.9</span> 3. Advanced Stochastic Models: Large Language Models</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">1.10</span> Conclusion</a></li>
+  <li><a href="#understanding-spurious-correlations-confounders-and-colliders" id="toc-understanding-spurious-correlations-confounders-and-colliders" class="nav-link" data-scroll-target="#understanding-spurious-correlations-confounders-and-colliders"><span class="header-section-number">1.11</span> Understanding Spurious Correlations, Confounders, and Colliders</a></li>
+  <li><a href="#spurious-correlations" id="toc-spurious-correlations" class="nav-link" data-scroll-target="#spurious-correlations"><span class="header-section-number">1.12</span> Spurious Correlations</a>
+  <ul class="collapse">
+  <li><a href="#example-ice-cream-sales-and-drowning-incidents" id="toc-example-ice-cream-sales-and-drowning-incidents" class="nav-link" data-scroll-target="#example-ice-cream-sales-and-drowning-incidents"><span class="header-section-number">1.12.1</span> Example: Ice Cream Sales and Drowning Incidents</a></li>
+  </ul></li>
+  <li><a href="#confounders" id="toc-confounders" class="nav-link" data-scroll-target="#confounders"><span class="header-section-number">1.13</span> Confounders</a>
+  <ul class="collapse">
+  <li><a href="#example-education-income-and-age" id="toc-example-education-income-and-age" class="nav-link" data-scroll-target="#example-education-income-and-age"><span class="header-section-number">1.13.1</span> Example: Education, Income, and Age</a></li>
+  </ul></li>
+  <li><a href="#colliders" id="toc-colliders" class="nav-link" data-scroll-target="#colliders"><span class="header-section-number">1.14</span> Colliders</a>
+  <ul class="collapse">
+  <li><a href="#example-job-satisfaction-salary-and-work-life-balance" id="toc-example-job-satisfaction-salary-and-work-life-balance" class="nav-link" data-scroll-target="#example-job-satisfaction-salary-and-work-life-balance"><span class="header-section-number">1.14.1</span> Example: Job Satisfaction, Salary, and Work-Life Balance</a></li>
+  </ul></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">1.15</span> Conclusion</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">1.16</span> Further Reading</a></li>
+  <li><a href="#ethical-considerations-in-social-science-data-analysis" id="toc-ethical-considerations-in-social-science-data-analysis" class="nav-link" data-scroll-target="#ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.17</span> Ethical Considerations in Social Science Data Analysis</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">1.18</span> Key Takeaways</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">1.19</span> Next Steps</a></li>
   </ul>
 </nav>
     </div>
@@ -676,8 +731,307 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>This example demonstrates basic data manipulation, summary statistics, and visualization using R, which are common tasks in social science research.</p>
 </section>
 </section>
-<section id="ethical-considerations-in-social-science-data-analysis" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.6</span> Ethical Considerations in Social Science Data Analysis</h2>
+<section id="models-in-science-from-deterministic-to-stochastic" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.6</span> Models in Science: From Deterministic to Stochastic</h2>
+<p>In this tutorial, we’ll explore different types of models used in science, ranging from deterministic models often seen in physics to stochastic models common in social sciences and machine learning. We’ll use R to demonstrate some concepts and provide real-world examples.</p>
+<p>A model in science is a simplified representation of a complex system or phenomenon. It’s designed to help us understand, explain, and make predictions about the real world. Models can take various forms, including mathematical equations, computer simulations, or conceptual frameworks. They allow scientists to focus on key aspects of a system while ignoring less relevant details, making complex problems more manageable and easier to study.</p>
+</section>
+<section id="deterministic-models" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="deterministic-models"><span class="header-section-number">1.7</span> 1. Deterministic Models</h2>
+<p>Deterministic models are those where the output is fully determined by the parameter values and the initial conditions. These models are often used in physics and engineering.</p>
+<section id="example-simple-harmonic-motion" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="example-simple-harmonic-motion"><span class="header-section-number">1.7.1</span> Example: Simple Harmonic Motion</h3>
+<p>A classic example of a deterministic model is simple harmonic motion, described by the equation:</p>
+<p><span class="math display">\[x(t) = A \cos(\omega t + \phi)\]</span></p>
+<p>Where: - <span class="math inline">\(x(t)\)</span> is the position at time <span class="math inline">\(t\)</span> - <span class="math inline">\(A\)</span> is the amplitude - <span class="math inline">\(\omega\)</span> is the angular frequency - <span class="math inline">\(\phi\)</span> is the phase</p>
+<p>Let’s simulate this in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple Harmonic Motion</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sim_harmonic_motion <span class="ot">&lt;-</span> <span class="cf">function</span>(A, omega, phi, t) {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">*</span> <span class="fu">cos</span>(omega <span class="sc">*</span> t <span class="sc">+</span> phi)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sim_harmonic_motion</span>(<span class="at">A =</span> <span class="dv">1</span>, <span class="at">omega =</span> <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">phi =</span> <span class="dv">0</span>, <span class="at">t =</span> t)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(t, x, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">xlab =</span> <span class="st">"Time"</span>, <span class="at">ylab =</span> <span class="st">"Position"</span>, </span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Simple Harmonic Motion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This will produce a plot of a simple harmonic oscillation.</p>
+</section>
+</section>
+<section id="stochastic-models-in-social-sciences" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="stochastic-models-in-social-sciences"><span class="header-section-number">1.8</span> 2. Stochastic Models in Social Sciences</h2>
+<p>Stochastic models incorporate randomness and are often used in social sciences where there’s inherent uncertainty in the systems being studied.</p>
+<section id="example-ordinary-least-squares-ols-regression" class="level3" data-number="1.8.1">
+<h3 data-number="1.8.1" class="anchored" data-anchor-id="example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.8.1</span> Example: Ordinary Least Squares (OLS) Regression</h3>
+<p>OLS is a fundamental stochastic model in social sciences. It’s represented as:</p>
+<p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
+<p>Where: - <span class="math inline">\(Y\)</span> is the dependent variable - <span class="math inline">\(X\)</span> is the independent variable - <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are parameters - <span class="math inline">\(\epsilon\)</span> is the error term (stochastic component)</p>
+<p>Let’s demonstrate OLS in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some sample data</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">sd =</span> <span class="fl">0.5</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit OLS model</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary of the model</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Y ~ X)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.95367 -0.34175 -0.04375  0.29032  1.64520 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.94860    0.04878   39.95   &lt;2e-16 ***
+X            2.97376    0.05344   55.65   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.4854 on 98 degrees of freedom
+Multiple R-squared:  0.9693,    Adjusted R-squared:  0.969 
+F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X, Y, <span class="at">main =</span> <span class="st">"OLS Regression"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(model, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This will fit an OLS model to some simulated data and plot the results.</p>
+</section>
+</section>
+<section id="advanced-stochastic-models-large-language-models" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="advanced-stochastic-models-large-language-models"><span class="header-section-number">1.9</span> 3. Advanced Stochastic Models: Large Language Models</h2>
+<p>Large Language Models (LLMs) like GPT-3 are complex stochastic models used in natural language processing. While we can’t implement a full LLM in this tutorial, we can discuss its principles.</p>
+<p>LLMs are based on the transformer architecture and use self-attention mechanisms. They’re trained on vast amounts of text data and learn to predict the next token in a sequence.</p>
+<p>The core of an LLM can be thought of as a conditional probability distribution:</p>
+<p><span class="math display">\[P(x_t | x_{&lt;t}, \theta)\]</span></p>
+<p>Where: - <span class="math inline">\(x_t\)</span> is the current token - <span class="math inline">\(x_{&lt;t}\)</span> represents all previous tokens - <span class="math inline">\(\theta\)</span> are the model parameters</p>
+<p>Unlike deterministic models, LLMs produce different outputs even for the same input due to their stochastic nature.</p>
+</section>
+<section id="conclusion" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">1.10</span> Conclusion</h2>
+<p>We’ve explored a range of models from deterministic to highly complex stochastic ones. Each type of model has its place in science, depending on the system being studied and the level of uncertainty involved.</p>
+<p>Remember, the choice between deterministic and stochastic models often depends on the nature of the system you’re studying and the questions you’re trying to answer. Deterministic models are great for systems with well-understood mechanics, while stochastic models shine when dealing with inherent randomness or complex, not fully understood systems.</p>
+</section>
+<section id="understanding-spurious-correlations-confounders-and-colliders" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="understanding-spurious-correlations-confounders-and-colliders"><span class="header-section-number">1.11</span> Understanding Spurious Correlations, Confounders, and Colliders</h2>
+<p>In this tutorial, we’ll explore three important concepts in statistical analysis: spurious correlations, confounders, and colliders. Understanding these concepts is crucial for avoiding misinterpretation of data and drawing incorrect conclusions from statistical analyses.</p>
+<p>Let’s start by loading the necessary libraries:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dagitty)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdag)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># for reproducibility</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="spurious-correlations" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="spurious-correlations"><span class="header-section-number">1.12</span> Spurious Correlations</h2>
+<p>Spurious correlations are relationships between variables that appear to be causal but are actually coincidental or caused by an unseen third factor.</p>
+<section id="example-ice-cream-sales-and-drowning-incidents" class="level3" data-number="1.12.1">
+<h3 data-number="1.12.1" class="anchored" data-anchor-id="example-ice-cream-sales-and-drowning-incidents"><span class="header-section-number">1.12.1</span> Example: Ice Cream Sales and Drowning Incidents</h3>
+<p>Let’s create a dataset that shows a spurious correlation between ice cream sales and drowning incidents:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>spurious_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">temperature =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">25</span>, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ice_cream_sales =</span> <span class="dv">100</span> <span class="sc">+</span> <span class="dv">5</span> <span class="sc">*</span> temperature <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">drowning_incidents =</span> <span class="dv">1</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> temperature <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(spurious_data, <span class="fu">aes</span>(<span class="at">x =</span> ice_cream_sales, <span class="at">y =</span> drowning_incidents)) <span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Spurious Correlation: Ice Cream Sales vs. Drowning Incidents"</span>,</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Ice Cream Sales"</span>, <span class="at">y =</span> <span class="st">"Drowning Incidents"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter1_files/figure-html/spurious-data-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This plot shows a positive correlation between ice cream sales and drowning incidents. However, this relationship is spurious. The real cause for both is the temperature:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(spurious_data, <span class="fu">aes</span>(<span class="at">x =</span> temperature)) <span class="sc">+</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> ice_cream_sales), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> drowning_incidents <span class="sc">*</span> <span class="dv">10</span>), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">y =</span> ice_cream_sales), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">y =</span> drowning_incidents <span class="sc">*</span> <span class="dv">10</span>), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Ice Cream Sales"</span>,</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span>.<span class="sc">/</span><span class="dv">10</span>, <span class="at">name =</span> <span class="st">"Drowning Incidents"</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Temperature as the Common Cause"</span>,</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Temperature"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter1_files/figure-html/spurious-explanation-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="confounders" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="confounders"><span class="header-section-number">1.13</span> Confounders</h2>
+<p>A confounder is a variable that influences both the dependent variable and independent variable, causing a spurious association.</p>
+<section id="example-education-income-and-age" class="level3" data-number="1.13.1">
+<h3 data-number="1.13.1" class="anchored" data-anchor-id="example-education-income-and-age"><span class="header-section-number">1.13.1</span> Example: Education, Income, and Age</h3>
+<p>Let’s create a dataset where age confounds the relationship between education and income:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>confounder_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">runif</span>(n, <span class="dv">25</span>, <span class="dv">65</span>),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">education =</span> <span class="fu">round</span>(<span class="dv">10</span> <span class="sc">+</span> <span class="fl">0.1</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">2</span>)),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">income =</span> <span class="dv">20000</span> <span class="sc">+</span> <span class="dv">1000</span> <span class="sc">*</span> education <span class="sc">+</span> <span class="dv">500</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">5000</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Without controlling for age</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>model_naive <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> education, <span class="at">data =</span> confounder_data)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Controlling for age</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>model_adjusted <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> education <span class="sc">+</span> age, <span class="at">data =</span> confounder_data)</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(confounder_data, <span class="fu">aes</span>(<span class="at">x =</span> education, <span class="at">y =</span> income, <span class="at">color =</span> age)) <span class="sc">+</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">group =</span> <span class="fu">cut</span>(age, <span class="at">breaks =</span> <span class="dv">3</span>)), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Education vs Income, Confounded by Age"</span>,</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Years of Education"</span>, <span class="at">y =</span> <span class="st">"Income"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: The following aesthetics were dropped during statistical transformation:
+colour.
+ℹ This can happen when ggplot fails to infer the correct grouping structure in
+  the data.
+ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+  variable into a factor?</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter1_files/figure-html/confounder-data-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Compare the coefficients:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_naive)<span class="sc">$</span>coefficients[<span class="st">"education"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2328.718</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_adjusted)<span class="sc">$</span>coefficients[<span class="st">"education"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1101.783</code></pre>
+</div>
+</div>
+<p>The effect of education on income is overestimated when we don’t control for age.</p>
+</section>
+</section>
+<section id="colliders" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="colliders"><span class="header-section-number">1.14</span> Colliders</h2>
+<p>A collider is a variable that is influenced by both the independent variable and the dependent variable. Controlling for a collider can introduce a spurious correlation.</p>
+<section id="example-job-satisfaction-salary-and-work-life-balance" class="level3" data-number="1.14.1">
+<h3 data-number="1.14.1" class="anchored" data-anchor-id="example-job-satisfaction-salary-and-work-life-balance"><span class="header-section-number">1.14.1</span> Example: Job Satisfaction, Salary, and Work-Life Balance</h3>
+<p>Let’s create a dataset where work-life balance is a collider between job satisfaction and salary:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>collider_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">job_satisfaction =</span> <span class="fu">rnorm</span>(n),</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">salary =</span> <span class="fu">rnorm</span>(n),</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">work_life_balance =</span> <span class="sc">-</span><span class="fl">0.5</span> <span class="sc">*</span> job_satisfaction <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> salary <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">0.5</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Without controlling for work-life balance</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>model_correct <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary <span class="sc">~</span> job_satisfaction, <span class="at">data =</span> collider_data)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrectly controlling for work-life balance</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>model_collider <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary <span class="sc">~</span> job_satisfaction <span class="sc">+</span> work_life_balance, <span class="at">data =</span> collider_data)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(collider_data, <span class="fu">aes</span>(<span class="at">x =</span> job_satisfaction, <span class="at">y =</span> salary, <span class="at">color =</span> work_life_balance)) <span class="sc">+</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Job Satisfaction vs Salary, Work-Life Balance as Collider"</span>,</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Job Satisfaction"</span>, <span class="at">y =</span> <span class="st">"Salary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter1_files/figure-html/collider-data-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Compare the coefficients:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_correct)<span class="sc">$</span>coefficients[<span class="st">"job_satisfaction"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.02063487</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_collider)<span class="sc">$</span>coefficients[<span class="st">"job_satisfaction"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.4794016</code></pre>
+</div>
+</div>
+<p>Controlling for the collider (work-life balance) introduces a spurious correlation between job satisfaction and salary.</p>
+</section>
+</section>
+<section id="conclusion-1" class="level2" data-number="1.15">
+<h2 data-number="1.15" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">1.15</span> Conclusion</h2>
+<p>Understanding spurious correlations, confounders, and colliders is crucial for proper statistical analysis and causal inference. Always consider the underlying causal structure of your data and be cautious about which variables you control for in your analyses.</p>
+</section>
+<section id="further-reading" class="level2" data-number="1.16">
+<h2 data-number="1.16" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">1.16</span> Further Reading</h2>
+<ul>
+<li>Pearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press.</li>
+<li>Hernán, M. A., &amp; Robins, J. M. (2020). Causal Inference: What If. Boca Raton: Chapman &amp; Hall/CRC.</li>
+</ul>
+</section>
+<section id="ethical-considerations-in-social-science-data-analysis" class="level2" data-number="1.17">
+<h2 data-number="1.17" class="anchored" data-anchor-id="ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.17</span> Ethical Considerations in Social Science Data Analysis</h2>
 <p>Ethics play a crucial role in social science research:</p>
 <ol type="1">
 <li><strong>Privacy and Consent</strong>: Ensuring participant privacy and informed consent</li>
@@ -700,8 +1054,8 @@ Important
 </div>
 </div>
 </section>
-<section id="key-takeaways" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">1.7</span> Key Takeaways</h2>
+<section id="key-takeaways" class="level2" data-number="1.18">
+<h2 data-number="1.18" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">1.18</span> Key Takeaways</h2>
 <ol type="1">
 <li>Data science in social sciences builds upon traditional statistical methods, incorporating new technologies to analyze complex social phenomena.</li>
 <li>Understanding concepts like population, sample, and data generating processes is crucial for valid social science research.</li>
@@ -710,8 +1064,8 @@ Important
 <li>Ethical considerations should be at the forefront of any social science data project.</li>
 </ol>
 </section>
-<section id="next-steps" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">1.8</span> Next Steps</h2>
+<section id="next-steps" class="level2" data-number="1.19">
+<h2 data-number="1.19" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">1.19</span> Next Steps</h2>
 <p>In the following chapters, we’ll dive deeper into each component of the data science process, exploring statistical concepts, R programming techniques, and real-world applications in social science research.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">

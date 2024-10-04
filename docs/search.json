@@ -73,8 +73,8 @@
     "objectID": "chapter1.html#ethical-considerations-in-social-science-data-analysis",
     "href": "chapter1.html#ethical-considerations-in-social-science-data-analysis",
     "title": "1  Introduction to Data Science and Statistics for Social Sciences",
-    "section": "1.6 Ethical Considerations in Social Science Data Analysis",
-    "text": "1.6 Ethical Considerations in Social Science Data Analysis\nEthics play a crucial role in social science research:\n\nPrivacy and Consent: Ensuring participant privacy and informed consent\nData Protection: Securely storing and managing sensitive personal data\nBias and Representation: Addressing sampling bias and ensuring diverse representation\nTransparency: Clearly communicating research methods and limitations\nSocial Impact: Considering the potential societal implications of research findings\n\n\n\n\n\n\n\nImportant\n\n\n\nSocial scientists must carefully consider the ethical implications of their data collection, analysis, and dissemination practices.",
+    "section": "1.17 Ethical Considerations in Social Science Data Analysis",
+    "text": "1.17 Ethical Considerations in Social Science Data Analysis\nEthics play a crucial role in social science research:\n\nPrivacy and Consent: Ensuring participant privacy and informed consent\nData Protection: Securely storing and managing sensitive personal data\nBias and Representation: Addressing sampling bias and ensuring diverse representation\nTransparency: Clearly communicating research methods and limitations\nSocial Impact: Considering the potential societal implications of research findings\n\n\n\n\n\n\n\nImportant\n\n\n\nSocial scientists must carefully consider the ethical implications of their data collection, analysis, and dissemination practices.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
     ]
@@ -83,8 +83,8 @@
     "objectID": "chapter1.html#key-takeaways",
     "href": "chapter1.html#key-takeaways",
     "title": "1  Introduction to Data Science and Statistics for Social Sciences",
-    "section": "1.7 Key Takeaways",
-    "text": "1.7 Key Takeaways\n\nData science in social sciences builds upon traditional statistical methods, incorporating new technologies to analyze complex social phenomena.\nUnderstanding concepts like population, sample, and data generating processes is crucial for valid social science research.\nThe data science process in social research involves multiple steps from ethical data collection to the communication of insights.\nR is a powerful tool for social science data analysis, offering a wide range of capabilities.\nEthical considerations should be at the forefront of any social science data project.",
+    "section": "1.18 Key Takeaways",
+    "text": "1.18 Key Takeaways\n\nData science in social sciences builds upon traditional statistical methods, incorporating new technologies to analyze complex social phenomena.\nUnderstanding concepts like population, sample, and data generating processes is crucial for valid social science research.\nThe data science process in social research involves multiple steps from ethical data collection to the communication of insights.\nR is a powerful tool for social science data analysis, offering a wide range of capabilities.\nEthical considerations should be at the forefront of any social science data project.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
     ]
@@ -93,8 +93,8 @@
     "objectID": "chapter1.html#next-steps",
     "href": "chapter1.html#next-steps",
     "title": "1  Introduction to Data Science and Statistics for Social Sciences",
-    "section": "1.8 Next Steps",
-    "text": "1.8 Next Steps\nIn the following chapters, we’ll dive deeper into each component of the data science process, exploring statistical concepts, R programming techniques, and real-world applications in social science research.\n\n\n\n\n\n\nPractice Exercise\n\n\n\nUsing the concepts learned in this chapter, design a small-scale study on a social science topic of your choice. Identify the population, consider how you would draw a sample, and reflect on the potential data generating process. What ethical considerations would you need to address?",
+    "section": "1.19 Next Steps",
+    "text": "1.19 Next Steps\nIn the following chapters, we’ll dive deeper into each component of the data science process, exploring statistical concepts, R programming techniques, and real-world applications in social science research.\n\n\n\n\n\n\nPractice Exercise\n\n\n\nUsing the concepts learned in this chapter, design a small-scale study on a social science topic of your choice. Identify the population, consider how you would draw a sample, and reflect on the potential data generating process. What ethical considerations would you need to address?",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
     ]
@@ -163,8 +163,8 @@
     "objectID": "rozdzial1.html#etyczne-aspekty-w-analizie-danych-nauk-społecznych",
     "href": "rozdzial1.html#etyczne-aspekty-w-analizie-danych-nauk-społecznych",
     "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
-    "section": "2.6 Etyczne Aspekty w Analizie Danych Nauk Społecznych",
-    "text": "2.6 Etyczne Aspekty w Analizie Danych Nauk Społecznych\nEtyka odgrywa kluczową rolę w badaniach nauk społecznych:\n\nPrywatność i Zgoda: Zapewnienie prywatności uczestników i świadomej zgody\nOchrona Danych: Bezpieczne przechowywanie i zarządzanie wrażliwymi danymi osobowymi\nBłędy i Reprezentacja: Adresowanie błędów próbkowania i zapewnienie różnorodnej reprezentacji\nPrzejrzystość: Jasne komunikowanie metod badawczych i ograniczeń\nWpływ Społeczny: Rozważanie potencjalnych społecznych implikacji wyników badań\n\n\n\n\n\n\n\nWażne\n\n\n\nNaukowcy społeczni muszą starannie rozważyć etyczne implikacje swoich praktyk zbierania, analizy i rozpowszechniania danych.",
+    "section": "2.17 Etyczne Aspekty w Analizie Danych Nauk Społecznych",
+    "text": "2.17 Etyczne Aspekty w Analizie Danych Nauk Społecznych\nEtyka odgrywa kluczową rolę w badaniach nauk społecznych:\n\nPrywatność i Zgoda: Zapewnienie prywatności uczestników i świadomej zgody\nOchrona Danych: Bezpieczne przechowywanie i zarządzanie wrażliwymi danymi osobowymi\nBłędy i Reprezentacja: Adresowanie błędów próbkowania i zapewnienie różnorodnej reprezentacji\nPrzejrzystość: Jasne komunikowanie metod badawczych i ograniczeń\nWpływ Społeczny: Rozważanie potencjalnych społecznych implikacji wyników badań\n\n\n\n\n\n\n\nWażne\n\n\n\nNaukowcy społeczni muszą starannie rozważyć etyczne implikacje swoich praktyk zbierania, analizy i rozpowszechniania danych.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
     ]
@@ -173,8 +173,8 @@
     "objectID": "rozdzial1.html#kluczowe-wnioski",
     "href": "rozdzial1.html#kluczowe-wnioski",
     "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
-    "section": "2.7 Kluczowe Wnioski",
-    "text": "2.7 Kluczowe Wnioski\n\nNauka o danych w naukach społecznych bazuje na tradycyjnych metodach statystycznych, włączając nowe technologie do analizy złożonych zjawisk społecznych.\nZrozumienie koncepcji takich jak populacja, próba i procesy generowania danych jest kluczowe dla prawidłowych badań w naukach społecznych.\nProces nauki o danych w badaniach społecznych obejmuje wiele etapów, od etycznego zbierania danych po komunikację wniosków.\nR jest potężnym narzędziem do analizy danych w naukach społecznych, oferującym szeroki zakres możliwości.\nAspekty etyczne powinny być na pierwszym planie każdego projektu związanego z danymi w naukach społecznych.",
+    "section": "2.18 Kluczowe Wnioski",
+    "text": "2.18 Kluczowe Wnioski\n\nNauka o danych w naukach społecznych bazuje na tradycyjnych metodach statystycznych, włączając nowe technologie do analizy złożonych zjawisk społecznych.\nZrozumienie koncepcji takich jak populacja, próba i procesy generowania danych jest kluczowe dla prawidłowych badań w naukach społecznych.\nProces nauki o danych w badaniach społecznych obejmuje wiele etapów, od etycznego zbierania danych po komunikację wniosków.\nR jest potężnym narzędziem do analizy danych w naukach społecznych, oferującym szeroki zakres możliwości.\nAspekty etyczne powinny być na pierwszym planie każdego projektu związanego z danymi w naukach społecznych.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
     ]
@@ -183,8 +183,8 @@
     "objectID": "rozdzial1.html#następne-kroki",
     "href": "rozdzial1.html#następne-kroki",
     "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
-    "section": "2.8 Następne Kroki",
-    "text": "2.8 Następne Kroki\nW kolejnych rozdziałach zagłębimy się w każdy komponent procesu nauki o danych, badając koncepcje statystyczne, techniki programowania w R i rzeczywiste zastosowania w badaniach nauk społecznych.\n\n\n\n\n\n\nĆwiczenie Praktyczne\n\n\n\nWykorzystując koncepcje poznane w tym rozdziale, zaprojektuj małe badanie na wybrany temat z nauk społecznych. Określ populację, zastanów się, jak wybrałbyś próbę i przemyśl potencjalny proces generowania danych. Jakie aspekty etyczne należałoby uwzględnić?",
+    "section": "2.19 Następne Kroki",
+    "text": "2.19 Następne Kroki\nW kolejnych rozdziałach zagłębimy się w każdy komponent procesu nauki o danych, badając koncepcje statystyczne, techniki programowania w R i rzeczywiste zastosowania w badaniach nauk społecznych.\n\n\n\n\n\n\nĆwiczenie Praktyczne\n\n\n\nWykorzystując koncepcje poznane w tym rozdziale, zaprojektuj małe badanie na wybrany temat z nauk społecznych. Określ populację, zastanów się, jak wybrałbyś próbę i przemyśl potencjalny proces generowania danych. Jakie aspekty etyczne należałoby uwzględnić?",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
     ]
@@ -1307,6 +1307,226 @@
     "text": "13.5 Conclusion\nIn this chapter, we explored three fundamental types of data visualizations: bar plots, histograms, and box plots. We demonstrated how to create these plots by hand, using R’s base plotting system, and using the ggplot2 library.\nEach type of plot serves a different purpose: - Bar plots are excellent for comparing categories. - Histograms show the distribution of a continuous variable. - Box plots provide a concise summary of a distribution, highlighting central tendency, spread, and outliers.\nRemember, the choice of visualization depends on your data type and the insights you want to convey. Always consider your audience and the story you want to tell with your data when selecting and designing your visualizations.\nPractice creating these plots by hand to deepen your understanding of their construction and interpretation. Then, leverage the power of R and ggplot2 to quickly create and customize these visualizations for larger datasets and more complex analyses.",
     "crumbs": [
       "<span class='chapter-number'>13</span>  <span class='chapter-title'>Data Visualization: From Pen and Paper to R</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#understanding-spurious-correlations-confounders-and-colliders",
+    "href": "chapter1.html#understanding-spurious-correlations-confounders-and-colliders",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.11 Understanding Spurious Correlations, Confounders, and Colliders",
+    "text": "1.11 Understanding Spurious Correlations, Confounders, and Colliders\nIn this tutorial, we’ll explore three important concepts in statistical analysis: spurious correlations, confounders, and colliders. Understanding these concepts is crucial for avoiding misinterpretation of data and drawing incorrect conclusions from statistical analyses.\nLet’s start by loading the necessary libraries:\n\nlibrary(tidyverse)\nlibrary(dagitty)\nlibrary(ggdag)\nset.seed(123) # for reproducibility",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#spurious-correlations",
+    "href": "chapter1.html#spurious-correlations",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.12 Spurious Correlations",
+    "text": "1.12 Spurious Correlations\nSpurious correlations are relationships between variables that appear to be causal but are actually coincidental or caused by an unseen third factor.\n\n1.12.1 Example: Ice Cream Sales and Drowning Incidents\nLet’s create a dataset that shows a spurious correlation between ice cream sales and drowning incidents:\n\nn &lt;- 100\nspurious_data &lt;- tibble(\n  temperature = rnorm(n, mean = 25, sd = 5),\n  ice_cream_sales = 100 + 5 * temperature + rnorm(n, sd = 10),\n  drowning_incidents = 1 + 0.5 * temperature + rnorm(n, sd = 2)\n)\n\nggplot(spurious_data, aes(x = ice_cream_sales, y = drowning_incidents)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Spurious Correlation: Ice Cream Sales vs. Drowning Incidents\",\n       x = \"Ice Cream Sales\", y = \"Drowning Incidents\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThis plot shows a positive correlation between ice cream sales and drowning incidents. However, this relationship is spurious. The real cause for both is the temperature:\n\nggplot(spurious_data, aes(x = temperature)) +\n  geom_point(aes(y = ice_cream_sales), color = \"blue\") +\n  geom_point(aes(y = drowning_incidents * 10), color = \"red\") +\n  geom_smooth(aes(y = ice_cream_sales), method = \"lm\", se = FALSE, color = \"blue\") +\n  geom_smooth(aes(y = drowning_incidents * 10), method = \"lm\", se = FALSE, color = \"red\") +\n  scale_y_continuous(\n    name = \"Ice Cream Sales\",\n    sec.axis = sec_axis(~./10, name = \"Drowning Incidents\")\n  ) +\n  labs(title = \"Temperature as the Common Cause\",\n       x = \"Temperature\")\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#confounders",
+    "href": "chapter1.html#confounders",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.13 Confounders",
+    "text": "1.13 Confounders\nA confounder is a variable that influences both the dependent variable and independent variable, causing a spurious association.\n\n1.13.1 Example: Education, Income, and Age\nLet’s create a dataset where age confounds the relationship between education and income:\n\nn &lt;- 1000\nconfounder_data &lt;- tibble(\n  age = runif(n, 25, 65),\n  education = round(10 + 0.1 * age + rnorm(n, sd = 2)),\n  income = 20000 + 1000 * education + 500 * age + rnorm(n, sd = 5000)\n)\n\n# Without controlling for age\nmodel_naive &lt;- lm(income ~ education, data = confounder_data)\n\n# Controlling for age\nmodel_adjusted &lt;- lm(income ~ education + age, data = confounder_data)\n\n# Visualize\nggplot(confounder_data, aes(x = education, y = income, color = age)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  geom_smooth(aes(group = cut(age, breaks = 3)), method = \"lm\", se = FALSE) +\n  scale_color_viridis_c() +\n  labs(title = \"Education vs Income, Confounded by Age\",\n       x = \"Years of Education\", y = \"Income\")\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\nCompare the coefficients:\n\nsummary(model_naive)$coefficients[\"education\", \"Estimate\"]\n\n[1] 2328.718\n\nsummary(model_adjusted)$coefficients[\"education\", \"Estimate\"]\n\n[1] 1101.783\n\n\nThe effect of education on income is overestimated when we don’t control for age.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#colliders",
+    "href": "chapter1.html#colliders",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.14 Colliders",
+    "text": "1.14 Colliders\nA collider is a variable that is influenced by both the independent variable and the dependent variable. Controlling for a collider can introduce a spurious correlation.\n\n1.14.1 Example: Job Satisfaction, Salary, and Work-Life Balance\nLet’s create a dataset where work-life balance is a collider between job satisfaction and salary:\n\nn &lt;- 1000\ncollider_data &lt;- tibble(\n  job_satisfaction = rnorm(n),\n  salary = rnorm(n),\n  work_life_balance = -0.5 * job_satisfaction - 0.5 * salary + rnorm(n, sd = 0.5)\n)\n\n# Without controlling for work-life balance\nmodel_correct &lt;- lm(salary ~ job_satisfaction, data = collider_data)\n\n# Incorrectly controlling for work-life balance\nmodel_collider &lt;- lm(salary ~ job_satisfaction + work_life_balance, data = collider_data)\n\n# Visualize\nggplot(collider_data, aes(x = job_satisfaction, y = salary, color = work_life_balance)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  scale_color_viridis_c() +\n  labs(title = \"Job Satisfaction vs Salary, Work-Life Balance as Collider\",\n       x = \"Job Satisfaction\", y = \"Salary\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nCompare the coefficients:\n\nsummary(model_correct)$coefficients[\"job_satisfaction\", \"Estimate\"]\n\n[1] 0.02063487\n\nsummary(model_collider)$coefficients[\"job_satisfaction\", \"Estimate\"]\n\n[1] -0.4794016\n\n\nControlling for the collider (work-life balance) introduces a spurious correlation between job satisfaction and salary.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#conclusion",
+    "href": "chapter1.html#conclusion",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.10 Conclusion",
+    "text": "1.10 Conclusion\nWe’ve explored a range of models from deterministic to highly complex stochastic ones. Each type of model has its place in science, depending on the system being studied and the level of uncertainty involved.\nRemember, the choice between deterministic and stochastic models often depends on the nature of the system you’re studying and the questions you’re trying to answer. Deterministic models are great for systems with well-understood mechanics, while stochastic models shine when dealing with inherent randomness or complex, not fully understood systems.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#further-reading",
+    "href": "chapter1.html#further-reading",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.16 Further Reading",
+    "text": "1.16 Further Reading\n\nPearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press.\nHernán, M. A., & Robins, J. M. (2020). Causal Inference: What If. Boca Raton: Chapman & Hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#zrozumienie-pozornych-korelacji-zmiennych-zakłócających-i-kolizyjnych",
+    "href": "rozdzial1.html#zrozumienie-pozornych-korelacji-zmiennych-zakłócających-i-kolizyjnych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.11 Zrozumienie Pozornych Korelacji, Zmiennych Zakłócających i Kolizyjnych",
+    "text": "2.11 Zrozumienie Pozornych Korelacji, Zmiennych Zakłócających i Kolizyjnych\nW tej sekcji zbadamy trzy ważne pojęcia w analizie statystycznej: pozorne korelacje, zmienne zakłócające i zmienne kolizyjne. Zrozumienie tych pojęć jest kluczowe dla uniknięcia błędnej interpretacji danych i wyciągania nieprawidłowych wniosków z analiz statystycznych.\nZacznijmy od załadowania niezbędnych bibliotek:\n\nlibrary(tidyverse)\nlibrary(dagitty)\nlibrary(ggdag)\nset.seed(123) # dla powtarzalności",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#pozorne-korelacje",
+    "href": "rozdzial1.html#pozorne-korelacje",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.12 Pozorne Korelacje",
+    "text": "2.12 Pozorne Korelacje\nPozorne korelacje to związki między zmiennymi, które wydają się przyczynowe, ale w rzeczywistości są przypadkowe lub spowodowane przez niewidoczny trzeci czynnik.\n\n2.12.1 Przykład: Sprzedaż lodów a przypadki utonięć\nStwórzmy zbiór danych, który pokazuje pozorną korelację między sprzedażą lodów a przypadkami utonięć:\n\nn &lt;- 100\ndane_pozorne &lt;- tibble(\n  temperatura = rnorm(n, mean = 25, sd = 5),\n  sprzedaz_lodow = 100 + 5 * temperatura + rnorm(n, sd = 10),\n  przypadki_utoniec = 1 + 0.5 * temperatura + rnorm(n, sd = 2)\n)\n\nggplot(dane_pozorne, aes(x = sprzedaz_lodow, y = przypadki_utoniec)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Pozorna Korelacja: Sprzedaż Lodów vs Przypadki Utonięć\",\n       x = \"Sprzedaż Lodów\", y = \"Przypadki Utonięć\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nTen wykres pokazuje pozytywną korelację między sprzedażą lodów a przypadkami utonięć. Jednak ta relacja jest pozorna. Prawdziwą przyczyną obu zjawisk jest temperatura:\n\nggplot(dane_pozorne, aes(x = temperatura)) +\n  geom_point(aes(y = sprzedaz_lodow), color = \"blue\") +\n  geom_point(aes(y = przypadki_utoniec * 10), color = \"red\") +\n  geom_smooth(aes(y = sprzedaz_lodow), method = \"lm\", se = FALSE, color = \"blue\") +\n  geom_smooth(aes(y = przypadki_utoniec * 10), method = \"lm\", se = FALSE, color = \"red\") +\n  scale_y_continuous(\n    name = \"Sprzedaż Lodów\",\n    sec.axis = sec_axis(~./10, name = \"Przypadki Utonięć\")\n  ) +\n  labs(title = \"Temperatura jako Wspólna Przyczyna\",\n       x = \"Temperatura\")\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#zmienne-zakłócające",
+    "href": "rozdzial1.html#zmienne-zakłócające",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.13 Zmienne Zakłócające",
+    "text": "2.13 Zmienne Zakłócające\nZmienna zakłócająca to zmienna, która wpływa zarówno na zmienną zależną, jak i niezależną, powodując pozorny związek.\n\n2.13.1 Przykład: Edukacja, Dochód i Wiek\nStwórzmy zbiór danych, w którym wiek zakłóca relację między edukacją a dochodem:\n\nn &lt;- 1000\ndane_zaklocajace &lt;- tibble(\n  wiek = runif(n, 25, 65),\n  edukacja = round(10 + 0.1 * wiek + rnorm(n, sd = 2)),\n  dochod = 20000 + 1000 * edukacja + 500 * wiek + rnorm(n, sd = 5000)\n)\n\n# Bez kontrolowania wieku\nmodel_naiwny &lt;- lm(dochod ~ edukacja, data = dane_zaklocajace)\n\n# Kontrolowanie wieku\nmodel_skorygowany &lt;- lm(dochod ~ edukacja + wiek, data = dane_zaklocajace)\n\n# Wizualizacja\nggplot(dane_zaklocajace, aes(x = edukacja, y = dochod, color = wiek)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  geom_smooth(aes(group = cut(wiek, breaks = 3)), method = \"lm\", se = FALSE) +\n  scale_color_viridis_c() +\n  labs(title = \"Edukacja vs Dochód, Zakłócone przez Wiek\",\n       x = \"Lata Edukacji\", y = \"Dochód\")\n\n`geom_smooth()` using formula = 'y ~ x'\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?\n\n\n\n\n\n\n\n\n\nPorównajmy współczynniki:\n\nsummary(model_naiwny)$coefficients[\"edukacja\", \"Estimate\"]\n\n[1] 2328.718\n\nsummary(model_skorygowany)$coefficients[\"edukacja\", \"Estimate\"]\n\n[1] 1101.783\n\n\nEfekt edukacji na dochód jest przeszacowany, gdy nie kontrolujemy wieku.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#zmienne-kolizyjne",
+    "href": "rozdzial1.html#zmienne-kolizyjne",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.14 Zmienne Kolizyjne",
+    "text": "2.14 Zmienne Kolizyjne\nZmienna kolizyjna to zmienna, na którą wpływają zarówno zmienna niezależna, jak i zmienna zależna. Kontrolowanie zmiennej kolizyjnej może wprowadzić pozorną korelację.\n\n2.14.1 Przykład: Satysfakcja z pracy, Wynagrodzenie i Równowaga między pracą a życiem prywatnym\nStwórzmy zbiór danych, w którym równowaga między pracą a życiem prywatnym jest zmienną kolizyjną między satysfakcją z pracy a wynagrodzeniem:\n\nn &lt;- 1000\ndane_kolizyjne &lt;- tibble(\n  satysfakcja_z_pracy = rnorm(n),\n  wynagrodzenie = rnorm(n),\n  rownowaga_praca_zycie = -0.5 * satysfakcja_z_pracy - 0.5 * wynagrodzenie + rnorm(n, sd = 0.5)\n)\n\n# Bez kontrolowania równowagi praca-życie\nmodel_poprawny &lt;- lm(wynagrodzenie ~ satysfakcja_z_pracy, data = dane_kolizyjne)\n\n# Błędne kontrolowanie równowagi praca-życie\nmodel_kolizyjny &lt;- lm(wynagrodzenie ~ satysfakcja_z_pracy + rownowaga_praca_zycie, data = dane_kolizyjne)\n\n# Wizualizacja\nggplot(dane_kolizyjne, aes(x = satysfakcja_z_pracy, y = wynagrodzenie, color = rownowaga_praca_zycie)) +\n  geom_point(alpha = 0.5) +\n  geom_smooth(method = \"lm\", se = FALSE, color = \"red\") +\n  scale_color_viridis_c() +\n  labs(title = \"Satysfakcja z Pracy vs Wynagrodzenie, Równowaga Praca-Życie jako Zmienna Kolizyjna\",\n       x = \"Satysfakcja z Pracy\", y = \"Wynagrodzenie\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nPorównajmy współczynniki:\n\nsummary(model_poprawny)$coefficients[\"satysfakcja_z_pracy\", \"Estimate\"]\n\n[1] 0.02063487\n\nsummary(model_kolizyjny)$coefficients[\"satysfakcja_z_pracy\", \"Estimate\"]\n\n[1] -0.4794016\n\n\nKontrolowanie zmiennej kolizyjnej (równowaga praca-życie) wprowadza pozorną korelację między satysfakcją z pracy a wynagrodzeniem.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#podsumowanie",
+    "href": "rozdzial1.html#podsumowanie",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.10 Podsumowanie",
+    "text": "2.10 Podsumowanie\nZbadaliśmy szereg modeli, od deterministycznych po wysoce złożone modele stochastyczne. Każdy rodzaj modelu ma swoje miejsce w nauce, w zależności od badanego systemu i poziomu niepewności.\nPamiętaj, że wybór między modelami deterministycznymi a stochastycznymi często zależy od natury badanego systemu i pytań, na które próbujesz odpowiedzieć. Modele deterministyczne są świetne dla systemów o dobrze zrozumiałej mechanice, podczas gdy modele stochastyczne sprawdzają się przy radzeniu sobie z nieodłączną losowością lub złożonymi, nie w pełni zrozumiałymi systemami.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#dalsza-lektura",
+    "href": "rozdzial1.html#dalsza-lektura",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.16 Dalsza Lektura",
+    "text": "2.16 Dalsza Lektura\n\nPearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press.\nHernán, M. A., & Robins, J. M. (2020). Causal Inference: What If. Boca Raton: Chapman & Hall/CRC.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#models-in-science-from-deterministic-to-stochastic",
+    "href": "chapter1.html#models-in-science-from-deterministic-to-stochastic",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.6 Models in Science: From Deterministic to Stochastic",
+    "text": "1.6 Models in Science: From Deterministic to Stochastic\nIn this tutorial, we’ll explore different types of models used in science, ranging from deterministic models often seen in physics to stochastic models common in social sciences and machine learning. We’ll use R to demonstrate some concepts and provide real-world examples.\nA model in science is a simplified representation of a complex system or phenomenon. It’s designed to help us understand, explain, and make predictions about the real world. Models can take various forms, including mathematical equations, computer simulations, or conceptual frameworks. They allow scientists to focus on key aspects of a system while ignoring less relevant details, making complex problems more manageable and easier to study.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#deterministic-models",
+    "href": "chapter1.html#deterministic-models",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.7 1. Deterministic Models",
+    "text": "1.7 1. Deterministic Models\nDeterministic models are those where the output is fully determined by the parameter values and the initial conditions. These models are often used in physics and engineering.\n\n1.7.1 Example: Simple Harmonic Motion\nA classic example of a deterministic model is simple harmonic motion, described by the equation:\n\\[x(t) = A \\cos(\\omega t + \\phi)\\]\nWhere: - \\(x(t)\\) is the position at time \\(t\\) - \\(A\\) is the amplitude - \\(\\omega\\) is the angular frequency - \\(\\phi\\) is the phase\nLet’s simulate this in R:\n\n# Simple Harmonic Motion\nsim_harmonic_motion &lt;- function(A, omega, phi, t) {\n  A * cos(omega * t + phi)\n}\n\n# Generate data\nt &lt;- seq(0, 10, by = 0.1)\nx &lt;- sim_harmonic_motion(A = 1, omega = 2*pi, phi = 0, t = t)\n\n# Plot\nplot(t, x, type = \"l\", xlab = \"Time\", ylab = \"Position\", \n     main = \"Simple Harmonic Motion\")\n\n\n\n\n\n\n\n\nThis will produce a plot of a simple harmonic oscillation.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#stochastic-models-in-social-sciences",
+    "href": "chapter1.html#stochastic-models-in-social-sciences",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.8 2. Stochastic Models in Social Sciences",
+    "text": "1.8 2. Stochastic Models in Social Sciences\nStochastic models incorporate randomness and are often used in social sciences where there’s inherent uncertainty in the systems being studied.\n\n1.8.1 Example: Ordinary Least Squares (OLS) Regression\nOLS is a fundamental stochastic model in social sciences. It’s represented as:\n\\[Y = \\beta_0 + \\beta_1X + \\epsilon\\]\nWhere: - \\(Y\\) is the dependent variable - \\(X\\) is the independent variable - \\(\\beta_0\\) and \\(\\beta_1\\) are parameters - \\(\\epsilon\\) is the error term (stochastic component)\nLet’s demonstrate OLS in R:\n\n# Generate some sample data\nset.seed(123)\nX &lt;- rnorm(100)\nY &lt;- 2 + 3*X + rnorm(100, sd = 0.5)\n\n# Fit OLS model\nmodel &lt;- lm(Y ~ X)\n\n# Summary of the model\nsummary(model)\n\n\nCall:\nlm(formula = Y ~ X)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.95367 -0.34175 -0.04375  0.29032  1.64520 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  1.94860    0.04878   39.95   &lt;2e-16 ***\nX            2.97376    0.05344   55.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4854 on 98 degrees of freedom\nMultiple R-squared:  0.9693,    Adjusted R-squared:  0.969 \nF-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16\n\n# Plot\nplot(X, Y, main = \"OLS Regression\")\nabline(model, col = \"red\")\n\n\n\n\n\n\n\n\nThis will fit an OLS model to some simulated data and plot the results.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#advanced-stochastic-models-large-language-models",
+    "href": "chapter1.html#advanced-stochastic-models-large-language-models",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.9 3. Advanced Stochastic Models: Large Language Models",
+    "text": "1.9 3. Advanced Stochastic Models: Large Language Models\nLarge Language Models (LLMs) like GPT-3 are complex stochastic models used in natural language processing. While we can’t implement a full LLM in this tutorial, we can discuss its principles.\nLLMs are based on the transformer architecture and use self-attention mechanisms. They’re trained on vast amounts of text data and learn to predict the next token in a sequence.\nThe core of an LLM can be thought of as a conditional probability distribution:\n\\[P(x_t | x_{&lt;t}, \\theta)\\]\nWhere: - \\(x_t\\) is the current token - \\(x_{&lt;t}\\) represents all previous tokens - \\(\\theta\\) are the model parameters\nUnlike deterministic models, LLMs produce different outputs even for the same input due to their stochastic nature.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "chapter1.html#conclusion-1",
+    "href": "chapter1.html#conclusion-1",
+    "title": "1  Introduction to Data Science and Statistics for Social Sciences",
+    "section": "1.15 Conclusion",
+    "text": "1.15 Conclusion\nUnderstanding spurious correlations, confounders, and colliders is crucial for proper statistical analysis and causal inference. Always consider the underlying causal structure of your data and be cautious about which variables you control for in your analyses.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#modele-w-nauce-od-deterministycznych-do-stochastycznych",
+    "href": "rozdzial1.html#modele-w-nauce-od-deterministycznych-do-stochastycznych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.6 Modele w Nauce: Od Deterministycznych do Stochastycznych",
+    "text": "2.6 Modele w Nauce: Od Deterministycznych do Stochastycznych\nW tej sekcji omówimy różne rodzaje modeli stosowanych w nauce, od modeli deterministycznych często spotykanych w fizyce po modele stochastyczne powszechne w naukach społecznych i uczeniu maszynowym. Użyjemy R do zademonstrowania niektórych koncepcji i podamy rzeczywiste przykłady.\nModel w nauce to uproszczona reprezentacja złożonego systemu lub zjawiska. Jest on zaprojektowany, aby pomóc nam zrozumieć, wyjaśnić i przewidywać zjawiska zachodzące w rzeczywistym świecie. Modele mogą przybierać różne formy, w tym równania matematyczne, symulacje komputerowe lub ramy koncepcyjne. Pozwalają naukowcom skupić się na kluczowych aspektach systemu, ignorując mniej istotne szczegóły, co sprawia, że złożone problemy stają się łatwiejsze do zarządzania i badania.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#modele-deterministyczne",
+    "href": "rozdzial1.html#modele-deterministyczne",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.7 1. Modele Deterministyczne",
+    "text": "2.7 1. Modele Deterministyczne\nModele deterministyczne to te, w których wynik jest w pełni określony przez wartości parametrów i warunki początkowe. Modele te są często używane w fizyce i inżynierii.\n\n2.7.1 Przykład: Ruch Harmoniczny Prosty\nKlasycznym przykładem modelu deterministycznego jest ruch harmoniczny prosty, opisany równaniem:\n\\[x(t) = A \\cos(\\omega t + \\phi)\\]\nGdzie: - \\(x(t)\\) to położenie w czasie \\(t\\) - \\(A\\) to amplituda - \\(\\omega\\) to częstość kątowa - \\(\\phi\\) to faza\nZasymulujmy to w R:\n\n# Ruch Harmoniczny Prosty\nsymuluj_ruch_harmoniczny &lt;- function(A, omega, phi, t) {\n  A * cos(omega * t + phi)\n}\n\n# Generowanie danych\nt &lt;- seq(0, 10, by = 0.1)\nx &lt;- symuluj_ruch_harmoniczny(A = 1, omega = 2*pi, phi = 0, t = t)\n\n# Wykres\nplot(t, x, type = \"l\", xlab = \"Czas\", ylab = \"Położenie\", \n     main = \"Ruch Harmoniczny Prosty\")\n\n\n\n\n\n\n\n\nTo wygeneruje wykres prostego ruchu harmonicznego.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#modele-stochastyczne-w-naukach-społecznych",
+    "href": "rozdzial1.html#modele-stochastyczne-w-naukach-społecznych",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.8 2. Modele Stochastyczne w Naukach Społecznych",
+    "text": "2.8 2. Modele Stochastyczne w Naukach Społecznych\nModele stochastyczne uwzględniają losowość i są często używane w naukach społecznych, gdzie istnieje nieodłączna niepewność w badanych systemach.\n\n2.8.1 Przykład: Regresja Metodą Najmniejszych Kwadratów (OLS)\nOLS to podstawowy model stochastyczny w naukach społecznych. Jest reprezentowany jako:\n\\[Y = \\beta_0 + \\beta_1X + \\epsilon\\]\nGdzie: - \\(Y\\) to zmienna zależna - \\(X\\) to zmienna niezależna - \\(\\beta_0\\) i \\(\\beta_1\\) to parametry - \\(\\epsilon\\) to składnik błędu (komponent stochastyczny)\nZademonstrujmy OLS w R:\n\n# Generowanie przykładowych danych\nset.seed(123)\nX &lt;- rnorm(100)\nY &lt;- 2 + 3*X + rnorm(100, sd = 0.5)\n\n# Dopasowanie modelu OLS\nmodel &lt;- lm(Y ~ X)\n\n# Podsumowanie modelu\nsummary(model)\n\n\nCall:\nlm(formula = Y ~ X)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.95367 -0.34175 -0.04375  0.29032  1.64520 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  1.94860    0.04878   39.95   &lt;2e-16 ***\nX            2.97376    0.05344   55.65   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.4854 on 98 degrees of freedom\nMultiple R-squared:  0.9693,    Adjusted R-squared:  0.969 \nF-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16\n\n# Wykres\nplot(X, Y, main = \"Regresja OLS\")\nabline(model, col = \"red\")\n\n\n\n\n\n\n\n\nTo dopasuje model OLS do symulowanych danych i wykreśli wyniki.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#zaawansowane-modele-stochastyczne-duże-modele-językowe",
+    "href": "rozdzial1.html#zaawansowane-modele-stochastyczne-duże-modele-językowe",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.9 3. Zaawansowane Modele Stochastyczne: Duże Modele Językowe",
+    "text": "2.9 3. Zaawansowane Modele Stochastyczne: Duże Modele Językowe\nDuże Modele Językowe (LLM), takie jak GPT-3, to złożone modele stochastyczne używane w przetwarzaniu języka naturalnego. Chociaż nie możemy zaimplementować pełnego LLM w tym tutorialu, możemy omówić jego zasady.\nLLM opierają się na architekturze transformatora i wykorzystują mechanizmy samouwagi. Są trenowane na ogromnych ilościach danych tekstowych i uczą się przewidywać następny token w sekwencji.\nRdzeń LLM można postrzegać jako warunkowy rozkład prawdopodobieństwa:\n\\[P(x_t | x_{&lt;t}, \\theta)\\]\nGdzie: - \\(x_t\\) to aktualny token - \\(x_{&lt;t}\\) reprezentuje wszystkie poprzednie tokeny - \\(\\theta\\) to parametry modelu\nW przeciwieństwie do modeli deterministycznych, LLM produkują różne wyniki nawet dla tego samego wejścia ze względu na ich stochastyczną naturę.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
+    ]
+  },
+  {
+    "objectID": "rozdzial1.html#podsumowanie-1",
+    "href": "rozdzial1.html#podsumowanie-1",
+    "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
+    "section": "2.15 Podsumowanie",
+    "text": "2.15 Podsumowanie\nZrozumienie pozornych korelacji, zmiennych zakłócających i kolizyjnych jest kluczowe dla prawidłowej analizy statystycznej i wnioskowania przyczynowego. Zawsze rozważ podstawową strukturę przyczynową swoich danych i bądź ostrożny w kwestii tego, które zmienne kontrolujesz w swoich analizach.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
     ]
   }
 ]
