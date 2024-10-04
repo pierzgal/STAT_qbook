@@ -311,6 +311,30 @@ window.Quarto = {
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">17</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">18</span> References</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">19</span> Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1.-center-and-dispersion-of-data" id="toc-exercise-1.-center-and-dispersion-of-data" class="nav-link" data-scroll-target="#exercise-1.-center-and-dispersion-of-data"><span class="header-section-number">19.1</span> Exercise 1. Center and dispersion of data</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">19.1.1</span> Data</a></li>
+  <li><a href="#measures-of-central-tendency-1" id="toc-measures-of-central-tendency-1" class="nav-link" data-scroll-target="#measures-of-central-tendency-1"><span class="header-section-number">19.1.2</span> Measures of Central Tendency</a></li>
+  <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion"><span class="header-section-number">19.1.3</span> Measures of Dispersion</a></li>
+  <li><a href="#quartiles-1" id="toc-quartiles-1" class="nav-link" data-scroll-target="#quartiles-1"><span class="header-section-number">19.1.4</span> Quartiles</a></li>
+  <li><a href="#tukey-box-plot" id="toc-tukey-box-plot" class="nav-link" data-scroll-target="#tukey-box-plot"><span class="header-section-number">19.1.5</span> Tukey Box Plot</a></li>
+  <li><a href="#comparison-of-results" id="toc-comparison-of-results" class="nav-link" data-scroll-target="#comparison-of-results"><span class="header-section-number">19.1.6</span> Comparison of Results</a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">19.1.7</span> Conclusion</a></li>
+  </ul></li>
+  <li><a href="#exercise-2.-comparing-district-magnitude-variability-between-countries" id="toc-exercise-2.-comparing-district-magnitude-variability-between-countries" class="nav-link" data-scroll-target="#exercise-2.-comparing-district-magnitude-variability-between-countries"><span class="header-section-number">19.2</span> Exercise 2. Comparing District Magnitude Variability Between Countries</a>
+  <ul class="collapse">
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1"><span class="header-section-number">19.2.1</span> Data</a></li>
+  <li><a href="#measures-of-central-tendency-2" id="toc-measures-of-central-tendency-2" class="nav-link" data-scroll-target="#measures-of-central-tendency-2"><span class="header-section-number">19.2.2</span> Measures of Central Tendency</a></li>
+  <li><a href="#measures-of-dispersion-1" id="toc-measures-of-dispersion-1" class="nav-link" data-scroll-target="#measures-of-dispersion-1"><span class="header-section-number">19.2.3</span> Measures of Dispersion</a></li>
+  <li><a href="#quartiles-and-interquartile-range-iqr" id="toc-quartiles-and-interquartile-range-iqr" class="nav-link" data-scroll-target="#quartiles-and-interquartile-range-iqr"><span class="header-section-number">19.2.4</span> Quartiles and Interquartile Range (IQR)</a></li>
+  <li><a href="#coefficient-of-variation-cv" id="toc-coefficient-of-variation-cv" class="nav-link" data-scroll-target="#coefficient-of-variation-cv"><span class="header-section-number">19.2.5</span> Coefficient of Variation (CV)</a></li>
+  <li><a href="#comparison-of-results-1" id="toc-comparison-of-results-1" class="nav-link" data-scroll-target="#comparison-of-results-1"><span class="header-section-number">19.2.6</span> Comparison of Results</a></li>
+  <li><a href="#key-observations-1" id="toc-key-observations-1" class="nav-link" data-scroll-target="#key-observations-1"><span class="header-section-number">19.2.7</span> Key Observations</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">19.2.8</span> Conclusions</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -822,8 +846,883 @@ Attaching package: 'moments'</code></pre>
 <li>Field, A. (2013). Discovering statistics using IBM SPSS statistics. Sage.</li>
 <li>Hair, J. F., Black, W. C., Babin, B. J., &amp; Anderson, R. E. (2019). Multivariate data analysis (8th ed.). Cengage Learning.</li>
 </ol>
+</section>
+<section id="exercises" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Exercises</h1>
+<section id="exercise-1.-center-and-dispersion-of-data" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="exercise-1.-center-and-dispersion-of-data"><span class="header-section-number">19.1</span> Exercise 1. Center and dispersion of data</h2>
+<section id="data" class="level3" data-number="19.1.1">
+<h3 data-number="19.1.1" class="anchored" data-anchor-id="data"><span class="header-section-number">19.1.1</span> Data</h3>
+<p>We have salary data (in thousands of euros) from two small European companies:</p>
+<p>Company X: X = {2,2,2,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,20,35} Company Y: Y = {3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,7,7,8}</p>
+</section>
+<section id="measures-of-central-tendency-1" class="level3" data-number="19.1.2">
+<h3 data-number="19.1.2" class="anchored" data-anchor-id="measures-of-central-tendency-1"><span class="header-section-number">19.1.2</span> Measures of Central Tendency</h3>
+<section id="mean" class="level4" data-number="19.1.2.1">
+<h4 data-number="19.1.2.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">19.1.2.1</span> Mean</h4>
+<p>The mean is the average of all values in a dataset.</p>
+<p>Formula: <span class="math inline">\(\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}\)</span></p>
+<section id="manual-calculation-for-company-x" class="level5" data-number="19.1.2.1.1">
+<h5 data-number="19.1.2.1.1" class="anchored" data-anchor-id="manual-calculation-for-company-x"><span class="header-section-number">19.1.2.1.1</span> Manual Calculation for Company X</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Value (<span class="math inline">\(x_i\)</span>)</th>
+<th>Frequency (<span class="math inline">\(f_i\)</span>)</th>
+<th><span class="math inline">\(x_i \cdot f_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>6</td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>5</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>4</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>1</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>35</td>
+<td>1</td>
+<td>35</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>n = 20</td>
+<td>Sum = 119</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\bar{x} = \frac{119}{20} = 5.95\)</span></p>
+</section>
+<section id="manual-calculation-for-company-y" class="level5" data-number="19.1.2.1.2">
+<h5 data-number="19.1.2.1.2" class="anchored" data-anchor-id="manual-calculation-for-company-y"><span class="header-section-number">19.1.2.1.2</span> Manual Calculation for Company Y</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Value (<span class="math inline">\(x_i\)</span>)</th>
+<th>Frequency (<span class="math inline">\(f_i\)</span>)</th>
+<th><span class="math inline">\(x_i \cdot f_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>2</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>6</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>6</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>3</td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>2</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>n = 20</td>
+<td>Sum = 100</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\bar{y} = \frac{100}{20} = 5\)</span></p>
+</section>
+<section id="r-verification" class="level5" data-number="19.1.2.1.3">
+<h5 data-number="19.1.2.1.3" class="anchored" data-anchor-id="r-verification"><span class="header-section-number">19.1.2.1.3</span> R Verification</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5.95</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="median-1" class="level4" data-number="19.1.2.2">
+<h4 data-number="19.1.2.2" class="anchored" data-anchor-id="median-1"><span class="header-section-number">19.1.2.2</span> Median</h4>
+<p>The median is the middle value when the data is ordered.</p>
+<section id="manual-calculation-for-company-x-1" class="level5" data-number="19.1.2.2.1">
+<h5 data-number="19.1.2.2.1" class="anchored" data-anchor-id="manual-calculation-for-company-x-1"><span class="header-section-number">19.1.2.2.1</span> Manual Calculation for Company X</h5>
+<p>Ordered data: 2,2,2,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,20,35</p>
+<p>n = 20 (even), so we take the average of the 10th and 11th values:</p>
+<p>Median = <span class="math inline">\(\frac{4 + 4}{2} = 4\)</span></p>
+</section>
+<section id="manual-calculation-for-company-y-1" class="level5" data-number="19.1.2.2.2">
+<h5 data-number="19.1.2.2.2" class="anchored" data-anchor-id="manual-calculation-for-company-y-1"><span class="header-section-number">19.1.2.2.2</span> Manual Calculation for Company Y</h5>
+<p>Ordered data: 3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,7,7,8</p>
+<p>n = 20 (even), so we take the average of the 10th and 11th values:</p>
+<p>Median = <span class="math inline">\(\frac{5 + 5}{2} = 5\)</span></p>
+</section>
+<section id="r-verification-1" class="level5" data-number="19.1.2.2.3">
+<h5 data-number="19.1.2.2.3" class="anchored" data-anchor-id="r-verification-1"><span class="header-section-number">19.1.2.2.3</span> R Verification</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="mode-1" class="level4" data-number="19.1.2.3">
+<h4 data-number="19.1.2.3" class="anchored" data-anchor-id="mode-1"><span class="header-section-number">19.1.2.3</span> Mode</h4>
+<p>The mode is the most frequent value in the dataset.</p>
+<p>For Company X, the mode is 3 (appears 6 times). For Company Y, there are two modes: 4 and 5 (both appear 6 times).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate mode</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  unique_x <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  unique_x[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, unique_x)))]</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="fu">get_mode</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_mode</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="measures-of-dispersion" class="level3" data-number="19.1.3">
+<h3 data-number="19.1.3" class="anchored" data-anchor-id="measures-of-dispersion"><span class="header-section-number">19.1.3</span> Measures of Dispersion</h3>
+<section id="variance-1" class="level4" data-number="19.1.3.1">
+<h4 data-number="19.1.3.1" class="anchored" data-anchor-id="variance-1"><span class="header-section-number">19.1.3.1</span> Variance</h4>
+<p>The variance measures the average squared deviation from the mean.</p>
+<p>Formula: <span class="math inline">\(s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)</span></p>
+<section id="manual-calculation-for-company-x-2" class="level5" data-number="19.1.3.1.1">
+<h5 data-number="19.1.3.1.1" class="anchored" data-anchor-id="manual-calculation-for-company-x-2"><span class="header-section-number">19.1.3.1.1</span> Manual Calculation for Company X</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\(f_i\)</span></th>
+<th><span class="math inline">\(x_i - \bar{x}\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
+<th><span class="math inline">\(f_i(x_i - \bar{x})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+<td>-3.95</td>
+<td>15.6025</td>
+<td>46.8075</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>6</td>
+<td>-2.95</td>
+<td>8.7025</td>
+<td>52.215</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>5</td>
+<td>-1.95</td>
+<td>3.8025</td>
+<td>19.0125</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>4</td>
+<td>-0.95</td>
+<td>0.9025</td>
+<td>3.61</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>1</td>
+<td>14.05</td>
+<td>197.4025</td>
+<td>197.4025</td>
+</tr>
+<tr class="even">
+<td>35</td>
+<td>1</td>
+<td>29.05</td>
+<td>843.9025</td>
+<td>843.9025</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td>1162.95</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(s^2 = \frac{1162.95}{19} = 61.21\)</span></p>
+</section>
+<section id="manual-calculation-for-company-y-2" class="level5" data-number="19.1.3.1.2">
+<h5 data-number="19.1.3.1.2" class="anchored" data-anchor-id="manual-calculation-for-company-y-2"><span class="header-section-number">19.1.3.1.2</span> Manual Calculation for Company Y</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\(f_i\)</span></th>
+<th><span class="math inline">\(x_i - \bar{x}\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
+<th><span class="math inline">\(f_i(x_i - \bar{x})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>2</td>
+<td>-2</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>6</td>
+<td>-1</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>1</td>
+<td>3</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>20</td>
+<td></td>
+<td></td>
+<td>34</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(s^2 = \frac{34}{19} = 1.79\)</span></p>
+</section>
+<section id="r-verification-2" class="level5" data-number="19.1.3.1.3">
+<h5 data-number="19.1.3.1.3" class="anchored" data-anchor-id="r-verification-2"><span class="header-section-number">19.1.3.1.3</span> R Verification</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 61.20789</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.789474</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="standard-deviation-1" class="level4" data-number="19.1.3.2">
+<h4 data-number="19.1.3.2" class="anchored" data-anchor-id="standard-deviation-1"><span class="header-section-number">19.1.3.2</span> Standard Deviation</h4>
+<p>The standard deviation is the square root of the variance.</p>
+<p>Formula: <span class="math inline">\(s = \sqrt{s^2}\)</span></p>
+<p>For Company X: <span class="math inline">\(s = \sqrt{61.21} = 7.82\)</span> For Company Y: <span class="math inline">\(s = \sqrt{1.79} = 1.34\)</span></p>
+<section id="r-verification-3" class="level5" data-number="19.1.3.2.1">
+<h5 data-number="19.1.3.2.1" class="anchored" data-anchor-id="r-verification-3"><span class="header-section-number">19.1.3.2.1</span> R Verification</h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.823547</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.337712</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="quartiles-1" class="level3" data-number="19.1.4">
+<h3 data-number="19.1.4" class="anchored" data-anchor-id="quartiles-1"><span class="header-section-number">19.1.4</span> Quartiles</h3>
+<p>Quartiles divide the dataset into four equal parts.</p>
+<section id="manual-calculation-for-company-x-3" class="level4" data-number="19.1.4.1">
+<h4 data-number="19.1.4.1" class="anchored" data-anchor-id="manual-calculation-for-company-x-3"><span class="header-section-number">19.1.4.1</span> Manual Calculation for Company X</h4>
+<p>Ordered data: 2,2,2,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,20,35</p>
+<ul>
+<li>Q1 (25th percentile): median of first 10 numbers = 3</li>
+<li>Q2 (50th percentile, median): 4</li>
+<li>Q3 (75th percentile): median of last 10 numbers = 5</li>
+</ul>
+</section>
+<section id="manual-calculation-for-company-y-3" class="level4" data-number="19.1.4.2">
+<h4 data-number="19.1.4.2" class="anchored" data-anchor-id="manual-calculation-for-company-y-3"><span class="header-section-number">19.1.4.2</span> Manual Calculation for Company Y</h4>
+<p>Ordered data: 3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,7,7,8</p>
+<ul>
+<li>Q1 (25th percentile): median of first 10 numbers = 4</li>
+<li>Q2 (50th percentile, median): 5</li>
+<li>Q3 (75th percentile): median of last 10 numbers = 6</li>
+</ul>
+</section>
+<section id="r-verification-4" class="level4" data-number="19.1.4.3">
+<h4 data-number="19.1.4.3" class="anchored" data-anchor-id="r-verification-4"><span class="header-section-number">19.1.4.3</span> R Verification</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  0%  25%  50%  75% 100% 
+   2    3    4    5   35 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  0%  25%  50%  75% 100% 
+   3    4    5    6    8 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="tukey-box-plot" class="level3" data-number="19.1.5">
+<h3 data-number="19.1.5" class="anchored" data-anchor-id="tukey-box-plot"><span class="header-section-number">19.1.5</span> Tukey Box Plot</h3>
+<p>A Tukey box plot visually represents the distribution of data based on quartiles. We’ll use ggplot2 to create the plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the data</span></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Company =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>), <span class="at">each =</span> <span class="dv">20</span>),</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Salary =</span> <span class="fu">c</span>(X, Y)</span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the box plot</span></span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Company, <span class="at">y =</span> Salary, <span class="at">fill =</span> Company)) <span class="sc">+</span></span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary Distribution in Companies X and Y"</span>,</span>
+<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Company"</span>,</span>
+<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Salary (thousands of euros)"</span>) <span class="sc">+</span></span>
+<span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#69b3a2"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#404080"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpreting-the-box-plot" class="level4" data-number="19.1.5.1">
+<h4 data-number="19.1.5.1" class="anchored" data-anchor-id="interpreting-the-box-plot"><span class="header-section-number">19.1.5.1</span> Interpreting the Box Plot</h4>
+<ol type="1">
+<li>The box represents the interquartile range (IQR) from Q1 to Q3.</li>
+<li>The line inside the box is the median (Q2).</li>
+<li>Whiskers extend to the smallest and largest values within 1.5 * IQR.</li>
+<li>Points beyond the whiskers are considered outliers.</li>
+</ol>
+</section>
+</section>
+<section id="comparison-of-results" class="level3" data-number="19.1.6">
+<h3 data-number="19.1.6" class="anchored" data-anchor-id="comparison-of-results"><span class="header-section-number">19.1.6</span> Comparison of Results</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Company X</th>
+<th>Company Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td>5.95</td>
+<td>5.00</td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Mode</td>
+<td>3</td>
+<td>4 and 5</td>
+</tr>
+<tr class="even">
+<td>Variance</td>
+<td>61.21</td>
+<td>1.79</td>
+</tr>
+<tr class="odd">
+<td>Standard Deviation</td>
+<td>7.82</td>
+<td>1.34</td>
+</tr>
+<tr class="even">
+<td>Q1</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Q3</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<section id="key-observations" class="level4" data-number="19.1.6.1">
+<h4 data-number="19.1.6.1" class="anchored" data-anchor-id="key-observations"><span class="header-section-number">19.1.6.1</span> Key Observations:</h4>
+<ol type="1">
+<li>Central Tendency: Company X has a higher mean but lower median than Company Y, indicating a right-skewed distribution for Company X.</li>
+<li>Dispersion: Company X shows much higher variance and standard deviation, suggesting greater salary disparities.</li>
+<li>Distribution Shape: Company Y’s salaries are more tightly clustered, while Company X has extreme values (potential outliers) that significantly affect its mean and variance.</li>
+<li>Quartiles: Company Y’s interquartile range (Q3 - Q1) is slightly larger, but its overall range is much smaller than Company X’s.</li>
+</ol>
+</section>
+</section>
+<section id="conclusion-1" class="level3" data-number="19.1.7">
+<h3 data-number="19.1.7" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">19.1.7</span> Conclusion</h3>
+<p>This comparative analysis reveals significant differences in salary structures between the two companies. Company X shows greater variability and potential inequality in its pay scale, while Company Y demonstrates a more consistent and narrowly distributed salary range. These insights can be valuable for understanding compensation strategies and potential areas for policy review in each company.</p>
+</section>
+</section>
+<section id="exercise-2.-comparing-district-magnitude-variability-between-countries" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="exercise-2.-comparing-district-magnitude-variability-between-countries"><span class="header-section-number">19.2</span> Exercise 2. Comparing District Magnitude Variability Between Countries</h2>
+<section id="data-1" class="level3" data-number="19.2.1">
+<h3 data-number="19.2.1" class="anchored" data-anchor-id="data-1"><span class="header-section-number">19.2.1</span> Data</h3>
+<p>We have data on the size of electoral districts from two countries:</p>
+<ul>
+<li>Country with high variability (X): 1, 3, 5, 7, 9, 11, 13, 15, 17, 19</li>
+<li>Country with low variability (Y): 8, 9, 9, 10, 10, 11, 11, 12, 12, 13</li>
+</ul>
+</section>
+<section id="measures-of-central-tendency-2" class="level3" data-number="19.2.2">
+<h3 data-number="19.2.2" class="anchored" data-anchor-id="measures-of-central-tendency-2"><span class="header-section-number">19.2.2</span> Measures of Central Tendency</h3>
+<section id="arithmetic-mean-1" class="level4" data-number="19.2.2.1">
+<h4 data-number="19.2.2.1" class="anchored" data-anchor-id="arithmetic-mean-1"><span class="header-section-number">19.2.2.1</span> Arithmetic Mean</h4>
+<p>The arithmetic mean is the sum of all values divided by their count.</p>
+<p>Formula: <span class="math inline">\(\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}\)</span></p>
+<section id="calculations-for-country-x" class="level5" data-number="19.2.2.1.1">
+<h5 data-number="19.2.2.1.1" class="anchored" data-anchor-id="calculations-for-country-x"><span class="header-section-number">19.2.2.1.1</span> Calculations for Country X</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Values</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 + 3 + 5 + 7 + 9 + 11 + 13 + 15 + 17 + 19</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\bar{x} = \frac{100}{10} = 10\)</span></p>
+</section>
+<section id="calculations-for-country-y" class="level5" data-number="19.2.2.1.2">
+<h5 data-number="19.2.2.1.2" class="anchored" data-anchor-id="calculations-for-country-y"><span class="header-section-number">19.2.2.1.2</span> Calculations for Country Y</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Values</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8 + 9 + 9 + 10 + 10 + 11 + 11 + 12 + 12 + 13</td>
+<td>105</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\bar{y} = \frac{105}{10} = 10.5\)</span></p>
+</section>
+</section>
+<section id="median-2" class="level4" data-number="19.2.2.2">
+<h4 data-number="19.2.2.2" class="anchored" data-anchor-id="median-2"><span class="header-section-number">19.2.2.2</span> Median</h4>
+<p>The median is the middle value in an ordered set of data.</p>
+<section id="calculations-for-country-x-1" class="level5" data-number="19.2.2.2.1">
+<h5 data-number="19.2.2.2.1" class="anchored" data-anchor-id="calculations-for-country-x-1"><span class="header-section-number">19.2.2.2.1</span> Calculations for Country X</h5>
+<p>Ordered data: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19</p>
+<p>Median = <span class="math inline">\(\frac{9 + 11}{2} = 10\)</span></p>
+</section>
+<section id="calculations-for-country-y-1" class="level5" data-number="19.2.2.2.2">
+<h5 data-number="19.2.2.2.2" class="anchored" data-anchor-id="calculations-for-country-y-1"><span class="header-section-number">19.2.2.2.2</span> Calculations for Country Y</h5>
+<p>Ordered data: 8, 9, 9, 10, 10, 11, 11, 12, 12, 13</p>
+<p>Median = <span class="math inline">\(\frac{10 + 11}{2} = 10.5\)</span></p>
+</section>
+</section>
+<section id="mode-2" class="level4" data-number="19.2.2.3">
+<h4 data-number="19.2.2.3" class="anchored" data-anchor-id="mode-2"><span class="header-section-number">19.2.2.3</span> Mode</h4>
+<p>The mode is the most frequently occurring value in a dataset.</p>
+<p>For Country X, there is no mode (all values occur once). For Country Y, there are four modes: 9, 10, 11, and 12 (each occurs twice).</p>
+</section>
+</section>
+<section id="measures-of-dispersion-1" class="level3" data-number="19.2.3">
+<h3 data-number="19.2.3" class="anchored" data-anchor-id="measures-of-dispersion-1"><span class="header-section-number">19.2.3</span> Measures of Dispersion</h3>
+<section id="range-1" class="level4" data-number="19.2.3.1">
+<h4 data-number="19.2.3.1" class="anchored" data-anchor-id="range-1"><span class="header-section-number">19.2.3.1</span> Range</h4>
+<p>The range is the difference between the maximum and minimum values.</p>
+<section id="calculations-for-country-x-2" class="level5" data-number="19.2.3.1.1">
+<h5 data-number="19.2.3.1.1" class="anchored" data-anchor-id="calculations-for-country-x-2"><span class="header-section-number">19.2.3.1.1</span> Calculations for Country X</h5>
+<p>Range = 19 - 1 = 18</p>
+</section>
+<section id="calculations-for-country-y-2" class="level5" data-number="19.2.3.1.2">
+<h5 data-number="19.2.3.1.2" class="anchored" data-anchor-id="calculations-for-country-y-2"><span class="header-section-number">19.2.3.1.2</span> Calculations for Country Y</h5>
+<p>Range = 13 - 8 = 5</p>
+</section>
+</section>
+<section id="variance-2" class="level4" data-number="19.2.3.2">
+<h4 data-number="19.2.3.2" class="anchored" data-anchor-id="variance-2"><span class="header-section-number">19.2.3.2</span> Variance</h4>
+<p>Variance measures the average squared deviation from the mean.</p>
+<p>Formula: <span class="math inline">\(s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)</span></p>
+<section id="calculations-for-country-x-3" class="level5" data-number="19.2.3.2.1">
+<h5 data-number="19.2.3.2.1" class="anchored" data-anchor-id="calculations-for-country-x-3"><span class="header-section-number">19.2.3.2.1</span> Calculations for Country X</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>-9</td>
+<td>81</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>-7</td>
+<td>49</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>-5</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>-3</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>3</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>7</td>
+<td>49</td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td>9</td>
+<td>81</td>
+</tr>
+<tr class="odd">
+<td>Sum</td>
+<td></td>
+<td>330</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(s^2_X = \frac{330}{9} = 36.67\)</span></p>
+</section>
+<section id="calculations-for-country-y-3" class="level5" data-number="19.2.3.2.2">
+<h5 data-number="19.2.3.2.2" class="anchored" data-anchor-id="calculations-for-country-y-3"><span class="header-section-number">19.2.3.2.2</span> Calculations for Country Y</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8</td>
+<td>-2.5</td>
+<td>6.25</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>-1.5</td>
+<td>2.25</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>-1.5</td>
+<td>2.25</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>-0.5</td>
+<td>0.25</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>-0.5</td>
+<td>0.25</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>0.5</td>
+<td>0.25</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>0.5</td>
+<td>0.25</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>1.5</td>
+<td>2.25</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>1.5</td>
+<td>2.25</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>2.5</td>
+<td>6.25</td>
+</tr>
+<tr class="odd">
+<td>Sum</td>
+<td></td>
+<td>22.5</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(s^2_Y = \frac{22.5}{9} = 2.5\)</span></p>
+</section>
+</section>
+<section id="standard-deviation-2" class="level4" data-number="19.2.3.3">
+<h4 data-number="19.2.3.3" class="anchored" data-anchor-id="standard-deviation-2"><span class="header-section-number">19.2.3.3</span> Standard Deviation</h4>
+<p>The standard deviation is the square root of the variance.</p>
+<p>Formula: <span class="math inline">\(s = \sqrt{s^2}\)</span></p>
+<section id="calculations-for-country-x-4" class="level5" data-number="19.2.3.3.1">
+<h5 data-number="19.2.3.3.1" class="anchored" data-anchor-id="calculations-for-country-x-4"><span class="header-section-number">19.2.3.3.1</span> Calculations for Country X</h5>
+<p><span class="math inline">\(s_X = \sqrt{36.67} \approx 6.06\)</span></p>
+</section>
+<section id="calculations-for-country-y-4" class="level5" data-number="19.2.3.3.2">
+<h5 data-number="19.2.3.3.2" class="anchored" data-anchor-id="calculations-for-country-y-4"><span class="header-section-number">19.2.3.3.2</span> Calculations for Country Y</h5>
+<p><span class="math inline">\(s_Y = \sqrt{2.5} \approx 1.58\)</span></p>
+</section>
+</section>
+</section>
+<section id="quartiles-and-interquartile-range-iqr" class="level3" data-number="19.2.4">
+<h3 data-number="19.2.4" class="anchored" data-anchor-id="quartiles-and-interquartile-range-iqr"><span class="header-section-number">19.2.4</span> Quartiles and Interquartile Range (IQR)</h3>
+<p>Quartiles divide the dataset into four equal parts.</p>
+<section id="calculations-for-country-x-5" class="level4" data-number="19.2.4.1">
+<h4 data-number="19.2.4.1" class="anchored" data-anchor-id="calculations-for-country-x-5"><span class="header-section-number">19.2.4.1</span> Calculations for Country X</h4>
+<ul>
+<li>Q1 (25th percentile): <span class="math inline">\(\frac{3 + 5}{2} = 4\)</span></li>
+<li>Q2 (50th percentile, median): 10</li>
+<li>Q3 (75th percentile): <span class="math inline">\(\frac{15 + 17}{2} = 16\)</span></li>
+<li>IQR = Q3 - Q1 = 16 - 4 = 12</li>
+</ul>
+</section>
+<section id="calculations-for-country-y-5" class="level4" data-number="19.2.4.2">
+<h4 data-number="19.2.4.2" class="anchored" data-anchor-id="calculations-for-country-y-5"><span class="header-section-number">19.2.4.2</span> Calculations for Country Y</h4>
+<ul>
+<li>Q1 (25th percentile): 9</li>
+<li>Q2 (50th percentile, median): 10.5</li>
+<li>Q3 (75th percentile): 12</li>
+<li>IQR = Q3 - Q1 = 12 - 9 = 3</li>
+</ul>
+</section>
+</section>
+<section id="coefficient-of-variation-cv" class="level3" data-number="19.2.5">
+<h3 data-number="19.2.5" class="anchored" data-anchor-id="coefficient-of-variation-cv"><span class="header-section-number">19.2.5</span> Coefficient of Variation (CV)</h3>
+<p>The coefficient of variation is the ratio of the standard deviation to the mean, expressed as a percentage.</p>
+<p>Formula: <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
+<section id="calculations-for-country-x-6" class="level4" data-number="19.2.5.1">
+<h4 data-number="19.2.5.1" class="anchored" data-anchor-id="calculations-for-country-x-6"><span class="header-section-number">19.2.5.1</span> Calculations for Country X</h4>
+<p><span class="math inline">\(CV_X = \frac{6.06}{10} \times 100\% = 60.6\%\)</span></p>
+</section>
+<section id="calculations-for-country-y-6" class="level4" data-number="19.2.5.2">
+<h4 data-number="19.2.5.2" class="anchored" data-anchor-id="calculations-for-country-y-6"><span class="header-section-number">19.2.5.2</span> Calculations for Country Y</h4>
+<p><span class="math inline">\(CV_Y = \frac{1.58}{10.5} \times 100\% = 15.0\%\)</span></p>
+</section>
+</section>
+<section id="comparison-of-results-1" class="level3" data-number="19.2.6">
+<h3 data-number="19.2.6" class="anchored" data-anchor-id="comparison-of-results-1"><span class="header-section-number">19.2.6</span> Comparison of Results</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Country X (High var.)</th>
+<th>Country Y (Low var.)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td>10</td>
+<td>10.5</td>
+</tr>
+<tr class="even">
+<td>Median</td>
+<td>10</td>
+<td>10.5</td>
+</tr>
+<tr class="odd">
+<td>Mode</td>
+<td>None</td>
+<td>9, 10, 11, 12</td>
+</tr>
+<tr class="even">
+<td>Range</td>
+<td>18</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>Variance</td>
+<td>36.67</td>
+<td>2.5</td>
+</tr>
+<tr class="even">
+<td>Standard Dev.</td>
+<td>6.06</td>
+<td>1.58</td>
+</tr>
+<tr class="odd">
+<td>IQR</td>
+<td>12</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Coef. of Var.</td>
+<td>60.6%</td>
+<td>15.0%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="key-observations-1" class="level3" data-number="19.2.7">
+<h3 data-number="19.2.7" class="anchored" data-anchor-id="key-observations-1"><span class="header-section-number">19.2.7</span> Key Observations</h3>
+<ol type="1">
+<li><p>Central Tendency: Both countries have similar means and medians, indicating that their average district sizes are close.</p></li>
+<li><p>Dispersion:</p>
+<ul>
+<li>Country X shows much higher variance and standard deviation, confirming its high variability.</li>
+<li>The range for Country X (18) is more than three times larger than for Country Y (5).</li>
+<li>The IQR for Country X (12) is four times larger than for Country Y (3), indicating a much wider spread of the middle 50% of the data.</li>
+</ul></li>
+<li><p>Distribution Shape:</p>
+<ul>
+<li>Country X has a uniform distribution with no clear mode.</li>
+<li>Country Y has a more clustered distribution with multiple modes, indicating common district sizes.</li>
+</ul></li>
+<li><p>Coefficient of Variation:</p>
+<ul>
+<li>The CV of Country X (60.6%) is significantly higher than Country Y (15.0%), providing a standardized measure of the difference in variability.</li>
+</ul></li>
+</ol>
+</section>
+<section id="conclusions" class="level3" data-number="19.2.8">
+<h3 data-number="19.2.8" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">19.2.8</span> Conclusions</h3>
+<p>This analysis clearly shows the contrast in electoral district size variability between the two countries:</p>
+<ol type="1">
+<li><p>Country X exhibits high variability, with district sizes spread widely from 1 to 19. This may indicate a diverse electoral system with a mix of small (possibly single-member) and large multi-member districts.</p></li>
+<li><p>Country Y exhibits low variability, with district sizes tightly clustered between 8 and 13. This suggests a more uniform electoral system, likely consisting of medium-sized multi-member districts.</p></li>
+</ol>
+<p>These differences in variability can have significant implications for political representation, party strategies, and electoral outcomes in each country. High variability (as in Country X) may lead to more diverse representation but could also result in more complex electoral strategies. Low variability (as in Country Y) may promote more consistent representation across districts but potentially limit the diversity of political voices.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
