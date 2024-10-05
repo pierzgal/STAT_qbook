@@ -334,12 +334,6 @@ window.Quarto = {
   <li><a href="#key-observations-1" id="toc-key-observations-1" class="nav-link" data-scroll-target="#key-observations-1"><span class="header-section-number">19.2.7</span> Key Observations</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">19.2.8</span> Conclusions</a></li>
   </ul></li>
-  <li><a href="#understanding-bias-vs.-variance-in-regression-models" id="toc-understanding-bias-vs.-variance-in-regression-models" class="nav-link" data-scroll-target="#understanding-bias-vs.-variance-in-regression-models"><span class="header-section-number">19.3</span> Understanding Bias vs.&nbsp;Variance in Regression Models</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">19.4</span> Setup</a></li>
-  <li><a href="#generating-synthetic-data" id="toc-generating-synthetic-data" class="nav-link" data-scroll-target="#generating-synthetic-data"><span class="header-section-number">19.5</span> Generating Synthetic Data</a></li>
-  <li><a href="#fitting-models-with-different-complexities" id="toc-fitting-models-with-different-complexities" class="nav-link" data-scroll-target="#fitting-models-with-different-complexities"><span class="header-section-number">19.6</span> Fitting Models with Different Complexities</a></li>
-  <li><a href="#discussing-bias-and-variance" id="toc-discussing-bias-and-variance" class="nav-link" data-scroll-target="#discussing-bias-and-variance"><span class="header-section-number">19.7</span> Discussing Bias and Variance</a></li>
-  <li><a href="#conclusion-2" id="toc-conclusion-2" class="nav-link" data-scroll-target="#conclusion-2"><span class="header-section-number">19.8</span> Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1725,146 +1719,9 @@ Attaching package: 'moments'</code></pre>
 <li><p>Country Y exhibits low variability, with district sizes tightly clustered between 8 and 13. This suggests a more uniform electoral system, likely consisting of medium-sized multi-member districts.</p></li>
 </ol>
 <p>These differences in variability can have significant implications for political representation, party strategies, and electoral outcomes in each country. High variability (as in Country X) may lead to more diverse representation but could also result in more complex electoral strategies. Low variability (as in Country Y) may promote more consistent representation across districts but potentially limit the diversity of political voices.</p>
-</section>
-</section>
-<section id="understanding-bias-vs.-variance-in-regression-models" class="level2" data-number="19.3">
-<h2 data-number="19.3" class="anchored" data-anchor-id="understanding-bias-vs.-variance-in-regression-models"><span class="header-section-number">19.3</span> Understanding Bias vs.&nbsp;Variance in Regression Models</h2>
-<p>In this document, we’ll explore the concepts of bias and variance in the context of regression models. We’ll use synthetic data to illustrate these ideas and show how they relate to model complexity and overfitting.</p>
-</section>
-<section id="setup" class="level2" data-number="19.4">
-<h2 data-number="19.4" class="anchored" data-anchor-id="setup"><span class="header-section-number">19.4</span> Setup</h2>
-<p>First, let’s load the necessary libraries and set a seed for reproducibility.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ lubridate 1.9.3     ✔ tibble    3.2.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="generating-synthetic-data" class="level2" data-number="19.5">
-<h2 data-number="19.5" class="anchored" data-anchor-id="generating-synthetic-data"><span class="header-section-number">19.5</span> Generating Synthetic Data</h2>
-<p>We’ll create a synthetic dataset with a non-linear relationship between X and Y.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">sin</span>(X) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.3</span>)</span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> X, <span class="at">Y =</span> Y)</span>
-<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Synthetic Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/generate_data-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="fitting-models-with-different-complexities" class="level2" data-number="19.6">
-<h2 data-number="19.6" class="anchored" data-anchor-id="fitting-models-with-different-complexities"><span class="header-section-number">19.6</span> Fitting Models with Different Complexities</h2>
-<p>Now, we’ll fit polynomial regression models of different degrees to illustrate bias and variance.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>fit_model <span class="ot">&lt;-</span> <span class="cf">function</span>(degree) {</span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lm</span>(Y <span class="sc">~</span> <span class="fu">poly</span>(X, degree), <span class="at">data =</span> df)</span>
-<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">linear =</span> <span class="fu">fit_model</span>(<span class="dv">1</span>),</span>
-<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">quadratic =</span> <span class="fu">fit_model</span>(<span class="dv">2</span>),</span>
-<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">cubic =</span> <span class="fu">fit_model</span>(<span class="dv">3</span>),</span>
-<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">degree_10 =</span> <span class="fu">fit_model</span>(<span class="dv">10</span>)</span>
-<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb77-11"><a href="#cb77-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-12"><a href="#cb77-12" aria-hidden="true" tabindex="-1"></a>plot_model <span class="ot">&lt;-</span> <span class="cf">function</span>(model, title) {</span>
-<span id="cb77-13"><a href="#cb77-13" aria-hidden="true" tabindex="-1"></a>  new_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>))</span>
-<span id="cb77-14"><a href="#cb77-14" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> new_data)</span>
-<span id="cb77-15"><a href="#cb77-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb77-18"><a href="#cb77-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">X =</span> new_data<span class="sc">$</span>X, <span class="at">Y =</span> predictions), </span>
-<span id="cb77-19"><a href="#cb77-19" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> title)</span>
-<span id="cb77-22"><a href="#cb77-22" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb77-23"><a href="#cb77-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-24"><a href="#cb77-24" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(models<span class="sc">$</span>linear, <span class="st">"Linear Model (High Bias, Low Variance)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/fit_models-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(models<span class="sc">$</span>quadratic, <span class="st">"Quadratic Model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/fit_models-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(models<span class="sc">$</span>cubic, <span class="st">"Cubic Model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/fit_models-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_model</span>(models<span class="sc">$</span>degree_10, <span class="st">"Degree 10 Polynomial (Low Bias, High Variance)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/fit_models-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="discussing-bias-and-variance" class="level2" data-number="19.7">
-<h2 data-number="19.7" class="anchored" data-anchor-id="discussing-bias-and-variance"><span class="header-section-number">19.7</span> Discussing Bias and Variance</h2>
-<ol type="1">
-<li><p><strong>Bias</strong>: Bias refers to the error introduced by approximating a real-world problem with a simplified model. High bias can cause an algorithm to miss relevant relations between features and target outputs (underfitting).</p>
-<ul>
-<li>The linear model has high bias: it’s too simple to capture the true underlying pattern in the data.</li>
-<li>The degree 10 polynomial has low bias: it’s flexible enough to capture complex patterns.</li>
-</ul></li>
-<li><p><strong>Variance</strong>: Variance refers to the error introduced by the model’s sensitivity to small fluctuations in the training set. High variance can cause an algorithm to model random noise in the training data (overfitting).</p>
-<ul>
-<li>The linear model has low variance: it’s consistent across different samples of data.</li>
-<li>The degree 10 polynomial has high variance: it’s sensitive to small changes in the data and may fit noise.</li>
-</ul></li>
-<li><p><strong>Trade-off</strong>: There’s often a trade-off between bias and variance. As model complexity increases:</p>
-<ul>
-<li>Bias tends to decrease (the model can fit more complex patterns)</li>
-<li>Variance tends to increase (the model becomes more sensitive to noise in the data)</li>
-</ul></li>
-<li><p><strong>Optimal Model</strong>: The goal is to find a model with the right balance of bias and variance. In this case, the quadratic or cubic model might be a good choice, as they capture the main trend without overfitting to noise.</p></li>
-</ol>
-</section>
-<section id="conclusion-2" class="level2" data-number="19.8">
-<h2 data-number="19.8" class="anchored" data-anchor-id="conclusion-2"><span class="header-section-number">19.8</span> Conclusion</h2>
-<p>Understanding the bias-variance trade-off is crucial for building effective machine learning models. By balancing model complexity, we can create models that generalize well to new, unseen data.</p>
 
 
+</section>
 </section>
 </section>
 

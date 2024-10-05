@@ -263,7 +263,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#równoważenie-rzetelności-trafności-i-spójności" id="toc-równoważenie-rzetelności-trafności-i-spójności" class="nav-link" data-scroll-target="#równoważenie-rzetelności-trafności-i-spójności"><span class="header-section-number">8.8</span> Równoważenie Rzetelności, Trafności i Spójności</a></li>
   <li><a href="#kompromis-między-obciążeniem-a-wariancją" id="toc-kompromis-między-obciążeniem-a-wariancją" class="nav-link" data-scroll-target="#kompromis-między-obciążeniem-a-wariancją"><span class="header-section-number">8.9</span> Kompromis między Obciążeniem a Wariancją</a></li>
   <li><a href="#dokładność-i-precyzja" id="toc-dokładność-i-precyzja" class="nav-link" data-scroll-target="#dokładność-i-precyzja"><span class="header-section-number">8.10</span> Dokładność i Precyzja</a></li>
-  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">9</span> Podsumowanie</a></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">8.11</span> Podsumowanie</a></li>
+  <li><a href="#zrozumienie-obciążenia-vs.-wariancji-w-pomiarach-statystycznych" id="toc-zrozumienie-obciążenia-vs.-wariancji-w-pomiarach-statystycznych" class="nav-link" data-scroll-target="#zrozumienie-obciążenia-vs.-wariancji-w-pomiarach-statystycznych"><span class="header-section-number">8.12</span> Zrozumienie Obciążenia vs.&nbsp;Wariancji w Pomiarach Statystycznych</a>
+  <ul class="collapse">
+  <li><a href="#wprowadzenie" id="toc-wprowadzenie" class="nav-link" data-scroll-target="#wprowadzenie"><span class="header-section-number">8.12.1</span> Wprowadzenie</a></li>
+  <li><a href="#funkcja-generowania-danych-i-dopasowywania-modelu" id="toc-funkcja-generowania-danych-i-dopasowywania-modelu" class="nav-link" data-scroll-target="#funkcja-generowania-danych-i-dopasowywania-modelu"><span class="header-section-number">8.12.2</span> Funkcja Generowania Danych i Dopasowywania Modelu</a></li>
+  <li><a href="#scenariusz-1-niskie-obciążenie-niska-wariancja" id="toc-scenariusz-1-niskie-obciążenie-niska-wariancja" class="nav-link" data-scroll-target="#scenariusz-1-niskie-obciążenie-niska-wariancja"><span class="header-section-number">8.12.3</span> Scenariusz 1: Niskie Obciążenie, Niska Wariancja</a></li>
+  </ul></li>
+  <li><a href="#scenariusz-2-niskie-obciążenie-wysoka-wariancja" id="toc-scenariusz-2-niskie-obciążenie-wysoka-wariancja" class="nav-link" data-scroll-target="#scenariusz-2-niskie-obciążenie-wysoka-wariancja"><span class="header-section-number">8.13</span> Scenariusz 2: Niskie Obciążenie, Wysoka Wariancja</a>
+  <ul class="collapse">
+  <li><a href="#scenariusz-3-wysokie-obciążenie-niska-wariancja" id="toc-scenariusz-3-wysokie-obciążenie-niska-wariancja" class="nav-link" data-scroll-target="#scenariusz-3-wysokie-obciążenie-niska-wariancja"><span class="header-section-number">8.13.1</span> Scenariusz 3: Wysokie Obciążenie, Niska Wariancja</a></li>
+  <li><a href="#scenariusz-4-wysokie-obciążenie-wysoka-wariancja" id="toc-scenariusz-4-wysokie-obciążenie-wysoka-wariancja" class="nav-link" data-scroll-target="#scenariusz-4-wysokie-obciążenie-wysoka-wariancja"><span class="header-section-number">8.13.2</span> Scenariusz 4: Wysokie Obciążenie, Wysoka Wariancja</a></li>
+  <li><a href="#podsumowanie-1" id="toc-podsumowanie-1" class="nav-link" data-scroll-target="#podsumowanie-1"><span class="header-section-number">8.13.3</span> Podsumowanie</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -573,11 +585,161 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>W tej wizualizacji: - Wysoka dokładność oznacza, że punkty są blisko środka (dziesiątki). - Wysoka precyzja oznacza, że punkty są ściśle zgrupowane. - Każdy panel reprezentuje inną kombinację dokładności i precyzji.</p>
 </section>
-<section id="podsumowanie" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Podsumowanie</h1>
+<section id="podsumowanie" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">8.11</span> Podsumowanie</h2>
 <p>Zrozumienie rzetelności i trafności jest kluczowe dla prowadzenia solidnych badań. Pojęcia te pomagają nam zapewnić, że nasze pomiary są zarówno spójne, jak i dokładne. Łącząc je z ideami takimi jak kompromis między obciążeniem a wariancją oraz dokładnością i precyzją, zyskujemy głębsze zrozumienie wyzwań związanych z pomiarem i modelowaniem w badaniach naukowych. Jako badacze musimy dążyć do opracowania miar i modeli, które są zarówno rzetelne, jak i trafne, równoważąc kompromisy między obciążeniem a wariancją oraz między dokładnością a precyzją. Wymaga to starannego projektowania metodologii badań, rygorystycznego testowania naszych instrumentów pomiarowych i przemyślanej interpretacji naszych wyników.</p>
+</section>
+<section id="zrozumienie-obciążenia-vs.-wariancji-w-pomiarach-statystycznych" class="level2" data-number="8.12">
+<h2 data-number="8.12" class="anchored" data-anchor-id="zrozumienie-obciążenia-vs.-wariancji-w-pomiarach-statystycznych"><span class="header-section-number">8.12</span> Zrozumienie Obciążenia vs.&nbsp;Wariancji w Pomiarach Statystycznych</h2>
+<section id="wprowadzenie" class="level3" data-number="8.12.1">
+<h3 data-number="8.12.1" class="anchored" data-anchor-id="wprowadzenie"><span class="header-section-number">8.12.1</span> Wprowadzenie</h3>
+<p>W statystyce i uczeniu maszynowym dwa ważne pojęcia, które wpływają na wydajność naszych modeli, to <strong>obciążenie</strong> (bias) i <strong>wariancja</strong> (variance). Zrozumienie tych pojęć jest kluczowe dla budowania efektywnych modeli predykcyjnych i unikania typowych pułapek, takich jak przeuczenie i niedouczenie.</p>
+<ul>
+<li><strong>Obciążenie</strong> odnosi się do błędu wprowadzonego przez przybliżenie rzeczywistego problemu, który może być złożony, za pomocą uproszczonego modelu. Wysokie obciążenie może prowadzić do niedouczenia.
+<ul>
+<li>Wyobraź sobie obciążenie jako średnią odległość naszych przewidywań od prawdziwych wartości.</li>
+<li>W kontekście trafności, wysokie obciążenie oznacza, że nasz model nie uchwycił prawdziwej zależności w danych.</li>
+</ul></li>
+<li><strong>Wariancja</strong> odnosi się do tego, jak bardzo nasz model zmieniłby się, gdybyśmy oszacowali go przy użyciu innego zbioru treningowego. Wysoka wariancja może prowadzić do przeuczenia.
+<ul>
+<li>Wyobraź sobie wariancję jako to, jak bardzo nasze przewidywania wahałyby się, gdybyśmy użyli różnych zbiorów danych.</li>
+<li>W kontekście rzetelności, wysoka wariancja oznacza, że nasz model jest zbyt wrażliwy na konkretne dane, na których został wytrenowany.</li>
+</ul></li>
+</ul>
+<p>Zbadamy cztery scenariusze, aby zilustrować różne kombinacje obciążenia i wariancji przy użyciu syntetycznych danych i modeli regresji.</p>
+</section>
+<section id="funkcja-generowania-danych-i-dopasowywania-modelu" class="level3" data-number="8.12.2">
+<h3 data-number="8.12.2" class="anchored" data-anchor-id="funkcja-generowania-danych-i-dopasowywania-modelu"><span class="header-section-number">8.12.2</span> Funkcja Generowania Danych i Dopasowywania Modelu</h3>
+<p>Najpierw stwórzmy funkcję, która pomoże nam generować dane i dopasowywać modele dla każdego scenariusza:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>generuj_i_dopasuj <span class="ot">&lt;-</span> <span class="cf">function</span>(n, wyraz_wolny, nachylenie, odch_szumu, stopien_modelu) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Generowanie syntetycznych danych</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> wyraz_wolny <span class="sc">+</span> nachylenie <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, odch_szumu)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Dopasowanie modelu</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(<span class="st">"y ~"</span>, <span class="fu">paste0</span>(<span class="st">"poly(x, "</span>, stopien_modelu, <span class="st">", raw = TRUE)"</span>)))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="fu">lm</span>(formula, <span class="at">data =</span> <span class="fu">data.frame</span>(x, y))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Generowanie przewidywań</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  x_pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  y_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_pred))</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Wykres</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_pred, <span class="at">y =</span> y_pred), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_abline</span>(<span class="at">intercept =</span> wyraz_wolny, <span class="at">slope =</span> nachylenie, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Stopień Modelu:"</span>, stopien_modelu),</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Odchylenie Standardowe Szumu:"</span>, odch_szumu),</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"X (Zmienna Wejściowa)"</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Y (Zmienna Docelowa)"</span>) <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ta funkcja wykonuje następujące czynności: 1. Generuje syntetyczne dane na podstawie naszych parametrów 2. Dopasowuje model regresji wielomianowej 3. Tworzy wykres pokazujący prawdziwą zależność (niebieska przerywana linia), przewidywania naszego modelu (czerwona ciągła linia) i punkty danych</p>
+<p>Teraz zbadajmy nasze cztery scenariusze!</p>
+</section>
+<section id="scenariusz-1-niskie-obciążenie-niska-wariancja" class="level3" data-number="8.12.3">
+<h3 data-number="8.12.3" class="anchored" data-anchor-id="scenariusz-1-niskie-obciążenie-niska-wariancja"><span class="header-section-number">8.12.3</span> Scenariusz 1: Niskie Obciążenie, Niska Wariancja</h3>
+<p>W tym idealnym scenariuszu używamy modelu liniowego do dopasowania danych liniowych z niskim szumem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generuj_i_dopasuj</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">wyraz_wolny =</span> <span class="dv">1</span>, <span class="at">nachylenie =</span> <span class="dv">2</span>, <span class="at">odch_szumu =</span> <span class="dv">1</span>, <span class="at">stopien_modelu =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial3b_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Wyjaśnienie:</strong> - Model (czerwona linia) ściśle podąża za prawdziwą zależnością (niebieska przerywana linia). - Punkty danych są skupione blisko linii, co wskazuje na niski szum. - Ten scenariusz reprezentuje dobre dopasowanie: model uchwycił podstawowy trend bez nadmiernej złożoności.</p>
+</section>
+</section>
+<section id="scenariusz-2-niskie-obciążenie-wysoka-wariancja" class="level2" data-number="8.13">
+<h2 data-number="8.13" class="anchored" data-anchor-id="scenariusz-2-niskie-obciążenie-wysoka-wariancja"><span class="header-section-number">8.13</span> Scenariusz 2: Niskie Obciążenie, Wysoka Wariancja</h2>
+<p>Tutaj używamy modelu liniowego do dopasowania danych liniowych, ale z wysokim szumem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generuj_i_dopasuj</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">wyraz_wolny =</span> <span class="dv">1</span>, <span class="at">nachylenie =</span> <span class="dv">2</span>, <span class="at">odch_szumu =</span> <span class="dv">5</span>, <span class="at">stopien_modelu =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial3b_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Wyjaśnienie:</strong> - Model nadal uchwycił ogólny trend, ale punkty danych są bardziej rozproszone. - Ta wysoka wariancja oznacza, że przewidywania naszego modelu byłyby mniej wiarygodne. - W rzeczywistych warunkach mogłoby to reprezentować sytuację, w której nasze pomiary są średnio poprawne, ale mają dużo losowego błędu.</p>
+<section id="scenariusz-3-wysokie-obciążenie-niska-wariancja" class="level3" data-number="8.13.1">
+<h3 data-number="8.13.1" class="anchored" data-anchor-id="scenariusz-3-wysokie-obciążenie-niska-wariancja"><span class="header-section-number">8.13.1</span> Scenariusz 3: Wysokie Obciążenie, Niska Wariancja</h3>
+<p>W tym przypadku używamy modelu liniowego do dopasowania danych kwadratowych (zakrzywionych) z niskim szumem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dane_kwadratowe <span class="ot">&lt;-</span> <span class="cf">function</span>(n, wyraz_wolny, nachylenie, odch_szumu, stopien_modelu) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> wyraz_wolny <span class="sc">+</span> nachylenie <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, odch_szumu)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  formula <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(<span class="st">"y ~"</span>, <span class="fu">paste0</span>(<span class="st">"poly(x, "</span>, stopien_modelu, <span class="st">", raw = TRUE)"</span>)))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span> <span class="fu">lm</span>(formula, <span class="at">data =</span> <span class="fu">data.frame</span>(x, y))</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  x_pred <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  y_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_pred))</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">data.frame</span>(x, y), <span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_pred, <span class="at">y =</span> y_pred), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="cf">function</span>(x) wyraz_wolny <span class="sc">+</span> nachylenie <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Stopień Modelu:"</span>, stopien_modelu),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Odchylenie Standardowe Szumu:"</span>, odch_szumu),</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"X (Zmienna Wejściowa)"</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Y (Zmienna Docelowa)"</span>) <span class="sc">+</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">dane_kwadratowe</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">wyraz_wolny =</span> <span class="dv">1</span>, <span class="at">nachylenie =</span> <span class="fl">0.2</span>, <span class="at">odch_szumu =</span> <span class="dv">1</span>, <span class="at">stopien_modelu =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial3b_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Wyjaśnienie:</strong> - Model liniowy (czerwona linia) nie uchwycił krzywizny prawdziwej zależności (niebieska przerywana linia). - To wysokie obciążenie oznacza, że nasz model konsekwentnie myli się w swoich przewidywaniach. - W rzeczywistych warunkach mogłoby to reprezentować użycie zbyt uproszczonego modelu dla złożonego zjawiska.</p>
+</section>
+<section id="scenariusz-4-wysokie-obciążenie-wysoka-wariancja" class="level3" data-number="8.13.2">
+<h3 data-number="8.13.2" class="anchored" data-anchor-id="scenariusz-4-wysokie-obciążenie-wysoka-wariancja"><span class="header-section-number">8.13.2</span> Scenariusz 4: Wysokie Obciążenie, Wysoka Wariancja</h3>
+<p>Na koniec używamy wielomianu wysokiego stopnia do dopasowania danych liniowych z wysokim szumem.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generuj_i_dopasuj</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">wyraz_wolny =</span> <span class="dv">1</span>, <span class="at">nachylenie =</span> <span class="dv">2</span>, <span class="at">odch_szumu =</span> <span class="dv">5</span>, <span class="at">stopien_modelu =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial3b_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Wyjaśnienie:</strong> - Model (czerwona linia) jest zbyt złożony, próbując dopasować się do szumu zamiast do podstawowego trendu. - Ta kombinacja wysokiego obciążenia i wysokiej wariancji prowadzi do słabej generalizacji. - W rzeczywistych warunkach mogłoby to reprezentować nadmierne skomplikowanie naszej analizy i wyciąganie fałszywych wniosków z losowych fluktuacji w naszych danych.</p>
+</section>
+<section id="podsumowanie-1" class="level3" data-number="8.13.3">
+<h3 data-number="8.13.3" class="anchored" data-anchor-id="podsumowanie-1"><span class="header-section-number">8.13.3</span> Podsumowanie</h3>
+<p>Zrozumienie kompromisu między obciążeniem a wariancją jest kluczowe w modelowaniu statystycznym:</p>
+<ol type="1">
+<li><p><strong>Niskie Obciążenie, Niska Wariancja:</strong> Idealny scenariusz, w którym nasz model dokładnie uchwycił podstawową zależność bez nadmiernej wrażliwości na szum.</p></li>
+<li><p><strong>Niskie Obciążenie, Wysoka Wariancja:</strong> Nasz model jest średnio poprawny, ale niewiarygodny ze względu na wysoką wrażliwość na pojedyncze punkty danych.</p></li>
+<li><p><strong>Wysokie Obciążenie, Niska Wariancja:</strong> Nasz model jest konsekwentnie błędny z powodu nadmiernego uproszczenia, ale daje stabilne przewidywania.</p></li>
+<li><p><strong>Wysokie Obciążenie, Wysoka Wariancja:</strong> Najgorszy scenariusz, w którym nasz model jest zarówno niedokładny, jak i niewiarygodny.</p></li>
+</ol>
+<p>W praktyce często musimy zrównoważyć obciążenie i wariancję. Techniki takie jak walidacja krzyżowa, regularyzacja i metody zespołowe mogą pomóc w znalezieniu tej równowagi.</p>
+<p>Pamiętaj: - Model z wysokim obciążeniem jest zbyt prosty i pomija ważne wzorce w danych. - Model z wysoką wariancją jest zbyt złożony i dopasowuje się do szumu w danych treningowych. - Celem jest znalezienie złotego środka, który uchwyci prawdziwe wzorce bez nadmiernego dopasowania do szumu.</p>
+<p>Zrozumienie tych pojęć pomoże ci lepiej wybierać odpowiednie modele, unikać przeuczenia i niedouczenia oraz budować bardziej efektywne modele predykcyjne w przyszłych analizach statystycznych!</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
