@@ -250,7 +250,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: From Pen and Paper to R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wizualizacja Danych: z przykładami w R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -331,8 +337,9 @@ window.Quarto = {
   <li><a href="#quartiles-and-interquartile-range-iqr" id="toc-quartiles-and-interquartile-range-iqr" class="nav-link" data-scroll-target="#quartiles-and-interquartile-range-iqr"><span class="header-section-number">19.2.4</span> Quartiles and Interquartile Range (IQR)</a></li>
   <li><a href="#coefficient-of-variation-cv" id="toc-coefficient-of-variation-cv" class="nav-link" data-scroll-target="#coefficient-of-variation-cv"><span class="header-section-number">19.2.5</span> Coefficient of Variation (CV)</a></li>
   <li><a href="#comparison-of-results-1" id="toc-comparison-of-results-1" class="nav-link" data-scroll-target="#comparison-of-results-1"><span class="header-section-number">19.2.6</span> Comparison of Results</a></li>
-  <li><a href="#key-observations-1" id="toc-key-observations-1" class="nav-link" data-scroll-target="#key-observations-1"><span class="header-section-number">19.2.7</span> Key Observations</a></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">19.2.8</span> Conclusions</a></li>
+  <li><a href="#boxplot-comparison" id="toc-boxplot-comparison" class="nav-link" data-scroll-target="#boxplot-comparison"><span class="header-section-number">19.2.7</span> Boxplot Comparison</a></li>
+  <li><a href="#key-observations-1" id="toc-key-observations-1" class="nav-link" data-scroll-target="#key-observations-1"><span class="header-section-number">19.2.8</span> Key Observations</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">19.2.9</span> Conclusions</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -1690,8 +1697,60 @@ Attaching package: 'moments'</code></pre>
 </tbody>
 </table>
 </section>
-<section id="key-observations-1" class="level3" data-number="19.2.7">
-<h3 data-number="19.2.7" class="anchored" data-anchor-id="key-observations-1"><span class="header-section-number">19.2.7</span> Key Observations</h3>
+<section id="boxplot-comparison" class="level3" data-number="19.2.7">
+<h3 data-number="19.2.7" class="anchored" data-anchor-id="boxplot-comparison"><span class="header-section-number">19.2.7</span> Boxplot Comparison</h3>
+<p>To visually compare the distribution of district sizes between the two countries, we can use a Tukey-style boxplot. This type of plot provides a concise summary of the data’s distribution, including the median, quartiles, and potential outliers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary library</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frames for each country</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>country_x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">country =</span> <span class="st">"X"</span>, <span class="at">size =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>))</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>country_y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">country =</span> <span class="st">"Y"</span>, <span class="at">size =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">13</span>))</span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine the data</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>all_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(country_x, country_y)</span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the boxplot</span></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(all_data, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> size, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of District Magnitude Variability"</span>,</span>
+<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Country"</span>,</span>
+<span id="cb73-17"><a href="#cb73-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"District Size"</span>) <span class="sc">+</span></span>
+<span id="cb73-18"><a href="#cb73-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb73-19"><a href="#cb73-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#FFA07A"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#98FB98"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/boxplot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Comparison of District Magnitude Variability</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpreting-the-boxplot" class="level4" data-number="19.2.7.1">
+<h4 data-number="19.2.7.1" class="anchored" data-anchor-id="interpreting-the-boxplot"><span class="header-section-number">19.2.7.1</span> Interpreting the Boxplot</h4>
+<p>The boxplot provides several key pieces of information:</p>
+<ol type="1">
+<li>The box represents the interquartile range (IQR), with the lower edge at Q1 and the upper edge at Q3.</li>
+<li>The line inside the box represents the median (Q2).</li>
+<li>The whiskers extend to the smallest and largest values within 1.5 times the IQR from the edges of the box.</li>
+<li>Any points beyond the whiskers are considered potential outliers and are plotted individually.</li>
+</ol>
+<p>From this plot, we can observe:</p>
+<ol type="1">
+<li>The median district size for Country Y is slightly higher than for Country X, consistent with our earlier calculations.</li>
+<li>The box for Country X is much larger than for Country Y, indicating a greater spread of the middle 50% of the data and thus higher variability.</li>
+<li>Country X’s data spans a much wider range, as shown by the longer whiskers, further confirming its higher variability.</li>
+<li>Country Y’s data is more tightly clustered, with a smaller box and shorter whiskers, indicating lower variability.</li>
+<li>The individual points for Country X are more spread out, while those for Country Y are more clustered, providing a visual representation of the difference in variability.</li>
+</ol>
+<p>This boxplot visualization reinforces our earlier numerical analysis, clearly showing the contrast in district size variability between the two countries.</p>
+</section>
+</section>
+<section id="key-observations-1" class="level3" data-number="19.2.8">
+<h3 data-number="19.2.8" class="anchored" data-anchor-id="key-observations-1"><span class="header-section-number">19.2.8</span> Key Observations</h3>
 <ol type="1">
 <li><p>Central Tendency: Both countries have similar means and medians, indicating that their average district sizes are close.</p></li>
 <li><p>Dispersion:</p>
@@ -1709,16 +1768,21 @@ Attaching package: 'moments'</code></pre>
 <ul>
 <li>The CV of Country X (60.6%) is significantly higher than Country Y (15.0%), providing a standardized measure of the difference in variability.</li>
 </ul></li>
+<li><p>Visual Comparison:</p>
+<ul>
+<li>The boxplot clearly illustrates the stark difference in variability between the two countries, supporting our numerical findings.</li>
+</ul></li>
 </ol>
 </section>
-<section id="conclusions" class="level3" data-number="19.2.8">
-<h3 data-number="19.2.8" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">19.2.8</span> Conclusions</h3>
+<section id="conclusions" class="level3" data-number="19.2.9">
+<h3 data-number="19.2.9" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">19.2.9</span> Conclusions</h3>
 <p>This analysis clearly shows the contrast in electoral district size variability between the two countries:</p>
 <ol type="1">
 <li><p>Country X exhibits high variability, with district sizes spread widely from 1 to 19. This may indicate a diverse electoral system with a mix of small (possibly single-member) and large multi-member districts.</p></li>
 <li><p>Country Y exhibits low variability, with district sizes tightly clustered between 8 and 13. This suggests a more uniform electoral system, likely consisting of medium-sized multi-member districts.</p></li>
 </ol>
 <p>These differences in variability can have significant implications for political representation, party strategies, and electoral outcomes in each country. High variability (as in Country X) may lead to more diverse representation but could also result in more complex electoral strategies. Low variability (as in Country Y) may promote more consistent representation across districts but potentially limit the diversity of political voices.</p>
+<p>The addition of the boxplot provides a powerful visual tool for understanding these differences, making the contrast between the two countries immediately apparent and complementing the detailed numerical analysis.</p>
 
 
 </section>

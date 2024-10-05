@@ -250,7 +250,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: From Pen and Paper to R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wizualizacja Danych: z przykładami w R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -313,7 +319,7 @@ window.Quarto = {
   <li><a href="#bibliografia" id="toc-bibliografia" class="nav-link" data-scroll-target="#bibliografia"><span class="header-section-number">19</span> Bibliografia</a></li>
   <li><a href="#ćwiczenia" id="toc-ćwiczenia" class="nav-link" data-scroll-target="#ćwiczenia"><span class="header-section-number">20</span> Ćwiczenia</a>
   <ul class="collapse">
-  <li><a href="#ćwiczenie-1." id="toc-ćwiczenie-1." class="nav-link" data-scroll-target="#ćwiczenie-1."><span class="header-section-number">20.1</span> Ćwiczenie 1.</a>
+  <li><a href="#ćwiczenie-1.-porównanie-wynagrodzeń" id="toc-ćwiczenie-1.-porównanie-wynagrodzeń" class="nav-link" data-scroll-target="#ćwiczenie-1.-porównanie-wynagrodzeń"><span class="header-section-number">20.1</span> Ćwiczenie 1. Porównanie wynagrodzeń</a>
   <ul class="collapse">
   <li><a href="#dane" id="toc-dane" class="nav-link" data-scroll-target="#dane"><span class="header-section-number">20.1.1</span> Dane</a></li>
   <li><a href="#miary-tendencji-centralnej-1" id="toc-miary-tendencji-centralnej-1" class="nav-link" data-scroll-target="#miary-tendencji-centralnej-1"><span class="header-section-number">20.1.2</span> Miary tendencji centralnej</a></li>
@@ -323,16 +329,17 @@ window.Quarto = {
   <li><a href="#porównanie-wyników" id="toc-porównanie-wyników" class="nav-link" data-scroll-target="#porównanie-wyników"><span class="header-section-number">20.1.6</span> Porównanie wyników</a></li>
   <li><a href="#wnioski" id="toc-wnioski" class="nav-link" data-scroll-target="#wnioski"><span class="header-section-number">20.1.7</span> Wnioski</a></li>
   </ul></li>
-  <li><a href="#ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami" id="toc-ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami" class="nav-link" data-scroll-target="#ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami"><span class="header-section-number">20.2</span> Ćwiczenie 2. Porównanie zmienności wielkości okręgów wyborczych między krajami</a>
+  <li><a href="#ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami" id="toc-ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami" class="nav-link" data-scroll-target="#ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami"><span class="header-section-number">20.2</span> Ćwiczenie 2. Porównanie Zmienności Wielkości Okręgów Wyborczych Między Krajami</a>
   <ul class="collapse">
   <li><a href="#dane-1" id="toc-dane-1" class="nav-link" data-scroll-target="#dane-1"><span class="header-section-number">20.2.1</span> Dane</a></li>
-  <li><a href="#miary-tendencji-centralnej-2" id="toc-miary-tendencji-centralnej-2" class="nav-link" data-scroll-target="#miary-tendencji-centralnej-2"><span class="header-section-number">20.2.2</span> Miary tendencji centralnej</a></li>
-  <li><a href="#miary-rozproszenia-1" id="toc-miary-rozproszenia-1" class="nav-link" data-scroll-target="#miary-rozproszenia-1"><span class="header-section-number">20.2.3</span> Miary rozproszenia</a></li>
-  <li><a href="#kwartyle-i-rozstęp-międzykwartylowy-iqr" id="toc-kwartyle-i-rozstęp-międzykwartylowy-iqr" class="nav-link" data-scroll-target="#kwartyle-i-rozstęp-międzykwartylowy-iqr"><span class="header-section-number">20.2.4</span> Kwartyle i rozstęp międzykwartylowy (IQR)</a></li>
-  <li><a href="#współczynnik-zmienności-cv" id="toc-współczynnik-zmienności-cv" class="nav-link" data-scroll-target="#współczynnik-zmienności-cv"><span class="header-section-number">20.2.5</span> Współczynnik zmienności (CV)</a></li>
-  <li><a href="#porównanie-wyników-1" id="toc-porównanie-wyników-1" class="nav-link" data-scroll-target="#porównanie-wyników-1"><span class="header-section-number">20.2.6</span> Porównanie wyników</a></li>
-  <li><a href="#kluczowe-obserwacje-1" id="toc-kluczowe-obserwacje-1" class="nav-link" data-scroll-target="#kluczowe-obserwacje-1"><span class="header-section-number">20.2.7</span> Kluczowe obserwacje</a></li>
-  <li><a href="#wnioski-1" id="toc-wnioski-1" class="nav-link" data-scroll-target="#wnioski-1"><span class="header-section-number">20.2.8</span> Wnioski</a></li>
+  <li><a href="#miary-tendencji-centralnej-2" id="toc-miary-tendencji-centralnej-2" class="nav-link" data-scroll-target="#miary-tendencji-centralnej-2"><span class="header-section-number">20.2.2</span> Miary Tendencji Centralnej</a></li>
+  <li><a href="#miary-rozproszenia-1" id="toc-miary-rozproszenia-1" class="nav-link" data-scroll-target="#miary-rozproszenia-1"><span class="header-section-number">20.2.3</span> Miary Rozproszenia</a></li>
+  <li><a href="#kwartyle-i-rozstęp-międzykwartylowy-iqr" id="toc-kwartyle-i-rozstęp-międzykwartylowy-iqr" class="nav-link" data-scroll-target="#kwartyle-i-rozstęp-międzykwartylowy-iqr"><span class="header-section-number">20.2.4</span> Kwartyle i Rozstęp Międzykwartylowy (IQR)</a></li>
+  <li><a href="#współczynnik-zmienności-cv" id="toc-współczynnik-zmienności-cv" class="nav-link" data-scroll-target="#współczynnik-zmienności-cv"><span class="header-section-number">20.2.5</span> Współczynnik Zmienności (CV)</a></li>
+  <li><a href="#porównanie-wyników-1" id="toc-porównanie-wyników-1" class="nav-link" data-scroll-target="#porównanie-wyników-1"><span class="header-section-number">20.2.6</span> Porównanie Wyników</a></li>
+  <li><a href="#porównanie-za-pomocą-wykresu-pudełkowego" id="toc-porównanie-za-pomocą-wykresu-pudełkowego" class="nav-link" data-scroll-target="#porównanie-za-pomocą-wykresu-pudełkowego"><span class="header-section-number">20.2.7</span> Porównanie za pomocą Wykresu Pudełkowego</a></li>
+  <li><a href="#kluczowe-obserwacje-1" id="toc-kluczowe-obserwacje-1" class="nav-link" data-scroll-target="#kluczowe-obserwacje-1"><span class="header-section-number">20.2.8</span> Kluczowe Obserwacje</a></li>
+  <li><a href="#wnioski-1" id="toc-wnioski-1" class="nav-link" data-scroll-target="#wnioski-1"><span class="header-section-number">20.2.9</span> Wnioski</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -839,8 +846,8 @@ Attaching package: 'moments'</code></pre>
 </section>
 <section id="ćwiczenia" class="level1" data-number="20">
 <h1 data-number="20"><span class="header-section-number">20</span> Ćwiczenia</h1>
-<section id="ćwiczenie-1." class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="ćwiczenie-1."><span class="header-section-number">20.1</span> Ćwiczenie 1.</h2>
+<section id="ćwiczenie-1.-porównanie-wynagrodzeń" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="ćwiczenie-1.-porównanie-wynagrodzeń"><span class="header-section-number">20.1</span> Ćwiczenie 1. Porównanie wynagrodzeń</h2>
 <section id="dane" class="level3" data-number="20.1.1">
 <h3 data-number="20.1.1" class="anchored" data-anchor-id="dane"><span class="header-section-number">20.1.1</span> Dane</h3>
 <p>Mamy dane o wynagrodzeniach (w tysiącach euro) z dwóch małych firm europejskich:</p>
@@ -1346,7 +1353,7 @@ Attaching package: 'moments'</code></pre>
 </section>
 </section>
 <section id="ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami"><span class="header-section-number">20.2</span> Ćwiczenie 2. Porównanie zmienności wielkości okręgów wyborczych między krajami</h2>
+<h2 data-number="20.2" class="anchored" data-anchor-id="ćwiczenie-2.-porównanie-zmienności-wielkości-okręgów-wyborczych-między-krajami"><span class="header-section-number">20.2</span> Ćwiczenie 2. Porównanie Zmienności Wielkości Okręgów Wyborczych Między Krajami</h2>
 <section id="dane-1" class="level3" data-number="20.2.1">
 <h3 data-number="20.2.1" class="anchored" data-anchor-id="dane-1"><span class="header-section-number">20.2.1</span> Dane</h3>
 <p>Mamy dane o wielkości okręgów wyborczych z dwóch krajów:</p>
@@ -1356,13 +1363,13 @@ Attaching package: 'moments'</code></pre>
 </ul>
 </section>
 <section id="miary-tendencji-centralnej-2" class="level3" data-number="20.2.2">
-<h3 data-number="20.2.2" class="anchored" data-anchor-id="miary-tendencji-centralnej-2"><span class="header-section-number">20.2.2</span> Miary tendencji centralnej</h3>
+<h3 data-number="20.2.2" class="anchored" data-anchor-id="miary-tendencji-centralnej-2"><span class="header-section-number">20.2.2</span> Miary Tendencji Centralnej</h3>
 <section id="średnia-arytmetyczna-2" class="level4" data-number="20.2.2.1">
-<h4 data-number="20.2.2.1" class="anchored" data-anchor-id="średnia-arytmetyczna-2"><span class="header-section-number">20.2.2.1</span> Średnia arytmetyczna</h4>
+<h4 data-number="20.2.2.1" class="anchored" data-anchor-id="średnia-arytmetyczna-2"><span class="header-section-number">20.2.2.1</span> Średnia Arytmetyczna</h4>
 <p>Średnia arytmetyczna to suma wszystkich wartości podzielona przez ich liczbę.</p>
 <p>Wzór: <span class="math inline">\(\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}\)</span></p>
 <section id="obliczenia-dla-kraju-x" class="level5" data-number="20.2.2.1.1">
-<h5 data-number="20.2.2.1.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x"><span class="header-section-number">20.2.2.1.1</span> Obliczenia dla kraju X</h5>
+<h5 data-number="20.2.2.1.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x"><span class="header-section-number">20.2.2.1.1</span> Obliczenia dla Kraju X</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1380,7 +1387,7 @@ Attaching package: 'moments'</code></pre>
 <p><span class="math inline">\(\bar{x} = \frac{100}{10} = 10\)</span></p>
 </section>
 <section id="obliczenia-dla-kraju-y" class="level5" data-number="20.2.2.1.2">
-<h5 data-number="20.2.2.1.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y"><span class="header-section-number">20.2.2.1.2</span> Obliczenia dla kraju Y</h5>
+<h5 data-number="20.2.2.1.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y"><span class="header-section-number">20.2.2.1.2</span> Obliczenia dla Kraju Y</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1402,33 +1409,33 @@ Attaching package: 'moments'</code></pre>
 <h4 data-number="20.2.2.2" class="anchored" data-anchor-id="mediana-2"><span class="header-section-number">20.2.2.2</span> Mediana</h4>
 <p>Mediana to środkowa wartość w uporządkowanym zbiorze danych.</p>
 <section id="obliczenia-dla-kraju-x-1" class="level5" data-number="20.2.2.2.1">
-<h5 data-number="20.2.2.2.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-1"><span class="header-section-number">20.2.2.2.1</span> Obliczenia dla kraju X</h5>
+<h5 data-number="20.2.2.2.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-1"><span class="header-section-number">20.2.2.2.1</span> Obliczenia dla Kraju X</h5>
 <p>Uporządkowane dane: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19</p>
 <p>Mediana = <span class="math inline">\(\frac{9 + 11}{2} = 10\)</span></p>
 </section>
 <section id="obliczenia-dla-kraju-y-1" class="level5" data-number="20.2.2.2.2">
-<h5 data-number="20.2.2.2.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-1"><span class="header-section-number">20.2.2.2.2</span> Obliczenia dla kraju Y</h5>
+<h5 data-number="20.2.2.2.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-1"><span class="header-section-number">20.2.2.2.2</span> Obliczenia dla Kraju Y</h5>
 <p>Uporządkowane dane: 8, 9, 9, 10, 10, 11, 11, 12, 12, 13</p>
 <p>Mediana = <span class="math inline">\(\frac{10 + 11}{2} = 10,5\)</span></p>
 </section>
 </section>
-<section id="dominanta-moda-1" class="level4" data-number="20.2.2.3">
-<h4 data-number="20.2.2.3" class="anchored" data-anchor-id="dominanta-moda-1"><span class="header-section-number">20.2.2.3</span> Dominanta (moda)</h4>
+<section id="dominanta" class="level4" data-number="20.2.2.3">
+<h4 data-number="20.2.2.3" class="anchored" data-anchor-id="dominanta"><span class="header-section-number">20.2.2.3</span> Dominanta</h4>
 <p>Dominanta to najczęściej występująca wartość w zbiorze danych.</p>
-<p>Dla kraju X nie ma dominanty (wszystkie wartości występują raz). Dla kraju Y są cztery dominanty: 9, 10, 11 i 12 (każda występuje dwa razy).</p>
+<p>Dla Kraju X nie ma dominanty (wszystkie wartości występują raz). Dla Kraju Y są cztery dominanty: 9, 10, 11 i 12 (każda występuje dwa razy).</p>
 </section>
 </section>
 <section id="miary-rozproszenia-1" class="level3" data-number="20.2.3">
-<h3 data-number="20.2.3" class="anchored" data-anchor-id="miary-rozproszenia-1"><span class="header-section-number">20.2.3</span> Miary rozproszenia</h3>
+<h3 data-number="20.2.3" class="anchored" data-anchor-id="miary-rozproszenia-1"><span class="header-section-number">20.2.3</span> Miary Rozproszenia</h3>
 <section id="rozstęp-1" class="level4" data-number="20.2.3.1">
 <h4 data-number="20.2.3.1" class="anchored" data-anchor-id="rozstęp-1"><span class="header-section-number">20.2.3.1</span> Rozstęp</h4>
 <p>Rozstęp to różnica między wartością maksymalną a minimalną.</p>
 <section id="obliczenia-dla-kraju-x-2" class="level5" data-number="20.2.3.1.1">
-<h5 data-number="20.2.3.1.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-2"><span class="header-section-number">20.2.3.1.1</span> Obliczenia dla kraju X</h5>
+<h5 data-number="20.2.3.1.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-2"><span class="header-section-number">20.2.3.1.1</span> Obliczenia dla Kraju X</h5>
 <p>Rozstęp = 19 - 1 = 18</p>
 </section>
 <section id="obliczenia-dla-kraju-y-2" class="level5" data-number="20.2.3.1.2">
-<h5 data-number="20.2.3.1.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-2"><span class="header-section-number">20.2.3.1.2</span> Obliczenia dla kraju Y</h5>
+<h5 data-number="20.2.3.1.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-2"><span class="header-section-number">20.2.3.1.2</span> Obliczenia dla Kraju Y</h5>
 <p>Rozstęp = 13 - 8 = 5</p>
 </section>
 </section>
@@ -1437,7 +1444,7 @@ Attaching package: 'moments'</code></pre>
 <p>Wariancja mierzy średnie kwadratowe odchylenie od średniej.</p>
 <p>Wzór: <span class="math inline">\(s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)</span></p>
 <section id="obliczenia-dla-kraju-x-3" class="level5" data-number="20.2.3.2.1">
-<h5 data-number="20.2.3.2.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-3"><span class="header-section-number">20.2.3.2.1</span> Obliczenia dla kraju X</h5>
+<h5 data-number="20.2.3.2.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-3"><span class="header-section-number">20.2.3.2.1</span> Obliczenia dla Kraju X</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1507,7 +1514,7 @@ Attaching package: 'moments'</code></pre>
 <p><span class="math inline">\(s^2_X = \frac{330}{9} = 36,67\)</span></p>
 </section>
 <section id="obliczenia-dla-kraju-y-3" class="level5" data-number="20.2.3.2.2">
-<h5 data-number="20.2.3.2.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-3"><span class="header-section-number">20.2.3.2.2</span> Obliczenia dla kraju Y</h5>
+<h5 data-number="20.2.3.2.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-3"><span class="header-section-number">20.2.3.2.2</span> Obliczenia dla Kraju Y</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1578,24 +1585,24 @@ Attaching package: 'moments'</code></pre>
 </section>
 </section>
 <section id="odchylenie-standardowe-2" class="level4" data-number="20.2.3.3">
-<h4 data-number="20.2.3.3" class="anchored" data-anchor-id="odchylenie-standardowe-2"><span class="header-section-number">20.2.3.3</span> Odchylenie standardowe</h4>
+<h4 data-number="20.2.3.3" class="anchored" data-anchor-id="odchylenie-standardowe-2"><span class="header-section-number">20.2.3.3</span> Odchylenie Standardowe</h4>
 <p>Odchylenie standardowe to pierwiastek kwadratowy z wariancji.</p>
 <p>Wzór: <span class="math inline">\(s = \sqrt{s^2}\)</span></p>
 <section id="obliczenia-dla-kraju-x-4" class="level5" data-number="20.2.3.3.1">
-<h5 data-number="20.2.3.3.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-4"><span class="header-section-number">20.2.3.3.1</span> Obliczenia dla kraju X</h5>
+<h5 data-number="20.2.3.3.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-4"><span class="header-section-number">20.2.3.3.1</span> Obliczenia dla Kraju X</h5>
 <p><span class="math inline">\(s_X = \sqrt{36,67} \approx 6,06\)</span></p>
 </section>
 <section id="obliczenia-dla-kraju-y-4" class="level5" data-number="20.2.3.3.2">
-<h5 data-number="20.2.3.3.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-4"><span class="header-section-number">20.2.3.3.2</span> Obliczenia dla kraju Y</h5>
+<h5 data-number="20.2.3.3.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-4"><span class="header-section-number">20.2.3.3.2</span> Obliczenia dla Kraju Y</h5>
 <p><span class="math inline">\(s_Y = \sqrt{2,5} \approx 1,58\)</span></p>
 </section>
 </section>
 </section>
 <section id="kwartyle-i-rozstęp-międzykwartylowy-iqr" class="level3" data-number="20.2.4">
-<h3 data-number="20.2.4" class="anchored" data-anchor-id="kwartyle-i-rozstęp-międzykwartylowy-iqr"><span class="header-section-number">20.2.4</span> Kwartyle i rozstęp międzykwartylowy (IQR)</h3>
+<h3 data-number="20.2.4" class="anchored" data-anchor-id="kwartyle-i-rozstęp-międzykwartylowy-iqr"><span class="header-section-number">20.2.4</span> Kwartyle i Rozstęp Międzykwartylowy (IQR)</h3>
 <p>Kwartyle dzielą zbiór danych na cztery równe części.</p>
 <section id="obliczenia-dla-kraju-x-5" class="level4" data-number="20.2.4.1">
-<h4 data-number="20.2.4.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-5"><span class="header-section-number">20.2.4.1</span> Obliczenia dla kraju X</h4>
+<h4 data-number="20.2.4.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-5"><span class="header-section-number">20.2.4.1</span> Obliczenia dla Kraju X</h4>
 <ul>
 <li>Q1 (25. percentyl): <span class="math inline">\(\frac{3 + 5}{2} = 4\)</span></li>
 <li>Q2 (50. percentyl, mediana): 10</li>
@@ -1604,7 +1611,7 @@ Attaching package: 'moments'</code></pre>
 </ul>
 </section>
 <section id="obliczenia-dla-kraju-y-5" class="level4" data-number="20.2.4.2">
-<h4 data-number="20.2.4.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-5"><span class="header-section-number">20.2.4.2</span> Obliczenia dla kraju Y</h4>
+<h4 data-number="20.2.4.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-5"><span class="header-section-number">20.2.4.2</span> Obliczenia dla Kraju Y</h4>
 <ul>
 <li>Q1 (25. percentyl): 9</li>
 <li>Q2 (50. percentyl, mediana): 10,5</li>
@@ -1614,20 +1621,20 @@ Attaching package: 'moments'</code></pre>
 </section>
 </section>
 <section id="współczynnik-zmienności-cv" class="level3" data-number="20.2.5">
-<h3 data-number="20.2.5" class="anchored" data-anchor-id="współczynnik-zmienności-cv"><span class="header-section-number">20.2.5</span> Współczynnik zmienności (CV)</h3>
+<h3 data-number="20.2.5" class="anchored" data-anchor-id="współczynnik-zmienności-cv"><span class="header-section-number">20.2.5</span> Współczynnik Zmienności (CV)</h3>
 <p>Współczynnik zmienności to stosunek odchylenia standardowego do średniej, wyrażony w procentach.</p>
 <p>Wzór: <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
 <section id="obliczenia-dla-kraju-x-6" class="level4" data-number="20.2.5.1">
-<h4 data-number="20.2.5.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-6"><span class="header-section-number">20.2.5.1</span> Obliczenia dla kraju X</h4>
+<h4 data-number="20.2.5.1" class="anchored" data-anchor-id="obliczenia-dla-kraju-x-6"><span class="header-section-number">20.2.5.1</span> Obliczenia dla Kraju X</h4>
 <p><span class="math inline">\(CV_X = \frac{6,06}{10} \times 100\% = 60,6\%\)</span></p>
 </section>
 <section id="obliczenia-dla-kraju-y-6" class="level4" data-number="20.2.5.2">
-<h4 data-number="20.2.5.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-6"><span class="header-section-number">20.2.5.2</span> Obliczenia dla kraju Y</h4>
+<h4 data-number="20.2.5.2" class="anchored" data-anchor-id="obliczenia-dla-kraju-y-6"><span class="header-section-number">20.2.5.2</span> Obliczenia dla Kraju Y</h4>
 <p><span class="math inline">\(CV_Y = \frac{1,58}{10,5} \times 100\% = 15,0\%\)</span></p>
 </section>
 </section>
 <section id="porównanie-wyników-1" class="level3" data-number="20.2.6">
-<h3 data-number="20.2.6" class="anchored" data-anchor-id="porównanie-wyników-1"><span class="header-section-number">20.2.6</span> Porównanie wyników</h3>
+<h3 data-number="20.2.6" class="anchored" data-anchor-id="porównanie-wyników-1"><span class="header-section-number">20.2.6</span> Porównanie Wyników</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1663,7 +1670,7 @@ Attaching package: 'moments'</code></pre>
 <td>2,5</td>
 </tr>
 <tr class="even">
-<td>Odchylenie stand.</td>
+<td>Odch. Stand.</td>
 <td>6,06</td>
 <td>1,58</td>
 </tr>
@@ -1673,42 +1680,99 @@ Attaching package: 'moments'</code></pre>
 <td>3</td>
 </tr>
 <tr class="even">
-<td>Współczynnik zm.</td>
+<td>Wsp. Zmienności</td>
 <td>60,6%</td>
 <td>15,0%</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="kluczowe-obserwacje-1" class="level3" data-number="20.2.7">
-<h3 data-number="20.2.7" class="anchored" data-anchor-id="kluczowe-obserwacje-1"><span class="header-section-number">20.2.7</span> Kluczowe obserwacje</h3>
+<section id="porównanie-za-pomocą-wykresu-pudełkowego" class="level3" data-number="20.2.7">
+<h3 data-number="20.2.7" class="anchored" data-anchor-id="porównanie-za-pomocą-wykresu-pudełkowego"><span class="header-section-number">20.2.7</span> Porównanie za pomocą Wykresu Pudełkowego</h3>
+<p>Aby wizualnie porównać rozkład wielkości okręgów wyborczych między dwoma krajami, możemy użyć wykresu pudełkowego w stylu Tukeya. Ten typ wykresu zapewnia zwięzłe podsumowanie rozkładu danych, w tym medianę, kwartyle i potencjalne wartości odstające.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wczytaj niezbędną bibliotekę</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Utwórz ramki danych dla każdego kraju</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>kraj_x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">kraj =</span> <span class="st">"X"</span>, <span class="at">wielkosc =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>))</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>kraj_y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">kraj =</span> <span class="st">"Y"</span>, <span class="at">wielkosc =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">13</span>))</span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Połącz dane</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>wszystkie_dane <span class="ot">&lt;-</span> <span class="fu">rbind</span>(kraj_x, kraj_y)</span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Utwórz wykres pudełkowy</span></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wszystkie_dane, <span class="fu">aes</span>(<span class="at">x =</span> kraj, <span class="at">y =</span> wielkosc, <span class="at">fill =</span> kraj)) <span class="sc">+</span></span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Porównanie Zmienności Wielkości Okręgów Wyborczych"</span>,</span>
+<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Kraj"</span>,</span>
+<span id="cb73-17"><a href="#cb73-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Wielkość Okręgu"</span>) <span class="sc">+</span></span>
+<span id="cb73-18"><a href="#cb73-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb73-19"><a href="#cb73-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#FFA07A"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#98FB98"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial5_files/figure-html/boxplot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Porównanie Zmienności Wielkości Okręgów Wyborczych</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="interpretacja-wykresu-pudełkowego-1" class="level4" data-number="20.2.7.1">
+<h4 data-number="20.2.7.1" class="anchored" data-anchor-id="interpretacja-wykresu-pudełkowego-1"><span class="header-section-number">20.2.7.1</span> Interpretacja Wykresu Pudełkowego</h4>
+<p>Wykres pudełkowy dostarcza kilku kluczowych informacji:</p>
 <ol type="1">
-<li><p>Tendencja centralna: Oba kraje mają podobne średnie i mediany, co wskazuje, że ich przeciętne wielkości okręgów są zbliżone.</p></li>
+<li>Pudełko reprezentuje rozstęp międzykwartylowy (IQR), z dolną krawędzią na Q1 i górną na Q3.</li>
+<li>Linia wewnątrz pudełka reprezentuje medianę (Q2).</li>
+<li>Wąsy rozciągają się do najmniejszej i największej wartości w zakresie 1,5 * IQR od krawędzi pudełka.</li>
+<li>Punkty poza wąsami są uznawane za potencjalne wartości odstające i są wykreślane indywidualnie.</li>
+</ol>
+<p>Na podstawie tego wykresu możemy zaobserwować:</p>
+<ol type="1">
+<li>Mediana wielkości okręgów dla Kraju Y jest nieznacznie wyższa niż dla Kraju X, co jest zgodne z naszymi wcześniejszymi obliczeniami.</li>
+<li>Pudełko dla Kraju X jest znacznie większe niż dla Kraju Y, co wskazuje na większe rozproszenie środkowych 50% danych, a tym samym wyższą zmienność.</li>
+<li>Dane Kraju X obejmują znacznie szerszy zakres, co widać po dłuższych wąsach, co dodatkowo potwierdza jego wyższą zmienność.</li>
+<li>Dane Kraju Y są bardziej skupione, z mniejszym pudełkiem i krótszymi wąsami, co wskazuje na niższą zmienność.</li>
+<li>Indywidualne punkty dla Kraju X są bardziej rozproszone, podczas gdy dla Kraju Y są bardziej skupione, co stanowi wizualną reprezentację różnicy w zmienności.</li>
+</ol>
+<p>Ta wizualizacja za pomocą wykresu pudełkowego wzmacnia naszą wcześniejszą analizę numeryczną, wyraźnie pokazując kontrast w zmienności wielkości okręgów wyborczych między dwoma krajami.</p>
+</section>
+</section>
+<section id="kluczowe-obserwacje-1" class="level3" data-number="20.2.8">
+<h3 data-number="20.2.8" class="anchored" data-anchor-id="kluczowe-obserwacje-1"><span class="header-section-number">20.2.8</span> Kluczowe Obserwacje</h3>
+<ol type="1">
+<li><p>Tendencja Centralna: Oba kraje mają podobne średnie i mediany, co wskazuje, że ich przeciętne wielkości okręgów są zbliżone.</p></li>
 <li><p>Rozproszenie:</p>
 <ul>
 <li>Kraj X wykazuje znacznie wyższą wariancję i odchylenie standardowe, potwierdzając jego wysoką zmienność.</li>
-<li>Rozstęp dla kraju X (18) jest ponad trzykrotnie większy niż dla kraju Y (5).</li>
-<li>IQR dla kraju X (12) jest czterokrotnie większy niż dla kraju Y (3), wskazując na znacznie szerszy rozrzut środkowych 50% danych.</li>
+<li>Rozstęp dla Kraju X (18) jest ponad trzy razy większy niż dla Kraju Y (5).</li>
+<li>IQR dla Kraju X (12) jest cztery razy większy niż dla Kraju Y (3), wskazując na znacznie szersze rozproszenie środkowych 50% danych.</li>
 </ul></li>
-<li><p>Kształt rozkładu:</p>
+<li><p>Kształt Rozkładu:</p>
 <ul>
-<li>Kraj X ma równomierny rozkład bez wyraźnej dominanty.</li>
+<li>Kraj X ma rozkład równomierny bez wyraźnej dominanty.</li>
 <li>Kraj Y ma bardziej skupiony rozkład z wieloma dominantami, wskazując na powszechne wielkości okręgów.</li>
 </ul></li>
-<li><p>Współczynnik zmienności:</p>
+<li><p>Współczynnik Zmienności:</p>
 <ul>
-<li>CV kraju X (60,6%) jest znacznie wyższy niż kraju Y (15,0%), dostarczając standaryzowanej miary różnicy w zmienności.</li>
+<li>CV Kraju X (60,6%) jest znacznie wyższy niż Kraju Y (15,0%), dostarczając standaryzowanej miary różnicy w zmienności.</li>
+</ul></li>
+<li><p>Porównanie Wizualne:</p>
+<ul>
+<li>Wykres pudełkowy wyraźnie ilustruje znaczącą różnicę w zmienności między dwoma krajami, potwierdzając nasze numeryczne odkrycia.</li>
 </ul></li>
 </ol>
 </section>
-<section id="wnioski-1" class="level3" data-number="20.2.8">
-<h3 data-number="20.2.8" class="anchored" data-anchor-id="wnioski-1"><span class="header-section-number">20.2.8</span> Wnioski</h3>
+<section id="wnioski-1" class="level3" data-number="20.2.9">
+<h3 data-number="20.2.9" class="anchored" data-anchor-id="wnioski-1"><span class="header-section-number">20.2.9</span> Wnioski</h3>
 <p>Ta analiza wyraźnie pokazuje kontrast w zmienności wielkości okręgów wyborczych między dwoma krajami:</p>
 <ol type="1">
-<li><p>Kraj X wykazuje wysoką zmienność, z wielkościami okręgów rozłożonymi szeroko od 1 do 19. Może to wskazywać na zróżnicowany system wyborczy z mieszanką małych (możliwe, że jednomandatowych) i dużych okręgów wielomandatowych.</p></li>
+<li><p>Kraj X wykazuje wysoką zmienność, z wielkościami okręgów rozproszonymi szeroko od 1 do 19. Może to wskazywać na zróżnicowany system wyborczy z mieszanką małych (prawdopodobnie jednomandatowych) i dużych okręgów wielomandatowych.</p></li>
 <li><p>Kraj Y wykazuje niską zmienność, z wielkościami okręgów ściśle skupionymi między 8 a 13. Sugeruje to bardziej jednolity system wyborczy, prawdopodobnie składający się z okręgów wielomandatowych średniej wielkości.</p></li>
 </ol>
-<p>Te różnice w zmienności mogą mieć istotne implikacje dla reprezentacji politycznej, strategii partyjnych i wyników wyborczych w każdym kraju. Wysoka zmienność (jak w kraju X) może prowadzić do bardziej zróżnicowanej reprezentacji, ale może również skutkować bardziej złożonymi strategiami wyborczymi. Niska zmienność (jak w kraju Y) może promować bardziej spójną reprezentację w okręgach, ale potencjalnie może ograniczać różnorodność głosów politycznych.</p>
+<p>Te różnice w zmienności mogą mieć istotne implikacje dla reprezentacji politycznej, strategii partyjnych i wyników wyborów w każdym kraju. Wysoka zmienność (jak w Kraju X) może prowadzić do bardziej zróżnicowanej reprezentacji, ale może również skutkować bardziej złożonymi strategiami wyborczymi. Niska zmienność (jak w Kraju Y) może sprzyjać bardziej spójnej reprezentacji w okręgach, ale potencjalnie ograniczać różnorodność głosów politycznych.</p>
+<p>Dodanie wykresu pudełkowego dostarcza potężnego narzędzia wizualnego do zrozumienia tych różnic, czyniąc kontrast między dwoma krajami natychmiast widocznym i uzupełniając szczegółową analizę numeryczną.</p>
 
 
 </section>
@@ -2143,8 +2207,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapter6.html" class="pagination-link" aria-label="Data Visualization: From Pen and Paper to R">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: From Pen and Paper to R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapter6.html" class="pagination-link" aria-label="Data Visualization: with examples in R">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
