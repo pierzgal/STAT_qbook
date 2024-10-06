@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) [working copy]</title>
+<title>2&nbsp; Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) [WORKING COPY]</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) [working copy]</a> 
+      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych) [WORKING COPY]</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -288,16 +288,24 @@ window.Quarto = {
   <li><a href="#r-w-analizie-danych-nauk-społecznych" id="toc-r-w-analizie-danych-nauk-społecznych" class="nav-link" data-scroll-target="#r-w-analizie-danych-nauk-społecznych"><span class="header-section-number">2.5.1</span> R w Analizie Danych Nauk Społecznych</a></li>
   </ul></li>
   <li><a href="#modele-w-nauce-od-deterministycznych-do-stochastycznych" id="toc-modele-w-nauce-od-deterministycznych-do-stochastycznych" class="nav-link" data-scroll-target="#modele-w-nauce-od-deterministycznych-do-stochastycznych"><span class="header-section-number">2.6</span> Modele w Nauce: Od Deterministycznych do Stochastycznych</a></li>
-  <li><a href="#modele-deterministyczne" id="toc-modele-deterministyczne" class="nav-link" data-scroll-target="#modele-deterministyczne"><span class="header-section-number">2.7</span> 1. Modele Deterministyczne</a>
+  <li><a href="#formy-modeli-w-nauce" id="toc-formy-modeli-w-nauce" class="nav-link" data-scroll-target="#formy-modeli-w-nauce"><span class="header-section-number">2.7</span> Formy Modeli w Nauce</a>
   <ul class="collapse">
-  <li><a href="#przykład-ruch-jednostajnie-przyspieszony" id="toc-przykład-ruch-jednostajnie-przyspieszony" class="nav-link" data-scroll-target="#przykład-ruch-jednostajnie-przyspieszony"><span class="header-section-number">2.7.1</span> Przykład: Ruch Jednostajnie Przyspieszony</a></li>
+  <li><a href="#modele-matematyczne" id="toc-modele-matematyczne" class="nav-link" data-scroll-target="#modele-matematyczne"><span class="header-section-number">2.7.1</span> Modele Matematyczne</a></li>
+  <li><a href="#modele-koncepcyjne" id="toc-modele-koncepcyjne" class="nav-link" data-scroll-target="#modele-koncepcyjne"><span class="header-section-number">2.7.2</span> Modele Koncepcyjne</a></li>
+  <li><a href="#modele-fizyczne" id="toc-modele-fizyczne" class="nav-link" data-scroll-target="#modele-fizyczne"><span class="header-section-number">2.7.3</span> Modele Fizyczne</a></li>
+  <li><a href="#modele-teoretyczne" id="toc-modele-teoretyczne" class="nav-link" data-scroll-target="#modele-teoretyczne"><span class="header-section-number">2.7.4</span> Modele Teoretyczne</a></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">2.7.5</span> Podsumowanie</a></li>
   </ul></li>
-  <li><a href="#modele-stochastyczne-w-naukach-społecznych" id="toc-modele-stochastyczne-w-naukach-społecznych" class="nav-link" data-scroll-target="#modele-stochastyczne-w-naukach-społecznych"><span class="header-section-number">2.8</span> 2. Modele Stochastyczne w Naukach Społecznych</a>
+  <li><a href="#modele-deterministyczne" id="toc-modele-deterministyczne" class="nav-link" data-scroll-target="#modele-deterministyczne"><span class="header-section-number">2.8</span> Modele Deterministyczne</a>
   <ul class="collapse">
-  <li><a href="#przykład-regresja-metodą-najmniejszych-kwadratów-ols" id="toc-przykład-regresja-metodą-najmniejszych-kwadratów-ols" class="nav-link" data-scroll-target="#przykład-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">2.8.1</span> Przykład: Regresja Metodą Najmniejszych Kwadratów (OLS)</a></li>
+  <li><a href="#przykład-ruch-jednostajnie-przyspieszony" id="toc-przykład-ruch-jednostajnie-przyspieszony" class="nav-link" data-scroll-target="#przykład-ruch-jednostajnie-przyspieszony"><span class="header-section-number">2.8.1</span> Przykład: Ruch Jednostajnie Przyspieszony</a></li>
   </ul></li>
-  <li><a href="#zaawansowane-modele-stochastyczne-duże-modele-językowe" id="toc-zaawansowane-modele-stochastyczne-duże-modele-językowe" class="nav-link" data-scroll-target="#zaawansowane-modele-stochastyczne-duże-modele-językowe"><span class="header-section-number">2.9</span> 3. Zaawansowane Modele Stochastyczne: Duże Modele Językowe</a></li>
-  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">2.10</span> Podsumowanie</a></li>
+  <li><a href="#modele-stochastyczne-w-naukach-społecznych" id="toc-modele-stochastyczne-w-naukach-społecznych" class="nav-link" data-scroll-target="#modele-stochastyczne-w-naukach-społecznych"><span class="header-section-number">2.9</span> Modele Stochastyczne w Naukach Społecznych</a>
+  <ul class="collapse">
+  <li><a href="#przykład-regresja-metodą-najmniejszych-kwadratów-ols" id="toc-przykład-regresja-metodą-najmniejszych-kwadratów-ols" class="nav-link" data-scroll-target="#przykład-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">2.9.1</span> Przykład: Regresja Metodą Najmniejszych Kwadratów (OLS)</a></li>
+  <li><a href="#zaawansowane-modele-stochastyczne-duże-modele-językowe" id="toc-zaawansowane-modele-stochastyczne-duże-modele-językowe" class="nav-link" data-scroll-target="#zaawansowane-modele-stochastyczne-duże-modele-językowe"><span class="header-section-number">2.9.2</span> Zaawansowane Modele Stochastyczne: Duże Modele Językowe</a></li>
+  </ul></li>
+  <li><a href="#podsumowanie-1" id="toc-podsumowanie-1" class="nav-link" data-scroll-target="#podsumowanie-1"><span class="header-section-number">2.10</span> Podsumowanie</a></li>
   <li><a href="#zrozumienie-pozornych-korelacji-zmiennych-zakłócających-i-kolizyjnych" id="toc-zrozumienie-pozornych-korelacji-zmiennych-zakłócających-i-kolizyjnych" class="nav-link" data-scroll-target="#zrozumienie-pozornych-korelacji-zmiennych-zakłócających-i-kolizyjnych"><span class="header-section-number">2.11</span> Zrozumienie Pozornych Korelacji, Zmiennych Zakłócających i Kolizyjnych</a></li>
   <li><a href="#pozorne-korelacje" id="toc-pozorne-korelacje" class="nav-link" data-scroll-target="#pozorne-korelacje"><span class="header-section-number">2.12</span> Pozorne Korelacje</a>
   <ul class="collapse">
@@ -311,11 +319,21 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#przykład-satysfakcja-z-pracy-wynagrodzenie-i-równowaga-między-pracą-a-życiem-prywatnym" id="toc-przykład-satysfakcja-z-pracy-wynagrodzenie-i-równowaga-między-pracą-a-życiem-prywatnym" class="nav-link" data-scroll-target="#przykład-satysfakcja-z-pracy-wynagrodzenie-i-równowaga-między-pracą-a-życiem-prywatnym"><span class="header-section-number">2.14.1</span> Przykład: Satysfakcja z pracy, Wynagrodzenie i Równowaga między pracą a życiem prywatnym</a></li>
   </ul></li>
-  <li><a href="#podsumowanie-1" id="toc-podsumowanie-1" class="nav-link" data-scroll-target="#podsumowanie-1"><span class="header-section-number">2.15</span> Podsumowanie</a></li>
+  <li><a href="#podsumowanie-2" id="toc-podsumowanie-2" class="nav-link" data-scroll-target="#podsumowanie-2"><span class="header-section-number">2.15</span> Podsumowanie</a></li>
   <li><a href="#dalsza-lektura" id="toc-dalsza-lektura" class="nav-link" data-scroll-target="#dalsza-lektura"><span class="header-section-number">2.16</span> Dalsza Lektura</a></li>
   <li><a href="#etyczne-aspekty-w-analizie-danych-nauk-społecznych" id="toc-etyczne-aspekty-w-analizie-danych-nauk-społecznych" class="nav-link" data-scroll-target="#etyczne-aspekty-w-analizie-danych-nauk-społecznych"><span class="header-section-number">2.17</span> Etyczne Aspekty w Analizie Danych Nauk Społecznych</a></li>
   <li><a href="#kluczowe-wnioski" id="toc-kluczowe-wnioski" class="nav-link" data-scroll-target="#kluczowe-wnioski"><span class="header-section-number">2.18</span> Kluczowe Wnioski</a></li>
   <li><a href="#następne-kroki" id="toc-następne-kroki" class="nav-link" data-scroll-target="#następne-kroki"><span class="header-section-number">2.19</span> Następne Kroki</a></li>
+  <li><a href="#appendix---losowość-klasyczna-a-kwantowa-zrozumienie-fundamentalnych-różnic" id="toc-appendix---losowość-klasyczna-a-kwantowa-zrozumienie-fundamentalnych-różnic" class="nav-link" data-scroll-target="#appendix---losowość-klasyczna-a-kwantowa-zrozumienie-fundamentalnych-różnic"><span class="header-section-number">2.20</span> Appendix - Losowość Klasyczna a Kwantowa: Zrozumienie Fundamentalnych Różnic</a>
+  <ul class="collapse">
+  <li><a href="#pochodzenie-losowości" id="toc-pochodzenie-losowości" class="nav-link" data-scroll-target="#pochodzenie-losowości"><span class="header-section-number">2.20.1</span> Pochodzenie Losowości</a></li>
+  <li><a href="#implikacje-filozoficzne" id="toc-implikacje-filozoficzne" class="nav-link" data-scroll-target="#implikacje-filozoficzne"><span class="header-section-number">2.20.2</span> Implikacje Filozoficzne</a></li>
+  <li><a href="#ujęcie-matematyczne" id="toc-ujęcie-matematyczne" class="nav-link" data-scroll-target="#ujęcie-matematyczne"><span class="header-section-number">2.20.3</span> Ujęcie Matematyczne</a></li>
+  <li><a href="#przewidywalność-i-kontrola" id="toc-przewidywalność-i-kontrola" class="nav-link" data-scroll-target="#przewidywalność-i-kontrola"><span class="header-section-number">2.20.4</span> Przewidywalność i Kontrola</a></li>
+  <li><a href="#praktyczne-implikacje" id="toc-praktyczne-implikacje" class="nav-link" data-scroll-target="#praktyczne-implikacje"><span class="header-section-number">2.20.5</span> Praktyczne Implikacje</a></li>
+  <li><a href="#przykłady-pomagające-zrozumieć-różnicę" id="toc-przykłady-pomagające-zrozumieć-różnicę" class="nav-link" data-scroll-target="#przykłady-pomagające-zrozumieć-różnicę"><span class="header-section-number">2.20.6</span> Przykłady Pomagające Zrozumieć Różnicę</a></li>
+  <li><a href="#podsumowanie-3" id="toc-podsumowanie-3" class="nav-link" data-scroll-target="#podsumowanie-3"><span class="header-section-number">2.20.7</span> Podsumowanie</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -767,11 +785,75 @@ Note
 </div>
 </div>
 </section>
-<section id="modele-deterministyczne" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="modele-deterministyczne"><span class="header-section-number">2.7</span> 1. Modele Deterministyczne</h2>
+<section id="formy-modeli-w-nauce" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="formy-modeli-w-nauce"><span class="header-section-number">2.7</span> Formy Modeli w Nauce</h2>
+<p>Modele są niezbędnymi narzędziami w badaniach naukowych, pomagając naukowcom reprezentować, rozumieć i przewidywać złożone zjawiska. Ta sekcja omawia główne typy modeli stosowanych w nauce, wraz z przykładami ich zastosowań. Należy pamiętać, że te kategorie często się nakładają, a wiele modeli naukowych łączy w sobie różne aspekty.</p>
+<section id="modele-matematyczne" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="modele-matematyczne"><span class="header-section-number">2.7.1</span> Modele Matematyczne</h3>
+<p>Modele matematyczne wykorzystują równania i koncepcje matematyczne do opisywania i analizowania systemów lub zjawisk. Można je podzielić na kilka podkategorii, choć należy pamiętać, że niektóre złożone modele mogą zawierać elementy z wielu kategorii:</p>
+<section id="a.-modele-deterministyczne" class="level4" data-number="2.7.1.1">
+<h4 data-number="2.7.1.1" class="anchored" data-anchor-id="a.-modele-deterministyczne"><span class="header-section-number">2.7.1.1</span> a. Modele Deterministyczne</h4>
+<p>Modele deterministyczne dostarczają precyzyjnych przewidywań na podstawie zestawu zmiennych, bez uwzględniania losowości na poziomie makroskopowym.</p>
+<p><strong>Przykład:</strong> Prawa ruchu Newtona, które mogą precyzyjnie przewidzieć ruch obiektów pod wpływem znanych sił w mechanice klasycznej.</p>
+</section>
+<section id="b.-modele-stochastyczne" class="level4" data-number="2.7.1.2">
+<h4 data-number="2.7.1.2" class="anchored" data-anchor-id="b.-modele-stochastyczne"><span class="header-section-number">2.7.1.2</span> b. Modele Stochastyczne</h4>
+<p>Modele stochastyczne uwzględniają losowość i prawdopodobieństwo. Jednak kluczowe jest rozróżnienie dwóch fundamentalnie różnych typów modeli stochastycznych:</p>
+<section id="i.-klasyczne-modele-stochastyczne" class="level5" data-number="2.7.1.2.1">
+<h5 data-number="2.7.1.2.1" class="anchored" data-anchor-id="i.-klasyczne-modele-stochastyczne"><span class="header-section-number">2.7.1.2.1</span> i. Klasyczne Modele Stochastyczne</h5>
+<p>Te modele zajmują się losowością wynikającą z niepełnej informacji lub złożonych interakcji w systemach klasycznych. Podstawowy system jest deterministyczny, ale praktyczne ograniczenia w pomiarach lub obliczeniach prowadzą do użycia opisów probabilistycznych.</p>
+<p><strong>Przykład:</strong> Modele regresji w statystyce, gdzie losowość reprezentuje niewyjaśnioną zmienność lub błąd pomiaru:</p>
+<p><span class="math display">\[y = β_0 + β_1x + ε\]</span></p>
+<p>Gdzie: - <span class="math inline">\(y\)</span> to zmienna zależna - <span class="math inline">\(x\)</span> to zmienna niezależna - <span class="math inline">\(β_0\)</span> i <span class="math inline">\(β_1\)</span> to parametry - <span class="math inline">\(ε\)</span> to składnik błędu, reprezentujący niewyjaśnioną zmienność</p>
+</section>
+<section id="ii.-kwantowe-modele-stochastyczne" class="level5" data-number="2.7.1.2.2">
+<h5 data-number="2.7.1.2.2" class="anchored" data-anchor-id="ii.-kwantowe-modele-stochastyczne"><span class="header-section-number">2.7.1.2.2</span> ii. Kwantowe Modele Stochastyczne</h5>
+<p>Te modele zajmują się fundamentalną, nieredukowalną losowością nieodłącznie związaną z systemami mechaniki kwantowej. Ta losowość nie wynika z braku informacji, ale jest podstawową cechą rzeczywistości kwantowej.</p>
+<p><strong>Przykład:</strong> Model Standardowy w fizyce cząstek elementarnych, który opisuje interakcje cząstek za pomocą kwantowej teorii pola. Na przykład, rozpad cząstki jest z natury probabilistyczny:</p>
+<p><span class="math display">\[P(t) = e^{-t/τ}\]</span></p>
+<p>Gdzie: - <span class="math inline">\(P(t)\)</span> to prawdopodobieństwo, że cząstka nie rozpadła się po czasie t - <span class="math inline">\(τ\)</span> to średni czas życia cząstki</p>
+</section>
+</section>
+<section id="c.-modele-symulacji-komputerowych" class="level4" data-number="2.7.1.3">
+<h4 data-number="2.7.1.3" class="anchored" data-anchor-id="c.-modele-symulacji-komputerowych"><span class="header-section-number">2.7.1.3</span> c.&nbsp;Modele Symulacji Komputerowych</h4>
+<p>Symulacje komputerowe wykorzystują algorytmy i metody obliczeniowe oparte na modelach matematycznych do symulowania złożonych systemów i przewidywania ich zachowania w czasie. Mogą być deterministyczne lub stochastyczne.</p>
+<p><strong>Przykład:</strong> Modele klimatyczne symulujące system klimatyczny Ziemi, uwzględniające czynniki takie jak skład atmosfery, prądy oceaniczne i promieniowanie słoneczne do prognozowania przyszłych scenariuszy klimatycznych.</p>
+</section>
+</section>
+<section id="modele-koncepcyjne" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="modele-koncepcyjne"><span class="header-section-number">2.7.2</span> Modele Koncepcyjne</h3>
+<p>Modele koncepcyjne to abstrakcyjne reprezentacje systemów lub procesów, często wykorzystujące diagramy lub schematy blokowe do ilustrowania relacji między komponentami.</p>
+<p><strong>Przykład:</strong> Model obiegu wody w naukach o Ziemi, który ilustruje ciągły ruch wody w obrębie Ziemi i atmosfery poprzez procesy takie jak parowanie, opady i spływ powierzchniowy.</p>
+</section>
+<section id="modele-fizyczne" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="modele-fizyczne"><span class="header-section-number">2.7.3</span> Modele Fizyczne</h3>
+<p>Modele fizyczne to namacalne reprezentacje obiektów lub systemów, często w formie pomniejszonej lub uproszczonej wersji rzeczywistego obiektu.</p>
+<p><strong>Przykład:</strong> Modele tunelu aerodynamicznego w badaniach aerodynamiki, używane do badania efektów przepływu powietrza wokół obiektów stałych i optymalizacji projektów samolotów, pojazdów lub budynków.</p>
+</section>
+<section id="modele-teoretyczne" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="modele-teoretyczne"><span class="header-section-number">2.7.4</span> Modele Teoretyczne</h3>
+<p>Modele teoretyczne to abstrakcyjne ramy oparte na fundamentalnych zasadach i hipotezach, często używane do wyjaśniania obserwowanych zjawisk lub przewidywania nowych. Te modele często wykorzystują równania matematyczne i mogą być deterministyczne lub stochastyczne.</p>
+<p><strong>Przykład:</strong> Teoria ewolucji poprzez dobór naturalny, która dostarcza ram do zrozumienia różnorodności i adaptacji form życia w czasie.</p>
+</section>
+<section id="podsumowanie" class="level3" data-number="2.7.5">
+<h3 data-number="2.7.5" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">2.7.5</span> Podsumowanie</h3>
+<p>Te różne formy modeli odgrywają kluczową rolę w badaniach naukowych, każda oferując unikalne zalety dla zrozumienia i przewidywania zjawisk naturalnych. Naukowcy często używają wielu typów modeli jednocześnie, aby uzyskać kompleksowy wgląd w złożone systemy i procesy.</p>
+<p>Ważne jest, aby zdawać sobie sprawę, że te kategorie nie są wzajemnie wykluczające i często się nakładają:</p>
+<ol type="1">
+<li>Modele matematyczne stanowią podstawę dla wielu innych typów modeli, w tym symulacji komputerowych i niektórych modeli teoretycznych.</li>
+<li>Modele symulacji komputerowych są zasadniczo modelami matematycznymi implementowanymi za pomocą metod obliczeniowych i mogą być deterministyczne lub stochastyczne.</li>
+<li>Modele teoretyczne często wykorzystują sformułowania matematyczne i mogą być implementowane jako symulacje komputerowe.</li>
+<li>Modele fizyczne mogą być projektowane na podstawie modeli matematycznych i mogą być używane do walidacji symulacji komputerowych.</li>
+</ol>
+<p>Wybór typu modelu często zależy od konkretnego pytania badawczego, natury badanego systemu, dostępnych danych oraz zasobów obliczeniowych. W miarę postępu nauki granice między tymi typami modeli coraz bardziej się zacierają, prowadząc do coraz bardziej wyrafinowanych i interdyscyplinarnych podejść do modelowania złożonych zjawisk.</p>
+<p>Kluczowe jest rozróżnienie różnych typów modeli stochastycznych. Klasyczne modele stochastyczne, takie jak te używane w analizie regresji, zajmują się losowością wynikającą z niepełnej informacji lub złożonych interakcji w systemach, które są zasadniczo deterministyczne. Z drugiej strony, kwantowe modele stochastyczne, jak te w fizyce cząstek, zajmują się fundamentalną, nieredukowalną losowością nieodłącznie związaną z systemami mechaniki kwantowej. To rozróżnienie odzwierciedla głębokie różnice między klasycznymi a kwantowymi paradygmatami w fizyce i podkreśla różnorodne sposoby, w jakie prawdopodobieństwo jest wykorzystywane w modelowaniu naukowym.</p>
+</section>
+</section>
+<section id="modele-deterministyczne" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="modele-deterministyczne"><span class="header-section-number">2.8</span> Modele Deterministyczne</h2>
 <p>Modele deterministyczne to te, w których wynik jest w pełni określony przez wartości parametrów i warunki początkowe. Modele te są często używane w fizyce i inżynierii.</p>
-<section id="przykład-ruch-jednostajnie-przyspieszony" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="przykład-ruch-jednostajnie-przyspieszony"><span class="header-section-number">2.7.1</span> Przykład: Ruch Jednostajnie Przyspieszony</h3>
+<section id="przykład-ruch-jednostajnie-przyspieszony" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="przykład-ruch-jednostajnie-przyspieszony"><span class="header-section-number">2.8.1</span> Przykład: Ruch Jednostajnie Przyspieszony</h3>
 <p>Klasycznym przykładem modelu deterministycznego jest ruch jednostajnie przyspieszony, opisany równaniem:</p>
 <p><span class="math display">\[x(t) = x_0 + v_0t + \frac{1}{2}at^2\]</span></p>
 <p>Gdzie:</p>
@@ -807,11 +889,11 @@ Note
 <p>Ten kod wygeneruje wykres ruchu jednostajnie przyspieszonego, który jest prostszym i bardziej intuicyjnym przykładem z dynamiki Newtona. W tym przypadku obiekt zaczyna ruch z początkową prędkością i przyspiesza jednostajnie, co prowadzi do parabolicznej trajektorii na wykresie położenia w funkcji czasu.</p>
 </section>
 </section>
-<section id="modele-stochastyczne-w-naukach-społecznych" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="modele-stochastyczne-w-naukach-społecznych"><span class="header-section-number">2.8</span> 2. Modele Stochastyczne w Naukach Społecznych</h2>
+<section id="modele-stochastyczne-w-naukach-społecznych" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="modele-stochastyczne-w-naukach-społecznych"><span class="header-section-number">2.9</span> Modele Stochastyczne w Naukach Społecznych</h2>
 <p>Modele stochastyczne uwzględniają losowość i są często używane w naukach społecznych, gdzie istnieje nieodłączna niepewność w badanych systemach.</p>
-<section id="przykład-regresja-metodą-najmniejszych-kwadratów-ols" class="level3" data-number="2.8.1">
-<h3 data-number="2.8.1" class="anchored" data-anchor-id="przykład-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">2.8.1</span> Przykład: Regresja Metodą Najmniejszych Kwadratów (OLS)</h3>
+<section id="przykład-regresja-metodą-najmniejszych-kwadratów-ols" class="level3" data-number="2.9.1">
+<h3 data-number="2.9.1" class="anchored" data-anchor-id="przykład-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">2.9.1</span> Przykład: Regresja Metodą Najmniejszych Kwadratów (OLS)</h3>
 <p>OLS to podstawowy model stochastyczny w naukach społecznych. Jest reprezentowany jako:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
 <p>Gdzie:</p>
@@ -872,9 +954,8 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </section>
-</section>
-<section id="zaawansowane-modele-stochastyczne-duże-modele-językowe" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="zaawansowane-modele-stochastyczne-duże-modele-językowe"><span class="header-section-number">2.9</span> 3. Zaawansowane Modele Stochastyczne: Duże Modele Językowe</h2>
+<section id="zaawansowane-modele-stochastyczne-duże-modele-językowe" class="level3" data-number="2.9.2">
+<h3 data-number="2.9.2" class="anchored" data-anchor-id="zaawansowane-modele-stochastyczne-duże-modele-językowe"><span class="header-section-number">2.9.2</span> Zaawansowane Modele Stochastyczne: Duże Modele Językowe</h3>
 <p>Duże Modele Językowe (LLM), takie jak GPT-3, to złożone modele stochastyczne używane w przetwarzaniu języka naturalnego. Chociaż nie możemy zaimplementować pełnego LLM w tym tutorialu, możemy omówić jego zasady.</p>
 <p>LLM opierają się na architekturze transformatora i wykorzystują mechanizmy samouwagi. Są trenowane na ogromnych ilościach danych tekstowych i uczą się przewidywać następny token w sekwencji.</p>
 <p>Rdzeń LLM można postrzegać jako warunkowy rozkład prawdopodobieństwa:</p>
@@ -899,8 +980,9 @@ Note
 </div>
 <p>W przeciwieństwie do modeli deterministycznych, LLM produkują różne wyniki nawet dla tego samego wejścia ze względu na ich stochastyczną naturę.</p>
 </section>
-<section id="podsumowanie" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">2.10</span> Podsumowanie</h2>
+</section>
+<section id="podsumowanie-1" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="podsumowanie-1"><span class="header-section-number">2.10</span> Podsumowanie</h2>
 <p>Każdy rodzaj modelu ma swoje miejsce w nauce, w zależności od badanego systemu i poziomu niepewności.</p>
 <p>Pamiętaj, że wybór między modelami deterministycznymi a stochastycznymi często zależy od natury badanego systemu i pytań, na które próbujesz odpowiedzieć. Modele deterministyczne są świetne dla systemów o dobrze zrozumiałej mechanice, podczas gdy modele stochastyczne sprawdzają się przy radzeniu sobie z nieodłączną losowością lub złożonymi, nie w pełni zrozumiałymi systemami.</p>
 </section>
@@ -1086,8 +1168,8 @@ colour.
 <p>Kontrolowanie zmiennej kolizyjnej (równowaga praca-życie) wprowadza pozorną korelację między satysfakcją z pracy a wynagrodzeniem.</p>
 </section>
 </section>
-<section id="podsumowanie-1" class="level2" data-number="2.15">
-<h2 data-number="2.15" class="anchored" data-anchor-id="podsumowanie-1"><span class="header-section-number">2.15</span> Podsumowanie</h2>
+<section id="podsumowanie-2" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="podsumowanie-2"><span class="header-section-number">2.15</span> Podsumowanie</h2>
 <p>Zrozumienie pozornych korelacji, zmiennych zakłócających i kolizyjnych jest kluczowe dla prawidłowej analizy statystycznej i wnioskowania przyczynowego. Zawsze rozważ podstawową strukturę przyczynową swoich danych i bądź ostrożny w kwestii tego, które zmienne kontrolujesz w swoich analizach.</p>
 </section>
 <section id="dalsza-lektura" class="level2" data-number="2.16">
@@ -1147,8 +1229,121 @@ Ważne
 <p>Wykorzystując koncepcje poznane w tym rozdziale, zaprojektuj małe badanie na wybrany temat z nauk społecznych. Określ populację, zastanów się, jak wybrałbyś próbę i przemyśl potencjalny proces generowania danych. Jakie aspekty etyczne należałoby uwzględnić?</p>
 </div>
 </div>
+</section>
+<section id="appendix---losowość-klasyczna-a-kwantowa-zrozumienie-fundamentalnych-różnic" class="level2" data-number="2.20">
+<h2 data-number="2.20" class="anchored" data-anchor-id="appendix---losowość-klasyczna-a-kwantowa-zrozumienie-fundamentalnych-różnic"><span class="header-section-number">2.20</span> Appendix - Losowość Klasyczna a Kwantowa: Zrozumienie Fundamentalnych Różnic</h2>
+<p>Aby zrozumieć, jak losowość w mechanice kwantowej różni się od losowości reprezentowanej przez składnik błędu w modelach regresji, musimy przeanalizować ich pochodzenie, naturę i implikacje.</p>
+<section id="pochodzenie-losowości" class="level3" data-number="2.20.1">
+<h3 data-number="2.20.1" class="anchored" data-anchor-id="pochodzenie-losowości"><span class="header-section-number">2.20.1</span> Pochodzenie Losowości</h3>
+<section id="losowość-klasyczna-modele-regresji" class="level4" data-number="2.20.1.1">
+<h4 data-number="2.20.1.1" class="anchored" data-anchor-id="losowość-klasyczna-modele-regresji"><span class="header-section-number">2.20.1.1</span> Losowość Klasyczna (Modele Regresji)</h4>
+<ul>
+<li><strong>Źródło</strong>: Niekompletna informacja lub złożone interakcje w systemie, który w zasadzie jest deterministyczny.</li>
+<li><strong>Natura</strong>: Niepewność epistemiczna (wynikająca z braku wiedzy).</li>
+<li><strong>Przykład</strong>: W modelu regresji, <span class="math inline">\(y = β_0 + β_1x + ε\)</span>, składnik błędu ε reprezentuje niewyjaśnioną zmienność.</li>
+</ul>
+</section>
+<section id="losowość-kwantowa" class="level4" data-number="2.20.1.2">
+<h4 data-number="2.20.1.2" class="anchored" data-anchor-id="losowość-kwantowa"><span class="header-section-number">2.20.1.2</span> Losowość Kwantowa</h4>
+<ul>
+<li><strong>Źródło</strong>: Fundamentalna właściwość systemów kwantowych.</li>
+<li><strong>Natura</strong>: Niepewność ontyczna (nieodłączna cecha systemu, nie wynika z braku wiedzy).</li>
+<li><strong>Przykład</strong>: Dokładny moment rozpadu atomu radioaktywnego nie może być przewidziany, można określić jedynie jego prawdopodobieństwo.</li>
+</ul>
+</section>
+</section>
+<section id="implikacje-filozoficzne" class="level3" data-number="2.20.2">
+<h3 data-number="2.20.2" class="anchored" data-anchor-id="implikacje-filozoficzne"><span class="header-section-number">2.20.2</span> Implikacje Filozoficzne</h3>
+<section id="losowość-klasyczna" class="level4" data-number="2.20.2.1">
+<h4 data-number="2.20.2.1" class="anchored" data-anchor-id="losowość-klasyczna"><span class="header-section-number">2.20.2.1</span> Losowość Klasyczna</h4>
+<ul>
+<li><strong>Determinizm</strong>: Podstawowa rzeczywistość jest deterministyczna; losowość odzwierciedla naszą niewiedzę.</li>
+<li><strong>Ukryte Zmienne</strong>: W zasadzie, gdybyśmy mieli pełną informację, moglibyśmy dokładnie przewidzieć wyniki.</li>
+</ul>
+</section>
+<section id="losowość-kwantowa-1" class="level4" data-number="2.20.2.2">
+<h4 data-number="2.20.2.2" class="anchored" data-anchor-id="losowość-kwantowa-1"><span class="header-section-number">2.20.2.2</span> Losowość Kwantowa</h4>
+<ul>
+<li><strong>Indeterminizm</strong>: Losowość jest fundamentalną cechą rzeczywistości, nie tylko naszego jej opisu.</li>
+<li><strong>Brak Ukrytych Zmiennych</strong>: Nawet przy pełnej informacji o systemie kwantowym, niektóre wyniki pozostają nieprzewidywalne (co sugeruje twierdzenie Bella).</li>
+</ul>
+</section>
+</section>
+<section id="ujęcie-matematyczne" class="level3" data-number="2.20.3">
+<h3 data-number="2.20.3" class="anchored" data-anchor-id="ujęcie-matematyczne"><span class="header-section-number">2.20.3</span> Ujęcie Matematyczne</h3>
+<section id="losowość-klasyczna-1" class="level4" data-number="2.20.3.1">
+<h4 data-number="2.20.3.1" class="anchored" data-anchor-id="losowość-klasyczna-1"><span class="header-section-number">2.20.3.1</span> Losowość Klasyczna</h4>
+<ul>
+<li><strong>Teoria Prawdopodobieństwa</strong>: Oparta na klasycznej teorii prawdopodobieństwa.</li>
+<li><strong>Rozkład</strong>: Często zakłada się znane rozkłady (np. rozkład normalny w wielu modelach regresji).</li>
+<li><strong>Centralne Twierdzenie Graniczne</strong>: Stosuje się do dużych prób zmiennych losowych.</li>
+</ul>
+</section>
+<section id="losowość-kwantowa-2" class="level4" data-number="2.20.3.2">
+<h4 data-number="2.20.3.2" class="anchored" data-anchor-id="losowość-kwantowa-2"><span class="header-section-number">2.20.3.2</span> Losowość Kwantowa</h4>
+<ul>
+<li><strong>Prawdopodobieństwo Kwantowe</strong>: Oparte na matematycznych podstawach mechaniki kwantowej.</li>
+<li><strong>Funkcja Falowa</strong>: Opisuje stan kwantowy i jego ewolucję.</li>
+<li><strong>Reguła Borna</strong>: Określa prawdopodobieństwa wyników pomiarów na podstawie funkcji falowej.</li>
+</ul>
+</section>
+</section>
+<section id="przewidywalność-i-kontrola" class="level3" data-number="2.20.4">
+<h3 data-number="2.20.4" class="anchored" data-anchor-id="przewidywalność-i-kontrola"><span class="header-section-number">2.20.4</span> Przewidywalność i Kontrola</h3>
+<section id="losowość-klasyczna-2" class="level4" data-number="2.20.4.1">
+<h4 data-number="2.20.4.1" class="anchored" data-anchor-id="losowość-klasyczna-2"><span class="header-section-number">2.20.4.1</span> Losowość Klasyczna</h4>
+<ul>
+<li><strong>Redukowalna</strong>: W zasadzie można ją zmniejszyć, zbierając więcej danych lub poprawiając dokładność pomiarów.</li>
+<li><strong>Kontrolowalna</strong>: Błędy systematyczne można zidentyfikować i skorygować.</li>
+</ul>
+</section>
+<section id="losowość-kwantowa-3" class="level4" data-number="2.20.4.2">
+<h4 data-number="2.20.4.2" class="anchored" data-anchor-id="losowość-kwantowa-3"><span class="header-section-number">2.20.4.2</span> Losowość Kwantowa</h4>
+<ul>
+<li><strong>Nieredukowalna</strong>: Nie można jej wyeliminować nawet przy idealnych pomiarach.</li>
+<li><strong>Fundamentalnie Niekontrolowalna</strong>: Sam akt pomiaru wpływa na system (problem pomiaru).</li>
+</ul>
+</section>
+</section>
+<section id="praktyczne-implikacje" class="level3" data-number="2.20.5">
+<h3 data-number="2.20.5" class="anchored" data-anchor-id="praktyczne-implikacje"><span class="header-section-number">2.20.5</span> Praktyczne Implikacje</h3>
+<section id="losowość-klasyczna-3" class="level4" data-number="2.20.5.1">
+<h4 data-number="2.20.5.1" class="anchored" data-anchor-id="losowość-klasyczna-3"><span class="header-section-number">2.20.5.1</span> Losowość Klasyczna</h4>
+<ul>
+<li><strong>Redukcja Błędów</strong>: Koncentracja na udoskonalaniu technik pomiarowych i zbierania danych.</li>
+<li><strong>Udoskonalanie Modelu</strong>: Dążenie do wyjaśnienia większej wariancji i zmniejszenia składnika błędu.</li>
+</ul>
+</section>
+<section id="losowość-kwantowa-4" class="level4" data-number="2.20.5.2">
+<h4 data-number="2.20.5.2" class="anchored" data-anchor-id="losowość-kwantowa-4"><span class="header-section-number">2.20.5.2</span> Losowość Kwantowa</h4>
+<ul>
+<li><strong>Nieodłączne Ograniczenie</strong>: Akceptacja fundamentalnych granic przewidywalności.</li>
+<li><strong>Przewidywania Probabilistyczne</strong>: Skupienie na dokładnych rozkładach prawdopodobieństwa zamiast na dokładnych wynikach.</li>
+</ul>
+</section>
+</section>
+<section id="przykłady-pomagające-zrozumieć-różnicę" class="level3" data-number="2.20.6">
+<h3 data-number="2.20.6" class="anchored" data-anchor-id="przykłady-pomagające-zrozumieć-różnicę"><span class="header-section-number">2.20.6</span> Przykłady Pomagające Zrozumieć Różnicę</h3>
+<section id="przykład-losowości-klasycznej" class="level4" data-number="2.20.6.1">
+<h4 data-number="2.20.6.1" class="anchored" data-anchor-id="przykład-losowości-klasycznej"><span class="header-section-number">2.20.6.1</span> Przykład Losowości Klasycznej</h4>
+<p>Wyobraź sobie rzut monetą. Fizyka klasyczna mówi, że wynik jest zdeterminowany przez warunki początkowe (przyłożona siła, opór powietrza itp.). “Losowość” wynika z naszej niezdolności do precyzyjnego zmierzenia i uwzględnienia wszystkich tych czynników.</p>
+</section>
+<section id="przykład-losowości-kwantowej" class="level4" data-number="2.20.6.2">
+<h4 data-number="2.20.6.2" class="anchored" data-anchor-id="przykład-losowości-kwantowej"><span class="header-section-number">2.20.6.2</span> Przykład Losowości Kwantowej</h4>
+<p>W eksperymencie z podwójną szczeliną pojedyncze cząstki wykazują wzory interferencyjne, jakby przechodziły przez obie szczeliny jednocześnie. Dokładna ścieżka każdej pojedynczej cząstki jest fundamentalnie nieokreślona do momentu pomiaru, a tej nieokreśloności nie można rozwiązać przez bardziej precyzyjne pomiary.</p>
+</section>
+</section>
+<section id="podsumowanie-3" class="level3" data-number="2.20.7">
+<h3 data-number="2.20.7" class="anchored" data-anchor-id="podsumowanie-3"><span class="header-section-number">2.20.7</span> Podsumowanie</h3>
+<p>Chociaż oba rodzaje losowości prowadzą do probabilistycznych przewidywań, ich fundamentalne natury są zupełnie różne:</p>
+<ul>
+<li>Losowość klasyczna w modelach regresji jest odzwierciedleniem naszej niepełnej wiedzy lub ograniczeń pomiarowych w systemie, który w zasadzie jest deterministyczny.</li>
+<li>Losowość kwantowa jest fundamentalną właściwością systemów kwantowych, reprezentującą nieodłączną nieokreśloność w naturze, która utrzymuje się nawet przy doskonałej wiedzy i pomiarze.</li>
+</ul>
+<p>Zrozumienie tych różnic jest kluczowe dla prawidłowej interpretacji i stosowania modeli statystycznych w różnych kontekstach naukowych, od nauk społecznych wykorzystujących analizę regresji po eksperymenty z fizyki kwantowej.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
