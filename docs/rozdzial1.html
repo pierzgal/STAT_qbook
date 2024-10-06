@@ -250,7 +250,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: From Pen and Paper to R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wizualizacja Danych: z przykładami w R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -276,7 +282,7 @@ window.Quarto = {
   <li><a href="#populacja-statystyczna-próba-i-proces-generowania-danych" id="toc-populacja-statystyczna-próba-i-proces-generowania-danych" class="nav-link" data-scroll-target="#populacja-statystyczna-próba-i-proces-generowania-danych"><span class="header-section-number">2.3.1</span> Populacja Statystyczna, Próba i Proces Generowania Danych</a></li>
   <li><a href="#rodzaje-danych-w-naukach-społecznych" id="toc-rodzaje-danych-w-naukach-społecznych" class="nav-link" data-scroll-target="#rodzaje-danych-w-naukach-społecznych"><span class="header-section-number">2.3.2</span> Rodzaje Danych w Naukach Społecznych</a></li>
   </ul></li>
-  <li><a href="#główne-komponenty-nauki-o-danych-w-badaniach-społecznych" id="toc-główne-komponenty-nauki-o-danych-w-badaniach-społecznych" class="nav-link" data-scroll-target="#główne-komponenty-nauki-o-danych-w-badaniach-społecznych"><span class="header-section-number">2.4</span> Główne Komponenty Nauki o Danych w Badaniach Społecznych</a></li>
+  <li><a href="#główne-komponenty-nauki-o-danych-w-badaniach-naukowych" id="toc-główne-komponenty-nauki-o-danych-w-badaniach-naukowych" class="nav-link" data-scroll-target="#główne-komponenty-nauki-o-danych-w-badaniach-naukowych"><span class="header-section-number">2.4</span> Główne Komponenty Nauki o Danych w Badaniach Naukowych</a></li>
   <li><a href="#narzędzia-do-nauki-o-danych-w-naukach-społecznych" id="toc-narzędzia-do-nauki-o-danych-w-naukach-społecznych" class="nav-link" data-scroll-target="#narzędzia-do-nauki-o-danych-w-naukach-społecznych"><span class="header-section-number">2.5</span> Narzędzia do Nauki o Danych w Naukach Społecznych</a>
   <ul class="collapse">
   <li><a href="#r-w-analizie-danych-nauk-społecznych" id="toc-r-w-analizie-danych-nauk-społecznych" class="nav-link" data-scroll-target="#r-w-analizie-danych-nauk-społecznych"><span class="header-section-number">2.5.1</span> R w Analizie Danych Nauk Społecznych</a></li>
@@ -284,7 +290,7 @@ window.Quarto = {
   <li><a href="#modele-w-nauce-od-deterministycznych-do-stochastycznych" id="toc-modele-w-nauce-od-deterministycznych-do-stochastycznych" class="nav-link" data-scroll-target="#modele-w-nauce-od-deterministycznych-do-stochastycznych"><span class="header-section-number">2.6</span> Modele w Nauce: Od Deterministycznych do Stochastycznych</a></li>
   <li><a href="#modele-deterministyczne" id="toc-modele-deterministyczne" class="nav-link" data-scroll-target="#modele-deterministyczne"><span class="header-section-number">2.7</span> 1. Modele Deterministyczne</a>
   <ul class="collapse">
-  <li><a href="#przykład-ruch-harmoniczny-prosty" id="toc-przykład-ruch-harmoniczny-prosty" class="nav-link" data-scroll-target="#przykład-ruch-harmoniczny-prosty"><span class="header-section-number">2.7.1</span> Przykład: Ruch Harmoniczny Prosty</a></li>
+  <li><a href="#przykład-ruch-jednostajnie-przyspieszony" id="toc-przykład-ruch-jednostajnie-przyspieszony" class="nav-link" data-scroll-target="#przykład-ruch-jednostajnie-przyspieszony"><span class="header-section-number">2.7.1</span> Przykład: Ruch Jednostajnie Przyspieszony</a></li>
   </ul></li>
   <li><a href="#modele-stochastyczne-w-naukach-społecznych" id="toc-modele-stochastyczne-w-naukach-społecznych" class="nav-link" data-scroll-target="#modele-stochastyczne-w-naukach-społecznych"><span class="header-section-number">2.8</span> 2. Modele Stochastyczne w Naukach Społecznych</a>
   <ul class="collapse">
@@ -335,10 +341,10 @@ window.Quarto = {
 </header>
 
 
-<p>Ten rozdział stanowi kompleksowe wprowadzenie do nauki o danych i statystyki, dostosowane do studentów nauk społecznych. Zbadamy podstawowe koncepcje, związek między statystyką a nauką o danych oraz jak te dziedziny mają zastosowanie w badaniach społecznych.</p>
+<p>Ten rozdział stanowi wprowadzenie do nauki o danych i statystyki dla studentów nauk społecznych.</p>
 <section id="czym-jest-nauka-o-danych" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="czym-jest-nauka-o-danych"><span class="header-section-number">2.1</span> Czym jest Nauka o Danych?</h2>
-<p>Nauka o danych to interdyscyplinarna dziedzina, która wykorzystuje metody naukowe, procesy, algorytmy i systemy do wydobywania wiedzy i wglądów ze strukturalnych i niestrukturalnych danych.</p>
+<p>Nauka o danych to interdyscyplinarna dziedzina, która wykorzystuje metody naukowe, procesy, algorytmy i systemy do wydobywania wiedzy z danych zarówno jakościowych, jak i numerycznych.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -375,7 +381,7 @@ Kluczowy Punkt
 </div>
 </div>
 </div>
-<p>Nauka o danych może być postrzegana jako ewolucja i rozszerzenie tradycyjnej statystyki, włączając nowe technologie i metodologie do obsługi większych i bardziej złożonych zbiorów danych w naukach społecznych.</p>
+<p>Nauka o danych może być postrzegana jako wynik ewolucji i rozszerzenie tradycyjnej statystyki, włączając nowe technologie i metody do obsługi większych i bardziej złożonych zbiorów danych w naukach społecznych.</p>
 </section>
 <section id="podstawowe-koncepcje-w-nauce-o-danych-i-statystyce" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="podstawowe-koncepcje-w-nauce-o-danych-i-statystyce"><span class="header-section-number">2.3</span> Podstawowe Koncepcje w Nauce o Danych i Statystyce</h2>
@@ -458,6 +464,12 @@ Przykład: Badanie Zachowań Wyborczych
 </div>
 </div>
 <p>Ta wizualizacja pokazuje, jak wiek i dochód (część PGD) wpływają na prawdopodobieństwo głosowania w naszej symulowanej populacji, na podstawie wybranej próby.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/sampling-estimators.svg" class="img-fluid figure-img"></p>
+<figcaption>Retrieved from: https://allmodelsarewrong.github.io/mse.html</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="rodzaje-danych-w-naukach-społecznych" class="level3" data-number="2.3.2">
@@ -470,53 +482,60 @@ Przykład: Badanie Zachowań Wyborczych
 </ol>
 </section>
 </section>
-<section id="główne-komponenty-nauki-o-danych-w-badaniach-społecznych" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="główne-komponenty-nauki-o-danych-w-badaniach-społecznych"><span class="header-section-number">2.4</span> Główne Komponenty Nauki o Danych w Badaniach Społecznych</h2>
+<section id="główne-komponenty-nauki-o-danych-w-badaniach-naukowych" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="główne-komponenty-nauki-o-danych-w-badaniach-naukowych"><span class="header-section-number">2.4</span> Główne Komponenty Nauki o Danych w Badaniach Naukowych</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Zbieranie Danych</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Przetwarzanie Danych</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Eksploracyjna Analiza Danych (EDA)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Wnioskowanie Statystyczne</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Zastosowania Uczenia Maszynowego</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-6" role="tab" aria-controls="tabset-2-6" aria-selected="false">Wizualizacja Danych i Komunikacja</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Zbieranie Danych</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Przetwarzanie Danych</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Eksploracyjna Analiza Danych (EDA)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Wnioskowanie Statystyczne</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Uczenie Maszynowe</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-6" role="tab" aria-controls="tabset-2-6" aria-selected="false">Wizualizacja Danych i Komunikacja</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-7" role="tab" aria-controls="tabset-2-7" aria-selected="false">Powtarzalność i Otwarta Nauka</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <ul>
-<li>Ankiety i kwestionariusze</li>
-<li>Wywiady i grupy fokusowe</li>
-<li>Zbieranie danych cyfrowych (np. web scraping, dostęp do API)</li>
-<li>Etyczne aspekty zbierania danych</li>
+<li>Metody eksperymentalne: Kontrolowane badania, w których naukowcy manipulują zmiennymi, aby obserwować efekty</li>
+<li>Badania obserwacyjne: Gromadzenie danych poprzez obserwację i rejestrację bez ingerencji</li>
+<li>Ankiety i wywiady: Zbieranie informacji bezpośrednio od ludzi poprzez zadawanie pytań</li>
+<li>Cyfrowe zbieranie danych: Gromadzenie danych ze źródeł internetowych, czujników lub systemów komputerowych</li>
+<li>Aspekty etyczne: Zapewnienie, że badania respektują prawa i dobro uczestników</li>
 </ul>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ul>
-<li>Czyszczenie i wstępne przetwarzanie danych</li>
-<li>Obsługa brakujących wartości i wartości odstających</li>
-<li>Kodowanie danych jakościowych</li>
-<li>Transformacja i normalizacja danych</li>
+<li>Czyszczenie danych: Usuwanie błędów i niespójności z surowych danych</li>
+<li>Obsługa brakujących wartości: Radzenie sobie z lukami w zbiorze danych, które mogłyby wpłynąć na analizę</li>
+<li>Transformacja danych: Konwertowanie danych na formaty odpowiednie do analizy, np. zmiana tekstu na liczby</li>
 </ul>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <ul>
-<li>Statystyki opisowe</li>
-<li>Wizualizacja danych</li>
-<li>Identyfikacja wzorców i trendów w zjawiskach społecznych</li>
+<li>Statystyki opisowe: Podsumowanie danych za pomocą miar takich jak średnia, mediana i odchylenie standardowe</li>
+<li>Wizualizacja danych: Tworzenie wykresów i diagramów do wizualnego przedstawienia wzorców w danych</li>
+<li>Identyfikacja wzorców: Odkrywanie trendów lub zależności w danych</li>
 </ul>
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <ul>
-<li>Testowanie hipotez w badaniach społecznych</li>
-<li>Analiza regresji</li>
-<li>Techniki wnioskowania przyczynowego</li>
+<li>Testowanie hipotez: Wykorzystanie danych do oceny twierdzeń o populacjach</li>
+<li>Analiza regresji: Badanie zależności między zmiennymi i dokonywanie przewidywań</li>
+<li>Wnioskowanie przyczynowe: Określanie, czy jedna zmienna bezpośrednio wpływa na inną</li>
 </ul>
 </div>
 <div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
 <ul>
-<li>Modelowanie predykcyjne zachowań społecznych</li>
-<li>Analiza tekstu i analiza sentymentu</li>
-<li>Analiza sieci w kontekstach społecznych</li>
+<li>Uczenie nadzorowane: Trenowanie modeli do przewidywania wyników przy użyciu danych ze znanymi odpowiedziami</li>
+<li>Uczenie nienadzorowane: Znajdowanie ukrytych wzorców w danych bez predefiniowanych kategorii</li>
+<li>Przetwarzanie języka naturalnego (NLP): Nauczanie komputerów rozumienia i analizy ludzkiego języka</li>
 </ul>
 </div>
 <div id="tabset-2-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-6-tab">
 <ul>
-<li>Tworzenie efektywnych wizualizacji dla danych z nauk społecznych</li>
-<li>Komunikowanie wyników badań różnym odbiorcom</li>
-<li>Storytelling oparty na danych</li>
+<li>Efektywne wizualizacje: Tworzenie czytelnych, informatywnych grafik do przedstawiania złożonych danych</li>
+<li>Komunikacja naukowa: Wyjaśnianie wyników różnym odbiorcom, od ekspertów po ogół społeczeństwa</li>
+<li>Pisanie naukowe: Przygotowywanie artykułów i raportów naukowych w celu dzielenia się wynikami</li>
+</ul>
+</div>
+<div id="tabset-2-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-7-tab">
+<ul>
+<li>Kontrola wersji: Śledzenie zmian w danych i kodzie w trakcie procesu badawczego</li>
+<li>Praktyki otwartych danych: Udostępnianie danych i metod badawczych do weryfikacji i dalszych badań</li>
+<li>Powtarzalne procesy badawcze: Dokumentowanie kroków badawczych, aby inni mogli powtórzyć badanie</li>
 </ul>
 </div>
 </div>
@@ -728,36 +747,55 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 3 Young           0.223</code></pre>
 </div>
 </div>
-<p>Ten przykład demonstruje podstawową manipulację danymi, statystyki opisowe i wizualizację przy użyciu R, które są powszechnymi zadaniami w badaniach nauk społecznych.</p>
+<p>Ten przykład demonstruje podstawowe operacje na danych, statystyki opisowe i wizualizację danych przy użyciu R.</p>
 </section>
 </section>
 <section id="modele-w-nauce-od-deterministycznych-do-stochastycznych" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="modele-w-nauce-od-deterministycznych-do-stochastycznych"><span class="header-section-number">2.6</span> Modele w Nauce: Od Deterministycznych do Stochastycznych</h2>
-<p>W tej sekcji omówimy różne rodzaje modeli stosowanych w nauce, od modeli deterministycznych często spotykanych w fizyce po modele stochastyczne powszechne w naukach społecznych i uczeniu maszynowym. Użyjemy R do zademonstrowania niektórych koncepcji i podamy rzeczywiste przykłady.</p>
-<p>Model w nauce to uproszczona reprezentacja złożonego systemu lub zjawiska. Jest on zaprojektowany, aby pomóc nam zrozumieć, wyjaśnić i przewidywać zjawiska zachodzące w rzeczywistym świecie. Modele mogą przybierać różne formy, w tym równania matematyczne, symulacje komputerowe lub ramy koncepcyjne. Pozwalają naukowcom skupić się na kluczowych aspektach systemu, ignorując mniej istotne szczegóły, co sprawia, że złożone problemy stają się łatwiejsze do zarządzania i badania.</p>
+<p>W tej sekcji omówimy różne rodzaje modeli stosowanych w nauce, od modeli deterministycznych często spotykanych w fizyce po modele stochastyczne powszechne w naukach społecznych i uczeniu maszynowym. Użyjemy R do zademonstrowania niektórych koncepcji i podamy przykłady.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Model w nauce to uproszczona reprezentacja złożonego systemu lub zjawiska. Jest on ta zaprojektowany, aby pomóc nam zrozumieć, wyjaśnić i przewidywać zjawiska zachodzące w rzeczywistym świecie. Modele mogą przybierać różne formy, w tym równania matematyczne, symulacje komputerowe lub ramy koncepcyjne. Pozwalają naukowcom skupić się na kluczowych aspektach systemu, ignorując mniej istotne szczegóły, co sprawia, że złożone problemy stają się łatwiejsze do zrozumienia i badania.</p>
+</div>
+</div>
 </section>
 <section id="modele-deterministyczne" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="modele-deterministyczne"><span class="header-section-number">2.7</span> 1. Modele Deterministyczne</h2>
 <p>Modele deterministyczne to te, w których wynik jest w pełni określony przez wartości parametrów i warunki początkowe. Modele te są często używane w fizyce i inżynierii.</p>
-<section id="przykład-ruch-harmoniczny-prosty" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="przykład-ruch-harmoniczny-prosty"><span class="header-section-number">2.7.1</span> Przykład: Ruch Harmoniczny Prosty</h3>
-<p>Klasycznym przykładem modelu deterministycznego jest ruch harmoniczny prosty, opisany równaniem:</p>
-<p><span class="math display">\[x(t) = A \cos(\omega t + \phi)\]</span></p>
-<p>Gdzie: - <span class="math inline">\(x(t)\)</span> to położenie w czasie <span class="math inline">\(t\)</span> - <span class="math inline">\(A\)</span> to amplituda - <span class="math inline">\(\omega\)</span> to częstość kątowa - <span class="math inline">\(\phi\)</span> to faza</p>
+<section id="przykład-ruch-jednostajnie-przyspieszony" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="przykład-ruch-jednostajnie-przyspieszony"><span class="header-section-number">2.7.1</span> Przykład: Ruch Jednostajnie Przyspieszony</h3>
+<p>Klasycznym przykładem modelu deterministycznego jest ruch jednostajnie przyspieszony, opisany równaniem:</p>
+<p><span class="math display">\[x(t) = x_0 + v_0t + \frac{1}{2}at^2\]</span></p>
+<p>Gdzie:</p>
+<ul>
+<li><span class="math inline">\(x(t)\)</span> to położenie w czasie <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(x_0\)</span> to położenie początkowe</li>
+<li><span class="math inline">\(v_0\)</span> to prędkość początkowa</li>
+<li><span class="math inline">\(a\)</span> to przyspieszenie</li>
+<li><span class="math inline">\(t\)</span> to czas</li>
+</ul>
 <p>Zasymulujmy to w R:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ruch Harmoniczny Prosty</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>symuluj_ruch_harmoniczny <span class="ot">&lt;-</span> <span class="cf">function</span>(A, omega, phi, t) {</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">*</span> <span class="fu">cos</span>(omega <span class="sc">*</span> t <span class="sc">+</span> phi)</span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ruch jednostajnie przyspieszony</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>symuluj_ruch_przyspieszony <span class="ot">&lt;-</span> <span class="cf">function</span>(x0, v0, a, t) {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  x0 <span class="sc">+</span> v0 <span class="sc">*</span> t <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> a <span class="sc">*</span> t<span class="sc">^</span><span class="dv">2</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie danych</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">symuluj_ruch_harmoniczny</span>(<span class="at">A =</span> <span class="dv">1</span>, <span class="at">omega =</span> <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">phi =</span> <span class="dv">0</span>, <span class="at">t =</span> t)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">symuluj_ruch_przyspieszony</span>(<span class="at">x0 =</span> <span class="dv">0</span>, <span class="at">v0 =</span> <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">1</span>, <span class="at">t =</span> t)</span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Wykres</span></span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(t, x, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">xlab =</span> <span class="st">"Czas"</span>, <span class="at">ylab =</span> <span class="st">"Położenie"</span>, </span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Ruch Harmoniczny Prosty"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Ruch Jednostajnie Przyspieszony"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -766,7 +804,7 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-<p>To wygeneruje wykres prostego ruchu harmonicznego.</p>
+<p>Ten kod wygeneruje wykres ruchu jednostajnie przyspieszonego, który jest prostszym i bardziej intuicyjnym przykładem z dynamiki Newtona. W tym przypadku obiekt zaczyna ruch z początkową prędkością i przyspiesza jednostajnie, co prowadzi do parabolicznej trajektorii na wykresie położenia w funkcji czasu.</p>
 </section>
 </section>
 <section id="modele-stochastyczne-w-naukach-społecznych" class="level2" data-number="2.8">
@@ -776,7 +814,13 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h3 data-number="2.8.1" class="anchored" data-anchor-id="przykład-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">2.8.1</span> Przykład: Regresja Metodą Najmniejszych Kwadratów (OLS)</h3>
 <p>OLS to podstawowy model stochastyczny w naukach społecznych. Jest reprezentowany jako:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
-<p>Gdzie: - <span class="math inline">\(Y\)</span> to zmienna zależna - <span class="math inline">\(X\)</span> to zmienna niezależna - <span class="math inline">\(\beta_0\)</span> i <span class="math inline">\(\beta_1\)</span> to parametry - <span class="math inline">\(\epsilon\)</span> to składnik błędu (komponent stochastyczny)</p>
+<p>Gdzie:</p>
+<ul>
+<li><span class="math inline">\(Y\)</span> to zmienna zależna</li>
+<li><span class="math inline">\(X\)</span> to zmienna niezależna</li>
+<li><span class="math inline">\(\beta_0\)</span> i <span class="math inline">\(\beta_1\)</span> to parametry</li>
+<li><span class="math inline">\(\epsilon\)</span> to składnik błędu (komponent stochastyczny)</li>
+</ul>
 <p>Zademonstrujmy OLS w R:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych danych</span></span>
@@ -821,6 +865,12 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>To dopasuje model OLS do symulowanych danych i wykreśli wyniki.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/ModelError.png" class="img-fluid figure-img"></p>
+<figcaption>Retrieved from: https://scientistcafe.com/ids/vbtradeoff</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="zaawansowane-modele-stochastyczne-duże-modele-językowe" class="level2" data-number="2.9">
@@ -851,7 +901,7 @@ Note
 </section>
 <section id="podsumowanie" class="level2" data-number="2.10">
 <h2 data-number="2.10" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">2.10</span> Podsumowanie</h2>
-<p>Zbadaliśmy szereg modeli, od deterministycznych po wysoce złożone modele stochastyczne. Każdy rodzaj modelu ma swoje miejsce w nauce, w zależności od badanego systemu i poziomu niepewności.</p>
+<p>Każdy rodzaj modelu ma swoje miejsce w nauce, w zależności od badanego systemu i poziomu niepewności.</p>
 <p>Pamiętaj, że wybór między modelami deterministycznymi a stochastycznymi często zależy od natury badanego systemu i pytań, na które próbujesz odpowiedzieć. Modele deterministyczne są świetne dla systemów o dobrze zrozumiałej mechanice, podczas gdy modele stochastyczne sprawdzają się przy radzeniu sobie z nieodłączną losowością lub złożonymi, nie w pełni zrozumiałymi systemami.</p>
 </section>
 <section id="zrozumienie-pozornych-korelacji-zmiennych-zakłócających-i-kolizyjnych" class="level2" data-number="2.11">

@@ -250,7 +250,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: From Pen and Paper to R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wizualizacja Danych: z przykładami w R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -276,7 +282,7 @@ window.Quarto = {
   <li><a href="#statistical-population-sample-and-data-generating-process" id="toc-statistical-population-sample-and-data-generating-process" class="nav-link" data-scroll-target="#statistical-population-sample-and-data-generating-process"><span class="header-section-number">1.3.1</span> Statistical Population, Sample, and Data Generating Process</a></li>
   <li><a href="#types-of-data-in-social-sciences" id="toc-types-of-data-in-social-sciences" class="nav-link" data-scroll-target="#types-of-data-in-social-sciences"><span class="header-section-number">1.3.2</span> Types of Data in Social Sciences</a></li>
   </ul></li>
-  <li><a href="#core-components-of-data-science-in-social-research" id="toc-core-components-of-data-science-in-social-research" class="nav-link" data-scroll-target="#core-components-of-data-science-in-social-research"><span class="header-section-number">1.4</span> Core Components of Data Science in Social Research</a></li>
+  <li><a href="#core-components-of-data-science-in-scientific-research" id="toc-core-components-of-data-science-in-scientific-research" class="nav-link" data-scroll-target="#core-components-of-data-science-in-scientific-research"><span class="header-section-number">1.4</span> Core Components of Data Science in Scientific Research</a></li>
   <li><a href="#tools-for-data-science-in-social-sciences" id="toc-tools-for-data-science-in-social-sciences" class="nav-link" data-scroll-target="#tools-for-data-science-in-social-sciences"><span class="header-section-number">1.5</span> Tools for Data Science in Social Sciences</a>
   <ul class="collapse">
   <li><a href="#r-for-social-science-data-analysis" id="toc-r-for-social-science-data-analysis" class="nav-link" data-scroll-target="#r-for-social-science-data-analysis"><span class="header-section-number">1.5.1</span> R for Social Science Data Analysis</a></li>
@@ -284,7 +290,7 @@ window.Quarto = {
   <li><a href="#models-in-science-from-deterministic-to-stochastic" id="toc-models-in-science-from-deterministic-to-stochastic" class="nav-link" data-scroll-target="#models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.6</span> Models in Science: From Deterministic to Stochastic</a></li>
   <li><a href="#deterministic-models" id="toc-deterministic-models" class="nav-link" data-scroll-target="#deterministic-models"><span class="header-section-number">1.7</span> 1. Deterministic Models</a>
   <ul class="collapse">
-  <li><a href="#example-simple-harmonic-motion" id="toc-example-simple-harmonic-motion" class="nav-link" data-scroll-target="#example-simple-harmonic-motion"><span class="header-section-number">1.7.1</span> Example: Simple Harmonic Motion</a></li>
+  <li><a href="#example-uniformly-accelerated-motion" id="toc-example-uniformly-accelerated-motion" class="nav-link" data-scroll-target="#example-uniformly-accelerated-motion"><span class="header-section-number">1.7.1</span> Example: Uniformly Accelerated Motion</a></li>
   </ul></li>
   <li><a href="#stochastic-models-in-social-sciences" id="toc-stochastic-models-in-social-sciences" class="nav-link" data-scroll-target="#stochastic-models-in-social-sciences"><span class="header-section-number">1.8</span> 2. Stochastic Models in Social Sciences</a>
   <ul class="collapse">
@@ -458,6 +464,12 @@ Example: Voter Behavior Study
 </div>
 </div>
 <p>This visualization demonstrates how age and income (part of the DGP) influence voting probability in our simulated population, based on the sample we’ve drawn.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/sampling-estimators.svg" class="img-fluid figure-img"></p>
+<figcaption>Retrieved from: https://allmodelsarewrong.github.io/mse.html</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="types-of-data-in-social-sciences" class="level3" data-number="1.3.2">
@@ -470,53 +482,60 @@ Example: Voter Behavior Study
 </ol>
 </section>
 </section>
-<section id="core-components-of-data-science-in-social-research" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="core-components-of-data-science-in-social-research"><span class="header-section-number">1.4</span> Core Components of Data Science in Social Research</h2>
+<section id="core-components-of-data-science-in-scientific-research" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="core-components-of-data-science-in-scientific-research"><span class="header-section-number">1.4</span> Core Components of Data Science in Scientific Research</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Data Collection</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Data Processing</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Exploratory Data Analysis (EDA)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Statistical Inference</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Machine Learning Applications</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-6" role="tab" aria-controls="tabset-2-6" aria-selected="false">Data Visualization and Communication</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Data Collection</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Data Processing</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Exploratory Data Analysis (EDA)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Statistical Inference</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-5" role="tab" aria-controls="tabset-2-5" aria-selected="false">Machine Learning</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-6" role="tab" aria-controls="tabset-2-6" aria-selected="false">Data Visualization and Communication</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-7" role="tab" aria-controls="tabset-2-7" aria-selected="false">Reproducibility and Open Science</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <ul>
-<li>Surveys and questionnaires</li>
-<li>Interviews and focus groups</li>
-<li>Digital data collection (e.g., web scraping, API access)</li>
-<li>Ethical considerations in data collection</li>
+<li>Experimental methods: Controlled studies where researchers manipulate variables to observe effects</li>
+<li>Observational studies: Gathering data by watching and recording without interfering</li>
+<li>Surveys and interviews: Collecting information directly from people through questions</li>
+<li>Digital data collection: Gathering data from online sources, sensors, or computer systems</li>
+<li>Ethical considerations: Ensuring research respects participants’ rights and well-being</li>
 </ul>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ul>
-<li>Cleaning and preprocessing data</li>
-<li>Handling missing values and outliers</li>
-<li>Coding qualitative data</li>
-<li>Data transformation and normalization</li>
+<li>Data cleaning: Removing errors and inconsistencies from raw data</li>
+<li>Handling missing values: Addressing gaps in the dataset that could affect analysis</li>
+<li>Data transformation: Converting data into formats suitable for analysis, like changing text to numbers</li>
 </ul>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <ul>
-<li>Descriptive statistics</li>
-<li>Data visualization</li>
-<li>Identifying patterns and trends in social phenomena</li>
+<li>Descriptive statistics: Summarizing data with measures like mean, median, and standard deviation</li>
+<li>Data visualization: Creating graphs and charts to visually represent data patterns</li>
+<li>Pattern identification: Discovering trends or relationships in the data</li>
 </ul>
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <ul>
-<li>Hypothesis testing in social research</li>
-<li>Regression analysis</li>
-<li>Causal inference techniques</li>
+<li>Hypothesis testing: Using data to evaluate claims about populations</li>
+<li>Regression analysis: Examining relationships between variables and making predictions</li>
+<li>Causal inference: Determining if one variable directly influences another</li>
 </ul>
 </div>
 <div id="tabset-2-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-5-tab">
 <ul>
-<li>Predictive modeling of social behaviors</li>
-<li>Text analysis and sentiment analysis</li>
-<li>Network analysis in social contexts</li>
+<li>Supervised learning: Training models to predict outcomes using data with known answers</li>
+<li>Unsupervised learning: Finding hidden patterns in data without predefined categories</li>
+<li>Natural Language Processing (NLP): Teaching computers to understand and analyze human language</li>
 </ul>
 </div>
 <div id="tabset-2-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-6-tab">
 <ul>
-<li>Creating effective visualizations for social science data</li>
-<li>Communicating research findings to diverse audiences</li>
-<li>Data-driven storytelling</li>
+<li>Effective visualizations: Creating clear, informative graphics to represent complex data</li>
+<li>Science communication: Explaining findings to different audiences, from experts to the public</li>
+<li>Scientific writing: Preparing research papers and reports to share results</li>
+</ul>
+</div>
+<div id="tabset-2-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-7-tab">
+<ul>
+<li>Version control: Tracking changes in data and code throughout the research process</li>
+<li>Open data practices: Sharing research data and methods for verification and further study</li>
+<li>Reproducible workflows: Documenting research steps so others can repeat the study</li>
 </ul>
 </div>
 </div>
@@ -734,30 +753,49 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 <section id="models-in-science-from-deterministic-to-stochastic" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.6</span> Models in Science: From Deterministic to Stochastic</h2>
 <p>In this tutorial, we’ll explore different types of models used in science, ranging from deterministic models often seen in physics to stochastic models common in social sciences and machine learning. We’ll use R to demonstrate some concepts and provide real-world examples.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A model in science is a simplified representation of a complex system or phenomenon. It’s designed to help us understand, explain, and make predictions about the real world. Models can take various forms, including mathematical equations, computer simulations, or conceptual frameworks. They allow scientists to focus on key aspects of a system while ignoring less relevant details, making complex problems more manageable and easier to study.</p>
+</div>
+</div>
 </section>
 <section id="deterministic-models" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="deterministic-models"><span class="header-section-number">1.7</span> 1. Deterministic Models</h2>
 <p>Deterministic models are those where the output is fully determined by the parameter values and the initial conditions. These models are often used in physics and engineering.</p>
-<section id="example-simple-harmonic-motion" class="level3" data-number="1.7.1">
-<h3 data-number="1.7.1" class="anchored" data-anchor-id="example-simple-harmonic-motion"><span class="header-section-number">1.7.1</span> Example: Simple Harmonic Motion</h3>
-<p>A classic example of a deterministic model is simple harmonic motion, described by the equation:</p>
-<p><span class="math display">\[x(t) = A \cos(\omega t + \phi)\]</span></p>
-<p>Where: - <span class="math inline">\(x(t)\)</span> is the position at time <span class="math inline">\(t\)</span> - <span class="math inline">\(A\)</span> is the amplitude - <span class="math inline">\(\omega\)</span> is the angular frequency - <span class="math inline">\(\phi\)</span> is the phase</p>
+<section id="example-uniformly-accelerated-motion" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="example-uniformly-accelerated-motion"><span class="header-section-number">1.7.1</span> Example: Uniformly Accelerated Motion</h3>
+<p>A classic example of a deterministic model is uniformly accelerated motion, described by the equation:</p>
+<p><span class="math display">\[x(t) = x_0 + v_0t + \frac{1}{2}at^2\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(x(t)\)</span> is the position at time <span class="math inline">\(t\)</span></li>
+<li><span class="math inline">\(x_0\)</span> is the initial position</li>
+<li><span class="math inline">\(v_0\)</span> is the initial velocity</li>
+<li><span class="math inline">\(a\)</span> is the acceleration</li>
+<li><span class="math inline">\(t\)</span> is time</li>
+</ul>
 <p>Let’s simulate this in R:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple Harmonic Motion</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sim_harmonic_motion <span class="ot">&lt;-</span> <span class="cf">function</span>(A, omega, phi, t) {</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  A <span class="sc">*</span> <span class="fu">cos</span>(omega <span class="sc">*</span> t <span class="sc">+</span> phi)</span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Uniformly accelerated motion</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>simulate_accelerated_motion <span class="ot">&lt;-</span> <span class="cf">function</span>(x0, v0, a, t) {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  x0 <span class="sc">+</span> v0 <span class="sc">*</span> t <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> a <span class="sc">*</span> t<span class="sc">^</span><span class="dv">2</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Generating data</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sim_harmonic_motion</span>(<span class="at">A =</span> <span class="dv">1</span>, <span class="at">omega =</span> <span class="dv">2</span><span class="sc">*</span>pi, <span class="at">phi =</span> <span class="dv">0</span>, <span class="at">t =</span> t)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">simulate_accelerated_motion</span>(<span class="at">x0 =</span> <span class="dv">0</span>, <span class="at">v0 =</span> <span class="dv">2</span>, <span class="at">a =</span> <span class="dv">1</span>, <span class="at">t =</span> t)</span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(t, x, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">xlab =</span> <span class="st">"Time"</span>, <span class="at">ylab =</span> <span class="st">"Position"</span>, </span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Simple Harmonic Motion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Uniformly Accelerated Motion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -766,7 +804,7 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </div>
-<p>This will produce a plot of a simple harmonic oscillation.</p>
+<p>This code will generate a plot of uniformly accelerated motion, which is a simpler and more intuitive example from Newtonian dynamics. In this case, an object starts moving with an initial velocity and accelerates uniformly, resulting in a parabolic trajectory on the position-time graph.</p>
 </section>
 </section>
 <section id="stochastic-models-in-social-sciences" class="level2" data-number="1.8">
@@ -776,7 +814,13 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h3 data-number="1.8.1" class="anchored" data-anchor-id="example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.8.1</span> Example: Ordinary Least Squares (OLS) Regression</h3>
 <p>OLS is a fundamental stochastic model in social sciences. It’s represented as:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
-<p>Where: - <span class="math inline">\(Y\)</span> is the dependent variable - <span class="math inline">\(X\)</span> is the independent variable - <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are parameters - <span class="math inline">\(\epsilon\)</span> is the error term (stochastic component)</p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(Y\)</span> is the dependent variable</li>
+<li><span class="math inline">\(X\)</span> is the independent variable</li>
+<li><span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are parameters</li>
+<li><span class="math inline">\(\epsilon\)</span> is the error term (stochastic component)</li>
+</ul>
 <p>Let’s demonstrate OLS in R:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some sample data</span></span>
@@ -821,6 +865,12 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>This will fit an OLS model to some simulated data and plot the results.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/ModelError.png" class="img-fluid figure-img"></p>
+<figcaption>Retrieved from: https://scientistcafe.com/ids/vbtradeoff</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="advanced-stochastic-models-large-language-models" class="level2" data-number="1.9">

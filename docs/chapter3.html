@@ -190,7 +190,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: From Pen and Paper to R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wizualizacja Danych: z przykładami w R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -223,8 +229,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ethical-considerations-in-sampling" id="toc-ethical-considerations-in-sampling" class="nav-link" data-scroll-target="#ethical-considerations-in-sampling"><span class="header-section-number">5.8</span> Ethical Considerations in Sampling</a></li>
   <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies"><span class="header-section-number">5.9</span> Case Studies</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5.10</span> Conclusion</a></li>
-  <li><a href="#review-questions-and-exercises" id="toc-review-questions-and-exercises" class="nav-link" data-scroll-target="#review-questions-and-exercises"><span class="header-section-number">5.11</span> Review Questions and Exercises</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5.12</span> Further Reading</a></li>
+  <li><a href="#statistical-errors---summary" id="toc-statistical-errors---summary" class="nav-link" data-scroll-target="#statistical-errors---summary"><span class="header-section-number">5.11</span> Statistical Errors - Summary</a>
+  <ul class="collapse">
+  <li><a href="#systematic-error-vs.-random-error" id="toc-systematic-error-vs.-random-error" class="nav-link" data-scroll-target="#systematic-error-vs.-random-error"><span class="header-section-number">5.11.1</span> Systematic Error vs.&nbsp;Random Error</a></li>
+  <li><a href="#sampling-errors-vs.-non-sampling-errors" id="toc-sampling-errors-vs.-non-sampling-errors" class="nav-link" data-scroll-target="#sampling-errors-vs.-non-sampling-errors"><span class="header-section-number">5.11.2</span> Sampling Errors vs.&nbsp;Non-Sampling Errors</a></li>
+  </ul></li>
+  <li><a href="#review-questions-and-exercises" id="toc-review-questions-and-exercises" class="nav-link" data-scroll-target="#review-questions-and-exercises"><span class="header-section-number">5.12</span> Review Questions and Exercises</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5.13</span> Further Reading</a></li>
   </ul>
 </nav>
     </div>
@@ -436,12 +447,95 @@ Note
 <h2 data-number="5.10" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5.10</span> Conclusion</h2>
 <p>Sampling remains a cornerstone of social science research, even in the era of big data. Understanding sampling principles helps researchers design studies, interpret results, and make valid inferences about populations. As we’ve seen, the journey from sample to population involves careful consideration of sampling methods, potential errors, ethical issues, and the ever-evolving landscape of data collection in the digital age.</p>
 </section>
-<section id="review-questions-and-exercises" class="level2" data-number="5.11">
-<h2 data-number="5.11" class="anchored" data-anchor-id="review-questions-and-exercises"><span class="header-section-number">5.11</span> Review Questions and Exercises</h2>
+<section id="statistical-errors---summary" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="statistical-errors---summary"><span class="header-section-number">5.11</span> Statistical Errors - Summary</h2>
+<section id="systematic-error-vs.-random-error" class="level3" data-number="5.11.1">
+<h3 data-number="5.11.1" class="anchored" data-anchor-id="systematic-error-vs.-random-error"><span class="header-section-number">5.11.1</span> Systematic Error vs.&nbsp;Random Error</h3>
+<p>Systematic errors and random errors are two fundamental types of errors in statistical measurements and experiments.</p>
+<ol type="1">
+<li>Systematic Error:
+<ul>
+<li>Definition: Consistent, predictable deviations from the true value</li>
+<li>Characteristics:
+<ul>
+<li>Biases the results in a specific direction</li>
+<li>Repeatable and often constant across measurements</li>
+<li>Can be corrected if identified</li>
+</ul></li>
+<li>Examples:
+<ul>
+<li>Miscalibrated measuring instrument</li>
+<li>Consistent rounding error in data entry</li>
+<li>Biased sampling method</li>
+</ul></li>
+</ul></li>
+<li>Random Error:
+<ul>
+<li>Definition: Unpredictable fluctuations in measurements due to chance</li>
+<li>Characteristics:
+<ul>
+<li>Varies in magnitude and direction</li>
+<li>Follows a probability distribution (often normal)</li>
+<li>Can be reduced by increasing sample size or repeated measurements</li>
+</ul></li>
+<li>Examples:
+<ul>
+<li>Natural variations in the phenomenon being measured</li>
+<li>Small fluctuations in measuring instruments</li>
+<li>Human errors in reading or recording data</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="sampling-errors-vs.-non-sampling-errors" class="level3" data-number="5.11.2">
+<h3 data-number="5.11.2" class="anchored" data-anchor-id="sampling-errors-vs.-non-sampling-errors"><span class="header-section-number">5.11.2</span> Sampling Errors vs.&nbsp;Non-Sampling Errors</h3>
+<p>Sampling and non-sampling errors are categories of errors that can occur in statistical studies, particularly in survey research.</p>
+<ol type="1">
+<li>Sampling Errors:
+<ul>
+<li>Definition: Errors that occur due to the sample not perfectly representing the population</li>
+<li>Characteristics:
+<ul>
+<li>Inherent in any sample-based study</li>
+<li>Can be estimated and quantified using statistical methods</li>
+<li>Decreases as sample size increases</li>
+</ul></li>
+<li>Examples:
+<ul>
+<li>Random fluctuations in sample statistics</li>
+<li>Over- or under-representation of certain groups in the sample</li>
+</ul></li>
+</ul></li>
+<li>Non-Sampling Errors:
+<ul>
+<li>Definition: All errors in a study that are not related to sampling</li>
+<li>Characteristics:
+<ul>
+<li>Can occur in both sample and census studies</li>
+<li>Often more difficult to quantify and control than sampling errors</li>
+<li>Can introduce bias into results</li>
+<li>Can be either systematic or random</li>
+</ul></li>
+<li>Examples:
+<ul>
+<li>Response errors (e.g., misunderstanding questions, deliberate misreporting)</li>
+<li>Nonresponse bias (when certain groups are less likely to respond)</li>
+<li>Data processing errors (e.g., coding mistakes, data entry errors)</li>
+<li>Coverage errors (when the sampling frame doesn’t accurately represent the population)</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>Important clarification: Non-sampling errors can indeed be either systematic or random. This is a crucial distinction that should have been included in the original description. Non-sampling errors encompass a wide range of potential errors that are not directly related to the sampling process. Some of these can be systematic (e.g., a miscalibrated measuring instrument), while others can be random (e.g., occasional mistakes in data entry).</p>
+<p>The distinction between sampling and non-sampling errors is independent of the division between systematic and random errors. In practice, non-sampling errors can fall into both of these categories, which makes their identification and control a particularly important aspect of statistical research.</p>
+<p>Understanding these types of errors is crucial for designing robust statistical studies, interpreting results accurately, and making valid inferences about populations based on sample data.</p>
+</section>
+</section>
+<section id="review-questions-and-exercises" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="review-questions-and-exercises"><span class="header-section-number">5.12</span> Review Questions and Exercises</h2>
 <p>[This section would include a mix of multiple-choice questions, short answer prompts, and practical exercises to reinforce key concepts]</p>
 </section>
-<section id="further-reading" class="level2" data-number="5.12">
-<h2 data-number="5.12" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5.12</span> Further Reading</h2>
+<section id="further-reading" class="level2" data-number="5.13">
+<h2 data-number="5.13" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5.13</span> Further Reading</h2>
 <p>[This section would list additional resources for students interested in deepening their understanding of sampling and related topics]</p>
 
 

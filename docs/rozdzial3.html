@@ -187,7 +187,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: From Pen and Paper to R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wizualizacja Danych: z przykładami w R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -220,8 +226,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#etyczne-aspekty-próbkowania" id="toc-etyczne-aspekty-próbkowania" class="nav-link" data-scroll-target="#etyczne-aspekty-próbkowania"><span class="header-section-number">6.8</span> Etyczne Aspekty Próbkowania</a></li>
   <li><a href="#studia-przypadków" id="toc-studia-przypadków" class="nav-link" data-scroll-target="#studia-przypadków"><span class="header-section-number">6.9</span> Studia Przypadków</a></li>
   <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">6.10</span> Podsumowanie</a></li>
-  <li><a href="#pytania-kontrolne-i-ćwiczenia" id="toc-pytania-kontrolne-i-ćwiczenia" class="nav-link" data-scroll-target="#pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.11</span> Pytania Kontrolne i Ćwiczenia</a></li>
-  <li><a href="#dalsza-lektura" id="toc-dalsza-lektura" class="nav-link" data-scroll-target="#dalsza-lektura"><span class="header-section-number">6.12</span> Dalsza Lektura</a></li>
+  <li><a href="#błędy-statystyczne---podsumowanie" id="toc-błędy-statystyczne---podsumowanie" class="nav-link" data-scroll-target="#błędy-statystyczne---podsumowanie"><span class="header-section-number">6.11</span> Błędy Statystyczne - podsumowanie</a>
+  <ul class="collapse">
+  <li><a href="#błąd-systematyczny-vs.-błąd-losowy" id="toc-błąd-systematyczny-vs.-błąd-losowy" class="nav-link" data-scroll-target="#błąd-systematyczny-vs.-błąd-losowy"><span class="header-section-number">6.11.1</span> Błąd Systematyczny vs.&nbsp;Błąd Losowy</a></li>
+  <li><a href="#błędy-samplowe-vs.-błędy-niesamplowe" id="toc-błędy-samplowe-vs.-błędy-niesamplowe" class="nav-link" data-scroll-target="#błędy-samplowe-vs.-błędy-niesamplowe"><span class="header-section-number">6.11.2</span> Błędy Samplowe vs.&nbsp;Błędy Niesamplowe</a></li>
+  </ul></li>
+  <li><a href="#pytania-kontrolne-i-ćwiczenia" id="toc-pytania-kontrolne-i-ćwiczenia" class="nav-link" data-scroll-target="#pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.12</span> Pytania Kontrolne i Ćwiczenia</a></li>
+  <li><a href="#dalsza-lektura" id="toc-dalsza-lektura" class="nav-link" data-scroll-target="#dalsza-lektura"><span class="header-section-number">6.13</span> Dalsza Lektura</a></li>
   </ul>
 </nav>
     </div>
@@ -419,6 +430,87 @@ Note
 <section id="podsumowanie" class="level2" data-number="6.10">
 <h2 data-number="6.10" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">6.10</span> Podsumowanie</h2>
 <p>Próbkowanie pozostaje fundamentem badań w naukach społecznych, nawet w erze big data. Zrozumienie zasad próbkowania pomaga badaczom projektować badania, interpretować wyniki i wyciągać trafne wnioski o populacjach. Jak widzieliśmy, droga od próby do populacji wymaga starannego rozważenia metod próbkowania, potencjalnych błędów, kwestii etycznych i stale ewoluującego krajobrazu gromadzenia danych w erze cyfrowej.</p>
+<p>Dziękuję za to bardzo trafne pytanie. Ma Pan/Pani rację, i doceniam tę uwagę. Rzeczywiście, tłumaczenie “błąd samplowy vs.&nbsp;niesamplowy” jest bardziej precyzyjne i lepiej oddaje istotę tych pojęć w polskiej terminologii statystycznej. Pozwolę sobie wprowadzić odpowiednie korekty i wyjaśnienia:</p>
+</section>
+<section id="błędy-statystyczne---podsumowanie" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="błędy-statystyczne---podsumowanie"><span class="header-section-number">6.11</span> Błędy Statystyczne - podsumowanie</h2>
+<section id="błąd-systematyczny-vs.-błąd-losowy" class="level3" data-number="6.11.1">
+<h3 data-number="6.11.1" class="anchored" data-anchor-id="błąd-systematyczny-vs.-błąd-losowy"><span class="header-section-number">6.11.1</span> Błąd Systematyczny vs.&nbsp;Błąd Losowy</h3>
+<p>Błędy systematyczne i losowe to dwa podstawowe rodzaje błędów w pomiarach i eksperymentach statystycznych.</p>
+<ol type="1">
+<li>Błąd Systematyczny:
+<ul>
+<li>Definicja: Konsekwentne, przewidywalne odchylenia od prawdziwej wartości</li>
+<li>Charakterystyka:
+<ul>
+<li>Zniekształca wyniki w określonym kierunku</li>
+<li>Powtarzalny i często stały w różnych pomiarach</li>
+<li>Może być skorygowany, jeśli zostanie zidentyfikowany</li>
+</ul></li>
+<li>Przykłady:
+<ul>
+<li>Źle skalibrowany przyrząd pomiarowy</li>
+<li>Konsekwentny błąd zaokrąglania przy wprowadzaniu danych</li>
+<li>Stronnicza metoda pobierania próbek</li>
+</ul></li>
+</ul></li>
+<li>Błąd Losowy:
+<ul>
+<li>Definicja: Nieprzewidywalne wahania w pomiarach wynikające z przypadku</li>
+<li>Charakterystyka:
+<ul>
+<li>Zmienia się co do wielkości i kierunku</li>
+<li>Podąża za rozkładem prawdopodobieństwa (często normalnym)</li>
+<li>Można go zmniejszyć zwiększając wielkość próby lub powtarzając pomiary</li>
+</ul></li>
+<li>Przykłady:
+<ul>
+<li>Naturalne wahania w badanym zjawisku</li>
+<li>Małe fluktuacje w przyrządach pomiarowych</li>
+<li>Błędy ludzkie przy odczytywaniu lub zapisywaniu danych</li>
+</ul></li>
+</ul></li>
+</ol>
+</section>
+<section id="błędy-samplowe-vs.-błędy-niesamplowe" class="level3" data-number="6.11.2">
+<h3 data-number="6.11.2" class="anchored" data-anchor-id="błędy-samplowe-vs.-błędy-niesamplowe"><span class="header-section-number">6.11.2</span> Błędy Samplowe vs.&nbsp;Błędy Niesamplowe</h3>
+<ol type="1">
+<li>Błędy Samplowe (lub Błędy Próbkowania):
+<ul>
+<li>Definicja: Błędy wynikające z tego, że próba (sample) nie reprezentuje idealnie populacji</li>
+<li>Charakterystyka:
+<ul>
+<li>Nieodłączne w każdym badaniu opartym na próbie</li>
+<li>Można je oszacować i skwantyfikować za pomocą metod statystycznych</li>
+<li>Zmniejszają się wraz ze wzrostem wielkości próby</li>
+</ul></li>
+<li>Przykłady:
+<ul>
+<li>Losowe wahania w statystykach próby</li>
+<li>Nadreprezentacja lub niedoreprezentowanie niektórych grup w próbie</li>
+</ul></li>
+</ul></li>
+<li>Błędy Niesamplowe:
+<ul>
+<li>Definicja: Wszystkie błędy w badaniu, które nie są związane z próbkowaniem (samplingiem)</li>
+<li>Charakterystyka:
+<ul>
+<li>Mogą wystąpić zarówno w badaniach próbkowych, jak i pełnych (spisach)</li>
+<li>Często trudniejsze do skwantyfikowania i kontrolowania niż błędy samplowe</li>
+<li>Mogą wprowadzać stronniczość do wyników</li>
+<li>Mogą być systematyczne lub losowe</li>
+</ul></li>
+<li>Przykłady:
+<ul>
+<li>Błędy odpowiedzi (np. niezrozumienie pytań, celowe błędne raportowanie)</li>
+<li>Błąd braku odpowiedzi (gdy niektóre grupy są mniej skłonne do odpowiedzi)</li>
+<li>Błędy przetwarzania danych (np. błędy kodowania, błędy wprowadzania danych)</li>
+<li>Błędy pokrycia (gdy operat losowania nie reprezentuje dokładnie populacji)</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>Ważne wyjaśnienie: Błędy niesamplowe mogą być zarówno systematyczne, jak i losowe. To kluczowe rozróżnienie, które powinienem był uwzględnić w pierwotnym opisie. Błędy niesamplowe obejmują szeroki zakres możliwych błędów, które nie są bezpośrednio związane z procesem próbkowania. Niektóre z nich mogą być systematyczne (np. błędnie skalibrowany instrument pomiarowy), podczas gdy inne mogą być losowe (np. przypadkowe błędy przy wprowadzaniu danych).</p>
+<p>Rozróżnienie na błędy samplowe i niesamplowe jest niezależne od podziału na błędy systematyczne i losowe. W praktyce, błędy niesamplowe mogą należeć do obu tych kategorii, co czyni ich identyfikację i kontrolę szczególnie ważnym aspektem badań statystycznych.</p>
 <p>Kluczowe punkty do zapamiętania:</p>
 <ol type="1">
 <li>Losowość jest podstawą wielu metod próbkowania i pomaga zapewnić reprezentatywność próby.</li>
@@ -430,8 +522,9 @@ Note
 <li>Etyczne aspekty próbkowania, w tym świadoma zgoda, prywatność i reprezentatywność, są nieodłączną częścią procesu badawczego.</li>
 </ol>
 </section>
-<section id="pytania-kontrolne-i-ćwiczenia" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.11</span> Pytania Kontrolne i Ćwiczenia</h2>
+</section>
+<section id="pytania-kontrolne-i-ćwiczenia" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.12</span> Pytania Kontrolne i Ćwiczenia</h2>
 <ol type="1">
 <li><p>Jakie są główne różnice między próbkowaniem probabilistycznym a nieprobabilistycznym? Podaj przykłady sytuacji, w których każde z nich mogłoby być odpowiednie.</p></li>
 <li><p>Wyobraź sobie, że prowadzisz badanie dotyczące opinii studentów na temat nauczania zdalnego. Zaproponuj odpowiednią metodę próbkowania i uzasadnij swój wybór.</p></li>
@@ -441,8 +534,8 @@ Note
 <li><p>Jak era big data wpływa na tradycyjne metody próbkowania? Omów zarówno możliwości, jak i wyzwania.</p></li>
 </ol>
 </section>
-<section id="dalsza-lektura" class="level2" data-number="6.12">
-<h2 data-number="6.12" class="anchored" data-anchor-id="dalsza-lektura"><span class="header-section-number">6.12</span> Dalsza Lektura</h2>
+<section id="dalsza-lektura" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="dalsza-lektura"><span class="header-section-number">6.13</span> Dalsza Lektura</h2>
 <ol type="1">
 <li>Babbie, E. (2020). “Badania społeczne w praktyce”. Warszawa: Wydawnictwo Naukowe PWN.</li>
 <li>Frankfort-Nachmias, C., &amp; Nachmias, D. (2001). “Metody badawcze w naukach społecznych”. Poznań: Zysk i S-ka.</li>
@@ -450,7 +543,6 @@ Note
 <li>Szreder, M. (2010). “Metody i techniki sondażowych badań opinii”. Warszawa: Polskie Wydawnictwo Ekonomiczne.</li>
 <li>Brzeziński, J. (2019). “Metodologia badań psychologicznych”. Warszawa: Wydawnictwo Naukowe PWN.</li>
 </ol>
-<p>Te źródła zapewniają dogłębne omówienie tematów związanych z próbkowaniem i metodologią badań w naukach społecznych w kontekście polskim.</p>
 
 
 </section>
