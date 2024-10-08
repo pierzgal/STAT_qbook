@@ -14,7 +14,7 @@
     "href": "chapter1.html",
     "title": "1  Introduction to Data Science and Statistics for Social Sciences",
     "section": "",
-    "text": "1.1 What is Data Science?\nData science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data.",
+    "text": "1.1 What is Data Science?\nData science is a cutting-edge, interdisciplinary field that integrates scientific methodologies, sophisticated procedures, advanced algorithms, and robust computational systems to extract valuable knowledge and actionable insights from both structured and unstructured data. This dynamic discipline combines elements of statistics, mathematics, computer science, and domain expertise to uncover hidden patterns, predict trends, and drive data-informed decision-making across various sectors. By employing large datasets and using techniques such as machine learning and artificial intelligence, data science empowers organizations to solve complex problems, optimize processes, and gain a competitive edge in an increasingly data-driven world.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Data Science and Statistics for Social Sciences</span>"
     ]
@@ -104,7 +104,7 @@
     "href": "rozdzial1.html",
     "title": "2  Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych",
     "section": "",
-    "text": "2.1 Czym jest Nauka o Danych?\nNauka o danych to interdyscyplinarna dziedzina, która wykorzystuje metody naukowe, procesy, algorytmy i systemy do wydobywania wiedzy z danych zarówno jakościowych, jak i numerycznych.",
+    "text": "2.1 Czym jest Nauka o Danych?\nNauka o danych to interdyscyplinarna dziedzina, która łączy w sobie metody naukowe, zaawansowane procedury, algorytmy oraz systemy informatyczne. Jej celem jest wydobywanie cennej wiedzy i odkrywanie ukrytych wzorców zarówno z danych jakościowych, jak i ilościowych. Ta innowacyjna dyscyplina pozwala na głębsze zrozumienie złożonych zjawisk i umożliwia podejmowanie decyzji opartych na rzetelnych analizach.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span>"
     ]
