@@ -279,16 +279,25 @@ window.Quarto = {
   <li><a href="#the-relationship-between-statistics-and-data-science" id="toc-the-relationship-between-statistics-and-data-science" class="nav-link" data-scroll-target="#the-relationship-between-statistics-and-data-science"><span class="header-section-number">1.2</span> The Relationship Between Statistics and Data Science</a></li>
   <li><a href="#essential-concepts-in-data-science-and-statistics" id="toc-essential-concepts-in-data-science-and-statistics" class="nav-link" data-scroll-target="#essential-concepts-in-data-science-and-statistics"><span class="header-section-number">1.3</span> Essential Concepts in Data Science and Statistics</a>
   <ul class="collapse">
-  <li><a href="#statistical-population-sample-and-data-generating-process" id="toc-statistical-population-sample-and-data-generating-process" class="nav-link" data-scroll-target="#statistical-population-sample-and-data-generating-process"><span class="header-section-number">1.3.1</span> Statistical Population, Sample, and Data Generating Process</a></li>
-  <li><a href="#types-of-data-in-social-sciences" id="toc-types-of-data-in-social-sciences" class="nav-link" data-scroll-target="#types-of-data-in-social-sciences"><span class="header-section-number">1.3.2</span> Types of Data in Social Sciences</a></li>
+  <li><a href="#data-and-populations" id="toc-data-and-populations" class="nav-link" data-scroll-target="#data-and-populations"><span class="header-section-number">1.3.1</span> Data and Populations</a></li>
+  <li><a href="#variables-and-constants" id="toc-variables-and-constants" class="nav-link" data-scroll-target="#variables-and-constants"><span class="header-section-number">1.3.2</span> Variables and Constants</a></li>
+  <li><a href="#population-parameters-and-estimands" id="toc-population-parameters-and-estimands" class="nav-link" data-scroll-target="#population-parameters-and-estimands"><span class="header-section-number">1.3.3</span> Population Parameters and Estimands</a></li>
+  <li><a href="#statistics-and-estimators" id="toc-statistics-and-estimators" class="nav-link" data-scroll-target="#statistics-and-estimators"><span class="header-section-number">1.3.4</span> Statistic(s) and Estimators</a></li>
+  <li><a href="#estimates" id="toc-estimates" class="nav-link" data-scroll-target="#estimates"><span class="header-section-number">1.3.5</span> Estimates</a></li>
+  <li><a href="#statistical-models" id="toc-statistical-models" class="nav-link" data-scroll-target="#statistical-models"><span class="header-section-number">1.3.6</span> Statistical Models</a></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference"><span class="header-section-number">1.3.7</span> Inference</a></li>
+  <li><a href="#important-concepts-in-estimation" id="toc-important-concepts-in-estimation" class="nav-link" data-scroll-target="#important-concepts-in-estimation"><span class="header-section-number">1.3.8</span> Important Concepts in Estimation</a></li>
+  <li><a href="#relationships-between-concepts" id="toc-relationships-between-concepts" class="nav-link" data-scroll-target="#relationships-between-concepts"><span class="header-section-number">1.3.9</span> Relationships Between Concepts</a></li>
+  <li><a href="#additional-important-concepts" id="toc-additional-important-concepts" class="nav-link" data-scroll-target="#additional-important-concepts"><span class="header-section-number">1.3.10</span> Additional Important Concepts</a></li>
+  <li><a href="#types-of-data-in-social-sciences" id="toc-types-of-data-in-social-sciences" class="nav-link" data-scroll-target="#types-of-data-in-social-sciences"><span class="header-section-number">1.3.11</span> Types of Data in Social Sciences</a></li>
   </ul></li>
   <li><a href="#core-components-of-data-science-in-scientific-research" id="toc-core-components-of-data-science-in-scientific-research" class="nav-link" data-scroll-target="#core-components-of-data-science-in-scientific-research"><span class="header-section-number">1.4</span> Core Components of Data Science in Scientific Research</a></li>
   <li><a href="#tools-for-data-science-in-social-sciences" id="toc-tools-for-data-science-in-social-sciences" class="nav-link" data-scroll-target="#tools-for-data-science-in-social-sciences"><span class="header-section-number">1.5</span> Tools for Data Science in Social Sciences</a>
   <ul class="collapse">
   <li><a href="#r-for-social-science-data-analysis" id="toc-r-for-social-science-data-analysis" class="nav-link" data-scroll-target="#r-for-social-science-data-analysis"><span class="header-section-number">1.5.1</span> R for Social Science Data Analysis</a></li>
   </ul></li>
-  <li><a href="#models-in-science-from-deterministic-to-stochastic" id="toc-models-in-science-from-deterministic-to-stochastic" class="nav-link" data-scroll-target="#models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.6</span> Models in Science: From Deterministic to Stochastic</a></li>
-  <li><a href="#forms-of-models-in-science" id="toc-forms-of-models-in-science" class="nav-link" data-scroll-target="#forms-of-models-in-science"><span class="header-section-number">1.7</span> Forms of Models in Science</a>
+  <li><a href="#causal-inference-vs.-observational-studies" id="toc-causal-inference-vs.-observational-studies" class="nav-link" data-scroll-target="#causal-inference-vs.-observational-studies"><span class="header-section-number">1.6</span> Causal Inference vs.&nbsp;Observational Studies</a></li>
+  <li><a href="#models-in-science-from-deterministic-to-stochastic" id="toc-models-in-science-from-deterministic-to-stochastic" class="nav-link" data-scroll-target="#models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.7</span> Models in Science: From Deterministic to Stochastic (*)</a>
   <ul class="collapse">
   <li><a href="#mathematical-models" id="toc-mathematical-models" class="nav-link" data-scroll-target="#mathematical-models"><span class="header-section-number">1.7.1</span> Mathematical Models</a></li>
   <li><a href="#conceptual-models" id="toc-conceptual-models" class="nav-link" data-scroll-target="#conceptual-models"><span class="header-section-number">1.7.2</span> Conceptual Models</a></li>
@@ -296,50 +305,44 @@ window.Quarto = {
   <li><a href="#theoretical-models" id="toc-theoretical-models" class="nav-link" data-scroll-target="#theoretical-models"><span class="header-section-number">1.7.4</span> Theoretical Models</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">1.7.5</span> Conclusion</a></li>
   </ul></li>
-  <li><a href="#deterministic-models" id="toc-deterministic-models" class="nav-link" data-scroll-target="#deterministic-models"><span class="header-section-number">1.8</span> Deterministic Models</a>
+  <li><a href="#deterministic-vs-stochastic-models" id="toc-deterministic-vs-stochastic-models" class="nav-link" data-scroll-target="#deterministic-vs-stochastic-models"><span class="header-section-number">1.8</span> Deterministic vs Stochastic Models (*)</a>
   <ul class="collapse">
-  <li><a href="#example-uniformly-accelerated-motion" id="toc-example-uniformly-accelerated-motion" class="nav-link" data-scroll-target="#example-uniformly-accelerated-motion"><span class="header-section-number">1.8.1</span> Example: Uniformly Accelerated Motion</a></li>
+  <li><a href="#deterministic-models" id="toc-deterministic-models" class="nav-link" data-scroll-target="#deterministic-models"><span class="header-section-number">1.8.1</span> Deterministic Models</a></li>
+  <li><a href="#example-uniformly-accelerated-motion" id="toc-example-uniformly-accelerated-motion" class="nav-link" data-scroll-target="#example-uniformly-accelerated-motion"><span class="header-section-number">1.8.2</span> Example: Uniformly Accelerated Motion</a></li>
+  <li><a href="#stochastic-models-in-social-sciences" id="toc-stochastic-models-in-social-sciences" class="nav-link" data-scroll-target="#stochastic-models-in-social-sciences"><span class="header-section-number">1.8.3</span> Stochastic Models in Social Sciences</a></li>
+  <li><a href="#example-ordinary-least-squares-ols-regression" id="toc-example-ordinary-least-squares-ols-regression" class="nav-link" data-scroll-target="#example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.8.4</span> Example: Ordinary Least Squares (OLS) Regression</a></li>
+  <li><a href="#advanced-stochastic-models-large-language-models" id="toc-advanced-stochastic-models-large-language-models" class="nav-link" data-scroll-target="#advanced-stochastic-models-large-language-models"><span class="header-section-number">1.8.5</span> Advanced Stochastic Models: Large Language Models</a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">1.8.6</span> Conclusion</a></li>
   </ul></li>
-  <li><a href="#stochastic-models-in-social-sciences" id="toc-stochastic-models-in-social-sciences" class="nav-link" data-scroll-target="#stochastic-models-in-social-sciences"><span class="header-section-number">1.9</span> Stochastic Models in Social Sciences</a>
+  <li><a href="#understanding-spurious-correlations-confounders-and-colliders" id="toc-understanding-spurious-correlations-confounders-and-colliders" class="nav-link" data-scroll-target="#understanding-spurious-correlations-confounders-and-colliders"><span class="header-section-number">1.9</span> Understanding Spurious Correlations, Confounders, and Colliders (*)</a>
   <ul class="collapse">
-  <li><a href="#example-ordinary-least-squares-ols-regression" id="toc-example-ordinary-least-squares-ols-regression" class="nav-link" data-scroll-target="#example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.9.1</span> Example: Ordinary Least Squares (OLS) Regression</a></li>
-  <li><a href="#advanced-stochastic-models-large-language-models" id="toc-advanced-stochastic-models-large-language-models" class="nav-link" data-scroll-target="#advanced-stochastic-models-large-language-models"><span class="header-section-number">1.9.2</span> Advanced Stochastic Models: Large Language Models</a></li>
+  <li><a href="#spurious-correlations" id="toc-spurious-correlations" class="nav-link" data-scroll-target="#spurious-correlations"><span class="header-section-number">1.9.1</span> Spurious Correlations</a></li>
+  <li><a href="#example-ice-cream-sales-and-drowning-incidents" id="toc-example-ice-cream-sales-and-drowning-incidents" class="nav-link" data-scroll-target="#example-ice-cream-sales-and-drowning-incidents"><span class="header-section-number">1.9.2</span> Example: Ice Cream Sales and Drowning Incidents</a></li>
+  <li><a href="#confounders" id="toc-confounders" class="nav-link" data-scroll-target="#confounders"><span class="header-section-number">1.9.3</span> Confounders</a></li>
+  <li><a href="#example-education-income-and-age" id="toc-example-education-income-and-age" class="nav-link" data-scroll-target="#example-education-income-and-age"><span class="header-section-number">1.9.4</span> Example: Education, Income, and Age</a></li>
+  <li><a href="#colliders" id="toc-colliders" class="nav-link" data-scroll-target="#colliders"><span class="header-section-number">1.9.5</span> Colliders</a></li>
+  <li><a href="#example-job-satisfaction-salary-and-work-life-balance" id="toc-example-job-satisfaction-salary-and-work-life-balance" class="nav-link" data-scroll-target="#example-job-satisfaction-salary-and-work-life-balance"><span class="header-section-number">1.9.6</span> Example: Job Satisfaction, Salary, and Work-Life Balance</a></li>
+  <li><a href="#conclusion-2" id="toc-conclusion-2" class="nav-link" data-scroll-target="#conclusion-2"><span class="header-section-number">1.9.7</span> Conclusion</a></li>
   </ul></li>
-  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">1.10</span> Conclusion</a></li>
-  <li><a href="#understanding-spurious-correlations-confounders-and-colliders" id="toc-understanding-spurious-correlations-confounders-and-colliders" class="nav-link" data-scroll-target="#understanding-spurious-correlations-confounders-and-colliders"><span class="header-section-number">1.11</span> Understanding Spurious Correlations, Confounders, and Colliders</a></li>
-  <li><a href="#spurious-correlations" id="toc-spurious-correlations" class="nav-link" data-scroll-target="#spurious-correlations"><span class="header-section-number">1.12</span> Spurious Correlations</a>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">1.10</span> Further Reading</a></li>
+  <li><a href="#ethical-considerations-in-social-science-data-analysis" id="toc-ethical-considerations-in-social-science-data-analysis" class="nav-link" data-scroll-target="#ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.11</span> Ethical Considerations in Social Science Data Analysis</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">1.12</span> Key Takeaways</a></li>
+  <li><a href="#appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences" id="toc-appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences" class="nav-link" data-scroll-target="#appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences"><span class="header-section-number">1.13</span> Appendix A: Classical vs Quantum Randomness: Understanding the Fundamental Differences</a>
   <ul class="collapse">
-  <li><a href="#example-ice-cream-sales-and-drowning-incidents" id="toc-example-ice-cream-sales-and-drowning-incidents" class="nav-link" data-scroll-target="#example-ice-cream-sales-and-drowning-incidents"><span class="header-section-number">1.12.1</span> Example: Ice Cream Sales and Drowning Incidents</a></li>
+  <li><a href="#origin-of-randomness" id="toc-origin-of-randomness" class="nav-link" data-scroll-target="#origin-of-randomness"><span class="header-section-number">1.13.1</span> Origin of Randomness</a></li>
+  <li><a href="#philosophical-implications" id="toc-philosophical-implications" class="nav-link" data-scroll-target="#philosophical-implications"><span class="header-section-number">1.13.2</span> Philosophical Implications</a></li>
+  <li><a href="#mathematical-treatment" id="toc-mathematical-treatment" class="nav-link" data-scroll-target="#mathematical-treatment"><span class="header-section-number">1.13.3</span> Mathematical Treatment</a></li>
+  <li><a href="#predictability-and-control" id="toc-predictability-and-control" class="nav-link" data-scroll-target="#predictability-and-control"><span class="header-section-number">1.13.4</span> Predictability and Control</a></li>
+  <li><a href="#practical-implications" id="toc-practical-implications" class="nav-link" data-scroll-target="#practical-implications"><span class="header-section-number">1.13.5</span> Practical Implications</a></li>
+  <li><a href="#examples-to-understand-the-difference" id="toc-examples-to-understand-the-difference" class="nav-link" data-scroll-target="#examples-to-understand-the-difference"><span class="header-section-number">1.13.6</span> Examples to Understand the Difference</a></li>
+  <li><a href="#conclusion-3" id="toc-conclusion-3" class="nav-link" data-scroll-target="#conclusion-3"><span class="header-section-number">1.13.7</span> Conclusion</a></li>
   </ul></li>
-  <li><a href="#confounders" id="toc-confounders" class="nav-link" data-scroll-target="#confounders"><span class="header-section-number">1.13</span> Confounders</a>
+  <li><a href="#appendix-b-large-language-models---understanding-their-stochastic-nature" id="toc-appendix-b-large-language-models---understanding-their-stochastic-nature" class="nav-link" data-scroll-target="#appendix-b-large-language-models---understanding-their-stochastic-nature"><span class="header-section-number">1.14</span> Appendix B: Large Language Models - Understanding Their Stochastic Nature</a>
   <ul class="collapse">
-  <li><a href="#example-education-income-and-age" id="toc-example-education-income-and-age" class="nav-link" data-scroll-target="#example-education-income-and-age"><span class="header-section-number">1.13.1</span> Example: Education, Income, and Age</a></li>
-  </ul></li>
-  <li><a href="#colliders" id="toc-colliders" class="nav-link" data-scroll-target="#colliders"><span class="header-section-number">1.14</span> Colliders</a>
-  <ul class="collapse">
-  <li><a href="#example-job-satisfaction-salary-and-work-life-balance" id="toc-example-job-satisfaction-salary-and-work-life-balance" class="nav-link" data-scroll-target="#example-job-satisfaction-salary-and-work-life-balance"><span class="header-section-number">1.14.1</span> Example: Job Satisfaction, Salary, and Work-Life Balance</a></li>
-  </ul></li>
-  <li><a href="#conclusion-2" id="toc-conclusion-2" class="nav-link" data-scroll-target="#conclusion-2"><span class="header-section-number">1.15</span> Conclusion</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">1.16</span> Further Reading</a></li>
-  <li><a href="#ethical-considerations-in-social-science-data-analysis" id="toc-ethical-considerations-in-social-science-data-analysis" class="nav-link" data-scroll-target="#ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.17</span> Ethical Considerations in Social Science Data Analysis</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">1.18</span> Key Takeaways</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">1.19</span> Next Steps</a></li>
-  <li><a href="#appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences" id="toc-appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences" class="nav-link" data-scroll-target="#appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences"><span class="header-section-number">1.20</span> Appendix A: Classical vs Quantum Randomness: Understanding the Fundamental Differences</a>
-  <ul class="collapse">
-  <li><a href="#origin-of-randomness" id="toc-origin-of-randomness" class="nav-link" data-scroll-target="#origin-of-randomness"><span class="header-section-number">1.20.1</span> Origin of Randomness</a></li>
-  <li><a href="#philosophical-implications" id="toc-philosophical-implications" class="nav-link" data-scroll-target="#philosophical-implications"><span class="header-section-number">1.20.2</span> Philosophical Implications</a></li>
-  <li><a href="#mathematical-treatment" id="toc-mathematical-treatment" class="nav-link" data-scroll-target="#mathematical-treatment"><span class="header-section-number">1.20.3</span> Mathematical Treatment</a></li>
-  <li><a href="#predictability-and-control" id="toc-predictability-and-control" class="nav-link" data-scroll-target="#predictability-and-control"><span class="header-section-number">1.20.4</span> Predictability and Control</a></li>
-  <li><a href="#practical-implications" id="toc-practical-implications" class="nav-link" data-scroll-target="#practical-implications"><span class="header-section-number">1.20.5</span> Practical Implications</a></li>
-  <li><a href="#examples-to-understand-the-difference" id="toc-examples-to-understand-the-difference" class="nav-link" data-scroll-target="#examples-to-understand-the-difference"><span class="header-section-number">1.20.6</span> Examples to Understand the Difference</a></li>
-  <li><a href="#conclusion-3" id="toc-conclusion-3" class="nav-link" data-scroll-target="#conclusion-3"><span class="header-section-number">1.20.7</span> Conclusion</a></li>
-  </ul></li>
-  <li><a href="#appendix-b-large-language-models---understanding-their-stochastic-nature" id="toc-appendix-b-large-language-models---understanding-their-stochastic-nature" class="nav-link" data-scroll-target="#appendix-b-large-language-models---understanding-their-stochastic-nature"><span class="header-section-number">1.21</span> Appendix B: Large Language Models - Understanding Their Stochastic Nature</a>
-  <ul class="collapse">
-  <li><a href="#llm-basics-and-stochastic-nature" id="toc-llm-basics-and-stochastic-nature" class="nav-link" data-scroll-target="#llm-basics-and-stochastic-nature"><span class="header-section-number">1.21.1</span> LLM Basics and Stochastic Nature</a></li>
-  <li><a href="#comparison-to-classical-statistical-models" id="toc-comparison-to-classical-statistical-models" class="nav-link" data-scroll-target="#comparison-to-classical-statistical-models"><span class="header-section-number">1.21.2</span> Comparison to Classical Statistical Models</a></li>
-  <li><a href="#implications-for-mathematical-tasks" id="toc-implications-for-mathematical-tasks" class="nav-link" data-scroll-target="#implications-for-mathematical-tasks"><span class="header-section-number">1.21.3</span> Implications for Mathematical Tasks</a></li>
-  <li><a href="#best-practices-and-conclusion" id="toc-best-practices-and-conclusion" class="nav-link" data-scroll-target="#best-practices-and-conclusion"><span class="header-section-number">1.21.4</span> Best Practices and Conclusion</a></li>
+  <li><a href="#llm-basics-and-stochastic-nature" id="toc-llm-basics-and-stochastic-nature" class="nav-link" data-scroll-target="#llm-basics-and-stochastic-nature"><span class="header-section-number">1.14.1</span> LLM Basics and Stochastic Nature</a></li>
+  <li><a href="#comparison-to-classical-statistical-models" id="toc-comparison-to-classical-statistical-models" class="nav-link" data-scroll-target="#comparison-to-classical-statistical-models"><span class="header-section-number">1.14.2</span> Comparison to Classical Statistical Models</a></li>
+  <li><a href="#implications-for-mathematical-tasks" id="toc-implications-for-mathematical-tasks" class="nav-link" data-scroll-target="#implications-for-mathematical-tasks"><span class="header-section-number">1.14.3</span> Implications for Mathematical Tasks</a></li>
+  <li><a href="#best-practices-and-conclusion" id="toc-best-practices-and-conclusion" class="nav-link" data-scroll-target="#best-practices-and-conclusion"><span class="header-section-number">1.14.4</span> Best Practices and Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -366,17 +369,33 @@ window.Quarto = {
 </header>
 
 
-<p>This chapter provides a comprehensive introduction to data science and statistics, tailored for students in social sciences. We’ll explore fundamental concepts, the relationship between statistics and data science, and how these fields apply to social research.</p>
 <section id="what-is-data-science" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="what-is-data-science"><span class="header-section-number">1.1</span> What is Data Science?</h2>
-<p>Data science is a cutting-edge, interdisciplinary field that integrates scientific methodologies, sophisticated procedures, advanced algorithms, and robust computational systems to extract valuable knowledge and actionable insights from both structured and unstructured data. This dynamic discipline combines elements of statistics, mathematics, computer science, and domain expertise to uncover hidden patterns, predict trends, and drive data-informed decision-making across various sectors. By employing large datasets and using techniques such as machine learning and artificial intelligence, data science empowers organizations to solve complex problems, optimize processes, and gain a competitive edge in an increasingly data-driven world.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Statistics and Data Science are The Art and Science of Learning from Data.</p>
+</div>
+</div>
+<ol type="1">
+<li><p>Data science is an interdisciplinary field that integrates scientific methodologies, sophisticated procedures, advanced algorithms, and robust computational systems to extract valuable knowledge and actionable insights from both structured and unstructured data.</p></li>
+<li><p>This dynamic discipline combines elements of statistics, mathematics, computer science, and domain expertise to uncover hidden patterns, predict trends, and drive data-informed decision-making across various sectors.</p></li>
+<li><p>By employing large datasets and using techniques such as machine learning and artificial intelligence, data science empowers organizations to solve complex problems, optimize processes, and gain a competitive edge in an increasingly data-driven world.</p></li>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Point
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -386,22 +405,30 @@ Key Point
 </section>
 <section id="the-relationship-between-statistics-and-data-science" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="the-relationship-between-statistics-and-data-science"><span class="header-section-number">1.2</span> The Relationship Between Statistics and Data Science</h2>
-<p>While statistics and data science are closely related, they have some distinctions:</p>
+<p>Statistics and data science are closely interrelated fields with significant overlap, especially in social sciences. Rather than strict divisions, it’s more accurate to view them as complementary approaches on a continuum:</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Statistics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Data Science</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Traditional Statistics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Modern Data Science</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Evolving Landscape</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <ul>
-<li>Focuses on mathematical theories and methods for collecting, analyzing, interpreting, and presenting data</li>
+<li>Rooted in mathematical theories and methods for data analysis</li>
 <li>Emphasizes statistical inference, hypothesis testing, and probability theory</li>
-<li>Has a long history in social sciences for analyzing survey data, experimental results, and observational studies</li>
+<li>Historically central to social sciences for analyzing surveys, experiments, and observational studies</li>
 </ul>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <ul>
-<li>Incorporates statistical methods along with computer science and domain expertise</li>
-<li>Emphasizes big data, machine learning, and predictive modeling</li>
-<li>In social sciences, often deals with large-scale digital traces, social media data, and complex behavioral datasets</li>
+<li>Integrates statistical methods with computer science and domain expertise</li>
+<li>Expands focus to include machine learning, big data processing, and predictive modeling</li>
+<li>In social sciences, often tackles large-scale digital data and complex behavioral datasets</li>
+</ul>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ul>
+<li>Boundaries between statistics and data science are increasingly blurred</li>
+<li>Many techniques and tools are shared across both fields</li>
+<li>Social scientists often combine traditional statistical approaches with newer data science methods</li>
+<li>The choice of approach depends on research questions, data characteristics, and specific analytical needs</li>
 </ul>
 </div>
 </div>
@@ -410,33 +437,185 @@ Key Point
 </section>
 <section id="essential-concepts-in-data-science-and-statistics" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="essential-concepts-in-data-science-and-statistics"><span class="header-section-number">1.3</span> Essential Concepts in Data Science and Statistics</h2>
-<section id="statistical-population-sample-and-data-generating-process" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="statistical-population-sample-and-data-generating-process"><span class="header-section-number">1.3.1</span> Statistical Population, Sample, and Data Generating Process</h3>
-<p>Understanding the relationships between population, sample, and the data generating process (DGP) is crucial in social science research.</p>
+<section id="data-and-populations" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="data-and-populations"><span class="header-section-number">1.3.1</span> Data and Populations</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definitions
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Population</strong>: The entire group of individuals or objects about which information is sought.</li>
 <li><strong>Sample</strong>: A subset of the population that is selected for study.</li>
-<li><strong>Data Generating Process (DGP)</strong>: The underlying mechanism or system that produces the observed data.</li>
+<li><strong>Data</strong>: Observations or measurements collected from a sample or population.</li>
+<li><strong>Data Generating Process (DGP)</strong>: The underlying mechanism or system that produces the observed data. The Data Generating Process (DGP) is essentially the “true” model or process that creates data.</li>
 </ul>
 </div>
 </div>
-<section id="comparing-population-and-dgp" class="level4" data-number="1.3.1.1">
-<h4 data-number="1.3.1.1" class="anchored" data-anchor-id="comparing-population-and-dgp"><span class="header-section-number">1.3.1.1</span> Comparing Population and DGP:</h4>
+<p>Data forms the foundation of statistical analysis. It can be: - Primary data: Collected firsthand for a specific purpose - Secondary data: Obtained from existing sources</p>
+<p>Example: In a study of university students’ heights, the population is all university students in the country, while a sample might be 1000 randomly selected students.</p>
+</section>
+<section id="variables-and-constants" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="variables-and-constants"><span class="header-section-number">1.3.2</span> Variables and Constants</h3>
+<p>Variables are characteristics that can take different values across a dataset. They can be:</p>
+<ol type="1">
+<li>Quantitative (numeric):
 <ul>
-<li>The population represents the group we want to study, while the DGP is the mechanism producing the characteristics we observe in that population.</li>
-<li>In social sciences, the DGP often involves complex social, psychological, and economic factors that shape the population’s characteristics.</li>
-<li>Understanding the DGP helps us interpret why the population has certain characteristics and how these might change over time or in different contexts.</li>
+<li>Continuous: Height, weight, temperature</li>
+<li>Discrete: Number of children, count of errors in a program</li>
+</ul></li>
+<li>Qualitative (categorical):
+<ul>
+<li>Nominal: Blood type, eye color</li>
+<li>Ordinal: Education level, customer satisfaction rating</li>
+</ul></li>
+</ol>
+<p>Constants are fixed values that remain unchanged throughout an analysis.</p>
+</section>
+<section id="population-parameters-and-estimands" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="population-parameters-and-estimands"><span class="header-section-number">1.3.3</span> Population Parameters and Estimands</h3>
+<p>Population parameters are numerical characteristics of a population. Key points:</p>
+<ol type="1">
+<li>They describe the entire population, not just a sample.</li>
+<li>They are usually denoted by Greek letters.</li>
+<li>In most cases, they cannot be directly calculated because we can’t measure the entire population.</li>
+<li>They are determined by the underlying Data Generating Process (DGP).</li>
+</ol>
+<p>Common population parameters include:</p>
+<ul>
+<li>Population mean (<span class="math inline">\(\mu\)</span>): The average value of a variable in the population.</li>
+<li>Population variance (<span class="math inline">\(\sigma^2\)</span>): A measure of variability in the population.</li>
+<li>Population proportion (<span class="math inline">\(p\)</span>): The proportion of individuals in the population with a certain characteristic.</li>
 </ul>
+<p>An estimand is the target of estimation - the specific population parameter or function of parameters that we aim to estimate. It defines what we want to know about the population.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Height of University Students
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the height of all university students in a country: - <span class="math inline">\(\mu\)</span> (estimand): The true average height of all university students (population mean) - <span class="math inline">\(\sigma^2\)</span> (estimand): The true variance of heights in the population These parameters are unknown estimands that we aim to estimate using sample data.</p>
+</div>
+</div>
+<section id="relationships-between-variables---an-example-using-r" class="level4" data-number="1.3.3.1">
+<h4 data-number="1.3.3.1" class="anchored" data-anchor-id="relationships-between-variables---an-example-using-r"><span class="header-section-number">1.3.3.1</span> Relationships between variables - an example using R</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to show/hide R code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulating population based on a simple DGP</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>income <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="fl">0.5</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>voting_probability <span class="ot">&lt;-</span> <span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">5</span> <span class="sc">+</span> <span class="fl">0.05</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fl">0.00003</span> <span class="sc">*</span> income <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">sd =</span> <span class="fl">0.5</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>population <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> age, <span class="at">income =</span> income, <span class="at">voting_probability =</span> voting_probability)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecting a random sample</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>sample_indices <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(population), <span class="dv">1000</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> population[sample_indices, ]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sample_data, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> income, <span class="at">color =</span> voting_probability)) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Sample: Age, Income, and Voting Probability"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age"</span>, <span class="at">y =</span> <span class="st">"Income"</span>, <span class="at">color =</span> <span class="st">"Voting Probability"</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This visualization shows how age and income (part of the DGP) influence the probability of voting in our simulated population, based on the selected sample.</p>
+</section>
+</section>
+<section id="statistics-and-estimators" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="statistics-and-estimators"><span class="header-section-number">1.3.4</span> Statistic(s) and Estimators</h3>
+<p>A statistic (singular) or sample statistic is any quantity computed from values in a sample, which is considered for a statistical purpose.</p>
+<p>When a statistic is used for estimating an estimand (population parameter), it is called an estimator. Estimators are functions of sample data that provide approximate values for unknown population parameters.</p>
+<p>Examples of statistics/estimators:</p>
+<ul>
+<li>Sample mean: <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span> (estimates <span class="math inline">\(\mu\)</span>)</li>
+<li>Sample variance: <span class="math inline">\(s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2\)</span> (estimates <span class="math inline">\(\sigma^2\)</span>)</li>
+<li>Sample proportion: <span class="math inline">\(\hat{p} = \frac{x}{n}\)</span> (estimates <span class="math inline">\(p\)</span>)</li>
+</ul>
+</section>
+<section id="estimates" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="estimates"><span class="header-section-number">1.3.5</span> Estimates</h3>
+<p>An estimate is the specific value obtained by applying an estimator to a particular sample. It is a point value that approximates the true estimand (population parameter).</p>
+<p>Example: If we calculate a sample mean height of 68 inches from our data, then 68 inches is our estimate of the estimand <span class="math inline">\(\mu\)</span> (population mean height).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/sampling-estimators.svg" class="img-fluid figure-img"></p>
+<figcaption>Retrieved from: https://allmodelsarewrong.github.io/mse.html</figcaption>
+</figure>
+</div>
+</section>
+<section id="statistical-models" class="level3" data-number="1.3.6">
+<h3 data-number="1.3.6" class="anchored" data-anchor-id="statistical-models"><span class="header-section-number">1.3.6</span> Statistical Models</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A model in science is a simplified representation of a complex system or phenomenon. It’s designed to help us understand, explain, and make predictions about the real world. Models can take various forms, including mathematical equations, computer simulations, or conceptual frameworks. They allow scientists to focus on key aspects of a system while ignoring less relevant details, making complex problems more manageable and easier to study.</p>
+</div>
+</div>
+<p>Statistical models represent relationships between variables and help in making predictions or inferences about estimands (population parameters).</p>
+<p>Example: A linear regression model <span class="math inline">\(y = \beta_0 + \beta_1x + \epsilon\)</span> describes the relationship between an independent variable <span class="math inline">\(x\)</span> and a dependent variable <span class="math inline">\(y\)</span>, where <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are estimands to be estimated.</p>
+</section>
+<section id="inference" class="level3" data-number="1.3.7">
+<h3 data-number="1.3.7" class="anchored" data-anchor-id="inference"><span class="header-section-number">1.3.7</span> Inference</h3>
+<p>Statistical inference is the process of drawing conclusions about estimands (population parameters) based on sample data. It involves two main types:</p>
+<ol type="1">
+<li>Estimation: Using sample statistics (estimators) to estimate estimands (population parameters)</li>
+<li>Hypothesis testing: Making decisions about estimands based on sample evidence</li>
+</ol>
+</section>
+<section id="important-concepts-in-estimation" class="level3" data-number="1.3.8">
+<h3 data-number="1.3.8" class="anchored" data-anchor-id="important-concepts-in-estimation"><span class="header-section-number">1.3.8</span> Important Concepts in Estimation</h3>
+<section id="bias" class="level4" data-number="1.3.8.1">
+<h4 data-number="1.3.8.1" class="anchored" data-anchor-id="bias"><span class="header-section-number">1.3.8.1</span> Bias</h4>
+<p>Bias refers to the tendency of an estimator to systematically over- or underestimate the true estimand (population parameter).</p>
+<ul>
+<li>An unbiased estimator has an expected value equal to the true parameter value.</li>
+<li><span class="math inline">\(\text{Bias}(\hat{\theta}) = E(\hat{\theta}) - \theta\)</span>, where <span class="math inline">\(\hat{\theta}\)</span> is the estimator and <span class="math inline">\(\theta\)</span> is the true estimand.</li>
+</ul>
+</section>
+<section id="efficiency" class="level4" data-number="1.3.8.2">
+<h4 data-number="1.3.8.2" class="anchored" data-anchor-id="efficiency"><span class="header-section-number">1.3.8.2</span> Efficiency</h4>
+<p>Efficiency relates to the precision of an estimator. A more efficient estimator has less variability in its estimates of the estimand.</p>
+<ul>
+<li>Measured by the variance of the estimator</li>
+<li>For unbiased estimators, efficiency is often compared using the Mean Squared Error (MSE)</li>
+</ul>
+</section>
+</section>
+<section id="relationships-between-concepts" class="level3" data-number="1.3.9">
+<h3 data-number="1.3.9" class="anchored" data-anchor-id="relationships-between-concepts"><span class="header-section-number">1.3.9</span> Relationships Between Concepts</h3>
+<ol type="1">
+<li>The DGP determines the values of population parameters (estimands).</li>
+<li>Estimands are estimated using sample statistics (estimators).</li>
+<li>The quality of estimators is evaluated based on properties like bias and efficiency in estimating the estimand.</li>
+<li>Statistical models use estimated parameters to describe relationships between estimands in the population.</li>
+<li>Inference uses estimators to draw conclusions about estimands based on sample data.</li>
+</ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -449,46 +628,14 @@ Example: Voter Behavior Study
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Population</strong>: All eligible voters in a country</li>
+<li><strong>Estimand</strong>: <span class="math inline">\(p\)</span> = true proportion of voters supporting a candidate</li>
 <li><strong>Sample</strong>: 1000 randomly selected eligible voters</li>
-<li><strong>DGP</strong>: The complex interplay of factors influencing voting decisions, such as political beliefs, economic conditions, media exposure, and social networks.</li>
+<li><strong>Estimator</strong>: <span class="math inline">\(\hat{p}\)</span> = sample proportion of voters supporting the candidate</li>
+<li><strong>Estimate</strong>: The specific value of <span class="math inline">\(\hat{p}\)</span> calculated from the sample (e.g., 0.52)</li>
+<li><strong>DGP</strong>: The complex interplay of factors influencing voting decisions, such as political beliefs, economic conditions, media exposure, and social networks. Understanding the DGP helps researchers interpret why the estimand <span class="math inline">\(p\)</span> has a certain value and how it might change over time.</li>
 </ul>
-<p>Understanding the DGP helps researchers interpret voter behavior and potentially predict future trends.</p>
 </div>
 </div>
-<p>Let’s visualize this concept using R:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Click to show/hide R code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate a population based on a simple DGP</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">mean =</span> <span class="dv">45</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>income <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="fl">0.5</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>voting_prob <span class="ot">&lt;-</span> <span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">5</span> <span class="sc">+</span> <span class="fl">0.05</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fl">0.00003</span> <span class="sc">*</span> income <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10000</span>, <span class="at">sd =</span> <span class="fl">0.5</span>))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>population <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> age, <span class="at">income =</span> income, <span class="at">voting_prob =</span> voting_prob)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a random sample</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>sample_indices <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(population), <span class="dv">1000</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>sample_data <span class="ot">&lt;-</span> population[sample_indices, ]</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sample_data, <span class="fu">aes</span>(<span class="at">x =</span> age, <span class="at">y =</span> income, <span class="at">color =</span> voting_prob)) <span class="sc">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Sample: Age, Income, and Voting Probability"</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age"</span>, <span class="at">y =</span> <span class="st">"Income"</span>, <span class="at">color =</span> <span class="st">"Voting Probability"</span>) <span class="sc">+</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>This visualization demonstrates how age and income (part of the DGP) influence voting probability in our simulated population, based on the sample we’ve drawn.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="stat_imgs/sampling-estimators.svg" class="img-fluid figure-img"></p>
@@ -496,9 +643,42 @@ Example: Voter Behavior Study
 </figure>
 </div>
 </section>
+<section id="additional-important-concepts" class="level3" data-number="1.3.10">
+<h3 data-number="1.3.10" class="anchored" data-anchor-id="additional-important-concepts"><span class="header-section-number">1.3.10</span> Additional Important Concepts</h3>
+<section id="inference-1" class="level4" data-number="1.3.10.1">
+<h4 data-number="1.3.10.1" class="anchored" data-anchor-id="inference-1"><span class="header-section-number">1.3.10.1</span> Inference</h4>
+<p>Statistical inference is the process of drawing conclusions about a population based on sample data. It involves two main types:</p>
+<ol type="1">
+<li>Estimation: Using sample statistics to estimate population parameters</li>
+<li>Hypothesis testing: Making decisions about population parameters based on sample evidence</li>
+</ol>
+<p>Example: Using a sample mean to estimate the average height of all university students in a country.</p>
 </section>
-<section id="types-of-data-in-social-sciences" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="types-of-data-in-social-sciences"><span class="header-section-number">1.3.2</span> Types of Data in Social Sciences</h3>
+<section id="bias-1" class="level4" data-number="1.3.10.2">
+<h4 data-number="1.3.10.2" class="anchored" data-anchor-id="bias-1"><span class="header-section-number">1.3.10.2</span> Bias</h4>
+<p>Bias refers to the tendency of an estimator to systematically over- or underestimate the true population parameter.</p>
+<ul>
+<li>An unbiased estimator has an expected value equal to the true parameter value.</li>
+<li>Bias(<span class="math inline">\(\hat{\theta}\)</span>) = <span class="math inline">\(E(\hat{\theta}) - \theta\)</span>, where <span class="math inline">\(\hat{\theta}\)</span> is the estimator and <span class="math inline">\(\theta\)</span> is the true parameter value.</li>
+</ul>
+<p>Example: The sample variance <span class="math inline">\(s^2\)</span> is an unbiased estimator of the population variance <span class="math inline">\(\sigma^2\)</span>, while <span class="math inline">\(\frac{(n-1)}{n}s^2\)</span> is a biased estimator.</p>
+</section>
+<section id="efficiency-1" class="level4" data-number="1.3.10.3">
+<h4 data-number="1.3.10.3" class="anchored" data-anchor-id="efficiency-1"><span class="header-section-number">1.3.10.3</span> Efficiency</h4>
+<p>Efficiency relates to the precision of an estimator. A more efficient estimator has less variability in its estimates.</p>
+<ul>
+<li>Measured by the variance of the estimator</li>
+<li>For unbiased estimators, efficiency is often compared using the Mean Squared Error (MSE)</li>
+</ul>
+<p>Example: Among unbiased estimators, the one with the smallest variance is considered the most efficient.</p>
+</section>
+<section id="relationship-between-bias-and-efficiency" class="level4" data-number="1.3.10.4">
+<h4 data-number="1.3.10.4" class="anchored" data-anchor-id="relationship-between-bias-and-efficiency"><span class="header-section-number">1.3.10.4</span> Relationship between Bias and Efficiency</h4>
+<p>There’s often a trade-off between bias and efficiency. Some biased estimators may have lower variance (higher efficiency) than unbiased alternatives. The choice between them depends on the specific context and goals of the analysis.</p>
+</section>
+</section>
+<section id="types-of-data-in-social-sciences" class="level3" data-number="1.3.11">
+<h3 data-number="1.3.11" class="anchored" data-anchor-id="types-of-data-in-social-sciences"><span class="header-section-number">1.3.11</span> Types of Data in Social Sciences</h3>
 <p>Social science research deals with various types of data:</p>
 <ol type="1">
 <li><strong>Quantitative Data</strong>: Numerical data (e.g., survey responses, economic indicators)</li>
@@ -568,7 +748,7 @@ Example: Voter Behavior Study
 </section>
 <section id="tools-for-data-science-in-social-sciences" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="tools-for-data-science-in-social-sciences"><span class="header-section-number">1.5</span> Tools for Data Science in Social Sciences</h2>
-<p>In this course, we’ll primarily use R for our data analysis, as it’s widely used in social science research.</p>
+<p>In this course, we’ll use R for our data analysis, as it’s widely used in social science research.</p>
 <section id="r-for-social-science-data-analysis" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="r-for-social-science-data-analysis"><span class="header-section-number">1.5.1</span> R for Social Science Data Analysis</h3>
 <p>R offers powerful capabilities for social science research, from data manipulation to advanced statistical modeling.</p>
@@ -593,7 +773,7 @@ Example: Voter Behavior Study
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate example data with a stronger Simpson's Paradox</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate example data with a Simpson's Paradox</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">age_group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Young"</span>, <span class="st">"Middle"</span>, <span class="st">"Old"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>)),</span>
@@ -775,24 +955,79 @@ F-statistic:  2244 on 3 and 996 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>This example demonstrates basic data manipulation, summary statistics, and visualization using R, which are common tasks in social science research.</p>
 </section>
 </section>
-<section id="models-in-science-from-deterministic-to-stochastic" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.6</span> Models in Science: From Deterministic to Stochastic</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="causal-inference-vs.-observational-studies" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="causal-inference-vs.-observational-studies"><span class="header-section-number">1.6</span> Causal Inference vs.&nbsp;Observational Studies</h2>
+<p>In social sciences and beyond, understanding the relationship between variables is crucial. Two key approaches to this are causal inference and observational studies, each with its own strengths and limitations.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Causal Inference</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Observational Studies</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Key Distinction: Correlation vs.&nbsp;Causation</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<ul>
+<li>Aims to establish cause-and-effect relationships</li>
+<li>Often involves experimental designs or advanced statistical techniques</li>
+<li>Seeks to answer “What if?” questions and determine the impact of interventions</li>
+<li>Examples: Randomized controlled trials, quasi-experimental designs, instrumental variables</li>
+</ul>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<ul>
+<li>Examine relationships between variables without direct intervention</li>
+<li>Rely on data collected from natural settings or existing datasets</li>
+<li>Can identify correlations and patterns but struggle to establish causation</li>
+<li>Examples: Cohort studies, case-control studies, cross-sectional surveys</li>
+</ul>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Remember: Correlation Does Not Imply Causation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A model in science is a simplified representation of a complex system or phenomenon. It’s designed to help us understand, explain, and make predictions about the real world. Models can take various forms, including mathematical equations, computer simulations, or conceptual frameworks. They allow scientists to focus on key aspects of a system while ignoring less relevant details, making complex problems more manageable and easier to study.</p>
+<p>A fundamental principle in research is that correlation between two variables does not necessarily imply a causal relationship. This concept is crucial when interpreting results from observational studies.</p>
+<ul>
+<li><strong>Correlation</strong>: Measures the strength and direction of a relationship between variables</li>
+<li><strong>Causation</strong>: Indicates that changes in one variable directly cause changes in another</li>
+</ul>
+<p>While strong correlations can suggest potential causal links, additional evidence and rigorous methods are required to establish causality.</p>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Challenges in Establishing Causality</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Methods to Strengthen Causal Claims</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">Importance in Social Sciences</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<ul>
+<li>Confounding variables: Unmeasured factors that affect both the presumed cause and effect</li>
+<li>Reverse causality: The presumed effect might actually be causing the presumed cause</li>
+<li>Selection bias: Non-random selection of subjects into study groups</li>
+</ul>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<ol type="1">
+<li>Randomized controlled trials (when ethical and feasible)</li>
+<li>Natural experiments or quasi-experimental designs</li>
+<li>Propensity score matching</li>
+<li>Difference-in-differences analysis</li>
+<li>Instrumental variable approaches</li>
+<li>Directed acyclic graphs (DAGs) for visualizing causal relationships</li>
+</ol>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p>Understanding the distinction between causal inference and observational studies is crucial in social sciences, where ethical considerations often limit experimental manipulation. Researchers must carefully design studies and interpret results to avoid misleading conclusions about causality.</p>
+</div>
 </div>
 </div>
 </section>
-<section id="forms-of-models-in-science" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="forms-of-models-in-science"><span class="header-section-number">1.7</span> Forms of Models in Science</h2>
+<section id="models-in-science-from-deterministic-to-stochastic" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="models-in-science-from-deterministic-to-stochastic"><span class="header-section-number">1.7</span> Models in Science: From Deterministic to Stochastic (*)</h2>
 <p>Models are essential tools in scientific research, helping scientists to represent, understand, and predict complex phenomena. This section explores the main types of models used in science, along with examples of their applications. It’s important to note that these categories often overlap, and many scientific models incorporate multiple aspects.</p>
 <section id="mathematical-models" class="level3" data-number="1.7.1">
 <h3 data-number="1.7.1" class="anchored" data-anchor-id="mathematical-models"><span class="header-section-number">1.7.1</span> Mathematical Models</h3>
@@ -855,11 +1090,14 @@ Note
 <p>It’s crucial to distinguish between different types of stochastic models. Classical stochastic models, such as those used in regression analysis, deal with randomness arising from incomplete information or complex interactions in otherwise deterministic systems. In contrast, quantum stochastic models, like those in particle physics, deal with fundamental, irreducible randomness inherent in quantum mechanical systems. This distinction reflects the profound differences between classical and quantum paradigms in physics and highlights the diverse ways in which probability is used in scientific modeling.</p>
 </section>
 </section>
-<section id="deterministic-models" class="level2" data-number="1.8">
-<h2 data-number="1.8" class="anchored" data-anchor-id="deterministic-models"><span class="header-section-number">1.8</span> Deterministic Models</h2>
+<section id="deterministic-vs-stochastic-models" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="deterministic-vs-stochastic-models"><span class="header-section-number">1.8</span> Deterministic vs Stochastic Models (*)</h2>
+<section id="deterministic-models" class="level3" data-number="1.8.1">
+<h3 data-number="1.8.1" class="anchored" data-anchor-id="deterministic-models"><span class="header-section-number">1.8.1</span> Deterministic Models</h3>
 <p>Deterministic models are those where the output is fully determined by the parameter values and the initial conditions. These models are often used in physics and engineering.</p>
-<section id="example-uniformly-accelerated-motion" class="level3" data-number="1.8.1">
-<h3 data-number="1.8.1" class="anchored" data-anchor-id="example-uniformly-accelerated-motion"><span class="header-section-number">1.8.1</span> Example: Uniformly Accelerated Motion</h3>
+</section>
+<section id="example-uniformly-accelerated-motion" class="level3" data-number="1.8.2">
+<h3 data-number="1.8.2" class="anchored" data-anchor-id="example-uniformly-accelerated-motion"><span class="header-section-number">1.8.2</span> Example: Uniformly Accelerated Motion</h3>
 <p>A classic example of a deterministic model is uniformly accelerated motion, described by the equation:</p>
 <p><span class="math display">\[x(t) = x_0 + v_0t + \frac{1}{2}at^2\]</span></p>
 <p>Where:</p>
@@ -894,12 +1132,12 @@ Note
 </div>
 <p>This code will generate a plot of uniformly accelerated motion, which is a simpler and more intuitive example from Newtonian dynamics. In this case, an object starts moving with an initial velocity and accelerates uniformly, resulting in a parabolic trajectory on the position-time graph.</p>
 </section>
-</section>
-<section id="stochastic-models-in-social-sciences" class="level2" data-number="1.9">
-<h2 data-number="1.9" class="anchored" data-anchor-id="stochastic-models-in-social-sciences"><span class="header-section-number">1.9</span> Stochastic Models in Social Sciences</h2>
+<section id="stochastic-models-in-social-sciences" class="level3" data-number="1.8.3">
+<h3 data-number="1.8.3" class="anchored" data-anchor-id="stochastic-models-in-social-sciences"><span class="header-section-number">1.8.3</span> Stochastic Models in Social Sciences</h3>
 <p>Stochastic models incorporate randomness and are often used in social sciences where there’s inherent uncertainty in the systems being studied.</p>
-<section id="example-ordinary-least-squares-ols-regression" class="level3" data-number="1.9.1">
-<h3 data-number="1.9.1" class="anchored" data-anchor-id="example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.9.1</span> Example: Ordinary Least Squares (OLS) Regression</h3>
+</section>
+<section id="example-ordinary-least-squares-ols-regression" class="level3" data-number="1.8.4">
+<h3 data-number="1.8.4" class="anchored" data-anchor-id="example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.8.4</span> Example: Ordinary Least Squares (OLS) Regression</h3>
 <p>OLS is a fundamental stochastic model in social sciences. It’s represented as:</p>
 <p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
 <p>Where:</p>
@@ -960,8 +1198,8 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 </figure>
 </div>
 </section>
-<section id="advanced-stochastic-models-large-language-models" class="level3" data-number="1.9.2">
-<h3 data-number="1.9.2" class="anchored" data-anchor-id="advanced-stochastic-models-large-language-models"><span class="header-section-number">1.9.2</span> Advanced Stochastic Models: Large Language Models</h3>
+<section id="advanced-stochastic-models-large-language-models" class="level3" data-number="1.8.5">
+<h3 data-number="1.8.5" class="anchored" data-anchor-id="advanced-stochastic-models-large-language-models"><span class="header-section-number">1.8.5</span> Advanced Stochastic Models: Large Language Models</h3>
 <p>Large Language Models (LLMs) like GPT-3 are complex stochastic models used in natural language processing. While we can’t implement a full LLM in this tutorial, we can discuss its principles.</p>
 <p>LLMs are based on the transformer architecture and use self-attention mechanisms. They’re trained on vast amounts of text data and learn to predict the next token in a sequence.</p>
 <p>The core of an LLM can be thought of as a conditional probability distribution:</p>
@@ -986,14 +1224,14 @@ Note
 </div>
 <p>Unlike deterministic models, LLMs produce different outputs even for the same input due to their stochastic nature.</p>
 </section>
-</section>
-<section id="conclusion-1" class="level2" data-number="1.10">
-<h2 data-number="1.10" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">1.10</span> Conclusion</h2>
+<section id="conclusion-1" class="level3" data-number="1.8.6">
+<h3 data-number="1.8.6" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">1.8.6</span> Conclusion</h3>
 <p>We’ve explored a range of models from deterministic to highly complex stochastic ones. Each type of model has its place in science, depending on the system being studied and the level of uncertainty involved.</p>
 <p>Remember, the choice between deterministic and stochastic models often depends on the nature of the system you’re studying and the questions you’re trying to answer. Deterministic models are great for systems with well-understood mechanics, while stochastic models shine when dealing with inherent randomness or complex, not fully understood systems.</p>
 </section>
-<section id="understanding-spurious-correlations-confounders-and-colliders" class="level2" data-number="1.11">
-<h2 data-number="1.11" class="anchored" data-anchor-id="understanding-spurious-correlations-confounders-and-colliders"><span class="header-section-number">1.11</span> Understanding Spurious Correlations, Confounders, and Colliders</h2>
+</section>
+<section id="understanding-spurious-correlations-confounders-and-colliders" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="understanding-spurious-correlations-confounders-and-colliders"><span class="header-section-number">1.9</span> Understanding Spurious Correlations, Confounders, and Colliders (*)</h2>
 <p>In this tutorial, we’ll explore three important concepts in statistical analysis: spurious correlations, confounders, and colliders. Understanding these concepts is crucial for avoiding misinterpretation of data and drawing incorrect conclusions from statistical analyses.</p>
 <p>Let’s start by loading the necessary libraries:</p>
 <div class="cell">
@@ -1002,12 +1240,12 @@ Note
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdag)</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># for reproducibility</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="spurious-correlations" class="level2" data-number="1.12">
-<h2 data-number="1.12" class="anchored" data-anchor-id="spurious-correlations"><span class="header-section-number">1.12</span> Spurious Correlations</h2>
+<section id="spurious-correlations" class="level3" data-number="1.9.1">
+<h3 data-number="1.9.1" class="anchored" data-anchor-id="spurious-correlations"><span class="header-section-number">1.9.1</span> Spurious Correlations</h3>
 <p>Spurious correlations are relationships between variables that appear to be causal but are actually coincidental or caused by an unseen third factor.</p>
-<section id="example-ice-cream-sales-and-drowning-incidents" class="level3" data-number="1.12.1">
-<h3 data-number="1.12.1" class="anchored" data-anchor-id="example-ice-cream-sales-and-drowning-incidents"><span class="header-section-number">1.12.1</span> Example: Ice Cream Sales and Drowning Incidents</h3>
+</section>
+<section id="example-ice-cream-sales-and-drowning-incidents" class="level3" data-number="1.9.2">
+<h3 data-number="1.9.2" class="anchored" data-anchor-id="example-ice-cream-sales-and-drowning-incidents"><span class="header-section-number">1.9.2</span> Example: Ice Cream Sales and Drowning Incidents</h3>
 <p>Let’s create a dataset that shows a spurious correlation between ice cream sales and drowning incidents:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
@@ -1059,12 +1297,12 @@ Note
 </div>
 </div>
 </section>
-</section>
-<section id="confounders" class="level2" data-number="1.13">
-<h2 data-number="1.13" class="anchored" data-anchor-id="confounders"><span class="header-section-number">1.13</span> Confounders</h2>
+<section id="confounders" class="level3" data-number="1.9.3">
+<h3 data-number="1.9.3" class="anchored" data-anchor-id="confounders"><span class="header-section-number">1.9.3</span> Confounders</h3>
 <p>A confounder is a variable that influences both the dependent variable and independent variable, causing a spurious association.</p>
-<section id="example-education-income-and-age" class="level3" data-number="1.13.1">
-<h3 data-number="1.13.1" class="anchored" data-anchor-id="example-education-income-and-age"><span class="header-section-number">1.13.1</span> Example: Education, Income, and Age</h3>
+</section>
+<section id="example-education-income-and-age" class="level3" data-number="1.9.4">
+<h3 data-number="1.9.4" class="anchored" data-anchor-id="example-education-income-and-age"><span class="header-section-number">1.9.4</span> Example: Education, Income, and Age</h3>
 <p>Let’s create a dataset where age confounds the relationship between education and income:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
@@ -1121,12 +1359,12 @@ colour.
 </div>
 <p>The effect of education on income is overestimated when we don’t control for age.</p>
 </section>
-</section>
-<section id="colliders" class="level2" data-number="1.14">
-<h2 data-number="1.14" class="anchored" data-anchor-id="colliders"><span class="header-section-number">1.14</span> Colliders</h2>
+<section id="colliders" class="level3" data-number="1.9.5">
+<h3 data-number="1.9.5" class="anchored" data-anchor-id="colliders"><span class="header-section-number">1.9.5</span> Colliders</h3>
 <p>A collider is a variable that is influenced by both the independent variable and the dependent variable. Controlling for a collider can introduce a spurious correlation.</p>
-<section id="example-job-satisfaction-salary-and-work-life-balance" class="level3" data-number="1.14.1">
-<h3 data-number="1.14.1" class="anchored" data-anchor-id="example-job-satisfaction-salary-and-work-life-balance"><span class="header-section-number">1.14.1</span> Example: Job Satisfaction, Salary, and Work-Life Balance</h3>
+</section>
+<section id="example-job-satisfaction-salary-and-work-life-balance" class="level3" data-number="1.9.6">
+<h3 data-number="1.9.6" class="anchored" data-anchor-id="example-job-satisfaction-salary-and-work-life-balance"><span class="header-section-number">1.9.6</span> Example: Job Satisfaction, Salary, and Work-Life Balance</h3>
 <p>Let’s create a dataset where work-life balance is a collider between job satisfaction and salary:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
@@ -1173,20 +1411,20 @@ colour.
 </div>
 <p>Controlling for the collider (work-life balance) introduces a spurious correlation between job satisfaction and salary.</p>
 </section>
-</section>
-<section id="conclusion-2" class="level2" data-number="1.15">
-<h2 data-number="1.15" class="anchored" data-anchor-id="conclusion-2"><span class="header-section-number">1.15</span> Conclusion</h2>
+<section id="conclusion-2" class="level3" data-number="1.9.7">
+<h3 data-number="1.9.7" class="anchored" data-anchor-id="conclusion-2"><span class="header-section-number">1.9.7</span> Conclusion</h3>
 <p>Understanding spurious correlations, confounders, and colliders is crucial for proper statistical analysis and causal inference. Always consider the underlying causal structure of your data and be cautious about which variables you control for in your analyses.</p>
 </section>
-<section id="further-reading" class="level2" data-number="1.16">
-<h2 data-number="1.16" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">1.16</span> Further Reading</h2>
+</section>
+<section id="further-reading" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">1.10</span> Further Reading</h2>
 <ul>
 <li>Pearl, J. (2009). Causality: Models, Reasoning, and Inference. Cambridge University Press.</li>
 <li>Hernán, M. A., &amp; Robins, J. M. (2020). Causal Inference: What If. Boca Raton: Chapman &amp; Hall/CRC.</li>
 </ul>
 </section>
-<section id="ethical-considerations-in-social-science-data-analysis" class="level2" data-number="1.17">
-<h2 data-number="1.17" class="anchored" data-anchor-id="ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.17</span> Ethical Considerations in Social Science Data Analysis</h2>
+<section id="ethical-considerations-in-social-science-data-analysis" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="ethical-considerations-in-social-science-data-analysis"><span class="header-section-number">1.11</span> Ethical Considerations in Social Science Data Analysis</h2>
 <p>Ethics play a crucial role in social science research:</p>
 <ol type="1">
 <li><strong>Privacy and Consent</strong>: Ensuring participant privacy and informed consent</li>
@@ -1209,8 +1447,8 @@ Important
 </div>
 </div>
 </section>
-<section id="key-takeaways" class="level2" data-number="1.18">
-<h2 data-number="1.18" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">1.18</span> Key Takeaways</h2>
+<section id="key-takeaways" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">1.12</span> Key Takeaways</h2>
 <ol type="1">
 <li>Data science in social sciences builds upon traditional statistical methods, incorporating new technologies to analyze complex social phenomena.</li>
 <li>Understanding concepts like population, sample, and data generating processes is crucial for valid social science research.</li>
@@ -1219,38 +1457,21 @@ Important
 <li>Ethical considerations should be at the forefront of any social science data project.</li>
 </ol>
 </section>
-<section id="next-steps" class="level2" data-number="1.19">
-<h2 data-number="1.19" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">1.19</span> Next Steps</h2>
-<p>In the following chapters, we’ll dive deeper into each component of the data science process, exploring statistical concepts, R programming techniques, and real-world applications in social science research.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Practice Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Using the concepts learned in this chapter, design a small-scale study on a social science topic of your choice. Identify the population, consider how you would draw a sample, and reflect on the potential data generating process. What ethical considerations would you need to address?</p>
-</div>
-</div>
-</section>
-<section id="appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences" class="level2" data-number="1.20">
-<h2 data-number="1.20" class="anchored" data-anchor-id="appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences"><span class="header-section-number">1.20</span> Appendix A: Classical vs Quantum Randomness: Understanding the Fundamental Differences</h2>
+<section id="appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="appendix-a-classical-vs-quantum-randomness-understanding-the-fundamental-differences"><span class="header-section-number">1.13</span> Appendix A: Classical vs Quantum Randomness: Understanding the Fundamental Differences</h2>
 <p>To understand how the randomness in quantum mechanics differs from the randomness represented by the error term in regression models, we need to examine their origins, nature, and implications.</p>
-<section id="origin-of-randomness" class="level3" data-number="1.20.1">
-<h3 data-number="1.20.1" class="anchored" data-anchor-id="origin-of-randomness"><span class="header-section-number">1.20.1</span> Origin of Randomness</h3>
-<section id="classical-randomness-regression-models" class="level4" data-number="1.20.1.1">
-<h4 data-number="1.20.1.1" class="anchored" data-anchor-id="classical-randomness-regression-models"><span class="header-section-number">1.20.1.1</span> Classical Randomness (Regression Models)</h4>
+<section id="origin-of-randomness" class="level3" data-number="1.13.1">
+<h3 data-number="1.13.1" class="anchored" data-anchor-id="origin-of-randomness"><span class="header-section-number">1.13.1</span> Origin of Randomness</h3>
+<section id="classical-randomness-regression-models" class="level4" data-number="1.13.1.1">
+<h4 data-number="1.13.1.1" class="anchored" data-anchor-id="classical-randomness-regression-models"><span class="header-section-number">1.13.1.1</span> Classical Randomness (Regression Models)</h4>
 <ul>
 <li><strong>Source</strong>: Incomplete information or complex interactions in an otherwise deterministic system.</li>
 <li><strong>Nature</strong>: Epistemic uncertainty (due to lack of knowledge).</li>
 <li><strong>Example</strong>: In a regression model, <span class="math inline">\(y = β_0 + β_1x + ε\)</span>, the error term ε represents unexplained variation.</li>
 </ul>
 </section>
-<section id="quantum-randomness" class="level4" data-number="1.20.1.2">
-<h4 data-number="1.20.1.2" class="anchored" data-anchor-id="quantum-randomness"><span class="header-section-number">1.20.1.2</span> Quantum Randomness</h4>
+<section id="quantum-randomness" class="level4" data-number="1.13.1.2">
+<h4 data-number="1.13.1.2" class="anchored" data-anchor-id="quantum-randomness"><span class="header-section-number">1.13.1.2</span> Quantum Randomness</h4>
 <ul>
 <li><strong>Source</strong>: Fundamental property of quantum systems.</li>
 <li><strong>Nature</strong>: Ontic uncertainty (inherent to the system, not due to lack of knowledge).</li>
@@ -1258,35 +1479,35 @@ Practice Exercise
 </ul>
 </section>
 </section>
-<section id="philosophical-implications" class="level3" data-number="1.20.2">
-<h3 data-number="1.20.2" class="anchored" data-anchor-id="philosophical-implications"><span class="header-section-number">1.20.2</span> Philosophical Implications</h3>
-<section id="classical-randomness" class="level4" data-number="1.20.2.1">
-<h4 data-number="1.20.2.1" class="anchored" data-anchor-id="classical-randomness"><span class="header-section-number">1.20.2.1</span> Classical Randomness</h4>
+<section id="philosophical-implications" class="level3" data-number="1.13.2">
+<h3 data-number="1.13.2" class="anchored" data-anchor-id="philosophical-implications"><span class="header-section-number">1.13.2</span> Philosophical Implications</h3>
+<section id="classical-randomness" class="level4" data-number="1.13.2.1">
+<h4 data-number="1.13.2.1" class="anchored" data-anchor-id="classical-randomness"><span class="header-section-number">1.13.2.1</span> Classical Randomness</h4>
 <ul>
 <li><strong>Determinism</strong>: Underlying reality is deterministic; randomness reflects our ignorance.</li>
 <li><strong>Hidden Variables</strong>: In principle, if we had complete information, we could predict outcomes precisely.</li>
 </ul>
 </section>
-<section id="quantum-randomness-1" class="level4" data-number="1.20.2.2">
-<h4 data-number="1.20.2.2" class="anchored" data-anchor-id="quantum-randomness-1"><span class="header-section-number">1.20.2.2</span> Quantum Randomness</h4>
+<section id="quantum-randomness-1" class="level4" data-number="1.13.2.2">
+<h4 data-number="1.13.2.2" class="anchored" data-anchor-id="quantum-randomness-1"><span class="header-section-number">1.13.2.2</span> Quantum Randomness</h4>
 <ul>
 <li><strong>Indeterminism</strong>: Randomness is a fundamental feature of reality, not just our description of it.</li>
 <li><strong>No Hidden Variables</strong>: Even with complete information about a quantum system, some outcomes remain unpredictable (as suggested by Bell’s theorem).</li>
 </ul>
 </section>
 </section>
-<section id="mathematical-treatment" class="level3" data-number="1.20.3">
-<h3 data-number="1.20.3" class="anchored" data-anchor-id="mathematical-treatment"><span class="header-section-number">1.20.3</span> Mathematical Treatment</h3>
-<section id="classical-randomness-1" class="level4" data-number="1.20.3.1">
-<h4 data-number="1.20.3.1" class="anchored" data-anchor-id="classical-randomness-1"><span class="header-section-number">1.20.3.1</span> Classical Randomness</h4>
+<section id="mathematical-treatment" class="level3" data-number="1.13.3">
+<h3 data-number="1.13.3" class="anchored" data-anchor-id="mathematical-treatment"><span class="header-section-number">1.13.3</span> Mathematical Treatment</h3>
+<section id="classical-randomness-1" class="level4" data-number="1.13.3.1">
+<h4 data-number="1.13.3.1" class="anchored" data-anchor-id="classical-randomness-1"><span class="header-section-number">1.13.3.1</span> Classical Randomness</h4>
 <ul>
 <li><strong>Probability Theory</strong>: Based on classical probability theory.</li>
 <li><strong>Distribution</strong>: Often assumed to follow known distributions (e.g., normal distribution in many regression models).</li>
 <li><strong>Central Limit Theorem</strong>: Applies to large samples of random variables.</li>
 </ul>
 </section>
-<section id="quantum-randomness-2" class="level4" data-number="1.20.3.2">
-<h4 data-number="1.20.3.2" class="anchored" data-anchor-id="quantum-randomness-2"><span class="header-section-number">1.20.3.2</span> Quantum Randomness</h4>
+<section id="quantum-randomness-2" class="level4" data-number="1.13.3.2">
+<h4 data-number="1.13.3.2" class="anchored" data-anchor-id="quantum-randomness-2"><span class="header-section-number">1.13.3.2</span> Quantum Randomness</h4>
 <ul>
 <li><strong>Quantum Probability</strong>: Based on the mathematical framework of quantum mechanics.</li>
 <li><strong>Wave Function</strong>: Describes the quantum state and its evolution.</li>
@@ -1294,53 +1515,53 @@ Practice Exercise
 </ul>
 </section>
 </section>
-<section id="predictability-and-control" class="level3" data-number="1.20.4">
-<h3 data-number="1.20.4" class="anchored" data-anchor-id="predictability-and-control"><span class="header-section-number">1.20.4</span> Predictability and Control</h3>
-<section id="classical-randomness-2" class="level4" data-number="1.20.4.1">
-<h4 data-number="1.20.4.1" class="anchored" data-anchor-id="classical-randomness-2"><span class="header-section-number">1.20.4.1</span> Classical Randomness</h4>
+<section id="predictability-and-control" class="level3" data-number="1.13.4">
+<h3 data-number="1.13.4" class="anchored" data-anchor-id="predictability-and-control"><span class="header-section-number">1.13.4</span> Predictability and Control</h3>
+<section id="classical-randomness-2" class="level4" data-number="1.13.4.1">
+<h4 data-number="1.13.4.1" class="anchored" data-anchor-id="classical-randomness-2"><span class="header-section-number">1.13.4.1</span> Classical Randomness</h4>
 <ul>
 <li><strong>Reducible</strong>: In principle, can be reduced by gathering more data or improving measurement precision.</li>
 <li><strong>Controllable</strong>: Systematic errors can be identified and corrected.</li>
 </ul>
 </section>
-<section id="quantum-randomness-3" class="level4" data-number="1.20.4.2">
-<h4 data-number="1.20.4.2" class="anchored" data-anchor-id="quantum-randomness-3"><span class="header-section-number">1.20.4.2</span> Quantum Randomness</h4>
+<section id="quantum-randomness-3" class="level4" data-number="1.13.4.2">
+<h4 data-number="1.13.4.2" class="anchored" data-anchor-id="quantum-randomness-3"><span class="header-section-number">1.13.4.2</span> Quantum Randomness</h4>
 <ul>
 <li><strong>Irreducible</strong>: Cannot be eliminated even with perfect measurements.</li>
 <li><strong>Fundamentally Uncontrollable</strong>: The act of measurement itself affects the system (measurement problem).</li>
 </ul>
 </section>
 </section>
-<section id="practical-implications" class="level3" data-number="1.20.5">
-<h3 data-number="1.20.5" class="anchored" data-anchor-id="practical-implications"><span class="header-section-number">1.20.5</span> Practical Implications</h3>
-<section id="classical-randomness-3" class="level4" data-number="1.20.5.1">
-<h4 data-number="1.20.5.1" class="anchored" data-anchor-id="classical-randomness-3"><span class="header-section-number">1.20.5.1</span> Classical Randomness</h4>
+<section id="practical-implications" class="level3" data-number="1.13.5">
+<h3 data-number="1.13.5" class="anchored" data-anchor-id="practical-implications"><span class="header-section-number">1.13.5</span> Practical Implications</h3>
+<section id="classical-randomness-3" class="level4" data-number="1.13.5.1">
+<h4 data-number="1.13.5.1" class="anchored" data-anchor-id="classical-randomness-3"><span class="header-section-number">1.13.5.1</span> Classical Randomness</h4>
 <ul>
 <li><strong>Error Reduction</strong>: Focus on improving measurement techniques and data collection.</li>
 <li><strong>Model Refinement</strong>: Aim to explain more variance and reduce the error term.</li>
 </ul>
 </section>
-<section id="quantum-randomness-4" class="level4" data-number="1.20.5.2">
-<h4 data-number="1.20.5.2" class="anchored" data-anchor-id="quantum-randomness-4"><span class="header-section-number">1.20.5.2</span> Quantum Randomness</h4>
+<section id="quantum-randomness-4" class="level4" data-number="1.13.5.2">
+<h4 data-number="1.13.5.2" class="anchored" data-anchor-id="quantum-randomness-4"><span class="header-section-number">1.13.5.2</span> Quantum Randomness</h4>
 <ul>
 <li><strong>Inherent Limitation</strong>: Accept fundamental limits on predictability.</li>
 <li><strong>Probabilistic Predictions</strong>: Focus on accurate probability distributions rather than exact outcomes.</li>
 </ul>
 </section>
 </section>
-<section id="examples-to-understand-the-difference" class="level3" data-number="1.20.6">
-<h3 data-number="1.20.6" class="anchored" data-anchor-id="examples-to-understand-the-difference"><span class="header-section-number">1.20.6</span> Examples to Understand the Difference</h3>
-<section id="classical-randomness-example" class="level4" data-number="1.20.6.1">
-<h4 data-number="1.20.6.1" class="anchored" data-anchor-id="classical-randomness-example"><span class="header-section-number">1.20.6.1</span> Classical Randomness Example</h4>
+<section id="examples-to-understand-the-difference" class="level3" data-number="1.13.6">
+<h3 data-number="1.13.6" class="anchored" data-anchor-id="examples-to-understand-the-difference"><span class="header-section-number">1.13.6</span> Examples to Understand the Difference</h3>
+<section id="classical-randomness-example" class="level4" data-number="1.13.6.1">
+<h4 data-number="1.13.6.1" class="anchored" data-anchor-id="classical-randomness-example"><span class="header-section-number">1.13.6.1</span> Classical Randomness Example</h4>
 <p>Imagine flipping a coin. Classical physics says the outcome is determined by initial conditions (force applied, air resistance, etc.). The “randomness” comes from our inability to precisely measure and account for all these factors.</p>
 </section>
-<section id="quantum-randomness-example" class="level4" data-number="1.20.6.2">
-<h4 data-number="1.20.6.2" class="anchored" data-anchor-id="quantum-randomness-example"><span class="header-section-number">1.20.6.2</span> Quantum Randomness Example</h4>
+<section id="quantum-randomness-example" class="level4" data-number="1.13.6.2">
+<h4 data-number="1.13.6.2" class="anchored" data-anchor-id="quantum-randomness-example"><span class="header-section-number">1.13.6.2</span> Quantum Randomness Example</h4>
 <p>In the double-slit experiment, individual particles show interference patterns as if they went through both slits simultaneously. The exact path of any individual particle is fundamentally undetermined until measured, and this indeterminacy cannot be resolved by more precise measurements.</p>
 </section>
 </section>
-<section id="conclusion-3" class="level3" data-number="1.20.7">
-<h3 data-number="1.20.7" class="anchored" data-anchor-id="conclusion-3"><span class="header-section-number">1.20.7</span> Conclusion</h3>
+<section id="conclusion-3" class="level3" data-number="1.13.7">
+<h3 data-number="1.13.7" class="anchored" data-anchor-id="conclusion-3"><span class="header-section-number">1.13.7</span> Conclusion</h3>
 <p>While both types of randomness lead to probabilistic predictions, their fundamental natures are quite different:</p>
 <ul>
 <li>Classical randomness in regression models is a reflection of our incomplete knowledge or measurement limitations in an otherwise deterministic system.</li>
@@ -1349,11 +1570,11 @@ Practice Exercise
 <p>Understanding these differences is crucial for correctly interpreting and applying statistical models in different scientific contexts, from social sciences using regression analysis to quantum physics experiments.</p>
 </section>
 </section>
-<section id="appendix-b-large-language-models---understanding-their-stochastic-nature" class="level2" data-number="1.21">
-<h2 data-number="1.21" class="anchored" data-anchor-id="appendix-b-large-language-models---understanding-their-stochastic-nature"><span class="header-section-number">1.21</span> Appendix B: Large Language Models - Understanding Their Stochastic Nature</h2>
+<section id="appendix-b-large-language-models---understanding-their-stochastic-nature" class="level2" data-number="1.14">
+<h2 data-number="1.14" class="anchored" data-anchor-id="appendix-b-large-language-models---understanding-their-stochastic-nature"><span class="header-section-number">1.14</span> Appendix B: Large Language Models - Understanding Their Stochastic Nature</h2>
 <p>Large Language Models (LLMs) like GPT-3, BERT, and Claude have revolutionized natural language processing but can make puzzling mistakes, especially in mathematical tasks. This appendix explains LLMs’ functioning, stochastic nature, and compares them to classical statistical models.</p>
-<section id="llm-basics-and-stochastic-nature" class="level3" data-number="1.21.1">
-<h3 data-number="1.21.1" class="anchored" data-anchor-id="llm-basics-and-stochastic-nature"><span class="header-section-number">1.21.1</span> LLM Basics and Stochastic Nature</h3>
+<section id="llm-basics-and-stochastic-nature" class="level3" data-number="1.14.1">
+<h3 data-number="1.14.1" class="anchored" data-anchor-id="llm-basics-and-stochastic-nature"><span class="header-section-number">1.14.1</span> LLM Basics and Stochastic Nature</h3>
 <p>LLMs are trained on vast text data to predict the probability distribution of the next token in a sequence. They use transformer architectures for processing and generating text. Key aspects of their stochastic nature include:</p>
 <ol type="1">
 <li>Probabilistic token selection: LLMs choose each word based on calculated probabilities, not fixed rules.</li>
@@ -1362,8 +1583,8 @@ Practice Exercise
 <li>Contextual ambiguity: LLMs interpret context probabilistically, sometimes leading to misunderstandings.</li>
 </ol>
 </section>
-<section id="comparison-to-classical-statistical-models" class="level3" data-number="1.21.2">
-<h3 data-number="1.21.2" class="anchored" data-anchor-id="comparison-to-classical-statistical-models"><span class="header-section-number">1.21.2</span> Comparison to Classical Statistical Models</h3>
+<section id="comparison-to-classical-statistical-models" class="level3" data-number="1.14.2">
+<h3 data-number="1.14.2" class="anchored" data-anchor-id="comparison-to-classical-statistical-models"><span class="header-section-number">1.14.2</span> Comparison to Classical Statistical Models</h3>
 <p>To understand LLMs better, let’s compare them to Ordinary Least Squares (OLS) regression:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1418,8 +1639,8 @@ Practice Exercise
 </table>
 <p>Both models aim to learn input-output mappings based on training data patterns.</p>
 </section>
-<section id="implications-for-mathematical-tasks" class="level3" data-number="1.21.3">
-<h3 data-number="1.21.3" class="anchored" data-anchor-id="implications-for-mathematical-tasks"><span class="header-section-number">1.21.3</span> Implications for Mathematical Tasks</h3>
+<section id="implications-for-mathematical-tasks" class="level3" data-number="1.14.3">
+<h3 data-number="1.14.3" class="anchored" data-anchor-id="implications-for-mathematical-tasks"><span class="header-section-number">1.14.3</span> Implications for Mathematical Tasks</h3>
 <p>LLMs’ stochastic nature affects mathematical operations:</p>
 <ol type="1">
 <li>Variable outputs for repeated calculations: Each attempt might yield a different result due to probabilistic token selection.</li>
@@ -1436,8 +1657,8 @@ Practice Exercise
 <li>Lack of consistency checks: LLMs don’t verify the logical consistency of their outputs.</li>
 </ul>
 </section>
-<section id="best-practices-and-conclusion" class="level3" data-number="1.21.4">
-<h3 data-number="1.21.4" class="anchored" data-anchor-id="best-practices-and-conclusion"><span class="header-section-number">1.21.4</span> Best Practices and Conclusion</h3>
+<section id="best-practices-and-conclusion" class="level3" data-number="1.14.4">
+<h3 data-number="1.14.4" class="anchored" data-anchor-id="best-practices-and-conclusion"><span class="header-section-number">1.14.4</span> Best Practices and Conclusion</h3>
 <p>When using LLMs for mathematical tasks:</p>
 <ol type="1">
 <li>Focus on conceptual explanations, not precise calculations: LLMs excel at explaining concepts but may falter on exact computations.</li>
