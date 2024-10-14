@@ -102,6 +102,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -451,7 +454,87 @@ Important
 <li><strong>Populacja</strong> (Population): Cała grupa osób lub obiektów, o których chcemy uzyskać informacje.</li>
 <li><strong>Próba</strong> (Sample): Podzbiór populacji wybrany do badania. Próba reprezentatywna to podzbiór większej populacji, który dokładnie odzwierciedla cechy tej populacji. Próba powinna odzwierciedlać populację pod względem ważnych cech, takich jak wiek, płeć, status społeczno-ekonomiczny itp. Często wykorzystuje metody losowego doboru, aby uniknąć stronniczości. Wystarczająco duża, aby być statystycznie istotna, ale mniejsza niż cała populacja.</li>
 <li><strong>Dane</strong> (Data): Obserwacje lub pomiary zebrane z próby lub populacji.</li>
-<li><strong>Proces Generujący Dane</strong> (Data Generating Process, DGP): Podstawowy mechanizm lub system, który produkuje obserwowane dane. Proces Generujący Dane (PGD) jest zasadniczo “prawdziwym” modelem lub procesem tworzącym dane.</li>
+<li><strong>Proces (Model) Generujący Dane</strong> (Data (Model) Generating Process, DGP): Podstawowy mechanizm lub system, który produkuje obserwowane dane, w tym populację statystyczną i próby. Proces Generujący Dane (PGD) jest zasadniczo “prawdziwym” modelem lub procesem tworzącym dane.</li>
+</ul>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Data Generating Process DGP]
+    B(Population)
+    C[Sample]
+    A --&gt;|Generates| B
+    B --&gt;|Sampled from| C
+    C -.-&gt;|Inference| B
+    C -.-&gt;|Inference| A
+    B -.-&gt;|Inference| A
+    
+    classDef dgp fill:#f9f,stroke:#333,stroke-width:4px;
+    classDef pop fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef sam fill:#bfb,stroke:#333,stroke-width:2px;
+    
+    class A dgp;
+    class B pop;
+    class C sam;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Explanation of the DGP, Population, and Sample Diagram
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This diagram shows:</p>
+<ol type="1">
+<li>Solid arrows for direct relationships:
+<ul>
+<li>DGP generates the Population</li>
+<li>Population is sampled to create the Sample</li>
+</ul></li>
+<li>Dashed arrows for inference paths:
+<ul>
+<li>Sample to Population (traditional inference)</li>
+<li>Sample to DGP (inferring about the process from a sample)</li>
+<li>Population to DGP (inferring about the process from full population data, as in your case)</li>
+</ul></li>
+<li>Different colors and styles for each element:
+<ul>
+<li>DGP: Pink with thick border</li>
+<li>Population: Light blue with rounded corners</li>
+<li>Sample: Light green</li>
+</ul></li>
+</ol>
+<p>This diagram illustrates the relationships between the Data Generating Process (DGP), population, and sample, including paths of inference:</p>
+<ol type="1">
+<li>Direct relationships (solid arrows):
+<ul>
+<li>The DGP generates the population</li>
+<li>Samples are drawn from the population</li>
+</ul></li>
+<li>Inference paths (dashed arrows):
+<ul>
+<li>From Sample to Population: Traditional statistical inference</li>
+<li>From Sample to DGP: Inferring about the underlying process from sample data</li>
+<li>From Population to DGP: Inferring about the DGP using complete population data</li>
+</ul></li>
+</ol>
+<p>For example, in the study on turnout in Polish municipalities (1998-2010 municipal elections):</p>
+<ul>
+<li>We have data for the entire population, so we don’t need to infer from a sample to the population.</li>
+<li>Our focus is on using the population data (rightmost dashed arrow) to make inferences about the underlying DGP - the complex processes shaping municipalities.</li>
+<li>This approach allows us to potentially understand the mechanisms behind municipal characteristics and make informed predictions about future trends or hypothetical scenarios.</li>
 </ul>
 </div>
 </div>
@@ -542,7 +625,7 @@ Przykład: Wzrost Studentów Uniwersyteckich
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial1_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -814,7 +897,7 @@ income               -0.8152477  1.0000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial1_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -828,7 +911,7 @@ income               -0.8152477  1.0000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial1_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial1_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1096,7 +1179,7 @@ Pamiętaj: Korelacja nie implikuje przyczynowości
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial1_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1156,7 +1239,7 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
