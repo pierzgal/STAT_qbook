@@ -282,7 +282,7 @@ window.Quarto = {
   <li><a href="#the-relationship-between-statistics-and-data-science" id="toc-the-relationship-between-statistics-and-data-science" class="nav-link" data-scroll-target="#the-relationship-between-statistics-and-data-science"><span class="header-section-number">1.2</span> The Relationship Between Statistics and Data Science</a></li>
   <li><a href="#essential-concepts-in-data-science-and-statistics" id="toc-essential-concepts-in-data-science-and-statistics" class="nav-link" data-scroll-target="#essential-concepts-in-data-science-and-statistics"><span class="header-section-number">1.3</span> Essential Concepts in Data Science and Statistics</a>
   <ul class="collapse">
-  <li><a href="#data-and-populations" id="toc-data-and-populations" class="nav-link" data-scroll-target="#data-and-populations"><span class="header-section-number">1.3.1</span> Data and Populations</a></li>
+  <li><a href="#population-sample-and-related-concepts" id="toc-population-sample-and-related-concepts" class="nav-link" data-scroll-target="#population-sample-and-related-concepts"><span class="header-section-number">1.3.1</span> Population, Sample and related concepts</a></li>
   <li><a href="#variables-and-constants" id="toc-variables-and-constants" class="nav-link" data-scroll-target="#variables-and-constants"><span class="header-section-number">1.3.2</span> Variables and Constants</a></li>
   <li><a href="#population-parameters-and-estimands" id="toc-population-parameters-and-estimands" class="nav-link" data-scroll-target="#population-parameters-and-estimands"><span class="header-section-number">1.3.3</span> Population Parameters and Estimands</a></li>
   <li><a href="#statistics-and-estimators" id="toc-statistics-and-estimators" class="nav-link" data-scroll-target="#statistics-and-estimators"><span class="header-section-number">1.3.4</span> Statistic(s) and Estimators</a></li>
@@ -441,8 +441,8 @@ Note
 </section>
 <section id="essential-concepts-in-data-science-and-statistics" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="essential-concepts-in-data-science-and-statistics"><span class="header-section-number">1.3</span> Essential Concepts in Data Science and Statistics</h2>
-<section id="data-and-populations" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="data-and-populations"><span class="header-section-number">1.3.1</span> Data and Populations</h3>
+<section id="population-sample-and-related-concepts" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="population-sample-and-related-concepts"><span class="header-section-number">1.3.1</span> Population, Sample and related concepts</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -453,12 +453,42 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<ol type="1">
+<li><p><strong>Data</strong>: Observations or measurements collected from a sample or population.</p></li>
+<li><p><strong>Data-Generating Process (DGP)</strong>: The underlying mechanism producing the data.</p>
 <ul>
-<li><strong>Population</strong>: The entire group of individuals or objects about which information is sought.</li>
-<li><strong>Sample</strong>: A subset of the population that is selected for study. A representative sample is a subset of a larger population that accurately reflects the characteristics of that population. The sample should mirror the population in terms of important traits like age, gender, socioeconomic status, etc. Often uses random sampling methods to avoid bias. Large enough to be statistically significant, but smaller than the full population.</li>
-<li><strong>Data</strong>: Observations or measurements collected from a sample or population.</li>
-<li><strong>Data (Model) Generating Process (DGP)</strong>: The underlying mechanism or system that produces the observed data (including statistical populations and samples). The Data Generating Process (DGP) is essentially the “true” model or process that creates data.</li>
+<li>Example: The complex interplay of socioeconomic factors, media influence, and personal experiences shaping political opinions.</li>
+</ul></li>
+<li><p><strong>Super-population</strong>: A hypothetical, infinite population that embodies the DGP.</p>
+<ul>
+<li>Example: The conceptual “pool” of all possible political opinion combinations that could occur given current social, economic, and political conditions.</li>
+</ul></li>
+<li><p><strong>Population</strong>: The entire set of individuals or items under study at a specific time.</p>
+<ul>
+<li>Example: All eligible voters in a country during a specific election year.</li>
+</ul></li>
+<li><p><strong>Sample</strong>: A subset of the population that is actually measured. A representative sample is a subset of a larger population that accurately reflects the characteristics of that population. The sample should mirror the population in terms of important traits like age, gender, socioeconomic status, etc. Often uses random sampling methods to avoid bias. Large enough to be statistically significant, but smaller than the full population.</p>
+<ul>
+<li>Example: 1500 randomly selected eligible voters surveyed in a pre-election poll.</li>
+</ul></li>
+</ol>
+<p>Key Relationship: DGP and Super-population</p>
+<p>It’s crucial to understand that the Data-Generating Process (DGP) and the super-population are closely related concepts:</p>
+<ul>
+<li>The DGP is the abstract process or mechanism that generates data.</li>
+<li>The super-population is a way to conceptualize this process in terms of an infinite population.</li>
+<li>You can think of the super-population as a manifestation of the DGP.</li>
+<li>Both concepts help us think about variability not just within our current population, but across all possible populations that the DGP could generate.</li>
 </ul>
+<p>Practical Example in Political Science:</p>
+<p>Consider a study on the factors influencing voting behavior in a presidential election:</p>
+<ul>
+<li><strong>DGP</strong>: The complex process by which various factors (e.g., economic conditions, candidate characteristics, media coverage, personal ideologies) interact to shape an individual’s voting decision.</li>
+<li><strong>Super-population</strong>: All possible combinations of voter characteristics and voting decisions that could occur under the current political and societal conditions.</li>
+<li><strong>Population</strong>: All registered voters in the country eligible to vote in the upcoming presidential election.</li>
+<li><strong>Sample</strong>: 3000 registered voters from diverse demographics who participate in a detailed survey about their voting intentions and influencing factors.</li>
+</ul>
+<p>In this example, the DGP represents the underlying mechanisms (like how economic self-interest interacts with party loyalty, or how media consumption shapes perceptions of candidates), while the super-population represents all the ways these mechanisms could play out across infinite hypothetical voters.</p>
 </div>
 </div>
 <div class="cell" data-layout-align="default">
@@ -499,26 +529,6 @@ Explanation of the DGP, Population, and Sample Diagram
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This diagram shows:</p>
-<ol type="1">
-<li>Solid arrows for direct relationships:
-<ul>
-<li>DGP generates the Population</li>
-<li>Population is sampled to create the Sample</li>
-</ul></li>
-<li>Dashed arrows for inference paths:
-<ul>
-<li>Sample to Population (traditional inference)</li>
-<li>Sample to DGP (inferring about the process from a sample)</li>
-<li>Population to DGP (inferring about the process from full population data, as in your case)</li>
-</ul></li>
-<li>Different colors and styles for each element:
-<ul>
-<li>DGP: Pink with thick border</li>
-<li>Population: Light blue with rounded corners</li>
-<li>Sample: Light green</li>
-</ul></li>
-</ol>
 <p>This diagram illustrates the relationships between the Data Generating Process (DGP), population, and sample, including paths of inference:</p>
 <ol type="1">
 <li>Direct relationships (solid arrows):
@@ -533,11 +543,11 @@ Explanation of the DGP, Population, and Sample Diagram
 <li>From Population to DGP: Inferring about the DGP using complete population data</li>
 </ul></li>
 </ol>
-<p>For example, in the study on turnout in Polish municipalities (1998-2010 municipal elections):</p>
+<p>For example, in our study on the effect of electoral rules on voter turnout in Polish municipalities (1998-2010 municipal elections):</p>
 <ul>
-<li>We have data for the entire population, so we don’t need to infer from a sample to the population.</li>
-<li>Our focus is on using the population data (rightmost dashed arrow) to make inferences about the underlying DGP - the complex processes shaping municipalities.</li>
-<li>This approach allows us to potentially understand the mechanisms behind municipal characteristics and make informed predictions about future trends or hypothetical scenarios.</li>
+<li>We have data for the entire population of municipalities, so we don’t need to infer from a sample to the population.</li>
+<li>Our focus is on using the complete population data (rightmost dashed arrow) to make inferences about the underlying DGP—the complex processes by which electoral rules influence voter turnout across municipalities.</li>
+<li>This approach allows us to potentially understand the mechanisms behind how different electoral systems (e.g., proportional representation vs.&nbsp;plurality vote) affect turnout rates, and make informed predictions about how changes in electoral rules might impact future turnout or how these effects might generalize to similar contexts.</li>
 </ul>
 </div>
 </div>
