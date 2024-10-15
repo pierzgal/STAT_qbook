@@ -327,8 +327,7 @@ window.Quarto = {
   <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference"><span class="header-section-number">1.3.7</span> Inference</a></li>
   <li><a href="#important-concepts-in-estimation" id="toc-important-concepts-in-estimation" class="nav-link" data-scroll-target="#important-concepts-in-estimation"><span class="header-section-number">1.3.8</span> Important Concepts in Estimation</a></li>
   <li><a href="#relationships-between-concepts" id="toc-relationships-between-concepts" class="nav-link" data-scroll-target="#relationships-between-concepts"><span class="header-section-number">1.3.9</span> Relationships Between Concepts</a></li>
-  <li><a href="#additional-important-concepts" id="toc-additional-important-concepts" class="nav-link" data-scroll-target="#additional-important-concepts"><span class="header-section-number">1.3.10</span> Additional Important Concepts</a></li>
-  <li><a href="#types-of-data-in-social-sciences" id="toc-types-of-data-in-social-sciences" class="nav-link" data-scroll-target="#types-of-data-in-social-sciences"><span class="header-section-number">1.3.11</span> Types of Data in Social Sciences</a></li>
+  <li><a href="#types-of-data-in-social-sciences" id="toc-types-of-data-in-social-sciences" class="nav-link" data-scroll-target="#types-of-data-in-social-sciences"><span class="header-section-number">1.3.10</span> Types of Data in Social Sciences</a></li>
   </ul></li>
   <li><a href="#core-components-of-data-science-in-scientific-research" id="toc-core-components-of-data-science-in-scientific-research" class="nav-link" data-scroll-target="#core-components-of-data-science-in-scientific-research"><span class="header-section-number">1.4</span> Core Components of Data Science in Scientific Research</a></li>
   <li><a href="#tools-for-data-science-in-social-sciences" id="toc-tools-for-data-science-in-social-sciences" class="nav-link" data-scroll-target="#tools-for-data-science-in-social-sciences"><span class="header-section-number">1.5</span> Tools for Data Science in Social Sciences</a>
@@ -731,29 +730,29 @@ Note
 <h3 data-number="1.3.8" class="anchored" data-anchor-id="important-concepts-in-estimation"><span class="header-section-number">1.3.8</span> Important Concepts in Estimation</h3>
 <section id="bias" class="level4" data-number="1.3.8.1">
 <h4 data-number="1.3.8.1" class="anchored" data-anchor-id="bias"><span class="header-section-number">1.3.8.1</span> Bias</h4>
-<p>Bias refers to the tendency of an estimator to systematically over- or underestimate the true estimand (population parameter).</p>
+<p>Bias refers to the tendency of an estimator to systematically overestimate or underestimate the true value of a population parameter (estimand).</p>
 <ul>
-<li>An unbiased estimator has an expected value equal to the true parameter value.</li>
-<li><span class="math inline">\(\text{Bias}(\hat{\theta}) = E(\hat{\theta}) - \theta\)</span>, where <span class="math inline">\(\hat{\theta}\)</span> is the estimator and <span class="math inline">\(\theta\)</span> is the true estimand.</li>
+<li>An unbiased estimator is one whose average value (when estimation is repeated multiple times) equals the true value of the parameter.</li>
+<li>Bias can be understood as the difference between the average value of the estimator and the true value of the parameter.</li>
 </ul>
 </section>
 <section id="efficiency" class="level4" data-number="1.3.8.2">
 <h4 data-number="1.3.8.2" class="anchored" data-anchor-id="efficiency"><span class="header-section-number">1.3.8.2</span> Efficiency</h4>
-<p>Efficiency relates to the precision of an estimator. A more efficient estimator has less variability in its estimates of the estimand.</p>
+<p>Efficiency refers to the precision of an estimator. A more efficient estimator produces results closer to the true parameter value, i.e., it has less dispersion in its results.</p>
 <ul>
-<li>Measured by the variance of the estimator</li>
-<li>For unbiased estimators, efficiency is often compared using the Mean Squared Error (MSE)</li>
+<li>It is most often measured by the variance of the estimator (lower variance means higher efficiency)</li>
+<li>For unbiased estimators, efficiency is often compared using Mean Squared Error (MSE)</li>
 </ul>
 </section>
 </section>
 <section id="relationships-between-concepts" class="level3" data-number="1.3.9">
 <h3 data-number="1.3.9" class="anchored" data-anchor-id="relationships-between-concepts"><span class="header-section-number">1.3.9</span> Relationships Between Concepts</h3>
 <ol type="1">
-<li>The DGP determines the values of population parameters (estimands).</li>
-<li>Estimands are estimated using sample statistics (estimators).</li>
-<li>The quality of estimators is evaluated based on properties like bias and efficiency in estimating the estimand.</li>
-<li>Statistical models use estimated parameters to describe relationships between estimands in the population.</li>
-<li>Inference uses estimators to draw conclusions about estimands based on sample data.</li>
+<li>The Data Generating Process (DGP) determines the actual values of population parameters (estimands).</li>
+<li>Estimands are estimated using statistics calculated from the sample (estimators).</li>
+<li>The quality of estimators is assessed based on properties such as bias and efficiency in estimating the estimand.</li>
+<li>Statistical models use estimated parameters to describe relationships between variables in the population.</li>
+<li>Statistical inference involves drawing conclusions about estimands based on sample data, utilizing the properties of estimators.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -761,57 +760,25 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example: Voter Behavior Study
+Example: Studying Voting Behavior
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Population</strong>: All eligible voters in a country</li>
-<li><strong>Estimand</strong>: <span class="math inline">\(p\)</span> = true proportion of voters supporting a candidate</li>
+<li><strong>Estimand</strong>: <span class="math inline">\(p\)</span> = true proportion of voters supporting a given candidate</li>
 <li><strong>Sample</strong>: 1000 randomly selected eligible voters</li>
-<li><strong>Estimator</strong>: <span class="math inline">\(\hat{p}\)</span> = sample proportion of voters supporting the candidate</li>
-<li><strong>Estimate</strong>: The specific value of <span class="math inline">\(\hat{p}\)</span> calculated from the sample (e.g., 0.52)</li>
-<li><strong>DGP</strong>: The complex interplay of factors influencing voting decisions, such as political beliefs, economic conditions, media exposure, and social networks. Understanding the DGP helps researchers interpret why the estimand <span class="math inline">\(p\)</span> has a certain value and how it might change over time.</li>
+<li><strong>Estimator</strong>: <span class="math inline">\(\hat{p}\)</span> = proportion of voters in the sample supporting the candidate</li>
+<li><strong>Estimate</strong>: Specific value of <span class="math inline">\(\hat{p}\)</span> calculated from the sample (e.g., 0.52)</li>
+<li><strong>DGP</strong>: Complex interaction of factors influencing voting decisions, such as political beliefs, economic conditions, media exposure, and social networks.</li>
 </ul>
+<p>Understanding the DGP helps researchers interpret why the estimand <span class="math inline">\(p\)</span> has a certain value and how it might change over time. For example, a sudden change in the economy might affect voters’ preferences, thereby changing the value of <span class="math inline">\(p\)</span>.</p>
+<p><strong>Bias and efficiency in the context of the example</strong>: - If <span class="math inline">\(\hat{p}\)</span> is an unbiased estimator, it means that when the survey is repeated multiple times with different samples, the average value of <span class="math inline">\(\hat{p}\)</span> will be close to the true value of <span class="math inline">\(p\)</span>. - The efficiency of <span class="math inline">\(\hat{p}\)</span> determines how dispersed the results of individual surveys are around this average. The less dispersion, the more efficient the estimator.</p>
 </div>
 </div>
 </section>
-<section id="additional-important-concepts" class="level3" data-number="1.3.10">
-<h3 data-number="1.3.10" class="anchored" data-anchor-id="additional-important-concepts"><span class="header-section-number">1.3.10</span> Additional Important Concepts</h3>
-<section id="inference-1" class="level4" data-number="1.3.10.1">
-<h4 data-number="1.3.10.1" class="anchored" data-anchor-id="inference-1"><span class="header-section-number">1.3.10.1</span> Inference</h4>
-<p>Statistical inference is the process of drawing conclusions about a population based on sample data. It involves two main types:</p>
-<ol type="1">
-<li>Estimation: Using sample statistics to estimate population parameters</li>
-<li>Hypothesis testing: Making decisions about population parameters based on sample evidence</li>
-</ol>
-<p>Example: Using a sample mean to estimate the average height of all university students in a country.</p>
-</section>
-<section id="bias-1" class="level4" data-number="1.3.10.2">
-<h4 data-number="1.3.10.2" class="anchored" data-anchor-id="bias-1"><span class="header-section-number">1.3.10.2</span> Bias</h4>
-<p>Bias refers to the tendency of an estimator to systematically over- or underestimate the true population parameter.</p>
-<ul>
-<li>An unbiased estimator has an expected value equal to the true parameter value.</li>
-<li>Bias(<span class="math inline">\(\hat{\theta}\)</span>) = <span class="math inline">\(E(\hat{\theta}) - \theta\)</span>, where <span class="math inline">\(\hat{\theta}\)</span> is the estimator and <span class="math inline">\(\theta\)</span> is the true parameter value.</li>
-</ul>
-<p>Example: The sample variance <span class="math inline">\(s^2\)</span> is an unbiased estimator of the population variance <span class="math inline">\(\sigma^2\)</span>, while <span class="math inline">\(\frac{(n-1)}{n}s^2\)</span> is a biased estimator.</p>
-</section>
-<section id="efficiency-1" class="level4" data-number="1.3.10.3">
-<h4 data-number="1.3.10.3" class="anchored" data-anchor-id="efficiency-1"><span class="header-section-number">1.3.10.3</span> Efficiency</h4>
-<p>Efficiency relates to the precision of an estimator. A more efficient estimator has less variability in its estimates.</p>
-<ul>
-<li>Measured by the variance of the estimator</li>
-<li>For unbiased estimators, efficiency is often compared using the Mean Squared Error (MSE)</li>
-</ul>
-<p>Example: Among unbiased estimators, the one with the smallest variance is considered the most efficient.</p>
-</section>
-<section id="relationship-between-bias-and-efficiency" class="level4" data-number="1.3.10.4">
-<h4 data-number="1.3.10.4" class="anchored" data-anchor-id="relationship-between-bias-and-efficiency"><span class="header-section-number">1.3.10.4</span> Relationship between Bias and Efficiency</h4>
-<p>There’s often a trade-off between bias and efficiency. Some biased estimators may have lower variance (higher efficiency) than unbiased alternatives. The choice between them depends on the specific context and goals of the analysis.</p>
-</section>
-</section>
-<section id="types-of-data-in-social-sciences" class="level3" data-number="1.3.11">
-<h3 data-number="1.3.11" class="anchored" data-anchor-id="types-of-data-in-social-sciences"><span class="header-section-number">1.3.11</span> Types of Data in Social Sciences</h3>
+<section id="types-of-data-in-social-sciences" class="level3" data-number="1.3.10">
+<h3 data-number="1.3.10" class="anchored" data-anchor-id="types-of-data-in-social-sciences"><span class="header-section-number">1.3.10</span> Types of Data in Social Sciences</h3>
 <p>Social science research deals with various types of data:</p>
 <ol type="1">
 <li><strong>Quantitative Data</strong>: Numerical data (e.g., survey responses, economic indicators)</li>

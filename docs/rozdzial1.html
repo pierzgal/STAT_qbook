@@ -325,7 +325,7 @@ window.Quarto = {
   <li><a href="#oszacowania-estimates" id="toc-oszacowania-estimates" class="nav-link" data-scroll-target="#oszacowania-estimates"><span class="header-section-number">2.3.7</span> Oszacowania (Estimates)</a></li>
   <li><a href="#modele-statystyczne-statistical-models" id="toc-modele-statystyczne-statistical-models" class="nav-link" data-scroll-target="#modele-statystyczne-statistical-models"><span class="header-section-number">2.3.8</span> Modele Statystyczne (Statistical Models)</a></li>
   <li><a href="#wnioskowanie-inference" id="toc-wnioskowanie-inference" class="nav-link" data-scroll-target="#wnioskowanie-inference"><span class="header-section-number">2.3.9</span> Wnioskowanie (Inference)</a></li>
-  <li><a href="#ważne-pojęcia-w-estymacji" id="toc-ważne-pojęcia-w-estymacji" class="nav-link" data-scroll-target="#ważne-pojęcia-w-estymacji"><span class="header-section-number">2.3.10</span> Ważne Pojęcia w Estymacji</a></li>
+  <li><a href="#ważne-pojęcia-teorii-estymacji" id="toc-ważne-pojęcia-teorii-estymacji" class="nav-link" data-scroll-target="#ważne-pojęcia-teorii-estymacji"><span class="header-section-number">2.3.10</span> Ważne Pojęcia Teorii Estymacji</a></li>
   <li><a href="#relacje-między-pojęciami" id="toc-relacje-między-pojęciami" class="nav-link" data-scroll-target="#relacje-między-pojęciami"><span class="header-section-number">2.3.11</span> Relacje Między Pojęciami</a></li>
   <li><a href="#rodzaje-danych-w-naukach-społecznych" id="toc-rodzaje-danych-w-naukach-społecznych" class="nav-link" data-scroll-target="#rodzaje-danych-w-naukach-społecznych"><span class="header-section-number">2.3.12</span> Rodzaje Danych w Naukach Społecznych</a></li>
   </ul></li>
@@ -731,21 +731,21 @@ Note
 <li>Testowanie hipotez (Hypothesis testing): Podejmowanie decyzji o estymandach na podstawie dowodów z próby</li>
 </ol>
 </section>
-<section id="ważne-pojęcia-w-estymacji" class="level3" data-number="2.3.10">
-<h3 data-number="2.3.10" class="anchored" data-anchor-id="ważne-pojęcia-w-estymacji"><span class="header-section-number">2.3.10</span> Ważne Pojęcia w Estymacji</h3>
+<section id="ważne-pojęcia-teorii-estymacji" class="level3" data-number="2.3.10">
+<h3 data-number="2.3.10" class="anchored" data-anchor-id="ważne-pojęcia-teorii-estymacji"><span class="header-section-number">2.3.10</span> Ważne Pojęcia Teorii Estymacji</h3>
 <section id="obciążenie-bias" class="level4" data-number="2.3.10.1">
 <h4 data-number="2.3.10.1" class="anchored" data-anchor-id="obciążenie-bias"><span class="header-section-number">2.3.10.1</span> Obciążenie (Bias)</h4>
-<p>Obciążenie odnosi się do tendencji estymatora do systematycznego przeszacowania lub niedoszacowania prawdziwej estymandy (parametru populacji).</p>
+<p>Obciążenie odnosi się do tendencji estymatora do systematycznego przeszacowania lub niedoszacowania prawdziwej wartości parametru populacji (estymandy).</p>
 <ul>
-<li>Nieobciążony estymator ma wartość oczekiwaną równą prawdziwej wartości parametru.</li>
-<li><span class="math inline">\(\text{Obciążenie}(\hat{\theta}) = E(\hat{\theta}) - \theta\)</span>, gdzie <span class="math inline">\(\hat{\theta}\)</span> to estymator, a <span class="math inline">\(\theta\)</span> to prawdziwa estymanda.</li>
+<li>Estymator nieobciążony to taki, którego średnia wartość (przy wielokrotnym powtórzeniu estymacji) jest równa prawdziwej wartości parametru.</li>
+<li>Obciążenie można rozumieć jako różnicę między średnią wartością estymatora a prawdziwą wartością parametru.</li>
 </ul>
 </section>
 <section id="efektywność-efficiency" class="level4" data-number="2.3.10.2">
 <h4 data-number="2.3.10.2" class="anchored" data-anchor-id="efektywność-efficiency"><span class="header-section-number">2.3.10.2</span> Efektywność (Efficiency)</h4>
-<p>Efektywność odnosi się do precyzji estymatora. Bardziej efektywny estymator ma mniejszą zmienność w swoich oszacowaniach estymandy.</p>
+<p>Efektywność odnosi się do precyzji estymatora. Bardziej efektywny estymator daje wyniki bliższe prawdziwej wartości parametru, czyli ma mniejsze rozproszenie wyników.</p>
 <ul>
-<li>Mierzona wariancją estymatora</li>
+<li>Mierzona jest najczęściej wariancją estymatora (im mniejsza wariancja, tym większa efektywność)</li>
 <li>Dla nieobciążonych estymatorów efektywność często porównuje się za pomocą Błędu Średniokwadratowego (Mean Squared Error, MSE)</li>
 </ul>
 </section>
@@ -753,11 +753,11 @@ Note
 <section id="relacje-między-pojęciami" class="level3" data-number="2.3.11">
 <h3 data-number="2.3.11" class="anchored" data-anchor-id="relacje-między-pojęciami"><span class="header-section-number">2.3.11</span> Relacje Między Pojęciami</h3>
 <ol type="1">
-<li>DGP determinuje wartości parametrów populacji (estymand).</li>
-<li>Estymandy są szacowane za pomocą statystyk z próby (estymatorów).</li>
-<li>Jakość estymatorów jest oceniana na podstawie właściwości takich jak obciążenie i efektywność w szacowaniu estymandy.</li>
-<li>Modele statystyczne wykorzystują oszacowane parametry do opisania relacji między estymandami w populacji.</li>
-<li>Wnioskowanie wykorzystuje estymatory do wyciągania wniosków o estymandach na podstawie danych z próby.</li>
+<li>Proces Generujący Dane (DGP - Data Generating Process) określa rzeczywiste wartości parametrów populacji (estymand).</li>
+<li>Estymandy są szacowane za pomocą statystyk obliczonych na podstawie próby (estymatorów).</li>
+<li>Jakość estymatorów ocenia się na podstawie właściwości takich jak obciążenie i efektywność w szacowaniu estymandy.</li>
+<li>Modele statystyczne wykorzystują oszacowane parametry do opisania relacji między zmiennymi w populacji.</li>
+<li>Wnioskowanie statystyczne polega na wyciąganiu wniosków o estymandach na podstawie danych z próby, wykorzystując właściwości estymatorów.</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -771,12 +771,14 @@ Przykład: Badanie Zachowań Wyborczych
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Populacja</strong>: Wszyscy uprawnieni wyborcy w kraju</li>
-<li><strong>Estymanda</strong>: <span class="math inline">\(p\)</span> = prawdziwa proporcja wyborców popierających kandydata</li>
+<li><strong>Estymanda</strong>: <span class="math inline">\(p\)</span> = rzeczywista proporcja wyborców popierających danego kandydata</li>
 <li><strong>Próba</strong>: 1000 losowo wybranych uprawnionych wyborców</li>
-<li><strong>Estymator</strong>: <span class="math inline">\(\hat{p}\)</span> = proporcja z próby wyborców popierających kandydata</li>
+<li><strong>Estymator</strong>: <span class="math inline">\(\hat{p}\)</span> = proporcja wyborców z próby popierających kandydata</li>
 <li><strong>Oszacowanie</strong>: Konkretna wartość <span class="math inline">\(\hat{p}\)</span> obliczona z próby (np. 0,52)</li>
-<li><strong>DGP</strong>: Złożona interakcja czynników wpływających na decyzje wyborcze, takich jak przekonania polityczne, warunki ekonomiczne, ekspozycja na media i sieci społeczne. Zrozumienie DGP pomaga badaczom zinterpretować, dlaczego estymanda <span class="math inline">\(p\)</span> ma określoną wartość i jak może się zmieniać w czasie.</li>
+<li><strong>DGP</strong>: Złożona interakcja czynników wpływających na decyzje wyborcze, takich jak przekonania polityczne, warunki ekonomiczne, ekspozycja na media i sieci społeczne.</li>
 </ul>
+<p>Zrozumienie DGP pomaga badaczom interpretować, dlaczego estymanda <span class="math inline">\(p\)</span> ma określoną wartość i jak może się zmieniać w czasie. Na przykład, nagła zmiana w gospodarce może wpłynąć na preferencje wyborców, zmieniając tym samym wartość <span class="math inline">\(p\)</span>.</p>
+<p><strong>Obciążenie i efektywność w kontekście przykładu</strong>: - Jeśli <span class="math inline">\(\hat{p}\)</span> jest nieobciążonym estymatorem, oznacza to, że przy wielokrotnym powtórzeniu badania na różnych próbach, średnia wartość <span class="math inline">\(\hat{p}\)</span> będzie bliska rzeczywistej wartości <span class="math inline">\(p\)</span>. - Efektywność <span class="math inline">\(\hat{p}\)</span> określa, jak bardzo rozproszone są wyniki poszczególnych badań wokół tej średniej. Im mniejsze rozproszenie, tym estymator jest bardziej efektywny.</p>
 </div>
 </div>
 </section>
