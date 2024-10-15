@@ -266,8 +266,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#błąd-systematyczny-vs.-błąd-losowy" id="toc-błąd-systematyczny-vs.-błąd-losowy" class="nav-link" data-scroll-target="#błąd-systematyczny-vs.-błąd-losowy"><span class="header-section-number">6.10.1</span> Błąd Systematyczny vs.&nbsp;Błąd Losowy</a></li>
   <li><a href="#błędy-samplowe-vs.-błędy-niesamplowe" id="toc-błędy-samplowe-vs.-błędy-niesamplowe" class="nav-link" data-scroll-target="#błędy-samplowe-vs.-błędy-niesamplowe"><span class="header-section-number">6.10.2</span> Błędy Samplowe vs.&nbsp;Błędy Niesamplowe</a></li>
   </ul></li>
-  <li><a href="#pytania-kontrolne-i-ćwiczenia" id="toc-pytania-kontrolne-i-ćwiczenia" class="nav-link" data-scroll-target="#pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.11</span> Pytania Kontrolne i Ćwiczenia</a></li>
-  <li><a href="#dalsza-lektura" id="toc-dalsza-lektura" class="nav-link" data-scroll-target="#dalsza-lektura"><span class="header-section-number">6.12</span> Dalsza Lektura</a></li>
   </ul>
 </nav>
     </div>
@@ -377,7 +375,7 @@ Note
 <p>Przykład: Średni dochód z próby 1000 pracowników może być użyty do oszacowania średniego dochodu wszystkich pracowników w kraju.</p></li>
 <li><p><strong>Przedziały ufności</strong>: Zakres wartości, który prawdopodobnie zawiera prawdziwy parametr populacji.</p>
 <p>Przykład: Możemy powiedzieć: “Jesteśmy w 95% pewni, że prawdziwy średni dochód populacji mieści się między 4500 a 5500 złotych”.</p></li>
-<li><p><strong>Margines błędu</strong>: Zakres wartości powyżej i poniżej statystyki próby w przedziale ufności.</p>
+<li><p><strong>Margines błędu</strong>: Zakres wartości powyżej i poniżej statystyki z próby w przedziale ufności.</p>
 <p>Przykład: W sondażach politycznych można zobaczyć stwierdzenie: “Kandydat A jest preferowany przez 52% wyborców, z marginesem błędu ±3%”.</p></li>
 <li><p><strong>Testowanie hipotez</strong>: Metoda podejmowania decyzji o parametrach populacji na podstawie danych z próby.</p>
 <p>Przykład: Badacz może testować, czy istnieje istotna różnica w wynikach testów między uczniami, którzy uczą się przy muzyce, a tymi, którzy uczą się w ciszy.</p></li>
@@ -386,7 +384,7 @@ Note
 <section id="błędy-próbkowania-i-błędy-niepróbkowe" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="błędy-próbkowania-i-błędy-niepróbkowe"><span class="header-section-number">6.5</span> Błędy Próbkowania i Błędy Niepróbkowe</h2>
 <p>Zrozumienie potencjalnych błędów w badaniach jest kluczowe dla dokładnej interpretacji wyników.</p>
-<p><strong>Błąd próbkowania</strong>: Różnica między statystyką próby a prawdziwym parametrem populacji, występująca z powodu przypadkowych wahań w wyborze członków próby.</p>
+<p><strong>Błąd próbkowania</strong>: Różnica między statystyką z próby a prawdziwym parametrem populacji, występująca z powodu przypadkowych wahań w wyborze członków próby.</p>
 <p>Przykład: Jeśli oszacujemy średni wzrost wszystkich dorosłych mężczyzn w kraju na podstawie próby, nasze oszacowanie prawdopodobnie będzie się nieco różnić od prawdziwej średniej z powodu błędu próbkowania.</p>
 <p><strong>Błędy niepróbkowe</strong>: Błędy nie wynikające z przypadku, które mogą wystąpić zarówno w badaniach próbkowych, jak i spisach.</p>
 <ol type="1">
@@ -554,7 +552,7 @@ Przykład: Sprawdzanie, czy korzystanie z mediów społecznościowych wpływa na
 </ul></li>
 <li>Przykłady:
 <ul>
-<li>Losowe wahania w statystykach próby</li>
+<li>Losowe wahania w statystykach (z) próby</li>
 <li>Nadreprezentacja lub niedoreprezentowanie niektórych grup w próbie</li>
 </ul></li>
 </ul></li>
@@ -579,6 +577,12 @@ Przykład: Sprawdzanie, czy korzystanie z mediów społecznościowych wpływa na
 </ol>
 <p>Ważne wyjaśnienie: Błędy niesamplowe mogą być zarówno systematyczne, jak i losowe. To kluczowe rozróżnienie, które powinienem był uwzględnić w pierwotnym opisie. Błędy niesamplowe obejmują szeroki zakres możliwych błędów, które nie są bezpośrednio związane z procesem próbkowania. Niektóre z nich mogą być systematyczne (np. błędnie skalibrowany instrument pomiarowy), podczas gdy inne mogą być losowe (np. przypadkowe błędy przy wprowadzaniu danych).</p>
 <p>Rozróżnienie na błędy samplowe i niesamplowe jest niezależne od podziału na błędy systematyczne i losowe. W praktyce, błędy niesamplowe mogą należeć do obu tych kategorii, co czyni ich identyfikację i kontrolę szczególnie ważnym aspektem badań statystycznych.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/ModelError.png" class="img-fluid figure-img"></p>
+<figcaption>Retrieved from: https://scientistcafe.com/ids/vbtradeoff</figcaption>
+</figure>
+</div>
 <p>Kluczowe punkty do zapamiętania:</p>
 <ol type="1">
 <li>Losowość jest podstawą wielu metod próbkowania i pomaga zapewnić reprezentatywność próby.</li>
@@ -589,30 +593,9 @@ Przykład: Sprawdzanie, czy korzystanie z mediów społecznościowych wpływa na
 <li>Era cyfrowa przynosi nowe możliwości i wyzwania w zakresie próbkowania i gromadzenia danych.</li>
 <li>Etyczne aspekty próbkowania, w tym świadoma zgoda, prywatność i reprezentatywność, są nieodłączną częścią procesu badawczego.</li>
 </ol>
-</section>
-</section>
-<section id="pytania-kontrolne-i-ćwiczenia" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="pytania-kontrolne-i-ćwiczenia"><span class="header-section-number">6.11</span> Pytania Kontrolne i Ćwiczenia</h2>
-<ol type="1">
-<li><p>Jakie są główne różnice między próbkowaniem probabilistycznym a nieprobabilistycznym? Podaj przykłady sytuacji, w których każde z nich mogłoby być odpowiednie.</p></li>
-<li><p>Wyobraź sobie, że prowadzisz badanie dotyczące opinii studentów na temat nauczania zdalnego. Zaproponuj odpowiednią metodę próbkowania i uzasadnij swój wybór.</p></li>
-<li><p>Jakie potencjalne błędy próbkowania i niepróbkowe mogłyby wystąpić w badaniu opisanym w pytaniu 2? Jak można by je zminimalizować?</p></li>
-<li><p>Oblicz wymaganą wielkość próby dla badania opinii publicznej, zakładając poziom ufności 95%, margines błędu 3% i maksymalną zmienność (p = 0,5).</p></li>
-<li><p>Omów etyczne aspekty próbkowania w kontekście badania wrażliwych grup społecznych, takich jak osoby bezdomne lub nieletni.</p></li>
-<li><p>Jak era big data wpływa na tradycyjne metody próbkowania? Omów zarówno możliwości, jak i wyzwania.</p></li>
-</ol>
-</section>
-<section id="dalsza-lektura" class="level2" data-number="6.12">
-<h2 data-number="6.12" class="anchored" data-anchor-id="dalsza-lektura"><span class="header-section-number">6.12</span> Dalsza Lektura</h2>
-<ol type="1">
-<li>Babbie, E. (2020). “Badania społeczne w praktyce”. Warszawa: Wydawnictwo Naukowe PWN.</li>
-<li>Frankfort-Nachmias, C., &amp; Nachmias, D. (2001). “Metody badawcze w naukach społecznych”. Poznań: Zysk i S-ka.</li>
-<li>Gruszczyński, L. A. (2003). “Kwestionariusze w socjologii: budowa narzędzi do badań surveyowych”. Katowice: Wydawnictwo Uniwersytetu Śląskiego.</li>
-<li>Szreder, M. (2010). “Metody i techniki sondażowych badań opinii”. Warszawa: Polskie Wydawnictwo Ekonomiczne.</li>
-<li>Brzeziński, J. (2019). “Metodologia badań psychologicznych”. Warszawa: Wydawnictwo Naukowe PWN.</li>
-</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
