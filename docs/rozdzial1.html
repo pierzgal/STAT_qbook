@@ -379,6 +379,33 @@ window.Quarto = {
   <li><a href="#implikacje-dla-zadań-matematycznych" id="toc-implikacje-dla-zadań-matematycznych" class="nav-link" data-scroll-target="#implikacje-dla-zadań-matematycznych"><span class="header-section-number">2.13.3</span> Implikacje dla Zadań Matematycznych</a></li>
   <li><a href="#najlepsze-praktyki-i-wnioski" id="toc-najlepsze-praktyki-i-wnioski" class="nav-link" data-scroll-target="#najlepsze-praktyki-i-wnioski"><span class="header-section-number">2.13.4</span> Najlepsze Praktyki i Wnioski</a></li>
   </ul></li>
+  <li><a href="#appendix-wprowadzenie-do-r-rstudio-i-tidyverse" id="toc-appendix-wprowadzenie-do-r-rstudio-i-tidyverse" class="nav-link" data-scroll-target="#appendix-wprowadzenie-do-r-rstudio-i-tidyverse"><span class="header-section-number">2.14</span> Appendix: Wprowadzenie do R, RStudio i tidyverse</a>
+  <ul class="collapse">
+  <li><a href="#kluczowe-cechy-r" id="toc-kluczowe-cechy-r" class="nav-link" data-scroll-target="#kluczowe-cechy-r"><span class="header-section-number">2.14.1</span> Kluczowe cechy R:</a></li>
+  </ul></li>
+  <li><a href="#pierwsze-kroki-z-rstudio" id="toc-pierwsze-kroki-z-rstudio" class="nav-link" data-scroll-target="#pierwsze-kroki-z-rstudio"><span class="header-section-number">2.15</span> Pierwsze kroki z RStudio</a>
+  <ul class="collapse">
+  <li><a href="#instalacja-r-i-rstudio" id="toc-instalacja-r-i-rstudio" class="nav-link" data-scroll-target="#instalacja-r-i-rstudio"><span class="header-section-number">2.15.1</span> Instalacja R i RStudio</a></li>
+  <li><a href="#interfejs-rstudio" id="toc-interfejs-rstudio" class="nav-link" data-scroll-target="#interfejs-rstudio"><span class="header-section-number">2.15.2</span> Interfejs RStudio</a></li>
+  <li><a href="#podstawowe-funkcje-rstudio" id="toc-podstawowe-funkcje-rstudio" class="nav-link" data-scroll-target="#podstawowe-funkcje-rstudio"><span class="header-section-number">2.15.3</span> Podstawowe funkcje RStudio</a></li>
+  </ul></li>
+  <li><a href="#podstawy-r" id="toc-podstawy-r" class="nav-link" data-scroll-target="#podstawy-r"><span class="header-section-number">2.16</span> Podstawy R</a>
+  <ul class="collapse">
+  <li><a href="#typy-danych-w-r" id="toc-typy-danych-w-r" class="nav-link" data-scroll-target="#typy-danych-w-r"><span class="header-section-number">2.16.1</span> Typy danych w R</a></li>
+  <li><a href="#struktury-danych" id="toc-struktury-danych" class="nav-link" data-scroll-target="#struktury-danych"><span class="header-section-number">2.16.2</span> Struktury danych</a></li>
+  <li><a href="#funkcje" id="toc-funkcje" class="nav-link" data-scroll-target="#funkcje"><span class="header-section-number">2.16.3</span> Funkcje</a></li>
+  <li><a href="#struktury-kontrolne" id="toc-struktury-kontrolne" class="nav-link" data-scroll-target="#struktury-kontrolne"><span class="header-section-number">2.16.4</span> Struktury kontrolne</a></li>
+  </ul></li>
+  <li><a href="#wprowadzenie-do-tidyverse" id="toc-wprowadzenie-do-tidyverse" class="nav-link" data-scroll-target="#wprowadzenie-do-tidyverse"><span class="header-section-number">2.17</span> Wprowadzenie do tidyverse</a>
+  <ul class="collapse">
+  <li><a href="#kluczowe-pakiety-tidyverse" id="toc-kluczowe-pakiety-tidyverse" class="nav-link" data-scroll-target="#kluczowe-pakiety-tidyverse"><span class="header-section-number">2.17.1</span> Kluczowe pakiety tidyverse</a></li>
+  <li><a href="#rozpoczęcie-pracy-z-tidyverse" id="toc-rozpoczęcie-pracy-z-tidyverse" class="nav-link" data-scroll-target="#rozpoczęcie-pracy-z-tidyverse"><span class="header-section-number">2.17.2</span> Rozpoczęcie pracy z tidyverse</a></li>
+  <li><a href="#import-danych-z-readr" id="toc-import-danych-z-readr" class="nav-link" data-scroll-target="#import-danych-z-readr"><span class="header-section-number">2.17.3</span> Import danych z readr</a></li>
+  <li><a href="#manipulacja-danymi-z-dplyr" id="toc-manipulacja-danymi-z-dplyr" class="nav-link" data-scroll-target="#manipulacja-danymi-z-dplyr"><span class="header-section-number">2.17.4</span> Manipulacja danymi z dplyr</a></li>
+  <li><a href="#wizualizacja-danych-z-ggplot2" id="toc-wizualizacja-danych-z-ggplot2" class="nav-link" data-scroll-target="#wizualizacja-danych-z-ggplot2"><span class="header-section-number">2.17.5</span> Wizualizacja danych z ggplot2</a></li>
+  </ul></li>
+  <li><a href="#ćwiczenia-dla-studentów" id="toc-ćwiczenia-dla-studentów" class="nav-link" data-scroll-target="#ćwiczenia-dla-studentów"><span class="header-section-number">2.18</span> Ćwiczenia dla studentów</a></li>
+  <li><a href="#dodatkowe-zasoby" id="toc-dodatkowe-zasoby" class="nav-link" data-scroll-target="#dodatkowe-zasoby"><span class="header-section-number">2.19</span> Dodatkowe zasoby</a></li>
   </ul>
 </nav>
     </div>
@@ -1784,9 +1811,500 @@ Warning
 <li>Używaj jako narzędzi wspomagających, nie zamienników dla ekspertyzy: LLM powinny uzupełniać, a nie zastępować wiedzę matematyczną.</li>
 </ol>
 <p>Zrozumienie probabilistycznej natury LLM pomaga wykorzystać ich mocne strony w zadaniach językowych, jednocześnie uznając ich ograniczenia w dziedzinach wymagających deterministycznej precyzji, takich jak matematyka.</p>
-
-
 </section>
+</section>
+<section id="appendix-wprowadzenie-do-r-rstudio-i-tidyverse" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="appendix-wprowadzenie-do-r-rstudio-i-tidyverse"><span class="header-section-number">2.14</span> Appendix: Wprowadzenie do R, RStudio i tidyverse</h2>
+<p>R to potężny język programowania i środowisko do obliczeń statystycznych i grafiki. Jest szeroko stosowany w środowisku akademickim, szczególnie w naukach społecznych, do analizy danych i wizualizacji.</p>
+<section id="kluczowe-cechy-r" class="level3" data-number="2.14.1">
+<h3 data-number="2.14.1" class="anchored" data-anchor-id="kluczowe-cechy-r"><span class="header-section-number">2.14.1</span> Kluczowe cechy R:</h3>
+<ul>
+<li>Otwarty kod źródłowy i darmowy</li>
+<li>Rozbudowany ekosystem pakietów</li>
+<li>Silne wsparcie społeczności</li>
+<li>Doskonały do analizy statystycznej i wizualizacji danych</li>
+</ul>
+</section>
+</section>
+<section id="pierwsze-kroki-z-rstudio" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="pierwsze-kroki-z-rstudio"><span class="header-section-number">2.15</span> Pierwsze kroki z RStudio</h2>
+<p>RStudio to zintegrowane środowisko programistyczne (IDE) dla R, które ułatwia pracę z R.</p>
+<section id="instalacja-r-i-rstudio" class="level3" data-number="2.15.1">
+<h3 data-number="2.15.1" class="anchored" data-anchor-id="instalacja-r-i-rstudio"><span class="header-section-number">2.15.1</span> Instalacja R i RStudio</h3>
+<ol type="1">
+<li>Pobierz i zainstaluj R ze strony <a href="https://cran.r-project.org/">CRAN</a></li>
+<li>Pobierz i zainstaluj RStudio ze <a href="https://www.rstudio.com/products/rstudio/download/">strony RStudio</a></li>
+</ol>
+</section>
+<section id="interfejs-rstudio" class="level3" data-number="2.15.2">
+<h3 data-number="2.15.2" class="anchored" data-anchor-id="interfejs-rstudio"><span class="header-section-number">2.15.2</span> Interfejs RStudio</h3>
+<p>RStudio ma cztery główne panele:</p>
+<ol type="1">
+<li><strong>Edytor źródłowy</strong>: Gdzie piszesz i edytujesz skrypty R</li>
+<li><strong>Konsola</strong>: Gdzie możesz wpisywać polecenia R i widzieć wyniki</li>
+<li><strong>Środowisko/Historia</strong>: Pokazuje wszystkie obiekty w twoim obszarze roboczym i historię poleceń</li>
+<li><strong>Pliki/Wykresy/Pakiety/Pomoc</strong>: Wielofunkcyjny panel do zarządzania plikami, przeglądania wykresów, zarządzania pakietami i dostępu do pomocy</li>
+</ol>
+</section>
+<section id="podstawowe-funkcje-rstudio" class="level3" data-number="2.15.3">
+<h3 data-number="2.15.3" class="anchored" data-anchor-id="podstawowe-funkcje-rstudio"><span class="header-section-number">2.15.3</span> Podstawowe funkcje RStudio</h3>
+<ul>
+<li>Tworzenie nowego skryptu R: Plik &gt; Nowy plik &gt; Skrypt R</li>
+<li>Uruchamianie kodu: Zaznacz kod i naciśnij Ctrl+Enter (Cmd+Enter na Macu)</li>
+<li>Instalowanie pakietów: Narzędzia &gt; Instaluj pakiety</li>
+<li>Uzyskiwanie pomocy: Wpisz <code>?nazwa_funkcji</code> w konsoli</li>
+</ul>
+</section>
+</section>
+<section id="podstawy-r" class="level2" data-number="2.16">
+<h2 data-number="2.16" class="anchored" data-anchor-id="podstawy-r"><span class="header-section-number">2.16</span> Podstawy R</h2>
+<section id="typy-danych-w-r" class="level3" data-number="2.16.1">
+<h3 data-number="2.16.1" class="anchored" data-anchor-id="typy-danych-w-r"><span class="header-section-number">2.16.1</span> Typy danych w R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Numeryczny</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fl">10.5</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Całkowity</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span>L</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Znakowy</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>imie <span class="ot">&lt;-</span> <span class="st">"Alicja"</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(imie)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Logiczny</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>jest_studentem <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(jest_studentem)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+</div>
+</section>
+<section id="struktury-danych" class="level3" data-number="2.16.2">
+<h3 data-number="2.16.2" class="anchored" data-anchor-id="struktury-danych"><span class="header-section-number">2.16.2</span> Struktury danych</h3>
+<section id="wektory" class="level4" data-number="2.16.2.1">
+<h4 data-number="2.16.2.1" class="anchored" data-anchor-id="wektory"><span class="header-section-number">2.16.2.1</span> Wektory</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wektora</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>liczby <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>owoce <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"jabłko"</span>, <span class="st">"banan"</span>, <span class="st">"wiśnia"</span>)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Operacje na wektorach</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>liczby <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 4 5 6 7</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>liczby <span class="sc">*</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  2  4  6  8 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(liczby)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(owoce)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="macierze" class="level4" data-number="2.16.2.2">
+<h4 data-number="2.16.2.2" class="anchored" data-anchor-id="macierze"><span class="header-section-number">2.16.2.2</span> Macierze</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie macierzy</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Operacje na macierzach</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(m)  <span class="co"># transpozycja</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+[3,]    5    6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>m <span class="sc">*</span> <span class="dv">2</span>  <span class="co"># mnożenie skalarne</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    2    6   10
+[2,]    4    8   12</code></pre>
+</div>
+</div>
+</section>
+<section id="ramki-danych" class="level4" data-number="2.16.2.3">
+<h4 data-number="2.16.2.3" class="anchored" data-anchor-id="ramki-danych"><span class="header-section-number">2.16.2.3</span> Ramki danych</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie ramki danych</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">imie =</span> <span class="fu">c</span>(<span class="st">"Alicja"</span>, <span class="st">"Bartek"</span>, <span class="st">"Celina"</span>),</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">wiek =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">student =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    imie wiek student
+1 Alicja   25    TRUE
+2 Bartek   30   FALSE
+3 Celina   35    TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dostęp do elementów ramki danych</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>imie</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Alicja" "Bartek" "Celina"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">1</span>, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>df[df<span class="sc">$</span>wiek <span class="sc">&gt;</span> <span class="dv">25</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    imie wiek student
+2 Bartek   30   FALSE
+3 Celina   35    TRUE</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="funkcje" class="level3" data-number="2.16.3">
+<h3 data-number="2.16.3" class="anchored" data-anchor-id="funkcje"><span class="header-section-number">2.16.3</span> Funkcje</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definiowanie funkcji</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>powitaj <span class="ot">&lt;-</span> <span class="cf">function</span>(imie) {</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">"Cześć,"</span>, imie, <span class="st">"!"</span>)</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Użycie funkcji</span></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="fu">powitaj</span>(<span class="st">"Alicja"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Cześć, Alicja !"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Funkcja z wieloma argumentami</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>oblicz_bmi <span class="ot">&lt;-</span> <span class="cf">function</span>(waga, wzrost) {</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  bmi <span class="ot">&lt;-</span> waga <span class="sc">/</span> (wzrost<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(bmi)</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="fu">oblicz_bmi</span>(<span class="dv">70</span>, <span class="fl">1.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22.85714</code></pre>
+</div>
+</div>
+</section>
+<section id="struktury-kontrolne" class="level3" data-number="2.16.4">
+<h3 data-number="2.16.4" class="anchored" data-anchor-id="struktury-kontrolne"><span class="header-section-number">2.16.4</span> Struktury kontrolne</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instrukcja if-else</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x jest większe niż 5"</span>)</span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"x nie jest większe niż 5"</span>)</span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "x jest większe niż 5"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pętla for</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Iteracja"</span>, i))</span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Iteracja 1"
+[1] "Iteracja 2"
+[1] "Iteracja 3"
+[1] "Iteracja 4"
+[1] "Iteracja 5"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pętla while</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>licznik <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (licznik <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Licznik:"</span>, licznik))</span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>  licznik <span class="ot">&lt;-</span> licznik <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Licznik: 1"
+[1] "Licznik: 2"
+[1] "Licznik: 3"
+[1] "Licznik: 4"
+[1] "Licznik: 5"</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="wprowadzenie-do-tidyverse" class="level2" data-number="2.17">
+<h2 data-number="2.17" class="anchored" data-anchor-id="wprowadzenie-do-tidyverse"><span class="header-section-number">2.17</span> Wprowadzenie do tidyverse</h2>
+<p>Tidyverse to kolekcja pakietów R zaprojektowanych do nauki o danych. Te pakiety mają wspólną filozofię i są zaprojektowane do bezproblemowej współpracy.</p>
+<section id="kluczowe-pakiety-tidyverse" class="level3" data-number="2.17.1">
+<h3 data-number="2.17.1" class="anchored" data-anchor-id="kluczowe-pakiety-tidyverse"><span class="header-section-number">2.17.1</span> Kluczowe pakiety tidyverse</h3>
+<ul>
+<li>ggplot2: do wizualizacji danych</li>
+<li>dplyr: do manipulacji danymi</li>
+<li>tidyr: do porządkowania danych</li>
+<li>readr: do odczytu danych prostokątnych</li>
+<li>purrr: do programowania funkcyjnego</li>
+<li>tibble: nowoczesne ujęcie ramek danych</li>
+</ul>
+</section>
+<section id="rozpoczęcie-pracy-z-tidyverse" class="level3" data-number="2.17.2">
+<h3 data-number="2.17.2" class="anchored" data-anchor-id="rozpoczęcie-pracy-z-tidyverse"><span class="header-section-number">2.17.2</span> Rozpoczęcie pracy z tidyverse</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalacja tidyverse (uruchom raz)</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse")</span></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Wczytanie tidyverse</span></span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="import-danych-z-readr" class="level3" data-number="2.17.3">
+<h3 data-number="2.17.3" class="anchored" data-anchor-id="import-danych-z-readr"><span class="header-section-number">2.17.3</span> Import danych z readr</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Odczyt plików CSV</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"dane_spoleczne.csv"</span>)</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Odczyt innych formatów plików</span></span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(<span class="st">"dane.tsv"</span>)  <span class="co"># Wartości oddzielone tabulatorem</span></span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="st">"dane.txt"</span>, <span class="at">delim =</span> <span class="st">"|"</span>)  <span class="co"># Niestandardowy separator</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="manipulacja-danymi-z-dplyr" class="level3" data-number="2.17.4">
+<h3 data-number="2.17.4" class="anchored" data-anchor-id="manipulacja-danymi-z-dplyr"><span class="header-section-number">2.17.4</span> Manipulacja danymi z dplyr</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Użyjmy wbudowanego zbioru danych mtcars</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Wybieranie kolumn</span></span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, hp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl  hp
+Mazda RX4           21.0   6 110
+Mazda RX4 Wag       21.0   6 110
+Datsun 710          22.8   4  93
+Hornet 4 Drive      21.4   6 110
+Hornet Sportabout   18.7   8 175
+Valiant             18.1   6 105
+Duster 360          14.3   8 245
+Merc 240D           24.4   4  62
+Merc 230            22.8   4  95
+Merc 280            19.2   6 123
+Merc 280C           17.8   6 123
+Merc 450SE          16.4   8 180
+Merc 450SL          17.3   8 180
+Merc 450SLC         15.2   8 180
+Cadillac Fleetwood  10.4   8 205
+Lincoln Continental 10.4   8 215
+Chrysler Imperial   14.7   8 230
+Fiat 128            32.4   4  66
+Honda Civic         30.4   4  52
+Toyota Corolla      33.9   4  65
+Toyota Corona       21.5   4  97
+Dodge Challenger    15.5   8 150
+AMC Javelin         15.2   8 150
+Camaro Z28          13.3   8 245
+Pontiac Firebird    19.2   8 175
+Fiat X1-9           27.3   4  66
+Porsche 914-2       26.0   4  91
+Lotus Europa        30.4   4 113
+Ford Pantera L      15.8   8 264
+Ferrari Dino        19.7   6 175
+Maserati Bora       15.0   8 335
+Volvo 142E          21.4   4 109</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrowanie wierszy</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+Toyota Corona  21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sortowanie danych</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie nowych zmiennych</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">kpl =</span> mpg <span class="sc">*</span> <span class="fl">0.425</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb     kpl
+Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4  8.9250
+Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4  8.9250
+Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1  9.6900
+Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1  9.0950
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2  7.9475
+Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1  7.6925
+Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4  6.0775
+Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2 10.3700
+Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2  9.6900
+Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4  8.1600
+Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4  7.5650
+Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3  6.9700
+Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3  7.3525
+Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3  6.4600
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4  4.4200
+Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4  4.4200
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4  6.2475
+Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1 13.7700
+Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2 12.9200
+Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1 14.4075
+Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1  9.1375
+Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2  6.5875
+AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2  6.4600
+Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4  5.6525
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2  8.1600
+Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1 11.6025
+Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2 11.0500
+Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2 12.9200
+Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4  6.7150
+Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6  8.3725
+Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8  6.3750
+Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2  9.0950</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Podsumowywanie danych</span></span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> </span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">srednie_mpg =</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">liczba =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+    cyl srednie_mpg liczba
+  &lt;dbl&gt;       &lt;dbl&gt;  &lt;int&gt;
+1     4        26.7     11
+2     6        19.7      7
+3     8        15.1     14</code></pre>
+</div>
+</div>
+</section>
+<section id="wizualizacja-danych-z-ggplot2" class="level3" data-number="2.17.5">
+<h3 data-number="2.17.5" class="anchored" data-anchor-id="wizualizacja-danych-z-ggplot2"><span class="header-section-number">2.17.5</span> Wizualizacja danych z ggplot2</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wykres rozrzutu</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Waga samochodu vs. Zużycie paliwa"</span>,</span>
+<span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Waga (1000 funtów)"</span>,</span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mile na galon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial1_files/figure-html/wykres-rozrzutu-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Waga samochodu vs.&nbsp;Zużycie paliwa</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wykres słupkowy</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(cyl) <span class="sc">%&gt;%</span> </span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(cyl), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Liczba samochodów według liczby cylindrów"</span>,</span>
+<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Liczba cylindrów"</span>,</span>
+<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Liczba"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial1_files/figure-html/wykres-slupkowy-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Liczba samochodów według liczby cylindrów</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wykres pudełkowy</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(cyl), <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Zużycie paliwa według liczby cylindrów"</span>,</span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Liczba cylindrów"</span>,</span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Mile na galon"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial1_files/figure-html/wykres-pudelkowy-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Zużycie paliwa według liczby cylindrów</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ćwiczenia-dla-studentów" class="level2" data-number="2.18">
+<h2 data-number="2.18" class="anchored" data-anchor-id="ćwiczenia-dla-studentów"><span class="header-section-number">2.18</span> Ćwiczenia dla studentów</h2>
+<ol type="1">
+<li><p>Korzystając ze zbioru danych <code>mtcars</code>, stwórz wykres rozrzutu <code>hp</code> (moc) względem <code>qsec</code> (czas 1/4 mili). Dodaj tytuł i odpowiednie etykiety osi.</p></li>
+<li><p>Oblicz średnie <code>mpg</code> dla samochodów z 4, 6 i 8 cylindrami. Przedstaw wyniki w ładnie sformatowanej tabeli.</p></li>
+<li><p>Utwórz nową zmienną w zbiorze danych <code>mtcars</code> o nazwie <code>kategoria_wydajnosci</code>. Skategoryzuj samochody jako “Wysoka”, jeśli ich <code>mpg</code> jest powyżej mediany, i “Niska” w przeciwnym razie. Następnie stwórz wykres słupkowy pokazujący liczbę samochodów w każdej kategorii wydajności.</p></li>
+<li><p>Napisz funkcję, która przyjmuje zbiór danych i nazwę kolumny jako dane wejściowe i zwraca średnią i odchylenie standardowe tej kolumny. Przetestuj swoją funkcję z różnymi kolumnami zbioru danych <code>mtcars</code>.</p></li>
+<li><p>Utwórz dokument Quarto, który zawiera wyniki ćwiczeń 1-4, wraz z tekstowymi wyjaśnieniami twojego procesu i wnioskami.</p></li>
+</ol>
+</section>
+<section id="dodatkowe-zasoby" class="level2" data-number="2.19">
+<h2 data-number="2.19" class="anchored" data-anchor-id="dodatkowe-zasoby"><span class="header-section-number">2.19</span> Dodatkowe zasoby</h2>
+<ul>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
+<li><a href="https://www.tidyverse.org/">Dokumentacja tidyverse</a></li>
+<li><a href="https://www.rstudio.com/resources/cheatsheets/">Ściągawki RStudio</a></li>
+<li><a href="https://quarto.org/docs/guide/">Przewodnik Quarto</a></li>
+<li><a href="http://www.cookbook-r.com/">R Cookbook</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/r">Stack Overflow - Pytania o R</a></li>
+</ul>
+<p>Pamiętaj, aby eksperymentować z kodem, modyfikować przykłady i nie wahaj się korzystać z wbudowanego systemu pomocy R (dostępnego przez wpisanie <code>?nazwa_funkcji</code> w konsoli), gdy napotkasz nieznane funkcje lub koncepcje.</p>
+
+
 </section>
 
 </main> <!-- /main -->
