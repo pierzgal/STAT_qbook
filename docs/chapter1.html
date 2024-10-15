@@ -1408,9 +1408,8 @@ Note
 <section id="example-education-income-and-age" class="level3" data-number="1.9.4">
 <h3 data-number="1.9.4" class="anchored" data-anchor-id="example-education-income-and-age"><span class="header-section-number">1.9.4</span> Example: Education, Income, and Age</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: confounder-data</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: viridisLite</code></pre>
 </div>
@@ -1451,48 +1450,6 @@ Note
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter1_files/figure-html/confounder-data.2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>confounder_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">runif</span>(n, <span class="dv">25</span>, <span class="dv">65</span>),</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">education =</span> <span class="fu">round</span>(<span class="dv">10</span> <span class="sc">+</span> <span class="fl">0.1</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">2</span>)),</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">income =</span> <span class="dv">20000</span> <span class="sc">+</span> <span class="dv">1000</span> <span class="sc">*</span> education <span class="sc">+</span> <span class="dv">500</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">5000</span>)</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Without controlling for age</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>model_naive <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> education, <span class="at">data =</span> confounder_data)</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Controlling for age</span></span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>model_adjusted <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> education <span class="sc">+</span> age, <span class="at">data =</span> confounder_data)</span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(confounder_data, <span class="fu">aes</span>(<span class="at">x =</span> education, <span class="at">y =</span> income, <span class="at">color =</span> age)) <span class="sc">+</span></span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">group =</span> <span class="fu">cut</span>(age, <span class="at">breaks =</span> <span class="dv">3</span>)), <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Education vs Income, Confounded by Age"</span>,</span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Years of Education"</span>, <span class="at">y =</span> <span class="st">"Income"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following aesthetics were dropped during statistical transformation:
-colour.
-ℹ This can happen when ggplot fails to infer the correct grouping structure in
-  the data.
-ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
-  variable into a factor?</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
 <p><img src="chapter1_files/figure-html/confounder-data-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
@@ -1500,13 +1457,13 @@ colour.
 </div>
 <p>Compare the coefficients:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_naive)<span class="sc">$</span>coefficients[<span class="st">"education"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_naive)<span class="sc">$</span>coefficients[<span class="st">"education"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2316.878</code></pre>
+<pre><code>[1] 2328.718</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_adjusted)<span class="sc">$</span>coefficients[<span class="st">"education"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_adjusted)<span class="sc">$</span>coefficients[<span class="st">"education"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1045.73</code></pre>
+<pre><code>[1] 1101.783</code></pre>
 </div>
 </div>
 <p>The effect of education on income is overestimated when we don’t control for age.</p>
@@ -1519,26 +1476,26 @@ colour.
 <h3 data-number="1.9.6" class="anchored" data-anchor-id="example-job-satisfaction-salary-and-work-life-balance"><span class="header-section-number">1.9.6</span> Example: Job Satisfaction, Salary, and Work-Life Balance</h3>
 <p>Let’s create a dataset where work-life balance is a collider between job satisfaction and salary:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>collider_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">job_satisfaction =</span> <span class="fu">rnorm</span>(n),</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">salary =</span> <span class="fu">rnorm</span>(n),</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">work_life_balance =</span> <span class="sc">-</span><span class="fl">0.5</span> <span class="sc">*</span> job_satisfaction <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> salary <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">0.5</span>)</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Without controlling for work-life balance</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>model_correct <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary <span class="sc">~</span> job_satisfaction, <span class="at">data =</span> collider_data)</span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrectly controlling for work-life balance</span></span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>model_collider <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary <span class="sc">~</span> job_satisfaction <span class="sc">+</span> work_life_balance, <span class="at">data =</span> collider_data)</span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(collider_data, <span class="fu">aes</span>(<span class="at">x =</span> job_satisfaction, <span class="at">y =</span> salary, <span class="at">color =</span> work_life_balance)) <span class="sc">+</span></span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Job Satisfaction vs Salary, Work-Life Balance as Collider"</span>,</span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Job Satisfaction"</span>, <span class="at">y =</span> <span class="st">"Salary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>collider_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">job_satisfaction =</span> <span class="fu">rnorm</span>(n),</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">salary =</span> <span class="fu">rnorm</span>(n),</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">work_life_balance =</span> <span class="sc">-</span><span class="fl">0.5</span> <span class="sc">*</span> job_satisfaction <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> salary <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">0.5</span>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Without controlling for work-life balance</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>model_correct <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary <span class="sc">~</span> job_satisfaction, <span class="at">data =</span> collider_data)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorrectly controlling for work-life balance</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>model_collider <span class="ot">&lt;-</span> <span class="fu">lm</span>(salary <span class="sc">~</span> job_satisfaction <span class="sc">+</span> work_life_balance, <span class="at">data =</span> collider_data)</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(collider_data, <span class="fu">aes</span>(<span class="at">x =</span> job_satisfaction, <span class="at">y =</span> salary, <span class="at">color =</span> work_life_balance)) <span class="sc">+</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Job Satisfaction vs Salary, Work-Life Balance as Collider"</span>,</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Job Satisfaction"</span>, <span class="at">y =</span> <span class="st">"Salary"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -1552,13 +1509,13 @@ colour.
 </div>
 <p>Compare the coefficients:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_correct)<span class="sc">$</span>coefficients[<span class="st">"job_satisfaction"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_correct)<span class="sc">$</span>coefficients[<span class="st">"job_satisfaction"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.009763657</code></pre>
+<pre><code>[1] 0.02063487</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_collider)<span class="sc">$</span>coefficients[<span class="st">"job_satisfaction"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_collider)<span class="sc">$</span>coefficients[<span class="st">"job_satisfaction"</span>, <span class="st">"Estimate"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.4475771</code></pre>
+<pre><code>[1] -0.4794016</code></pre>
 </div>
 </div>
 <p>Controlling for the collider (work-life balance) introduces a spurious correlation between job satisfaction and salary.</p>
