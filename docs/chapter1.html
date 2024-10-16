@@ -744,32 +744,32 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Estimation:</p>
+<p>We flip a coin 100 times and count the number of heads:</p>
+<ul>
+<li>Let’s say we get 55 heads.</li>
+<li>Our estimate of the probability of getting heads is 55/100 = 0.55 or 55%.</li>
+<li>We might also provide a range, like 45% to 65%, where we think the true probability likely falls.</li>
+</ul>
+<p>The goal of estimation is to provide our best guess of the actual probability of getting heads, based on our observed data.</p>
+<p>Hypothesis Testing: Now we want to determine if the coin is fair or not. We use the concepts of null and alternative hypotheses:</p>
 <ol type="1">
-<li>Estimation:</li>
+<li>Null Hypothesis (H0): The coin is fair (probability of heads = 0.5)</li>
+<li>Alternative Hypothesis (H1): The coin is not fair (probability of heads ≠ 0.5)</li>
 </ol>
-<p>Estimation is about determining the likely value of a population parameter based on sample data. In the context of a binomial distribution, we might be interested in estimating the probability of success (p) for a certain event.</p>
-<p>Example: Let’s say we’re flipping a coin 100 times and want to estimate the probability of getting heads.</p>
+<p>We flip the coin 100 times and observe 55 heads.</p>
+<p>Now we ask: “If the null hypothesis were true (the coin is fair), how likely is it that we’d see 55 or more heads out of 100 flips (assuming that H0 is true)?”</p>
 <ul>
-<li>We flip the coin 100 times and observe 55 heads.</li>
-<li>Our point estimate for p (probability of heads) would be 55/100 = 0.55</li>
-<li>We might also calculate a confidence interval, e.g., a 95% confidence interval might be (0.45, 0.65). The confidence interval tells us a range where we think the true probability might lie. Let’s say our 95% confidence interval is (0.45, 0.65). In plain English, this means: “We’re 95% confident that the true probability of getting heads is between 45% and 65%.”</li>
+<li>If this probability is very low, we reject the null hypothesis and lean towards believing the alternative hypothesis (the coin is not fair).</li>
+<li>If this probability isn’t very low, we fail to reject the null hypothesis. This doesn’t prove the coin is fair, but we don’t have strong evidence that it isn’t.</li>
 </ul>
-<p>The goal here is to provide our best guess of the true probability of heads, along with a range of plausible values.</p>
-<ol start="2" type="1">
-<li>Hypothesis Testing:</li>
+<p>The goal of hypothesis testing is to make a decision about which hypothesis to believe, based on how likely our observed data would be if the null hypothesis were true.</p>
+<p>Key Differences:</p>
+<ol type="1">
+<li>Estimation provides a specific value (55%) and possibly a range (45% to 65%) for the probability of heads.</li>
+<li>Hypothesis testing decides between two competing claims (fair vs.&nbsp;not fair) based on the observed data.</li>
+<li>Estimation answers “What do we think the probability is?”, while hypothesis testing answers “Do we have enough evidence to believe the coin isn’t fair?”</li>
 </ol>
-<p>Hypothesis testing, on the other hand, is about making a decision between two competing claims about a population parameter. We typically have a null hypothesis (H0) and an alternative hypothesis (H1).</p>
-<p>Example: Using the same coin-flipping scenario, let’s say we want to test if the coin is fair (p = 0.5) or biased towards heads (p &gt; 0.5).</p>
-<ul>
-<li>Null hypothesis (H0): p = 0.5 (the coin is fair)</li>
-<li>Alternative hypothesis (H1): p &gt; 0.5 (the coin is biased towards heads)</li>
-<li>We observe 55 heads out of 100 flips</li>
-<li>We calculate a p-value (the probability of observing 55 or more heads if the coin were truly fair)</li>
-<li>If the p-value is less than our chosen significance level (e.g., 0.05), we reject H0 and conclude the coin might be biased</li>
-<li>If the p-value is greater than our significance level, we fail to reject H0 and cannot conclude the coin is biased</li>
-</ul>
-<p>The goal here is to make a decision about whether there’s enough evidence to support the claim that the coin is biased, rather than estimating the exact probability of heads.</p>
-<p>Key Differences: 1. Purpose: Estimation aims to quantify a parameter, while hypothesis testing aims to make a decision between competing claims. 2. Output: Estimation provides point estimates and intervals, while hypothesis testing provides decisions (reject or fail to reject) and p-values. 3. Questions answered: Estimation answers “What is the likely value?”, while hypothesis testing answers “Is there evidence to support this claim?”</p>
 </div>
 </div>
 </section>
