@@ -555,6 +555,95 @@ F-statistic:  3105 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>Ten przykład pokazuje, jak możemy analizować dane dotyczące wieku zarówno dyskretnie (używając wykresu słupkowego), jak i w sposób ciągły (używając histogramu i regresji liniowej). Wybór między tymi podejściami zależałby od konkretnego pytania badawczego i wymaganego poziomu precyzji w analizie.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Liczby wymierne i miary procentowe: Dyskretna natura w pozornie ciągłej formie
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Zmienne mierzone w procentach, takie jak stopa bezrobocia czy frekwencja wyborcza, stanowią interesujący przypadek w spektrum dyskretno-ciągłym. Rzucają one wyzwanie naszemu intuicyjnemu rozumieniu dyskretności i ciągłości oraz podkreślają znaczenie rozważania podstawowej natury naszych danych.</p>
+<section id="kluczowe-punkty" class="level4" data-number="4.2.6.1">
+<h4 data-number="4.2.6.1" class="anchored" data-anchor-id="kluczowe-punkty"><span class="header-section-number">4.2.6.1</span> Kluczowe punkty:</h4>
+<ol type="1">
+<li><strong>Wymierna natura procentów</strong>:
+<ul>
+<li>Procenty są w istocie ułamkami postaci m/n, gdzie n = 100.</li>
+<li>To sprawia, że z definicji są liczbami wymiernymi.</li>
+</ul></li>
+<li><strong>Dyskretność miar procentowych</strong>:
+<ul>
+<li>Mimo pozorów ciągłości, miary procentowe są z natury dyskretne.</li>
+<li>Mogą przyjmować tylko skończoną liczbę wartości między 0 a 100.</li>
+</ul></li>
+<li><strong>Ograniczona gęstość</strong>:
+<ul>
+<li>W przeciwieństwie do zbioru wszystkich liczb wymiernych, miary procentowe nie są gęste.</li>
+<li>Istnieje najmniejszy możliwy przyrost (1/100 lub 0,01%), poniżej którego nie można reprezentować żadnej wartości.</li>
+</ul></li>
+<li><strong>Praktyczne implikacje</strong>:
+<ul>
+<li>Zmienne takie jak stopa bezrobocia (np. 5,2%) czy frekwencja wyborcza (np. 67,8%) mają skończoną precyzję.</li>
+<li>W większości przypadków są raportowane z dokładnością do jednego lub dwóch miejsc po przecinku, co dodatkowo ogranicza ich możliwe wartości.</li>
+</ul></li>
+<li><strong>Podejście analityczne</strong>:
+<ul>
+<li>Mimo ich dyskretnej natury, w analizie danych często traktujemy miary procentowe jako zmienne ciągłe.</li>
+<li>Takie podejście pozwala na zastosowanie technik statystycznych przeznaczonych dla danych ciągłych.</li>
+<li>Wybór między traktowaniem jako dyskretne lub ciągłe zależy od konkretnego kontekstu analitycznego i wymaganego poziomu precyzji.</li>
+</ul></li>
+<li><strong>Paradoks</strong>:
+<ul>
+<li>Miary procentowe łączą w sobie cechy dyskretne i ciągłe, wydając się ciągłe, ale będąc fundamentalnie dyskretne.</li>
+<li>Tworzą one skończony zbiór liczb wymiernych, które mogą aproksymować ciągłość w wielu praktycznych sytuacjach.</li>
+</ul></li>
+</ol>
+</section>
+<section id="przykład-w-r" class="level4" data-number="4.2.6.2">
+<h4 data-number="4.2.6.2" class="anchored" data-anchor-id="przykład-w-r"><span class="header-section-number">4.2.6.2</span> Przykład w R:</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Symulacja stóp bezrobocia</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>stopy_bezrobocia <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(<span class="dv">1000</span>, <span class="at">min =</span> <span class="dv">3</span>, <span class="at">max =</span> <span class="dv">10</span>), <span class="dv">1</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Traktowanie jako dyskretne</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(stopy_bezrobocia), </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Stopy bezrobocia (ujęcie dyskretne)"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Stopa (%)"</span>, <span class="at">ylab =</span> <span class="st">"Częstość"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traktowanie jako ciągłe</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(stopy_bezrobocia, <span class="at">breaks =</span> <span class="dv">30</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Stopy bezrobocia (ujęcie ciągłe)"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Stopa (%)"</span>, <span class="at">ylab =</span> <span class="st">"Częstość"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial2_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Oba podejścia mogą dostarczyć cennych informacji, w zależności od pytania badawczego</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstracja dyskretnej natury</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>unikalne_wartosci <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(stopy_bezrobocia))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Liczba unikalnych wartości:"</span>, unikalne_wartosci)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Liczba unikalnych wartości: 71</code></pre>
+</div>
+</div>
+<p>Zrozumienie dyskretnej natury miar procentowych, mimo ich pozorów ciągłości, wzbogaca nasze podejście do analizy danych. Przypomina nam o konieczności rozważania fundamentalnej natury naszych danych przy wyborze metod analitycznych i interpretacji wyników.</p>
+</section>
+</div>
+</div>
 </section>
 </section>
 <section id="wprowadzenie-do-typologii-danych-stevensa" class="level2" data-number="4.3">
@@ -599,21 +688,21 @@ F-statistic:  3105 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Test chi-kwadrat</li>
 </ul>
 </section>
-<section id="przykład-w-r" class="level4" data-number="4.3.1.5">
-<h4 data-number="4.3.1.5" class="anchored" data-anchor-id="przykład-w-r"><span class="header-section-number">4.3.1.5</span> Przykład w R</h4>
+<section id="przykład-w-r-1" class="level4" data-number="4.3.1.5">
+<h4 data-number="4.3.1.5" class="anchored" data-anchor-id="przykład-w-r-1"><span class="header-section-number">4.3.1.5</span> Przykład w R</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej nominalnej</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>kolory_oczu <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Niebieskie"</span>, <span class="st">"Brązowe"</span>, <span class="st">"Zielone"</span>, <span class="st">"Brązowe"</span>, <span class="st">"Niebieskie"</span>, <span class="st">"Piwne"</span>))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozkład częstości</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(kolory_oczu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej nominalnej</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>kolory_oczu <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Niebieskie"</span>, <span class="st">"Brązowe"</span>, <span class="st">"Zielone"</span>, <span class="st">"Brązowe"</span>, <span class="st">"Niebieskie"</span>, <span class="st">"Piwne"</span>))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Rozkład częstości</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(kolory_oczu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>kolory_oczu
    Brązowe Niebieskie      Piwne    Zielone 
          2          2          1          1 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Moda (dominanta)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">table</span>(kolory_oczu)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Moda (dominanta)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(<span class="fu">which.max</span>(<span class="fu">table</span>(kolory_oczu)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Brązowe"</code></pre>
 </div>
@@ -651,20 +740,20 @@ F-statistic:  3105 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Test U Manna-Whitneya</li>
 </ul>
 </section>
-<section id="przykład-w-r-1" class="level4" data-number="4.3.2.5">
-<h4 data-number="4.3.2.5" class="anchored" data-anchor-id="przykład-w-r-1"><span class="header-section-number">4.3.2.5</span> Przykład w R</h4>
+<section id="przykład-w-r-2" class="level4" data-number="4.3.2.5">
+<h4 data-number="4.3.2.5" class="anchored" data-anchor-id="przykład-w-r-2"><span class="header-section-number">4.3.2.5</span> Przykład w R</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej porządkowej</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>poziomy_edukacji <span class="ot">&lt;-</span> <span class="fu">ordered</span>(<span class="fu">c</span>(<span class="st">"Szkoła Średnia"</span>, <span class="st">"Licencjat"</span>, <span class="st">"Magister"</span>, <span class="st">"Doktorat"</span>, <span class="st">"Licencjat"</span>, <span class="st">"Magister"</span>),</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Szkoła Średnia"</span>, <span class="st">"Licencjat"</span>, <span class="st">"Magister"</span>, <span class="st">"Doktorat"</span>))</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Mediana</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(<span class="fu">as.integer</span>(poziomy_edukacji))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej porządkowej</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>poziomy_edukacji <span class="ot">&lt;-</span> <span class="fu">ordered</span>(<span class="fu">c</span>(<span class="st">"Szkoła Średnia"</span>, <span class="st">"Licencjat"</span>, <span class="st">"Magister"</span>, <span class="st">"Doktorat"</span>, <span class="st">"Licencjat"</span>, <span class="st">"Magister"</span>),</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Szkoła Średnia"</span>, <span class="st">"Licencjat"</span>, <span class="st">"Magister"</span>, <span class="st">"Doktorat"</span>))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Mediana</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(<span class="fu">as.integer</span>(poziomy_edukacji))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2.5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Percentyle</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(<span class="fu">as.integer</span>(poziomy_edukacji), <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Percentyle</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(<span class="fu">as.integer</span>(poziomy_edukacji), <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>25% 50% 75% 
 2.0 2.5 3.0 </code></pre>
@@ -703,24 +792,24 @@ F-statistic:  3105 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Testy t i ANOVA</li>
 </ul>
 </section>
-<section id="przykład-w-r-2" class="level4" data-number="4.3.3.5">
-<h4 data-number="4.3.3.5" class="anchored" data-anchor-id="przykład-w-r-2"><span class="header-section-number">4.3.3.5</span> Przykład w R</h4>
+<section id="przykład-w-r-3" class="level4" data-number="4.3.3.5">
+<h4 data-number="4.3.3.5" class="anchored" data-anchor-id="przykład-w-r-3"><span class="header-section-number">4.3.3.5</span> Przykład w R</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej interwałowej (temperatura w stopniach Celsjusza)</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>temperatury <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">19</span>, <span class="dv">28</span>, <span class="dv">23</span>, <span class="dv">20</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Średnia i odchylenie standardowe</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(temperatury)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej interwałowej (temperatura w stopniach Celsjusza)</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>temperatury <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">25</span>, <span class="dv">19</span>, <span class="dv">28</span>, <span class="dv">23</span>, <span class="dv">20</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Średnia i odchylenie standardowe</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(temperatury)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22.83333</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(temperatury)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(temperatury)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.311596</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Korelacja Pearsona z inną zmienną</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>wilgotnosc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">55</span>, <span class="dv">70</span>, <span class="dv">62</span>, <span class="dv">58</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(temperatury, wilgotnosc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Korelacja Pearsona z inną zmienną</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>wilgotnosc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">55</span>, <span class="dv">70</span>, <span class="dv">62</span>, <span class="dv">58</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(temperatury, wilgotnosc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.9958407</code></pre>
 </div>
@@ -758,19 +847,19 @@ F-statistic:  3105 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li>Współczynnik zmienności</li>
 </ul>
 </section>
-<section id="przykład-w-r-3" class="level4" data-number="4.3.4.5">
-<h4 data-number="4.3.4.5" class="anchored" data-anchor-id="przykład-w-r-3"><span class="header-section-number">4.3.4.5</span> Przykład w R</h4>
+<section id="przykład-w-r-4" class="level4" data-number="4.3.4.5">
+<h4 data-number="4.3.4.5" class="anchored" data-anchor-id="przykład-w-r-4"><span class="header-section-number">4.3.4.5</span> Przykład w R</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej ilorazowej (wiek)</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>wieki <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">28</span>, <span class="dv">40</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Średnia geometryczna</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">mean</span>(<span class="fu">log</span>(wieki)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennej ilorazowej (wiek)</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>wieki <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">28</span>, <span class="dv">40</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Średnia geometryczna</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">mean</span>(<span class="fu">log</span>(wieki)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 29.40774</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Współczynnik zmienności</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(wieki) <span class="sc">/</span> <span class="fu">mean</span>(wieki)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Współczynnik zmienności</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(wieki) <span class="sc">/</span> <span class="fu">mean</span>(wieki)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.220101</code></pre>
 </div>
@@ -850,21 +939,21 @@ pH as an Interval Scale
 </ol>
 <p>Zilustrujmy to przykładem w R:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzymy zmienną typu factor reprezentującą odpowiedzi w skali Likerta</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>odpowiedzi_likert <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Zdecydowanie się nie zgadzam"</span>, <span class="st">"Nie zgadzam się"</span>, <span class="st">"Neutralnie"</span>, <span class="st">"Zgadzam się"</span>, <span class="st">"Zdecydowanie się zgadzam"</span>),</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ordered =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Zdecydowanie się nie zgadzam"</span>, <span class="st">"Nie zgadzam się"</span>, <span class="st">"Neutralnie"</span>, <span class="st">"Zgadzam się"</span>, <span class="st">"Zdecydowanie się zgadzam"</span>))</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlamy poziomy, aby pokazać uporządkowanie</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">levels</span>(odpowiedzi_likert))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzymy zmienną typu factor reprezentującą odpowiedzi w skali Likerta</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>odpowiedzi_likert <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Zdecydowanie się nie zgadzam"</span>, <span class="st">"Nie zgadzam się"</span>, <span class="st">"Neutralnie"</span>, <span class="st">"Zgadzam się"</span>, <span class="st">"Zdecydowanie się zgadzam"</span>),</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">ordered =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Zdecydowanie się nie zgadzam"</span>, <span class="st">"Nie zgadzam się"</span>, <span class="st">"Neutralnie"</span>, <span class="st">"Zgadzam się"</span>, <span class="st">"Zdecydowanie się zgadzam"</span>))</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlamy poziomy, aby pokazać uporządkowanie</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">levels</span>(odpowiedzi_likert))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Zdecydowanie się nie zgadzam" "Nie zgadzam się"             
 [3] "Neutralnie"                   "Zgadzam się"                 
 [5] "Zdecydowanie się zgadzam"    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Próba obliczenia średniej (co jest niewłaściwe dla danych porządkowych)</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>odpowiedzi_numeryczne <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(odpowiedzi_likert)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(odpowiedzi_numeryczne))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Próba obliczenia średniej (co jest niewłaściwe dla danych porządkowych)</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>odpowiedzi_numeryczne <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(odpowiedzi_likert)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(odpowiedzi_numeryczne))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -897,30 +986,30 @@ pH as an Interval Scale
 <h3 data-number="4.5.2" class="anchored" data-anchor-id="przykład-symulowana-skala-depresji"><span class="header-section-number">4.5.2</span> Przykład: Symulowana Skala Depresji</h3>
 <p>Zilustrujmy to na symulowanej skali depresji:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>wyniki_depresji <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">27</span>, <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)  <span class="co"># Symulacja wyników BDI-II</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie kategorii</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>kategorie_depresji <span class="ot">&lt;-</span> <span class="fu">cut</span>(wyniki_depresji, </span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">13</span>, <span class="dv">19</span>, <span class="dv">28</span>, <span class="cn">Inf</span>),</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Minimalna"</span>, <span class="st">"Łagodna"</span>, <span class="st">"Umiarkowana"</span>, <span class="st">"Ciężka"</span>))</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Pokazanie rozkładu</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(kategorie_depresji)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>wyniki_depresji <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">27</span>, <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)  <span class="co"># Symulacja wyników BDI-II</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie kategorii</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>kategorie_depresji <span class="ot">&lt;-</span> <span class="fu">cut</span>(wyniki_depresji, </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">13</span>, <span class="dv">19</span>, <span class="dv">28</span>, <span class="cn">Inf</span>),</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Minimalna"</span>, <span class="st">"Łagodna"</span>, <span class="st">"Umiarkowana"</span>, <span class="st">"Ciężka"</span>))</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Pokazanie rozkładu</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(kategorie_depresji)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>kategorie_depresji
   Minimalna     Łagodna Umiarkowana      Ciężka 
          46          20          34           0 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wykres rozkładu</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(kategorie_depresji), </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Rozkład Nasilenia Depresji"</span>,</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Kategoria Nasilenia"</span>,</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Częstość"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wykres rozkładu</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(kategorie_depresji), </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Rozkład Nasilenia Depresji"</span>,</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Kategoria Nasilenia"</span>,</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Częstość"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
