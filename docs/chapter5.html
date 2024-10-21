@@ -713,8 +713,17 @@ Important
 <pre><code>[1] 5.142857</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Easy to calculate and understand - Uses all data points - Useful for further statistical calculations</p>
-<p><strong>Cons:</strong> - Sensitive to outliers - Not ideal for skewed distributions</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Easy to calculate and understand</li>
+<li>Uses all data points</li>
+<li>Useful for further statistical calculations</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Sensitive to outliers</li>
+<li>Not ideal for skewed distributions</li>
+</ul>
 <p><strong>Example with outlier:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data_with_outlier <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">100</span>)</span>
@@ -763,8 +772,16 @@ Important
 <pre><code>[1] 5</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Not affected by extreme outliers - Better for skewed distributions</p>
-<p><strong>Cons:</strong> - Doesn’t use all data points - Less useful for further statistical calculations</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Not affected by extreme outliers</li>
+<li>Better for skewed distributions</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Doesn’t use all data points</li>
+<li>Less useful for further statistical calculations</li>
+</ul>
 </section>
 <section id="mode" class="level3" data-number="11.6.3">
 <h3 data-number="11.6.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">11.6.3</span> Mode</h3>
@@ -810,8 +827,16 @@ Important
 <pre><code>[1] 4 5</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Only measure of central tendency for nominal data - Can identify multiple peaks in the data</p>
-<p><strong>Cons:</strong> - Not always uniquely defined - Not useful for continuous data</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Only measure of central tendency for nominal data</li>
+<li>Can identify multiple peaks in the data</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Not always uniquely defined</li>
+<li>Not useful for continuous data</li>
+</ul>
 </section>
 <section id="weighted-mean" class="level3" data-number="11.6.4">
 <h3 data-number="11.6.4" class="anchored" data-anchor-id="weighted-mean"><span class="header-section-number">11.6.4</span> Weighted Mean</h3>
@@ -904,8 +929,18 @@ Important
 <pre><code>[1] 4.8</code></pre>
 </div>
 </div>
-<p><strong>Pros of Weighted Means:</strong> - Account for varying importance of data points - Useful in survey analysis with different sample sizes or importance levels - Can adjust for unequal probabilities in sampling designs</p>
-<p><strong>Cons of Weighted Means:</strong> - Require justification for weights - Can be misused to manipulate results - May be less intuitive to interpret than simple arithmetic mean</p>
+<p><strong>Pros of Weighted Means:</strong></p>
+<ul>
+<li>Account for varying importance of data points</li>
+<li>Useful in survey analysis with different sample sizes or importance levels</li>
+<li>Can adjust for unequal probabilities in sampling designs</li>
+</ul>
+<p><strong>Cons of Weighted Means:</strong></p>
+<ul>
+<li>Require justification for weights</li>
+<li>Can be misused to manipulate results</li>
+<li>May be less intuitive to interpret than simple arithmetic mean</li>
+</ul>
 </section>
 </section>
 </section>
@@ -955,8 +990,16 @@ Important
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Simple to calculate and understand - Gives an immediate sense of data spread</p>
-<p><strong>Cons:</strong> - Extremely sensitive to outliers - Doesn’t provide information about the distribution between extremes</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Simple to calculate and understand</li>
+<li>Gives an immediate sense of data spread</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Extremely sensitive to outliers</li>
+<li>Doesn’t provide information about the distribution between extremes</li>
+</ul>
 </section>
 <section id="interquartile-range-iqr" class="level3" data-number="11.7.2">
 <h3 data-number="11.7.2" class="anchored" data-anchor-id="interquartile-range-iqr"><span class="header-section-number">11.7.2</span> Interquartile Range (IQR)</h3>
@@ -1022,8 +1065,16 @@ Important
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Robust to outliers - Provides information about the spread of the middle 50% of the data</p>
-<p><strong>Cons:</strong> - Ignores the tails of the distribution - Less efficient than standard deviation for normal distributions</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Robust to outliers</li>
+<li>Provides information about the spread of the middle 50% of the data</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Ignores the tails of the distribution</li>
+<li>Less efficient than standard deviation for normal distributions</li>
+</ul>
 </section>
 <section id="variance" class="level3" data-number="11.7.3">
 <h3 data-number="11.7.3" class="anchored" data-anchor-id="variance"><span class="header-section-number">11.7.3</span> Variance</h3>
@@ -1104,8 +1155,16 @@ Important
 <pre><code>[1] 5.142857</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Uses all data points - Foundation for many statistical tests</p>
-<p><strong>Cons:</strong> - Units are squared, making interpretation less intuitive - Sensitive to outliers</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Uses all data points</li>
+<li>Foundation for many statistical tests</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Units are squared, making interpretation less intuitive</li>
+<li>Sensitive to outliers</li>
+</ul>
 </section>
 <section id="standard-deviation" class="level3" data-number="11.7.4">
 <h3 data-number="11.7.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">11.7.4</span> Standard Deviation</h3>
@@ -1146,8 +1205,16 @@ Important
 <pre><code>[1] 2.267787</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - In same units as original data - Widely used and understood</p>
-<p><strong>Cons:</strong> - Still sensitive to outliers - Assumes data is roughly normally distributed</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>In same units as original data</li>
+<li>Widely used and understood</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Still sensitive to outliers</li>
+<li>Assumes data is roughly normally distributed</li>
+</ul>
 </section>
 <section id="coefficient-of-variation" class="level3" data-number="11.7.5">
 <h3 data-number="11.7.5" class="anchored" data-anchor-id="coefficient-of-variation"><span class="header-section-number">11.7.5</span> Coefficient of Variation</h3>
@@ -1193,8 +1260,16 @@ Important
 <pre><code>[1] 44.09586</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Allows comparison of variability between datasets with different units or means - Useful in fields like finance for risk assessment</p>
-<p><strong>Cons:</strong> - Not meaningful for data with both positive and negative values - Can be misleading when mean is close to zero</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Allows comparison of variability between datasets with different units or means</li>
+<li>Useful in fields like finance for risk assessment</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Not meaningful for data with both positive and negative values</li>
+<li>Can be misleading when mean is close to zero</li>
+</ul>
 </section>
 </section>
 <section id="measures-of-relative-position" class="level2" data-number="11.8">
@@ -1228,6 +1303,7 @@ Important
 <li>Q2: Median (50th percentile)</li>
 <li>Q3: 75th percentile</li>
 </ul>
+<p><img src="stat_imgs/IMG_4327.jpg" class="img-fluid"></p>
 <p><strong>Manual Calculation:</strong></p>
 <p>See the IQR section for a step-by-step process to find quartiles manually.</p>
 <p><strong>R calculation:</strong></p>
@@ -1238,8 +1314,16 @@ Important
   2.000   4.000   5.000   5.143   6.000   9.000 </code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong> - Robust to outliers - Provide information about data spread and skewness</p>
-<p><strong>Cons:</strong> - Less precise than using all data points - Multiple methods of calculation can lead to slightly different results</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Robust to outliers</li>
+<li>Provide information about data spread and skewness</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Less precise than using all data points</li>
+<li>Multiple methods of calculation can lead to slightly different results</li>
+</ul>
 </section>
 </section>
 <section id="measures-of-shape" class="level2" data-number="11.9">
@@ -1489,8 +1573,16 @@ Attaching package: 'moments'</code></pre>
 </div>
 </div>
 <p><strong>Interpretation:</strong> - The positive covariance (1.5) indicates that x and y tend to increase together.</p>
-<p><strong>Pros:</strong> - Provides direction of relationship (positive or negative) - Useful in calculating other measures like correlation</p>
-<p><strong>Cons:</strong> - Scale-dependent, making it difficult to compare across different variable pairs - Doesn’t provide information about the strength of the relationship</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Provides direction of relationship (positive or negative)</li>
+<li>Useful in calculating other measures like correlation</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Scale-dependent, making it difficult to compare across different variable pairs</li>
+<li>Doesn’t provide information about the strength of the relationship</li>
+</ul>
 </section>
 <section id="pearson-correlation" class="level3" data-number="11.10.2">
 <h3 data-number="11.10.2" class="anchored" data-anchor-id="pearson-correlation"><span class="header-section-number">11.10.2</span> Pearson Correlation</h3>
@@ -1537,8 +1629,18 @@ Attaching package: 'moments'</code></pre>
 </div>
 </div>
 <p><strong>Interpretation:</strong> - The correlation coefficient of 0.7746 indicates a strong positive linear relationship between x and y.</p>
-<p><strong>Pros:</strong> - Scale-independent, always between -1 and 1 - Widely understood and used - Tests for linear relationships</p>
-<p><strong>Cons:</strong> - Sensitive to outliers - Only measures linear relationships - Assumes normally distributed variables</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Scale-independent, always between -1 and 1</li>
+<li>Widely understood and used</li>
+<li>Tests for linear relationships</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Sensitive to outliers</li>
+<li>Only measures linear relationships</li>
+<li>Assumes normally distributed variables</li>
+</ul>
 </section>
 <section id="spearman-correlation" class="level3" data-number="11.10.3">
 <h3 data-number="11.10.3" class="anchored" data-anchor-id="spearman-correlation"><span class="header-section-number">11.10.3</span> Spearman Correlation</h3>
@@ -1597,8 +1699,17 @@ Attaching package: 'moments'</code></pre>
 </div>
 </div>
 <p><strong>Interpretation:</strong> - The Spearman correlation of 0.8 indicates a strong positive monotonic relationship between x and y.</p>
-<p><strong>Pros:</strong> - Robust to outliers - Can detect non-linear monotonic relationships - Suitable for ordinal data</p>
-<p><strong>Cons:</strong> - Less powerful than Pearson for detecting linear relationships in normally distributed data - Doesn’t provide information about the shape of the relationship beyond monotonicity</p>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Robust to outliers</li>
+<li>Can detect non-linear monotonic relationships</li>
+<li>Suitable for ordinal data</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Less powerful than Pearson for detecting linear relationships in normally distributed data</li>
+<li>Doesn’t provide information about the shape of the relationship beyond monotonicity</li>
+</ul>
 </section>
 <section id="cross-tabulation" class="level3" data-number="11.10.4">
 <h3 data-number="11.10.4" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">11.10.4</span> Cross-tabulation</h3>
@@ -1618,36 +1729,50 @@ education     Employed Unemployed
   High School        1          2</code></pre>
 </div>
 </div>
-<p><strong>Interpretation:</strong> - This table shows the count of individuals in each combination of education level and employment status. - For example, we can see how many high school graduates are employed versus unemployed.</p>
-<p><strong>Pros:</strong> - Provides a clear visual representation of the relationship between categorical variables - Easy to understand and interpret - Basis for many statistical tests (e.g., chi-square test of independence)</p>
-<p><strong>Cons:</strong> - Limited to categorical data - Can become unwieldy with many categories - Doesn’t provide a single summary statistic of association strength</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>This table shows the count of individuals in each combination of education level and employment status.</li>
+<li>For example, we can see how many high school graduates are employed versus unemployed.</li>
+</ul>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Provides a clear visual representation of the relationship between categorical variables</li>
+<li>Easy to understand and interpret</li>
+<li>Basis for many statistical tests (e.g., chi-square test of independence)</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Limited to categorical data</li>
+<li>Can become unwieldy with many categories</li>
+<li>Doesn’t provide a single summary statistic of association strength</li>
+</ul>
 </section>
 </section>
 <section id="choosing-the-appropriate-measure" class="level2" data-number="11.11">
 <h2 data-number="11.11" class="anchored" data-anchor-id="choosing-the-appropriate-measure"><span class="header-section-number">11.11</span> Choosing the Appropriate Measure</h2>
 <p>When deciding which bivariate statistic to use, consider:</p>
 <ol type="1">
-<li>Data type:
+<li><p>Data type:</p>
 <ul>
 <li>Continuous data: Covariance, Pearson correlation</li>
 <li>Ordinal data: Spearman correlation</li>
 <li>Categorical data: Cross-tabulation</li>
 </ul></li>
-<li>Relationship type:
+<li><p>Relationship type:</p>
 <ul>
 <li>Linear: Pearson correlation</li>
 <li>Monotonic but potentially non-linear: Spearman correlation</li>
 </ul></li>
-<li>Presence of outliers:
+<li><p>Presence of outliers:</p>
 <ul>
 <li>If outliers are a concern, Spearman correlation is more robust</li>
 </ul></li>
-<li>Distribution:
+<li><p>Distribution:</p>
 <ul>
 <li>For normally distributed data, Pearson correlation is most powerful</li>
 <li>For non-normal distributions, consider Spearman correlation</li>
 </ul></li>
-<li>Sample size:
+<li><p>Sample size:</p>
 <ul>
 <li>For very small samples, non-parametric methods like Spearman correlation might be preferred</li>
 </ul></li>
@@ -1680,7 +1805,12 @@ age    -0.1291760 -0.06814187  1.00000000  0.65654902
 income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 </div>
 </div>
-<p><strong>Interpretation:</strong> - Each cell shows the correlation between two variables. - The diagonal is always 1 (correlation of a variable with itself). - Look for strong correlations (close to 1 or -1) to identify potential relationships.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Each cell shows the correlation between two variables.</li>
+<li>The diagonal is always 1 (correlation of a variable with itself).</li>
+<li>Look for strong correlations (close to 1 or -1) to identify potential relationships.</li>
+</ul>
 </section>
 <section id="visualizing-multivariate-relationships" class="level3" data-number="11.12.2">
 <h3 data-number="11.12.2" class="anchored" data-anchor-id="visualizing-multivariate-relationships"><span class="header-section-number">11.12.2</span> Visualizing Multivariate Relationships</h3>
@@ -1697,7 +1827,12 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Interpretation:</strong> - Each plot shows the relationship between two variables. - Diagonal elements show the distribution of each variable. - Look for patterns, clusters, or trends in the plots.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Each plot shows the relationship between two variables.</li>
+<li>Diagonal elements show the distribution of each variable.</li>
+<li>Look for patterns, clusters, or trends in the plots.</li>
+</ul>
 </section>
 <section id="correlation-plot" class="level4" data-number="11.12.2.2">
 <h4 data-number="11.12.2.2" class="anchored" data-anchor-id="correlation-plot"><span class="header-section-number">11.12.2.2</span> Correlation Plot</h4>
@@ -1716,7 +1851,11 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Interpretation:</strong> - Color intensity and size of the circles indicate the strength of correlation. - Blue colors typically indicate positive correlations, red colors indicate negative correlations.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Color intensity and size of the circles indicate the strength of correlation.</li>
+<li>Blue colors typically indicate positive correlations, red colors indicate negative correlations.</li>
+</ul>
 </section>
 </section>
 <section id="partial-correlation" class="level3" data-number="11.12.3">
@@ -1743,7 +1882,11 @@ Attaching package: 'MASS'</code></pre>
 1 0.6654367 5.758157e-14  8.779896 100  1 pearson</code></pre>
 </div>
 </div>
-<p><strong>Interpretation:</strong> - Compare this to the simple correlation between height and weight. - A significant change might indicate that age plays a role in the height-weight relationship.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Compare this to the simple correlation between height and weight.</li>
+<li>A significant change might indicate that age plays a role in the height-weight relationship.</li>
+</ul>
 </section>
 <section id="multiple-correlation" class="level3" data-number="11.12.4">
 <h3 data-number="11.12.4" class="anchored" data-anchor-id="multiple-correlation"><span class="header-section-number">11.12.4</span> Multiple Correlation</h3>
@@ -1757,7 +1900,11 @@ Attaching package: 'MASS'</code></pre>
 <pre><code>[1] "Multiple correlation coefficient: 0.667377840470434"</code></pre>
 </div>
 </div>
-<p><strong>Interpretation:</strong> - R ranges from 0 to 1, with higher values indicating stronger relationships. - R² (R-squared) represents the proportion of variance in the dependent variable explained by the independent variables.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>R ranges from 0 to 1, with higher values indicating stronger relationships.</li>
+<li>R² (R-squared) represents the proportion of variance in the dependent variable explained by the independent variables.</li>
+</ul>
 </section>
 <section id="factor-analysis" class="level3" data-number="11.12.5">
 <h3 data-number="11.12.5" class="anchored" data-anchor-id="factor-analysis"><span class="header-section-number">11.12.5</span> Factor Analysis</h3>
@@ -1796,7 +1943,11 @@ Proportion Var 0.336 0.335
 Cumulative Var 0.336 0.671</code></pre>
 </div>
 </div>
-<p><strong>Interpretation:</strong> - Look at which variables load highly on each factor. - Try to interpret what each factor might represent based on the variables that load on it.</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Look at which variables load highly on each factor.</li>
+<li>Try to interpret what each factor might represent based on the variables that load on it.</li>
+</ul>
 </section>
 <section id="considerations-in-multivariate-analysis" class="level3" data-number="11.12.6">
 <h3 data-number="11.12.6" class="anchored" data-anchor-id="considerations-in-multivariate-analysis"><span class="header-section-number">11.12.6</span> Considerations in Multivariate Analysis</h3>
