@@ -346,7 +346,7 @@ window.Quarto = {
   <li><a href="#percentyle" id="toc-percentyle" class="nav-link" data-scroll-target="#percentyle"><span class="header-section-number">12.8.1</span> Percentyle</a></li>
   <li><a href="#kwartyle" id="toc-kwartyle" class="nav-link" data-scroll-target="#kwartyle"><span class="header-section-number">12.8.2</span> Kwartyle</a></li>
   </ul></li>
-  <li><a href="#miary-kształtu" id="toc-miary-kształtu" class="nav-link" data-scroll-target="#miary-kształtu"><span class="header-section-number">12.9</span> Miary kształtu</a>
+  <li><a href="#miary-kształtu" id="toc-miary-kształtu" class="nav-link" data-scroll-target="#miary-kształtu"><span class="header-section-number">12.9</span> Miary Kształtu</a>
   <ul class="collapse">
   <li><a href="#skośność" id="toc-skośność" class="nav-link" data-scroll-target="#skośność"><span class="header-section-number">12.9.1</span> Skośność</a></li>
   <li><a href="#kurtoza" id="toc-kurtoza" class="nav-link" data-scroll-target="#kurtoza"><span class="header-section-number">12.9.2</span> Kurtoza</a></li>
@@ -1140,78 +1140,27 @@ Important
 </section>
 </section>
 <section id="miary-kształtu" class="level2" data-number="12.9">
-<h2 data-number="12.9" class="anchored" data-anchor-id="miary-kształtu"><span class="header-section-number">12.9</span> Miary kształtu</h2>
-<p>Te miary opisują kształt rozkładu (prawdopodobieństwa) danych.</p>
+<h2 data-number="12.9" class="anchored" data-anchor-id="miary-kształtu"><span class="header-section-number">12.9</span> Miary Kształtu</h2>
 <section id="skośność" class="level3" data-number="12.9.1">
 <h3 data-number="12.9.1" class="anchored" data-anchor-id="skośność"><span class="header-section-number">12.9.1</span> Skośność</h3>
-<p>Skośność mierzy asymetrię rozkładu (prawdopodobieństwa).</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3\)</span></p>
-<p><strong>Przykład obliczeń ręcznych:</strong> Obliczmy skośność dla małego zbioru danych: 1, 2, 3, 4, 10</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Krok</th>
-<th>Opis</th>
-<th>Obliczenia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Oblicz średnią</td>
-<td><span class="math inline">\(\bar{x} = (1 + 2 + 3 + 4 + 10) / 5 = 4\)</span></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Oblicz odchylenie standardowe</td>
-<td><span class="math inline">\(s = \sqrt{\frac{(1-4)^2 + (2-4)^2 + (3-4)^2 + (4-4)^2 + (10-4)^2}{4}} = 3,32\)</span></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Dla każdej wartości oblicz <span class="math inline">\((\frac{x_i - \bar{x}}{s})^3\)</span></td>
-<td><span class="math inline">\((1-4)/3,32)^3 = -0,3375\)</span></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td><span class="math inline">\((2-4)/3,32)^3 = -0,1282\)</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td><span class="math inline">\((3-4)/3,32)^3 = -0,0165\)</span></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td><span class="math inline">\((4-4)/3,32)^3 = 0\)</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td><span class="math inline">\((10-4)/3,32)^3 = 2,6959\)</span></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Zsumuj wyniki</td>
-<td><span class="math inline">\(-0,3375 - 0,1282 - 0,0165 + 0 + 2,6959 = 2,2137\)</span></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Pomnóż przez <span class="math inline">\(\frac{n}{(n-1)(n-2)}\)</span></td>
-<td><span class="math inline">\((5 / (4 * 3)) * 2,2137 = 0,9224\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Obliczenia w R:</strong></p>
+<section id="definicja" class="level4" data-number="12.9.1.1">
+<h4 data-number="12.9.1.1" class="anchored" data-anchor-id="definicja"><span class="header-section-number">12.9.1.1</span> Definicja</h4>
+<p>Skośność kwantyfikuje asymetrię rozkładu prawdopodobieństwa. Wskazuje, czy dane grupują się bardziej po jednej stronie średniej niż po drugiej.</p>
+</section>
+<section id="wyrażenie-matematyczne" class="level4" data-number="12.9.1.2">
+<h4 data-number="12.9.1.2" class="anchored" data-anchor-id="wyrażenie-matematyczne"><span class="header-section-number">12.9.1.2</span> Wyrażenie Matematyczne</h4>
+<p><span class="math inline">\(SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3\)</span> gdzie:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> to wielkość próby</li>
+<li><span class="math inline">\(x_i\)</span> to i-ta obserwacja</li>
+<li><span class="math inline">\(\bar{x}\)</span> to średnia z próby</li>
+<li><span class="math inline">\(s\)</span> to odchylenie standardowe z próby</li>
+</ul>
+</section>
+<section id="przykład-analiza-frekwencji-wyborczej" class="level4" data-number="12.9.1.3">
+<h4 data-number="12.9.1.3" class="anchored" data-anchor-id="przykład-analiza-frekwencji-wyborczej"><span class="header-section-number">12.9.1.3</span> Przykład: Analiza Frekwencji Wyborczej</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>dane_skosnosc <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">10</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'moments'</code></pre>
@@ -1221,92 +1170,131 @@ Attaching package: 'moments'</code></pre>
 
     skewness</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skewness</span>(dane_skosnosc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych danych frekwencji w obwodach wyborczych</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>dane_frekwencji <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Obwody miejskie</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">300</span>, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">12</span>),</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Obwody podmiejskie</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">400</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Obwody wiejskie</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">300</span>, <span class="at">mean =</span> <span class="dv">68</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Zapewnienie, że frekwencja mieści się w przedziale 0-100%</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmax</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmin</span>(<span class="dv">100</span>)</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczenie i wizualizacja</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>wartosc_skosnosci <span class="ot">&lt;-</span> <span class="fu">skewness</span>(dane_frekwencji)</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>wartosc_skosnosci</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.13842</code></pre>
+<pre><code>[1] 0.02558143</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> dane_frekwencji), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(dane_frekwencji), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(dane_frekwencji), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">str_glue</span>(<span class="st">"Rozkład Frekwencji w Obwodach Wyborczych (Skośność = {round(wartosc_skosnosci, 4)})"</span>),</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Czerwona: Średnia, Niebieska: Mediana"</span>,</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Frekwencja Wyborcza (%)"</span>,</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Liczba Obwodów"</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p><strong>Interpretacja:</strong> - Dodatnia skośność (0,9224) wskazuje, że rozkład ma dłuższy ogon po prawej stronie.</p>
+</div>
+</section>
+<section id="przewodnik-interpretacji" class="level4" data-number="12.9.1.4">
+<h4 data-number="12.9.1.4" class="anchored" data-anchor-id="przewodnik-interpretacji"><span class="header-section-number">12.9.1.4</span> Przewodnik Interpretacji</h4>
+<ul>
+<li><strong>Skośność Dodatnia (&gt; 0)</strong>: Rozkład ma dłuższy ogon prawy</li>
+<li><strong>Skośność Ujemna (&lt; 0)</strong>: Rozkład ma dłuższy ogon lewy</li>
+<li><strong>Skośność Zero</strong>: Rozkład w przybliżeniu symetryczny</li>
+</ul>
+</section>
 </section>
 <section id="kurtoza" class="level3" data-number="12.9.2">
 <h3 data-number="12.9.2" class="anchored" data-anchor-id="kurtoza"><span class="header-section-number">12.9.2</span> Kurtoza</h3>
-<p>Kurtoza mierzy “wysmukłość” rozkładu (prawdopodobieństwa).</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}\)</span></p>
-<p><strong>Przykład obliczeń ręcznych:</strong> Używając tego samego zbioru danych: 1, 2, 3, 4, 10</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Krok</th>
-<th>Opis</th>
-<th>Obliczenia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Oblicz średnią i odchylenie standardowe</td>
-<td>(Z poprzednich obliczeń) <span class="math inline">\(\bar{x} = 4, s = 3,32\)</span></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Dla każdej wartości oblicz <span class="math inline">\((\frac{x_i - \bar{x}}{s})^4\)</span></td>
-<td><span class="math inline">\((1-4)/3,32)^4 = 0,3037\)</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td><span class="math inline">\((2-4)/3,32)^4 = 0,0487\)</span></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td><span class="math inline">\((3-4)/3,32)^4 = 0,0021\)</span></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td><span class="math inline">\((4-4)/3,32)^4 = 0\)</span></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td><span class="math inline">\((10-4)/3,32)^4 = 12,1593\)</span></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Zsumuj wyniki</td>
-<td><span class="math inline">\(0,3037 + 0,0487 + 0,0021 + 0 + 12,1593 = 12,5138\)</span></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Oblicz <span class="math inline">\(\frac{n(n+1)}{(n-1)(n-2)(n-3)}\)</span></td>
-<td><span class="math inline">\((5 * 6) / (4 * 3 * 2) = 1,25\)</span></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Oblicz <span class="math inline">\(\frac{3(n-1)^2}{(n-2)(n-3)}\)</span></td>
-<td><span class="math inline">\((3 * 4^2) / (3 * 2) = 8\)</span></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Zastosuj pełny wzór</td>
-<td><span class="math inline">\(1,25 * 12,5138 - 8 = -0,6577\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Obliczenia w R:</strong></p>
+<section id="definicja-1" class="level4" data-number="12.9.2.1">
+<h4 data-number="12.9.2.1" class="anchored" data-anchor-id="definicja-1"><span class="header-section-number">12.9.2.1</span> Definicja</h4>
+<p>Kurtoza mierzy “ogoniastość” rozkładu, wskazując na obecność wartości ekstremalnych w porównaniu z rozkładem normalnym.</p>
+</section>
+<section id="wyrażenie-matematyczne-1" class="level4" data-number="12.9.2.2">
+<h4 data-number="12.9.2.2" class="anchored" data-anchor-id="wyrażenie-matematyczne-1"><span class="header-section-number">12.9.2.2</span> Wyrażenie Matematyczne</h4>
+<p><span class="math inline">\(K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}\)</span></p>
+</section>
+<section id="przykład-analiza-głosowań-parlamentarnych" class="level4" data-number="12.9.2.3">
+<h4 data-number="12.9.2.3" class="anchored" data-anchor-id="przykład-analiza-głosowań-parlamentarnych"><span class="header-section-number">12.9.2.3</span> Przykład: Analiza Głosowań Parlamentarnych</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kurtosis</span>(dane_skosnosc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generowanie przykładowych wyników zgodności głosowań</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>zgodnosc_glosowan <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Standardowe wzorce głosowania</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">400</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Przypadki współpracy międzypartyjnej</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">15</span>),</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Głosowania zgodne z linią partii</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">95</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmax</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmin</span>(<span class="dv">100</span>)</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>wartosc_kurtozy <span class="ot">&lt;-</span> <span class="fu">kurtosis</span>(zgodnosc_glosowan)</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>wartosc_kurtozy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.788</code></pre>
+<pre><code>[1] 3.849939</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wizualizacja z porównaniem do rozkładu normalnego</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>zakres_x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(zgodnosc_glosowan)<span class="sc">-</span><span class="dv">1</span>, <span class="fu">max</span>(zgodnosc_glosowan)<span class="sc">+</span><span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>rozklad_normalny <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(zakres_x, <span class="at">mean =</span> <span class="fu">mean</span>(zgodnosc_glosowan), <span class="at">sd =</span> <span class="fu">sd</span>(zgodnosc_glosowan))</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> zgodnosc_glosowan), </span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x), </span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>, </span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> zakres_x, <span class="at">y =</span> rozklad_normalny),</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y),</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">str_glue</span>(<span class="st">"Rozkład Zgodności Głosowań (Kurtoza = {round(wartosc_kurtozy, 4)})"</span>),</span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Rozkład obserwowany (niebieski) vs. Rozkład normalny (czerwony)"</span>,</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Wskaźnik Zgodności Głosowań (%)"</span>,</span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gęstość"</span></span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p><strong>Interpretacja:</strong> - Ujemna kurtoza (-0,6577) wskazuje, że rozkład ma lżejsze ogony i jest bardziej płaski w porównaniu do rozkładu normalnego.</p>
+</div>
+</section>
+<section id="przewodnik-interpretacji-1" class="level4" data-number="12.9.2.4">
+<h4 data-number="12.9.2.4" class="anchored" data-anchor-id="przewodnik-interpretacji-1"><span class="header-section-number">12.9.2.4</span> Przewodnik Interpretacji</h4>
+<ul>
+<li><strong>Nadwyżka Kurtozy</strong>: Różnica względem kurtozy rozkładu normalnego (3)</li>
+<li><strong>Leptokurtyczny (&gt; 3)</strong>: Więcej wartości ekstremalnych niż w rozkładzie normalnym</li>
+<li><strong>Platykurtyczny (&lt; 3)</strong>: Mniej wartości ekstremalnych niż w rozkładzie normalnym</li>
+<li><strong>Mezokurtyczny (= 3)</strong>: Podobny do rozkładu normalnego</li>
+</ul>
+</section>
 </section>
 </section>
 <section id="statystyki-dwuwymiarowe" class="level2" data-number="12.10">
@@ -1376,9 +1364,9 @@ Attaching package: 'moments'</code></pre>
 </table>
 <p><strong>Obliczenie w R:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.5</code></pre>
 </div>
@@ -1434,7 +1422,7 @@ Attaching package: 'moments'</code></pre>
 </table>
 <p><strong>Obliczenie w R:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7745967</code></pre>
 </div>
@@ -1502,9 +1490,9 @@ Attaching package: 'moments'</code></pre>
 </table>
 <p><strong>Obliczenie w R:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8</code></pre>
 </div>
@@ -1528,10 +1516,10 @@ Attaching package: 'moments'</code></pre>
 <p><strong>Przykład:</strong></p>
 <p>Stwórzmy tabelę krzyżową dla dwóch zmiennych: - Poziom wykształcenia: Średnie, Wyższe, Podyplomowe - Status zatrudnienia: Zatrudniony, Bezrobotny</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>wyksztalcenie <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>, <span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>, <span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>))</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>zatrudnienie <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Zatrudniony"</span>))</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wyksztalcenie, zatrudnienie)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>wyksztalcenie <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>, <span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>, <span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>zatrudnienie <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Zatrudniony"</span>))</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wyksztalcenie, zatrudnienie)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             zatrudnienie
 wyksztalcenie Bezrobotny Zatrudniony
@@ -1598,16 +1586,16 @@ wyksztalcenie Bezrobotny Zatrudniony
 <p>Macierz korelacji to tabela pokazująca korelacje parami dla kilku zmiennych. Jest to podstawowe narzędzie w analizie wielowymiarowej.</p>
 <p><strong>Przykład:</strong> Stwórzmy macierz korelacji dla czterech zmiennych: wzrost, waga, wiek i dochód.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># Dla powtarzalności</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">170</span>, <span class="dv">10</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>waga <span class="ot">&lt;-</span> wzrost <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>wiek <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">40</span>, <span class="dv">10</span>)</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>dochod <span class="ot">&lt;-</span> wiek <span class="sc">*</span> <span class="dv">1000</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">10000</span>)</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(wzrost, waga, wiek, dochod)</span>
-<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>macierz_kor <span class="ot">&lt;-</span> <span class="fu">cor</span>(dane)</span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(macierz_kor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># Dla powtarzalności</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">170</span>, <span class="dv">10</span>)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>waga <span class="ot">&lt;-</span> wzrost <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>wiek <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">40</span>, <span class="dv">10</span>)</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>dochod <span class="ot">&lt;-</span> wiek <span class="sc">*</span> <span class="dv">1000</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">10000</span>)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(wzrost, waga, wiek, dochod)</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>macierz_kor <span class="ot">&lt;-</span> <span class="fu">cor</span>(dane)</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(macierz_kor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           wzrost        waga        wiek      dochod
 wzrost  1.0000000  0.66712996 -0.12917601 -0.12246786
@@ -1624,7 +1612,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <h4 data-number="12.12.2.1" class="anchored" data-anchor-id="macierz-wykresów-rozrzutu"><span class="header-section-number">12.12.2.1</span> Macierz Wykresów Rozrzutu</h4>
 <p>Macierz wykresów rozrzutu pokazuje parami związki między wieloma zmiennymi.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1644,11 +1632,11 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <h4 data-number="12.12.2.2" class="anchored" data-anchor-id="wykres-korelacji"><span class="header-section-number">12.12.2.2</span> Wykres Korelacji</h4>
 <p>Wykres korelacji zapewnia wizualną reprezentację macierzy korelacji.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>corrplot 0.94 loaded</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(macierz_kor, <span class="at">method =</span> <span class="st">"color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(macierz_kor, <span class="at">method =</span> <span class="st">"color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1669,7 +1657,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <p>Korelacja cząstkowa mierzy związek między dwiema zmiennymi przy kontrolowaniu jednej lub więcej innych zmiennych.</p>
 <p><strong>Przykład:</strong> Obliczmy korelację cząstkową między wzrostem a wagą, kontrolując wiek.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: MASS</code></pre>
 </div>
@@ -1682,7 +1670,7 @@ Attaching package: 'MASS'</code></pre>
 
     select</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pcor.test</span>(dane<span class="sc">$</span>wzrost, dane<span class="sc">$</span>waga, dane<span class="sc">$</span>wiek)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pcor.test</span>(dane<span class="sc">$</span>wzrost, dane<span class="sc">$</span>waga, dane<span class="sc">$</span>wiek)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   estimate      p.value statistic   n gp  Method
 1 0.6654367 5.758157e-14  8.779896 100  1 pearson</code></pre>
@@ -1699,9 +1687,9 @@ Attaching package: 'MASS'</code></pre>
 <p>Korelacja wielokrotna mierzy siłę związku między zmienną zależną a wieloma zmiennymi niezależnymi.</p>
 <p><strong>Przykład:</strong> Przewidźmy wagę na podstawie wzrostu i wieku.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(waga <span class="sc">~</span> wzrost <span class="sc">+</span> wiek, <span class="at">data =</span> dane)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>r.squared)</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Współczynnik korelacji wielokrotnej:"</span>, R))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(waga <span class="sc">~</span> wzrost <span class="sc">+</span> wiek, <span class="at">data =</span> dane)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>r.squared)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Współczynnik korelacji wielokrotnej:"</span>, R))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Współczynnik korelacji wielokrotnej: 0.667377840470434"</code></pre>
 </div>
@@ -1717,7 +1705,7 @@ Attaching package: 'MASS'</code></pre>
 <p>Analiza czynnikowa to technika używana do zredukowania wielu zmiennych do mniejszej liczby czynników leżących u podstaw.</p>
 <p><strong>Przykład:</strong> Wykonajmy prostą analizę czynnikową na naszym zbiorze danych.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Registered S3 method overwritten by 'psych':
   method         from  
@@ -1732,8 +1720,8 @@ Attaching package: 'psych'</code></pre>
 
     %+%, alpha</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>wynik_fa <span class="ot">&lt;-</span> <span class="fu">fa</span>(dane, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wynik_fa<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>wynik_fa <span class="ot">&lt;-</span> <span class="fu">fa</span>(dane, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wynik_fa<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Loadings:
@@ -1996,14 +1984,14 @@ Cumulative Var 0.336 0.671</code></pre>
 <section id="weryfikacja-w-r" class="level5" data-number="12.13.2.1.3">
 <h5 data-number="12.13.2.1.3" class="anchored" data-anchor-id="weryfikacja-w-r"><span class="header-section-number">12.13.2.1.3</span> Weryfikacja w R</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.95</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -2028,11 +2016,11 @@ Cumulative Var 0.336 0.671</code></pre>
 <section id="weryfikacja-w-r-1" class="level5" data-number="12.13.2.2.3">
 <h5 data-number="12.13.2.2.3" class="anchored" data-anchor-id="weryfikacja-w-r-1"><span class="header-section-number">12.13.2.2.3</span> Weryfikacja w R</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -2044,17 +2032,17 @@ Cumulative Var 0.336 0.671</code></pre>
 <p>Dominanta to najczęściej występująca wartość w zbiorze danych.</p>
 <p>Dla Firmy X dominanta wynosi 3 (występuje 6 razy). Dla Firmy Y są dwie dominanty: 4 i 5 (obie występują 6 razy).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Funkcja do obliczania dominanty</span></span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>znajdz_dominante <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>  unikalne_x <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
-<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  unikalne_x[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, unikalne_x)))]</span>
-<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="fu">znajdz_dominante</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Funkcja do obliczania dominanty</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>znajdz_dominante <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>  unikalne_x <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>  unikalne_x[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, unikalne_x)))]</span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a><span class="fu">znajdz_dominante</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">znajdz_dominante</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">znajdz_dominante</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -2216,11 +2204,11 @@ Cumulative Var 0.336 0.671</code></pre>
 <section id="weryfikacja-w-r-2" class="level5" data-number="12.13.3.1.3">
 <h5 data-number="12.13.3.1.3" class="anchored" data-anchor-id="weryfikacja-w-r-2"><span class="header-section-number">12.13.3.1.3</span> Weryfikacja w R</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 61.20789</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.789474</code></pre>
 </div>
@@ -2235,11 +2223,11 @@ Cumulative Var 0.336 0.671</code></pre>
 <section id="weryfikacja-w-r-3" class="level5" data-number="12.13.3.2.1">
 <h5 data-number="12.13.3.2.1" class="anchored" data-anchor-id="weryfikacja-w-r-3"><span class="header-section-number">12.13.3.2.1</span> Weryfikacja w R</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7.823547</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.337712</code></pre>
 </div>
@@ -2271,12 +2259,12 @@ Cumulative Var 0.336 0.671</code></pre>
 <section id="weryfikacja-w-r-4" class="level4" data-number="12.13.4.3">
 <h4 data-number="12.13.4.3" class="anchored" data-anchor-id="weryfikacja-w-r-4"><span class="header-section-number">12.13.4.3</span> Weryfikacja w R</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  0%  25%  50%  75% 100% 
    2    3    4    5   35 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  0%  25%  50%  75% 100% 
    3    4    5    6    8 </code></pre>
@@ -2288,23 +2276,23 @@ Cumulative Var 0.336 0.671</code></pre>
 <h3 data-number="12.13.5" class="anchored" data-anchor-id="wykres-pudełkowy-tukeya"><span class="header-section-number">12.13.5</span> Wykres pudełkowy Tukeya</h3>
 <p>Wykres pudełkowy Tukeya wizualnie przedstawia rozkład danych na podstawie kwartyli. Użyjemy biblioteki ggplot2 do stworzenia wykresu.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Przygotowanie danych</span></span>
-<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Firma =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>), <span class="at">each =</span> <span class="dv">20</span>),</span>
-<span id="cb96-7"><a href="#cb96-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Wynagrodzenie =</span> <span class="fu">c</span>(X, Y)</span>
-<span id="cb96-8"><a href="#cb96-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb96-9"><a href="#cb96-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb96-10"><a href="#cb96-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu pudełkowego</span></span>
-<span id="cb96-11"><a href="#cb96-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Firma, <span class="at">y =</span> Wynagrodzenie, <span class="at">fill =</span> Firma)) <span class="sc">+</span></span>
-<span id="cb96-12"><a href="#cb96-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb96-13"><a href="#cb96-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Rozkład wynagrodzeń w firmach X i Y"</span>,</span>
-<span id="cb96-14"><a href="#cb96-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Firma"</span>,</span>
-<span id="cb96-15"><a href="#cb96-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Wynagrodzenie (tysiące euro)"</span>) <span class="sc">+</span></span>
-<span id="cb96-16"><a href="#cb96-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb96-17"><a href="#cb96-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#69b3a2"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#404080"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Przygotowanie danych</span></span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb98-6"><a href="#cb98-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Firma =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>), <span class="at">each =</span> <span class="dv">20</span>),</span>
+<span id="cb98-7"><a href="#cb98-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Wynagrodzenie =</span> <span class="fu">c</span>(X, Y)</span>
+<span id="cb98-8"><a href="#cb98-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb98-9"><a href="#cb98-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-10"><a href="#cb98-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu pudełkowego</span></span>
+<span id="cb98-11"><a href="#cb98-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> Firma, <span class="at">y =</span> Wynagrodzenie, <span class="at">fill =</span> Firma)) <span class="sc">+</span></span>
+<span id="cb98-12"><a href="#cb98-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb98-13"><a href="#cb98-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Rozkład wynagrodzeń w firmach X i Y"</span>,</span>
+<span id="cb98-14"><a href="#cb98-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Firma"</span>,</span>
+<span id="cb98-15"><a href="#cb98-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Wynagrodzenie (tysiące euro)"</span>) <span class="sc">+</span></span>
+<span id="cb98-16"><a href="#cb98-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb98-17"><a href="#cb98-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#69b3a2"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#404080"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2725,25 +2713,25 @@ Cumulative Var 0.336 0.671</code></pre>
 <h3 data-number="12.14.7" class="anchored" data-anchor-id="porównanie-za-pomocą-wykresu-pudełkowego"><span class="header-section-number">12.14.7</span> Porównanie za pomocą Wykresu Pudełkowego</h3>
 <p>Aby wizualnie porównać rozkład wielkości okręgów wyborczych między dwoma krajami, możemy użyć wykresu pudełkowego w stylu Tukeya. Ten typ wykresu zapewnia zwięzłe podsumowanie rozkładu danych, w tym medianę, kwartyle i potencjalne wartości odstające.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wczytaj niezbędną bibliotekę</span></span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Utwórz ramki danych dla każdego kraju</span></span>
-<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>kraj_x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">kraj =</span> <span class="st">"X"</span>, <span class="at">wielkosc =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>))</span>
-<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>kraj_y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">kraj =</span> <span class="st">"Y"</span>, <span class="at">wielkosc =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">13</span>))</span>
-<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Połącz dane</span></span>
-<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a>wszystkie_dane <span class="ot">&lt;-</span> <span class="fu">rbind</span>(kraj_x, kraj_y)</span>
-<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb97-11"><a href="#cb97-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Utwórz wykres pudełkowy</span></span>
-<span id="cb97-12"><a href="#cb97-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wszystkie_dane, <span class="fu">aes</span>(<span class="at">x =</span> kraj, <span class="at">y =</span> wielkosc, <span class="at">fill =</span> kraj)) <span class="sc">+</span></span>
-<span id="cb97-13"><a href="#cb97-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb97-14"><a href="#cb97-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb97-15"><a href="#cb97-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Porównanie Zmienności Wielkości Okręgów Wyborczych"</span>,</span>
-<span id="cb97-16"><a href="#cb97-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Kraj"</span>,</span>
-<span id="cb97-17"><a href="#cb97-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Wielkość Okręgu"</span>) <span class="sc">+</span></span>
-<span id="cb97-18"><a href="#cb97-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb97-19"><a href="#cb97-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#FFA07A"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#98FB98"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wczytaj niezbędną bibliotekę</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Utwórz ramki danych dla każdego kraju</span></span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>kraj_x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">kraj =</span> <span class="st">"X"</span>, <span class="at">wielkosc =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>))</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>kraj_y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">kraj =</span> <span class="st">"Y"</span>, <span class="at">wielkosc =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">13</span>))</span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Połącz dane</span></span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a>wszystkie_dane <span class="ot">&lt;-</span> <span class="fu">rbind</span>(kraj_x, kraj_y)</span>
+<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Utwórz wykres pudełkowy</span></span>
+<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wszystkie_dane, <span class="fu">aes</span>(<span class="at">x =</span> kraj, <span class="at">y =</span> wielkosc, <span class="at">fill =</span> kraj)) <span class="sc">+</span></span>
+<span id="cb99-13"><a href="#cb99-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb99-14"><a href="#cb99-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb99-15"><a href="#cb99-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Porównanie Zmienności Wielkości Okręgów Wyborczych"</span>,</span>
+<span id="cb99-16"><a href="#cb99-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Kraj"</span>,</span>
+<span id="cb99-17"><a href="#cb99-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Wielkość Okręgu"</span>) <span class="sc">+</span></span>
+<span id="cb99-18"><a href="#cb99-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb99-19"><a href="#cb99-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#FFA07A"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#98FB98"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
