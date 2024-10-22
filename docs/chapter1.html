@@ -770,6 +770,39 @@ Note
 <li><span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are parameters, estimands to be estimated</li>
 <li><span class="math inline">\(\epsilon\)</span> is the error term, representing unexplained variation</li>
 </ul>
+<p>I’ll help you create a callout note about causal inference and counterfactuals for Quarto.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Causal Inference and Counterfactuals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In social sciences, we often want to understand <strong>what would have happened</strong> if we had done something differently - this hypothetical scenario is called a <em>counterfactual</em>. For instance:</p>
+<ul>
+<li>What would a person’s income be if they had attended college vs.&nbsp;if they hadn’t?</li>
+<li>How would voter turnout change if voting was mandatory?</li>
+</ul>
+<p>Since we can’t observe both scenarios simultaneously, statistical models help us estimate these counterfactuals by: 1. Controlling for confounding variables 2. Comparing similar groups that differ only in the treatment 3. Using techniques like propensity score matching or instrumental variables</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="stat_imgs/meme_horse.pdf" class="img-fluid"></p>
+<figcaption>Fundamental problem of causal inference: We can think of causal inference as a PREDICTION problem. How could we predict the counterfactual given that we never observe it?</figcaption>
+</figure>
+</div>
+<p>Remember: Correlation ≠ Causation, but careful research design and statistical methods can help us make causal claims.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/ff13-23.png" class="img-fluid figure-img"></p>
+<figcaption>https://ff13.fastforwardlabs.com/</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This creates a note-type callout in Quarto that explains the concept succinctly while highlighting key points about counterfactuals and their estimation.</p>
 </section>
 <section id="inference" class="level3" data-number="1.3.7">
 <h3 data-number="1.3.7" class="anchored" data-anchor-id="inference"><span class="header-section-number">1.3.7</span> Inference</h3>

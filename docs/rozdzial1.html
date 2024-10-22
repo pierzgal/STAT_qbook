@@ -767,6 +767,42 @@ Note
 <li><span class="math inline">\(\beta_0\)</span> i <span class="math inline">\(\beta_1\)</span> to parametry, estymandy do oszacowania</li>
 <li><span class="math inline">\(\epsilon\)</span> to składnik błędu, reprezentujący niewyjaśnioną zmienność</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wnioskowanie przyczynowe i kontrfakty
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>W naukach społecznych często chcemy zrozumieć <strong>co by się stało</strong>, gdybyśmy podjęli inne działanie - ten hipotetyczny scenariusz nazywamy <em>kontrfaktem/wynikiem kontrfaktycznym</em>. Na przykład:</p>
+<ul>
+<li>Jakie byłyby zarobki danej osoby, gdyby poszła na studia vs.&nbsp;gdyby nie poszła?</li>
+<li>Jak zmieniłaby się frekwencja wyborcza, gdyby głosowanie było obowiązkowe?</li>
+</ul>
+<p>Ponieważ nie możemy obserwować obu scenariuszy jednocześnie, modele statystyczne pomagają nam oszacować te kontrfakty poprzez:</p>
+<ol type="1">
+<li>Kontrolowanie zmiennych zakłócających (<em>confounders</em>)</li>
+<li>Porównywanie podobnych grup, które różnią się tylko badanym czynnikiem</li>
+<li>Wykorzystanie technik takich jak dopasowanie według współczynnika skłonności czy zmienne instrumentalne</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="stat_imgs/meme_horse.pdf" class="img-fluid"></p>
+<figcaption>Fundamental problem of causal inference: We can think of causal inference as a PREDICTION problem. How could we predict the counterfactual given that we never observe it?</figcaption>
+</figure>
+</div>
+<p>Pamiętaj: Korelacja ≠ Przyczynowość, ale staranny projekt badawczy i metody statystyczne mogą pomóc nam formułować wnioski przyczynowe.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stat_imgs/ff13-23.png" class="img-fluid figure-img"></p>
+<figcaption>https://ff13.fastforwardlabs.com/</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="wnioskowanie-inference" class="level3" data-number="2.3.7">
 <h3 data-number="2.3.7" class="anchored" data-anchor-id="wnioskowanie-inference"><span class="header-section-number">2.3.7</span> Wnioskowanie (Inference)</h3>
