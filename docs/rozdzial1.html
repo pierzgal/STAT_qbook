@@ -791,14 +791,20 @@ Wnioskowanie przyczynowe i kontrfakty
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><embed src="stat_imgs/meme_horse.pdf" class="img-fluid"></p>
-<figcaption>Fundamental problem of causal inference: We can think of causal inference as a PREDICTION problem. How could we predict the counterfactual given that we never observe it?</figcaption>
+<figcaption>Fundamentalny problem wnioskowania przyczynowego: We can think of causal inference as a PREDICTION problem. How could we predict the counterfactual given that we never observe it?</figcaption>
 </figure>
 </div>
 <p>Pamiętaj: Korelacja ≠ Przyczynowość, ale staranny projekt badawczy i metody statystyczne mogą pomóc nam formułować wnioski przyczynowe.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
+<p><img src="stat_imgs/IMG_4337.jpg" class="img-fluid figure-img"></p>
+<figcaption>Confounding bias and spurious correlation (https://www.bradyneal.com/causal-inference-course) drinking the night before is a common cause of sleeping with shoes on and waking up with a headache :-)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="stat_imgs/ff13-23.png" class="img-fluid figure-img"></p>
-<figcaption>https://ff13.fastforwardlabs.com/</figcaption>
+<figcaption>Reverse causality: https://ff13.fastforwardlabs.com/</figcaption>
 </figure>
 </div>
 </div>
@@ -862,8 +868,7 @@ Estymacja i testowanie hipotez: Dogłębna analiza
 <li>Hipoteza alternatywna (H1): p &gt; 0,5 (moneta jest stronnicza na korzyść orła)</li>
 <li>Obserwujemy 55 orłów na 100 rzutów</li>
 </ul>
-<p>**P-wartość i “probabilistyczny dowód nie wprost”</p>
-<p>Teraz zagłębmy się w koncepcję wartości p i jak testowanie hipotez działa jako rodzaj “probabilistycznego dowodu nie wprost”:</p>
+<p>P-wartość i jak testowanie hipotez działa jako rodzaj <strong>“probabilistycznego dowodu nie wprost”</strong>:</p>
 <ol type="1">
 <li><p>Zaczynamy od założenia, że hipoteza zerowa (H0) jest prawdziwa. W tym przypadku zakładamy, że moneta jest uczciwa.</p></li>
 <li><p>Następnie pytamy: “Jeśli moneta byłaby naprawdę uczciwa, jakie byłoby prawdopodobieństwo zaobserwowania 55 lub więcej orłów na 100 rzutów?”</p></li>
@@ -879,7 +884,7 @@ Estymacja i testowanie hipotez: Dogłębna analiza
 <li>Sprawdzamy, czy to założenie prowadzi do bardzo mało prawdopodobnej sytuacji (naszych zaobserwowanych danych).</li>
 <li>Jeśli tak, odrzucamy założenie (H0) i faworyzujemy alternatywę.</li>
 </ul>
-<p>Wartość p dokładnie określa, jak mało prawdopodobna jest nasza obserwacja przy H0. Bardzo mała wartość p (np. 0,01) oznacza: “Gdyby H0 była prawdziwa, spodziewalibyśmy się zobaczyć tak ekstremalne dane tylko około 1% czasu.”</p>
+<p>Wartość p dokładnie określa, jak mało prawdopodobna jest nasza obserwacja przy założeniu H0. Bardzo mała wartość p (np. 0,01) oznacza: “Gdyby H0 była prawdziwa, spodziewalibyśmy się zobaczyć tak ekstremalne dane tylko około 1% czasu.”</p>
 <p><strong>Testowanie hipotez i estymacja to powiązane, ale odrębne procedury statystyczne; testowanie hipotez może być wykorzystane do wyciągania wniosków o oszacowaniach i może uzupełniać estymację na kilka sposobów, np.</strong>:</p>
 <ul>
 <li>Testowanie oszacowań punktowych: Testowanie hipotez może być wykorzystane do oceny, czy oszacowanie punktowe różni się istotnie od hipotetycznej wartości. Na przykład, jeśli oszacujemy, że moneta ma prawdopodobieństwo 0,55 wypadnięcia orłem, możemy użyć testu hipotezy, aby określić, czy ta wartość różni się istotnie od 0,5 (uczciwa moneta).</li>
