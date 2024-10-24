@@ -1320,6 +1320,90 @@ Understanding Different Levels of Variability
 <h3 data-number="11.7.3" class="anchored" data-anchor-id="variance"><span class="header-section-number">11.7.3</span> Variance</h3>
 <p>Variance measures the average squared deviation from the mean.</p>
 <p><strong>Formula:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}\)</span></p>
+<p>Let me help diagnose the Mermaid syntax issue. For Mermaid diagrams in Quarto, we need to ensure:</p>
+<ol type="1">
+<li>The syntax is correct</li>
+<li>We’re using a supported Mermaid chart type</li>
+</ol>
+<p>The issue was with <code>xychart-beta</code> - it’s an experimental feature and might not be supported in all Quarto versions. Let’s try with a more standard Mermaid chart type:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variance: Understanding Average Squared Deviations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>What is Variance?</strong> Variance measures how “spread out” numbers are from their mean - it’s the average of squared deviations from the mean.</p>
+<p>Formula: <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></p>
+<p><strong>Simple Example:</strong> Consider numbers: 2, 4, 6, 8, 10 Mean (<span class="math inline">\(\bar{x}\)</span>) = 6</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Calculating Deviations:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Value</th>
+<th>Deviation from mean</th>
+<th>Square of deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>-4</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>-2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>+2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>+4</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+<p>Variance = <span class="math inline">\(\frac{16 + 4 + 0 + 4 + 16}{4} = 10\)</span></p>
+<p><strong>Key Points:</strong></p>
+<ol type="1">
+<li>Mean acts as a reference line (blue dashed line)</li>
+<li>Deviations show distance from mean (red dotted lines)</li>
+<li>Squaring makes all deviations positive (blue bars)</li>
+<li>Larger deviations contribute more to variance</li>
+</ol>
+</div>
+</div>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
@@ -1405,6 +1489,67 @@ Understanding Different Levels of Variability
 <li>Units are squared, making interpretation less intuitive</li>
 <li>Sensitive to outliers</li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Bessel’s Correction: Why We Divide by (n-1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>The Key Insight:</strong></p>
+<p>When we calculate deviations from the mean, they must sum to zero. This is a mathematical fact: <span class="math inline">\(\sum(x_i - \bar{x}) = 0\)</span></p>
+<p><strong>Think of it Like This:</strong></p>
+<p>If you have 5 numbers and their mean:</p>
+<ul>
+<li>Once you calculate 4 deviations from the mean</li>
+<li>The 5th deviation MUST be whatever makes the sum zero</li>
+<li>You don’t really have 5 independent deviations</li>
+<li>You only have 4 truly “free” deviations</li>
+</ul>
+<p><strong>Simple Example:</strong></p>
+<p>Numbers: 2, 4, 6, 8, 10</p>
+<ul>
+<li>Mean = 6</li>
+<li>Deviations: -4, -2, 0, +2, +4</li>
+<li>Notice they sum to zero</li>
+<li>If you know any 4 deviations, the 5th is predetermined!</li>
+</ul>
+<p><strong>This is Why:</strong></p>
+<ul>
+<li>When calculating variance: <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></li>
+<li>We divide by (n-1) not n</li>
+<li>Because only (n-1) deviations are truly independent</li>
+<li>The last one is determined by the others</li>
+</ul>
+<p><strong>Degrees of Freedom:</strong></p>
+<ul>
+<li>n = number of observations</li>
+<li>1 = constraint (deviations must sum to zero)</li>
+<li>n-1 = degrees of freedom = number of truly independent deviations</li>
+</ul>
+<p><strong>When to Use It:</strong></p>
+<ul>
+<li>When calculating sample variance</li>
+<li>When calculating sample standard deviation</li>
+<li>When working with a sample from a larger group</li>
+</ul>
+<p><strong>When NOT to Use It:</strong></p>
+<ul>
+<li>Population calculations (when you have all data)</li>
+<li>Calculating deviation from a fixed, known value (not a calculated mean)</li>
+</ul>
+<p><strong>Remember:</strong></p>
+<ul>
+<li>It’s not just a statistical trick</li>
+<li>It comes from a real constraint in the data</li>
+<li>Deviations from the mean must sum to zero</li>
+<li>This constraint costs us one degree of freedom</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="standard-deviation" class="level3" data-number="11.7.4">
 <h3 data-number="11.7.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">11.7.4</span> Standard Deviation</h3>
@@ -1577,7 +1722,7 @@ Understanding Different Levels of Variability
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1734,7 +1879,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1807,7 +1952,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2148,7 +2293,7 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2172,7 +2317,7 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2837,7 +2982,7 @@ Cumulative Var 0.336 0.671</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

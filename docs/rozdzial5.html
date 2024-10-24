@@ -1298,6 +1298,55 @@ Zrozumienie Różnych Poziomów Zmienności
 <li>Jednostki są podniesione do kwadratu, co utrudnia interpretację</li>
 <li>Wrażliwa na wartości odstające</li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Kluczowe Spostrzeżenie:</strong></p>
+<p>Gdy obliczamy odchylenia od średniej, ich suma musi wynosić zero. To matematyczny fakt: <span class="math inline">\(\sum(x_i - \bar{x}) = 0\)</span></p>
+<p><strong>Pomyśl o tym Tak:</strong></p>
+<p>Jeśli masz 5 liczb i ich średnią: - Po obliczeniu 4 odchyleń od średniej - 5-te odchylenie MUSI być takie, żeby suma była zero - Nie masz tak naprawdę 5 niezależnych odchyleń - Masz tylko 4 prawdziwie “swobodne” odchylenia</p>
+<p><strong>Prosty Przykład:</strong></p>
+<p>Liczby: 2, 4, 6, 8, 10 - Średnia = 6 - Odchylenia: -4, -2, 0, +2, +4 - Zauważ, że sumują się do zera - Jeśli znasz dowolne 4 odchylenia, 5-te jest z góry określone!</p>
+<p><strong>Dlatego Właśnie:</strong></p>
+<ul>
+<li>Przy obliczaniu wariancji: <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></li>
+<li>Dzielimy przez (n-1), a nie n</li>
+<li>Ponieważ tylko (n-1) odchyleń jest naprawdę niezależnych</li>
+<li>Ostatnie jest określone przez pozostałe</li>
+</ul>
+<p><strong>Stopnie Swobody:</strong></p>
+<ul>
+<li>n = liczba obserwacji</li>
+<li>1 = ograniczenie (odchylenia muszą sumować się do zera)</li>
+<li>n-1 = stopnie swobody = liczba prawdziwie niezależnych odchyleń</li>
+</ul>
+<p><strong>Kiedy Stosować:</strong></p>
+<ul>
+<li>Przy obliczaniu wariancji z próby</li>
+<li>Przy obliczaniu odchylenia standardowego z próby</li>
+<li>Gdy pracujemy z próbą z większej grupy</li>
+</ul>
+<p><strong>Kiedy NIE Stosować:</strong></p>
+<ul>
+<li>W obliczeniach dla całej populacji (gdy mamy wszystkie dane)</li>
+<li>Przy obliczaniu odchylenia od ustalonej, znanej wartości (nie obliczonej średniej)</li>
+</ul>
+<p><strong>Pamiętaj:</strong></p>
+<ul>
+<li>To nie jest tylko statystyczny trik</li>
+<li>Wynika z rzeczywistego ograniczenia w danych</li>
+<li>Odchylenia od średniej muszą sumować się do zera</li>
+<li>To ograniczenie kosztuje nas jeden stopień swobody</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="odchylenie-standardowe" class="level3" data-number="12.7.4">
 <h3 data-number="12.7.4" class="anchored" data-anchor-id="odchylenie-standardowe"><span class="header-section-number">12.7.4</span> Odchylenie Standardowe</h3>
