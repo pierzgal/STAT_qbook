@@ -1213,6 +1213,84 @@ Zrozumienie Różnych Poziomów Zmienności
 <h3 data-number="12.7.3" class="anchored" data-anchor-id="wariancja"><span class="header-section-number">12.7.3</span> Wariancja</h3>
 <p>Wariancja mierzy średnie kwadratowe odchylenie od średniej.</p>
 <p><strong>Wzór:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}\)</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wariancja: Zrozumienie Średniego Odchylenia Kwadratowego
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Czym jest Wariancja?</strong> Wariancja mierzy, jak bardzo liczby są “rozrzucone” wokół średniej - jest średnią kwadratów odchyleń od średniej.</p>
+<p>Wzór: <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></p>
+<p><strong>Prosty Przykład:</strong> Rozważmy liczby: 2, 4, 6, 8, 10 Średnia (<span class="math inline">\(\bar{x}\)</span>) = 6</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Obliczanie Odchyleń:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Wartość</th>
+<th>Odchylenie od średniej</th>
+<th>Kwadrat odchylenia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>-4</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>-2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>+2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>+4</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+<p>Wariancja = <span class="math inline">\(\frac{16 + 4 + 0 + 4 + 16}{4} = 10\)</span></p>
+<p><strong>Kluczowe Punkty:</strong></p>
+<ol type="1">
+<li>Średnia służy jako linia odniesienia (niebieska przerywana linia)</li>
+<li>Odchylenia pokazują odległość od średniej (czerwone kropkowane linie)</li>
+<li>Podniesienie do kwadratu sprawia, że wszystkie odchylenia są dodatnie (niebieskie słupki)</li>
+<li>Większe odchylenia mają większy wpływ na wariancję</li>
+</ol>
+</div>
+</div>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
 <p>Używając zbioru danych: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
@@ -1311,9 +1389,21 @@ Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
 <p><strong>Kluczowe Spostrzeżenie:</strong></p>
 <p>Gdy obliczamy odchylenia od średniej, ich suma musi wynosić zero. To matematyczny fakt: <span class="math inline">\(\sum(x_i - \bar{x}) = 0\)</span></p>
 <p><strong>Pomyśl o tym Tak:</strong></p>
-<p>Jeśli masz 5 liczb i ich średnią: - Po obliczeniu 4 odchyleń od średniej - 5-te odchylenie MUSI być takie, żeby suma była zero - Nie masz tak naprawdę 5 niezależnych odchyleń - Masz tylko 4 prawdziwie “swobodne” odchylenia</p>
+<p>Jeśli masz 5 liczb i ich średnią:</p>
+<ul>
+<li>Po obliczeniu 4 odchyleń od średniej</li>
+<li>5-te odchylenie MUSI być takie, żeby suma była zero</li>
+<li>Nie masz tak naprawdę 5 niezależnych odchyleń</li>
+<li>Masz tylko 4 prawdziwie “swobodne” odchylenia</li>
+</ul>
 <p><strong>Prosty Przykład:</strong></p>
-<p>Liczby: 2, 4, 6, 8, 10 - Średnia = 6 - Odchylenia: -4, -2, 0, +2, +4 - Zauważ, że sumują się do zera - Jeśli znasz dowolne 4 odchylenia, 5-te jest z góry określone!</p>
+<p>Liczby: 2, 4, 6, 8, 10</p>
+<ul>
+<li>Średnia = 6</li>
+<li>Odchylenia: -4, -2, 0, +2, +4</li>
+<li>Zauważ, że sumują się do zera</li>
+<li>Jeśli znasz dowolne 4 odchylenia, 5-te jest z góry określone!</li>
+</ul>
 <p><strong>Dlatego Właśnie:</strong></p>
 <ul>
 <li>Przy obliczaniu wariancji: <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></li>
@@ -1468,7 +1558,7 @@ Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1623,7 +1713,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1696,7 +1786,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2032,7 +2122,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2056,7 +2146,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2720,7 +2810,7 @@ Cumulative Var 0.336 0.671</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
