@@ -1070,13 +1070,37 @@ Warning
 <section id="measures-of-variability" class="level2" data-number="11.7">
 <h2 data-number="11.7" class="anchored" data-anchor-id="measures-of-variability"><span class="header-section-number">11.7</span> Measures of Variability</h2>
 <p>These measures describe how spread out the data is. They are crucial for understanding the dispersion of data points around the central tendency.</p>
-<div class="cell" data-layout-align="center">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding Variance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+<div id="fig-variance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-variance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter5_files/figure-html/fig-variance-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-variance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Three dot plots showing increasing variance with constant mean
+</figcaption>
 </figure>
 </div>
+</div>
+</div>
+<p>The three dot plots above demonstrate how variance measures the spread of data around a central value:</p>
+<ul>
+<li>All distributions have the same mean (μ = 10), shown by the dashed line</li>
+<li><strong>Low Variance</strong> (σ² = 1): Points cluster tightly around the mean</li>
+<li><strong>Medium Variance</strong> (σ² = 4): Points show moderate spread</li>
+<li><strong>High Variance</strong> (σ² = 9): Points spread widely around the mean</li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1110,7 +1134,6 @@ Understanding Different Levels of Variability
 <li>Most observations fall within ±4 units of the mean</li>
 </ul></li>
 </ol>
-<p>Note how the standard deviation (σ) directly relates to the spread of the distribution - larger values of σ indicate greater variability in the data, while smaller values indicate that data points tend to be closer to the mean.</p>
 </div>
 </div>
 <section id="range" class="level3" data-number="11.7.1">
@@ -1692,6 +1715,36 @@ Percentiles vs.&nbsp;Percentile Ranks: Key Differences
 </ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Dual Nature of Median: Center and Position
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-median-dual" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-median-dual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter5_files/figure-html/fig-median-dual-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-median-dual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.2: Visualization of median’s dual role
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The median serves two distinct but related roles:</p>
+<p><strong>A. As a Measure of Center:</strong> - Represents the middle point of the data - Balances the number of observations on each side - Robust to outliers unlike the mean</p>
+<p><strong>B. As a Measure of Relative Standing:</strong> - Marks the 50th percentile - Divides the data into two equal parts - Every value can be compared to it: * Below median: bottom 50% * Above median: top 50%</p>
+<p>This dual nature makes the median particularly useful for: - Describing typical values (central tendency) - Understanding positions within a distribution (relative standing) - Making comparisons across different datasets</p>
+</div>
+</div>
 </section>
 </section>
 <section id="quartiles" class="level3" data-number="11.8.2">
@@ -1714,8 +1767,13 @@ Percentiles vs.&nbsp;Percentile Ranks: Key Differences
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  2.000   4.000   5.000   5.143   6.000   9.000 </code></pre>
+<pre><code>     value          group          
+ Min.   :2.000   Length:7          
+ 1st Qu.:3.500   Class :character  
+ Median :5.000   Mode  :character  
+ Mean   :5.429                     
+ 3rd Qu.:7.500                     
+ Max.   :9.000                     </code></pre>
 </div>
 </div>
 <p><strong>Pros:</strong></p>
@@ -1799,7 +1857,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1872,7 +1930,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2213,7 +2271,7 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2237,7 +2295,7 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2902,7 +2960,7 @@ Cumulative Var 0.336 0.671</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

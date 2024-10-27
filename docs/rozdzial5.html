@@ -963,11 +963,44 @@ Warning
 <section id="miary-zmienności" class="level2" data-number="12.7">
 <h2 data-number="12.7" class="anchored" data-anchor-id="miary-zmienności"><span class="header-section-number">12.7</span> Miary Zmienności</h2>
 <p>Te miary opisują, jak bardzo rozproszone są dane. Są kluczowe dla zrozumienia rozproszenia punktów danych wokół tendencji centralnej.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Zrozumienie Wariancji
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-variance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-variance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rozdzial5_files/figure-html/fig-variance-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-variance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: Trzy wykresy punktowe pokazujące rosnącą wariancję przy stałej średniej
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Powyższe trzy wykresy punktowe pokazują, w jaki sposób wariancja mierzy rozproszenie danych wokół wartości centralnej:</p>
+<ul>
+<li>Wszystkie rozkłady mają tę samą średnią (μ = 10), oznaczoną linią przerywaną</li>
+<li><strong>Mała Wariancja</strong> (σ² = 1): Punkty są skupione blisko średniej</li>
+<li><strong>Średnia Wariancja</strong> (σ² = 4): Punkty wykazują umiarkowane rozproszenie</li>
+<li><strong>Duża Wariancja</strong> (σ² = 9): Punkty są szeroko rozproszone wokół średniej</li>
+</ul>
+</div>
+</div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -1156,7 +1189,7 @@ Wariancja: Zrozumienie Średniego Odchylenia Kwadratowego
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="576"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1166,7 +1199,7 @@ Wariancja: Zrozumienie Średniego Odchylenia Kwadratowego
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="576"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1484,7 +1517,7 @@ Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1532,6 +1565,36 @@ Percentyle vs.&nbsp;Rangi Centylowe: Kluczowe Różnice
 <li>Percentyle: od wartości → do procentu</li>
 <li>Rangi centylowe: od procentu → do wartości</li>
 </ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Podwójna Natura Mediany
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-median-dual" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-median-dual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rozdzial5_files/figure-html/fig-median-dual-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-median-dual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.2: Wizualizacja podwójnej roli mediany
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Mediana pełni dwie odrębne, ale powiązane ze sobą role:</p>
+<p><strong>A. Jako Miara Centrum:</strong> - Reprezentuje środkowy punkt danych - Równoważy liczbę obserwacji po obu stronach - Jest odporna na wartości odstające (w przeciwieństwie do średniej)</p>
+<p><strong>B. Jako Miara Pozycji Względnej:</strong> - Wyznacza 50-ty percentyl - Dzieli dane na dwie równe części - Każdą wartość można do niej odnieść: * Poniżej mediany: dolne 50% * Powyżej mediany: górne 50%</p>
+<p>Ta podwójna natura sprawia, że mediana jest szczególnie przydatna do: - Opisywania wartości typowych (tendencja centralna) - Zrozumienia pozycji w rozkładzie (pozycja względna) - Dokonywania porównań między różnymi zbiorami danych</p>
 </div>
 </div>
 </section>
@@ -1639,7 +1702,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1712,7 +1775,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2048,7 +2111,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2072,7 +2135,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2736,7 +2799,7 @@ Cumulative Var 0.336 0.671</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
