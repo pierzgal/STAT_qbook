@@ -329,35 +329,84 @@ window.Quarto = {
   <li><a href="#considerations-in-multivariate-analysis" id="toc-considerations-in-multivariate-analysis" class="nav-link" data-scroll-target="#considerations-in-multivariate-analysis"><span class="header-section-number">15.2.6</span> Considerations in Multivariate Analysis</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">15.2.7</span> Conclusion</a></li>
   </ul></li>
-  <li><a href="#appendix-a.1-calculating-covariance-pearson-and-spearman-correlation---worked-example" id="toc-appendix-a.1-calculating-covariance-pearson-and-spearman-correlation---worked-example" class="nav-link" data-scroll-target="#appendix-a.1-calculating-covariance-pearson-and-spearman-correlation---worked-example"><span class="header-section-number">15.3</span> Appendix A.1: Calculating Covariance, Pearson, and Spearman Correlation - worked example</a>
+  <li><a href="#regression-analysis---introduction" id="toc-regression-analysis---introduction" class="nav-link" data-scroll-target="#regression-analysis---introduction"><span class="header-section-number">15.3</span> Regression Analysis - Introduction</a></li>
+  <li><a href="#analiza-regresji---wprowadzenie" id="toc-analiza-regresji---wprowadzenie" class="nav-link" data-scroll-target="#analiza-regresji---wprowadzenie"><span class="header-section-number">15.4</span> Analiza regresji - Wprowadzenie</a>
   <ul class="collapse">
-  <li><a href="#step-1-calculate-basic-statistics" id="toc-step-1-calculate-basic-statistics" class="nav-link" data-scroll-target="#step-1-calculate-basic-statistics"><span class="header-section-number">15.3.1</span> Step 1: Calculate Basic Statistics</a></li>
-  <li><a href="#step-2-detailed-covariance-calculations" id="toc-step-2-detailed-covariance-calculations" class="nav-link" data-scroll-target="#step-2-detailed-covariance-calculations"><span class="header-section-number">15.3.2</span> Step 2: Detailed Covariance Calculations</a></li>
-  <li><a href="#step-3-standard-deviation-calculations" id="toc-step-3-standard-deviation-calculations" class="nav-link" data-scroll-target="#step-3-standard-deviation-calculations"><span class="header-section-number">15.3.3</span> Step 3: Standard Deviation Calculations</a></li>
-  <li><a href="#step-4-pearson-correlation-calculation" id="toc-step-4-pearson-correlation-calculation" class="nav-link" data-scroll-target="#step-4-pearson-correlation-calculation"><span class="header-section-number">15.3.4</span> Step 4: Pearson Correlation Calculation</a></li>
-  <li><a href="#step-5-spearman-rank-correlation-calculation" id="toc-step-5-spearman-rank-correlation-calculation" class="nav-link" data-scroll-target="#step-5-spearman-rank-correlation-calculation"><span class="header-section-number">15.3.5</span> Step 5: Spearman Rank Correlation Calculation</a></li>
-  <li><a href="#step-6-r-verification" id="toc-step-6-r-verification" class="nav-link" data-scroll-target="#step-6-r-verification"><span class="header-section-number">15.3.6</span> Step 6: R Verification</a></li>
-  <li><a href="#step-7-basic-visualization" id="toc-step-7-basic-visualization" class="nav-link" data-scroll-target="#step-7-basic-visualization"><span class="header-section-number">15.3.7</span> Step 7: Basic Visualization</a></li>
+  <li><a href="#ordinary-least-squares-ols-regression" id="toc-ordinary-least-squares-ols-regression" class="nav-link" data-scroll-target="#ordinary-least-squares-ols-regression"><span class="header-section-number">15.4.1</span> Ordinary Least Squares (OLS) Regression</a></li>
+  <li><a href="#liniowa-regresja-metodą-najmniejszych-kwadratów-ols" id="toc-liniowa-regresja-metodą-najmniejszych-kwadratów-ols" class="nav-link" data-scroll-target="#liniowa-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">15.4.2</span> Liniowa regresja metodą najmniejszych kwadratów (OLS)</a></li>
+  <li><a href="#measures-of-goodness-of-fit" id="toc-measures-of-goodness-of-fit" class="nav-link" data-scroll-target="#measures-of-goodness-of-fit"><span class="header-section-number">15.4.3</span> Measures of Goodness of Fit</a></li>
+  <li><a href="#miary-dopasowania-modelu" id="toc-miary-dopasowania-modelu" class="nav-link" data-scroll-target="#miary-dopasowania-modelu"><span class="header-section-number">15.4.4</span> Miary dopasowania modelu</a></li>
+  <li><a href="#key-assumptions-in-regression-analysis" id="toc-key-assumptions-in-regression-analysis" class="nav-link" data-scroll-target="#key-assumptions-in-regression-analysis"><span class="header-section-number">15.4.5</span> Key Assumptions in Regression Analysis</a></li>
+  <li><a href="#główne-założenia-analizy-regresji" id="toc-główne-założenia-analizy-regresji" class="nav-link" data-scroll-target="#główne-założenia-analizy-regresji"><span class="header-section-number">15.4.6</span> Główne założenia analizy regresji</a></li>
+  <li><a href="#strict-exogeneity-assumption" id="toc-strict-exogeneity-assumption" class="nav-link" data-scroll-target="#strict-exogeneity-assumption"><span class="header-section-number">15.4.7</span> Strict Exogeneity Assumption</a></li>
+  <li><a href="#założenie-ścisłej-egzogeniczności" id="toc-założenie-ścisłej-egzogeniczności" class="nav-link" data-scroll-target="#założenie-ścisłej-egzogeniczności"><span class="header-section-number">15.4.8</span> Założenie ścisłej egzogeniczności</a></li>
+  <li><a href="#functional-form-assumption" id="toc-functional-form-assumption" class="nav-link" data-scroll-target="#functional-form-assumption"><span class="header-section-number">15.4.9</span> Functional Form Assumption</a></li>
+  <li><a href="#założenie-funkcyjnej-formy-modelu" id="toc-założenie-funkcyjnej-formy-modelu" class="nav-link" data-scroll-target="#założenie-funkcyjnej-formy-modelu"><span class="header-section-number">15.4.10</span> Założenie funkcyjnej formy modelu</a></li>
+  <li><a href="#dealing-with-violations-of-functional-form-assumption" id="toc-dealing-with-violations-of-functional-form-assumption" class="nav-link" data-scroll-target="#dealing-with-violations-of-functional-form-assumption"><span class="header-section-number">15.4.11</span> Dealing with Violations of Functional Form Assumption</a></li>
+  <li><a href="#radzenie-sobie-z-naruszeniami-założenia-funkcyjnej-formy-modelu" id="toc-radzenie-sobie-z-naruszeniami-założenia-funkcyjnej-formy-modelu" class="nav-link" data-scroll-target="#radzenie-sobie-z-naruszeniami-założenia-funkcyjnej-formy-modelu"><span class="header-section-number">15.4.12</span> Radzenie sobie z naruszeniami założenia funkcyjnej formy modelu</a></li>
   </ul></li>
-  <li><a href="#appendix-a.2-ols-estimation-and-goodness-of-fit-measures" id="toc-appendix-a.2-ols-estimation-and-goodness-of-fit-measures" class="nav-link" data-scroll-target="#appendix-a.2-ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.4</span> Appendix A.2: OLS Estimation and Goodness-of-Fit Measures</a>
+  <li><a href="#appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" id="toc-appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" class="nav-link" data-scroll-target="#appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data"><span class="header-section-number">15.5</span> Appendix A.1: Understanding Correlation Measures: A Self-Study Tutorial (Using Stress Level and Cognitive Performance Data)</a>
   <ul class="collapse">
-  <li><a href="#step-1-calculate-ols-estimates" id="toc-step-1-calculate-ols-estimates" class="nav-link" data-scroll-target="#step-1-calculate-ols-estimates"><span class="header-section-number">15.4.1</span> Step 1: Calculate OLS Estimates</a></li>
-  <li><a href="#step-2-calculate-fitted-values-and-residuals" id="toc-step-2-calculate-fitted-values-and-residuals" class="nav-link" data-scroll-target="#step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.4.2</span> Step 2: Calculate Fitted Values and Residuals</a></li>
-  <li><a href="#step-3-calculate-goodness-of-fit-measures" id="toc-step-3-calculate-goodness-of-fit-measures" class="nav-link" data-scroll-target="#step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.4.3</span> Step 3: Calculate Goodness-of-Fit Measures</a></li>
-  <li><a href="#step-4-r-verification" id="toc-step-4-r-verification" class="nav-link" data-scroll-target="#step-4-r-verification"><span class="header-section-number">15.4.4</span> Step 4: R Verification</a></li>
-  <li><a href="#step-5-residual-analysis" id="toc-step-5-residual-analysis" class="nav-link" data-scroll-target="#step-5-residual-analysis"><span class="header-section-number">15.4.5</span> Step 5: Residual Analysis</a></li>
-  <li><a href="#step-6-predicted-vs-actual-values-plot" id="toc-step-6-predicted-vs-actual-values-plot" class="nav-link" data-scroll-target="#step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.4.6</span> Step 6: Predicted vs Actual Values Plot</a></li>
+  <li><a href="#dataset-overview" id="toc-dataset-overview" class="nav-link" data-scroll-target="#dataset-overview"><span class="header-section-number">15.5.1</span> Dataset Overview</a></li>
+  <li><a href="#covariance-calculation" id="toc-covariance-calculation" class="nav-link" data-scroll-target="#covariance-calculation"><span class="header-section-number">15.5.2</span> 1. Covariance Calculation</a></li>
+  <li><a href="#pearson-correlation-coefficient" id="toc-pearson-correlation-coefficient" class="nav-link" data-scroll-target="#pearson-correlation-coefficient"><span class="header-section-number">15.5.3</span> 2. Pearson Correlation Coefficient</a></li>
+  <li><a href="#spearman-rank-correlation" id="toc-spearman-rank-correlation" class="nav-link" data-scroll-target="#spearman-rank-correlation"><span class="header-section-number">15.5.4</span> 3. Spearman Rank Correlation</a></li>
+  <li><a href="#verification-using-r" id="toc-verification-using-r" class="nav-link" data-scroll-target="#verification-using-r"><span class="header-section-number">15.5.5</span> Verification using R</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">15.5.6</span> Interpretation</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">15.5.7</span> Exercise</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">15.5.8</span> References</a></li>
   </ul></li>
-  <li><a href="#appendix-a.3-log-transformed-models" id="toc-appendix-a.3-log-transformed-models" class="nav-link" data-scroll-target="#appendix-a.3-log-transformed-models"><span class="header-section-number">15.5</span> Appendix A.3: Log-Transformed Models</a>
+  <li><a href="#appendix-a.2-calculating-covariance-pearson-and-spearman-correlation---worked-example" id="toc-appendix-a.2-calculating-covariance-pearson-and-spearman-correlation---worked-example" class="nav-link" data-scroll-target="#appendix-a.2-calculating-covariance-pearson-and-spearman-correlation---worked-example"><span class="header-section-number">15.6</span> Appendix A.2: Calculating Covariance, Pearson, and Spearman Correlation - worked example</a>
   <ul class="collapse">
-  <li><a href="#step-1-data-transformation" id="toc-step-1-data-transformation" class="nav-link" data-scroll-target="#step-1-data-transformation"><span class="header-section-number">15.5.1</span> Step 1: Data Transformation</a></li>
-  <li><a href="#step-2-compare-different-model-specifications" id="toc-step-2-compare-different-model-specifications" class="nav-link" data-scroll-target="#step-2-compare-different-model-specifications"><span class="header-section-number">15.5.2</span> Step 2: Compare Different Model Specifications</a></li>
-  <li><a href="#step-3-visual-comparison" id="toc-step-3-visual-comparison" class="nav-link" data-scroll-target="#step-3-visual-comparison"><span class="header-section-number">15.5.3</span> Step 3: Visual Comparison</a></li>
-  <li><a href="#step-4-residual-analysis-for-best-model" id="toc-step-4-residual-analysis-for-best-model" class="nav-link" data-scroll-target="#step-4-residual-analysis-for-best-model"><span class="header-section-number">15.5.4</span> Step 4: Residual Analysis for Best Model</a></li>
-  <li><a href="#step-5-interpretation-of-best-model" id="toc-step-5-interpretation-of-best-model" class="nav-link" data-scroll-target="#step-5-interpretation-of-best-model"><span class="header-section-number">15.5.5</span> Step 5: Interpretation of Best Model</a></li>
-  <li><a href="#step-6-model-predictions" id="toc-step-6-model-predictions" class="nav-link" data-scroll-target="#step-6-model-predictions"><span class="header-section-number">15.5.6</span> Step 6: Model Predictions</a></li>
-  <li><a href="#step-7-elasticity-analysis" id="toc-step-7-elasticity-analysis" class="nav-link" data-scroll-target="#step-7-elasticity-analysis"><span class="header-section-number">15.5.7</span> Step 7: Elasticity Analysis</a></li>
+  <li><a href="#step-1-calculate-basic-statistics" id="toc-step-1-calculate-basic-statistics" class="nav-link" data-scroll-target="#step-1-calculate-basic-statistics"><span class="header-section-number">15.6.1</span> Step 1: Calculate Basic Statistics</a></li>
+  <li><a href="#step-2-detailed-covariance-calculations" id="toc-step-2-detailed-covariance-calculations" class="nav-link" data-scroll-target="#step-2-detailed-covariance-calculations"><span class="header-section-number">15.6.2</span> Step 2: Detailed Covariance Calculations</a></li>
+  <li><a href="#step-3-standard-deviation-calculations" id="toc-step-3-standard-deviation-calculations" class="nav-link" data-scroll-target="#step-3-standard-deviation-calculations"><span class="header-section-number">15.6.3</span> Step 3: Standard Deviation Calculations</a></li>
+  <li><a href="#step-4-pearson-correlation-calculation" id="toc-step-4-pearson-correlation-calculation" class="nav-link" data-scroll-target="#step-4-pearson-correlation-calculation"><span class="header-section-number">15.6.4</span> Step 4: Pearson Correlation Calculation</a></li>
+  <li><a href="#step-5-spearman-rank-correlation-calculation" id="toc-step-5-spearman-rank-correlation-calculation" class="nav-link" data-scroll-target="#step-5-spearman-rank-correlation-calculation"><span class="header-section-number">15.6.5</span> Step 5: Spearman Rank Correlation Calculation</a></li>
+  <li><a href="#step-6-r-verification" id="toc-step-6-r-verification" class="nav-link" data-scroll-target="#step-6-r-verification"><span class="header-section-number">15.6.6</span> Step 6: R Verification</a></li>
+  <li><a href="#step-7-basic-visualization" id="toc-step-7-basic-visualization" class="nav-link" data-scroll-target="#step-7-basic-visualization"><span class="header-section-number">15.6.7</span> Step 7: Basic Visualization</a></li>
   </ul></li>
+  <li><a href="#appendix-a.3-ols-estimation-and-goodness-of-fit-measures" id="toc-appendix-a.3-ols-estimation-and-goodness-of-fit-measures" class="nav-link" data-scroll-target="#appendix-a.3-ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.7</span> Appendix A.3: OLS Estimation and Goodness-of-Fit Measures</a>
+  <ul class="collapse">
+  <li><a href="#step-1-calculate-ols-estimates" id="toc-step-1-calculate-ols-estimates" class="nav-link" data-scroll-target="#step-1-calculate-ols-estimates"><span class="header-section-number">15.7.1</span> Step 1: Calculate OLS Estimates</a></li>
+  <li><a href="#step-2-calculate-fitted-values-and-residuals" id="toc-step-2-calculate-fitted-values-and-residuals" class="nav-link" data-scroll-target="#step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.7.2</span> Step 2: Calculate Fitted Values and Residuals</a></li>
+  <li><a href="#step-3-calculate-goodness-of-fit-measures" id="toc-step-3-calculate-goodness-of-fit-measures" class="nav-link" data-scroll-target="#step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.7.3</span> Step 3: Calculate Goodness-of-Fit Measures</a></li>
+  <li><a href="#step-4-r-verification" id="toc-step-4-r-verification" class="nav-link" data-scroll-target="#step-4-r-verification"><span class="header-section-number">15.7.4</span> Step 4: R Verification</a></li>
+  <li><a href="#step-5-residual-analysis" id="toc-step-5-residual-analysis" class="nav-link" data-scroll-target="#step-5-residual-analysis"><span class="header-section-number">15.7.5</span> Step 5: Residual Analysis</a></li>
+  <li><a href="#step-6-predicted-vs-actual-values-plot" id="toc-step-6-predicted-vs-actual-values-plot" class="nav-link" data-scroll-target="#step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.7.6</span> Step 6: Predicted vs Actual Values Plot</a></li>
+  </ul></li>
+  <li><a href="#appendix-a.4-log-transformed-models" id="toc-appendix-a.4-log-transformed-models" class="nav-link" data-scroll-target="#appendix-a.4-log-transformed-models"><span class="header-section-number">15.8</span> Appendix A.4: Log-Transformed Models</a>
+  <ul class="collapse">
+  <li><a href="#step-1-data-transformation" id="toc-step-1-data-transformation" class="nav-link" data-scroll-target="#step-1-data-transformation"><span class="header-section-number">15.8.1</span> Step 1: Data Transformation</a></li>
+  <li><a href="#step-2-compare-different-model-specifications" id="toc-step-2-compare-different-model-specifications" class="nav-link" data-scroll-target="#step-2-compare-different-model-specifications"><span class="header-section-number">15.8.2</span> Step 2: Compare Different Model Specifications</a></li>
+  <li><a href="#step-3-visual-comparison" id="toc-step-3-visual-comparison" class="nav-link" data-scroll-target="#step-3-visual-comparison"><span class="header-section-number">15.8.3</span> Step 3: Visual Comparison</a></li>
+  <li><a href="#step-4-residual-analysis-for-best-model" id="toc-step-4-residual-analysis-for-best-model" class="nav-link" data-scroll-target="#step-4-residual-analysis-for-best-model"><span class="header-section-number">15.8.4</span> Step 4: Residual Analysis for Best Model</a></li>
+  <li><a href="#step-5-interpretation-of-best-model" id="toc-step-5-interpretation-of-best-model" class="nav-link" data-scroll-target="#step-5-interpretation-of-best-model"><span class="header-section-number">15.8.5</span> Step 5: Interpretation of Best Model</a></li>
+  <li><a href="#step-6-model-predictions" id="toc-step-6-model-predictions" class="nav-link" data-scroll-target="#step-6-model-predictions"><span class="header-section-number">15.8.6</span> Step 6: Model Predictions</a></li>
+  <li><a href="#step-7-elasticity-analysis" id="toc-step-7-elasticity-analysis" class="nav-link" data-scroll-target="#step-7-elasticity-analysis"><span class="header-section-number">15.8.7</span> Step 7: Elasticity Analysis</a></li>
+  </ul></li>
+  <li><a href="#appendix-a.5-calculating-cramérs-v-manually-and-in-r-obliczanie-v-craméra-ręcznie-i-w-r" id="toc-appendix-a.5-calculating-cramérs-v-manually-and-in-r-obliczanie-v-craméra-ręcznie-i-w-r" class="nav-link" data-scroll-target="#appendix-a.5-calculating-cramérs-v-manually-and-in-r-obliczanie-v-craméra-ręcznie-i-w-r"><span class="header-section-number">15.9</span> Appendix A.5: Calculating Cramér’s V Manually and in R (Obliczanie V Craméra ręcznie i w R)</a></li>
+  <li><a href="#manual-calculation" id="toc-manual-calculation" class="nav-link" data-scroll-target="#manual-calculation"><span class="header-section-number">15.10</span> Manual Calculation</a></li>
+  <li><a href="#obliczenia-ręczne" id="toc-obliczenia-ręczne" class="nav-link" data-scroll-target="#obliczenia-ręczne"><span class="header-section-number">15.11</span> Obliczenia ręczne</a>
+  <ul class="collapse">
+  <li><a href="#step-1-contingency-table" id="toc-step-1-contingency-table" class="nav-link" data-scroll-target="#step-1-contingency-table"><span class="header-section-number">15.11.1</span> Step 1: Contingency Table</a></li>
+  <li><a href="#krok-1-tabela-kontyngencji" id="toc-krok-1-tabela-kontyngencji" class="nav-link" data-scroll-target="#krok-1-tabela-kontyngencji"><span class="header-section-number">15.11.2</span> Krok 1: Tabela kontyngencji</a></li>
+  <li><a href="#step-2-expected-frequencies" id="toc-step-2-expected-frequencies" class="nav-link" data-scroll-target="#step-2-expected-frequencies"><span class="header-section-number">15.11.3</span> Step 2: Expected Frequencies</a></li>
+  <li><a href="#krok-2-oczekiwane-częstości" id="toc-krok-2-oczekiwane-częstości" class="nav-link" data-scroll-target="#krok-2-oczekiwane-częstości"><span class="header-section-number">15.11.4</span> Krok 2: Oczekiwane częstości</a></li>
+  <li><a href="#step-3-chi-square-statistic" id="toc-step-3-chi-square-statistic" class="nav-link" data-scroll-target="#step-3-chi-square-statistic"><span class="header-section-number">15.11.5</span> Step 3: Chi-Square Statistic</a></li>
+  <li><a href="#krok-3-statystyka-chi-kwadrat" id="toc-krok-3-statystyka-chi-kwadrat" class="nav-link" data-scroll-target="#krok-3-statystyka-chi-kwadrat"><span class="header-section-number">15.11.6</span> Krok 3: Statystyka chi-kwadrat</a></li>
+  <li><a href="#step-4-sample-size-and-minimum-dimension" id="toc-step-4-sample-size-and-minimum-dimension" class="nav-link" data-scroll-target="#step-4-sample-size-and-minimum-dimension"><span class="header-section-number">15.11.7</span> Step 4: Sample Size and Minimum Dimension</a></li>
+  <li><a href="#krok-4-wielkość-próby-i-minimalny-wymiar" id="toc-krok-4-wielkość-próby-i-minimalny-wymiar" class="nav-link" data-scroll-target="#krok-4-wielkość-próby-i-minimalny-wymiar"><span class="header-section-number">15.11.8</span> Krok 4: Wielkość próby i minimalny wymiar</a></li>
+  <li><a href="#step-5-cramérs-v" id="toc-step-5-cramérs-v" class="nav-link" data-scroll-target="#step-5-cramérs-v"><span class="header-section-number">15.11.9</span> Step 5: Cramér’s V</a></li>
+  <li><a href="#krok-5-v-craméra" id="toc-krok-5-v-craméra" class="nav-link" data-scroll-target="#krok-5-v-craméra"><span class="header-section-number">15.11.10</span> Krok 5: V Craméra</a></li>
+  <li><a href="#observed-and-expected-frequencies-related-to-independent-events" id="toc-observed-and-expected-frequencies-related-to-independent-events" class="nav-link" data-scroll-target="#observed-and-expected-frequencies-related-to-independent-events"><span class="header-section-number">15.11.11</span> Observed and Expected Frequencies Related to Independent Events</a></li>
+  <li><a href="#obserwowane-i-oczekiwane-częstości-a-niezależne-zdarzenia" id="toc-obserwowane-i-oczekiwane-częstości-a-niezależne-zdarzenia" class="nav-link" data-scroll-target="#obserwowane-i-oczekiwane-częstości-a-niezależne-zdarzenia"><span class="header-section-number">15.11.12</span> Obserwowane i oczekiwane częstości a niezależne zdarzenia</a></li>
+  </ul></li>
+  <li><a href="#appendix-a.6-calculating-cramérs-v-in-r-obliczanie-v-craméra-w-r" id="toc-appendix-a.6-calculating-cramérs-v-in-r-obliczanie-v-craméra-w-r" class="nav-link" data-scroll-target="#appendix-a.6-calculating-cramérs-v-in-r-obliczanie-v-craméra-w-r"><span class="header-section-number">15.12</span> Appendix A.6: Calculating Cramér’s V in R (Obliczanie V Craméra w R)</a></li>
+  <li><a href="#appendix-b-bias-in-ols-estimation-with-endogenous-regressors" id="toc-appendix-b-bias-in-ols-estimation-with-endogenous-regressors" class="nav-link" data-scroll-target="#appendix-b-bias-in-ols-estimation-with-endogenous-regressors"><span class="header-section-number">15.13</span> Appendix B: Bias in OLS Estimation with Endogenous Regressors</a></li>
+  <li><a href="#theoretical-derivation" id="toc-theoretical-derivation" class="nav-link" data-scroll-target="#theoretical-derivation"><span class="header-section-number">15.14</span> Theoretical Derivation</a></li>
+  <li><a href="#simulation-in-r" id="toc-simulation-in-r" class="nav-link" data-scroll-target="#simulation-in-r"><span class="header-section-number">15.15</span> Simulation in R</a></li>
+  <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">15.16</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -834,8 +883,613 @@ Cumulative Var 0.336 0.671</code></pre>
 <p>This introduction to multivariate statistics builds upon the concept of correlation to explore relationships among multiple variables. These techniques provide powerful tools for understanding complex datasets, but they also require careful consideration of assumptions and limitations. As you progress in your statistical journey, you’ll encounter more advanced multivariate techniques such as MANOVA, discriminant analysis, and structural equation modeling.</p>
 </section>
 </section>
-<section id="appendix-a.1-calculating-covariance-pearson-and-spearman-correlation---worked-example" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="appendix-a.1-calculating-covariance-pearson-and-spearman-correlation---worked-example"><span class="header-section-number">15.3</span> Appendix A.1: Calculating Covariance, Pearson, and Spearman Correlation - worked example</h2>
+<section id="regression-analysis---introduction" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="regression-analysis---introduction"><span class="header-section-number">15.3</span> Regression Analysis - Introduction</h2>
+</section>
+<section id="analiza-regresji---wprowadzenie" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="analiza-regresji---wprowadzenie"><span class="header-section-number">15.4</span> Analiza regresji - Wprowadzenie</h2>
+<p>Regression analysis is a statistical method used to model the relationship between a dependent variable and one or more independent variables.</p>
+<p>Analiza regresji jest metodą statystyczną służącą do modelowania zależności między zmienną zależną a jedną lub więcej zmiennymi niezależnymi.</p>
+<section id="ordinary-least-squares-ols-regression" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="ordinary-least-squares-ols-regression"><span class="header-section-number">15.4.1</span> Ordinary Least Squares (OLS) Regression</h3>
+</section>
+<section id="liniowa-regresja-metodą-najmniejszych-kwadratów-ols" class="level3" data-number="15.4.2">
+<h3 data-number="15.4.2" class="anchored" data-anchor-id="liniowa-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">15.4.2</span> Liniowa regresja metodą najmniejszych kwadratów (OLS)</h3>
+<p>OLS regression aims to find the line of best fit that minimizes the sum of squared residuals (differences between observed and predicted values).</p>
+<p>Regresja OLS ma na celu znalezienie linii najlepszego dopasowania, która minimalizuje sumę kwadratów reszt (różnic między wartościami obserwowanymi a przewidywanymi).</p>
+<p>Let’s use an example with synthetic data:</p>
+<p>Wykorzystajmy przykład z danymi syntetycznymi:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>To find the line of best fit <span class="math inline">\(y = mx + b\)</span>, we need to find <span class="math inline">\(m\)</span> (slope) and <span class="math inline">\(b\)</span> (y-intercept) that minimize the sum of squared residuals:</p>
+<p>Aby znaleźć linię najlepszego dopasowania <span class="math inline">\(y = mx + b\)</span>, musimy znaleźć <span class="math inline">\(m\)</span> (nachylenie) i <span class="math inline">\(b\)</span> (wyraz wolny), które minimalizują sumę kwadratów reszt:</p>
+<p><span class="math display">\[SSE = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\]</span></p>
+<p>Where <span class="math inline">\(\hat{y}_i = mx_i + b\)</span> is the predicted value.</p>
+<p>Gdzie <span class="math inline">\(\hat{y}_i = mx_i + b\)</span> jest wartością przewidywaną.</p>
+<p>It can be shown that the solutions are:</p>
+<p>Można pokazać, że rozwiązaniami są:</p>
+<p><span class="math display">\[m = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2}\]</span> <span class="math display">\[b = \bar{y} - m\bar{x}\]</span></p>
+<p>For our data, this gives <span class="math inline">\(m = 2\)</span> and <span class="math inline">\(b = 1\)</span>, so the line of best fit is <span class="math inline">\(y = 2x + 1\)</span>.</p>
+<p>Dla naszych danych otrzymujemy <span class="math inline">\(m = 2\)</span> i <span class="math inline">\(b = 1\)</span>, więc linia najlepszego dopasowania to <span class="math inline">\(y = 2x + 1\)</span>.</p>
+</section>
+<section id="measures-of-goodness-of-fit" class="level3" data-number="15.4.3">
+<h3 data-number="15.4.3" class="anchored" data-anchor-id="measures-of-goodness-of-fit"><span class="header-section-number">15.4.3</span> Measures of Goodness of Fit</h3>
+</section>
+<section id="miary-dopasowania-modelu" class="level3" data-number="15.4.4">
+<h3 data-number="15.4.4" class="anchored" data-anchor-id="miary-dopasowania-modelu"><span class="header-section-number">15.4.4</span> Miary dopasowania modelu</h3>
+<ul>
+<li><p><strong>Sum of Squared Residuals (SSE):</strong> The SSE measures the total deviation of the data from the fitted line. A smaller SSE indicates a better fit.</p>
+<p><strong>Suma kwadratów reszt (SSE):</strong> SSE mierzy całkowite odchylenie danych od dopasowanej linii. Mniejsza wartość SSE wskazuje na lepsze dopasowanie.</p></li>
+<li><p><strong>Total Sum of Squares (SST):</strong> The SST is the total deviation of the data from its mean.</p>
+<p><strong>Całkowita suma kwadratów (SST):</strong> SST jest całkowitym odchyleniem danych od średniej.</p>
+<p><span class="math display">\[SST = \sum_{i=1}^{n} (y_i - \bar{y})^2\]</span></p></li>
+<li><p><strong>Regression Sum of Squares (SSR):</strong> The SSR measures the deviation of the predicted values from the mean, which is explained by the regression model.</p>
+<p><strong>Suma kwadratów regresji (SSR):</strong> SSR mierzy odchylenie wartości przewidywanych od średniej, które jest wyjaśnione przez model regresji.</p>
+<p><span class="math display">\[SSR = \sum_{i=1}^{n} (\hat{y}_i - \bar{y})^2\]</span></p></li>
+<li><p><strong>R-squared (<span class="math inline">\(R^2\)</span>):</strong> <span class="math inline">\(R^2\)</span> measures the proportion of variance in the dependent variable that is explained by the independent variable(s).</p>
+<p><strong>Współczynnik determinacji (<span class="math inline">\(R^2\)</span>):</strong> <span class="math inline">\(R^2\)</span> mierzy część wariancji zmiennej zależnej, która jest wyjaśniona przez zmienną(e) niezależną(e).</p>
+<p><span class="math display">\[R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}\]</span></p>
+<p><span class="math inline">\(R^2\)</span> ranges from 0 to 1, with higher values indicating a better fit.</p>
+<p><span class="math inline">\(R^2\)</span> zawiera się w przedziale od 0 do 1, gdzie wyższe wartości wskazują na lepsze dopasowanie.</p></li>
+<li><p><strong>Root Mean Squared Error (RMSE):</strong> The RMSE is the square root of the average squared residual. It measures the average deviation of the data from the fitted line.</p>
+<p><strong>Pierwiastek błędu średniokwadratowego (RMSE):</strong> RMSE jest pierwiastkiem kwadratowym ze średniego kwadratu reszt. Mierzy średnie odchylenie danych od dopasowanej linii.</p>
+<p><span class="math display">\[RMSE = \sqrt{\frac{SSE}{n}}\]</span></p>
+<p>Lower RMSE values indicate a better fit.</p>
+<p>Niższe wartości RMSE wskazują na lepsze dopasowanie.</p></li>
+</ul>
+<p>Using our example data: - <span class="math inline">\(SSE = 0\)</span> - <span class="math inline">\(SST = 14\)</span> - <span class="math inline">\(SSR = 14\)</span> - <span class="math inline">\(R^2 = 1\)</span> - <span class="math inline">\(RMSE = 0\)</span></p>
+<p>Dla naszych danych przykładowych: - <span class="math inline">\(SSE = 0\)</span> - <span class="math inline">\(SST = 14\)</span> - <span class="math inline">\(SSR = 14\)</span> - <span class="math inline">\(R^2 = 1\)</span> - <span class="math inline">\(RMSE = 0\)</span></p>
+<p>This indicates a perfect fit since the data points lie exactly on the fitted line.</p>
+<p>Wskazuje to na idealne dopasowanie, ponieważ punkty danych leżą dokładnie na dopasowanej linii.</p>
+</section>
+<section id="key-assumptions-in-regression-analysis" class="level3" data-number="15.4.5">
+<h3 data-number="15.4.5" class="anchored" data-anchor-id="key-assumptions-in-regression-analysis"><span class="header-section-number">15.4.5</span> Key Assumptions in Regression Analysis</h3>
+</section>
+<section id="główne-założenia-analizy-regresji" class="level3" data-number="15.4.6">
+<h3 data-number="15.4.6" class="anchored" data-anchor-id="główne-założenia-analizy-regresji"><span class="header-section-number">15.4.6</span> Główne założenia analizy regresji</h3>
+<p>In order for OLS regression to provide reliable and unbiased results, certain assumptions must be met. Here, we discuss two key assumptions using examples.</p>
+<p>Aby regresja OLS dostarczała wiarygodnych i nieobciążonych wyników, muszą być spełnione pewne założenia. Tutaj omówimy dwa kluczowe założenia na przykładach.</p>
+</section>
+<section id="strict-exogeneity-assumption" class="level3" data-number="15.4.7">
+<h3 data-number="15.4.7" class="anchored" data-anchor-id="strict-exogeneity-assumption"><span class="header-section-number">15.4.7</span> Strict Exogeneity Assumption</h3>
+</section>
+<section id="założenie-ścisłej-egzogeniczności" class="level3" data-number="15.4.8">
+<h3 data-number="15.4.8" class="anchored" data-anchor-id="założenie-ścisłej-egzogeniczności"><span class="header-section-number">15.4.8</span> Założenie ścisłej egzogeniczności</h3>
+<p>The strict exogeneity assumption states that the independent variable(s) must be uncorrelated with the error term (residual) in the regression model.</p>
+<p>Założenie ścisłej egzogeniczności oznacza, że zmienna(e) niezależna(e) nie może(gą) być skorelowana(e) z członem losowym (resztą) w modelu regresji.</p>
+<p>Let’s consider the following example:</p>
+<p>Rozważmy następujący przykład:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>Suppose we fit a simple linear regression model: <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span>, where <span class="math inline">\(\epsilon\)</span> is the error term.</p>
+<p>Przypuśćmy, że dopasowujemy prosty model regresji liniowej: <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span>, gdzie <span class="math inline">\(\epsilon\)</span> jest członem losowym.</p>
+<p>If the error term <span class="math inline">\(\epsilon\)</span> is correlated with the independent variable <span class="math inline">\(x\)</span>, then the strict exogeneity assumption is violated. This can happen, for example, if there is an omitted variable that is correlated with both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>Jeśli człon losowy <span class="math inline">\(\epsilon\)</span> jest skorelowany ze zmienną niezależną <span class="math inline">\(x\)</span>, to założenie ścisłej egzogeniczności jest naruszone. Może się tak zdarzyć na przykład, gdy pominięto zmienną skorelowaną zarówno z <span class="math inline">\(x\)</span>, jak i <span class="math inline">\(y\)</span>.</p>
+<p>Violation of this assumption can lead to biased and inconsistent estimates of the regression coefficients.</p>
+<p>Naruszenie tego założenia może prowadzić do obciążonych i niespójnych oszacowań współczynników regresji.</p>
+</section>
+<section id="functional-form-assumption" class="level3" data-number="15.4.9">
+<h3 data-number="15.4.9" class="anchored" data-anchor-id="functional-form-assumption"><span class="header-section-number">15.4.9</span> Functional Form Assumption</h3>
+</section>
+<section id="założenie-funkcyjnej-formy-modelu" class="level3" data-number="15.4.10">
+<h3 data-number="15.4.10" class="anchored" data-anchor-id="założenie-funkcyjnej-formy-modelu"><span class="header-section-number">15.4.10</span> Założenie funkcyjnej formy modelu</h3>
+<p>The functional form assumption states that the regression model is correctly specified in terms of the functional relationship between the dependent and independent variables.</p>
+<p>Założenie funkcyjnej formy modelu oznacza, że model regresji jest poprawnie określony pod względem funkcyjnej zależności między zmienną zależną a zmiennymi niezależnymi.</p>
+<p>Consider the following example:</p>
+<p>Rozważmy następujący przykład:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<p>If we fit a linear regression model <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span> to this data, the functional form assumption is violated because the true relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is non-linear (it appears to be exponential).</p>
+<p>Jeśli dopasujemy do tych danych model regresji liniowej <span class="math inline">\(y = \beta_0 + \beta_1 x + \epsilon\)</span>, to założenie funkcyjnej formy modelu zostanie naruszone, ponieważ prawdziwa zależność między <span class="math inline">\(x\)</span> a <span class="math inline">\(y\)</span> jest nieliniowa (wygląda na wykładniczą).</p>
+<p>A more appropriate model might be <span class="math inline">\(y = \beta_0 \beta_1^x + \epsilon\)</span> (an exponential function).</p>
+<p>Bardziej odpowiednim modelem mogłoby być <span class="math inline">\(y = \beta_0 \beta_1^x + \epsilon\)</span> (funkcja wykładnicza).</p>
+<p>Violation of this assumption can lead to poor model fit, biased estimates, and incorrect inferences.</p>
+<p>Naruszenie tego założenia może prowadzić do słabego dopasowania modelu, obciążonych oszacowań i nieprawidłowych wniosków.</p>
+<p>To assess the functional form assumption, one can examine residual plots, consider transformations of variables, or include polynomial or interaction terms in the model.</p>
+<p>Aby ocenić założenie funkcyjnej formy modelu, można zbadać wykresy reszt, rozważyć transformacje zmiennych lub uwzględnić w modelu wyrażenia wielomianowe lub interakcyjne.</p>
+<p>By ensuring that these key assumptions are met, OLS regression can provide reliable and interpretable results for modeling the relationship between variables.</p>
+<p>Zapewniając, że te kluczowe założenia są spełnione, regresja OLS może dostarczać wiarygodnych i interpretowalnych wyników dla modelowania zależności między zmiennymi.</p>
+</section>
+<section id="dealing-with-violations-of-functional-form-assumption" class="level3" data-number="15.4.11">
+<h3 data-number="15.4.11" class="anchored" data-anchor-id="dealing-with-violations-of-functional-form-assumption"><span class="header-section-number">15.4.11</span> Dealing with Violations of Functional Form Assumption</h3>
+</section>
+<section id="radzenie-sobie-z-naruszeniami-założenia-funkcyjnej-formy-modelu" class="level3" data-number="15.4.12">
+<h3 data-number="15.4.12" class="anchored" data-anchor-id="radzenie-sobie-z-naruszeniami-założenia-funkcyjnej-formy-modelu"><span class="header-section-number">15.4.12</span> Radzenie sobie z naruszeniami założenia funkcyjnej formy modelu</h3>
+<p>When the functional form assumption is violated, one approach is to consider alternative models that can better capture the non-linear relationship between the variables.</p>
+<p>Gdy założenie funkcyjnej formy modelu jest naruszone, jednym z podejść jest rozważenie alternatywnych modeli, które mogą lepiej odzwierciedlić nieliniową zależność między zmiennymi.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># More realistic synthetic data</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Bardziej realistyczne dane syntetyczne</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x<span class="sc">^</span><span class="fl">1.5</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s start by fitting a simple linear regression model: Zacznijmy od dopasowania prostego modelu regresji liniowej:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>linear_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(linear_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2907 -2.0170 -0.3672  1.6256  6.3840 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   -8.996      1.647  -5.462 3.46e-05 ***
+x              6.762      0.251  26.936 5.35e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.087 on 18 degrees of freedom
+Multiple R-squared:  0.9758,    Adjusted R-squared:  0.9744 
+F-statistic: 725.6 on 1 and 18 DF,  p-value: 5.354e-16</code></pre>
+</div>
+</div>
+<p>The residual plot suggests a non-linear relationship: Wykres reszt sugeruje nieliniową zależność:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(linear_model, <span class="at">which =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_en_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#![Residual Plot](residual_plot2.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data"><span class="header-section-number">15.5</span> Appendix A.1: Understanding Correlation Measures: A Self-Study Tutorial (Using Stress Level and Cognitive Performance Data)</h2>
+<section id="dataset-overview" class="level3" data-number="15.5.1">
+<h3 data-number="15.5.1" class="anchored" data-anchor-id="dataset-overview"><span class="header-section-number">15.5.1</span> Dataset Overview</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">anxiety_level =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">7</span>, <span class="dv">10</span>),</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">cognitive_performance =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">62</span>, <span class="dv">55</span>, <span class="dv">80</span>, <span class="dv">65</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="covariance-calculation" class="level3" data-number="15.5.2">
+<h3 data-number="15.5.2" class="anchored" data-anchor-id="covariance-calculation"><span class="header-section-number">15.5.2</span> 1. Covariance Calculation</h3>
+<section id="step-1-calculate-means" class="level4" data-number="15.5.2.1">
+<h4 data-number="15.5.2.1" class="anchored" data-anchor-id="step-1-calculate-means"><span class="header-section-number">15.5.2.1</span> Step 1: Calculate Means</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 40%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Calculation</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean Anxiety (<span class="math inline">\(\bar{x}\)</span>)</td>
+<td><span class="math inline">\((8 + 5 + 11 + 14 + 7 + 10) ÷ 6\)</span></td>
+<td>9.17</td>
+</tr>
+<tr class="even">
+<td>Mean Cognitive (<span class="math inline">\(\bar{y}\)</span>)</td>
+<td><span class="math inline">\((85 + 90 + 62 + 55 + 80 + 65) ÷ 6\)</span></td>
+<td>72.83</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-2-calculate-deviations-and-products" class="level4" data-number="15.5.2.2">
+<h4 data-number="15.5.2.2" class="anchored" data-anchor-id="step-2-calculate-deviations-and-products"><span class="header-section-number">15.5.2.2</span> Step 2: Calculate Deviations and Products</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>i</th>
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\(y_i\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})\)</span></th>
+<th><span class="math inline">\((y_i - \bar{y})\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})(y_i - \bar{y})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>8</td>
+<td>85</td>
+<td>-1.17</td>
+<td>12.17</td>
+<td>-14.24</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>5</td>
+<td>90</td>
+<td>-4.17</td>
+<td>17.17</td>
+<td>-71.60</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>11</td>
+<td>62</td>
+<td>1.83</td>
+<td>-10.83</td>
+<td>-19.82</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>14</td>
+<td>55</td>
+<td>4.83</td>
+<td>-17.83</td>
+<td>-86.12</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>7</td>
+<td>80</td>
+<td>-2.17</td>
+<td>7.17</td>
+<td>-15.56</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>10</td>
+<td>65</td>
+<td>0.83</td>
+<td>-7.83</td>
+<td>-6.50</td>
+</tr>
+<tr class="odd">
+<td>Sum</td>
+<td>55</td>
+<td>437</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-213.84</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-3-calculate-covariance" class="level4" data-number="15.5.2.3">
+<h4 data-number="15.5.2.3" class="anchored" data-anchor-id="step-3-calculate-covariance"><span class="header-section-number">15.5.2.3</span> Step 3: Calculate Covariance</h4>
+<p><span class="math display">\[ \text{Cov}(X,Y) = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{n-1} = \frac{-213.84}{5} = -42.77 \]</span></p>
+</section>
+</section>
+<section id="pearson-correlation-coefficient" class="level3" data-number="15.5.3">
+<h3 data-number="15.5.3" class="anchored" data-anchor-id="pearson-correlation-coefficient"><span class="header-section-number">15.5.3</span> 2. Pearson Correlation Coefficient</h3>
+<section id="step-1-calculate-squared-deviations" class="level4" data-number="15.5.3.1">
+<h4 data-number="15.5.3.1" class="anchored" data-anchor-id="step-1-calculate-squared-deviations"><span class="header-section-number">15.5.3.1</span> Step 1: Calculate Squared Deviations</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>i</th>
+<th><span class="math inline">\((x_i - \bar{x})\)</span></th>
+<th><span class="math inline">\((y_i - \bar{y})\)</span></th>
+<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
+<th><span class="math inline">\((y_i - \bar{y})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>-1.17</td>
+<td>12.17</td>
+<td>1.37</td>
+<td>148.11</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>-4.17</td>
+<td>17.17</td>
+<td>17.39</td>
+<td>294.81</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1.83</td>
+<td>-10.83</td>
+<td>3.35</td>
+<td>117.29</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>4.83</td>
+<td>-17.83</td>
+<td>23.33</td>
+<td>317.91</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>-2.17</td>
+<td>7.17</td>
+<td>4.71</td>
+<td>51.41</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>0.83</td>
+<td>-7.83</td>
+<td>0.69</td>
+<td>61.31</td>
+</tr>
+<tr class="odd">
+<td>Sum</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>50.84</td>
+<td>990.84</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-2-calculate-standard-deviations" class="level4" data-number="15.5.3.2">
+<h4 data-number="15.5.3.2" class="anchored" data-anchor-id="step-2-calculate-standard-deviations"><span class="header-section-number">15.5.3.2</span> Step 2: Calculate Standard Deviations</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 32%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Formula</th>
+<th>Calculation</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(s_x\)</span></td>
+<td><span class="math inline">\(\sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}\)</span></td>
+<td><span class="math inline">\(\sqrt{\frac{50.84}{5}}\)</span></td>
+<td>3.19</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(s_y\)</span></td>
+<td><span class="math inline">\(\sqrt{\frac{\sum (y_i - \bar{y})^2}{n-1}}\)</span></td>
+<td><span class="math inline">\(\sqrt{\frac{990.84}{5}}\)</span></td>
+<td>14.08</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-3-calculate-pearson-correlation" class="level4" data-number="15.5.3.3">
+<h4 data-number="15.5.3.3" class="anchored" data-anchor-id="step-3-calculate-pearson-correlation"><span class="header-section-number">15.5.3.3</span> Step 3: Calculate Pearson Correlation</h4>
+<p><span class="math display">\[ r = \frac{\text{Cov}(X,Y)}{s_x s_y} = \frac{-42.77}{3.19 \times 14.08} = -0.95 \]</span></p>
+</section>
+</section>
+<section id="spearman-rank-correlation" class="level3" data-number="15.5.4">
+<h3 data-number="15.5.4" class="anchored" data-anchor-id="spearman-rank-correlation"><span class="header-section-number">15.5.4</span> 3. Spearman Rank Correlation</h3>
+<section id="step-1-assign-ranks" class="level4" data-number="15.5.4.1">
+<h4 data-number="15.5.4.1" class="anchored" data-anchor-id="step-1-assign-ranks"><span class="header-section-number">15.5.4.1</span> Step 1: Assign Ranks</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>i</th>
+<th><span class="math inline">\(x_i\)</span></th>
+<th><span class="math inline">\(y_i\)</span></th>
+<th>Rank <span class="math inline">\(x_i\)</span></th>
+<th>Rank <span class="math inline">\(y_i\)</span></th>
+<th><span class="math inline">\(d_i\)</span></th>
+<th><span class="math inline">\(d_i^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>8</td>
+<td>85</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>5</td>
+<td>90</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>11</td>
+<td>62</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>14</td>
+<td>55</td>
+<td>6</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>7</td>
+<td>80</td>
+<td>2</td>
+<td>3</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>10</td>
+<td>65</td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Sum</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-2-calculate-spearman-correlation" class="level4" data-number="15.5.4.2">
+<h4 data-number="15.5.4.2" class="anchored" data-anchor-id="step-2-calculate-spearman-correlation"><span class="header-section-number">15.5.4.2</span> Step 2: Calculate Spearman Correlation</h4>
+<p><span class="math display">\[ \rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)} = 1 - \frac{6(2)}{6(36-1)} = 1 - \frac{12}{210} = 0.94 \]</span></p>
+</section>
+</section>
+<section id="verification-using-r" class="level3" data-number="15.5.5">
+<h3 data-number="15.5.5" class="anchored" data-anchor-id="verification-using-r"><span class="header-section-number">15.5.5</span> Verification using R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlations using R</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data<span class="sc">$</span>anxiety_level, data<span class="sc">$</span>cognitive_performance, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.9527979</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data<span class="sc">$</span>anxiety_level, data<span class="sc">$</span>cognitive_performance, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.9428571</code></pre>
+</div>
+</div>
+</section>
+<section id="interpretation" class="level3" data-number="15.5.6">
+<h3 data-number="15.5.6" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">15.5.6</span> Interpretation</h3>
+<ol type="1">
+<li><p>The strong negative Pearson correlation (r = -0.95) indicates a very strong negative linear relationship between anxiety level and cognitive performance.</p></li>
+<li><p>The strong positive Spearman correlation (ρ = 0.94) shows that the relationship is also strongly monotonic.</p></li>
+<li><p>The difference between Pearson and Spearman correlations suggests that while there is a strong relationship, it might not be perfectly linear.</p></li>
+</ol>
+</section>
+<section id="exercise" class="level3" data-number="15.5.7">
+<h3 data-number="15.5.7" class="anchored" data-anchor-id="exercise"><span class="header-section-number">15.5.7</span> Exercise</h3>
+<ol type="1">
+<li>Verify each calculation step in the tables above.</li>
+<li>Try calculating these measures with a modified dataset:
+<ul>
+<li>Add one outlier and observe how it affects both correlation coefficients</li>
+<li>Change one pair of values and recalculate</li>
+</ul></li>
+</ol>
+</section>
+<section id="references" class="level3" data-number="15.5.8">
+<h3 data-number="15.5.8" class="anchored" data-anchor-id="references"><span class="header-section-number">15.5.8</span> References</h3>
+<ol type="1">
+<li>Understanding Correlation:
+<ul>
+<li>Pearson, K. (1895). “Notes on regression and inheritance in the case of two parents.”</li>
+<li>Spearman, C. (1904). “The proof and measurement of association between two things.”</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="appendix-a.2-calculating-covariance-pearson-and-spearman-correlation---worked-example" class="level2" data-number="15.6">
+<h2 data-number="15.6" class="anchored" data-anchor-id="appendix-a.2-calculating-covariance-pearson-and-spearman-correlation---worked-example"><span class="header-section-number">15.6</span> Appendix A.2: Calculating Covariance, Pearson, and Spearman Correlation - worked example</h2>
 <p>Given data on Electoral District Magnitude (DM) and Gallagher index:</p>
 <table class="caption-top table">
 <thead>
@@ -887,8 +1541,8 @@ Cumulative Var 0.336 0.671</code></pre>
 </tr>
 </tbody>
 </table>
-<section id="step-1-calculate-basic-statistics" class="level3" data-number="15.3.1">
-<h3 data-number="15.3.1" class="anchored" data-anchor-id="step-1-calculate-basic-statistics"><span class="header-section-number">15.3.1</span> Step 1: Calculate Basic Statistics</h3>
+<section id="step-1-calculate-basic-statistics" class="level3" data-number="15.6.1">
+<h3 data-number="15.6.1" class="anchored" data-anchor-id="step-1-calculate-basic-statistics"><span class="header-section-number">15.6.1</span> Step 1: Calculate Basic Statistics</h3>
 <p>Calculation of means:</p>
 <p>For DM (<span class="math inline">\(X\)</span>): <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^n X_i}{n}\)</span></p>
 <p>Detailed calculation:</p>
@@ -899,8 +1553,8 @@ x̄ = 65 ÷ 10 = 6.5</code></pre>
 <pre><code>18.2 + 16.7 + 15.8 + 15.3 + 15.0 + 14.8 + 14.7 + 14.6 + 14.55 + 14.52 = 154.17
 ȳ = 154.17 ÷ 10 = 15.417</code></pre>
 </section>
-<section id="step-2-detailed-covariance-calculations" class="level3" data-number="15.3.2">
-<h3 data-number="15.3.2" class="anchored" data-anchor-id="step-2-detailed-covariance-calculations"><span class="header-section-number">15.3.2</span> Step 2: Detailed Covariance Calculations</h3>
+<section id="step-2-detailed-covariance-calculations" class="level3" data-number="15.6.2">
+<h3 data-number="15.6.2" class="anchored" data-anchor-id="step-2-detailed-covariance-calculations"><span class="header-section-number">15.6.2</span> Step 2: Detailed Covariance Calculations</h3>
 <p>Complete working table showing all calculations:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1041,8 +1695,8 @@ x̄ = 65 ÷ 10 = 6.5</code></pre>
 <p>Covariance calculation: <span class="math inline">\(Cov(X,Y) = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\)</span></p>
 <pre><code>Cov(X,Y) = -28.085 ÷ 9 = -3.120556</code></pre>
 </section>
-<section id="step-3-standard-deviation-calculations" class="level3" data-number="15.3.3">
-<h3 data-number="15.3.3" class="anchored" data-anchor-id="step-3-standard-deviation-calculations"><span class="header-section-number">15.3.3</span> Step 3: Standard Deviation Calculations</h3>
+<section id="step-3-standard-deviation-calculations" class="level3" data-number="15.6.3">
+<h3 data-number="15.6.3" class="anchored" data-anchor-id="step-3-standard-deviation-calculations"><span class="header-section-number">15.6.3</span> Step 3: Standard Deviation Calculations</h3>
 <p>For DM (<span class="math inline">\(X\)</span>): <span class="math inline">\(\sigma_X = \sqrt{\frac{\sum_{i=1}^n (X_i - \bar{X})^2}{n-1}}\)</span></p>
 <pre><code>σx = √(82.5 ÷ 9)
    = √9.1667
@@ -1052,15 +1706,15 @@ x̄ = 65 ÷ 10 = 6.5</code></pre>
    = √1.4271
    = 1.194612</code></pre>
 </section>
-<section id="step-4-pearson-correlation-calculation" class="level3" data-number="15.3.4">
-<h3 data-number="15.3.4" class="anchored" data-anchor-id="step-4-pearson-correlation-calculation"><span class="header-section-number">15.3.4</span> Step 4: Pearson Correlation Calculation</h3>
+<section id="step-4-pearson-correlation-calculation" class="level3" data-number="15.6.4">
+<h3 data-number="15.6.4" class="anchored" data-anchor-id="step-4-pearson-correlation-calculation"><span class="header-section-number">15.6.4</span> Step 4: Pearson Correlation Calculation</h3>
 <p><span class="math inline">\(r = \frac{Cov(X,Y)}{\sigma_X \sigma_Y}\)</span></p>
 <pre><code>r = -3.120556 ÷ (3.026582 × 1.194612)
   = -3.120556 ÷ 3.615752
   = -0.863044</code></pre>
 </section>
-<section id="step-5-spearman-rank-correlation-calculation" class="level3" data-number="15.3.5">
-<h3 data-number="15.3.5" class="anchored" data-anchor-id="step-5-spearman-rank-correlation-calculation"><span class="header-section-number">15.3.5</span> Step 5: Spearman Rank Correlation Calculation</h3>
+<section id="step-5-spearman-rank-correlation-calculation" class="level3" data-number="15.6.5">
+<h3 data-number="15.6.5" class="anchored" data-anchor-id="step-5-spearman-rank-correlation-calculation"><span class="header-section-number">15.6.5</span> Step 5: Spearman Rank Correlation Calculation</h3>
 <p>Complete ranking table with all calculations:</p>
 <table class="caption-top table">
 <thead>
@@ -1182,33 +1836,33 @@ x̄ = 65 ÷ 10 = 6.5</code></pre>
    = 1 - 2
    = -1</code></pre>
 </section>
-<section id="step-6-r-verification" class="level3" data-number="15.3.6">
-<h3 data-number="15.3.6" class="anchored" data-anchor-id="step-6-r-verification"><span class="header-section-number">15.3.6</span> Step 6: R Verification</h3>
+<section id="step-6-r-verification" class="level3" data-number="15.6.6">
+<h3 data-number="15.6.6" class="anchored" data-anchor-id="step-6-r-verification"><span class="header-section-number">15.6.6</span> Step 6: R Verification</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create vectors</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>DM <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>GH <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">18.2</span>, <span class="fl">16.7</span>, <span class="fl">15.8</span>, <span class="fl">15.3</span>, <span class="fl">15.0</span>, <span class="fl">14.8</span>, <span class="fl">14.7</span>, <span class="fl">14.6</span>, <span class="fl">14.55</span>, <span class="fl">14.52</span>)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate covariance</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(DM, GH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create vectors</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>DM <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>GH <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">18.2</span>, <span class="fl">16.7</span>, <span class="fl">15.8</span>, <span class="fl">15.3</span>, <span class="fl">15.0</span>, <span class="fl">14.8</span>, <span class="fl">14.7</span>, <span class="fl">14.6</span>, <span class="fl">14.55</span>, <span class="fl">14.52</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate covariance</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(DM, GH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -3.120556</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlations</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(DM, GH, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlations</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(DM, GH, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.8627742</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(DM, GH, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(DM, GH, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -1</code></pre>
 </div>
 </div>
 </section>
-<section id="step-7-basic-visualization" class="level3" data-number="15.3.7">
-<h3 data-number="15.3.7" class="anchored" data-anchor-id="step-7-basic-visualization"><span class="header-section-number">15.3.7</span> Step 7: Basic Visualization</h3>
+<section id="step-7-basic-visualization" class="level3" data-number="15.6.7">
+<h3 data-number="15.6.7" class="anchored" data-anchor-id="step-7-basic-visualization"><span class="header-section-number">15.6.7</span> Step 7: Basic Visualization</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'ggplot2'</code></pre>
@@ -1218,36 +1872,36 @@ Attaching package: 'ggplot2'</code></pre>
 
     %+%, alpha</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frame</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">DM =</span> DM, <span class="at">GH =</span> GH)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"District Magnitude vs Gallagher Index"</span>,</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"District Magnitude (DM)"</span>,</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gallagher Index (GH)"</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data frame</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">DM =</span> DM, <span class="at">GH =</span> GH)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"District Magnitude vs Gallagher Index"</span>,</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"District Magnitude (DM)"</span>,</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gallagher Index (GH)"</span></span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="appendix-a.2-ols-estimation-and-goodness-of-fit-measures" class="level2" data-number="15.4">
-<h2 data-number="15.4" class="anchored" data-anchor-id="appendix-a.2-ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.4</span> Appendix A.2: OLS Estimation and Goodness-of-Fit Measures</h2>
-<section id="step-1-calculate-ols-estimates" class="level3" data-number="15.4.1">
-<h3 data-number="15.4.1" class="anchored" data-anchor-id="step-1-calculate-ols-estimates"><span class="header-section-number">15.4.1</span> Step 1: Calculate OLS Estimates</h3>
+<section id="appendix-a.3-ols-estimation-and-goodness-of-fit-measures" class="level2" data-number="15.7">
+<h2 data-number="15.7" class="anchored" data-anchor-id="appendix-a.3-ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.7</span> Appendix A.3: OLS Estimation and Goodness-of-Fit Measures</h2>
+<section id="step-1-calculate-ols-estimates" class="level3" data-number="15.7.1">
+<h3 data-number="15.7.1" class="anchored" data-anchor-id="step-1-calculate-ols-estimates"><span class="header-section-number">15.7.1</span> Step 1: Calculate OLS Estimates</h3>
 <p>Using previously calculated values: - <span class="math inline">\(\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28.085\)</span> - <span class="math inline">\(\sum(X_i - \bar{X})^2 = 82.5\)</span> - <span class="math inline">\(\bar{X} = 6.5\)</span> - <span class="math inline">\(\bar{Y} = 15.417\)</span></p>
 <p>Calculate slope (<span class="math inline">\(\beta_1\)</span>): <span class="math inline">\(\beta_1 = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}\)</span></p>
 <pre><code>β₁ = -28.085 ÷ 82.5 = -0.3404</code></pre>
@@ -1257,8 +1911,8 @@ Attaching package: 'ggplot2'</code></pre>
    = 17.6296</code></pre>
 <p>Therefore, the OLS regression equation is: <span class="math inline">\(\hat{Y} = 17.6296 - 0.3404X\)</span></p>
 </section>
-<section id="step-2-calculate-fitted-values-and-residuals" class="level3" data-number="15.4.2">
-<h3 data-number="15.4.2" class="anchored" data-anchor-id="step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.4.2</span> Step 2: Calculate Fitted Values and Residuals</h3>
+<section id="step-2-calculate-fitted-values-and-residuals" class="level3" data-number="15.7.2">
+<h3 data-number="15.7.2" class="anchored" data-anchor-id="step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.7.2</span> Step 2: Calculate Fitted Values and Residuals</h3>
 <p>Complete table showing all calculations:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1405,8 +2059,8 @@ For X = 3:
 
 [... continue for all values]</code></pre>
 </section>
-<section id="step-3-calculate-goodness-of-fit-measures" class="level3" data-number="15.4.3">
-<h3 data-number="15.4.3" class="anchored" data-anchor-id="step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.4.3</span> Step 3: Calculate Goodness-of-Fit Measures</h3>
+<section id="step-3-calculate-goodness-of-fit-measures" class="level3" data-number="15.7.3">
+<h3 data-number="15.7.3" class="anchored" data-anchor-id="step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.7.3</span> Step 3: Calculate Goodness-of-Fit Measures</h3>
 <p>Sum of Squared Errors (SSE): <span class="math inline">\(SSE = \sum e_i^2\)</span></p>
 <pre><code>SSE = 3.2832</code></pre>
 <p>Sum of Squared Total (SST): <span class="math inline">\(SST = \sum(Y_i - \bar{Y})^2\)</span></p>
@@ -1419,14 +2073,14 @@ For X = 3:
 <pre><code>R² = 9.5524 ÷ 12.8442
    = 0.7438</code></pre>
 </section>
-<section id="step-4-r-verification" class="level3" data-number="15.4.4">
-<h3 data-number="15.4.4" class="anchored" data-anchor-id="step-4-r-verification"><span class="header-section-number">15.4.4</span> Step 4: R Verification</h3>
+<section id="step-4-r-verification" class="level3" data-number="15.7.4">
+<h3 data-number="15.7.4" class="anchored" data-anchor-id="step-4-r-verification"><span class="header-section-number">15.7.4</span> Step 4: R Verification</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit linear model</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View summary statistics</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit linear model</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co"># View summary statistics</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1447,62 +2101,62 @@ Residual standard error: 0.6406 on 8 degrees of freedom
 Multiple R-squared:  0.7444,    Adjusted R-squared:  0.7124 
 F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate R-squared manually</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>((GH <span class="sc">-</span> <span class="fu">mean</span>(GH))<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(model)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>SSR <span class="ot">&lt;-</span> SST <span class="sc">-</span> SSE</span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>R2_manual <span class="ot">&lt;-</span> SSR<span class="sc">/</span>SST</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>R2_manual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate R-squared manually</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>((GH <span class="sc">-</span> <span class="fu">mean</span>(GH))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(model)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>SSR <span class="ot">&lt;-</span> SST <span class="sc">-</span> SSE</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>R2_manual <span class="ot">&lt;-</span> SSR<span class="sc">/</span>SST</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>R2_manual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7443793</code></pre>
 </div>
 </div>
 </section>
-<section id="step-5-residual-analysis" class="level3" data-number="15.4.5">
-<h3 data-number="15.4.5" class="anchored" data-anchor-id="step-5-residual-analysis"><span class="header-section-number">15.4.5</span> Step 5: Residual Analysis</h3>
+<section id="step-5-residual-analysis" class="level3" data-number="15.7.5">
+<h3 data-number="15.7.5" class="anchored" data-anchor-id="step-5-residual-analysis"><span class="header-section-number">15.7.5</span> Step 5: Residual Analysis</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create residual plots</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create residual plots</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="step-6-predicted-vs-actual-values-plot" class="level3" data-number="15.4.6">
-<h3 data-number="15.4.6" class="anchored" data-anchor-id="step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.4.6</span> Step 6: Predicted vs Actual Values Plot</h3>
+<section id="step-6-predicted-vs-actual-values-plot" class="level3" data-number="15.7.6">
+<h3 data-number="15.7.6" class="anchored" data-anchor-id="step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.7.6</span> Step 6: Predicted vs Actual Values Plot</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create predicted vs actual plot</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Actual =</span> GH,</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Predicted =</span> <span class="fu">fitted</span>(model)</span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>), <span class="fu">aes</span>(<span class="at">x =</span> Predicted, <span class="at">y =</span> Actual)) <span class="sc">+</span></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Predicted vs Actual Values"</span>,</span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Predicted Gallagher Index"</span>,</span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Actual Gallagher Index"</span></span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create predicted vs actual plot</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Actual =</span> GH,</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Predicted =</span> <span class="fu">fitted</span>(model)</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>), <span class="fu">aes</span>(<span class="at">x =</span> Predicted, <span class="at">y =</span> Actual)) <span class="sc">+</span></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Predicted vs Actual Values"</span>,</span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Predicted Gallagher Index"</span>,</span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Actual Gallagher Index"</span></span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="appendix-a.3-log-transformed-models" class="level2" data-number="15.5">
-<h2 data-number="15.5" class="anchored" data-anchor-id="appendix-a.3-log-transformed-models"><span class="header-section-number">15.5</span> Appendix A.3: Log-Transformed Models</h2>
-<section id="step-1-data-transformation" class="level3" data-number="15.5.1">
-<h3 data-number="15.5.1" class="anchored" data-anchor-id="step-1-data-transformation"><span class="header-section-number">15.5.1</span> Step 1: Data Transformation</h3>
+<section id="appendix-a.4-log-transformed-models" class="level2" data-number="15.8">
+<h2 data-number="15.8" class="anchored" data-anchor-id="appendix-a.4-log-transformed-models"><span class="header-section-number">15.8</span> Appendix A.4: Log-Transformed Models</h2>
+<section id="step-1-data-transformation" class="level3" data-number="15.8.1">
+<h3 data-number="15.8.1" class="anchored" data-anchor-id="step-1-data-transformation"><span class="header-section-number">15.8.1</span> Step 1: Data Transformation</h3>
 <p>First, calculate natural logarithms of variables:</p>
 <table class="caption-top table">
 <thead>
@@ -1588,8 +2242,8 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </tbody>
 </table>
 </section>
-<section id="step-2-compare-different-model-specifications" class="level3" data-number="15.5.2">
-<h3 data-number="15.5.2" class="anchored" data-anchor-id="step-2-compare-different-model-specifications"><span class="header-section-number">15.5.2</span> Step 2: Compare Different Model Specifications</h3>
+<section id="step-2-compare-different-model-specifications" class="level3" data-number="15.8.2">
+<h3 data-number="15.8.2" class="anchored" data-anchor-id="step-2-compare-different-model-specifications"><span class="header-section-number">15.8.2</span> Step 2: Compare Different Model Specifications</h3>
 <p>We estimate three alternative specifications:</p>
 <ol type="1">
 <li>Log-linear model: <span class="math inline">\(\ln(Y_i) = \beta_0 + \beta_1X_i + \epsilon_i\)</span></li>
@@ -1597,29 +2251,29 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <li>Log-log model: <span class="math inline">\(\ln(Y_i) = \beta_0 + \beta_1\ln(X_i) + \epsilon_i\)</span></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create transformed variables</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>log_DM <span class="ot">&lt;-</span> <span class="fu">log</span>(data<span class="sc">$</span>DM)</span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>log_GH <span class="ot">&lt;-</span> <span class="fu">log</span>(data<span class="sc">$</span>GH)</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit models</span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>model_linear <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>model_loglinear <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>model_linearlog <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> log_DM, <span class="at">data =</span> data)</span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>model_loglog <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_GH <span class="sc">~</span> log_DM, <span class="at">data =</span> data)</span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare R-squared values</span></span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>models_comparison <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Linear"</span>, <span class="st">"Log-linear"</span>, <span class="st">"Linear-log"</span>, <span class="st">"Log-log"</span>),</span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">R_squared =</span> <span class="fu">c</span>(</span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_linear)<span class="sc">$</span>r.squared,</span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_loglinear)<span class="sc">$</span>r.squared,</span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_linearlog)<span class="sc">$</span>r.squared,</span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_loglog)<span class="sc">$</span>r.squared</span>
-<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display comparison</span></span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>models_comparison</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create transformed variables</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>log_DM <span class="ot">&lt;-</span> <span class="fu">log</span>(data<span class="sc">$</span>DM)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>log_GH <span class="ot">&lt;-</span> <span class="fu">log</span>(data<span class="sc">$</span>GH)</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit models</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>model_linear <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>model_loglinear <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>model_linearlog <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> log_DM, <span class="at">data =</span> data)</span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>model_loglog <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_GH <span class="sc">~</span> log_DM, <span class="at">data =</span> data)</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare R-squared values</span></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a>models_comparison <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Linear"</span>, <span class="st">"Log-linear"</span>, <span class="st">"Linear-log"</span>, <span class="st">"Log-log"</span>),</span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">R_squared =</span> <span class="fu">c</span>(</span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_linear)<span class="sc">$</span>r.squared,</span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_loglinear)<span class="sc">$</span>r.squared,</span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_linearlog)<span class="sc">$</span>r.squared,</span>
+<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_loglog)<span class="sc">$</span>r.squared</span>
+<span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb65-21"><a href="#cb65-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-22"><a href="#cb65-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display comparison</span></span>
+<span id="cb65-23"><a href="#cb65-23" aria-hidden="true" tabindex="-1"></a>models_comparison</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Model R_squared
 1     Linear 0.7443793
@@ -1629,37 +2283,37 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
 </div>
 </section>
-<section id="step-3-visual-comparison" class="level3" data-number="15.5.3">
-<h3 data-number="15.5.3" class="anchored" data-anchor-id="step-3-visual-comparison"><span class="header-section-number">15.5.3</span> Step 3: Visual Comparison</h3>
+<section id="step-3-visual-comparison" class="level3" data-number="15.8.3">
+<h3 data-number="15.8.3" class="anchored" data-anchor-id="step-3-visual-comparison"><span class="header-section-number">15.8.3</span> Step 3: Visual Comparison</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plots for each model</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Linear Model"</span>) <span class="sc">+</span></span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> log_GH)) <span class="sc">+</span></span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Log-linear Model"</span>) <span class="sc">+</span></span>
-<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
-<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Linear-log Model"</span>) <span class="sc">+</span></span>
-<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> log_GH)) <span class="sc">+</span></span>
-<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Log-log Model"</span>) <span class="sc">+</span></span>
-<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange plots in a grid</span></span>
-<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, p3, p4, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plots for each model</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Linear Model"</span>) <span class="sc">+</span></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> log_GH)) <span class="sc">+</span></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Log-linear Model"</span>) <span class="sc">+</span></span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Linear-log Model"</span>) <span class="sc">+</span></span>
+<span id="cb67-18"><a href="#cb67-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb67-19"><a href="#cb67-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-20"><a href="#cb67-20" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> log_GH)) <span class="sc">+</span></span>
+<span id="cb67-21"><a href="#cb67-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb67-22"><a href="#cb67-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb67-23"><a href="#cb67-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Log-log Model"</span>) <span class="sc">+</span></span>
+<span id="cb67-24"><a href="#cb67-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb67-25"><a href="#cb67-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-26"><a href="#cb67-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrange plots in a grid</span></span>
+<span id="cb67-27"><a href="#cb67-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb67-28"><a href="#cb67-28" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, p3, p4, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'
 `geom_smooth()` using formula = 'y ~ x'
@@ -1669,33 +2323,33 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="step-4-residual-analysis-for-best-model" class="level3" data-number="15.5.4">
-<h3 data-number="15.5.4" class="anchored" data-anchor-id="step-4-residual-analysis-for-best-model"><span class="header-section-number">15.5.4</span> Step 4: Residual Analysis for Best Model</h3>
+<section id="step-4-residual-analysis-for-best-model" class="level3" data-number="15.8.4">
+<h3 data-number="15.8.4" class="anchored" data-anchor-id="step-4-residual-analysis-for-best-model"><span class="header-section-number">15.8.4</span> Step 4: Residual Analysis for Best Model</h3>
 <p>Based on R-squared values, analyze residuals for the best-fitting model:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plots for best model</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_linearlog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plots for best model</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_linearlog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="step-5-interpretation-of-best-model" class="level3" data-number="15.5.5">
-<h3 data-number="15.5.5" class="anchored" data-anchor-id="step-5-interpretation-of-best-model"><span class="header-section-number">15.5.5</span> Step 5: Interpretation of Best Model</h3>
+<section id="step-5-interpretation-of-best-model" class="level3" data-number="15.8.5">
+<h3 data-number="15.8.5" class="anchored" data-anchor-id="step-5-interpretation-of-best-model"><span class="header-section-number">15.8.5</span> Step 5: Interpretation of Best Model</h3>
 <p>The linear-log model coefficients:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_linearlog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_linearlog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1719,50 +2373,307 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </div>
 <p>Interpretation: - <span class="math inline">\(\beta_0\)</span> represents the expected Gallagher Index when ln(DM) = 0 (i.e., when DM = 1) - <span class="math inline">\(\beta_1\)</span> represents the change in Gallagher Index associated with a one-unit increase in ln(DM)</p>
 </section>
-<section id="step-6-model-predictions" class="level3" data-number="15.5.6">
-<h3 data-number="15.5.6" class="anchored" data-anchor-id="step-6-model-predictions"><span class="header-section-number">15.5.6</span> Step 6: Model Predictions</h3>
+<section id="step-6-model-predictions" class="level3" data-number="15.8.6">
+<h3 data-number="15.8.6" class="anchored" data-anchor-id="step-6-model-predictions"><span class="header-section-number">15.8.6</span> Step 6: Model Predictions</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create prediction plot for best model</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Linear-log Model: Gallagher Index vs ln(District Magnitude)"</span>,</span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"ln(District Magnitude)"</span>,</span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gallagher Index"</span></span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create prediction plot for best model</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Linear-log Model: Gallagher Index vs ln(District Magnitude)"</span>,</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"ln(District Magnitude)"</span>,</span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Gallagher Index"</span></span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="step-7-elasticity-analysis" class="level3" data-number="15.5.7">
-<h3 data-number="15.5.7" class="anchored" data-anchor-id="step-7-elasticity-analysis"><span class="header-section-number">15.5.7</span> Step 7: Elasticity Analysis</h3>
+<section id="step-7-elasticity-analysis" class="level3" data-number="15.8.7">
+<h3 data-number="15.8.7" class="anchored" data-anchor-id="step-7-elasticity-analysis"><span class="header-section-number">15.8.7</span> Step 7: Elasticity Analysis</h3>
 <p>For the log-log model, coefficients represent elasticities directly. Calculate average elasticity for the linear-log model:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate elasticity at means</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>mean_DM <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>DM)</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>mean_GH <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>GH)</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(model_linearlog)[<span class="dv">2</span>]</span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>elasticity <span class="ot">&lt;-</span> beta1 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span>mean_GH)</span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>elasticity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate elasticity at means</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>mean_DM <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>DM)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>mean_GH <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>GH)</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(model_linearlog)[<span class="dv">2</span>]</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>elasticity <span class="ot">&lt;-</span> beta1 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span>mean_GH)</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>elasticity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    log_DM 
 -0.1336136 </code></pre>
 </div>
 </div>
 <p>This represents the percentage change in the Gallagher Index for a 1% change in District Magnitude.</p>
-
-
 </section>
+</section>
+<section id="appendix-a.5-calculating-cramérs-v-manually-and-in-r-obliczanie-v-craméra-ręcznie-i-w-r" class="level2" data-number="15.9">
+<h2 data-number="15.9" class="anchored" data-anchor-id="appendix-a.5-calculating-cramérs-v-manually-and-in-r-obliczanie-v-craméra-ręcznie-i-w-r"><span class="header-section-number">15.9</span> Appendix A.5: Calculating Cramér’s V Manually and in R (Obliczanie V Craméra ręcznie i w R)</h2>
+<p>Cramér’s V is a measure of association between two nominal variables based on the chi-square statistic. It ranges from 0 to 1, with higher values indicating a stronger association between the variables. This document explains how to calculate Cramér’s V manually and using R, and relates the concept to independent events in probability.</p>
+<p>V Craméra jest miarą związku między dwiema zmiennymi nominalnymi opartą na statystyce chi-kwadrat. Przyjmuje wartości od 0 do 1, gdzie wyższe wartości wskazują na silniejszy związek między zmiennymi. Ten dokument wyjaśnia, jak obliczyć V Craméra ręcznie i przy użyciu R, oraz odnosi koncepcję do niezależnych zdarzeń w rachunku prawdopodobieństwa.</p>
+</section>
+<section id="manual-calculation" class="level2" data-number="15.10">
+<h2 data-number="15.10" class="anchored" data-anchor-id="manual-calculation"><span class="header-section-number">15.10</span> Manual Calculation</h2>
+</section>
+<section id="obliczenia-ręczne" class="level2" data-number="15.11">
+<h2 data-number="15.11" class="anchored" data-anchor-id="obliczenia-ręczne"><span class="header-section-number">15.11</span> Obliczenia ręczne</h2>
+<p>To calculate Cramér’s V manually, follow these steps: Aby obliczyć V Craméra ręcznie, wykonaj następujące kroki:</p>
+<ol type="1">
+<li>Create a contingency table with observed frequencies. Utwórz tabelę kontyngencji z obserwowanymi częstościami.</li>
+<li>Calculate the expected frequencies for each cell assuming independence. Oblicz oczekiwane częstości dla każdej komórki, zakładając niezależność.</li>
+<li>Compute the chi-square statistic. Oblicz statystykę chi-kwadrat.</li>
+<li>Calculate the sample size (n) and the minimum dimension of the contingency table (k). Oblicz wielkość próby (n) i minimalny wymiar tabeli kontyngencji (k).</li>
+<li>Calculate Cramér’s V using the formula: V = sqrt(chi-square / (n * k)). Oblicz V Craméra, korzystając ze wzoru: V = sqrt(chi-kwadrat / (n * k)).</li>
+</ol>
+<section id="step-1-contingency-table" class="level3" data-number="15.11.1">
+<h3 data-number="15.11.1" class="anchored" data-anchor-id="step-1-contingency-table"><span class="header-section-number">15.11.1</span> Step 1: Contingency Table</h3>
+</section>
+<section id="krok-1-tabela-kontyngencji" class="level3" data-number="15.11.2">
+<h3 data-number="15.11.2" class="anchored" data-anchor-id="krok-1-tabela-kontyngencji"><span class="header-section-number">15.11.2</span> Krok 1: Tabela kontyngencji</h3>
+<p>Let’s use the example contingency table from the previous discussion: Użyjmy przykładowej tabeli kontyngencji z poprzedniej dyskusji:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Democrat</th>
+<th>Republican</th>
+<th>Independent</th>
+<th>Row Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Support</td>
+<td>120</td>
+<td>30</td>
+<td>50</td>
+<td>200</td>
+</tr>
+<tr class="even">
+<td>Neutral</td>
+<td>50</td>
+<td>40</td>
+<td>60</td>
+<td>150</td>
+</tr>
+<tr class="odd">
+<td>Oppose</td>
+<td>30</td>
+<td>130</td>
+<td>90</td>
+<td>250</td>
+</tr>
+<tr class="even">
+<td>Col Total</td>
+<td>200</td>
+<td>200</td>
+<td>200</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-2-expected-frequencies" class="level3" data-number="15.11.3">
+<h3 data-number="15.11.3" class="anchored" data-anchor-id="step-2-expected-frequencies"><span class="header-section-number">15.11.3</span> Step 2: Expected Frequencies</h3>
+</section>
+<section id="krok-2-oczekiwane-częstości" class="level3" data-number="15.11.4">
+<h3 data-number="15.11.4" class="anchored" data-anchor-id="krok-2-oczekiwane-częstości"><span class="header-section-number">15.11.4</span> Krok 2: Oczekiwane częstości</h3>
+<p>To calculate the expected frequency (E) for each cell, use the following formula: Aby obliczyć oczekiwaną częstość (E) dla każdej komórki, użyj następującego wzoru:</p>
+<p>Expected Frequency (E) = (Row Total * Column Total) / Grand Total Oczekiwana częstość (E) = (Suma wiersza * Suma kolumny) / Suma całkowita</p>
+<p>Democrat, Support: E = (200 * 200) / 500 = 80 Democrat, Neutral: E = (150 * 200) / 500 = 60 Democrat, Oppose: E = (250 * 200) / 500 = 100 Republican, Support: E = (200 * 200) / 500 = 80 Republican, Neutral: E = (150 * 200) / 500 = 60 Republican, Oppose: E = (250 * 200) / 500 = 100 Independent, Support: E = (200 * 200) / 500 = 80 Independent, Neutral: E = (150 * 200) / 500 = 60 Independent, Oppose: E = (250 * 200) / 500 = 100</p>
+</section>
+<section id="step-3-chi-square-statistic" class="level3" data-number="15.11.5">
+<h3 data-number="15.11.5" class="anchored" data-anchor-id="step-3-chi-square-statistic"><span class="header-section-number">15.11.5</span> Step 3: Chi-Square Statistic</h3>
+</section>
+<section id="krok-3-statystyka-chi-kwadrat" class="level3" data-number="15.11.6">
+<h3 data-number="15.11.6" class="anchored" data-anchor-id="krok-3-statystyka-chi-kwadrat"><span class="header-section-number">15.11.6</span> Krok 3: Statystyka chi-kwadrat</h3>
+<p>Calculate the chi-square statistic by summing up (Observed - Expected)^2 / Expected for each cell: Oblicz statystykę chi-kwadrat, sumując (Obserwowane - Oczekiwane)^2 / Oczekiwane dla każdej komórki:</p>
+<p>Chi-square = (120 - 80)^2 / 80 + (50 - 60)^2 / 60 + (30 - 100)^2 / 100 + (30 - 80)^2 / 80 + (40 - 60)^2 / 60 + (130 - 100)^2 / 100 + (50 - 80)^2 / 80 + (60 - 60)^2 / 60 + (90 - 100)^2 / 100 = 20 + 1.67 + 49 + 31.25 + 6.67 + 9 + 11.25 + 0 + 1 = 129.84</p>
+</section>
+<section id="step-4-sample-size-and-minimum-dimension" class="level3" data-number="15.11.7">
+<h3 data-number="15.11.7" class="anchored" data-anchor-id="step-4-sample-size-and-minimum-dimension"><span class="header-section-number">15.11.7</span> Step 4: Sample Size and Minimum Dimension</h3>
+</section>
+<section id="krok-4-wielkość-próby-i-minimalny-wymiar" class="level3" data-number="15.11.8">
+<h3 data-number="15.11.8" class="anchored" data-anchor-id="krok-4-wielkość-próby-i-minimalny-wymiar"><span class="header-section-number">15.11.8</span> Krok 4: Wielkość próby i minimalny wymiar</h3>
+<p>Calculate the sample size (n) by summing up all the observed frequencies: Oblicz wielkość próby (n), sumując wszystkie obserwowane częstości: n = 500</p>
+<p>Find the minimum dimension of the contingency table (k): Znajdź minimalny wymiar tabeli kontyngencji (k): r = 3, c = 3, so k = min(3, 3) - 1 = 2</p>
+</section>
+<section id="step-5-cramérs-v" class="level3" data-number="15.11.9">
+<h3 data-number="15.11.9" class="anchored" data-anchor-id="step-5-cramérs-v"><span class="header-section-number">15.11.9</span> Step 5: Cramér’s V</h3>
+</section>
+<section id="krok-5-v-craméra" class="level3" data-number="15.11.10">
+<h3 data-number="15.11.10" class="anchored" data-anchor-id="krok-5-v-craméra"><span class="header-section-number">15.11.10</span> Krok 5: V Craméra</h3>
+<p>Calculate Cramér’s V using the formula: Oblicz V Craméra, korzystając ze wzoru: V = sqrt(chi-square / (n * k)) = sqrt(129.84 / (500 * 2)) = sqrt(0.12984) ≈ 0.3603</p>
+<p>The Cramér’s V value of approximately 0.3603 suggests a strong association between political party affiliation and stance on gun control in this example. Wartość V Craméra wynosząca około 0,3603 sugeruje silny związek między przynależnością do partii politycznej a stanowiskiem w sprawie kontroli broni w tym przykładzie.</p>
+</section>
+<section id="observed-and-expected-frequencies-related-to-independent-events" class="level3" data-number="15.11.11">
+<h3 data-number="15.11.11" class="anchored" data-anchor-id="observed-and-expected-frequencies-related-to-independent-events"><span class="header-section-number">15.11.11</span> Observed and Expected Frequencies Related to Independent Events</h3>
+</section>
+<section id="obserwowane-i-oczekiwane-częstości-a-niezależne-zdarzenia" class="level3" data-number="15.11.12">
+<h3 data-number="15.11.12" class="anchored" data-anchor-id="obserwowane-i-oczekiwane-częstości-a-niezależne-zdarzenia"><span class="header-section-number">15.11.12</span> Obserwowane i oczekiwane częstości a niezależne zdarzenia</h3>
+<p>The calculation of expected frequencies relates to the concept of marginal and conditional probability: Obliczanie oczekiwanych częstości wiąże się z pojęciem prawdopodobieństwa brzegowego i warunkowego:</p>
+<ul>
+<li><p>Marginal probability: The probability of an event occurring, regardless of the outcome of another event. In a contingency table, marginal probabilities are represented by the row and column totals divided by the grand total.</p></li>
+<li><p>Prawdopodobieństwo brzegowe: Prawdopodobieństwo wystąpienia zdarzenia, niezależnie od wyniku innego zdarzenia. W tabeli kontyngencji prawdopodobieństwa brzegowe są reprezentowane przez sumy wierszy i kolumn podzielone przez sumę całkowitą.</p></li>
+<li><p>Conditional probability: The probability of an event occurring, given that another event has already occurred. In a contingency table, conditional probabilities can be calculated by dividing the observed frequency in a cell by its corresponding row or column total.</p></li>
+<li><p>Prawdopodobieństwo warunkowe: Prawdopodobieństwo wystąpienia zdarzenia, pod warunkiem, że inne zdarzenie już wystąpiło. W tabeli kontyngencji prawdopodobieństwa warunkowe można obliczyć, dzieląc obserwowaną częstość w komórce przez odpowiednią sumę wiersza lub kolumny.</p></li>
+</ul>
+<p>Under the assumption of independence, the joint probability of two events (i.e., the probability of being in a specific cell) is equal to the product of their marginal probabilities. This is why the expected frequency for each cell is calculated by multiplying the row total and column total and dividing by the grand total. Przy założeniu niezależności, prawdopodobieństwo łączne dwóch zdarzeń (tj. prawdopodobieństwo znalezienia się w konkretnej komórce) jest równe iloczynowi ich prawdopodobieństw brzegowych. Dlatego oczekiwana częstość dla każdej komórki jest obliczana przez pomnożenie sumy wiersza i sumy kolumny, a następnie podzielenie przez sumę całkowitą.</p>
+<p>If the observed frequencies deviate significantly from the expected frequencies, it suggests an association between the two variables. Jeśli obserwowane częstości znacznie odbiegają od oczekiwanych częstości, sugeruje to związek między dwiema zmiennymi.</p>
+</section>
+</section>
+<section id="appendix-a.6-calculating-cramérs-v-in-r-obliczanie-v-craméra-w-r" class="level2" data-number="15.12">
+<h2 data-number="15.12" class="anchored" data-anchor-id="appendix-a.6-calculating-cramérs-v-in-r-obliczanie-v-craméra-w-r"><span class="header-section-number">15.12</span> Appendix A.6: Calculating Cramér’s V in R (Obliczanie V Craméra w R)</h2>
+<p>To calculate Cramér’s V in R, you can use the <code>chisq.test()</code> function to obtain the chi-square statistic and contingency table dimensions, and then manually calculate Cramér’s V. Aby obliczyć V Craméra w R, możesz użyć funkcji <code>chisq.test()</code> do uzyskania statystyki chi-kwadrat i wymiarów tabeli kontyngencji, a następnie ręcznie obliczyć V Craméra.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a contingency table</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Utwórz tabelę kontyngencji</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">120</span>, <span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">130</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">90</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Support"</span>, <span class="st">"Neutral"</span>, <span class="st">"Oppose"</span>)</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Democrat"</span>, <span class="st">"Republican"</span>, <span class="st">"Independent"</span>)</span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform chi-square test</span></span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Przeprowadź test chi-kwadrat</span></span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a>chi_square_test <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(data)</span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract chi-square statistic and sample size</span></span>
+<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyodrębnij statystykę chi-kwadrat i wielkość próby</span></span>
+<span id="cb76-13"><a href="#cb76-13" aria-hidden="true" tabindex="-1"></a>chi_square <span class="ot">&lt;-</span> chi_square_test<span class="sc">$</span>statistic</span>
+<span id="cb76-14"><a href="#cb76-14" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">sum</span>(data)</span>
+<span id="cb76-15"><a href="#cb76-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-16"><a href="#cb76-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate minimum dimension (k)</span></span>
+<span id="cb76-17"><a href="#cb76-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Oblicz minimalny wymiar (k)</span></span>
+<span id="cb76-18"><a href="#cb76-18" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="fu">nrow</span>(data), <span class="fu">ncol</span>(data)) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb76-19"><a href="#cb76-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-20"><a href="#cb76-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Cramér's V</span></span>
+<span id="cb76-21"><a href="#cb76-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Oblicz V Craméra</span></span>
+<span id="cb76-22"><a href="#cb76-22" aria-hidden="true" tabindex="-1"></a>cramers_v <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(chi_square <span class="sc">/</span> (n <span class="sc">*</span> k))</span>
+<span id="cb76-23"><a href="#cb76-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cramers_v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>X-squared 
+0.3314111 </code></pre>
+</div>
+</div>
+<p>Cramér’s V ranges from 0 to 1, with 0 indicating no association and 1 indicating a perfect association between the two variables. The interpretation of Cramér’s V depends on the context and the size of the contingency table. As a general guideline: V Craméra przyjmuje wartości od 0 do 1, gdzie 0 oznacza brak związku, a 1 oznacza doskonały związek między dwiema zmiennymi. Interpretacja V Craméra zależy od kontekstu i rozmiaru tabeli kontyngencji. Jako ogólna wskazówka:</p>
+<ul>
+<li>0.1 or less: weak association</li>
+<li>0.1 lub mniej: słaby związek</li>
+<li>0.1 to 0.3: moderate association</li>
+<li>0.1 do 0.3: umiarkowany związek</li>
+<li>0.3 or higher: strong association</li>
+<li>0.3 lub więcej: silny związek</li>
+</ul>
+<p>However, these guidelines may vary depending on the field of study and the specific research question. Jednak te wskazówki mogą się różnić w zależności od dziedziny badań i konkretnego problemu badawczego.</p>
+<p>In the example provided, a Cramér’s V value of approximately 0.3603 suggests a strong association between political party affiliation and stance on gun control. This means that knowing an individual’s political party affiliation provides substantial information about their likely stance on gun control, and vice versa. W podanym przykładzie wartość V Craméra wynosząca około 0,3603 sugeruje silny związek między przynależnością do partii politycznej a stanowiskiem w sprawie kontroli broni. Oznacza to, że znajomość przynależności partyjnej danej osoby dostarcza istotnych informacji o jej prawdopodobnym stanowisku w sprawie kontroli broni i odwrotnie.</p>
+</section>
+<section id="appendix-b-bias-in-ols-estimation-with-endogenous-regressors" class="level2" data-number="15.13">
+<h2 data-number="15.13" class="anchored" data-anchor-id="appendix-b-bias-in-ols-estimation-with-endogenous-regressors"><span class="header-section-number">15.13</span> Appendix B: Bias in OLS Estimation with Endogenous Regressors</h2>
+<p>In this tutorial, we will explore the bias in Ordinary Least Squares (OLS) estimation when the error term is correlated with the explanatory variable, a situation known as endogeneity. We will first derive the bias mathematically and then illustrate it using a simulated dataset in R.</p>
+</section>
+<section id="theoretical-derivation" class="level2" data-number="15.14">
+<h2 data-number="15.14" class="anchored" data-anchor-id="theoretical-derivation"><span class="header-section-number">15.14</span> Theoretical Derivation</h2>
+<p>Consider a data generating process (DGP) where the true relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is:</p>
+<p><span class="math display">\[ y = 2x + e \]</span></p>
+<p>However, there is an endogeneity problem because the error term <span class="math inline">\(e\)</span> is correlated with <span class="math inline">\(x\)</span> in the following way:</p>
+<p><span class="math display">\[ e = 1x + u \]</span></p>
+<p>where <span class="math inline">\(u\)</span> is an independent error term.</p>
+<p>If we estimate the simple linear model <span class="math inline">\(y = \beta_0 + \beta_1x + \varepsilon\)</span> using OLS, the OLS estimator of <span class="math inline">\(\beta_1\)</span> will be biased due to the endogeneity issue.</p>
+<p>To understand the bias, let’s derive the expected value of the OLS estimator <span class="math inline">\(\hat{\beta}_1\)</span>:</p>
+<p><span class="math display">\[\begin{align*}
+E[\hat{\beta}_1] &amp;= E[(X'X)^{-1}X'y] \\
+                 &amp;= E[(X'X)^{-1}X'(2x + 1x + u)] \\
+                 &amp;= E[(X'X)^{-1}X'(3x + u)] \\
+                 &amp;= 3 + E[(X'X)^{-1}X'u]
+\end{align*}\]</span></p>
+<p>If the error term <span class="math inline">\(u\)</span> is uncorrelated with <span class="math inline">\(x\)</span>, then <span class="math inline">\(E[(X'X)^{-1}X'u] = 0\)</span>, and the OLS estimator would be unbiased: <span class="math inline">\(E[\hat{\beta}_1] = 3\)</span>. However, in this case, the original error term <span class="math inline">\(e\)</span> is correlated with <span class="math inline">\(x\)</span>, so <span class="math inline">\(u\)</span> is also likely to be correlated with <span class="math inline">\(x\)</span>.</p>
+<p>Assuming <span class="math inline">\(E[(X'X)^{-1}X'u] \neq 0\)</span>, the OLS estimator will be biased:</p>
+<p><span class="math display">\[\begin{align*}
+\text{Bias}(\hat{\beta}_1) &amp;= E[\hat{\beta}_1] - \beta_{1,\text{true}} \\
+                           &amp;= 3 + E[(X'X)^{-1}X'u] - 2 \\
+                           &amp;= 1 + E[(X'X)^{-1}X'u]
+\end{align*}\]</span></p>
+<p>The direction and magnitude of the bias will depend on the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(u\)</span>. If <span class="math inline">\(x\)</span> and <span class="math inline">\(u\)</span> are positively correlated, the bias will be positive, and the OLS estimator will overestimate the true coefficient. Conversely, if <span class="math inline">\(x\)</span> and <span class="math inline">\(u\)</span> are negatively correlated, the bias will be negative, and the OLS estimator will underestimate the true coefficient.</p>
+</section>
+<section id="simulation-in-r" class="level2" data-number="15.15">
+<h2 data-number="15.15" class="anchored" data-anchor-id="simulation-in-r"><span class="header-section-number">15.15</span> Simulation in R</h2>
+<p>Let’s create a simple dataset with 10 observations where <span class="math inline">\(x\)</span> is in the interval 1:10, and generate <span class="math inline">\(y\)</span> values based on the given DGP: <span class="math inline">\(y = 2x + e\)</span>, where <span class="math inline">\(e = 1x + u\)</span>, and <span class="math inline">\(u\)</span> is a random error term.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># for reproducibility</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">*</span>x <span class="sc">+</span> u</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="co"># e &lt;- 1*x</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">*</span>x <span class="sc">+</span> e</span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the data frame</span></span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate the OLS model</span></span>
+<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data)</span>
+<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the model summary</span></span>
+<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.1348 -0.5624 -0.1393  0.3854  1.6814 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)   0.5255     0.6673   0.787    0.454    
+x             2.9180     0.1075  27.134 3.67e-09 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.9768 on 8 degrees of freedom
+Multiple R-squared:  0.9893,    Adjusted R-squared:  0.9879 
+F-statistic: 736.3 on 1 and 8 DF,  p-value: 3.666e-09</code></pre>
+</div>
+</div>
+<p>In this example, the true relationship is <span class="math inline">\(y = 2x + e\)</span>, where <span class="math inline">\(e = 1x + u\)</span>. However, when we estimate the OLS model, we get:</p>
+<p><span class="math display">\[ \hat{y} = 0.18376 + 3.05874x \]</span></p>
+<p>The estimated coefficient for <span class="math inline">\(x\)</span> is 3.05874, which is biased upward from the true value of 2. This bias is due to the correlation between the error term <span class="math inline">\(e\)</span> and the explanatory variable <span class="math inline">\(x\)</span>.</p>
+<p>To visualize the bias using ggplot2, we can plot the true relationship (<span class="math inline">\(y = 2x\)</span>) and the estimated OLS relationship:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fu">coef</span>(model)[<span class="dv">1</span>], <span class="at">slope =</span> <span class="fu">coef</span>(model)[<span class="dv">2</span>], <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"True vs. Estimated Relationship"</span>, <span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">"Lines"</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>), </span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"True"</span>, <span class="st">"OLS"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_en_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot will show that the estimated OLS line (red) is steeper than the true relationship line (blue), illustrating the upward bias in the estimated coefficient.</p>
+</section>
+<section id="conclusion-1" class="level2" data-number="15.16">
+<h2 data-number="15.16" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">15.16</span> Conclusion</h2>
+<p>In summary, when the error term is correlated with the explanatory variable (endogeneity), the OLS estimator will be biased. The direction and magnitude of the bias depend on the nature of the correlation between the error term and the explanatory variable. This tutorial demonstrated the bias both mathematically and through a simulated example in R, using ggplot2 for visualization.</p>
+
+
 </section>
 
 </main> <!-- /main -->

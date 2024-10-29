@@ -311,7 +311,14 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">11.1</span> Introduction</a></li>
+  <li><a href="#introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ" id="toc-introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ" class="nav-link active" data-scroll-target="#introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ"><span class="header-section-number">11.1</span> Introduction to Sigma Notation (Σ) | Wprowadzenie do Notacji Sigma (Σ)</a>
+  <ul class="collapse">
+  <li><a href="#basic-formula-podstawowa-formuła" id="toc-basic-formula-podstawowa-formuła" class="nav-link" data-scroll-target="#basic-formula-podstawowa-formuła"><span class="header-section-number">11.1.1</span> Basic Formula | Podstawowa formuła</a></li>
+  <li><a href="#simple-example-prosty-przykład" id="toc-simple-example-prosty-przykład" class="nav-link" data-scroll-target="#simple-example-prosty-przykład"><span class="header-section-number">11.1.2</span> Simple Example | Prosty przykład</a></li>
+  <li><a href="#example-with-a-function-przykład-z-funkcją" id="toc-example-with-a-function-przykład-z-funkcją" class="nav-link" data-scroll-target="#example-with-a-function-przykład-z-funkcją"><span class="header-section-number">11.1.3</span> Example with a Function | Przykład z funkcją</a></li>
+  <li><a href="#practical-application-in-statistics-praktyczne-zastosowanie-w-statystyce" id="toc-practical-application-in-statistics-praktyczne-zastosowanie-w-statystyce" class="nav-link" data-scroll-target="#practical-application-in-statistics-praktyczne-zastosowanie-w-statystyce"><span class="header-section-number">11.1.4</span> Practical Application in Statistics | Praktyczne zastosowanie w statystyce</a></li>
+  <li><a href="#benefits-of-using-sigma-notation-korzyści-z-używania-notacji-sigma" id="toc-benefits-of-using-sigma-notation-korzyści-z-używania-notacji-sigma" class="nav-link" data-scroll-target="#benefits-of-using-sigma-notation-korzyści-z-używania-notacji-sigma"><span class="header-section-number">11.1.5</span> Benefits of Using Sigma Notation | Korzyści z używania notacji Sigma</a></li>
+  </ul></li>
   <li><a href="#types-of-data-distributions" id="toc-types-of-data-distributions" class="nav-link" data-scroll-target="#types-of-data-distributions"><span class="header-section-number">11.2</span> Types of Data Distributions</a>
   <ul class="collapse">
   <li><a href="#normal-distribution" id="toc-normal-distribution" class="nav-link" data-scroll-target="#normal-distribution"><span class="header-section-number">11.2.1</span> Normal Distribution</a></li>
@@ -325,8 +332,9 @@ window.Quarto = {
   <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot"><span class="header-section-number">11.3.2</span> Box Plot</a></li>
   <li><a href="#violin-plot" id="toc-violin-plot" class="nav-link" data-scroll-target="#violin-plot"><span class="header-section-number">11.3.3</span> Violin Plot</a></li>
   <li><a href="#ridgeline-plot" id="toc-ridgeline-plot" class="nav-link" data-scroll-target="#ridgeline-plot"><span class="header-section-number">11.3.4</span> Ridgeline Plot</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11.3.5</span> Conclusion</a></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11.4</span> Conclusion</a></li>
+  <li><a href="#the-different-types-of-data-sets-and-their-formats" id="toc-the-different-types-of-data-sets-and-their-formats" class="nav-link" data-scroll-target="#the-different-types-of-data-sets-and-their-formats"><span class="header-section-number">11.4</span> The different types of data sets and their formats</a></li>
   <li><a href="#understanding-outliers" id="toc-understanding-outliers" class="nav-link" data-scroll-target="#understanding-outliers"><span class="header-section-number">11.5</span> Understanding Outliers</a></li>
   <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">11.6</span> Measures of Central Tendency</a>
   <ul class="collapse">
@@ -407,8 +415,6 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">11.1</span> Introduction</h2>
 <p>Descriptive statistics are fundamental tools in social science research, providing a concise summary of data characteristics. They serve several crucial functions:</p>
 <ul>
 <li>Summarizing large datasets into manageable information</li>
@@ -416,6 +422,67 @@ window.Quarto = {
 <li>Detecting potential anomalies or outliers</li>
 <li>Providing a foundation for further statistical analysis</li>
 </ul>
+<section id="introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ"><span class="header-section-number">11.1</span> Introduction to Sigma Notation (Σ) | Wprowadzenie do Notacji Sigma (Σ)</h2>
+<ul>
+<li><strong>What is Sigma? | Co to jest Sigma?</strong> Sigma (Σ) is a mathematical notation used for summing a sequence of terms. | Sigma (Σ) to notacja matematyczna używana do sumowania sekwencji wyrazów.</li>
+<li><strong>Purpose: | Cel:</strong> Simplifies the notation for adding a series of numbers or expressions. | Upraszcza notację do dodawania serii liczb lub wyrażeń.</li>
+</ul>
+<section id="basic-formula-podstawowa-formuła" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="basic-formula-podstawowa-formuła"><span class="header-section-number">11.1.1</span> Basic Formula | Podstawowa formuła</h3>
+<ul>
+<li>The general form of a sigma notation is: | Ogólna forma notacji sigma to:</li>
+</ul>
+<p><span class="math display">\[\sum_{i=a}^{b} f(i)\]</span></p>
+<ul>
+<li><strong>Index of Summation: | Indeks sumowania:</strong> <span class="math inline">\(i\)</span></li>
+<li><strong>Lower Limit: | Dolna granica:</strong> <span class="math inline">\(a\)</span></li>
+<li><strong>Upper Limit: | Górna granica:</strong> <span class="math inline">\(b\)</span></li>
+<li><strong>Function: | Funkcja:</strong> <span class="math inline">\(f(i)\)</span></li>
+</ul>
+</section>
+<section id="simple-example-prosty-przykład" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="simple-example-prosty-przykład"><span class="header-section-number">11.1.2</span> Simple Example | Prosty przykład</h3>
+<ul>
+<li>Consider you want to add the first five positive integers: | Załóżmy, że chcesz dodać pierwsze pięć dodatnich liczb całkowitych:</li>
+</ul>
+<p><span class="math display">\[\sum_{i=1}^{5} i = 1 + 2 + 3 + 4 + 5 = 15\]</span></p>
+<ul>
+<li>Adds the first five positive integers. | Dodaje pierwsze pięć dodatnich liczb całkowitych.</li>
+</ul>
+</section>
+<section id="example-with-a-function-przykład-z-funkcją" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="example-with-a-function-przykład-z-funkcją"><span class="header-section-number">11.1.3</span> Example with a Function | Przykład z funkcją</h3>
+<ul>
+<li>Suppose you want to sum the squares of the first four positive integers: | Załóżmy, że chcesz zsumować kwadraty pierwszych czterech dodatnich liczb całkowitych:</li>
+</ul>
+<p><span class="math display">\[\sum_{i=1}^{4} i^2 = 1^2 + 2^2 + 3^2 + 4^2 = 30\]</span></p>
+<ul>
+<li>Sum of the squares of the first four positive integers. | Suma kwadratów pierwszych czterech dodatnich liczb całkowitych.</li>
+</ul>
+</section>
+<section id="practical-application-in-statistics-praktyczne-zastosowanie-w-statystyce" class="level3" data-number="11.1.4">
+<h3 data-number="11.1.4" class="anchored" data-anchor-id="practical-application-in-statistics-praktyczne-zastosowanie-w-statystyce"><span class="header-section-number">11.1.4</span> Practical Application in Statistics | Praktyczne zastosowanie w statystyce</h3>
+<ul>
+<li><strong>Calculating the Mean: | Obliczanie średniej:</strong>
+<ul>
+<li>Data Points: | Punkty danych: <span class="math inline">\(x_1, x_2, ..., x_n\)</span></li>
+<li>Mean <span class="math inline">\(\bar{x}\)</span>: | Średnia <span class="math inline">\(\bar{x}\)</span>:</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\]</span></p>
+<ul>
+<li>Example: | Przykład: <span class="math inline">\(x_1, x_2, x_3, x_4\)</span> are 4, 8, 15, 16 | <span class="math inline">\(x_1, x_2, x_3, x_4\)</span> to 4, 8, 15, 16</li>
+</ul>
+<p><span class="math display">\[\bar{x} = \frac{43}{4} = 10.75\]</span></p>
+</section>
+<section id="benefits-of-using-sigma-notation-korzyści-z-używania-notacji-sigma" class="level3" data-number="11.1.5">
+<h3 data-number="11.1.5" class="anchored" data-anchor-id="benefits-of-using-sigma-notation-korzyści-z-używania-notacji-sigma"><span class="header-section-number">11.1.5</span> Benefits of Using Sigma Notation | Korzyści z używania notacji Sigma</h3>
+<ul>
+<li><strong>Clarity: | Jasność:</strong> Provides a clear and concise representation. | Zapewnia jasne i zwięzłe przedstawienie.</li>
+<li><strong>Versatility: | Wszechstronność:</strong> Useful in various mathematical operations across different fields. | Przydatne w różnych operacjach matematycznych w różnych dziedzinach.</li>
+</ul>
+</section>
 </section>
 <section id="types-of-data-distributions" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="types-of-data-distributions"><span class="header-section-number">11.2</span> Types of Data Distributions</h2>
@@ -683,10 +750,213 @@ Manual Construction of Tukey Boxplot
 </div>
 </div>
 </section>
-</section>
-<section id="conclusion" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11.4</span> Conclusion</h2>
+<section id="conclusion" class="level3" data-number="11.3.5">
+<h3 data-number="11.3.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11.3.5</span> Conclusion</h3>
 <p>Understanding and visualizing data distributions is crucial in data analysis. ggplot2 provides a flexible and powerful toolkit for creating various types of distribution plots. By exploring different visualization techniques, we can gain insights into the underlying patterns and characteristics of our data.</p>
+</section>
+</section>
+<section id="the-different-types-of-data-sets-and-their-formats" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="the-different-types-of-data-sets-and-their-formats"><span class="header-section-number">11.4</span> The different types of data sets and their formats</h2>
+<p>Cross-sectional data: Cross-sectional data consists of observations collected at a single point in time for multiple entities or individuals. Each row represents a unique entity, and each column represents a variable. For example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Individual</th>
+<th>Age</th>
+<th>Income</th>
+<th>Education</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>25</td>
+<td>50000</td>
+<td>Bachelor’s</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>35</td>
+<td>75000</td>
+<td>Master’s</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>45</td>
+<td>90000</td>
+<td>PhD</td>
+</tr>
+</tbody>
+</table>
+<p>Time series data: Time series data consists of observations collected over time for a single entity. Each row represents a unique time point, and each column represents a variable. For example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>GDP (in billions)</th>
+<th>Unemployment Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2018</td>
+<td>20580</td>
+<td>3.9%</td>
+</tr>
+<tr class="even">
+<td>2019</td>
+<td>21433</td>
+<td>3.7%</td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>20933</td>
+<td>8.1%</td>
+</tr>
+</tbody>
+</table>
+<p>Panel data: Panel data, also known as longitudinal data, consists of observations collected over time for multiple entities. Each row represents a unique combination of entity and time point, and each column represents a variable. For example:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Year</th>
+<th>GDP per capita</th>
+<th>Life Expectancy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USA</td>
+<td>2018</td>
+<td>62794</td>
+<td>78.7</td>
+</tr>
+<tr class="even">
+<td>USA</td>
+<td>2019</td>
+<td>65118</td>
+<td>78.8</td>
+</tr>
+<tr class="odd">
+<td>Canada</td>
+<td>2018</td>
+<td>46194</td>
+<td>81.9</td>
+</tr>
+<tr class="even">
+<td>Canada</td>
+<td>2019</td>
+<td>46194</td>
+<td>82.0</td>
+</tr>
+</tbody>
+</table>
+<p>Time-series cross-sectional (TSCS) data: TSCS data is a type of panel data where the number of time points is larger than the number of entities. It is commonly used in fields like political science and economics. The example of panel data above can also be considered TSCS data if there are more years than countries.</p>
+<p>Data formats:</p>
+<ol type="1">
+<li>Wide format: In wide format, each row represents a unique entity, and each column represents a variable or a time point. Here’s the panel data example in wide format:</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>GDP per capita_2018</th>
+<th>GDP per capita_2019</th>
+<th>Life Expectancy_2018</th>
+<th>Life Expectancy_2019</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USA</td>
+<td>62794</td>
+<td>65118</td>
+<td>78.7</td>
+<td>78.8</td>
+</tr>
+<tr class="even">
+<td>Canada</td>
+<td>46194</td>
+<td>46194</td>
+<td>81.9</td>
+<td>82.0</td>
+</tr>
+</tbody>
+</table>
+<p>In this wide format, each variable (GDP per capita and Life Expectancy) is represented by multiple columns, one for each time point (2018 and 2019).</p>
+<ol start="2" type="1">
+<li>Long format: In long format, each row represents a unique combination of entity, time point, and variable. There are separate columns for entity, time, variable, and value. Here’s the panel data example in long format:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Year</th>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USA</td>
+<td>2018</td>
+<td>GDP per capita</td>
+<td>62794</td>
+</tr>
+<tr class="even">
+<td>USA</td>
+<td>2019</td>
+<td>GDP per capita</td>
+<td>65118</td>
+</tr>
+<tr class="odd">
+<td>USA</td>
+<td>2018</td>
+<td>Life Expectancy</td>
+<td>78.7</td>
+</tr>
+<tr class="even">
+<td>USA</td>
+<td>2019</td>
+<td>Life Expectancy</td>
+<td>78.8</td>
+</tr>
+<tr class="odd">
+<td>Canada</td>
+<td>2018</td>
+<td>GDP per capita</td>
+<td>46194</td>
+</tr>
+<tr class="even">
+<td>Canada</td>
+<td>2019</td>
+<td>GDP per capita</td>
+<td>46194</td>
+</tr>
+<tr class="odd">
+<td>Canada</td>
+<td>2018</td>
+<td>Life Expectancy</td>
+<td>81.9</td>
+</tr>
+<tr class="even">
+<td>Canada</td>
+<td>2019</td>
+<td>Life Expectancy</td>
+<td>82.0</td>
+</tr>
+</tbody>
+</table>
+<p>In this long format, each variable is represented by a single column, and the time points are captured in a separate “Year” column.</p>
+<p>Long format is often preferred for data manipulation and analysis using tools like R and Python, as it allows for easier grouping, filtering, and reshaping of data.</p>
 </section>
 <section id="understanding-outliers" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="understanding-outliers"><span class="header-section-number">11.5</span> Understanding Outliers</h2>
