@@ -420,7 +420,6 @@ window.Quarto = {
 </ul>
 <section id="introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ"><span class="header-section-number">12.1</span> Introduction to Sigma Notation (Σ) | Wprowadzenie do Notacji Sigma (Σ)</h2>
-<p>Here’s the enhanced explanation with sigma defined more precisely as a summation operator:</p>
 <ul>
 <li><p><strong>What is Sigma? | Co to jest notacja sumacyjna Sigma?</strong> Sigma (Σ) is a mathematical operator that tells us to sum (add up) a sequence of terms - it functions as an instruction to perform addition of all elements in a specified range. | Sigma (Σ) to operator matematyczny, który nakazuje nam zsumować (dodać) sekwencję wyrazów - działa jak instrukcja wykonania dodawania wszystkich elementów w określonym zakresie.</p></li>
 <li><p><strong>Purpose: | Cel:</strong> Provides a compact way to write sums of many similar terms using a single symbol, avoiding lengthy addition expressions. | Zapewnia zwięzły sposób zapisu sum wielu podobnych wyrazów za pomocą jednego symbolu, unikając długich wyrażeń dodawania.</p></li>
@@ -478,6 +477,79 @@ window.Quarto = {
 <ul>
 <li><strong>Clarity: | Jasność:</strong> Provides a clear and concise representation of various statistical formulas. | Zapewnia jasne i zwięzłe przedstawienie statystycznych formuł.</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Operatory Sumy (Σ) i Iloczynu (Π)
+</div>
+</div>
+<section id="operator-sigma-σ" class="level3 callout-body-container callout-body" data-number="12.1.6">
+<h3 data-number="12.1.6" class="anchored" data-anchor-id="operator-sigma-σ"><span class="header-section-number">12.1.6</span> Operator Sigma (Σ)</h3>
+<p><span class="math inline">\(\sum\)</span> to <strong>operator sumowania</strong>, który nakazuje nam dodać wyrazy:</p>
+<p><span class="math inline">\(\sum_{i=1}^{n} x_i = x_1 + x_2 + ... + x_n\)</span></p>
+<p>gdzie: - <span class="math inline">\(i\)</span> to zmienna indeksowa - Dolna wartość pod Σ (tutaj <span class="math inline">\(i=1\)</span>) to punkt początkowy - Górna wartość (tutaj <span class="math inline">\(n\)</span>) to punkt końcowy</p>
+</section>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Przykład Σ
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\sum_{i=1}^{4} i = 1 + 2 + 3 + 4 = 10\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Operator Pi (Π)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\prod\)</span> to <strong>operator iloczynu</strong>, który nakazuje nam pomnożyć wyrazy:</p>
+<p><span class="math inline">\(\prod_{i=1}^{n} x_i = x_1 \times x_2 \times ... \times x_n\)</span></p>
+<p>gdzie: - <span class="math inline">\(i\)</span> to zmienna indeksowa - Dolna wartość pod Π (tutaj <span class="math inline">\(i=1\)</span>) to punkt początkowy - Górna wartość (tutaj <span class="math inline">\(n\)</span>) to punkt końcowy</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Przykład Π
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\prod_{i=1}^{4} i = 1 \times 2 \times 3 \times 4 = 24\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Kluczowe Różnice
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Σ oznacza wielokrotne dodawanie</li>
+<li>Π oznacza wielokrotne mnożenie</li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 <section id="typy-rozkładów-danych" class="level2" data-number="12.2">
@@ -492,7 +564,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Rozkład danych informuje o tym, jakie wartości przyjmuje zmienna i jak często.</p>
+<p><strong>Rozkład danych informuje o tym, jakie wartości przyjmuje zmienna i jak często</strong>.</p>
 </div>
 </div>
 <p>Zrozumienie rozkładów danych jest kluczowe dla analizy i wizualizacji danych. W tym dokumencie przyjrzymy się różnym typom rozkładów i sposobom ich wizualizacji przy użyciu ggplot2 w R.</p>
