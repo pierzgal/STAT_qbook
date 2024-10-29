@@ -338,8 +338,8 @@ window.Quarto = {
   <li><a href="#miary-tendencji-centralnej" id="toc-miary-tendencji-centralnej" class="nav-link" data-scroll-target="#miary-tendencji-centralnej"><span class="header-section-number">12.5</span> Miary Tendencji Centralnej</a>
   <ul class="collapse">
   <li><a href="#średnia-arytmetyczna" id="toc-średnia-arytmetyczna" class="nav-link" data-scroll-target="#średnia-arytmetyczna"><span class="header-section-number">12.5.1</span> Średnia Arytmetyczna</a></li>
-  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">12.5.2</span> Mediana</a></li>
-  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">12.5.3</span> Moda</a></li>
+  <li><a href="#mediana" id="toc-mediana" class="nav-link" data-scroll-target="#mediana"><span class="header-section-number">12.5.3</span> Mediana</a></li>
+  <li><a href="#moda" id="toc-moda" class="nav-link" data-scroll-target="#moda"><span class="header-section-number">12.5.4</span> Moda</a></li>
   </ul></li>
   <li><a href="#miary-zmienności" id="toc-miary-zmienności" class="nav-link" data-scroll-target="#miary-zmienności"><span class="header-section-number">12.6</span> Miary Zmienności</a>
   <ul class="collapse">
@@ -1073,13 +1073,55 @@ Rodzaje i Formaty Zbiorów Danych
 <p><strong>Ważna Właściwość:</strong> Średnia jest punktem równowagi w danych. Suma odchyleń od średniej zawsze wynosi zero:</p>
 <p><span class="math inline">\(\sum_{i=1}^n (x_i - \bar{x}) = 0\)</span></p>
 <p>Ta właściwość sprawia, że średnia jest użyteczna w wielu obliczeniach statystycznych.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Zrozumienie średniej jako punktu równowagi 🎯
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Rozważmy zbiór danych <span class="math inline">\(X = \{1, 2, 6, 7, 9\}\)</span> na osi liczbowej, wyobrażając go sobie jako huśtawkę:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
+<p><img src="stat_imgs/IMG_4336.jpg" class="img-fluid figure-img"></p>
+<figcaption>https://www.gastonsanchez.com/matrix4sl/mean-as-a-balancing-point.html</figcaption>
 </figure>
 </div>
+<p>Średnia (<span class="math inline">\(\mu\)</span>) działa jak idealny <strong>punkt równowagi</strong> tej huśtawki. Dla naszych danych:</p>
+<p><span class="math inline">\(\mu = \frac{1 + 2 + 6 + 7 + 9}{5} = 5\)</span></p>
+<section id="co-się-dzieje-przy-różnych-punktach-podparcia" class="level3" data-number="12.5.2">
+<h3 data-number="12.5.2" class="anchored" data-anchor-id="co-się-dzieje-przy-różnych-punktach-podparcia"><span class="header-section-number">12.5.2</span> Co się dzieje przy różnych punktach podparcia? 🤔</h3>
+<ol type="1">
+<li><strong>Punkt podparcia w 6</strong> (za wysoko):
+<ul>
+<li>Lewa strona: Wartości (1, 2) są poniżej</li>
+<li>Prawa strona: Wartości (7, 9) są powyżej</li>
+<li><span class="math inline">\(\sum\)</span> odległości z lewej = (6-1) + (6-2) = 9</li>
+<li><span class="math inline">\(\sum\)</span> odległości z prawej = (7-6) + (9-6) = 4</li>
+<li>Huśtawka przechyla się w lewo! ⬅️ bo 9 &gt; 4</li>
+</ul></li>
+<li><strong>Punkt podparcia w 4</strong> (za nisko):
+<ul>
+<li>Lewa strona: Wartości (1, 2) są poniżej</li>
+<li>Prawa strona: Wartości (6, 7, 9) są powyżej</li>
+<li><span class="math inline">\(\sum\)</span> odległości z lewej = (4-1) + (4-2) = 5</li>
+<li><span class="math inline">\(\sum\)</span> odległości z prawej = (6-4) + (7-4) + (9-4) = 10</li>
+<li>Huśtawka przechyla się w prawo! ➡️ bo 5 &lt; 10</li>
+</ul></li>
+<li><strong>Punkt podparcia w średniej (5)</strong> (idealna równowaga):
+<ul>
+<li><span class="math inline">\(\sum\)</span> odległości poniżej = <span class="math inline">\(\sum\)</span> odległości powyżej</li>
+<li><span class="math inline">\(((5-1) + (5-2)) = ((6-5) + (7-5) + (9-5))\)</span></li>
+<li><span class="math inline">\(7 = 7\)</span> ✨ Idealna równowaga!</li>
+</ul></li>
+</ol>
+<p>To pokazuje, dlaczego średnia jest unikalnym punktem równowagi, gdzie:</p>
+<p><span class="math inline">\(\sum_{i=1}^n (x_i - \mu) = 0\)</span></p>
+<p>Huśtawka zawsze będzie się przechylać, chyba że punkt podparcia zostanie umieszczony dokładnie w średniej! 🎪</p>
+</section>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1092,7 +1134,7 @@ Rodzaje i Formaty Zbiorów Danych
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ta wizualizacja (powyżej) pokazuje, jak średnia arytmetyczna (5) działa jako punkt równowagi:</p>
+<p>Ta wizualizacja pokazuje, jak średnia arytmetyczna (5) działa jako punkt równowagi pomiędzy skupionymi punktami z lewej strony a rozproszonymi punktami z prawej strony:</p>
 <p>Lewa strona średniej:</p>
 <ul>
 <li>Punkty o wartościach 2 i 3</li>
@@ -1121,13 +1163,16 @@ Rodzaje i Formaty Zbiorów Danych
 <li>Całkowita suma odległości = 5 jednostek po każdej stronie</li>
 </ul></li>
 </ol>
-</div>
-</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="stat_imgs/IMG_4336.jpg" class="img-fluid figure-img"></p>
-<figcaption>https://www.gastonsanchez.com/matrix4sl/mean-as-a-balancing-point.html</figcaption>
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
 <p>Obliczmy średnią dla zbioru danych: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1177,8 +1222,8 @@ Rodzaje i Formaty Zbiorów Danych
 <li>Nie idealna dla rozkładów skośnych</li>
 </ul>
 </section>
-<section id="mediana" class="level3" data-number="12.5.2">
-<h3 data-number="12.5.2" class="anchored" data-anchor-id="mediana"><span class="header-section-number">12.5.2</span> Mediana</h3>
+<section id="mediana" class="level3" data-number="12.5.3">
+<h3 data-number="12.5.3" class="anchored" data-anchor-id="mediana"><span class="header-section-number">12.5.3</span> Mediana</h3>
 <p>Mediana to środkowa wartość, gdy dane są uporządkowane.</p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
 <p>Używając tego samego zbioru danych: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1253,8 +1298,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="moda" class="level3" data-number="12.5.3">
-<h3 data-number="12.5.3" class="anchored" data-anchor-id="moda"><span class="header-section-number">12.5.3</span> Moda</h3>
+<section id="moda" class="level3" data-number="12.5.4">
+<h3 data-number="12.5.4" class="anchored" data-anchor-id="moda"><span class="header-section-number">12.5.4</span> Moda</h3>
 <p>Moda to najczęściej występująca wartość.</p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
 <p>Używając zbioru danych: 2, 4, 4, 5, 5, 7, 9</p>

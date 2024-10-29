@@ -338,9 +338,9 @@ window.Quarto = {
   <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">11.5</span> Measures of Central Tendency</a>
   <ul class="collapse">
   <li><a href="#arithmetic-mean" id="toc-arithmetic-mean" class="nav-link" data-scroll-target="#arithmetic-mean"><span class="header-section-number">11.5.1</span> Arithmetic Mean</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">11.5.2</span> Median</a></li>
-  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">11.5.3</span> Mode</a></li>
-  <li><a href="#weighted-mean" id="toc-weighted-mean" class="nav-link" data-scroll-target="#weighted-mean"><span class="header-section-number">11.5.4</span> Weighted Mean</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">11.5.3</span> Median</a></li>
+  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">11.5.4</span> Mode</a></li>
+  <li><a href="#weighted-mean" id="toc-weighted-mean" class="nav-link" data-scroll-target="#weighted-mean"><span class="header-section-number">11.5.5</span> Weighted Mean</a></li>
   </ul></li>
   <li><a href="#measures-of-variability" id="toc-measures-of-variability" class="nav-link" data-scroll-target="#measures-of-variability"><span class="header-section-number">11.6</span> Measures of Variability</a>
   <ul class="collapse">
@@ -1077,13 +1077,55 @@ Understanding Different Types of Data Sets and Their Formats
 <p><strong>Important Property:</strong> The mean is a balancing point in the data. The sum of deviations from the mean is always zero:</p>
 <p><span class="math inline">\(\sum_{i=1}^n (x_i - \bar{x}) = 0\)</span></p>
 <p>This property makes the mean useful in many statistical calculations.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding Mean as a Balancing Point 🎯
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s explore a dataset <span class="math inline">\(X = \{1, 2, 6, 7, 9\}\)</span> on a number line, imagining it as a see-saw:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
+<p><img src="stat_imgs/IMG_4336.jpg" class="img-fluid figure-img"></p>
+<figcaption>https://www.gastonsanchez.com/matrix4sl/mean-as-a-balancing-point.html</figcaption>
 </figure>
 </div>
+<p>The mean (<span class="math inline">\(\mu\)</span>) acts as the perfect <strong>balancing point</strong> of this see-saw. For our data:</p>
+<p><span class="math inline">\(\mu = \frac{1 + 2 + 6 + 7 + 9}{5} = 5\)</span></p>
+<section id="what-happens-with-different-fulcrum-points" class="level3" data-number="11.5.2">
+<h3 data-number="11.5.2" class="anchored" data-anchor-id="what-happens-with-different-fulcrum-points"><span class="header-section-number">11.5.2</span> What happens with different fulcrum points? 🤔</h3>
+<ol type="1">
+<li><strong>Fulcrum at 6</strong> (too high):
+<ul>
+<li>Left side: Values (1, 2) are below</li>
+<li>Right side: Values (7, 9) are above</li>
+<li><span class="math inline">\(\sum\)</span> distances left = (6-1) + (6-2) = 9</li>
+<li><span class="math inline">\(\sum\)</span> distances right = (7-6) + (9-6) = 4</li>
+<li>The see-saw tips to the left! ⬅️ because 9 &gt; 4</li>
+</ul></li>
+<li><strong>Fulcrum at 4</strong> (too low):
+<ul>
+<li>Left side: Values (1, 2) are below</li>
+<li>Right side: Values (6, 7, 9) are above</li>
+<li><span class="math inline">\(\sum\)</span> distances left = (4-1) + (4-2) = 5</li>
+<li><span class="math inline">\(\sum\)</span> distances right = (6-4) + (7-4) + (9-4) = 10</li>
+<li>The see-saw tips to the right! ➡️ because 5 &lt; 10</li>
+</ul></li>
+<li><strong>Fulcrum at mean (5)</strong> (perfect balance):
+<ul>
+<li><span class="math inline">\(\sum\)</span> distances below = <span class="math inline">\(\sum\)</span> distances above</li>
+<li><span class="math inline">\(((5-1) + (5-2)) = ((6-5) + (7-5) + (9-5))\)</span></li>
+<li><span class="math inline">\(7 = 7\)</span> ✨ Perfect equilibrium!</li>
+</ul></li>
+</ol>
+<p>This demonstrates why the mean is the unique balancing point where:</p>
+<p><span class="math inline">\(\sum_{i=1}^n (x_i - \mu) = 0\)</span></p>
+<p>The see-saw will always tip unless the fulcrum is placed exactly at the mean! 🎪</p>
+</section>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1096,7 +1138,7 @@ The Mean as a Balance Point
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This visualization above shows how the arithmetic mean (5) acts as a balance point with clustered left points and spread right points:</p>
+<p>This visualization shows how the arithmetic mean (5) acts as a balance point with clustered left points and spread right points:</p>
 <p>Left side of mean:</p>
 <ul>
 <li>Points at 2 and 3</li>
@@ -1111,13 +1153,16 @@ The Mean as a Balance Point
 <li>Distances from mean: 1 and 4 units</li>
 <li>Total “pull” = 5 units</li>
 </ul>
-</div>
-</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="stat_imgs/IMG_4336.jpg" class="img-fluid figure-img"></p>
-<figcaption>https://www.gastonsanchez.com/matrix4sl/mean-as-a-balancing-point.html</figcaption>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Let’s calculate the mean for the dataset: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1176,8 +1221,8 @@ The Mean as a Balance Point
 </div>
 <p>As we can see, the outlier (100) drastically affects the mean.</p>
 </section>
-<section id="median" class="level3" data-number="11.5.2">
-<h3 data-number="11.5.2" class="anchored" data-anchor-id="median"><span class="header-section-number">11.5.2</span> Median</h3>
+<section id="median" class="level3" data-number="11.5.3">
+<h3 data-number="11.5.3" class="anchored" data-anchor-id="median"><span class="header-section-number">11.5.3</span> Median</h3>
 <p>The median is the middle value when the data is ordered.</p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the same dataset: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1256,8 +1301,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="mode" class="level3" data-number="11.5.3">
-<h3 data-number="11.5.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">11.5.3</span> Mode</h3>
+<section id="mode" class="level3" data-number="11.5.4">
+<h3 data-number="11.5.4" class="anchored" data-anchor-id="mode"><span class="header-section-number">11.5.4</span> Mode</h3>
 <p>The mode is the most frequently occurring value.</p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1311,11 +1356,11 @@ Warning
 <li>Not useful for continuous data</li>
 </ul>
 </section>
-<section id="weighted-mean" class="level3" data-number="11.5.4">
-<h3 data-number="11.5.4" class="anchored" data-anchor-id="weighted-mean"><span class="header-section-number">11.5.4</span> Weighted Mean</h3>
+<section id="weighted-mean" class="level3" data-number="11.5.5">
+<h3 data-number="11.5.5" class="anchored" data-anchor-id="weighted-mean"><span class="header-section-number">11.5.5</span> Weighted Mean</h3>
 <p>The weighted mean is used when some data points are more important than others. There are two types of weighted means: with not normalized weights and with normalized weights.</p>
-<section id="weighted-mean-with-not-normalized-weights" class="level4" data-number="11.5.4.1">
-<h4 data-number="11.5.4.1" class="anchored" data-anchor-id="weighted-mean-with-not-normalized-weights"><span class="header-section-number">11.5.4.1</span> Weighted Mean with Not Normalized Weights</h4>
+<section id="weighted-mean-with-not-normalized-weights" class="level4" data-number="11.5.5.1">
+<h4 data-number="11.5.5.1" class="anchored" data-anchor-id="weighted-mean-with-not-normalized-weights"><span class="header-section-number">11.5.5.1</span> Weighted Mean with Not Normalized Weights</h4>
 <p>This is the standard form of the weighted mean, where weights can be any positive numbers representing the importance of each data point.</p>
 <p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
@@ -1361,8 +1406,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="weighted-mean-with-normalized-weights-fractions" class="level4" data-number="11.5.4.2">
-<h4 data-number="11.5.4.2" class="anchored" data-anchor-id="weighted-mean-with-normalized-weights-fractions"><span class="header-section-number">11.5.4.2</span> Weighted Mean with Normalized Weights (Fractions)</h4>
+<section id="weighted-mean-with-normalized-weights-fractions" class="level4" data-number="11.5.5.2">
+<h4 data-number="11.5.5.2" class="anchored" data-anchor-id="weighted-mean-with-normalized-weights-fractions"><span class="header-section-number">11.5.5.2</span> Weighted Mean with Normalized Weights (Fractions)</h4>
 <p>In this case, the weights are fractions that sum to 1, representing the proportion of importance for each data point.</p>
 <p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \sum_{i=1}^n w_i x_i\)</span>, where <span class="math inline">\(\sum_{i=1}^n w_i = 1\)</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
