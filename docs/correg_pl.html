@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -69,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -243,8 +306,60 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#statystyki-dwuwymiarowe" id="toc-statystyki-dwuwymiarowe" class="nav-link active" data-scroll-target="#statystyki-dwuwymiarowe"><span class="header-section-number">16.1</span> Statystyki Dwuwymiarowe</a>
+  <ul class="collapse">
+  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">16.1.1</span> Kowariancja</a></li>
+  <li><a href="#korelacja-pearsona" id="toc-korelacja-pearsona" class="nav-link" data-scroll-target="#korelacja-pearsona"><span class="header-section-number">16.1.2</span> Korelacja Pearsona</a></li>
+  <li><a href="#korelacja-spearmana" id="toc-korelacja-spearmana" class="nav-link" data-scroll-target="#korelacja-spearmana"><span class="header-section-number">16.1.3</span> Korelacja Spearmana</a></li>
+  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">16.1.4</span> Tabela Krzyżowa</a></li>
+  <li><a href="#wybór-odpowiedniej-miary" id="toc-wybór-odpowiedniej-miary" class="nav-link" data-scroll-target="#wybór-odpowiedniej-miary"><span class="header-section-number">16.1.5</span> Wybór Odpowiedniej Miary</a></li>
+  </ul></li>
+  <li><a href="#wprowadzenie-do-podstawowej-statystyki-wielowymiarowej" id="toc-wprowadzenie-do-podstawowej-statystyki-wielowymiarowej" class="nav-link" data-scroll-target="#wprowadzenie-do-podstawowej-statystyki-wielowymiarowej"><span class="header-section-number">16.2</span> Wprowadzenie do Podstawowej Statystyki Wielowymiarowej</a>
+  <ul class="collapse">
+  <li><a href="#macierz-korelacji" id="toc-macierz-korelacji" class="nav-link" data-scroll-target="#macierz-korelacji"><span class="header-section-number">16.2.1</span> Macierz Korelacji</a></li>
+  <li><a href="#wizualizacja-związków-wielowymiarowych" id="toc-wizualizacja-związków-wielowymiarowych" class="nav-link" data-scroll-target="#wizualizacja-związków-wielowymiarowych"><span class="header-section-number">16.2.2</span> Wizualizacja Związków Wielowymiarowych</a></li>
+  <li><a href="#korelacja-cząstkowa" id="toc-korelacja-cząstkowa" class="nav-link" data-scroll-target="#korelacja-cząstkowa"><span class="header-section-number">16.2.3</span> Korelacja Cząstkowa</a></li>
+  <li><a href="#korelacja-wielokrotna" id="toc-korelacja-wielokrotna" class="nav-link" data-scroll-target="#korelacja-wielokrotna"><span class="header-section-number">16.2.4</span> Korelacja Wielokrotna</a></li>
+  <li><a href="#analiza-czynnikowa" id="toc-analiza-czynnikowa" class="nav-link" data-scroll-target="#analiza-czynnikowa"><span class="header-section-number">16.2.5</span> Analiza Czynnikowa</a></li>
+  <li><a href="#uwagi-dotyczące-analizy-wielowymiarowej" id="toc-uwagi-dotyczące-analizy-wielowymiarowej" class="nav-link" data-scroll-target="#uwagi-dotyczące-analizy-wielowymiarowej"><span class="header-section-number">16.2.6</span> Uwagi dotyczące Analizy Wielowymiarowej</a></li>
+  <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">16.2.7</span> Podsumowanie</a></li>
+  </ul></li>
+  <li><a href="#dodatek-a.1-obliczanie-kowariancji-oraz-korelacji-pearsona-i-spearmana---przykład-z-obliczeniami" id="toc-dodatek-a.1-obliczanie-kowariancji-oraz-korelacji-pearsona-i-spearmana---przykład-z-obliczeniami" class="nav-link" data-scroll-target="#dodatek-a.1-obliczanie-kowariancji-oraz-korelacji-pearsona-i-spearmana---przykład-z-obliczeniami"><span class="header-section-number">16.3</span> Dodatek A.1: Obliczanie Kowariancji oraz Korelacji Pearsona i Spearmana - przykład z obliczeniami</a>
+  <ul class="collapse">
+  <li><a href="#krok-1-obliczanie-podstawowych-statystyk" id="toc-krok-1-obliczanie-podstawowych-statystyk" class="nav-link" data-scroll-target="#krok-1-obliczanie-podstawowych-statystyk"><span class="header-section-number">16.3.1</span> Krok 1: Obliczanie Podstawowych Statystyk</a></li>
+  <li><a href="#krok-2-szczegółowe-obliczenia-kowariancji" id="toc-krok-2-szczegółowe-obliczenia-kowariancji" class="nav-link" data-scroll-target="#krok-2-szczegółowe-obliczenia-kowariancji"><span class="header-section-number">16.3.2</span> Krok 2: Szczegółowe Obliczenia Kowariancji</a></li>
+  <li><a href="#krok-3-obliczanie-odchylenia-standardowego" id="toc-krok-3-obliczanie-odchylenia-standardowego" class="nav-link" data-scroll-target="#krok-3-obliczanie-odchylenia-standardowego"><span class="header-section-number">16.3.3</span> Krok 3: Obliczanie Odchylenia Standardowego</a></li>
+  <li><a href="#krok-4-obliczanie-korelacji-pearsona" id="toc-krok-4-obliczanie-korelacji-pearsona" class="nav-link" data-scroll-target="#krok-4-obliczanie-korelacji-pearsona"><span class="header-section-number">16.3.4</span> Krok 4: Obliczanie Korelacji Pearsona</a></li>
+  <li><a href="#krok-5-obliczanie-korelacji-rangowej-spearmana" id="toc-krok-5-obliczanie-korelacji-rangowej-spearmana" class="nav-link" data-scroll-target="#krok-5-obliczanie-korelacji-rangowej-spearmana"><span class="header-section-number">16.3.5</span> Krok 5: Obliczanie Korelacji Rangowej Spearmana</a></li>
+  <li><a href="#krok-6-weryfikacja-w-r" id="toc-krok-6-weryfikacja-w-r" class="nav-link" data-scroll-target="#krok-6-weryfikacja-w-r"><span class="header-section-number">16.3.6</span> Krok 6: Weryfikacja w R</a></li>
+  <li><a href="#krok-7-podstawowa-wizualizacja" id="toc-krok-7-podstawowa-wizualizacja" class="nav-link" data-scroll-target="#krok-7-podstawowa-wizualizacja"><span class="header-section-number">16.3.7</span> Krok 7: Podstawowa Wizualizacja</a></li>
+  </ul></li>
+  <li><a href="#dodatek-a.2-estymacja-ols-i-miary-dopasowania-modelu" id="toc-dodatek-a.2-estymacja-ols-i-miary-dopasowania-modelu" class="nav-link" data-scroll-target="#dodatek-a.2-estymacja-ols-i-miary-dopasowania-modelu"><span class="header-section-number">16.4</span> Dodatek A.2: Estymacja OLS i Miary Dopasowania Modelu</a>
+  <ul class="collapse">
+  <li><a href="#krok-1-obliczanie-estymatorów-ols" id="toc-krok-1-obliczanie-estymatorów-ols" class="nav-link" data-scroll-target="#krok-1-obliczanie-estymatorów-ols"><span class="header-section-number">16.4.1</span> Krok 1: Obliczanie Estymatorów OLS</a></li>
+  <li><a href="#krok-2-obliczanie-wartości-dopasowanych-i-reszt" id="toc-krok-2-obliczanie-wartości-dopasowanych-i-reszt" class="nav-link" data-scroll-target="#krok-2-obliczanie-wartości-dopasowanych-i-reszt"><span class="header-section-number">16.4.2</span> Krok 2: Obliczanie Wartości Dopasowanych i Reszt</a></li>
+  <li><a href="#krok-3-obliczanie-miar-dopasowania" id="toc-krok-3-obliczanie-miar-dopasowania" class="nav-link" data-scroll-target="#krok-3-obliczanie-miar-dopasowania"><span class="header-section-number">16.4.3</span> Krok 3: Obliczanie Miar Dopasowania</a></li>
+  <li><a href="#krok-4-weryfikacja-w-r" id="toc-krok-4-weryfikacja-w-r" class="nav-link" data-scroll-target="#krok-4-weryfikacja-w-r"><span class="header-section-number">16.4.4</span> Krok 4: Weryfikacja w R</a></li>
+  <li><a href="#krok-5-analiza-reszt" id="toc-krok-5-analiza-reszt" class="nav-link" data-scroll-target="#krok-5-analiza-reszt"><span class="header-section-number">16.4.5</span> Krok 5: Analiza Reszt</a></li>
+  <li><a href="#krok-6-wykres-wartości-przewidywanych-vs-rzeczywistych" id="toc-krok-6-wykres-wartości-przewidywanych-vs-rzeczywistych" class="nav-link" data-scroll-target="#krok-6-wykres-wartości-przewidywanych-vs-rzeczywistych"><span class="header-section-number">16.4.6</span> Krok 6: Wykres Wartości Przewidywanych vs Rzeczywistych</a></li>
+  </ul></li>
+  <li><a href="#dodatek-a.3-modele-z-transformacją-logarytmiczną" id="toc-dodatek-a.3-modele-z-transformacją-logarytmiczną" class="nav-link" data-scroll-target="#dodatek-a.3-modele-z-transformacją-logarytmiczną"><span class="header-section-number">16.5</span> Dodatek A.3 Modele z Transformacją Logarytmiczną</a>
+  <ul class="collapse">
+  <li><a href="#krok-1-transformacja-danych" id="toc-krok-1-transformacja-danych" class="nav-link" data-scroll-target="#krok-1-transformacja-danych"><span class="header-section-number">16.5.1</span> Krok 1: Transformacja Danych</a></li>
+  <li><a href="#krok-2-porównanie-różnych-specyfikacji-modelu" id="toc-krok-2-porównanie-różnych-specyfikacji-modelu" class="nav-link" data-scroll-target="#krok-2-porównanie-różnych-specyfikacji-modelu"><span class="header-section-number">16.5.2</span> Krok 2: Porównanie Różnych Specyfikacji Modelu</a></li>
+  <li><a href="#krok-3-porównanie-wizualne" id="toc-krok-3-porównanie-wizualne" class="nav-link" data-scroll-target="#krok-3-porównanie-wizualne"><span class="header-section-number">16.5.3</span> Krok 3: Porównanie Wizualne</a></li>
+  <li><a href="#krok-4-analiza-reszt-dla-najlepszego-modelu" id="toc-krok-4-analiza-reszt-dla-najlepszego-modelu" class="nav-link" data-scroll-target="#krok-4-analiza-reszt-dla-najlepszego-modelu"><span class="header-section-number">16.5.4</span> Krok 4: Analiza Reszt dla Najlepszego Modelu</a></li>
+  <li><a href="#krok-5-interpretacja-najlepszego-modelu" id="toc-krok-5-interpretacja-najlepszego-modelu" class="nav-link" data-scroll-target="#krok-5-interpretacja-najlepszego-modelu"><span class="header-section-number">16.5.5</span> Krok 5: Interpretacja Najlepszego Modelu</a></li>
+  <li><a href="#krok-6-predykcje-modelu" id="toc-krok-6-predykcje-modelu" class="nav-link" data-scroll-target="#krok-6-predykcje-modelu"><span class="header-section-number">16.5.6</span> Krok 6: Predykcje Modelu</a></li>
+  <li><a href="#krok-7-analiza-elastyczności" id="toc-krok-7-analiza-elastyczności" class="nav-link" data-scroll-target="#krok-7-analiza-elastyczności"><span class="header-section-number">16.5.7</span> Krok 7: Analiza Elastyczności</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -268,8 +383,1382 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="statystyki-dwuwymiarowe" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="statystyki-dwuwymiarowe"><span class="header-section-number">16.1</span> Statystyki Dwuwymiarowe</h2>
+<p>Statystyki dwuwymiarowe opisują związek między dwiema zmiennymi. Omówimy kilka miar, zaczynając od kowariancji i przechodząc do bardziej zaawansowanych miar korelacji.</p>
+<section id="kowariancja" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">16.1.1</span> Kowariancja</h3>
+<p>Kowariancja mierzy, jak dwie zmienne zmieniają się razem.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(cov(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n - 1}\)</span></p>
+<p><strong>Przykład Ręcznego Obliczenia:</strong></p>
+<p>Obliczmy kowariancję dla dwóch zmiennych:</p>
+<ul>
+<li>x: 1, 2, 3, 4, 5</li>
+<li>y: 2, 4, 5, 4, 5</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Krok</th>
+<th>Opis</th>
+<th>Obliczenie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Oblicz średnie</td>
+<td><span class="math inline">\(\bar{x} = 3, \bar{y} = 4\)</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Oblicz <span class="math inline">\((x_i - \bar{x})(y_i - \bar{y})\)</span> dla każdej pary</td>
+<td><span class="math inline">\((-2)(-2) = 4\)</span></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td><span class="math inline">\((-1)(0) = 0\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><span class="math inline">\((0)(1) = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td><span class="math inline">\((1)(0) = 0\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><span class="math inline">\((2)(1) = 2\)</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Zsumuj wyniki</td>
+<td><span class="math inline">\(4 + 0 + 0 + 0 + 2 = 6\)</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Podziel przez (n-1)</td>
+<td><span class="math inline">\(6 / 4 = 1,5\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong> - Dodatnia kowariancja (1,5) wskazuje, że x i y mają tendencję do wzrostu razem.</p>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Dostarcza informacji o kierunku związku (dodatni lub ujemny)</li>
+<li>Przydatna w obliczaniu innych miar, takich jak korelacja</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Zależna od skali, co utrudnia porównywanie między różnymi parami zmiennych</li>
+<li>Nie dostarcza informacji o sile związku</li>
+</ul>
+</section>
+<section id="korelacja-pearsona" class="level3" data-number="16.1.2">
+<h3 data-number="16.1.2" class="anchored" data-anchor-id="korelacja-pearsona"><span class="header-section-number">16.1.2</span> Korelacja Pearsona</h3>
+<p>Korelacja Pearsona mierzy siłę i kierunek liniowego związku między dwiema zmiennymi ciągłymi.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(r = \frac{cov(X,Y)}{s_X s_Y} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}\)</span></p>
+<p><strong>Przykład Ręcznego Obliczenia:</strong></p>
+<p>Używając tych samych danych co wyżej:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Krok</th>
+<th>Opis</th>
+<th>Obliczenie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Oblicz kowariancję</td>
+<td>(Z poprzedniego obliczenia) 1,5</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Oblicz odchylenia standardowe</td>
+<td><span class="math inline">\(s_X = \sqrt{\frac{10}{4}} = 1,58, s_Y = \sqrt{\frac{6}{4}} = 1,22\)</span></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Podziel kowariancję przez iloczyn odchyleń standardowych</td>
+<td><span class="math inline">\(1,5 / (1,58 * 1,22) = 0,7746\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7745967</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong> - Współczynnik korelacji 0,7746 wskazuje na silny dodatni związek liniowy między x i y.</p>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Niezależna od skali, zawsze między -1 a 1</li>
+<li>Szeroko rozumiana i stosowana</li>
+<li>Testuje związki liniowe</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Wrażliwa na wartości odstające</li>
+<li>Mierzy tylko związki liniowe</li>
+<li>Zakłada normalnie rozłożone zmienne</li>
+</ul>
+</section>
+<section id="korelacja-spearmana" class="level3" data-number="16.1.3">
+<h3 data-number="16.1.3" class="anchored" data-anchor-id="korelacja-spearmana"><span class="header-section-number">16.1.3</span> Korelacja Spearmana</h3>
+<p>Korelacja Spearmana mierzy siłę i kierunek monotonicznego związku między dwiema zmiennymi, które mogą być ciągłe lub porządkowe.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(r_s = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}\)</span>, gdzie <span class="math inline">\(d_i\)</span> to różnica między rangami.</p>
+<p><strong>Przykład Ręcznego Obliczenia:</strong></p>
+<p>Użyjmy nieco innych danych:</p>
+<ul>
+<li>x: 1, 2, 3, 4, 5</li>
+<li>y: 1, 3, 2, 5, 4</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Krok</th>
+<th>Opis</th>
+<th>Obliczenie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Przypisz rangi obu zmiennym</td>
+<td>x_ranga: 1, 2, 3, 4, 5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>y_ranga: 1, 3, 2, 5, 4</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Oblicz różnice w rangach (d)</td>
+<td>0, -1, 1, -1, 1</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Podnieś różnice do kwadratu</td>
+<td>0, 1, 1, 1, 1</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Zsumuj kwadraty różnic</td>
+<td><span class="math inline">\(\sum d_i^2 = 4\)</span></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Zastosuj wzór</td>
+<td><span class="math inline">\(r_s = 1 - \frac{6(4)}{5(5^2 - 1)} = 0,8\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Obliczenie w R:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong> - Korelacja Spearmana 0,8 wskazuje na silny dodatni związek monotoniczny między x i y.</p>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Odporna na wartości odstające</li>
+<li>Może wykrywać nieliniowe związki monotoniczne</li>
+<li>Odpowiednia dla danych porządkowych</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Mniej odporna niż korelacja Pearsona do wykrywania związków liniowych w normalnie rozłożonych danych</li>
+<li>Nie dostarcza informacji o kształcie związku poza monotonicznością</li>
+</ul>
+</section>
+<section id="tabela-krzyżowa" class="level3" data-number="16.1.4">
+<h3 data-number="16.1.4" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">16.1.4</span> Tabela Krzyżowa</h3>
+<p>Tabela krzyżowa (tabela kontyngencji) pokazuje związek między dwiema zmiennymi kategorycznymi.</p>
+<p><strong>Przykład:</strong></p>
+<p>Stwórzmy tabelę krzyżową dla dwóch zmiennych: - Poziom wykształcenia: Średnie, Wyższe, Podyplomowe - Status zatrudnienia: Zatrudniony, Bezrobotny</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wyksztalcenie <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>, <span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>, <span class="st">"Średnie"</span>, <span class="st">"Wyższe"</span>, <span class="st">"Podyplomowe"</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>zatrudnienie <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Zatrudniony"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Bezrobotny"</span>, <span class="st">"Zatrudniony"</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(wyksztalcenie, zatrudnienie)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             zatrudnienie
+wyksztalcenie Bezrobotny Zatrudniony
+  Podyplomowe          0           3
+  Średnie              2           1
+  Wyższe               1           2</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Ta tabela pokazuje liczbę osób w każdej kombinacji poziomu wykształcenia i statusu zatrudnienia.</li>
+<li>Na przykład, możemy zobaczyć, ilu absolwentów szkół średnich jest zatrudnionych, a ilu bezrobotnych.</li>
+</ul>
+<p><strong>Zalety:</strong></p>
+<ul>
+<li>Zapewnia jasną wizualną reprezentację związku między zmiennymi kategorycznymi</li>
+<li>Łatwa do zrozumienia i interpretacji</li>
+<li>Podstawa dla wielu testów statystycznych (np. test chi-kwadrat niezależności)</li>
+</ul>
+<p><strong>Wady:</strong></p>
+<ul>
+<li>Ograniczona do danych kategorycznych</li>
+<li>Może stać się nieporęczna przy wielu kategoriach</li>
+<li>Nie dostarcza pojedynczej statystyki podsumowującej siłę związku</li>
+</ul>
+</section>
+<section id="wybór-odpowiedniej-miary" class="level3" data-number="16.1.5">
+<h3 data-number="16.1.5" class="anchored" data-anchor-id="wybór-odpowiedniej-miary"><span class="header-section-number">16.1.5</span> Wybór Odpowiedniej Miary</h3>
+<p>Przy wyborze statystyki dwuwymiarowej należy wziąć pod uwagę:</p>
+<ol type="1">
+<li><p>Typ danych:</p>
+<ul>
+<li>Dane ciągłe: Kowariancja, korelacja Pearsona</li>
+<li>Dane porządkowe: Korelacja Spearmana</li>
+<li>Dane kategoryczne: Tabela krzyżowa</li>
+</ul></li>
+<li><p>Typ związku:</p>
+<ul>
+<li>Liniowy: Korelacja Pearsona</li>
+<li>Monotoniczny, ale potencjalnie nieliniowy: Korelacja Spearmana</li>
+</ul></li>
+<li><p>Obecność wartości odstających:</p>
+<ul>
+<li>Jeśli wartości odstające są problemem, korelacja Spearmana jest bardziej odporna</li>
+</ul></li>
+<li><p>Rozkład:</p>
+<ul>
+<li>Dla normalnie rozłożonych danych korelacja Pearsona jest najbardziej odporna (robust)</li>
+<li>Dla rozkładów “nienormalnych” rozważ korelację Spearmana</li>
+</ul></li>
+<li><p>Wielkość próby:</p>
+<ul>
+<li>Dla bardzo małych prób metody nieparametryczne, takie jak korelacja Spearmana, mogą być preferowane</li>
+</ul></li>
+</ol>
+<p>Pamiętaj, że często wartościowe jest użycie wielu miar i wizualizacji (takich jak wykresy rozrzutu), aby uzyskać kompleksowe zrozumienie związku między zmiennymi.</p>
+</section>
+</section>
+<section id="wprowadzenie-do-podstawowej-statystyki-wielowymiarowej" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="wprowadzenie-do-podstawowej-statystyki-wielowymiarowej"><span class="header-section-number">16.2</span> Wprowadzenie do Podstawowej Statystyki Wielowymiarowej</h2>
+<p>Statystyki wielowymiarowe obejmują analizę związków między trzema lub więcej zmiennymi jednocześnie. Ta sekcja wprowadzi niektóre podstawowe koncepcje i techniki analizy wielowymiarowej, koncentrując się na metodach opartych na korelacji.</p>
+<section id="macierz-korelacji" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="macierz-korelacji"><span class="header-section-number">16.2.1</span> Macierz Korelacji</h3>
+<p>Macierz korelacji to tabela pokazująca korelacje parami dla kilku zmiennych. Jest to podstawowe narzędzie w analizie wielowymiarowej.</p>
+<p><strong>Przykład:</strong> Stwórzmy macierz korelacji dla czterech zmiennych: wzrost, waga, wiek i dochód.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># Dla powtarzalności</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>wzrost <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">170</span>, <span class="dv">10</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>waga <span class="ot">&lt;-</span> wzrost <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>wiek <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">40</span>, <span class="dv">10</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dochod <span class="ot">&lt;-</span> wiek <span class="sc">*</span> <span class="dv">1000</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">10000</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>dane <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(wzrost, waga, wiek, dochod)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>macierz_kor <span class="ot">&lt;-</span> <span class="fu">cor</span>(dane)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(macierz_kor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           wzrost        waga        wiek      dochod
+wzrost  1.0000000  0.66712996 -0.12917601 -0.12246786
+waga    0.6671300  1.00000000 -0.06814187 -0.04579492
+wiek   -0.1291760 -0.06814187  1.00000000  0.65654902
+dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong> - Każda komórka pokazuje korelację między dwiema zmiennymi. - Przekątna zawsze wynosi 1 (korelacja zmiennej z samą sobą). - Szukaj silnych korelacji (bliskich 1 lub -1), aby zidentyfikować potencjalne związki.</p>
+</section>
+<section id="wizualizacja-związków-wielowymiarowych" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="wizualizacja-związków-wielowymiarowych"><span class="header-section-number">16.2.2</span> Wizualizacja Związków Wielowymiarowych</h3>
+<section id="macierz-wykresów-rozrzutu" class="level4" data-number="16.2.2.1">
+<h4 data-number="16.2.2.1" class="anchored" data-anchor-id="macierz-wykresów-rozrzutu"><span class="header-section-number">16.2.2.1</span> Macierz Wykresów Rozrzutu</h4>
+<p>Macierz wykresów rozrzutu pokazuje parami związki między wieloma zmiennymi.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dane)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Każdy wykres pokazuje związek między dwiema zmiennymi.</li>
+<li>Elementy na przekątnej pokazują rozkład każdej zmiennej.</li>
+<li>Szukaj wzorców, skupisk lub trendów na wykresach.</li>
+</ul>
+</section>
+<section id="wykres-korelacji" class="level4" data-number="16.2.2.2">
+<h4 data-number="16.2.2.2" class="anchored" data-anchor-id="wykres-korelacji"><span class="header-section-number">16.2.2.2</span> Wykres Korelacji</h4>
+<p>Wykres korelacji zapewnia wizualną reprezentację macierzy korelacji.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>corrplot 0.94 loaded</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(macierz_kor, <span class="at">method =</span> <span class="st">"color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Intensywność koloru i rozmiar kół wskazują na siłę korelacji.</li>
+<li>Niebieskie kolory zazwyczaj wskazują na dodatnie korelacje, czerwone na ujemne.</li>
+</ul>
+</section>
+</section>
+<section id="korelacja-cząstkowa" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="korelacja-cząstkowa"><span class="header-section-number">16.2.3</span> Korelacja Cząstkowa</h3>
+<p>Korelacja cząstkowa mierzy związek między dwiema zmiennymi przy kontrolowaniu jednej lub więcej innych zmiennych.</p>
+<p><strong>Przykład:</strong> Obliczmy korelację cząstkową między wzrostem a wagą, kontrolując wiek.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: MASS</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pcor.test</span>(dane<span class="sc">$</span>wzrost, dane<span class="sc">$</span>waga, dane<span class="sc">$</span>wiek)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   estimate      p.value statistic   n gp  Method
+1 0.6654367 5.758157e-14  8.779896 100  1 pearson</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Porównaj to z prostą korelacją między wzrostem a wagą.</li>
+<li>Znacząca zmiana może wskazywać, że wiek odgrywa rolę w związku między wzrostem a wagą.</li>
+</ul>
+</section>
+<section id="korelacja-wielokrotna" class="level3" data-number="16.2.4">
+<h3 data-number="16.2.4" class="anchored" data-anchor-id="korelacja-wielokrotna"><span class="header-section-number">16.2.4</span> Korelacja Wielokrotna</h3>
+<p>Korelacja wielokrotna mierzy siłę związku między zmienną zależną a wieloma zmiennymi niezależnymi.</p>
+<p><strong>Przykład:</strong> Przewidźmy wagę na podstawie wzrostu i wieku.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(waga <span class="sc">~</span> wzrost <span class="sc">+</span> wiek, <span class="at">data =</span> dane)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>r.squared)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Współczynnik korelacji wielokrotnej:"</span>, R))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Współczynnik korelacji wielokrotnej: 0.667377840470434"</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>R waha się od 0 do 1, przy czym wyższe wartości wskazują na silniejsze związki.</li>
+<li>R² (R-kwadrat) reprezentuje proporcję wariancji w zmiennej zależnej wyjaśnioną przez zmienne niezależne.</li>
+</ul>
+</section>
+<section id="analiza-czynnikowa" class="level3" data-number="16.2.5">
+<h3 data-number="16.2.5" class="anchored" data-anchor-id="analiza-czynnikowa"><span class="header-section-number">16.2.5</span> Analiza Czynnikowa</h3>
+<p>Analiza czynnikowa to technika używana do zredukowania wielu zmiennych do mniejszej liczby czynników leżących u podstaw.</p>
+<p><strong>Przykład:</strong> Wykonajmy prostą analizę czynnikową na naszym zbiorze danych.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>wynik_fa <span class="ot">&lt;-</span> <span class="fu">fa</span>(dane, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(wynik_fa<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+       MR2    MR1   
+wzrost  0.798       
+waga    0.836       
+wiek           0.729
+dochod         0.895
+
+                 MR2   MR1
+SS loadings    1.344 1.341
+Proportion Var 0.336 0.335
+Cumulative Var 0.336 0.671</code></pre>
+</div>
+</div>
+<p><strong>Interpretacja:</strong></p>
+<ul>
+<li>Spójrz, które zmienne ładują się wysoko na każdy czynnik.</li>
+<li>Spróbuj zinterpretować, co każdy czynnik może reprezentować na podstawie zmiennych, które się na niego ładują.</li>
+</ul>
+</section>
+<section id="uwagi-dotyczące-analizy-wielowymiarowej" class="level3" data-number="16.2.6">
+<h3 data-number="16.2.6" class="anchored" data-anchor-id="uwagi-dotyczące-analizy-wielowymiarowej"><span class="header-section-number">16.2.6</span> Uwagi dotyczące Analizy Wielowymiarowej</h3>
+<ol type="1">
+<li><p><strong>Wielkość próby</strong>: Techniki wielowymiarowe często wymagają większych prób dla stabilnych wyników.</p></li>
+<li><p><strong>Współliniowość</strong>: Wysokie korelacje między zmiennymi niezależnymi mogą powodować problemy w niektórych analizach.</p></li>
+<li><p><strong>Wartości odstające</strong>: Wielowymiarowe wartości odstające mogą mieć silny wpływ na wyniki.</p></li>
+<li><p><strong>Założenia</strong>: Wiele technik zakłada wielowymiarową normalność i liniowe związki.</p></li>
+<li><p><strong>Złożoność interpretacji</strong>: Wraz ze wzrostem liczby zmiennych interpretacja może stać się bardziej wyzwająca.</p></li>
+</ol>
+</section>
+<section id="podsumowanie" class="level3" data-number="16.2.7">
+<h3 data-number="16.2.7" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">16.2.7</span> Podsumowanie</h3>
+<p>To wprowadzenie do statystyki wielowymiarowej opiera się na koncepcji korelacji, aby badać związki między wieloma zmiennymi. Techniki te zapewniają potężne narzędzia do zrozumienia złożonych zbiorów danych, ale wymagają również starannego rozważenia założeń i ograniczeń. W miarę postępu w Twojej podróży statystycznej napotkasz bardziej zaawansowane techniki wielowymiarowe, takie jak MANOVA, analiza dyskryminacyjna i modelowanie równań strukturalnych.</p>
+</section>
+</section>
+<section id="dodatek-a.1-obliczanie-kowariancji-oraz-korelacji-pearsona-i-spearmana---przykład-z-obliczeniami" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="dodatek-a.1-obliczanie-kowariancji-oraz-korelacji-pearsona-i-spearmana---przykład-z-obliczeniami"><span class="header-section-number">16.3</span> Dodatek A.1: Obliczanie Kowariancji oraz Korelacji Pearsona i Spearmana - przykład z obliczeniami</h2>
+<p>Dane dotyczące wielkości okręgu wyborczego (DM) i indeksu Gallaghera:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>DM (<span class="math inline">\(X\)</span>)</th>
+<th>Gallagher (<span class="math inline">\(Y\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>18,2</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>16,7</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>15,8</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>15,3</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>15,0</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>14,8</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>14,7</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>14,6</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>14,55</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>14,52</td>
+</tr>
+</tbody>
+</table>
+<section id="krok-1-obliczanie-podstawowych-statystyk" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="krok-1-obliczanie-podstawowych-statystyk"><span class="header-section-number">16.3.1</span> Krok 1: Obliczanie Podstawowych Statystyk</h3>
+<p>Obliczanie średnich:</p>
+<p>Dla DM (<span class="math inline">\(X\)</span>): <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^n X_i}{n}\)</span></p>
+<p>Szczegółowe obliczenia:</p>
+<pre><code>2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 = 65
+x̄ = 65 ÷ 10 = 6,5</code></pre>
+<p>Dla indeksu Gallaghera (<span class="math inline">\(Y\)</span>): <span class="math inline">\(\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n}\)</span></p>
+<p>Szczegółowe obliczenia:</p>
+<pre><code>18,2 + 16,7 + 15,8 + 15,3 + 15,0 + 14,8 + 14,7 + 14,6 + 14,55 + 14,52 = 154,17
+ȳ = 154,17 ÷ 10 = 15,417</code></pre>
+</section>
+<section id="krok-2-szczegółowe-obliczenia-kowariancji" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="krok-2-szczegółowe-obliczenia-kowariancji"><span class="header-section-number">16.3.2</span> Krok 2: Szczegółowe Obliczenia Kowariancji</h3>
+<p>Pełna tabela robocza ze wszystkimi obliczeniami:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 26%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th><span class="math inline">\(X_i\)</span></th>
+<th><span class="math inline">\(Y_i\)</span></th>
+<th><span class="math inline">\((X_i - \bar{X})\)</span></th>
+<th><span class="math inline">\((Y_i - \bar{Y})\)</span></th>
+<th><span class="math inline">\((X_i - \bar{X})(Y_i - \bar{Y})\)</span></th>
+<th><span class="math inline">\((X_i - \bar{X})^2\)</span></th>
+<th><span class="math inline">\((Y_i - \bar{Y})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>18,2</td>
+<td>-4,5</td>
+<td>2,783</td>
+<td>-12,5235</td>
+<td>20,25</td>
+<td>7,7451</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>16,7</td>
+<td>-3,5</td>
+<td>1,283</td>
+<td>-4,4905</td>
+<td>12,25</td>
+<td>1,6461</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+<td>15,8</td>
+<td>-2,5</td>
+<td>0,383</td>
+<td>-0,9575</td>
+<td>6,25</td>
+<td>0,1467</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>5</td>
+<td>15,3</td>
+<td>-1,5</td>
+<td>-0,117</td>
+<td>0,1755</td>
+<td>2,25</td>
+<td>0,0137</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>6</td>
+<td>15,0</td>
+<td>-0,5</td>
+<td>-0,417</td>
+<td>0,2085</td>
+<td>0,25</td>
+<td>0,1739</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>14,8</td>
+<td>0,5</td>
+<td>-0,617</td>
+<td>-0,3085</td>
+<td>0,25</td>
+<td>0,3807</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>8</td>
+<td>14,7</td>
+<td>1,5</td>
+<td>-0,717</td>
+<td>-1,0755</td>
+<td>2,25</td>
+<td>0,5141</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>9</td>
+<td>14,6</td>
+<td>2,5</td>
+<td>-0,817</td>
+<td>-2,0425</td>
+<td>6,25</td>
+<td>0,6675</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>10</td>
+<td>14,55</td>
+<td>3,5</td>
+<td>-0,867</td>
+<td>-3,0345</td>
+<td>12,25</td>
+<td>0,7517</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>11</td>
+<td>14,52</td>
+<td>4,5</td>
+<td>-0,897</td>
+<td>-4,0365</td>
+<td>20,25</td>
+<td>0,8047</td>
+</tr>
+<tr class="odd">
+<td>Suma</td>
+<td>65</td>
+<td>154,17</td>
+<td>0</td>
+<td>0</td>
+<td>-28,085</td>
+<td>82,5</td>
+<td>12,8442</td>
+</tr>
+</tbody>
+</table>
+<p>Obliczanie kowariancji: <span class="math inline">\(Cov(X,Y) = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\)</span></p>
+<pre><code>Cov(X,Y) = -28,085 ÷ 9 = -3,120556</code></pre>
+</section>
+<section id="krok-3-obliczanie-odchylenia-standardowego" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="krok-3-obliczanie-odchylenia-standardowego"><span class="header-section-number">16.3.3</span> Krok 3: Obliczanie Odchylenia Standardowego</h3>
+<p>Dla DM (<span class="math inline">\(X\)</span>): <span class="math inline">\(\sigma_X = \sqrt{\frac{\sum_{i=1}^n (X_i - \bar{X})^2}{n-1}}\)</span></p>
+<pre><code>σx = √(82,5 ÷ 9)
+   = √9,1667
+   = 3,026582</code></pre>
+<p>Dla Gallaghera (<span class="math inline">\(Y\)</span>): <span class="math inline">\(\sigma_Y = \sqrt{\frac{\sum_{i=1}^n (Y_i - \bar{Y})^2}{n-1}}\)</span></p>
+<pre><code>σy = √(12,8442 ÷ 9)
+   = √1,4271
+   = 1,194612</code></pre>
+</section>
+<section id="krok-4-obliczanie-korelacji-pearsona" class="level3" data-number="16.3.4">
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="krok-4-obliczanie-korelacji-pearsona"><span class="header-section-number">16.3.4</span> Krok 4: Obliczanie Korelacji Pearsona</h3>
+<p><span class="math inline">\(r = \frac{Cov(X,Y)}{\sigma_X \sigma_Y}\)</span></p>
+<pre><code>r = -3,120556 ÷ (3,026582 × 1,194612)
+  = -3,120556 ÷ 3,615752
+  = -0,863044</code></pre>
+</section>
+<section id="krok-5-obliczanie-korelacji-rangowej-spearmana" class="level3" data-number="16.3.5">
+<h3 data-number="16.3.5" class="anchored" data-anchor-id="krok-5-obliczanie-korelacji-rangowej-spearmana"><span class="header-section-number">16.3.5</span> Krok 5: Obliczanie Korelacji Rangowej Spearmana</h3>
+<p>Pełna tabela rangowa ze wszystkimi obliczeniami:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th><span class="math inline">\(X_i\)</span></th>
+<th><span class="math inline">\(Y_i\)</span></th>
+<th>Ranga <span class="math inline">\(X_i\)</span></th>
+<th>Ranga <span class="math inline">\(Y_i\)</span></th>
+<th><span class="math inline">\(d_i\)</span></th>
+<th><span class="math inline">\(d_i^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>18,2</td>
+<td>1</td>
+<td>10</td>
+<td>-9</td>
+<td>81</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>16,7</td>
+<td>2</td>
+<td>9</td>
+<td>-7</td>
+<td>49</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+<td>15,8</td>
+<td>3</td>
+<td>8</td>
+<td>-5</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>5</td>
+<td>15,3</td>
+<td>4</td>
+<td>7</td>
+<td>-3</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>6</td>
+<td>15,0</td>
+<td>5</td>
+<td>6</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>14,8</td>
+<td>6</td>
+<td>5</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>8</td>
+<td>14,7</td>
+<td>7</td>
+<td>4</td>
+<td>3</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>9</td>
+<td>14,6</td>
+<td>8</td>
+<td>3</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>10</td>
+<td>14,55</td>
+<td>9</td>
+<td>2</td>
+<td>7</td>
+<td>49</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>11</td>
+<td>14,52</td>
+<td>10</td>
+<td>1</td>
+<td>9</td>
+<td>81</td>
+</tr>
+<tr class="odd">
+<td>Suma</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>330</td>
+</tr>
+</tbody>
+</table>
+<p>Obliczanie korelacji Spearmana: <span class="math inline">\(r_s = 1 - \frac{6\sum d_i^2}{n(n^2-1)}\)</span></p>
+<pre><code>rs = 1 - (6 × 330) ÷ (10(100 - 1))
+   = 1 - 1980 ÷ 990
+   = 1 - 2
+   = -1</code></pre>
+</section>
+<section id="krok-6-weryfikacja-w-r" class="level3" data-number="16.3.6">
+<h3 data-number="16.3.6" class="anchored" data-anchor-id="krok-6-weryfikacja-w-r"><span class="header-section-number">16.3.6</span> Krok 6: Weryfikacja w R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wektorów</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>DM <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>GH <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">18.2</span>, <span class="fl">16.7</span>, <span class="fl">15.8</span>, <span class="fl">15.3</span>, <span class="fl">15.0</span>, <span class="fl">14.8</span>, <span class="fl">14.7</span>, <span class="fl">14.6</span>, <span class="fl">14.55</span>, <span class="fl">14.52</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie kowariancji</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(DM, GH)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -3.120556</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczanie korelacji</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(DM, GH, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.8627742</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(DM, GH, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1</code></pre>
+</div>
+</div>
+</section>
+<section id="krok-7-podstawowa-wizualizacja" class="level3" data-number="16.3.7">
+<h3 data-number="16.3.7" class="anchored" data-anchor-id="krok-7-podstawowa-wizualizacja"><span class="header-section-number">16.3.7</span> Krok 7: Podstawowa Wizualizacja</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'ggplot2'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:psych':
+
+    %+%, alpha</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie ramki danych</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">DM =</span> DM, <span class="at">GH =</span> GH)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu rozrzutu</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Wielkość Okręgu vs Indeks Gallaghera"</span>,</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Wielkość Okręgu (DM)"</span>,</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indeks Gallaghera (GH)"</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dodatek-a.2-estymacja-ols-i-miary-dopasowania-modelu" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="dodatek-a.2-estymacja-ols-i-miary-dopasowania-modelu"><span class="header-section-number">16.4</span> Dodatek A.2: Estymacja OLS i Miary Dopasowania Modelu</h2>
+<section id="krok-1-obliczanie-estymatorów-ols" class="level3" data-number="16.4.1">
+<h3 data-number="16.4.1" class="anchored" data-anchor-id="krok-1-obliczanie-estymatorów-ols"><span class="header-section-number">16.4.1</span> Krok 1: Obliczanie Estymatorów OLS</h3>
+<p>Korzystając z wcześniej obliczonych wartości: - <span class="math inline">\(\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28,085\)</span> - <span class="math inline">\(\sum(X_i - \bar{X})^2 = 82,5\)</span> - <span class="math inline">\(\bar{X} = 6,5\)</span> - <span class="math inline">\(\bar{Y} = 15,417\)</span></p>
+<p>Obliczanie nachylenia (<span class="math inline">\(\beta_1\)</span>): <span class="math inline">\(\beta_1 = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}\)</span></p>
+<pre><code>β₁ = -28,085 ÷ 82,5 = -0,3404</code></pre>
+<p>Obliczanie wyrazu wolnego (<span class="math inline">\(\beta_0\)</span>): <span class="math inline">\(\beta_0 = \bar{Y} - \beta_1\bar{X}\)</span></p>
+<pre><code>β₀ = 15,417 - (-0,3404 × 6,5)
+   = 15,417 + 2,2126
+   = 17,6296</code></pre>
+<p>Zatem równanie regresji OLS ma postać: <span class="math inline">\(\hat{Y} = 17,6296 - 0,3404X\)</span></p>
+</section>
+<section id="krok-2-obliczanie-wartości-dopasowanych-i-reszt" class="level3" data-number="16.4.2">
+<h3 data-number="16.4.2" class="anchored" data-anchor-id="krok-2-obliczanie-wartości-dopasowanych-i-reszt"><span class="header-section-number">16.4.2</span> Krok 2: Obliczanie Wartości Dopasowanych i Reszt</h3>
+<p>Pełna tabela ze wszystkimi obliczeniami:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 11%">
+<col style="width: 21%">
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th><span class="math inline">\(X_i\)</span></th>
+<th><span class="math inline">\(Y_i\)</span></th>
+<th><span class="math inline">\(\hat{Y}_i\)</span></th>
+<th><span class="math inline">\(e_i = Y_i - \hat{Y}_i\)</span></th>
+<th><span class="math inline">\(e_i^2\)</span></th>
+<th><span class="math inline">\((Y_i - \bar{Y})^2\)</span></th>
+<th><span class="math inline">\((\hat{Y}_i - \bar{Y})^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>18,2</td>
+<td>16,9488</td>
+<td>1,2512</td>
+<td>1,5655</td>
+<td>7,7451</td>
+<td>2,3404</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>16,7</td>
+<td>16,6084</td>
+<td>0,0916</td>
+<td>0,0084</td>
+<td>1,6461</td>
+<td>1,4241</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+<td>15,8</td>
+<td>16,2680</td>
+<td>-0,4680</td>
+<td>0,2190</td>
+<td>0,1467</td>
+<td>0,7225</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>5</td>
+<td>15,3</td>
+<td>15,9276</td>
+<td>-0,6276</td>
+<td>0,3939</td>
+<td>0,0137</td>
+<td>0,2601</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>6</td>
+<td>15,0</td>
+<td>15,5872</td>
+<td>-0,5872</td>
+<td>0,3448</td>
+<td>0,1739</td>
+<td>0,0289</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>14,8</td>
+<td>15,2468</td>
+<td>-0,4468</td>
+<td>0,1996</td>
+<td>0,3807</td>
+<td>0,0290</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>8</td>
+<td>14,7</td>
+<td>14,9064</td>
+<td>-0,2064</td>
+<td>0,0426</td>
+<td>0,5141</td>
+<td>0,2610</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>9</td>
+<td>14,6</td>
+<td>14,5660</td>
+<td>0,0340</td>
+<td>0,0012</td>
+<td>0,6675</td>
+<td>0,7241</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>10</td>
+<td>14,55</td>
+<td>14,2256</td>
+<td>0,3244</td>
+<td>0,1052</td>
+<td>0,7517</td>
+<td>1,4184</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>11</td>
+<td>14,52</td>
+<td>13,8852</td>
+<td>0,6348</td>
+<td>0,4030</td>
+<td>0,8047</td>
+<td>2,3439</td>
+</tr>
+<tr class="odd">
+<td>Suma</td>
+<td>65</td>
+<td>154,17</td>
+<td>154,17</td>
+<td>0</td>
+<td>3,2832</td>
+<td>12,8442</td>
+<td>9,5524</td>
+</tr>
+</tbody>
+</table>
+<p>Obliczenia dla wartości dopasowanych:</p>
+<pre><code>Dla X = 2:
+Ŷ = 17,6296 + (-0,3404 × 2) = 16,9488
+
+Dla X = 3:
+Ŷ = 17,6296 + (-0,3404 × 3) = 16,6084
+
+[... kontynuacja dla wszystkich wartości]</code></pre>
+</section>
+<section id="krok-3-obliczanie-miar-dopasowania" class="level3" data-number="16.4.3">
+<h3 data-number="16.4.3" class="anchored" data-anchor-id="krok-3-obliczanie-miar-dopasowania"><span class="header-section-number">16.4.3</span> Krok 3: Obliczanie Miar Dopasowania</h3>
+<p>Suma kwadratów reszt (SSE): <span class="math inline">\(SSE = \sum e_i^2\)</span></p>
+<pre><code>SSE = 3,2832</code></pre>
+<p>Całkowita suma kwadratów (SST): <span class="math inline">\(SST = \sum(Y_i - \bar{Y})^2\)</span></p>
+<pre><code>SST = 12,8442</code></pre>
+<p>Suma kwadratów regresji (SSR): <span class="math inline">\(SSR = \sum(\hat{Y}_i - \bar{Y})^2\)</span></p>
+<pre><code>SSR = 9,5524</code></pre>
+<p>Weryfikacja dekompozycji: <span class="math inline">\(SST = SSR + SSE\)</span></p>
+<pre><code>12,8442 = 9,5524 + 3,2832 (w granicach błędu zaokrąglenia)</code></pre>
+<p>Obliczanie współczynnika determinacji R-kwadrat: <span class="math inline">\(R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}\)</span></p>
+<pre><code>R² = 9,5524 ÷ 12,8442
+   = 0,7438</code></pre>
+</section>
+<section id="krok-4-weryfikacja-w-r" class="level3" data-number="16.4.4">
+<h3 data-number="16.4.4" class="anchored" data-anchor-id="krok-4-weryfikacja-w-r"><span class="header-section-number">16.4.4</span> Krok 4: Weryfikacja w R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dopasowanie modelu liniowego</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Podsumowanie statystyk</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = GH ~ DM, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.62764 -0.46274 -0.08615  0.26624  1.25109 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 17.62976    0.50121  35.174 4.67e-10 ***
+DM          -0.34042    0.07053  -4.827  0.00131 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.6406 on 8 degrees of freedom
+Multiple R-squared:  0.7444,    Adjusted R-squared:  0.7124 
+F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ręczne obliczenie R-kwadrat</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>((GH <span class="sc">-</span> <span class="fu">mean</span>(GH))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(model)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>SSR <span class="ot">&lt;-</span> SST <span class="sc">-</span> SSE</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>R2_manual <span class="ot">&lt;-</span> SSR<span class="sc">/</span>SST</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>R2_manual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7443793</code></pre>
+</div>
+</div>
+</section>
+<section id="krok-5-analiza-reszt" class="level3" data-number="16.4.5">
+<h3 data-number="16.4.5" class="anchored" data-anchor-id="krok-5-analiza-reszt"><span class="header-section-number">16.4.5</span> Krok 5: Analiza Reszt</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresów reszt</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="krok-6-wykres-wartości-przewidywanych-vs-rzeczywistych" class="level3" data-number="16.4.6">
+<h3 data-number="16.4.6" class="anchored" data-anchor-id="krok-6-wykres-wartości-przewidywanych-vs-rzeczywistych"><span class="header-section-number">16.4.6</span> Krok 6: Wykres Wartości Przewidywanych vs Rzeczywistych</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu wartości przewidywanych vs rzeczywistych</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Rzeczywiste =</span> GH,</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Przewidywane =</span> <span class="fu">fitted</span>(model)</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>), <span class="fu">aes</span>(<span class="at">x =</span> Przewidywane, <span class="at">y =</span> Rzeczywiste)) <span class="sc">+</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">slope =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Wartości Przewidywane vs Rzeczywiste"</span>,</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Przewidywany Indeks Gallaghera"</span>,</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Rzeczywisty Indeks Gallaghera"</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dodatek-a.3-modele-z-transformacją-logarytmiczną" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="dodatek-a.3-modele-z-transformacją-logarytmiczną"><span class="header-section-number">16.5</span> Dodatek A.3 Modele z Transformacją Logarytmiczną</h2>
+<section id="krok-1-transformacja-danych" class="level3" data-number="16.5.1">
+<h3 data-number="16.5.1" class="anchored" data-anchor-id="krok-1-transformacja-danych"><span class="header-section-number">16.5.1</span> Krok 1: Transformacja Danych</h3>
+<p>Najpierw obliczamy logarytmy naturalne zmiennych:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th><span class="math inline">\(X_i\)</span></th>
+<th><span class="math inline">\(Y_i\)</span></th>
+<th><span class="math inline">\(\ln(X_i)\)</span></th>
+<th><span class="math inline">\(\ln(Y_i)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>18,2</td>
+<td>0,6931</td>
+<td>2,9014</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>16,7</td>
+<td>1,0986</td>
+<td>2,8154</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+<td>15,8</td>
+<td>1,3863</td>
+<td>2,7600</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>5</td>
+<td>15,3</td>
+<td>1,6094</td>
+<td>2,7278</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>6</td>
+<td>15,0</td>
+<td>1,7918</td>
+<td>2,7081</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>7</td>
+<td>14,8</td>
+<td>1,9459</td>
+<td>2,6946</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>8</td>
+<td>14,7</td>
+<td>2,0794</td>
+<td>2,6878</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>9</td>
+<td>14,6</td>
+<td>2,1972</td>
+<td>2,6810</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>10</td>
+<td>14,55</td>
+<td>2,3026</td>
+<td>2,6777</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>11</td>
+<td>14,52</td>
+<td>2,3979</td>
+<td>2,6757</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="krok-2-porównanie-różnych-specyfikacji-modelu" class="level3" data-number="16.5.2">
+<h3 data-number="16.5.2" class="anchored" data-anchor-id="krok-2-porównanie-różnych-specyfikacji-modelu"><span class="header-section-number">16.5.2</span> Krok 2: Porównanie Różnych Specyfikacji Modelu</h3>
+<p>Szacujemy trzy alternatywne specyfikacje:</p>
+<ol type="1">
+<li>Model log-liniowy: <span class="math inline">\(\ln(Y_i) = \beta_0 + \beta_1X_i + \epsilon_i\)</span></li>
+<li>Model liniowo-logarytmiczny: <span class="math inline">\(Y_i = \beta_0 + \beta_1\ln(X_i) + \epsilon_i\)</span></li>
+<li>Model log-log: <span class="math inline">\(\ln(Y_i) = \beta_0 + \beta_1\ln(X_i) + \epsilon_i\)</span></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennych transformowanych</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>log_DM <span class="ot">&lt;-</span> <span class="fu">log</span>(data<span class="sc">$</span>DM)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>log_GH <span class="ot">&lt;-</span> <span class="fu">log</span>(data<span class="sc">$</span>GH)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Dopasowanie modeli</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>model_linear <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>model_loglinear <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>model_linearlog <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> log_DM, <span class="at">data =</span> data)</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>model_loglog <span class="ot">&lt;-</span> <span class="fu">lm</span>(log_GH <span class="sc">~</span> log_DM, <span class="at">data =</span> data)</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Porównanie wartości R-kwadrat</span></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>models_comparison <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Liniowy"</span>, <span class="st">"Log-liniowy"</span>, <span class="st">"Liniowo-logarytmiczny"</span>, <span class="st">"Log-log"</span>),</span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">R_kwadrat =</span> <span class="fu">c</span>(</span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_linear)<span class="sc">$</span>r.squared,</span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_loglinear)<span class="sc">$</span>r.squared,</span>
+<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_linearlog)<span class="sc">$</span>r.squared,</span>
+<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summary</span>(model_loglog)<span class="sc">$</span>r.squared</span>
+<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyświetlenie porównania</span></span>
+<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>models_comparison</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  Model R_kwadrat
+1               Liniowy 0.7443793
+2           Log-liniowy 0.7670346
+3 Liniowo-logarytmiczny 0.9141560
+4               Log-log 0.9288088</code></pre>
+</div>
+</div>
+</section>
+<section id="krok-3-porównanie-wizualne" class="level3" data-number="16.5.3">
+<h3 data-number="16.5.3" class="anchored" data-anchor-id="krok-3-porównanie-wizualne"><span class="header-section-number">16.5.3</span> Krok 3: Porównanie Wizualne</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresów dla każdego modelu</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Model Liniowy"</span>) <span class="sc">+</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> log_GH)) <span class="sc">+</span></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Model Log-liniowy"</span>) <span class="sc">+</span></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Model Liniowo-logarytmiczny"</span>) <span class="sc">+</span></span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> log_GH)) <span class="sc">+</span></span>
+<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Model Log-log"</span>) <span class="sc">+</span></span>
+<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Układanie wykresów w siatkę</span></span>
+<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, p3, p4, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'
+`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="krok-4-analiza-reszt-dla-najlepszego-modelu" class="level3" data-number="16.5.4">
+<h3 data-number="16.5.4" class="anchored" data-anchor-id="krok-4-analiza-reszt-dla-najlepszego-modelu"><span class="header-section-number">16.5.4</span> Krok 4: Analiza Reszt dla Najlepszego Modelu</h3>
+<p>Na podstawie wartości R-kwadrat, analiza reszt dla najlepiej dopasowanego modelu:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wykresy reszt dla najlepszego modelu</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model_linearlog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="krok-5-interpretacja-najlepszego-modelu" class="level3" data-number="16.5.5">
+<h3 data-number="16.5.5" class="anchored" data-anchor-id="krok-5-interpretacja-najlepszego-modelu"><span class="header-section-number">16.5.5</span> Krok 5: Interpretacja Najlepszego Modelu</h3>
+<p>Współczynniki modelu liniowo-logarytmicznego:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_linearlog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = GH ~ log_DM, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.40702 -0.30207 -0.04907  0.22905  0.60549 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  19.0223     0.4079   46.64 4.94e-11 ***
+log_DM       -2.0599     0.2232   -9.23 1.54e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3712 on 8 degrees of freedom
+Multiple R-squared:  0.9142,    Adjusted R-squared:  0.9034 
+F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
+</div>
+</div>
+<p>Interpretacja: - <span class="math inline">\(\beta_0\)</span> reprezentuje oczekiwany Indeks Gallaghera, gdy ln(DM) = 0 (czyli gdy DM = 1) - <span class="math inline">\(\beta_1\)</span> reprezentuje zmianę Indeksu Gallaghera związaną z jednostkowym wzrostem ln(DM)</p>
+</section>
+<section id="krok-6-predykcje-modelu" class="level3" data-number="16.5.6">
+<h3 data-number="16.5.6" class="anchored" data-anchor-id="krok-6-predykcje-modelu"><span class="header-section-number">16.5.6</span> Krok 6: Predykcje Modelu</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie wykresu predykcji dla najlepszego modelu</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Model Liniowo-logarytmiczny: Indeks Gallaghera vs ln(Wielkość Okręgu)"</span>,</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"ln(Wielkość Okręgu)"</span>,</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indeks Gallaghera"</span></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="krok-7-analiza-elastyczności" class="level3" data-number="16.5.7">
+<h3 data-number="16.5.7" class="anchored" data-anchor-id="krok-7-analiza-elastyczności"><span class="header-section-number">16.5.7</span> Krok 7: Analiza Elastyczności</h3>
+<p>Dla modelu log-log współczynniki bezpośrednio reprezentują elastyczności. Obliczenie średniej elastyczności dla modelu liniowo-logarytmicznego:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obliczenie elastyczności przy wartościach średnich</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>mean_DM <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>DM)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>mean_GH <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>GH)</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> <span class="fu">coef</span>(model_linearlog)[<span class="dv">2</span>]</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>elastycznosc <span class="ot">&lt;-</span> beta1 <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span>mean_GH)</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>elastycznosc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    log_DM 
+-0.1336136 </code></pre>
+</div>
+</div>
+<p>Wartość ta reprezentuje procentową zmianę Indeksu Gallaghera przy jednoprocentowej zmianie Wielkości Okręgu.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
