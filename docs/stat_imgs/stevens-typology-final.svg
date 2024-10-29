@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300">
+    <!-- Background panels -->
+    <rect x="0" y="0" width="500" height="250" fill="#f8f8f8"/>
+    <rect x="500" y="0" width="500" height="250" fill="#f0f0f0"/>
+    
+    <!-- Main divider -->
+    <line x1="500" y1="0" x2="500" y2="250" stroke="#666" stroke-width="2"/>
+    
+    <!-- Main category labels -->
+    <text x="250" y="280" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="20" fill="#333">categorical</text>
+    <text x="750" y="280" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="20" fill="#333">quantitative/scale/measurement</text>
+    
+    <!-- Nominal section -->
+    <g transform="translate(125,120)">
+        <circle cx="0" cy="0" r="15" fill="none" stroke="#333" stroke-width="1.5"/>
+        <rect x="40" y="-15" width="30" height="30" fill="none" stroke="#333" stroke-width="1.5"/>
+        <polygon points="95,-15 125,0 95,15" fill="none" stroke="#333" stroke-width="1.5"/>
+        <text x="60" y="50" text-anchor="middle" font-family="Arial" font-size="18" fill="#333">nominal</text>
+        <text x="60" y="75" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">different shapes represent</text>
+        <text x="60" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">different categories</text>
+    </g>
+    
+    <!-- Ordinal section -->
+    <g transform="translate(375,120)">
+        <circle cx="-40" cy="0" r="8" fill="none" stroke="#333" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="12" fill="none" stroke="#333" stroke-width="1.5"/>
+        <circle cx="40" cy="0" r="16" fill="none" stroke="#333" stroke-width="1.5"/>
+        <text x="0" y="50" text-anchor="middle" font-family="Arial" font-size="18" fill="#333">ordinal</text>
+        <text x="0" y="75" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">ordered by size</text>
+        <text x="0" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">small → medium → large</text>
+    </g>
+    
+    <!-- Interval section -->
+    <g transform="translate(650,120)">
+        <line x1="-70" y1="0" x2="70" y2="0" stroke="#333" stroke-width="1.5"/>
+        <path d="M-70,-5 L-80,0 L-70,5" stroke="#333" stroke-width="1.5" fill="none"/>
+        <path d="M70,-5 L80,0 L70,5" stroke="#333" stroke-width="1.5" fill="none"/>
+        <text x="-70" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">200BC</text>
+        <text x="0" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">0</text>
+        <text x="70" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">200AD</text>
+        <text x="0" y="50" text-anchor="middle" font-family="Arial" font-size="18" fill="#333">interval</text>
+        <text x="0" y="75" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">meaningful intervals</text>
+        <text x="0" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">between values</text>
+    </g>
+    
+    <!-- Ratio section -->
+    <g transform="translate(900,120)">
+        <!-- Axes -->
+        <line x1="0" y1="0" x2="0" y2="-35" stroke="#333" stroke-width="1.5"/>
+        <line x1="0" y1="0" x2="35" y2="0" stroke="#333" stroke-width="1.5"/>
+        <!-- Arrows - exactly matching interval style -->
+        <path d="M-5,-30 L0,-35 L5,-30" stroke="#333" stroke-width="1.5" fill="none"/>
+        <path d="M30,-5 L35,0 L30,5" stroke="#333" stroke-width="1.5" fill="none"/>
+        <!-- Origin label -->
+        <text x="-5" y="15" text-anchor="end" font-family="Arial" font-size="12" fill="#333">0,0</text>
+        <text x="0" y="50" text-anchor="middle" font-family="Arial" font-size="18" fill="#333">ratio</text>
+        <text x="0" y="75" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">true zero point</text>
+        <text x="0" y="90" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">meaningful ratios</text>
+    </g>
+</svg>
