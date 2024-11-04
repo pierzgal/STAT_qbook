@@ -334,7 +334,7 @@ window.Quarto = {
   <li><a href="#wykres-grzbietowy" id="toc-wykres-grzbietowy" class="nav-link" data-scroll-target="#wykres-grzbietowy"><span class="header-section-number">12.3.4</span> Wykres grzbietowy</a></li>
   <li><a href="#podsumowanie" id="toc-podsumowanie" class="nav-link" data-scroll-target="#podsumowanie"><span class="header-section-number">12.3.5</span> Podsumowanie</a></li>
   </ul></li>
-  <li><a href="#zrozumienie-wartości-odstających" id="toc-zrozumienie-wartości-odstających" class="nav-link" data-scroll-target="#zrozumienie-wartości-odstających"><span class="header-section-number">12.4</span> Zrozumienie Wartości Odstających</a></li>
+  <li><a href="#wartości-odstające-outliers" id="toc-wartości-odstające-outliers" class="nav-link" data-scroll-target="#wartości-odstające-outliers"><span class="header-section-number">12.4</span> Wartości Odstające (Outliers)</a></li>
   <li><a href="#miary-tendencji-centralnej" id="toc-miary-tendencji-centralnej" class="nav-link" data-scroll-target="#miary-tendencji-centralnej"><span class="header-section-number">12.5</span> Miary Tendencji Centralnej</a>
   <ul class="collapse">
   <li><a href="#średnia-arytmetyczna" id="toc-średnia-arytmetyczna" class="nav-link" data-scroll-target="#średnia-arytmetyczna"><span class="header-section-number">12.5.1</span> Średnia Arytmetyczna</a></li>
@@ -347,15 +347,15 @@ window.Quarto = {
   <li><a href="#rozstęp-międzykwartylowy-iqr" id="toc-rozstęp-międzykwartylowy-iqr" class="nav-link" data-scroll-target="#rozstęp-międzykwartylowy-iqr"><span class="header-section-number">12.6.2</span> Rozstęp Międzykwartylowy (IQR)</a></li>
   <li><a href="#wariancja" id="toc-wariancja" class="nav-link" data-scroll-target="#wariancja"><span class="header-section-number">12.6.3</span> Wariancja</a></li>
   <li><a href="#odchylenie-standardowe" id="toc-odchylenie-standardowe" class="nav-link" data-scroll-target="#odchylenie-standardowe"><span class="header-section-number">12.6.4</span> Odchylenie Standardowe</a></li>
-  <li><a href="#coefficient-of-variation" id="toc-coefficient-of-variation" class="nav-link" data-scroll-target="#coefficient-of-variation"><span class="header-section-number">12.6.5</span> Coefficient of Variation</a></li>
+  <li><a href="#współczynnik-zmienności" id="toc-współczynnik-zmienności" class="nav-link" data-scroll-target="#współczynnik-zmienności"><span class="header-section-number">12.6.5</span> Współczynnik zmienności</a></li>
   </ul></li>
   <li><a href="#miary-położenia-względnego" id="toc-miary-położenia-względnego" class="nav-link" data-scroll-target="#miary-położenia-względnego"><span class="header-section-number">12.7</span> Miary Położenia Względnego</a>
   <ul class="collapse">
   <li><a href="#kwartyle-podstawy" id="toc-kwartyle-podstawy" class="nav-link" data-scroll-target="#kwartyle-podstawy"><span class="header-section-number">12.7.1</span> Kwartyle: Podstawy</a></li>
   <li><a href="#percentyle-bardziej-precyzyjna-miara" id="toc-percentyle-bardziej-precyzyjna-miara" class="nav-link" data-scroll-target="#percentyle-bardziej-precyzyjna-miara"><span class="header-section-number">12.7.2</span> Percentyle: Bardziej Precyzyjna Miara</a></li>
-  <li><a href="#rangi-percentylowe-pr-praca-wsteczna" id="toc-rangi-percentylowe-pr-praca-wsteczna" class="nav-link" data-scroll-target="#rangi-percentylowe-pr-praca-wsteczna"><span class="header-section-number">12.7.3</span> Rangi Percentylowe (PR): Praca Wsteczna</a></li>
+  <li><a href="#rangi-percentylowe-pr" id="toc-rangi-percentylowe-pr" class="nav-link" data-scroll-target="#rangi-percentylowe-pr"><span class="header-section-number">12.7.3</span> Rangi Percentylowe (PR)</a></li>
   <li><a href="#typowe-pytania-uczniów-i-odpowiedzi" id="toc-typowe-pytania-uczniów-i-odpowiedzi" class="nav-link" data-scroll-target="#typowe-pytania-uczniów-i-odpowiedzi"><span class="header-section-number">12.7.4</span> Typowe Pytania Uczniów i Odpowiedzi</a></li>
-  <li><a href="#zadania-praktyczne-z-rozwiązaniami" id="toc-zadania-praktyczne-z-rozwiązaniami" class="nav-link" data-scroll-target="#zadania-praktyczne-z-rozwiązaniami"><span class="header-section-number">12.7.5</span> Zadania Praktyczne z Rozwiązaniami</a></li>
+  <li><a href="#zadania-z-rozwiązaniami" id="toc-zadania-z-rozwiązaniami" class="nav-link" data-scroll-target="#zadania-z-rozwiązaniami"><span class="header-section-number">12.7.5</span> Zadania z Rozwiązaniami</a></li>
   </ul></li>
   <li><a href="#miary-kształtu" id="toc-miary-kształtu" class="nav-link" data-scroll-target="#miary-kształtu"><span class="header-section-number">12.8</span> Miary Kształtu</a>
   <ul class="collapse">
@@ -1091,8 +1091,8 @@ Rodzaje i Formaty Zbiorów Danych
 </div>
 </section>
 </section>
-<section id="zrozumienie-wartości-odstających" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="zrozumienie-wartości-odstających"><span class="header-section-number">12.4</span> Zrozumienie Wartości Odstających</h2>
+<section id="wartości-odstające-outliers" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="wartości-odstające-outliers"><span class="header-section-number">12.4</span> Wartości Odstające (Outliers)</h2>
 <p>Przed zagłębieniem się w konkretne miary, kluczowe jest zrozumienie pojęcia wartości odstających, ponieważ mogą one znacząco wpływać na wiele statystyk opisowych.</p>
 <p>Wartości odstające to punkty danych, które znacznie różnią się od innych obserwacji w zbiorze danych. Mogą wystąpić z powodu:</p>
 <ul>
@@ -1435,15 +1435,6 @@ Figure&nbsp;12.1: Trzy wykresy punktowe pokazujące rosnącą wariancję przy st
 </ul>
 </div>
 </div>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="rozdzial5_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1454,6 +1445,15 @@ Zrozumienie Różnych Poziomów Zmienności
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rozdzial5_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>Ta wizualizacja przedstawia trzy rozkłady normalne o tej samej średniej (μ = 10), ale różnych poziomach zmienności:</p>
 <ol type="1">
 <li><strong>Mała zmienność (σ = 0.5)</strong>
@@ -1695,7 +1695,7 @@ Wariancja: Zrozumienie Średniego Odchylenia Kwadratowego
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
-<col style="width: 50%">
+<col style="width: 48%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1881,60 +1881,52 @@ Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
 <li>Zakłada, że dane są w przybliżeniu normalnie rozłożone</li>
 </ul>
 </section>
-<section id="coefficient-of-variation" class="level3" data-number="12.6.5">
-<h3 data-number="12.6.5" class="anchored" data-anchor-id="coefficient-of-variation"><span class="header-section-number">12.6.5</span> Coefficient of Variation</h3>
-<p>The coefficient of variation is the standard deviation divided by the mean, often expressed as a percentage.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
-<p><strong>Manual Calculation Example:</strong></p>
-<p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
+<section id="współczynnik-zmienności" class="level3" data-number="12.6.5">
+<h3 data-number="12.6.5" class="anchored" data-anchor-id="współczynnik-zmienności"><span class="header-section-number">12.6.5</span> Współczynnik zmienności</h3>
+<p>Współczynnik zmienności to odchylenie standardowe podzielone przez średnią arytmetyczną, często wyrażany jako wartość procentowa.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
+<p><strong>Przykład obliczeń ręcznych:</strong></p>
+<p>Dla zbioru danych: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 48%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Step</th>
-<th>Description</th>
-<th>Calculation</th>
+<th>Krok</th>
+<th>Opis</th>
+<th>Obliczenia</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>Calculate the mean</td>
-<td><span class="math inline">\(\bar{x} = 5.14\)</span></td>
+<td>Oblicz średnią arytmetyczną</td>
+<td><span class="math inline">\(\bar{x} = 5,14\)</span></td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Calculate the standard deviation</td>
-<td><span class="math inline">\(s = 2.27\)</span></td>
+<td>Oblicz odchylenie standardowe</td>
+<td><span class="math inline">\(s = 2,27\)</span></td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Divide s by the mean and multiply by 100</td>
-<td><span class="math inline">\((2.27 / 5.14) * 100 = 44.16\%\)</span></td>
+<td>Podziel s przez średnią i pomnóż przez 100</td>
+<td><span class="math inline">\((2,27 / 5,14) * 100 = 44,16\%\)</span></td>
 </tr>
 </tbody>
 </table>
-<p><strong>R calculation:</strong></p>
+<p><strong>Obliczenia w R:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sd</span>(dane) <span class="sc">/</span> <span class="fu">mean</span>(dane)) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 44.09586</code></pre>
 </div>
 </div>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Allows comparison of variability between datasets with different units or means</li>
-<li>Useful in fields like finance for risk assessment</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Not meaningful for data with both positive and negative values</li>
-<li>Can be misleading when mean is close to zero</li>
-</ul>
+<p><strong>Zalety:</strong> - Umożliwia porównanie zmienności między zbiorami danych o różnych jednostkach lub średnich - Przydatny w dziedzinach takich jak finanse do oceny ryzyka</p>
+<p><strong>Wady:</strong> - Nie ma znaczenia dla danych zawierających zarówno wartości dodatnie, jak i ujemne - Może być mylący, gdy średnia jest bliska zeru</p>
 </section>
 </section>
 <section id="miary-położenia-względnego" class="level2" data-number="12.7">
@@ -1951,19 +1943,19 @@ Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
 </div>
 <section id="czym-są-kwartyle" class="level4" data-number="12.7.1.1">
 <h4 data-number="12.7.1.1" class="anchored" data-anchor-id="czym-są-kwartyle"><span class="header-section-number">12.7.1.1</span> Czym są Kwartyle?</h4>
-<p>Pierwszy Kwartyl (Q1):</p>
+<p><strong>Pierwszy Kwartyl (Q1):</strong></p>
 <ul>
 <li>Oddziela najniższe 25% danych od reszty</li>
 <li>Nazywany również 25-tym percentylem</li>
 <li>Przykład: Jeśli Q1 = 50 w zbiorze wyników testu, 25% uczniów uzyskało wynik poniżej 50</li>
 </ul>
-<p>Drugi Kwartyl (Q2):</p>
+<p><strong>Drugi Kwartyl (Q2):</strong></p>
 <ul>
 <li>Mediana - dzieli dane na pół</li>
 <li>Nazywany również 50-tym percentylem</li>
 <li>Przykład: Jeśli Q2 = 70, połowa uczniów uzyskała wynik poniżej 70</li>
 </ul>
-<p>Trzeci Kwartyl (Q3):</p>
+<p><strong>Trzeci Kwartyl (Q3):</strong></p>
 <ul>
 <li>Oddziela najwyższe 25% danych od reszty</li>
 <li>Nazywany również 75-tym percentylem</li>
@@ -2100,14 +2092,11 @@ Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
 <p>Co to oznacza: 60% uczniów uzyskało wynik 86.8 lub niższy.</p>
 </section>
 </section>
-<section id="rangi-percentylowe-pr-praca-wsteczna" class="level3" data-number="12.7.3">
-<h3 data-number="12.7.3" class="anchored" data-anchor-id="rangi-percentylowe-pr-praca-wsteczna"><span class="header-section-number">12.7.3</span> Rangi Percentylowe (PR): Praca Wsteczna</h3>
+<section id="rangi-percentylowe-pr" class="level3" data-number="12.7.3">
+<h3 data-number="12.7.3" class="anchored" data-anchor-id="rangi-percentylowe-pr"><span class="header-section-number">12.7.3</span> Rangi Percentylowe (PR)</h3>
 <section id="czym-jest-ranga-percentylowa" class="level4" data-number="12.7.3.1">
 <h4 data-number="12.7.3.1" class="anchored" data-anchor-id="czym-jest-ranga-percentylowa"><span class="header-section-number">12.7.3.1</span> Czym jest Ranga Percentylowa?</h4>
 <p>Podczas gdy percentyle mówią nam o wartości na określonej pozycji, ranga percentylowa mówi nam, jaki procent wartości znajduje się poniżej określonego wyniku. Można to traktować jako odpowiedź na pytanie “Jaki procent klasy uzyskał wynik niższy niż ja?”</p>
-</section>
-<section id="wzór" class="level4" data-number="12.7.3.2">
-<h4 data-number="12.7.3.2" class="anchored" data-anchor-id="wzór"><span class="header-section-number">12.7.3.2</span> Wzór</h4>
 <p><span class="math inline">\(PR = \frac{\text{liczba wartości poniżej } + 0.5 \times \text{liczba równych wartości}}{\text{całkowita liczba wartości}} \times 100\)</span></p>
 <p><strong>Przykład 4: Znajdowanie Rangi Percentylowej</strong> Rozważmy te wyniki egzaminu:</p>
 <p>65, 70, 70, 75, 75, 75, 80, 85, 85, 90</p>
@@ -2125,27 +2114,32 @@ Poprawka Bessela: Dlaczego Dzielimy przez (n-1)
 </section>
 <section id="typowe-pytania-uczniów-i-odpowiedzi" class="level3" data-number="12.7.4">
 <h3 data-number="12.7.4" class="anchored" data-anchor-id="typowe-pytania-uczniów-i-odpowiedzi"><span class="header-section-number">12.7.4</span> Typowe Pytania Uczniów i Odpowiedzi</h3>
-<p>P1: “Dlaczego używamy 0.5 dla równych wartości w PR?” O1: Jest tak, ponieważ zakładamy, że osoby z tym samym wynikiem są równomiernie rozłożone na tej pozycji. To jak powiedzenie, że dzielą pozycję po równo.</p>
-<p>P2: “Jaka jest różnica między byciem w 80-tym percentylu a uzyskaniem wyniku 80%?” O2: - 80-ty percentyl oznacza, że uzyskałeś wynik wyższy niż 80% osób - Wynik 80% oznacza po prostu, że zdobyłeś 80 na 100 punktów - To bardzo różne rzeczy! Możesz uzyskać 60% na trudnym teście i nadal być w 80-tym percentylu, jeśli większość osób uzyskała niższe wyniki.</p>
+<p>P1: “Dlaczego używamy 0.5 dla równych wartości w PR?”</p>
+<p>O1: Jest tak, ponieważ zakładamy, że osoby z tym samym wynikiem są równomiernie rozłożone na tej pozycji. To jak powiedzenie, że dzielą pozycję po równo.</p>
+<p>P2: “Jaka jest różnica między byciem w 80-tym percentylu a uzyskaniem wyniku 80%?”</p>
+<p>O2:</p>
+<p>- 80-ty percentyl oznacza, że uzyskałeś wynik wyższy niż 80% osób</p>
+<p>- Wynik 80% oznacza po prostu, że zdobyłeś 80 na 100 punktów</p>
+<p>- To bardzo różne rzeczy! Możesz uzyskać 60% na trudnym teście i nadal być w 80-tym percentylu, jeśli większość osób uzyskała niższe wyniki.</p>
 </section>
-<section id="zadania-praktyczne-z-rozwiązaniami" class="level3" data-number="12.7.5">
-<h3 data-number="12.7.5" class="anchored" data-anchor-id="zadania-praktyczne-z-rozwiązaniami"><span class="header-section-number">12.7.5</span> Zadania Praktyczne z Rozwiązaniami</h3>
+<section id="zadania-z-rozwiązaniami" class="level3" data-number="12.7.5">
+<h3 data-number="12.7.5" class="anchored" data-anchor-id="zadania-z-rozwiązaniami"><span class="header-section-number">12.7.5</span> Zadania z Rozwiązaniami</h3>
 <p><strong>Zadanie 1: Podstawowe Kwartyle</strong></p>
 <p>Dane: 10, 12, 15, 15, 18, 20, 22, 25, 25 Znajdź: Q1, Q2, Q3</p>
 <p>Rozwiązanie:</p>
 <ol type="1">
-<li><p>Q2 (n = 9, nieparzyste)</p>
+<li>Q2 (n = 9, nieparzyste)
 <ul>
 <li>Pozycja = (9 + 1)/2 = 5</li>
 <li>Q2 = 18</li>
 </ul></li>
-<li><p>Q1</p>
+<li>Q1
 <ul>
 <li>Pozycja = (9 + 1)/4 = 2.5</li>
 <li>Między 12 a 15</li>
 <li>Q1 = (12 + 15)/2 = 13.5</li>
 </ul></li>
-<li><p>Q3</p>
+<li>Q3
 <ul>
 <li>Pozycja = 3(9 + 1)/4 = 7.5</li>
 <li>Między 22 a 25</li>
@@ -2353,7 +2347,10 @@ Attaching package: 'moments'</code></pre>
 <section id="przewodnik-interpretacji-1" class="level4" data-number="12.8.2.4">
 <h4 data-number="12.8.2.4" class="anchored" data-anchor-id="przewodnik-interpretacji-1"><span class="header-section-number">12.8.2.4</span> Przewodnik Interpretacji</h4>
 <ul>
-<li><strong>Nadwyżka Kurtozy</strong>: Różnica względem kurtozy rozkładu normalnego (3)</li>
+<li><strong>Nadwyżka Kurtozy</strong>: Różnica względem kurtozy rozkładu normalnego
+<ol start="3" type="1">
+<li></li>
+</ol></li>
 <li><strong>Leptokurtyczny (&gt; 3)</strong>: Więcej wartości ekstremalnych niż w rozkładzie normalnym</li>
 <li><strong>Platykurtyczny (&lt; 3)</strong>: Mniej wartości ekstremalnych niż w rozkładzie normalnym</li>
 <li><strong>Mezokurtyczny (= 3)</strong>: Podobny do rozkładu normalnego</li>
@@ -2968,7 +2965,10 @@ Attaching package: 'moments'</code></pre>
 <section id="kluczowe-obserwacje" class="level4" data-number="12.9.6.1">
 <h4 data-number="12.9.6.1" class="anchored" data-anchor-id="kluczowe-obserwacje"><span class="header-section-number">12.9.6.1</span> Kluczowe obserwacje:</h4>
 <ol type="1">
-<li>Tendencja centralna: Firma X ma wyższą średnią, ale niższą medianę niż Firma Y, co wskazuje na prawostronnie skośny rozkład dla Firmy X.</li>
+<li>Tendencja centralna: Firma X ma wyższą średnią, ale niższą medianę niż Firma Y, co wskazuje na prawostronnie skośny rozkład dla Firmy
+<ol start="24" type="A">
+<li></li>
+</ol></li>
 <li>Rozproszenie: Firma X wykazuje znacznie wyższą wariancję i odchylenie standardowe, sugerując większe dysproporcje w wynagrodzeniach.</li>
 <li>Kształt rozkładu: Wynagrodzenia w Firmie Y są bardziej skupione, podczas gdy Firma X ma wartości ekstremalne (potencjalne wartości odstające), które znacząco wpływają na jej średnią i wariancję.</li>
 <li>Kwartyle: Rozstęp międzykwartylowy (Q3 - Q1) Firmy Y jest nieznacznie większy, ale jej ogólny zakres jest znacznie mniejszy niż Firmy X.</li>
@@ -4082,11 +4082,11 @@ y
 <h3 data-number="12.11.2" class="anchored" data-anchor-id="tabela-2-typologia-skal-pomiarowych-stevensa"><span class="header-section-number">12.11.2</span> Tabela 2: Typologia Skal Pomiarowych Stevensa</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 17%">
-<col style="width: 18%">
-<col style="width: 20%">
-<col style="width: 17%">
+<col style="width: 21%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4135,10 +4135,10 @@ y
 <h4 data-number="12.11.3.1" class="anchored" data-anchor-id="miary-tendencji-centralnej-3"><span class="header-section-number">12.11.3.1</span> Miary Tendencji Centralnej</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 21%">
-<col style="width: 15%">
-<col style="width: 44%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4174,10 +4174,10 @@ y
 <h4 data-number="12.11.3.2" class="anchored" data-anchor-id="miary-zmienności-1"><span class="header-section-number">12.11.3.2</span> Miary Zmienności</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 21%">
-<col style="width: 15%">
-<col style="width: 44%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4225,10 +4225,10 @@ y
 <h4 data-number="12.11.3.3" class="anchored"><span class="header-section-number">12.11.3.3</span> Miary Korelacji/Asocjacji</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 21%">
-<col style="width: 15%">
-<col style="width: 44%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4283,12 +4283,12 @@ Statistical Measures Applicability / Zastosowanie miar statystycznych
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 19%">
-<col style="width: 14%">
-<col style="width: 14%">
 <col style="width: 16%">
-<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">

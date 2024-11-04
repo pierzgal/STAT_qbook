@@ -354,9 +354,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#quartiles-the-basics" id="toc-quartiles-the-basics" class="nav-link" data-scroll-target="#quartiles-the-basics"><span class="header-section-number">11.7.1</span> Quartiles: The Basics</a></li>
   <li><a href="#percentiles-a-more-precise-measure" id="toc-percentiles-a-more-precise-measure" class="nav-link" data-scroll-target="#percentiles-a-more-precise-measure"><span class="header-section-number">11.7.2</span> Percentiles: A More Precise Measure</a></li>
-  <li><a href="#percentile-ranks-pr-working-backwards" id="toc-percentile-ranks-pr-working-backwards" class="nav-link" data-scroll-target="#percentile-ranks-pr-working-backwards"><span class="header-section-number">11.7.3</span> Percentile Ranks (PR): Working Backwards</a></li>
+  <li><a href="#percentile-ranks-pr" id="toc-percentile-ranks-pr" class="nav-link" data-scroll-target="#percentile-ranks-pr"><span class="header-section-number">11.7.3</span> Percentile Ranks (PR)</a></li>
   <li><a href="#common-student-questions-and-answers" id="toc-common-student-questions-and-answers" class="nav-link" data-scroll-target="#common-student-questions-and-answers"><span class="header-section-number">11.7.4</span> Common Student Questions and Answers</a></li>
-  <li><a href="#practice-problems-with-solutions" id="toc-practice-problems-with-solutions" class="nav-link" data-scroll-target="#practice-problems-with-solutions"><span class="header-section-number">11.7.5</span> Practice Problems with Solutions</a></li>
   </ul></li>
   <li><a href="#measures-of-shape" id="toc-measures-of-shape" class="nav-link" data-scroll-target="#measures-of-shape"><span class="header-section-number">11.8</span> Measures of Shape</a>
   <ul class="collapse">
@@ -1366,9 +1365,9 @@ Warning
 <p>Let’s calculate the weighted mean for the dataset: 2, 4, 5, 7 with weights 1, 2, 3, 1</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1413,9 +1412,9 @@ Warning
 <p>Let’s calculate the weighted mean for the dataset: 2, 4, 5, 7 with normalized weights 0.1, 0.3, 0.4, 0.2</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1507,6 +1506,15 @@ Understanding Different Levels of Variability
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>This visualization shows three normal distributions with the same mean (μ = 10) but different levels of variability:</p>
 <ol type="1">
 <li><strong>Low Variability (σ = 0.5)</strong>
@@ -1680,7 +1688,7 @@ Variance: Understanding Average Squared Deviations
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="576"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1690,7 +1698,7 @@ Variance: Understanding Average Squared Deviations
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="576"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1745,9 +1753,9 @@ Variance: Understanding Average Squared Deviations
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1896,9 +1904,9 @@ Bessel’s Correction: Why We Divide by (n-1)
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 8%">
+<col style="width: 33%">
+<col style="width: 58%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1946,9 +1954,9 @@ Bessel’s Correction: Why We Divide by (n-1)
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 23%">
+<col style="width: 38%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2157,14 +2165,11 @@ Bessel’s Correction: Why We Divide by (n-1)
 <p>What this means: 60% of students scored 86.8 or below.</p>
 </section>
 </section>
-<section id="percentile-ranks-pr-working-backwards" class="level3" data-number="11.7.3">
-<h3 data-number="11.7.3" class="anchored" data-anchor-id="percentile-ranks-pr-working-backwards"><span class="header-section-number">11.7.3</span> Percentile Ranks (PR): Working Backwards</h3>
+<section id="percentile-ranks-pr" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="percentile-ranks-pr"><span class="header-section-number">11.7.3</span> Percentile Ranks (PR)</h3>
 <section id="what-is-a-percentile-rank" class="level4" data-number="11.7.3.1">
 <h4 data-number="11.7.3.1" class="anchored" data-anchor-id="what-is-a-percentile-rank"><span class="header-section-number">11.7.3.1</span> What is a Percentile Rank?</h4>
 <p>While percentiles tell us the value at a certain position, percentile rank tells us what percentage of values fall below a specific score. Think of it as answering the question “What percentage of the class did I score higher than?”</p>
-</section>
-<section id="the-formula" class="level4" data-number="11.7.3.2">
-<h4 data-number="11.7.3.2" class="anchored" data-anchor-id="the-formula"><span class="header-section-number">11.7.3.2</span> The Formula</h4>
 <p><span class="math inline">\(PR = \frac{\text{number of values below } + 0.5 \times \text{number of equal values}}{\text{total number of values}} \times 100\)</span></p>
 <p><strong>Example 4: Finding a Percentile Rank</strong> Consider these exam scores:</p>
 <p>65, 70, 70, 75, 75, 75, 80, 85, 85, 90</p>
@@ -2182,33 +2187,15 @@ Bessel’s Correction: Why We Divide by (n-1)
 </section>
 <section id="common-student-questions-and-answers" class="level3" data-number="11.7.4">
 <h3 data-number="11.7.4" class="anchored" data-anchor-id="common-student-questions-and-answers"><span class="header-section-number">11.7.4</span> Common Student Questions and Answers</h3>
-<p>Q1: “Why do we use 0.5 for equal values in PR?” A1: This is because we’re assuming people with the same score are evenly spread across that position. It’s like saying they share the position equally.</p>
-<p>Q2: “What’s the difference between being in the 80th percentile and having an 80% score?” A2: - 80th percentile means you scored higher than 80% of people - 80% score just means you got 80 out of 100 points - These are very different! You could get 60% on a hard test and still be in the 80th percentile if most people scored lower.</p>
-</section>
-<section id="practice-problems-with-solutions" class="level3" data-number="11.7.5">
-<h3 data-number="11.7.5" class="anchored" data-anchor-id="practice-problems-with-solutions"><span class="header-section-number">11.7.5</span> Practice Problems with Solutions</h3>
-<p><strong>Problem 1: Basic Quartiles</strong></p>
-<p>Data: 10, 12, 15, 15, 18, 20, 22, 25, 25 Find: Q1, Q2, Q3</p>
-<p>Solution:</p>
-<ol type="1">
-<li><p>Q2 (n = 9, odd)</p>
+<p>Q1: “Why do we use 0.5 for equal values in PR?”</p>
+<p>A1: This is because we’re assuming people with the same score are evenly spread across that position. It’s like saying they share the position equally.</p>
+<p>Q2: “What’s the difference between being in the 80th percentile and having an 80% score?”</p>
+<p>A2:</p>
 <ul>
-<li>Position = (9 + 1)/2 = 5</li>
-<li>Q2 = 18</li>
-</ul></li>
-<li><p>Q1</p>
-<ul>
-<li>Position = (9 + 1)/4 = 2.5</li>
-<li>Between 12 and 15</li>
-<li>Q1 = (12 + 15)/2 = 13.5</li>
-</ul></li>
-<li><p>Q3</p>
-<ul>
-<li>Position = 3(9 + 1)/4 = 7.5</li>
-<li>Between 22 and 25</li>
-<li>Q3 = (22 + 25)/2 = 23.5</li>
-</ul></li>
-</ol>
+<li>80th percentile means you scored higher than 80% of people</li>
+<li>80% score just means you got 80 out of 100 points</li>
+<li>These are very different! You could get 60% on a hard test and still be in the 80th percentile if most people scored lower.</li>
+</ul>
 </section>
 </section>
 <section id="measures-of-shape" class="level2" data-number="11.8">
@@ -2280,7 +2267,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2353,7 +2340,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2362,7 +2349,10 @@ Attaching package: 'moments'</code></pre>
 <section id="interpretation-guide-1" class="level4" data-number="11.8.3.3">
 <h4 data-number="11.8.3.3" class="anchored" data-anchor-id="interpretation-guide-1"><span class="header-section-number">11.8.3.3</span> Interpretation Guide</h4>
 <ul>
-<li><strong>Excess Kurtosis</strong>: Difference from normal distribution’s kurtosis (3)</li>
+<li><strong>Excess Kurtosis</strong>: Difference from normal distribution’s kurtosis
+<ol start="3" type="1">
+<li></li>
+</ol></li>
 <li><strong>Leptokurtic (&gt; 3)</strong>: More extreme values than normal distribution</li>
 <li><strong>Platykurtic (&lt; 3)</strong>: Fewer extreme values than normal distribution</li>
 <li><strong>Mesokurtic (= 3)</strong>: Similar to normal distribution</li>
@@ -2912,7 +2902,7 @@ Attaching package: 'moments'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4072,7 +4062,7 @@ y
 <h3 data-number="11.11.1" class="anchored" data-anchor-id="table-1-discrete-vs.-continuous-data"><span class="header-section-number">11.11.1</span> Table 1: Discrete vs.&nbsp;Continuous Data</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
+<col style="width: 32%">
 <col style="width: 31%">
 <col style="width: 35%">
 </colgroup>
@@ -4116,11 +4106,11 @@ y
 <h3 data-number="11.11.2" class="anchored" data-anchor-id="table-2-stevens-typology-of-measurement-scales"><span class="header-section-number">11.11.2</span> Table 2: Stevens’ Typology of Measurement Scales</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 31%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 19%">
-<col style="width: 13%">
+<col style="width: 24%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4169,10 +4159,10 @@ y
 <h4 data-number="11.11.3.1" class="anchored" data-anchor-id="measures-of-center"><span class="header-section-number">11.11.3.1</span> Measures of Center</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 41%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4208,10 +4198,10 @@ y
 <h4 data-number="11.11.3.2" class="anchored" data-anchor-id="measures-of-variability-1"><span class="header-section-number">11.11.3.2</span> Measures of Variability</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 41%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4259,10 +4249,10 @@ y
 <h4 data-number="11.11.3.3" class="anchored"><span class="header-section-number">11.11.3.3</span> Measures of Correlation/Association</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 41%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4317,12 +4307,12 @@ Statistical Measures Applicability / Zastosowanie miar statystycznych
 <div class="callout-body-container callout-body">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 19%">
-<col style="width: 14%">
-<col style="width: 14%">
 <col style="width: 16%">
-<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
