@@ -338,9 +338,9 @@ window.Quarto = {
   <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">11.5</span> Measures of Central Tendency</a>
   <ul class="collapse">
   <li><a href="#arithmetic-mean" id="toc-arithmetic-mean" class="nav-link" data-scroll-target="#arithmetic-mean"><span class="header-section-number">11.5.1</span> Arithmetic Mean</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">11.5.3</span> Median</a></li>
-  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">11.5.4</span> Mode</a></li>
-  <li><a href="#weighted-mean" id="toc-weighted-mean" class="nav-link" data-scroll-target="#weighted-mean"><span class="header-section-number">11.5.5</span> Weighted Mean</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">11.5.2</span> Median</a></li>
+  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode"><span class="header-section-number">11.5.3</span> Mode</a></li>
+  <li><a href="#weighted-mean" id="toc-weighted-mean" class="nav-link" data-scroll-target="#weighted-mean"><span class="header-section-number">11.5.4</span> Weighted Mean</a></li>
   </ul></li>
   <li><a href="#measures-of-variability" id="toc-measures-of-variability" class="nav-link" data-scroll-target="#measures-of-variability"><span class="header-section-number">11.6</span> Measures of Variability</a>
   <ul class="collapse">
@@ -352,8 +352,11 @@ window.Quarto = {
   </ul></li>
   <li><a href="#measures-of-relative-position" id="toc-measures-of-relative-position" class="nav-link" data-scroll-target="#measures-of-relative-position"><span class="header-section-number">11.7</span> Measures of Relative Position</a>
   <ul class="collapse">
-  <li><a href="#percentiles" id="toc-percentiles" class="nav-link" data-scroll-target="#percentiles"><span class="header-section-number">11.7.1</span> Percentiles</a></li>
-  <li><a href="#quartiles" id="toc-quartiles" class="nav-link" data-scroll-target="#quartiles"><span class="header-section-number">11.7.2</span> Quartiles</a></li>
+  <li><a href="#quartiles-the-basics" id="toc-quartiles-the-basics" class="nav-link" data-scroll-target="#quartiles-the-basics"><span class="header-section-number">11.7.1</span> Quartiles: The Basics</a></li>
+  <li><a href="#percentiles-a-more-precise-measure" id="toc-percentiles-a-more-precise-measure" class="nav-link" data-scroll-target="#percentiles-a-more-precise-measure"><span class="header-section-number">11.7.2</span> Percentiles: A More Precise Measure</a></li>
+  <li><a href="#percentile-ranks-pr-working-backwards" id="toc-percentile-ranks-pr-working-backwards" class="nav-link" data-scroll-target="#percentile-ranks-pr-working-backwards"><span class="header-section-number">11.7.3</span> Percentile Ranks (PR): Working Backwards</a></li>
+  <li><a href="#common-student-questions-and-answers" id="toc-common-student-questions-and-answers" class="nav-link" data-scroll-target="#common-student-questions-and-answers"><span class="header-section-number">11.7.4</span> Common Student Questions and Answers</a></li>
+  <li><a href="#practice-problems-with-solutions" id="toc-practice-problems-with-solutions" class="nav-link" data-scroll-target="#practice-problems-with-solutions"><span class="header-section-number">11.7.5</span> Practice Problems with Solutions</a></li>
   </ul></li>
   <li><a href="#measures-of-shape" id="toc-measures-of-shape" class="nav-link" data-scroll-target="#measures-of-shape"><span class="header-section-number">11.8</span> Measures of Shape</a>
   <ul class="collapse">
@@ -366,7 +369,7 @@ window.Quarto = {
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">11.9.1</span> Data</a></li>
   <li><a href="#measures-of-central-tendency-1" id="toc-measures-of-central-tendency-1" class="nav-link" data-scroll-target="#measures-of-central-tendency-1"><span class="header-section-number">11.9.2</span> Measures of Central Tendency</a></li>
   <li><a href="#measures-of-dispersion" id="toc-measures-of-dispersion" class="nav-link" data-scroll-target="#measures-of-dispersion"><span class="header-section-number">11.9.3</span> Measures of Dispersion</a></li>
-  <li><a href="#quartiles-1" id="toc-quartiles-1" class="nav-link" data-scroll-target="#quartiles-1"><span class="header-section-number">11.9.4</span> Quartiles</a></li>
+  <li><a href="#quartiles" id="toc-quartiles" class="nav-link" data-scroll-target="#quartiles"><span class="header-section-number">11.9.4</span> Quartiles</a></li>
   <li><a href="#tukey-box-plot" id="toc-tukey-box-plot" class="nav-link" data-scroll-target="#tukey-box-plot"><span class="header-section-number">11.9.5</span> Tukey Box Plot</a></li>
   <li><a href="#comparison-of-results" id="toc-comparison-of-results" class="nav-link" data-scroll-target="#comparison-of-results"><span class="header-section-number">11.9.6</span> Comparison of Results</a></li>
   <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">11.9.7</span> Conclusion</a></li>
@@ -651,6 +654,47 @@ Important
 </div>
 </div>
 </div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 32%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distribution</th>
+<th>Key Properties</th>
+<th>Social Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Normal</td>
+<td>Symmetric, bell-shaped, most values near mean</td>
+<td>Height, IQ scores, standardized test scores</td>
+</tr>
+<tr class="even">
+<td>Uniform</td>
+<td>Equal probability across range</td>
+<td>Birth dates in year, arrival times in hour</td>
+</tr>
+<tr class="odd">
+<td>Bimodal</td>
+<td>Two peaks, suggests subgroups</td>
+<td>Age in college towns, polarized opinions</td>
+</tr>
+<tr class="even">
+<td>Log-normal</td>
+<td>Right-skewed, cannot be negative</td>
+<td>Income, house prices, social media followers</td>
+</tr>
+<tr class="odd">
+<td>Power law</td>
+<td>Extreme skew, “rich get richer”</td>
+<td>City sizes</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="visualizing-real-world-data-distributions" class="level2" data-number="11.3">
@@ -943,7 +987,7 @@ Understanding Different Types of Data Sets and Their Formats
 <section id="data-formats" class="level3" data-number="11.3.10">
 <h3 data-number="11.3.10" class="anchored" data-anchor-id="data-formats"><span class="header-section-number">11.3.10</span> Data Formats</h3>
 <section id="wide-format" class="level4" data-number="11.3.10.1">
-<h4 data-number="11.3.10.1" class="anchored" data-anchor-id="wide-format"><span class="header-section-number">11.3.10.1</span> 1. Wide Format</h4>
+<h4 data-number="11.3.10.1" class="anchored" data-anchor-id="wide-format"><span class="header-section-number">11.3.10.1</span> Wide Format</h4>
 <p>Each row represents an entity; columns represent variables/time points:</p>
 <table class="caption-top table">
 <thead>
@@ -974,7 +1018,7 @@ Understanding Different Types of Data Sets and Their Formats
 </table>
 </section>
 <section id="long-format" class="level4" data-number="11.3.10.2">
-<h4 data-number="11.3.10.2" class="anchored" data-anchor-id="long-format"><span class="header-section-number">11.3.10.2</span> 2. Long Format</h4>
+<h4 data-number="11.3.10.2" class="anchored" data-anchor-id="long-format"><span class="header-section-number">11.3.10.2</span> Long Format</h4>
 <p>Each row represents a unique entity-time-variable combination:</p>
 <table class="caption-top table">
 <thead>
@@ -1077,55 +1121,13 @@ Understanding Different Types of Data Sets and Their Formats
 <p><strong>Important Property:</strong> The mean is a balancing point in the data. The sum of deviations from the mean is always zero:</p>
 <p><span class="math inline">\(\sum_{i=1}^n (x_i - \bar{x}) = 0\)</span></p>
 <p>This property makes the mean useful in many statistical calculations.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Understanding Mean as a Balancing Point 🎯
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let’s explore a dataset <span class="math inline">\(X = \{1, 2, 6, 7, 9\}\)</span> on a number line, imagining it as a see-saw:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="stat_imgs/IMG_4336.jpg" class="img-fluid figure-img"></p>
-<figcaption>https://www.gastonsanchez.com/matrix4sl/mean-as-a-balancing-point.html</figcaption>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
 </figure>
 </div>
-<p>The mean (<span class="math inline">\(\mu\)</span>) acts as the perfect <strong>balancing point</strong> of this see-saw. For our data:</p>
-<p><span class="math inline">\(\mu = \frac{1 + 2 + 6 + 7 + 9}{5} = 5\)</span></p>
-<section id="what-happens-with-different-fulcrum-points" class="level3" data-number="11.5.2">
-<h3 data-number="11.5.2" class="anchored" data-anchor-id="what-happens-with-different-fulcrum-points"><span class="header-section-number">11.5.2</span> What happens with different fulcrum points? 🤔</h3>
-<ol type="1">
-<li><strong>Fulcrum at 6</strong> (too high):
-<ul>
-<li>Left side: Values (1, 2) are below</li>
-<li>Right side: Values (7, 9) are above</li>
-<li><span class="math inline">\(\sum\)</span> distances left = (6-1) + (6-2) = 9</li>
-<li><span class="math inline">\(\sum\)</span> distances right = (7-6) + (9-6) = 4</li>
-<li>The see-saw tips to the left! ⬅️ because 9 &gt; 4</li>
-</ul></li>
-<li><strong>Fulcrum at 4</strong> (too low):
-<ul>
-<li>Left side: Values (1, 2) are below</li>
-<li>Right side: Values (6, 7, 9) are above</li>
-<li><span class="math inline">\(\sum\)</span> distances left = (4-1) + (4-2) = 5</li>
-<li><span class="math inline">\(\sum\)</span> distances right = (6-4) + (7-4) + (9-4) = 10</li>
-<li>The see-saw tips to the right! ➡️ because 5 &lt; 10</li>
-</ul></li>
-<li><strong>Fulcrum at mean (5)</strong> (perfect balance):
-<ul>
-<li><span class="math inline">\(\sum\)</span> distances below = <span class="math inline">\(\sum\)</span> distances above</li>
-<li><span class="math inline">\(((5-1) + (5-2)) = ((6-5) + (7-5) + (9-5))\)</span></li>
-<li><span class="math inline">\(7 = 7\)</span> ✨ Perfect equilibrium!</li>
-</ul></li>
-</ol>
-<p>This demonstrates why the mean is the unique balancing point where:</p>
-<p><span class="math inline">\(\sum_{i=1}^n (x_i - \mu) = 0\)</span></p>
-<p>The see-saw will always tip unless the fulcrum is placed exactly at the mean! 🎪</p>
-</section>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1138,7 +1140,7 @@ The Mean as a Balance Point
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This visualization shows how the arithmetic mean (5) acts as a balance point with clustered left points and spread right points:</p>
+<p>This visualization above shows how the arithmetic mean (5) acts as a balance point with clustered left points and spread right points:</p>
 <p>Left side of mean:</p>
 <ul>
 <li>Points at 2 and 3</li>
@@ -1153,16 +1155,13 @@ The Mean as a Balance Point
 <li>Distances from mean: 1 and 4 units</li>
 <li>Total “pull” = 5 units</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
+</div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1152"></p>
+<p><img src="stat_imgs/IMG_4336.jpg" class="img-fluid figure-img"></p>
+<figcaption>https://www.gastonsanchez.com/matrix4sl/mean-as-a-balancing-point.html</figcaption>
 </figure>
-</div>
-</div>
-</div>
-</div>
 </div>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Let’s calculate the mean for the dataset: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1221,8 +1220,8 @@ The Mean as a Balance Point
 </div>
 <p>As we can see, the outlier (100) drastically affects the mean.</p>
 </section>
-<section id="median" class="level3" data-number="11.5.3">
-<h3 data-number="11.5.3" class="anchored" data-anchor-id="median"><span class="header-section-number">11.5.3</span> Median</h3>
+<section id="median" class="level3" data-number="11.5.2">
+<h3 data-number="11.5.2" class="anchored" data-anchor-id="median"><span class="header-section-number">11.5.2</span> Median</h3>
 <p>The median is the middle value when the data is ordered.</p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the same dataset: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1301,8 +1300,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="mode" class="level3" data-number="11.5.4">
-<h3 data-number="11.5.4" class="anchored" data-anchor-id="mode"><span class="header-section-number">11.5.4</span> Mode</h3>
+<section id="mode" class="level3" data-number="11.5.3">
+<h3 data-number="11.5.3" class="anchored" data-anchor-id="mode"><span class="header-section-number">11.5.3</span> Mode</h3>
 <p>The mode is the most frequently occurring value.</p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
@@ -1356,11 +1355,11 @@ Warning
 <li>Not useful for continuous data</li>
 </ul>
 </section>
-<section id="weighted-mean" class="level3" data-number="11.5.5">
-<h3 data-number="11.5.5" class="anchored" data-anchor-id="weighted-mean"><span class="header-section-number">11.5.5</span> Weighted Mean</h3>
+<section id="weighted-mean" class="level3" data-number="11.5.4">
+<h3 data-number="11.5.4" class="anchored" data-anchor-id="weighted-mean"><span class="header-section-number">11.5.4</span> Weighted Mean</h3>
 <p>The weighted mean is used when some data points are more important than others. There are two types of weighted means: with not normalized weights and with normalized weights.</p>
-<section id="weighted-mean-with-not-normalized-weights" class="level4" data-number="11.5.5.1">
-<h4 data-number="11.5.5.1" class="anchored" data-anchor-id="weighted-mean-with-not-normalized-weights"><span class="header-section-number">11.5.5.1</span> Weighted Mean with Not Normalized Weights</h4>
+<section id="weighted-mean-with-not-normalized-weights" class="level4" data-number="11.5.4.1">
+<h4 data-number="11.5.4.1" class="anchored" data-anchor-id="weighted-mean-with-not-normalized-weights"><span class="header-section-number">11.5.4.1</span> Weighted Mean with Not Normalized Weights</h4>
 <p>This is the standard form of the weighted mean, where weights can be any positive numbers representing the importance of each data point.</p>
 <p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
@@ -1406,8 +1405,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="weighted-mean-with-normalized-weights-fractions" class="level4" data-number="11.5.5.2">
-<h4 data-number="11.5.5.2" class="anchored" data-anchor-id="weighted-mean-with-normalized-weights-fractions"><span class="header-section-number">11.5.5.2</span> Weighted Mean with Normalized Weights (Fractions)</h4>
+<section id="weighted-mean-with-normalized-weights-fractions" class="level4" data-number="11.5.4.2">
+<h4 data-number="11.5.4.2" class="anchored" data-anchor-id="weighted-mean-with-normalized-weights-fractions"><span class="header-section-number">11.5.4.2</span> Weighted Mean with Normalized Weights (Fractions)</h4>
 <p>In this case, the weights are fractions that sum to 1, representing the proportion of importance for each data point.</p>
 <p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \sum_{i=1}^n w_i x_i\)</span>, where <span class="math inline">\(\sum_{i=1}^n w_i = 1\)</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
@@ -1997,209 +1996,219 @@ Bessel’s Correction: Why We Divide by (n-1)
 </section>
 <section id="measures-of-relative-position" class="level2" data-number="11.7">
 <h2 data-number="11.7" class="anchored" data-anchor-id="measures-of-relative-position"><span class="header-section-number">11.7</span> Measures of Relative Position</h2>
-<p>These measures help us understand where a particular value falls in relation to the entire dataset.</p>
-<section id="percentiles" class="level3" data-number="11.7.1">
-<h3 data-number="11.7.1" class="anchored" data-anchor-id="percentiles"><span class="header-section-number">11.7.1</span> Percentiles</h3>
-<p>Percentiles are vital statistical measures that divide a dataset into 100 equal parts, helping us understand how values are distributed and where specific observations fall within the overall distribution.</p>
-<section id="definition-and-interpretation" class="level4" data-number="11.7.1.1">
-<h4 data-number="11.7.1.1" class="anchored" data-anchor-id="definition-and-interpretation"><span class="header-section-number">11.7.1.1</span> Definition and Interpretation</h4>
-<p>A percentile represents the value below which a certain percentage of observations fall. For example:</p>
-<ul>
-<li>The 25th percentile (Q1) means 25% of the data falls below this value</li>
-<li>The 50th percentile (median) divides the data in half</li>
-<li>The 75th percentile (Q3) means 75% of the data falls below this value</li>
-</ul>
-</section>
-<section id="mathematical-formula" class="level4" data-number="11.7.1.2">
-<h4 data-number="11.7.1.2" class="anchored" data-anchor-id="mathematical-formula"><span class="header-section-number">11.7.1.2</span> Mathematical Formula</h4>
-<p>For the kth percentile: <span class="math inline">\(P_k = L + \frac{k(n+1)}{100}\)</span></p>
-<p>Where:</p>
-<ul>
-<li><span class="math inline">\(P_k\)</span> is the position of the kth percentile</li>
-<li><span class="math inline">\(L\)</span> is the lower limit of the interval</li>
-<li><span class="math inline">\(k\)</span> is the desired percentile (1-100)</li>
-<li><span class="math inline">\(n\)</span> is the number of observations</li>
-</ul>
-</section>
-<section id="practical-examples" class="level4" data-number="11.7.1.3">
-<h4 data-number="11.7.1.3" class="anchored" data-anchor-id="practical-examples"><span class="header-section-number">11.7.1.3</span> Practical Examples</h4>
-<p><strong>Example 1: Test Scores</strong> Consider these exam scores: 65, 70, 72, 75, 78, 80, 82, 85, 88, 90</p>
-<p>To find the 30th percentile:</p>
-<ol type="1">
-<li>Calculate position: <span class="math inline">\(P_{30} = \frac{30(10+1)}{100} = 3.3\)</span></li>
-<li>Since 3.3 falls between 3rd and 4th positions</li>
-<li>Interpolate between 72 and 75: 72 + 0.3(75-72) = 72.9</li>
-</ol>
-<p>Interpretation: 30% of students scored below 72.9</p>
-<p><strong>Example 2: Income Distribution</strong> For annual incomes ($K): 35, 38, 40, 42, 45, 48, 50, 55, 60, 65, 70, 75</p>
-<p>Finding key percentiles:</p>
-<ul>
-<li>25th percentile (Q1) = $41K (lower quarter of incomes)</li>
-<li>50th percentile = $49K (median income)</li>
-<li>75th percentile (Q3) = $62.5K (upper quarter of incomes)</li>
-<li>90th percentile = $72.5K (top 10% of incomes)</li>
-</ul>
-</section>
-<section id="calculating-in-r" class="level4" data-number="11.7.1.4">
-<h4 data-number="11.7.1.4" class="anchored" data-anchor-id="calculating-in-r"><span class="header-section-number">11.7.1.4</span> Calculating in R</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic percentile calculation</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(data, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.25</span>))  <span class="co"># Quartiles</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  0%  25%  50%  75% 100% 
-   2    4    5    6    9 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># More specific percentiles</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(data, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>, <span class="fl">0.7</span>, <span class="fl">0.9</span>))  <span class="co"># 10th, 30th, 50th, 70th, 90th</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10% 30% 50% 70% 90% 
-3.2 4.0 5.0 5.4 7.8 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visual representation</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(data)  <span class="co"># Shows 25th, 50th, 75th percentiles</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="key-considerations" class="level4" data-number="11.7.1.5">
-<h4 data-number="11.7.1.5" class="anchored" data-anchor-id="key-considerations"><span class="header-section-number">11.7.1.5</span> Key Considerations</h4>
-<ul>
-<li>Percentiles are resistant to outliers</li>
-<li>They’re useful for non-normal distributions</li>
-<li>The choice of percentile depends on the specific application</li>
-<li>Interpolation may be needed for precise values</li>
-<li>Different software might use slightly different calculation methods</li>
-</ul>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Percentiles vs.&nbsp;Percentile Ranks: Key Differences
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Percentile</strong></p>
-<ul>
-<li>Is a value in the dataset below which a certain percentage of observations fall</li>
-<li>Formula: <span class="math inline">\(P_k = L + \frac{k(n+1)}{100}\)</span></li>
-<li>Example: If 75th percentile is 85, then the score of 85 is greater than 75% of all scores</li>
-</ul>
-<p><strong>Percentile Rank</strong></p>
-<ul>
-<li>Is the percentage of values below a specific score/observation</li>
-<li>Formula: <span class="math inline">\(PR = \frac{\text{number of values below } X + 0.5 \times \text{number of values equal to } X}{\text{total number of values}} \times 100\)</span></li>
-<li>Example: If a score of 82 has a percentile rank of 70, then 70% of scores are below 82</li>
-</ul>
-<p><strong>Practical Comparison:</strong> Given dataset: 65, 70, 70, 75, 80, 85, 90</p>
-<p>For score = 70:</p>
-<ul>
-<li>This is the 25th percentile (approximately)</li>
-<li>Its percentile rank is 21.4% <span class="math inline">\((\frac{1 + (0.5 \times 2)}{7} \times 100)\)</span></li>
-</ul>
-<p>Key distinction:</p>
-<ul>
-<li>Percentiles go from value → percentage</li>
-<li>Percentile ranks go from percentage → value</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-The Dual Nature of Median: Center and Position
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-median-dual" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-median-dual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="chapter5_files/figure-html/fig-median-dual-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-median-dual-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11.2: Visualization of median’s dual role
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The median serves two distinct but related roles:</p>
-<p><strong>A. As a Measure of Center:</strong></p>
-<ul>
-<li>Represents the middle point of the data</li>
-<li>Balances the number of observations on each side</li>
-<li>Robust to outliers unlike the mean</li>
-</ul>
-<p><strong>B. As a Measure of Relative Standing:</strong></p>
-<ul>
-<li><p>Marks the 50th percentile</p></li>
-<li><p>Divides the data into two equal parts</p></li>
-<li><p>Every value can be compared to it:</p>
-<ul>
-<li>Below median: bottom 50%</li>
-<li>Above median: top 50%</li>
-</ul></li>
-</ul>
-<p>This dual nature makes the median particularly useful for:</p>
-<ul>
-<li>Describing typical values (central tendency)</li>
-<li>Understanding positions within a distribution (relative standing)</li>
-<li>Making comparisons across different datasets</li>
-</ul>
-</div>
-</div>
-</section>
-</section>
-<section id="quartiles" class="level3" data-number="11.7.2">
-<h3 data-number="11.7.2" class="anchored" data-anchor-id="quartiles"><span class="header-section-number">11.7.2</span> Quartiles</h3>
-<p>Quartiles divide the data into four equal parts.</p>
-<ul>
-<li>Q1: 25th percentile</li>
-<li>Q2: Median (50th percentile)</li>
-<li>Q3: 75th percentile</li>
-</ul>
+<p>Understanding where values sit within a dataset is crucial for data analysis. Let’s explore these concepts step by step.</p>
+<section id="quartiles-the-basics" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="quartiles-the-basics"><span class="header-section-number">11.7.1</span> Quartiles: The Basics</h3>
+<p>Think of quartiles as special numbers that split your ordered data into four equal parts.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="stat_imgs/IMG_4327.jpg" class="img-fluid figure-img"></p>
 <figcaption>Doane, D. P., &amp; Seward, L. W. (2016). Applied statistics in business and economics. Mcgraw-Hill.</figcaption>
 </figure>
 </div>
-<p><strong>Manual Calculation:</strong></p>
-<p>See the IQR section for a step-by-step process to find quartiles manually.</p>
-<p><strong>R calculation:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     value          group          
- Min.   :2.000   Length:7          
- 1st Qu.:3.500   Class :character  
- Median :5.000   Mode  :character  
- Mean   :5.429                     
- 3rd Qu.:7.500                     
- Max.   :9.000                     </code></pre>
-</div>
-</div>
-<p><strong>Pros:</strong></p>
+<section id="what-are-quartiles" class="level4" data-number="11.7.1.1">
+<h4 data-number="11.7.1.1" class="anchored" data-anchor-id="what-are-quartiles"><span class="header-section-number">11.7.1.1</span> What Are Quartiles?</h4>
+<p>First Quartile (Q1):</p>
 <ul>
-<li>Robust to outliers</li>
-<li>Provide information about data spread and skewness</li>
+<li>Separates the lowest 25% of data from the rest</li>
+<li>Also called the 25th percentile</li>
+<li>Example: If Q1 = 50 in a test score dataset, 25% of students scored below 50</li>
 </ul>
-<p><strong>Cons:</strong></p>
+<p>Second Quartile (Q2):</p>
 <ul>
-<li>Less precise than using all data points</li>
-<li>Multiple methods of calculation can lead to slightly different results</li>
+<li>The median - splits data in half</li>
+<li>Also called the 50th percentile</li>
+<li>Example: If Q2 = 70, half the students scored below 70</li>
 </ul>
+<p>Third Quartile (Q3):</p>
+<ul>
+<li>Separates the highest 25% of data from the rest</li>
+<li>Also called the 75th percentile</li>
+<li>Example: If Q3 = 85, 75% of students scored below 85</li>
+</ul>
+</section>
+<section id="how-to-calculate-quartiles-step-by-step---two-methods" class="level4" data-number="11.7.1.2">
+<h4 data-number="11.7.1.2" class="anchored" data-anchor-id="how-to-calculate-quartiles-step-by-step---two-methods"><span class="header-section-number">11.7.1.2</span> How to Calculate Quartiles (Step by Step) - Two Methods</h4>
+<p>Let’s examine student test scores using both common quartile calculation methods:</p>
+<p><strong>Example 1: Simple Case (11 scores)</strong><br>
+60, 65, 70, 72, 75, 78, 80, 82, 85, 88, 90</p>
+<p>Step 1: Find Q2 (median) - Same for both methods</p>
+<ul>
+<li>With n = 11 values (odd)</li>
+<li>Median position = (n + 1)/2 = 6</li>
+<li>Q2 = 78</li>
+</ul>
+<p>Step 2: Find Q1</p>
+<ul>
+<li>Tukey’s Method:
+<ul>
+<li>Look at lower half: 60, 65, 70, 72, 75</li>
+<li>Q1 = median of lower half = 70</li>
+</ul></li>
+<li>Interpolation Method:
+<ul>
+<li>Position = (n + 1)/4 = (11 + 1)/4 = 3</li>
+<li>Q1 = 70 (3rd value)</li>
+</ul></li>
+</ul>
+<p>Step 3: Find Q3</p>
+<ul>
+<li>Tukey’s Method:
+<ul>
+<li>Look at upper half: 80, 82, 85, 88, 90</li>
+<li>Q3 = median of upper half = 85</li>
+</ul></li>
+<li>Interpolation Method:
+<ul>
+<li>Position = 3(n + 1)/4 = 3(12)/4 = 9</li>
+<li>Q3 = 85 (9th value)</li>
+</ul></li>
+</ul>
+<p><strong>Example 2: Even Number Case (10 scores)</strong><br>
+60, 65, 70, 72, 75, 78, 80, 82, 85, 90</p>
+<p>Step 1: Find Q2 (median) - Same for both methods</p>
+<ul>
+<li>With n = 10 values (even)</li>
+<li>Median positions = 5 and 6</li>
+<li>Q2 = (75 + 78)/2 = 76.5</li>
+</ul>
+<p>Step 2: Find Q1</p>
+<ul>
+<li>Tukey’s Method:
+<ul>
+<li>Look at lower half: 60, 65, 70, 72, 75</li>
+<li>Q1 = median of lower half = 70</li>
+</ul></li>
+<li>Interpolation Method:
+<ul>
+<li>Position = (10 + 1)/4 = 2.75</li>
+<li>Q1 = 65 + 0.75(70 - 65) = 68.75</li>
+</ul></li>
+</ul>
+<p>Step 3: Find Q3</p>
+<ul>
+<li>Tukey’s Method:
+<ul>
+<li>Look at upper half: 78, 80, 82, 85, 90</li>
+<li>Q3 = median of upper half = 82</li>
+</ul></li>
+<li>Interpolation Method:
+<ul>
+<li>Position = 3(10 + 1)/4 = 8.25</li>
+<li>Q3 = 82 + 0.25(85 - 82) = 82.75</li>
+</ul></li>
+</ul>
+<p>Important Notes:</p>
+<ol type="1">
+<li><p>Tukey’s Method:</p>
+<ul>
+<li>First find the median (Q2)</li>
+<li>Split the data into lower and upper halves</li>
+<li>Find Q1 as the median of the lower half</li>
+<li>Find Q3 as the median of the upper half</li>
+<li>When n is odd, the median is not included in either half</li>
+</ul></li>
+<li><p>Interpolation Method:</p>
+<ul>
+<li>Uses positions (n+1)/4 for Q1 and 3(n+1)/4 for Q3</li>
+<li>When position falls between values, uses linear interpolation</li>
+<li>Doesn’t require splitting data into halves</li>
+</ul></li>
+</ol>
+<p>Both methods give the same results for simple positions (Example 1) but can differ when interpolation is needed (Example 2).</p>
+</section>
+</section>
+<section id="percentiles-a-more-precise-measure" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="percentiles-a-more-precise-measure"><span class="header-section-number">11.7.2</span> Percentiles: A More Precise Measure</h3>
+<section id="what-are-percentiles" class="level4" data-number="11.7.2.1">
+<h4 data-number="11.7.2.1" class="anchored" data-anchor-id="what-are-percentiles"><span class="header-section-number">11.7.2.1</span> What Are Percentiles?</h4>
+<p>Percentiles give us a more detailed view by dividing data into 100 equal parts. Unlike quartiles, percentiles use linear interpolation for more precise measurements.</p>
+<p>Key Points:</p>
+<ul>
+<li>The 25th percentile equals Q1</li>
+<li>The 50th percentile equals Q2 (median)</li>
+<li>The 75th percentile equals Q3</li>
+</ul>
+</section>
+<section id="calculating-percentiles" class="level4" data-number="11.7.2.2">
+<h4 data-number="11.7.2.2" class="anchored" data-anchor-id="calculating-percentiles"><span class="header-section-number">11.7.2.2</span> Calculating Percentiles</h4>
+<p>The Formula: <span class="math inline">\(P_k = \frac{k(n+1)}{100}\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(P_k\)</span> is the position for the kth percentile</li>
+<li>k is the percentile we want (1-100)</li>
+<li>n is the number of observations</li>
+</ul>
+<p><strong>Example 3: Finding the 60th Percentile</strong> Let’s use student homework scores: 72, 75, 78, 80, 82, 85, 88, 90, 92, 95</p>
+<p>Step 1: Calculate position</p>
+<ul>
+<li>n = 10 scores</li>
+<li>For 60th percentile: <span class="math inline">\(P_{60} = \frac{60(10+1)}{100} = 6.6\)</span></li>
+</ul>
+<p>Step 2: Find surrounding values</p>
+<ul>
+<li>Position 6: score of 85</li>
+<li>Position 7: score of 88</li>
+</ul>
+<p>Step 3: Interpolate (important: percentiles use linear interpolation)</p>
+<ul>
+<li>We need to go 0.6 of the way between 85 and 88 <span class="math inline">\(P_{60} = 85 + 0.6(88-85)\)</span> <span class="math inline">\(P_{60} = 85 + 0.6(3)\)</span> <span class="math inline">\(P_{60} = 85 + 1.8 = 86.8\)</span></li>
+</ul>
+<p>What this means: 60% of students scored 86.8 or below.</p>
+</section>
+</section>
+<section id="percentile-ranks-pr-working-backwards" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="percentile-ranks-pr-working-backwards"><span class="header-section-number">11.7.3</span> Percentile Ranks (PR): Working Backwards</h3>
+<section id="what-is-a-percentile-rank" class="level4" data-number="11.7.3.1">
+<h4 data-number="11.7.3.1" class="anchored" data-anchor-id="what-is-a-percentile-rank"><span class="header-section-number">11.7.3.1</span> What is a Percentile Rank?</h4>
+<p>While percentiles tell us the value at a certain position, percentile rank tells us what percentage of values fall below a specific score. Think of it as answering the question “What percentage of the class did I score higher than?”</p>
+</section>
+<section id="the-formula" class="level4" data-number="11.7.3.2">
+<h4 data-number="11.7.3.2" class="anchored" data-anchor-id="the-formula"><span class="header-section-number">11.7.3.2</span> The Formula</h4>
+<p><span class="math inline">\(PR = \frac{\text{number of values below } + 0.5 \times \text{number of equal values}}{\text{total number of values}} \times 100\)</span></p>
+<p><strong>Example 4: Finding a Percentile Rank</strong> Consider these exam scores:</p>
+<p>65, 70, 70, 75, 75, 75, 80, 85, 85, 90</p>
+<p>Let’s find the PR for a score of 75.</p>
+<p>Step 1: Count carefully</p>
+<ul>
+<li>Values below 75: 65, 70, 70 (3 values)</li>
+<li>Values equal to 75: 75, 75, 75 (3 values)</li>
+<li>Total values: 10</li>
+</ul>
+<p>Step 2: Apply the formula</p>
+<p><span class="math inline">\(PR = \frac{3 + 0.5(3)}{10} \times 100\)</span> <span class="math inline">\(PR = \frac{3 + 1.5}{10} \times 100\)</span> <span class="math inline">\(PR = \frac{4.5}{10} \times 100 = 45\%\)</span></p>
+<p>Interpretation: A score of 75 is higher than 45% of the class scores.</p>
+</section>
+</section>
+<section id="common-student-questions-and-answers" class="level3" data-number="11.7.4">
+<h3 data-number="11.7.4" class="anchored" data-anchor-id="common-student-questions-and-answers"><span class="header-section-number">11.7.4</span> Common Student Questions and Answers</h3>
+<p>Q1: “Why do we use 0.5 for equal values in PR?” A1: This is because we’re assuming people with the same score are evenly spread across that position. It’s like saying they share the position equally.</p>
+<p>Q2: “What’s the difference between being in the 80th percentile and having an 80% score?” A2: - 80th percentile means you scored higher than 80% of people - 80% score just means you got 80 out of 100 points - These are very different! You could get 60% on a hard test and still be in the 80th percentile if most people scored lower.</p>
+</section>
+<section id="practice-problems-with-solutions" class="level3" data-number="11.7.5">
+<h3 data-number="11.7.5" class="anchored" data-anchor-id="practice-problems-with-solutions"><span class="header-section-number">11.7.5</span> Practice Problems with Solutions</h3>
+<p><strong>Problem 1: Basic Quartiles</strong></p>
+<p>Data: 10, 12, 15, 15, 18, 20, 22, 25, 25 Find: Q1, Q2, Q3</p>
+<p>Solution:</p>
+<ol type="1">
+<li><p>Q2 (n = 9, odd)</p>
+<ul>
+<li>Position = (9 + 1)/2 = 5</li>
+<li>Q2 = 18</li>
+</ul></li>
+<li><p>Q1</p>
+<ul>
+<li>Position = (9 + 1)/4 = 2.5</li>
+<li>Between 12 and 15</li>
+<li>Q1 = (12 + 15)/2 = 13.5</li>
+</ul></li>
+<li><p>Q3</p>
+<ul>
+<li>Position = 3(9 + 1)/4 = 7.5</li>
+<li>Between 22 and 25</li>
+<li>Q3 = (22 + 25)/2 = 23.5</li>
+</ul></li>
+</ol>
 </section>
 </section>
 <section id="measures-of-shape" class="level2" data-number="11.8">
@@ -2224,7 +2233,7 @@ Figure&nbsp;11.2: Visualization of median’s dual role
 <section id="example-voter-turnout-analysis" class="level4" data-number="11.8.1.3">
 <h4 data-number="11.8.1.3" class="anchored" data-anchor-id="example-voter-turnout-analysis"><span class="header-section-number">11.8.1.3</span> Example: Voter Turnout Analysis</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'moments'</code></pre>
@@ -2234,44 +2243,44 @@ Attaching package: 'moments'</code></pre>
 
     skewness</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate example precinct-level voter turnout data</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>turnout_data <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Urban precincts</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">300</span>, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">12</span>),</span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Suburban precincts</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">400</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rural precincts</span></span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">300</span>, <span class="at">mean =</span> <span class="dv">68</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure turnout stays between 0-100%</span></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmax</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmin</span>(<span class="dv">100</span>)</span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate and visualize</span></span>
-<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>skew_value <span class="ot">&lt;-</span> <span class="fu">skewness</span>(turnout_data)</span>
-<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>skew_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate example precinct-level voter turnout data</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>turnout_data <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Urban precincts</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">300</span>, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">12</span>),</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Suburban precincts</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">400</span>, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rural precincts</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">300</span>, <span class="at">mean =</span> <span class="dv">68</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure turnout stays between 0-100%</span></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmax</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmin</span>(<span class="dv">100</span>)</span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate and visualize</span></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a>skew_value <span class="ot">&lt;-</span> <span class="fu">skewness</span>(turnout_data)</span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>skew_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.02558143</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> turnout_data), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(turnout_data), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(turnout_data), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">str_glue</span>(<span class="st">"Precinct-Level Voter Turnout Distribution (Skewness = {round(skew_value, 4)})"</span>),</span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Red: Mean, Blue: Median"</span>,</span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Voter Turnout (%)"</span>,</span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Precincts"</span></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> turnout_data), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(turnout_data), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(turnout_data), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">str_glue</span>(<span class="st">"Precinct-Level Voter Turnout Distribution (Skewness = {round(skew_value, 4)})"</span>),</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Red: Mean, Blue: Median"</span>,</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Voter Turnout (%)"</span>,</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Number of Precincts"</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2299,52 +2308,52 @@ Attaching package: 'moments'</code></pre>
 <section id="example-legislative-voting-analysis" class="level4" data-number="11.8.3.2">
 <h4 data-number="11.8.3.2" class="anchored" data-anchor-id="example-legislative-voting-analysis"><span class="header-section-number">11.8.3.2</span> Example: Legislative Voting Analysis</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate example legislative voting agreement scores</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>voting_agreement <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Regular voting patterns</span></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">400</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cross-party cooperation instances</span></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">15</span>),</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Party-line votes</span></span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">95</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmax</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmin</span>(<span class="dv">100</span>)</span>
-<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>kurt_value <span class="ot">&lt;-</span> <span class="fu">kurtosis</span>(voting_agreement)</span>
-<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>kurt_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate example legislative voting agreement scores</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>voting_agreement <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Regular voting patterns</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">400</span>, <span class="at">mean =</span> <span class="dv">75</span>, <span class="at">sd =</span> <span class="dv">10</span>),</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cross-party cooperation instances</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">15</span>),</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Party-line votes</span></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="at">mean =</span> <span class="dv">95</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmax</span>(<span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pmin</span>(<span class="dv">100</span>)</span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>kurt_value <span class="ot">&lt;-</span> <span class="fu">kurtosis</span>(voting_agreement)</span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>kurt_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.849939</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization with normal distribution comparison</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>x_range <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(voting_agreement)<span class="sc">-</span><span class="dv">1</span>, <span class="fu">max</span>(voting_agreement)<span class="sc">+</span><span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>normal_dist <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x_range, <span class="at">mean =</span> <span class="fu">mean</span>(voting_agreement), <span class="at">sd =</span> <span class="fu">sd</span>(voting_agreement))</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(</span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> voting_agreement), </span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x), </span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>, </span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span></span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_range, <span class="at">y =</span> normal_dist),</span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y),</span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span>,</span>
-<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
-<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">str_glue</span>(<span class="st">"Legislative Voting Agreement Distribution (Kurtosis = {round(kurt_value, 4)})"</span>),</span>
-<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Observed distribution (blue) vs. Normal distribution (red)"</span>,</span>
-<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Voting Agreement Score (%)"</span>,</span>
-<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
-<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization with normal distribution comparison</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>x_range <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(voting_agreement)<span class="sc">-</span><span class="dv">1</span>, <span class="fu">max</span>(voting_agreement)<span class="sc">+</span><span class="dv">1</span>, <span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>normal_dist <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x_range, <span class="at">mean =</span> <span class="fu">mean</span>(voting_agreement), <span class="at">sd =</span> <span class="fu">sd</span>(voting_agreement))</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> voting_agreement), </span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x), </span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"skyblue"</span>, </span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span></span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x_range, <span class="at">y =</span> normal_dist),</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y),</span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span>,</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span></span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">str_glue</span>(<span class="st">"Legislative Voting Agreement Distribution (Kurtosis = {round(kurt_value, 4)})"</span>),</span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Observed distribution (blue) vs. Normal distribution (red)"</span>,</span>
+<span id="cb51-21"><a href="#cb51-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Voting Agreement Score (%)"</span>,</span>
+<span id="cb51-22"><a href="#cb51-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb51-23"><a href="#cb51-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb51-24"><a href="#cb51-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2588,14 +2597,14 @@ Attaching package: 'moments'</code></pre>
 <section id="r-verification" class="level5" data-number="11.9.2.1.3">
 <h5 data-number="11.9.2.1.3" class="anchored" data-anchor-id="r-verification"><span class="header-section-number">11.9.2.1.3</span> R Verification</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">20</span>,<span class="dv">35</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.95</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -2620,11 +2629,11 @@ Attaching package: 'moments'</code></pre>
 <section id="r-verification-1" class="level5" data-number="11.9.2.2.3">
 <h5 data-number="11.9.2.2.3" class="anchored" data-anchor-id="r-verification-1"><span class="header-section-number">11.9.2.2.3</span> R Verification</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -2636,17 +2645,17 @@ Attaching package: 'moments'</code></pre>
 <p>The mode is the most frequent value in the dataset.</p>
 <p>For Company X, the mode is 3 (appears 6 times). For Company Y, there are two modes: 4 and 5 (both appear 6 times).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate mode</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  unique_x <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>  unique_x[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, unique_x)))]</span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="fu">get_mode</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate mode</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  unique_x <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>  unique_x[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, unique_x)))]</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="fu">get_mode</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_mode</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_mode</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -2808,11 +2817,11 @@ Attaching package: 'moments'</code></pre>
 <section id="r-verification-2" class="level5" data-number="11.9.3.1.3">
 <h5 data-number="11.9.3.1.3" class="anchored" data-anchor-id="r-verification-2"><span class="header-section-number">11.9.3.1.3</span> R Verification</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 61.20789</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.789474</code></pre>
 </div>
@@ -2830,11 +2839,11 @@ Attaching package: 'moments'</code></pre>
 <section id="r-verification-3" class="level5" data-number="11.9.3.2.1">
 <h5 data-number="11.9.3.2.1" class="anchored" data-anchor-id="r-verification-3"><span class="header-section-number">11.9.3.2.1</span> R Verification</h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7.823547</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.337712</code></pre>
 </div>
@@ -2842,8 +2851,8 @@ Attaching package: 'moments'</code></pre>
 </section>
 </section>
 </section>
-<section id="quartiles-1" class="level3" data-number="11.9.4">
-<h3 data-number="11.9.4" class="anchored" data-anchor-id="quartiles-1"><span class="header-section-number">11.9.4</span> Quartiles</h3>
+<section id="quartiles" class="level3" data-number="11.9.4">
+<h3 data-number="11.9.4" class="anchored" data-anchor-id="quartiles"><span class="header-section-number">11.9.4</span> Quartiles</h3>
 <p>Quartiles divide the dataset into four equal parts.</p>
 <section id="manual-calculation-for-company-x-3" class="level4" data-number="11.9.4.1">
 <h4 data-number="11.9.4.1" class="anchored" data-anchor-id="manual-calculation-for-company-x-3"><span class="header-section-number">11.9.4.1</span> Manual Calculation for Company X</h4>
@@ -2866,12 +2875,12 @@ Attaching package: 'moments'</code></pre>
 <section id="r-verification-4" class="level4" data-number="11.9.4.3">
 <h4 data-number="11.9.4.3" class="anchored" data-anchor-id="r-verification-4"><span class="header-section-number">11.9.4.3</span> R Verification</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  0%  25%  50%  75% 100% 
    2    3    4    5   35 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  0%  25%  50%  75% 100% 
    3    4    5    6    8 </code></pre>
@@ -2883,27 +2892,27 @@ Attaching package: 'moments'</code></pre>
 <h3 data-number="11.9.5" class="anchored" data-anchor-id="tukey-box-plot"><span class="header-section-number">11.9.5</span> Tukey Box Plot</h3>
 <p>A Tukey box plot visually represents the distribution of data based on quartiles. We’ll use ggplot2 to create the plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the data</span></span>
-<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Company =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>), <span class="at">each =</span> <span class="dv">20</span>),</span>
-<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Salary =</span> <span class="fu">c</span>(X, Y)</span>
-<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the box plot</span></span>
-<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Company, <span class="at">y =</span> Salary, <span class="at">fill =</span> Company)) <span class="sc">+</span></span>
-<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb83-13"><a href="#cb83-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary Distribution in Companies X and Y"</span>,</span>
-<span id="cb83-14"><a href="#cb83-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Company"</span>,</span>
-<span id="cb83-15"><a href="#cb83-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Salary (thousands of euros)"</span>) <span class="sc">+</span></span>
-<span id="cb83-16"><a href="#cb83-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb83-17"><a href="#cb83-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#69b3a2"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#404080"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare the data</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Company =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>), <span class="at">each =</span> <span class="dv">20</span>),</span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Salary =</span> <span class="fu">c</span>(X, Y)</span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the box plot</span></span>
+<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Company, <span class="at">y =</span> Salary, <span class="at">fill =</span> Company)) <span class="sc">+</span></span>
+<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb76-13"><a href="#cb76-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Salary Distribution in Companies X and Y"</span>,</span>
+<span id="cb76-14"><a href="#cb76-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Company"</span>,</span>
+<span id="cb76-15"><a href="#cb76-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Salary (thousands of euros)"</span>) <span class="sc">+</span></span>
+<span id="cb76-16"><a href="#cb76-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb76-17"><a href="#cb76-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#69b3a2"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#404080"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="chapter5_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="chapter5_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2987,13 +2996,13 @@ Attaching package: 'moments'</code></pre>
 <h3 data-number="11.10.1" class="anchored" data-anchor-id="data-1"><span class="header-section-number">11.10.1</span> Data</h3>
 <p>We have electoral district size data from two countries:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>)  <span class="co"># Country high variance</span></span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">13</span>)  <span class="co"># Country low variance</span></span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">data.frame</span>(</span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country X (High var.)"</span> <span class="ot">=</span> x,</span>
-<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country Y (Low var.)"</span> <span class="ot">=</span> y</span>
-<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">19</span>)  <span class="co"># Country high variance</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">12</span>, <span class="dv">13</span>)  <span class="co"># Country low variance</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">data.frame</span>(</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country X (High var.)"</span> <span class="ot">=</span> x,</span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country Y (Low var.)"</span> <span class="ot">=</span> y</span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <thead>
@@ -3111,8 +3120,8 @@ Attaching package: 'moments'</code></pre>
 </table>
 <p><span class="math inline">\(\bar{x} = \frac{100}{10} = 10\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>mean_x <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"R"</span> <span class="ot">=</span> mean_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>mean_x <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"R"</span> <span class="ot">=</span> mean_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
     10     10 </code></pre>
@@ -3177,8 +3186,8 @@ Attaching package: 'moments'</code></pre>
 </table>
 <p><span class="math inline">\(\bar{y} = \frac{105}{10} = 10.5\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>mean_y <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
-<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">10.5</span>, <span class="st">"R"</span> <span class="ot">=</span> mean_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>mean_y <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">10.5</span>, <span class="st">"R"</span> <span class="ot">=</span> mean_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
   10.5   10.5 </code></pre>
@@ -3195,8 +3204,8 @@ Attaching package: 'moments'</code></pre>
 <p>For n = 10 (even number of observations): Middle positions: 5 and 6 Middle values: 9 and 11</p>
 <p>Median = <span class="math inline">\(\frac{9 + 11}{2} = 10\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>median_x <span class="ot">&lt;-</span> <span class="fu">median</span>(x)</span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"R"</span> <span class="ot">=</span> median_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>median_x <span class="ot">&lt;-</span> <span class="fu">median</span>(x)</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"R"</span> <span class="ot">=</span> median_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
     10     10 </code></pre>
@@ -3209,8 +3218,8 @@ Attaching package: 'moments'</code></pre>
 <p>For n = 10 (even number of observations): Middle positions: 5 and 6 Middle values: 10 and 11</p>
 <p>Median = <span class="math inline">\(\frac{10 + 11}{2} = 10.5\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>median_y <span class="ot">&lt;-</span> <span class="fu">median</span>(y)</span>
-<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">10.5</span>, <span class="st">"R"</span> <span class="ot">=</span> median_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>median_y <span class="ot">&lt;-</span> <span class="fu">median</span>(y)</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">10.5</span>, <span class="st">"R"</span> <span class="ot">=</span> median_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
   10.5   10.5 </code></pre>
@@ -3312,14 +3321,14 @@ Attaching package: 'moments'</code></pre>
 </table>
 <p>Conclusion: Four modes: 9, 10, 11, 12 (each occurs twice)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency tables</span></span>
-<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>table_x <span class="ot">&lt;-</span> <span class="fu">table</span>(x)</span>
-<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>table_y <span class="ot">&lt;-</span> <span class="fu">table</span>(y)</span>
-<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
-<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country X"</span> <span class="ot">=</span> table_x,</span>
-<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country Y"</span> <span class="ot">=</span> table_y</span>
-<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency tables</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>table_x <span class="ot">&lt;-</span> <span class="fu">table</span>(x)</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>table_y <span class="ot">&lt;-</span> <span class="fu">table</span>(y)</span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country X"</span> <span class="ot">=</span> table_x,</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country Y"</span> <span class="ot">=</span> table_y</span>
+<span id="cb86-8"><a href="#cb86-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$`Country X`
 x
@@ -3408,8 +3417,8 @@ y
 </table>
 <p><span class="math inline">\(s^2_X = \frac{330}{9} = 36.67\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>var_x <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
-<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">36.67</span>, <span class="st">"R"</span> <span class="ot">=</span> var_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>var_x <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">36.67</span>, <span class="st">"R"</span> <span class="ot">=</span> var_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
  36.67  36.67 </code></pre>
@@ -3486,8 +3495,8 @@ y
 </table>
 <p><span class="math inline">\(s^2_Y = \frac{22.5}{9} = 2.5\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>var_y <span class="ot">&lt;-</span> <span class="fu">var</span>(y)</span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">2.5</span>, <span class="st">"R"</span> <span class="ot">=</span> var_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>var_y <span class="ot">&lt;-</span> <span class="fu">var</span>(y)</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">2.5</span>, <span class="st">"R"</span> <span class="ot">=</span> var_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
    2.5    2.5 </code></pre>
@@ -3525,8 +3534,8 @@ y
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>sd_x <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">6.06</span>, <span class="st">"R"</span> <span class="ot">=</span> sd_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>sd_x <span class="ot">&lt;-</span> <span class="fu">sd</span>(x)</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">6.06</span>, <span class="st">"R"</span> <span class="ot">=</span> sd_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
  6.060  6.055 </code></pre>
@@ -3559,8 +3568,8 @@ y
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>sd_y <span class="ot">&lt;-</span> <span class="fu">sd</span>(y)</span>
-<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">1.58</span>, <span class="st">"R"</span> <span class="ot">=</span> sd_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>sd_y <span class="ot">&lt;-</span> <span class="fu">sd</span>(y)</span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">1.58</span>, <span class="st">"R"</span> <span class="ot">=</span> sd_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
  1.580  1.581 </code></pre>
@@ -3604,8 +3613,8 @@ y
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>cv_x <span class="ot">&lt;-</span> <span class="fu">sd</span>(x) <span class="sc">/</span> <span class="fu">mean</span>(x) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">60.6</span>, <span class="st">"R"</span> <span class="ot">=</span> cv_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>cv_x <span class="ot">&lt;-</span> <span class="fu">sd</span>(x) <span class="sc">/</span> <span class="fu">mean</span>(x) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">60.6</span>, <span class="st">"R"</span> <span class="ot">=</span> cv_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
  60.60  60.55 </code></pre>
@@ -3638,8 +3647,8 @@ y
 </tbody>
 </table>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>cv_y <span class="ot">&lt;-</span> <span class="fu">sd</span>(y) <span class="sc">/</span> <span class="fu">mean</span>(y) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">15.0</span>, <span class="st">"R"</span> <span class="ot">=</span> cv_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>cv_y <span class="ot">&lt;-</span> <span class="fu">sd</span>(y) <span class="sc">/</span> <span class="fu">mean</span>(y) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">15.0</span>, <span class="st">"R"</span> <span class="ot">=</span> cv_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Manual      R 
  15.00  15.06 </code></pre>
@@ -3672,30 +3681,30 @@ y
 <p>Upper half: 11, 11, 12, 12, 13 Q3 = median of upper half = 12</p>
 <p>IQR = Q3 - Q1 = 12 - 9 = 3</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparison of different quartile calculation methods in R</span></span>
-<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>methods_comparison <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Method =</span> <span class="fu">c</span>(<span class="st">"Manual (excl. median)"</span>, </span>
-<span id="cb107-4"><a href="#cb107-4" aria-hidden="true" tabindex="-1"></a>             <span class="st">"R type=1"</span>, <span class="st">"R type=2"</span>, <span class="st">"R type=7 (default)"</span>),</span>
-<span id="cb107-5"><a href="#cb107-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q1 Country X"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, </span>
-<span id="cb107-6"><a href="#cb107-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
-<span id="cb107-7"><a href="#cb107-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
-<span id="cb107-8"><a href="#cb107-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">7</span>)),</span>
-<span id="cb107-9"><a href="#cb107-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q3 Country X"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>,</span>
-<span id="cb107-10"><a href="#cb107-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
-<span id="cb107-11"><a href="#cb107-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
-<span id="cb107-12"><a href="#cb107-12" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">7</span>)),</span>
-<span id="cb107-13"><a href="#cb107-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q1 Country Y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">9</span>,</span>
-<span id="cb107-14"><a href="#cb107-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
-<span id="cb107-15"><a href="#cb107-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
-<span id="cb107-16"><a href="#cb107-16" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">7</span>)),</span>
-<span id="cb107-17"><a href="#cb107-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q3 Country Y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">12</span>,</span>
-<span id="cb107-18"><a href="#cb107-18" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
-<span id="cb107-19"><a href="#cb107-19" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
-<span id="cb107-20"><a href="#cb107-20" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">7</span>))</span>
-<span id="cb107-21"><a href="#cb107-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb107-22"><a href="#cb107-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb107-23"><a href="#cb107-23" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(methods_comparison, <span class="at">digits =</span> <span class="dv">2</span>,</span>
-<span id="cb107-24"><a href="#cb107-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Comparison of different quartile calculation methods"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparison of different quartile calculation methods in R</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>methods_comparison <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Method =</span> <span class="fu">c</span>(<span class="st">"Manual (excl. median)"</span>, </span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a>             <span class="st">"R type=1"</span>, <span class="st">"R type=2"</span>, <span class="st">"R type=7 (default)"</span>),</span>
+<span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q1 Country X"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, </span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
+<span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">7</span>)),</span>
+<span id="cb100-9"><a href="#cb100-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q3 Country X"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">15</span>,</span>
+<span id="cb100-10"><a href="#cb100-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
+<span id="cb100-11"><a href="#cb100-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
+<span id="cb100-12"><a href="#cb100-12" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">7</span>)),</span>
+<span id="cb100-13"><a href="#cb100-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q1 Country Y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">9</span>,</span>
+<span id="cb100-14"><a href="#cb100-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
+<span id="cb100-15"><a href="#cb100-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
+<span id="cb100-16"><a href="#cb100-16" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">7</span>)),</span>
+<span id="cb100-17"><a href="#cb100-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Q3 Country Y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">12</span>,</span>
+<span id="cb100-18"><a href="#cb100-18" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>),</span>
+<span id="cb100-19"><a href="#cb100-19" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">2</span>),</span>
+<span id="cb100-20"><a href="#cb100-20" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">7</span>))</span>
+<span id="cb100-21"><a href="#cb100-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb100-22"><a href="#cb100-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-23"><a href="#cb100-23" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(methods_comparison, <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb100-24"><a href="#cb100-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Comparison of different quartile calculation methods"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Comparison of different quartile calculation methods</caption>
@@ -3782,16 +3791,16 @@ y
 <section id="results-comparison" class="level3" data-number="11.10.5">
 <h3 data-number="11.10.5" class="anchored" data-anchor-id="results-comparison"><span class="header-section-number">11.10.5</span> Results Comparison</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>summary_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Measure =</span> <span class="fu">c</span>(<span class="st">"Mean"</span>, <span class="st">"Median"</span>, <span class="st">"Mode"</span>, <span class="st">"Range"</span>, <span class="st">"Variance"</span>, </span>
-<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Std. Dev."</span>, <span class="st">"Q1"</span>, <span class="st">"Q3"</span>, <span class="st">"IQR"</span>, <span class="st">"CV (%)"</span>),</span>
-<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country X"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="st">"none"</span>, <span class="dv">18</span>, <span class="fl">36.67</span>, <span class="fl">6.06</span>, <span class="dv">5</span>, <span class="dv">15</span>, <span class="dv">10</span>, <span class="fl">60.6</span>),</span>
-<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country Y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">10.5</span>, <span class="fl">10.5</span>, <span class="st">"9,10,11,12"</span>, <span class="dv">5</span>, <span class="fl">2.5</span>, <span class="fl">1.58</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="fl">15.0</span>)</span>
-<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(summary_df, </span>
-<span id="cb108-9"><a href="#cb108-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Summary of all statistical measures"</span>,</span>
-<span id="cb108-10"><a href="#cb108-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">align =</span> <span class="fu">c</span>(<span class="st">'l'</span>, <span class="st">'r'</span>, <span class="st">'r'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>summary_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Measure =</span> <span class="fu">c</span>(<span class="st">"Mean"</span>, <span class="st">"Median"</span>, <span class="st">"Mode"</span>, <span class="st">"Range"</span>, <span class="st">"Variance"</span>, </span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"Std. Dev."</span>, <span class="st">"Q1"</span>, <span class="st">"Q3"</span>, <span class="st">"IQR"</span>, <span class="st">"CV (%)"</span>),</span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country X"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="st">"none"</span>, <span class="dv">18</span>, <span class="fl">36.67</span>, <span class="fl">6.06</span>, <span class="dv">5</span>, <span class="dv">15</span>, <span class="dv">10</span>, <span class="fl">60.6</span>),</span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Country Y"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">10.5</span>, <span class="fl">10.5</span>, <span class="st">"9,10,11,12"</span>, <span class="dv">5</span>, <span class="fl">2.5</span>, <span class="fl">1.58</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">3</span>, <span class="fl">15.0</span>)</span>
+<span id="cb101-6"><a href="#cb101-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb101-7"><a href="#cb101-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-8"><a href="#cb101-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(summary_df, </span>
+<span id="cb101-9"><a href="#cb101-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">"Summary of all statistical measures"</span>,</span>
+<span id="cb101-10"><a href="#cb101-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">align =</span> <span class="fu">c</span>(<span class="st">'l'</span>, <span class="st">'r'</span>, <span class="st">'r'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>Summary of all statistical measures</caption>
@@ -3861,40 +3870,40 @@ y
 <section id="comparison-using-box-plot" class="level3" data-number="11.10.6">
 <h3 data-number="11.10.6" class="anchored" data-anchor-id="comparison-using-box-plot"><span class="header-section-number">11.10.6</span> Comparison using Box Plot</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
-<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="fu">c</span>(x, y)</span>
-<span id="cb109-4"><a href="#cb109-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb109-5"><a href="#cb109-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb109-6"><a href="#cb109-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic plot</span></span>
-<span id="cb109-7"><a href="#cb109-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> size, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
-<span id="cb109-8"><a href="#cb109-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span>  <span class="co"># Disable default outlier points</span></span>
-<span id="cb109-9"><a href="#cb109-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Add points with transparency</span></span>
-<span id="cb109-10"><a href="#cb109-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#FFA07A"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#98FB98"</span>)) <span class="sc">+</span></span>
-<span id="cb109-11"><a href="#cb109-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb109-12"><a href="#cb109-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Comparison of Electoral District Size Variation"</span>,</span>
-<span id="cb109-13"><a href="#cb109-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"CV: Country X ="</span>, <span class="fu">round</span>(cv_x, <span class="dv">1</span>), <span class="st">"%, Country Y ="</span>, <span class="fu">round</span>(cv_y, <span class="dv">1</span>), <span class="st">"%"</span>),</span>
-<span id="cb109-14"><a href="#cb109-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Country"</span>,</span>
-<span id="cb109-15"><a href="#cb109-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"District Size"</span></span>
-<span id="cb109-16"><a href="#cb109-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb109-17"><a href="#cb109-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb109-18"><a href="#cb109-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb109-19"><a href="#cb109-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb109-20"><a href="#cb109-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add quartile annotations</span></span>
-<span id="cb109-21"><a href="#cb109-21" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">annotate</span>(</span>
-<span id="cb109-22"><a href="#cb109-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"text"</span>, </span>
-<span id="cb109-23"><a href="#cb109-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>), </span>
-<span id="cb109-24"><a href="#cb109-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">max</span>(x)<span class="sc">+</span><span class="dv">1</span>, <span class="fu">mean</span>(x), <span class="fu">min</span>(x)<span class="sc">-</span><span class="dv">1</span>, <span class="fu">max</span>(y)<span class="sc">+</span><span class="dv">1</span>, <span class="fu">mean</span>(y), <span class="fu">min</span>(y)<span class="sc">-</span><span class="dv">1</span>),</span>
-<span id="cb109-25"><a href="#cb109-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">c</span>(</span>
-<span id="cb109-26"><a href="#cb109-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q3 ="</span>, <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>)),</span>
-<span id="cb109-27"><a href="#cb109-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"M ="</span>, <span class="fu">median</span>(x)),</span>
-<span id="cb109-28"><a href="#cb109-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q1 ="</span>, <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>)),</span>
-<span id="cb109-29"><a href="#cb109-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q3 ="</span>, <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>)),</span>
-<span id="cb109-30"><a href="#cb109-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"M ="</span>, <span class="fu">median</span>(y)),</span>
-<span id="cb109-31"><a href="#cb109-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q1 ="</span>, <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>))</span>
-<span id="cb109-32"><a href="#cb109-32" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb109-33"><a href="#cb109-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">3</span></span>
-<span id="cb109-34"><a href="#cb109-34" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">country =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"X"</span>, <span class="st">"Y"</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="fu">c</span>(x, y)</span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb102-5"><a href="#cb102-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-6"><a href="#cb102-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic plot</span></span>
+<span id="cb102-7"><a href="#cb102-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> size, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
+<span id="cb102-8"><a href="#cb102-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span>  <span class="co"># Disable default outlier points</span></span>
+<span id="cb102-9"><a href="#cb102-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Add points with transparency</span></span>
+<span id="cb102-10"><a href="#cb102-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"X"</span> <span class="ot">=</span> <span class="st">"#FFA07A"</span>, <span class="st">"Y"</span> <span class="ot">=</span> <span class="st">"#98FB98"</span>)) <span class="sc">+</span></span>
+<span id="cb102-11"><a href="#cb102-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb102-12"><a href="#cb102-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Comparison of Electoral District Size Variation"</span>,</span>
+<span id="cb102-13"><a href="#cb102-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"CV: Country X ="</span>, <span class="fu">round</span>(cv_x, <span class="dv">1</span>), <span class="st">"%, Country Y ="</span>, <span class="fu">round</span>(cv_y, <span class="dv">1</span>), <span class="st">"%"</span>),</span>
+<span id="cb102-14"><a href="#cb102-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Country"</span>,</span>
+<span id="cb102-15"><a href="#cb102-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"District Size"</span></span>
+<span id="cb102-16"><a href="#cb102-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb102-17"><a href="#cb102-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb102-18"><a href="#cb102-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb102-19"><a href="#cb102-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-20"><a href="#cb102-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add quartile annotations</span></span>
+<span id="cb102-21"><a href="#cb102-21" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">annotate</span>(</span>
+<span id="cb102-22"><a href="#cb102-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"text"</span>, </span>
+<span id="cb102-23"><a href="#cb102-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>), </span>
+<span id="cb102-24"><a href="#cb102-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="fu">max</span>(x)<span class="sc">+</span><span class="dv">1</span>, <span class="fu">mean</span>(x), <span class="fu">min</span>(x)<span class="sc">-</span><span class="dv">1</span>, <span class="fu">max</span>(y)<span class="sc">+</span><span class="dv">1</span>, <span class="fu">mean</span>(y), <span class="fu">min</span>(y)<span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb102-25"><a href="#cb102-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="fu">c</span>(</span>
+<span id="cb102-26"><a href="#cb102-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q3 ="</span>, <span class="fu">quantile</span>(x, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>)),</span>
+<span id="cb102-27"><a href="#cb102-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"M ="</span>, <span class="fu">median</span>(x)),</span>
+<span id="cb102-28"><a href="#cb102-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q1 ="</span>, <span class="fu">quantile</span>(x, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>)),</span>
+<span id="cb102-29"><a href="#cb102-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q3 ="</span>, <span class="fu">quantile</span>(y, <span class="fl">0.75</span>, <span class="at">type=</span><span class="dv">1</span>)),</span>
+<span id="cb102-30"><a href="#cb102-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"M ="</span>, <span class="fu">median</span>(y)),</span>
+<span id="cb102-31"><a href="#cb102-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste</span>(<span class="st">"Q1 ="</span>, <span class="fu">quantile</span>(y, <span class="fl">0.25</span>, <span class="at">type=</span><span class="dv">1</span>))</span>
+<span id="cb102-32"><a href="#cb102-32" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb102-33"><a href="#cb102-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">3</span></span>
+<span id="cb102-34"><a href="#cb102-34" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
