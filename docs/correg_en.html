@@ -3774,7 +3774,11 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <section id="ols-regression-y-hatbeta_0-hatbeta_1x-1" class="level3" data-number="15.16.11">
 <h3 data-number="15.16.11" class="anchored" data-anchor-id="ols-regression-y-hatbeta_0-hatbeta_1x-1"><span class="header-section-number">15.16.11</span> OLS Regression <span class="math inline">\((Y = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
 <p><strong>Slope coefficient:</strong> <span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-21.33929}{3.922143} = -5.4407\]</span></p>
-<p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps: 1. <span class="math inline">\(-5.4407 × 5.275 = -28.6997\)</span> 2. <span class="math inline">\(\hat{\beta_0} = 76.625 - (-28.6997) = 105.3247\)</span></p>
+<p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps:</p>
+<ol type="1">
+<li><span class="math inline">\(-5.4407 × 5.275 = -28.6997\)</span></li>
+<li><span class="math inline">\(\hat{\beta_0} = 76.625 - (-28.6997) = 105.3247\)</span></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4005,7 +4009,11 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <section id="ols-regression-y-hatbeta_0-hatbeta_1x-2" class="level3" data-number="15.16.19">
 <h3 data-number="15.16.19" class="anchored" data-anchor-id="ols-regression-y-hatbeta_0-hatbeta_1x-2"><span class="header-section-number">15.16.19</span> OLS Regression <span class="math inline">\((Y = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
 <p><strong>Slope coefficient:</strong> <span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-14.0734}{20.2666} = -0.6944\]</span></p>
-<p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps: 1. <span class="math inline">\(-0.6944 × 8.6667 = -6.0181\)</span> 2. <span class="math inline">\(\hat{\beta_0} = 5.7167 - (-6.0181) = 11.7348\)</span></p>
+<p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps:</p>
+<ol type="1">
+<li><span class="math inline">\(-0.6944 × 8.6667 = -6.0181\)</span></li>
+<li><span class="math inline">\(\hat{\beta_0} = 5.7167 - (-6.0181) = 11.7348\)</span></li>
+</ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
