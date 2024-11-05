@@ -585,7 +585,7 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
-<col style="width: 50%">
+<col style="width: 48%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -668,7 +668,7 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
-<col style="width: 50%">
+<col style="width: 48%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1338,14 +1338,14 @@ x̄ = 65 ÷ 10 = 6,5</code></pre>
 <p>Pełna tabela robocza ze wszystkimi obliczeniami:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 3%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 26%">
-<col style="width: 15%">
-<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1674,10 +1674,18 @@ x̄ = 65 ÷ 10 = 6,5</code></pre>
 <h2 data-number="16.5" class="anchored" data-anchor-id="dodatek-a.2-estymacja-ols-i-miary-dopasowania-modelu"><span class="header-section-number">16.5</span> Dodatek A.2: Estymacja OLS i Miary Dopasowania Modelu</h2>
 <section id="krok-1-obliczanie-estymatorów-ols" class="level3" data-number="16.5.1">
 <h3 data-number="16.5.1" class="anchored" data-anchor-id="krok-1-obliczanie-estymatorów-ols"><span class="header-section-number">16.5.1</span> Krok 1: Obliczanie Estymatorów OLS</h3>
-<p>Korzystając z wcześniej obliczonych wartości: - <span class="math inline">\(\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28,085\)</span> - <span class="math inline">\(\sum(X_i - \bar{X})^2 = 82,5\)</span> - <span class="math inline">\(\bar{X} = 6,5\)</span> - <span class="math inline">\(\bar{Y} = 15,417\)</span></p>
-<p>Obliczanie nachylenia (<span class="math inline">\(\beta_1\)</span>): <span class="math inline">\(\beta_1 = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}\)</span></p>
+<p>Korzystając z wcześniej obliczonych wartości:</p>
+<ul>
+<li><span class="math inline">\(\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28,085\)</span></li>
+<li><span class="math inline">\(\sum(X_i - \bar{X})^2 = 82,5\)</span></li>
+<li><span class="math inline">\(\bar{X} = 6,5\)</span></li>
+<li><span class="math inline">\(\bar{Y} = 15,417\)</span></li>
+</ul>
+<p>Obliczanie nachylenia (<span class="math inline">\(\beta_1\)</span>):</p>
+<p><span class="math inline">\(\beta_1 = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}\)</span></p>
 <pre><code>β₁ = -28,085 ÷ 82,5 = -0,3404</code></pre>
-<p>Obliczanie wyrazu wolnego (<span class="math inline">\(\beta_0\)</span>): <span class="math inline">\(\beta_0 = \bar{Y} - \beta_1\bar{X}\)</span></p>
+<p>Obliczanie wyrazu wolnego (<span class="math inline">\(\beta_0\)</span>):</p>
+<p><span class="math inline">\(\beta_0 = \bar{Y} - \beta_1\bar{X}\)</span></p>
 <pre><code>β₀ = 15,417 - (-0,3404 × 6,5)
    = 15,417 + 2,2126
    = 17,6296</code></pre>
@@ -1688,14 +1696,14 @@ x̄ = 65 ÷ 10 = 6,5</code></pre>
 <p>Pełna tabela ze wszystkimi obliczeniami:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 11%">
-<col style="width: 21%">
-<col style="width: 8%">
-<col style="width: 18%">
-<col style="width: 23%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2217,14 +2225,14 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <h4 data-number="16.7.2.1" class="anchored" data-anchor-id="obliczenia-krok-po-kroku"><span class="header-section-number">16.7.2.1</span> Obliczenia krok po kroku:</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 2%">
-<col style="width: 5%">
-<col style="width: 5%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
 <col style="width: 13%">
-<col style="width: 13%">
-<col style="width: 26%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 12%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2388,14 +2396,6 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <section id="obliczenia-krok-po-kroku-2" class="level4" data-number="16.7.4.1">
 <h4 data-number="16.7.4.1" class="anchored" data-anchor-id="obliczenia-krok-po-kroku-2"><span class="header-section-number">16.7.4.1</span> Obliczenia krok po kroku:</h4>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 17%">
-<col style="width: 16%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 17%">
-<col style="width: 11%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Para (i,j)</th>
@@ -2673,7 +2673,11 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <h3 data-number="16.9.5" class="anchored" data-anchor-id="detailed-decomposition-of-variance-and-r-squared"><span class="header-section-number">16.9.5</span> Detailed Decomposition of Variance and R-squared</h3>
 <p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>: <span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429X\]</span></p>
 <p>For each X:</p>
-<p>X = 50: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(50) = 61.9485736\)</span> X = 45: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(45) = 55.6535591\)</span> X = 56: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(56) = 69.5114310\)</span> X = 40: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(40) = 49.3571446\)</span> X = 60: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(60) = 74.5200026\)</span></p>
+<p>X = 50: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(50) = 61.9485736\)</span></p>
+<p>X = 45: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(45) = 55.6535591\)</span></p>
+<p>X = 56: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(56) = 69.5114310\)</span></p>
+<p>X = 40: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(40) = 49.3571446\)</span></p>
+<p>X = 60: <span class="math inline">\(\hat{Y} = -0.9085714 + 1.2571429(60) = 74.5200026\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification of predicted values</span></span>
 <span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.9085714</span> <span class="sc">+</span> <span class="fl">1.2571429</span> <span class="sc">*</span> income</span>
@@ -2694,15 +2698,27 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 <p><strong>Step 2: Calculate SST (Total Sum of Squares)</strong></p>
 <p><span class="math inline">\(SST = \sum(Y_i - \bar{Y})^2\)</span> where <span class="math inline">\(\bar{Y} = 62.2\)</span></p>
-<p><span class="math inline">\((60 - 62.2)^2 = (-2.2)^2 = 4.84\)</span> <span class="math inline">\((56 - 62.2)^2 = (-6.2)^2 = 38.44\)</span> <span class="math inline">\((70 - 62.2)^2 = (7.8)^2 = 60.84\)</span> <span class="math inline">\((50 - 62.2)^2 = (-12.2)^2 = 148.84\)</span> <span class="math inline">\((75 - 62.2)^2 = (12.8)^2 = 163.84\)</span></p>
+<p><span class="math inline">\((60 - 62.2)^2 = (-2.2)^2 = 4.84\)</span></p>
+<p><span class="math inline">\((56 - 62.2)^2 = (-6.2)^2 = 38.44\)</span></p>
+<p><span class="math inline">\((70 - 62.2)^2 = (7.8)^2 = 60.84\)</span></p>
+<p><span class="math inline">\((50 - 62.2)^2 = (-12.2)^2 = 148.84\)</span></p>
+<p><span class="math inline">\((75 - 62.2)^2 = (12.8)^2 = 163.84\)</span></p>
 <p><span class="math inline">\(SST = 4.84 + 38.44 + 60.84 + 148.84 + 163.84 = 416.8\)</span></p>
 <p><strong>Step 3: Calculate SSR (Regression Sum of Squares)</strong></p>
 <p><span class="math inline">\(SSR = \sum(\hat{Y}_i - \bar{Y})^2\)</span></p>
-<p><span class="math inline">\((61.9485736 - 62.2)^2 = (-0.2514264)^2 = 0.0632151\)</span> <span class="math inline">\((55.6535591 - 62.2)^2 = (-6.5464409)^2 = 42.8558689\)</span> <span class="math inline">\((69.5114310 - 62.2)^2 = (7.3114310)^2 = 53.4570178\)</span> <span class="math inline">\((49.3571446 - 62.2)^2 = (-12.8428554)^2 = 164.9389370\)</span> <span class="math inline">\((74.5200026 - 62.2)^2 = (12.3200026)^2 = 151.7824640\)</span></p>
+<p><span class="math inline">\((61.9485736 - 62.2)^2 = (-0.2514264)^2 = 0.0632151\)</span></p>
+<p><span class="math inline">\((55.6535591 - 62.2)^2 = (-6.5464409)^2 = 42.8558689\)</span></p>
+<p><span class="math inline">\((69.5114310 - 62.2)^2 = (7.3114310)^2 = 53.4570178\)</span></p>
+<p><span class="math inline">\((49.3571446 - 62.2)^2 = (-12.8428554)^2 = 164.9389370\)</span></p>
+<p><span class="math inline">\((74.5200026 - 62.2)^2 = (12.3200026)^2 = 151.7824640\)</span></p>
 <p><span class="math inline">\(SSR = 413.0975028\)</span></p>
 <p><strong>Step 4: Calculate SSE (Error Sum of Squares)</strong></p>
 <p><span class="math inline">\(SSE = \sum(Y_i - \hat{Y}_i)^2\)</span></p>
-<p><span class="math inline">\((60 - 61.9485736)^2 = (-1.9485736)^2 = 3.7969384\)</span> <span class="math inline">\((56 - 55.6535591)^2 = (0.3464409)^2 = 0.1200212\)</span> <span class="math inline">\((70 - 69.5114310)^2 = (0.4885690)^2 = 0.2387198\)</span> <span class="math inline">\((50 - 49.3571446)^2 = (0.6428554)^2 = 0.4132631\)</span> <span class="math inline">\((75 - 74.5200026)^2 = (0.4799974)^2 = 0.2303975\)</span></p>
+<p><span class="math inline">\((60 - 61.9485736)^2 = (-1.9485736)^2 = 3.7969384\)</span></p>
+<p><span class="math inline">\((56 - 55.6535591)^2 = (0.3464409)^2 = 0.1200212\)</span></p>
+<p><span class="math inline">\((70 - 69.5114310)^2 = (0.4885690)^2 = 0.2387198\)</span></p>
+<p><span class="math inline">\((50 - 49.3571446)^2 = (0.6428554)^2 = 0.4132631\)</span></p>
+<p><span class="math inline">\((75 - 74.5200026)^2 = (0.4799974)^2 = 0.2303975\)</span></p>
 <p><span class="math inline">\(SSE = 4.7024972\)</span></p>
 <p><strong>Step 5: Verify decomposition</strong> <span class="math display">\[SST = SSR + SSE\]</span> <span class="math display">\[416.8 = 413.0975028 + 4.7024972\]</span></p>
 <p><strong>Step 6: Calculate R-squared</strong> <span class="math display">\[R^2 = \frac{SSR}{SST} = \frac{413.0975028}{416.8} = 0.9916\]</span></p>
@@ -2818,12 +2834,13 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 <p><strong>Variances:</strong> <span class="math display">\[s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}\]</span></p>
 <p>Deviations for X:</p>
-<p>(2.1 - 5.275) = -3.175 (3.4 - 5.275) = -1.875 (4.2 - 5.275) = -1.075 (5.1 - 5.275) = -0.175 (5.8 - 5.275) = 0.525 (6.4 - 5.275) = 1.125 (7.2 - 5.275) = 1.925 (8.0 - 5.275) = 2.725</p>
+<p>(2.1 - 5.275) = -3.175 (3.4 - 5.275) = -1.875 (4.2 - 5.275) = -1.075</p>
+<p>(5.1 - 5.275) = -0.175 (5.8 - 5.275) = 0.525 (6.4 - 5.275) = 1.125</p>
+<p>(7.2 - 5.275) = 1.925 (8.0 - 5.275) = 2.725</p>
 <p>Squared deviations:</p>
 <p>10.08063 + 3.51563 + 1.15563 + 0.03063 + 0.27563 + 1.26563 + 3.70563 + 7.42563 = 27.45500</p>
 <p><span class="math display">\[s^2_X = \frac{27.45500}{7} = 3.922143\]</span></p>
-<p>Similarly for Y:</p>
-<p>Deviations: 15.375, 11.375, 7.375, 1.375, -2.625, -6.625, -11.625, -14.625</p>
+<p>Similarly for Y: Deviations: 15.375, 11.375, 7.375, 1.375, -2.625, -6.625, -11.625, -14.625</p>
 <p><span class="math display">\[s^2_Y = \frac{236.875 + 129.391 + 54.391 + 1.891 + 6.891 + 43.891 + 135.141 + 213.891}{7} = \frac{822.362}{7} = 117.4803\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
@@ -2881,7 +2898,7 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </section>
 <section id="r-squared-calculation" class="level3" data-number="16.9.12">
-<h3 data-number="16.9.12" class="anchored" data-anchor-id="r-squared-calculation"><span class="header-section-number">16.9.12</span> R-squared Calculation</h3>
+<h3 data-number="16.9.12" class="anchored" data-anchor-id="r-squared-calculation"><span class="header-section-number">16.9.12</span> 4. R-squared Calculation</h3>
 <p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>: <span class="math display">\[\hat{Y} = 105.3247 - 5.4407X\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicted values</span></span>
