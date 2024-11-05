@@ -313,11 +313,11 @@ window.Quarto = {
   <ul>
   <li><a href="#statystyki-dwuwymiarowe" id="toc-statystyki-dwuwymiarowe" class="nav-link active" data-scroll-target="#statystyki-dwuwymiarowe"><span class="header-section-number">16.1</span> Statystyki Dwuwymiarowe</a>
   <ul class="collapse">
-  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">16.1.1</span> Kowariancja</a></li>
-  <li><a href="#korelacja-pearsona" id="toc-korelacja-pearsona" class="nav-link" data-scroll-target="#korelacja-pearsona"><span class="header-section-number">16.1.2</span> Korelacja Pearsona</a></li>
-  <li><a href="#korelacja-spearmana" id="toc-korelacja-spearmana" class="nav-link" data-scroll-target="#korelacja-spearmana"><span class="header-section-number">16.1.3</span> Korelacja Spearmana</a></li>
-  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">16.1.4</span> Tabela Krzyżowa</a></li>
-  <li><a href="#wybór-odpowiedniej-miary" id="toc-wybór-odpowiedniej-miary" class="nav-link" data-scroll-target="#wybór-odpowiedniej-miary"><span class="header-section-number">16.1.5</span> Wybór Odpowiedniej Miary</a></li>
+  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">16.1.5</span> Kowariancja</a></li>
+  <li><a href="#korelacja-pearsona" id="toc-korelacja-pearsona" class="nav-link" data-scroll-target="#korelacja-pearsona"><span class="header-section-number">16.1.6</span> Korelacja Pearsona</a></li>
+  <li><a href="#korelacja-spearmana" id="toc-korelacja-spearmana" class="nav-link" data-scroll-target="#korelacja-spearmana"><span class="header-section-number">16.1.7</span> Korelacja Spearmana</a></li>
+  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">16.1.8</span> Tabela Krzyżowa</a></li>
+  <li><a href="#wybór-odpowiedniej-miary" id="toc-wybór-odpowiedniej-miary" class="nav-link" data-scroll-target="#wybór-odpowiedniej-miary"><span class="header-section-number">16.1.9</span> Wybór Odpowiedniej Miary</a></li>
   </ul></li>
   <li><a href="#zrozumienie-korelacji-pearsona-spearmana-i-kendalla" id="toc-zrozumienie-korelacji-pearsona-spearmana-i-kendalla" class="nav-link" data-scroll-target="#zrozumienie-korelacji-pearsona-spearmana-i-kendalla"><span class="header-section-number">16.2</span> Zrozumienie Korelacji Pearsona, Spearmana i Kendalla</a>
   <ul class="collapse">
@@ -482,8 +482,100 @@ How Variables Interplay Together: Understanding Relationships in Social Data
 </ul>
 </div>
 </div>
-<section id="kowariancja" class="level3" data-number="16.1.1">
-<h3 data-number="16.1.1" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">16.1.1</span> Kowariancja</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Uwaga: Korelacja Nie Oznacza Przyczynowości!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To, że dwa zjawiska występują razem, nie oznacza, że jedno powoduje drugie. Przyjrzyjmy się fascynującym przykładom “korelacji pozornych” - gdy zmienne wydają się być powiązane, ale w rzeczywistości nie ma między nimi związku przyczynowego.</p>
+<section id="przykład-1-sprzedaż-lodów-a-przestępczość" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="przykład-1-sprzedaż-lodów-a-przestępczość"><span class="header-section-number">16.1.1</span> Przykład 1: Sprzedaż Lodów a Przestępczość</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Co tu się dzieje?</strong></p>
+<ul>
+<li>Sprzedaż lodów i wskaźnik przestępczości wydają się być silnie skorelowane</li>
+<li>Oba wskaźniki rosną w miesiącach letnich</li>
+<li>Prawdziwa przyczyna? Temperatura!
+<ul>
+<li>Ciepła pogoda → Więcej ludzi na zewnątrz → Większa sprzedaż lodów</li>
+<li>Ciepła pogoda → Więcej ludzi na zewnątrz → Więcej okazji do przestępstw</li>
+</ul></li>
+</ul>
+</section>
+<section id="przykład-2-liczba-bocianów-a-liczba-urodzeń" class="level3" data-number="16.1.2">
+<h3 data-number="16.1.2" class="anchored" data-anchor-id="przykład-2-liczba-bocianów-a-liczba-urodzeń"><span class="header-section-number">16.1.2</span> Przykład 2: Liczba Bocianów a Liczba Urodzeń</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Co tu się dzieje?</strong></p>
+<ul>
+<li>Regiony z większą liczbą bocianów mają więcej urodzeń</li>
+<li>Prawdziwa przyczyna? Wielkość regionu i charakter obszaru!
+<ul>
+<li>Większe, wiejskie regiony → Więcej dogodnych miejsc dla bocianów</li>
+<li>Większe regiony → Więcej mieszkańców → Więcej urodzeń</li>
+</ul></li>
+</ul>
+</section>
+<section id="dlaczego-to-jest-ważne" class="level3" data-number="16.1.3">
+<h3 data-number="16.1.3" class="anchored" data-anchor-id="dlaczego-to-jest-ważne"><span class="header-section-number">16.1.3</span> Dlaczego To Jest Ważne</h3>
+<p>Trzy częste pułapki w interpretacji korelacji:</p>
+<ol type="1">
+<li><strong>Ukryta Wspólna Przyczyna</strong> (jak temperatura w przykładzie z lodami)
+<ul>
+<li>Dwa zjawiska wydają się powiązane, bo coś innego wpływa na oba</li>
+</ul></li>
+<li><strong>Czysty Przypadek</strong>
+<ul>
+<li>Czasami trendy po prostu przypadkowo się pokrywają</li>
+</ul></li>
+<li><strong>Odwrócona Przyczynowość</strong>
+<ul>
+<li>Przykład: Miasta z większą liczbą szpitali mają więcej zgonów</li>
+<li>Rzeczywistość: Miasta z większą liczbą mieszkańców potrzebują więcej szpitali I mają więcej zgonów</li>
+</ul></li>
+</ol>
+</section>
+<section id="jak-krytycznie-myśleć-o-korelacjach" class="level3" data-number="16.1.4">
+<h3 data-number="16.1.4" class="anchored" data-anchor-id="jak-krytycznie-myśleć-o-korelacjach"><span class="header-section-number">16.1.4</span> Jak Krytycznie Myśleć o Korelacjach</h3>
+<p>✅ Zawsze pytaj:</p>
+<ul>
+<li>Co jeszcze mogłoby wyjaśniać tę relację?</li>
+<li>Czy istnieje logiczny związek?</li>
+<li>Czy relacja mogłaby działać w przeciwnym kierunku?</li>
+<li>Czy to może być tylko zbieg okoliczności?</li>
+</ul>
+<p>❌ Nie daj się zwieść:</p>
+<ul>
+<li>Prostym wyjaśnieniom złożonych zjawisk</li>
+<li>Związkom pozbawionym logicznego mechanizmu</li>
+<li>Korelacjom opartym na zbyt małej liczbie danych</li>
+</ul>
+<p>Pamiętaj: W naukach społecznych większość relacji jest złożona i obejmuje wiele czynników. Korelacja to tylko jeden element układanki!</p>
+</section>
+</div>
+</div>
+<section id="kowariancja" class="level3" data-number="16.1.5">
+<h3 data-number="16.1.5" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">16.1.5</span> Kowariancja</h3>
 <p>Kowariancja mierzy, jak dwie zmienne zmieniają się razem.</p>
 <p><strong>Wzór:</strong> <span class="math inline">\(cov(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n - 1}\)</span></p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
@@ -569,8 +661,8 @@ How Variables Interplay Together: Understanding Relationships in Social Data
 <li>Nie dostarcza informacji o sile związku</li>
 </ul>
 </section>
-<section id="korelacja-pearsona" class="level3" data-number="16.1.2">
-<h3 data-number="16.1.2" class="anchored" data-anchor-id="korelacja-pearsona"><span class="header-section-number">16.1.2</span> Korelacja Pearsona</h3>
+<section id="korelacja-pearsona" class="level3" data-number="16.1.6">
+<h3 data-number="16.1.6" class="anchored" data-anchor-id="korelacja-pearsona"><span class="header-section-number">16.1.6</span> Korelacja Pearsona</h3>
 <p>Korelacja Pearsona mierzy siłę i kierunek liniowego związku między dwiema zmiennymi ciągłymi.</p>
 <p><strong>Wzór:</strong> <span class="math inline">\(r = \frac{cov(X,Y)}{s_X s_Y} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}\)</span></p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
@@ -627,8 +719,8 @@ How Variables Interplay Together: Understanding Relationships in Social Data
 <li>Zakłada normalnie rozłożone zmienne</li>
 </ul>
 </section>
-<section id="korelacja-spearmana" class="level3" data-number="16.1.3">
-<h3 data-number="16.1.3" class="anchored" data-anchor-id="korelacja-spearmana"><span class="header-section-number">16.1.3</span> Korelacja Spearmana</h3>
+<section id="korelacja-spearmana" class="level3" data-number="16.1.7">
+<h3 data-number="16.1.7" class="anchored" data-anchor-id="korelacja-spearmana"><span class="header-section-number">16.1.7</span> Korelacja Spearmana</h3>
 <p>Korelacja Spearmana mierzy siłę i kierunek monotonicznego związku między dwiema zmiennymi, które mogą być ciągłe lub porządkowe.</p>
 <p><strong>Wzór:</strong> <span class="math inline">\(\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}\)</span>, gdzie <span class="math inline">\(d_i\)</span> to różnica między rangami.</p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
@@ -700,8 +792,8 @@ How Variables Interplay Together: Understanding Relationships in Social Data
 <li>Nie dostarcza informacji o kształcie związku poza monotonicznością</li>
 </ul>
 </section>
-<section id="tabela-krzyżowa" class="level3" data-number="16.1.4">
-<h3 data-number="16.1.4" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">16.1.4</span> Tabela Krzyżowa</h3>
+<section id="tabela-krzyżowa" class="level3" data-number="16.1.8">
+<h3 data-number="16.1.8" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">16.1.8</span> Tabela Krzyżowa</h3>
 <p>Tabela krzyżowa (tabela kontyngencji) pokazuje związek między dwiema zmiennymi kategorycznymi.</p>
 <p><strong>Przykład:</strong></p>
 <p>Stwórzmy tabelę krzyżową dla dwóch zmiennych: - Poziom wykształcenia: Średnie, Wyższe, Podyplomowe - Status zatrudnienia: Zatrudniony, Bezrobotny</p>
@@ -736,8 +828,8 @@ wyksztalcenie Bezrobotny Zatrudniony
 <li>Nie dostarcza pojedynczej statystyki podsumowującej siłę związku</li>
 </ul>
 </section>
-<section id="wybór-odpowiedniej-miary" class="level3" data-number="16.1.5">
-<h3 data-number="16.1.5" class="anchored" data-anchor-id="wybór-odpowiedniej-miary"><span class="header-section-number">16.1.5</span> Wybór Odpowiedniej Miary</h3>
+<section id="wybór-odpowiedniej-miary" class="level3" data-number="16.1.9">
+<h3 data-number="16.1.9" class="anchored" data-anchor-id="wybór-odpowiedniej-miary"><span class="header-section-number">16.1.9</span> Wybór Odpowiedniej Miary</h3>
 <p>Przy wyborze statystyki dwuwymiarowej należy wziąć pod uwagę:</p>
 <ol type="1">
 <li><p>Typ danych:</p>
@@ -859,7 +951,7 @@ wyksztalcenie Bezrobotny Zatrudniony
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -971,7 +1063,7 @@ wyksztalcenie Bezrobotny Zatrudniony
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1054,7 +1146,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1078,7 +1170,7 @@ dochod -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1574,7 +1666,7 @@ x̄ = 65 ÷ 10 = 6,5</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1804,7 +1896,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1829,7 +1921,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2017,7 +2109,7 @@ Attaching package: 'gridExtra'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2033,7 +2125,7 @@ Attaching package: 'gridExtra'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2086,7 +2178,7 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2647,7 +2739,7 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2845,7 +2937,7 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3109,7 +3201,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-56-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
