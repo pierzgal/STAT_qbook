@@ -746,62 +746,6 @@ Important
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Manual Construction of Tukey Boxplot
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Step 1: Calculate Key Components</strong></p>
-<ol type="1">
-<li>Find quartiles: <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> (median), <span class="math inline">\(Q_3\)</span></li>
-<li>Calculate Interquartile Range: <span class="math inline">\(IQR = Q_3 - Q_1\)</span></li>
-</ol>
-<p><strong>Step 2: Determine Whisker Boundaries</strong></p>
-<ul>
-<li>Lower fence: <span class="math inline">\(Q_1 - 1.5 \times IQR\)</span></li>
-<li>Upper fence: <span class="math inline">\(Q_3 + 1.5 \times IQR\)</span></li>
-</ul>
-<p><strong>Step 3: Identify Outliers</strong> Data points are outliers if they are:</p>
-<ul>
-<li>Below lower fence: <span class="math inline">\(x &lt; Q_1 - 1.5 \times IQR\)</span></li>
-<li>Above upper fence: <span class="math inline">\(x &gt; Q_3 + 1.5 \times IQR\)</span></li>
-</ul>
-<p><strong>Example:</strong> Given data: 2, 4, 6, 8, 9, 10, 11, 12, 14, 16, 50</p>
-<ol type="1">
-<li><p>Find quartiles:</p>
-<ul>
-<li><span class="math inline">\(Q_1 = 6\)</span></li>
-<li><span class="math inline">\(Q_2 = 10\)</span></li>
-<li><span class="math inline">\(Q_3 = 14\)</span></li>
-</ul></li>
-<li><p>Calculate <span class="math inline">\(IQR\)</span>:</p>
-<ul>
-<li><span class="math inline">\(IQR = 14 - 6 = 8\)</span></li>
-</ul></li>
-<li><p>Calculate fences:</p>
-<ul>
-<li>Lower: <span class="math inline">\(6 - (1.5 \times 8) = -6\)</span></li>
-<li>Upper: <span class="math inline">\(14 + (1.5 \times 8) = 26\)</span></li>
-</ul></li>
-<li><p>Identify outliers:</p>
-<ul>
-<li>50 &gt; 26, therefore 50 is an outlier</li>
-</ul></li>
-</ol>
-<p><strong>Graphical Elements:</strong></p>
-<ol type="1">
-<li>Box: Draw from <span class="math inline">\(Q_1\)</span> to <span class="math inline">\(Q_3\)</span></li>
-<li>Line inside box: Draw at <span class="math inline">\(Q_2\)</span></li>
-<li>Whiskers: Extend to most extreme non-outlier points</li>
-<li>Points: Plot outliers individually beyond whiskers</li>
-</ol>
-</div>
-</div>
 </section>
 <section id="wykres-skrzypcowy" class="level3" data-number="12.3.3">
 <h3 data-number="12.3.3" class="anchored" data-anchor-id="wykres-skrzypcowy"><span class="header-section-number">12.3.3</span> Wykres skrzypcowy</h3>
@@ -2346,6 +2290,62 @@ Ograniczenia Współczynnika Zmienności (CV)
 </ul></li>
 </ol>
 <p>Obie metody dają te same wyniki dla prostych pozycji (Przykład 1), ale mogą się różnić, gdy potrzebna jest interpolacja (Przykład 2).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Manual Construction of Tukey Boxplot
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Step 1: Calculate Key Components</strong></p>
+<ol type="1">
+<li>Find quartiles: <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> (median), <span class="math inline">\(Q_3\)</span></li>
+<li>Calculate Interquartile Range: <span class="math inline">\(IQR = Q_3 - Q_1\)</span></li>
+</ol>
+<p><strong>Step 2: Determine Whisker Boundaries</strong></p>
+<ul>
+<li>Lower fence: <span class="math inline">\(Q_1 - 1.5 \times IQR\)</span></li>
+<li>Upper fence: <span class="math inline">\(Q_3 + 1.5 \times IQR\)</span></li>
+</ul>
+<p><strong>Step 3: Identify Outliers</strong> Data points are outliers if they are:</p>
+<ul>
+<li>Below lower fence: <span class="math inline">\(x &lt; Q_1 - 1.5 \times IQR\)</span></li>
+<li>Above upper fence: <span class="math inline">\(x &gt; Q_3 + 1.5 \times IQR\)</span></li>
+</ul>
+<p><strong>Example:</strong> Given data: 2, 4, 6, 8, 9, 10, 11, 12, 14, 16, 50</p>
+<ol type="1">
+<li><p>Find quartiles:</p>
+<ul>
+<li><span class="math inline">\(Q_1 = 6\)</span></li>
+<li><span class="math inline">\(Q_2 = 10\)</span></li>
+<li><span class="math inline">\(Q_3 = 14\)</span></li>
+</ul></li>
+<li><p>Calculate <span class="math inline">\(IQR\)</span>:</p>
+<ul>
+<li><span class="math inline">\(IQR = 14 - 6 = 8\)</span></li>
+</ul></li>
+<li><p>Calculate fences:</p>
+<ul>
+<li>Lower: <span class="math inline">\(6 - (1.5 \times 8) = -6\)</span></li>
+<li>Upper: <span class="math inline">\(14 + (1.5 \times 8) = 26\)</span></li>
+</ul></li>
+<li><p>Identify outliers:</p>
+<ul>
+<li>50 &gt; 26, therefore 50 is an outlier</li>
+</ul></li>
+</ol>
+<p><strong>Graphical Elements:</strong></p>
+<ol type="1">
+<li>Box: Draw from <span class="math inline">\(Q_1\)</span> to <span class="math inline">\(Q_3\)</span></li>
+<li>Line inside box: Draw at <span class="math inline">\(Q_2\)</span></li>
+<li>Whiskers: Extend to most extreme non-outlier points</li>
+<li>Points: Plot outliers individually beyond whiskers</li>
+</ol>
+</div>
+</div>
 </section>
 </section>
 <section id="percentyle-bardziej-precyzyjna-miara-względnej-pozycji" class="level3" data-number="12.8.2">
