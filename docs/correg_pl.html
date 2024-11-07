@@ -4029,31 +4029,11 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>:</p>
 <p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429X\]</span></p>
 <p>The predicted values <span class="math inline">\(\hat{Y}\)</span> for each <span class="math inline">\(X\)</span> value:</p>
-<p>For <span class="math inline">\(X = 50\)</span>: <span class="math display">\[\begin{aligned}
-\hat{Y} &amp;= -0.9085714 + 1.2571429(50) \\
-        &amp;= -0.9085714 + 62.857145 \\
-        &amp;= 61.9485736
-\end{aligned}\]</span></p>
-<p>For <span class="math inline">\(X = 45\)</span>: <span class="math display">\[\begin{aligned}
-\hat{Y} &amp;= -0.9085714 + 1.2571429(45) \\
-        &amp;= -0.9085714 + 56.5714305 \\
-        &amp;= 55.6535591
-\end{aligned}\]</span></p>
-<p>For <span class="math inline">\(X = 56\)</span>: <span class="math display">\[\begin{aligned}
-\hat{Y} &amp;= -0.9085714 + 1.2571429(56) \\
-        &amp;= -0.9085714 + 70.4200024 \\
-        &amp;= 69.5114310
-\end{aligned}\]</span></p>
-<p>For <span class="math inline">\(X = 40\)</span>: <span class="math display">\[\begin{aligned}
-\hat{Y} &amp;= -0.9085714 + 1.2571429(40) \\
-        &amp;= -0.9085714 + 50.2657160 \\
-        &amp;= 49.3571446
-\end{aligned}\]</span></p>
-<p>For <span class="math inline">\(X = 60\)</span>: <span class="math display">\[\begin{aligned}
-\hat{Y} &amp;= -0.9085714 + 1.2571429(60) \\
-        &amp;= -0.9085714 + 75.4285740 \\
-        &amp;= 74.5200026
-\end{aligned}\]</span></p>
+<p>For <span class="math inline">\(X = 50\)</span>: <span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(50)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 62.857145\]</span> <span class="math display">\[\hat{Y} = 61.9485736\]</span></p>
+<p>For <span class="math inline">\(X = 45\)</span>: <span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(45)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 56.5714305\]</span> <span class="math display">\[\hat{Y} = 55.6535591\]</span></p>
+<p>For <span class="math inline">\(X = 56\)</span>: <span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(56)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 70.4200024\]</span> <span class="math display">\[\hat{Y} = 69.5114310\]</span></p>
+<p>For <span class="math inline">\(X = 40\)</span>: <span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(40)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 50.2657160\]</span> <span class="math display">\[\hat{Y} = 49.3571446\]</span></p>
+<p>For <span class="math inline">\(X = 60\)</span>: <span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(60)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 75.4285740\]</span> <span class="math display">\[\hat{Y} = 74.5200026\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification of predicted values</span></span>
 <span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.9085714</span> <span class="sc">+</span> <span class="fl">1.2571429</span> <span class="sc">*</span> income</span>
