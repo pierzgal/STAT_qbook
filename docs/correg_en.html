@@ -414,43 +414,39 @@ window.Quarto = {
   <li><a href="#step-5-spearman-rank-correlation-calculation" id="toc-step-5-spearman-rank-correlation-calculation" class="nav-link" data-scroll-target="#step-5-spearman-rank-correlation-calculation"><span class="header-section-number">15.15.5</span> Step 5: Spearman Rank Correlation Calculation</a></li>
   <li><a href="#step-6-r-verification" id="toc-step-6-r-verification" class="nav-link" data-scroll-target="#step-6-r-verification"><span class="header-section-number">15.15.6</span> Step 6: R Verification</a></li>
   <li><a href="#step-7-basic-visualization" id="toc-step-7-basic-visualization" class="nav-link" data-scroll-target="#step-7-basic-visualization"><span class="header-section-number">15.15.7</span> Step 7: Basic Visualization</a></li>
+  <li><a href="#ols-estimation-and-goodness-of-fit-measures" id="toc-ols-estimation-and-goodness-of-fit-measures" class="nav-link" data-scroll-target="#ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.15.8</span> OLS Estimation and Goodness-of-Fit Measures</a></li>
+  <li><a href="#step-1-calculate-ols-estimates" id="toc-step-1-calculate-ols-estimates" class="nav-link" data-scroll-target="#step-1-calculate-ols-estimates"><span class="header-section-number">15.15.9</span> Step 1: Calculate OLS Estimates</a></li>
+  <li><a href="#step-2-calculate-fitted-values-and-residuals" id="toc-step-2-calculate-fitted-values-and-residuals" class="nav-link" data-scroll-target="#step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.15.10</span> Step 2: Calculate Fitted Values and Residuals</a></li>
+  <li><a href="#step-3-calculate-goodness-of-fit-measures" id="toc-step-3-calculate-goodness-of-fit-measures" class="nav-link" data-scroll-target="#step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.15.11</span> Step 3: Calculate Goodness-of-Fit Measures</a></li>
+  <li><a href="#step-4-r-verification" id="toc-step-4-r-verification" class="nav-link" data-scroll-target="#step-4-r-verification"><span class="header-section-number">15.15.12</span> Step 4: R Verification</a></li>
+  <li><a href="#step-5-residual-analysis" id="toc-step-5-residual-analysis" class="nav-link" data-scroll-target="#step-5-residual-analysis"><span class="header-section-number">15.15.13</span> Step 5: Residual Analysis</a></li>
+  <li><a href="#step-6-predicted-vs-actual-values-plot" id="toc-step-6-predicted-vs-actual-values-plot" class="nav-link" data-scroll-target="#step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.15.14</span> Step 6: Predicted vs Actual Values Plot</a></li>
+  <li><a href="#log-transformed-models" id="toc-log-transformed-models" class="nav-link" data-scroll-target="#log-transformed-models"><span class="header-section-number">15.15.15</span> Log-Transformed Models</a></li>
+  <li><a href="#step-1-data-transformation" id="toc-step-1-data-transformation" class="nav-link" data-scroll-target="#step-1-data-transformation"><span class="header-section-number">15.15.16</span> Step 1: Data Transformation</a></li>
+  <li><a href="#step-2-compare-different-model-specifications" id="toc-step-2-compare-different-model-specifications" class="nav-link" data-scroll-target="#step-2-compare-different-model-specifications"><span class="header-section-number">15.15.17</span> Step 2: Compare Different Model Specifications</a></li>
+  <li><a href="#step-3-visual-comparison" id="toc-step-3-visual-comparison" class="nav-link" data-scroll-target="#step-3-visual-comparison"><span class="header-section-number">15.15.18</span> Step 3: Visual Comparison</a></li>
+  <li><a href="#step-4-residual-analysis-for-best-model" id="toc-step-4-residual-analysis-for-best-model" class="nav-link" data-scroll-target="#step-4-residual-analysis-for-best-model"><span class="header-section-number">15.15.19</span> Step 4: Residual Analysis for Best Model</a></li>
+  <li><a href="#step-5-interpretation-of-best-model" id="toc-step-5-interpretation-of-best-model" class="nav-link" data-scroll-target="#step-5-interpretation-of-best-model"><span class="header-section-number">15.15.20</span> Step 5: Interpretation of Best Model</a></li>
+  <li><a href="#step-6-model-predictions" id="toc-step-6-model-predictions" class="nav-link" data-scroll-target="#step-6-model-predictions"><span class="header-section-number">15.15.21</span> Step 6: Model Predictions</a></li>
+  <li><a href="#step-7-elasticity-analysis" id="toc-step-7-elasticity-analysis" class="nav-link" data-scroll-target="#step-7-elasticity-analysis"><span class="header-section-number">15.15.22</span> Step 7: Elasticity Analysis</a></li>
   </ul></li>
-  <li><a href="#appendix-a.3-ols-estimation-and-goodness-of-fit-measures" id="toc-appendix-a.3-ols-estimation-and-goodness-of-fit-measures" class="nav-link" data-scroll-target="#appendix-a.3-ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.16</span> Appendix A.3: OLS Estimation and Goodness-of-Fit Measures</a>
+  <li><a href="#appendix-a.3-understanding-pearson-spearman-and-kendall" id="toc-appendix-a.3-understanding-pearson-spearman-and-kendall" class="nav-link" data-scroll-target="#appendix-a.3-understanding-pearson-spearman-and-kendall"><span class="header-section-number">15.16</span> Appendix A.3: Understanding Pearson, Spearman, and Kendall</a>
   <ul class="collapse">
-  <li><a href="#step-1-calculate-ols-estimates" id="toc-step-1-calculate-ols-estimates" class="nav-link" data-scroll-target="#step-1-calculate-ols-estimates"><span class="header-section-number">15.16.1</span> Step 1: Calculate OLS Estimates</a></li>
-  <li><a href="#step-2-calculate-fitted-values-and-residuals" id="toc-step-2-calculate-fitted-values-and-residuals" class="nav-link" data-scroll-target="#step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.16.2</span> Step 2: Calculate Fitted Values and Residuals</a></li>
-  <li><a href="#step-3-calculate-goodness-of-fit-measures" id="toc-step-3-calculate-goodness-of-fit-measures" class="nav-link" data-scroll-target="#step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.16.3</span> Step 3: Calculate Goodness-of-Fit Measures</a></li>
-  <li><a href="#step-4-r-verification" id="toc-step-4-r-verification" class="nav-link" data-scroll-target="#step-4-r-verification"><span class="header-section-number">15.16.4</span> Step 4: R Verification</a></li>
-  <li><a href="#step-5-residual-analysis" id="toc-step-5-residual-analysis" class="nav-link" data-scroll-target="#step-5-residual-analysis"><span class="header-section-number">15.16.5</span> Step 5: Residual Analysis</a></li>
-  <li><a href="#step-6-predicted-vs-actual-values-plot" id="toc-step-6-predicted-vs-actual-values-plot" class="nav-link" data-scroll-target="#step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.16.6</span> Step 6: Predicted vs Actual Values Plot</a></li>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">15.16.1</span> Dataset</a></li>
+  <li><a href="#pearson-correlation-1" id="toc-pearson-correlation-1" class="nav-link" data-scroll-target="#pearson-correlation-1"><span class="header-section-number">15.16.2</span> Pearson Correlation</a></li>
+  <li><a href="#spearman-correlation-1" id="toc-spearman-correlation-1" class="nav-link" data-scroll-target="#spearman-correlation-1"><span class="header-section-number">15.16.3</span> Spearman Correlation</a></li>
+  <li><a href="#kendalls-tau-1" id="toc-kendalls-tau-1" class="nav-link" data-scroll-target="#kendalls-tau-1"><span class="header-section-number">15.16.4</span> Kendall’s Tau</a></li>
+  <li><a href="#verification-in-r" id="toc-verification-in-r" class="nav-link" data-scroll-target="#verification-in-r"><span class="header-section-number">15.16.5</span> Verification in R</a></li>
+  <li><a href="#interpretation-of-results" id="toc-interpretation-of-results" class="nav-link" data-scroll-target="#interpretation-of-results"><span class="header-section-number">15.16.6</span> Interpretation of Results</a></li>
+  <li><a href="#comparison-of-measures" id="toc-comparison-of-measures" class="nav-link" data-scroll-target="#comparison-of-measures"><span class="header-section-number">15.16.7</span> Comparison of Measures</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">15.16.8</span> Exercises</a></li>
+  <li><a href="#key-points-to-remember" id="toc-key-points-to-remember" class="nav-link" data-scroll-target="#key-points-to-remember"><span class="header-section-number">15.16.9</span> Key Points to Remember</a></li>
   </ul></li>
-  <li><a href="#appendix-a.4-log-transformed-models" id="toc-appendix-a.4-log-transformed-models" class="nav-link" data-scroll-target="#appendix-a.4-log-transformed-models"><span class="header-section-number">15.17</span> Appendix A.4: Log-Transformed Models</a>
-  <ul class="collapse">
-  <li><a href="#step-1-data-transformation" id="toc-step-1-data-transformation" class="nav-link" data-scroll-target="#step-1-data-transformation"><span class="header-section-number">15.17.1</span> Step 1: Data Transformation</a></li>
-  <li><a href="#step-2-compare-different-model-specifications" id="toc-step-2-compare-different-model-specifications" class="nav-link" data-scroll-target="#step-2-compare-different-model-specifications"><span class="header-section-number">15.17.2</span> Step 2: Compare Different Model Specifications</a></li>
-  <li><a href="#step-3-visual-comparison" id="toc-step-3-visual-comparison" class="nav-link" data-scroll-target="#step-3-visual-comparison"><span class="header-section-number">15.17.3</span> Step 3: Visual Comparison</a></li>
-  <li><a href="#step-4-residual-analysis-for-best-model" id="toc-step-4-residual-analysis-for-best-model" class="nav-link" data-scroll-target="#step-4-residual-analysis-for-best-model"><span class="header-section-number">15.17.4</span> Step 4: Residual Analysis for Best Model</a></li>
-  <li><a href="#step-5-interpretation-of-best-model" id="toc-step-5-interpretation-of-best-model" class="nav-link" data-scroll-target="#step-5-interpretation-of-best-model"><span class="header-section-number">15.17.5</span> Step 5: Interpretation of Best Model</a></li>
-  <li><a href="#step-6-model-predictions" id="toc-step-6-model-predictions" class="nav-link" data-scroll-target="#step-6-model-predictions"><span class="header-section-number">15.17.6</span> Step 6: Model Predictions</a></li>
-  <li><a href="#step-7-elasticity-analysis" id="toc-step-7-elasticity-analysis" class="nav-link" data-scroll-target="#step-7-elasticity-analysis"><span class="header-section-number">15.17.7</span> Step 7: Elasticity Analysis</a></li>
-  </ul></li>
-  <li><a href="#appendix-a.5-understanding-pearson-spearman-and-kendall" id="toc-appendix-a.5-understanding-pearson-spearman-and-kendall" class="nav-link" data-scroll-target="#appendix-a.5-understanding-pearson-spearman-and-kendall"><span class="header-section-number">15.18</span> Appendix A.5: Understanding Pearson, Spearman, and Kendall</a>
-  <ul class="collapse">
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">15.18.1</span> Dataset</a></li>
-  <li><a href="#pearson-correlation-1" id="toc-pearson-correlation-1" class="nav-link" data-scroll-target="#pearson-correlation-1"><span class="header-section-number">15.18.2</span> Pearson Correlation</a></li>
-  <li><a href="#spearman-correlation-1" id="toc-spearman-correlation-1" class="nav-link" data-scroll-target="#spearman-correlation-1"><span class="header-section-number">15.18.3</span> Spearman Correlation</a></li>
-  <li><a href="#kendalls-tau-1" id="toc-kendalls-tau-1" class="nav-link" data-scroll-target="#kendalls-tau-1"><span class="header-section-number">15.18.4</span> Kendall’s Tau</a></li>
-  <li><a href="#verification-in-r" id="toc-verification-in-r" class="nav-link" data-scroll-target="#verification-in-r"><span class="header-section-number">15.18.5</span> Verification in R</a></li>
-  <li><a href="#interpretation-of-results" id="toc-interpretation-of-results" class="nav-link" data-scroll-target="#interpretation-of-results"><span class="header-section-number">15.18.6</span> Interpretation of Results</a></li>
-  <li><a href="#comparison-of-measures" id="toc-comparison-of-measures" class="nav-link" data-scroll-target="#comparison-of-measures"><span class="header-section-number">15.18.7</span> Comparison of Measures</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">15.18.8</span> Exercises</a></li>
-  <li><a href="#key-points-to-remember" id="toc-key-points-to-remember" class="nav-link" data-scroll-target="#key-points-to-remember"><span class="header-section-number">15.18.9</span> Key Points to Remember</a></li>
-  </ul></li>
-  <li><a href="#appendix-b-bias-in-ols-estimation-with-endogenous-regressors" id="toc-appendix-b-bias-in-ols-estimation-with-endogenous-regressors" class="nav-link" data-scroll-target="#appendix-b-bias-in-ols-estimation-with-endogenous-regressors"><span class="header-section-number">15.19</span> Appendix B: Bias in OLS Estimation with Endogenous Regressors</a></li>
-  <li><a href="#theoretical-derivation" id="toc-theoretical-derivation" class="nav-link" data-scroll-target="#theoretical-derivation"><span class="header-section-number">15.20</span> Theoretical Derivation</a></li>
-  <li><a href="#simulation-in-r" id="toc-simulation-in-r" class="nav-link" data-scroll-target="#simulation-in-r"><span class="header-section-number">15.21</span> Simulation in R</a></li>
-  <li><a href="#conclusion-2" id="toc-conclusion-2" class="nav-link" data-scroll-target="#conclusion-2"><span class="header-section-number">15.22</span> Conclusion</a></li>
-  <li><a href="#appendix-c.-examples" id="toc-appendix-c.-examples" class="nav-link" data-scroll-target="#appendix-c.-examples"><span class="header-section-number">15.23</span> Appendix C. Examples</a></li>
+  <li><a href="#appendix-b-bias-in-ols-estimation-with-endogenous-regressors" id="toc-appendix-b-bias-in-ols-estimation-with-endogenous-regressors" class="nav-link" data-scroll-target="#appendix-b-bias-in-ols-estimation-with-endogenous-regressors"><span class="header-section-number">15.17</span> Appendix B: Bias in OLS Estimation with Endogenous Regressors</a></li>
+  <li><a href="#theoretical-derivation" id="toc-theoretical-derivation" class="nav-link" data-scroll-target="#theoretical-derivation"><span class="header-section-number">15.18</span> Theoretical Derivation</a></li>
+  <li><a href="#simulation-in-r" id="toc-simulation-in-r" class="nav-link" data-scroll-target="#simulation-in-r"><span class="header-section-number">15.19</span> Simulation in R</a></li>
+  <li><a href="#conclusion-2" id="toc-conclusion-2" class="nav-link" data-scroll-target="#conclusion-2"><span class="header-section-number">15.20</span> Conclusion</a></li>
+  <li><a href="#appendix-c.-examples" id="toc-appendix-c.-examples" class="nav-link" data-scroll-target="#appendix-c.-examples"><span class="header-section-number">15.21</span> Appendix C. Examples</a></li>
   </ul>
 </nav>
     </div>
@@ -3391,11 +3387,11 @@ Attaching package: 'kableExtra'</code></pre>
 </div>
 </div>
 </section>
+<section id="ols-estimation-and-goodness-of-fit-measures" class="level3" data-number="15.15.8">
+<h3 data-number="15.15.8" class="anchored" data-anchor-id="ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.15.8</span> OLS Estimation and Goodness-of-Fit Measures</h3>
 </section>
-<section id="appendix-a.3-ols-estimation-and-goodness-of-fit-measures" class="level2" data-number="15.16">
-<h2 data-number="15.16" class="anchored" data-anchor-id="appendix-a.3-ols-estimation-and-goodness-of-fit-measures"><span class="header-section-number">15.16</span> Appendix A.3: OLS Estimation and Goodness-of-Fit Measures</h2>
-<section id="step-1-calculate-ols-estimates" class="level3" data-number="15.16.1">
-<h3 data-number="15.16.1" class="anchored" data-anchor-id="step-1-calculate-ols-estimates"><span class="header-section-number">15.16.1</span> Step 1: Calculate OLS Estimates</h3>
+<section id="step-1-calculate-ols-estimates" class="level3" data-number="15.15.9">
+<h3 data-number="15.15.9" class="anchored" data-anchor-id="step-1-calculate-ols-estimates"><span class="header-section-number">15.15.9</span> Step 1: Calculate OLS Estimates</h3>
 <p>Using previously calculated values: - <span class="math inline">\(\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28.085\)</span> - <span class="math inline">\(\sum(X_i - \bar{X})^2 = 82.5\)</span> - <span class="math inline">\(\bar{X} = 6.5\)</span> - <span class="math inline">\(\bar{Y} = 15.417\)</span></p>
 <p>Calculate slope (<span class="math inline">\(\hat{\beta_1}\)</span>): <span class="math inline">\(\hat{\beta_1} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}\)</span></p>
 <p><span class="math display">\[\hat{\beta_1} = -28,085 ÷ 82,5 = -0,3404\]</span></p>
@@ -3405,8 +3401,8 @@ Attaching package: 'kableExtra'</code></pre>
    = 17,6296\]</span></p>
 <p>Therefore, the OLS regression equation is: <span class="math inline">\(\hat{Y} = 17.6296 - 0.3404X\)</span></p>
 </section>
-<section id="step-2-calculate-fitted-values-and-residuals" class="level3" data-number="15.16.2">
-<h3 data-number="15.16.2" class="anchored" data-anchor-id="step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.16.2</span> Step 2: Calculate Fitted Values and Residuals</h3>
+<section id="step-2-calculate-fitted-values-and-residuals" class="level3" data-number="15.15.10">
+<h3 data-number="15.15.10" class="anchored" data-anchor-id="step-2-calculate-fitted-values-and-residuals"><span class="header-section-number">15.15.10</span> Step 2: Calculate Fitted Values and Residuals</h3>
 <p>Complete table showing all calculations:</p>
 <table class="caption-top table">
 <colgroup>
@@ -3553,8 +3549,8 @@ For X = 3:
 
 [... continue for all values]</code></pre>
 </section>
-<section id="step-3-calculate-goodness-of-fit-measures" class="level3" data-number="15.16.3">
-<h3 data-number="15.16.3" class="anchored" data-anchor-id="step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.16.3</span> Step 3: Calculate Goodness-of-Fit Measures</h3>
+<section id="step-3-calculate-goodness-of-fit-measures" class="level3" data-number="15.15.11">
+<h3 data-number="15.15.11" class="anchored" data-anchor-id="step-3-calculate-goodness-of-fit-measures"><span class="header-section-number">15.15.11</span> Step 3: Calculate Goodness-of-Fit Measures</h3>
 <p>Sum of Squared Errors (SSE): <span class="math inline">\(SSE = \sum e_i^2\)</span></p>
 <pre><code>SSE = 3.2832</code></pre>
 <p>Sum of Squared Total (SST): <span class="math inline">\(SST = \sum(Y_i - \bar{Y})^2\)</span></p>
@@ -3567,8 +3563,8 @@ For X = 3:
 <pre><code>R² = 9.5524 ÷ 12.8442
    = 0.7438</code></pre>
 </section>
-<section id="step-4-r-verification" class="level3" data-number="15.16.4">
-<h3 data-number="15.16.4" class="anchored" data-anchor-id="step-4-r-verification"><span class="header-section-number">15.16.4</span> Step 4: R Verification</h3>
+<section id="step-4-r-verification" class="level3" data-number="15.15.12">
+<h3 data-number="15.15.12" class="anchored" data-anchor-id="step-4-r-verification"><span class="header-section-number">15.15.12</span> Step 4: R Verification</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit linear model</span></span>
 <span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(GH <span class="sc">~</span> DM, <span class="at">data =</span> data)</span>
@@ -3606,8 +3602,8 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
 </div>
 </section>
-<section id="step-5-residual-analysis" class="level3" data-number="15.16.5">
-<h3 data-number="15.16.5" class="anchored" data-anchor-id="step-5-residual-analysis"><span class="header-section-number">15.16.5</span> Step 5: Residual Analysis</h3>
+<section id="step-5-residual-analysis" class="level3" data-number="15.15.13">
+<h3 data-number="15.15.13" class="anchored" data-anchor-id="step-5-residual-analysis"><span class="header-section-number">15.15.13</span> Step 5: Residual Analysis</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create residual plots</span></span>
 <span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
@@ -3621,8 +3617,8 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
 </div>
 </section>
-<section id="step-6-predicted-vs-actual-values-plot" class="level3" data-number="15.16.6">
-<h3 data-number="15.16.6" class="anchored" data-anchor-id="step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.16.6</span> Step 6: Predicted vs Actual Values Plot</h3>
+<section id="step-6-predicted-vs-actual-values-plot" class="level3" data-number="15.15.14">
+<h3 data-number="15.15.14" class="anchored" data-anchor-id="step-6-predicted-vs-actual-values-plot"><span class="header-section-number">15.15.14</span> Step 6: Predicted vs Actual Values Plot</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create predicted vs actual plot</span></span>
 <span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(</span>
@@ -3646,11 +3642,11 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
 </div>
 </section>
+<section id="log-transformed-models" class="level3" data-number="15.15.15">
+<h3 data-number="15.15.15" class="anchored" data-anchor-id="log-transformed-models"><span class="header-section-number">15.15.15</span> Log-Transformed Models</h3>
 </section>
-<section id="appendix-a.4-log-transformed-models" class="level2" data-number="15.17">
-<h2 data-number="15.17" class="anchored" data-anchor-id="appendix-a.4-log-transformed-models"><span class="header-section-number">15.17</span> Appendix A.4: Log-Transformed Models</h2>
-<section id="step-1-data-transformation" class="level3" data-number="15.17.1">
-<h3 data-number="15.17.1" class="anchored" data-anchor-id="step-1-data-transformation"><span class="header-section-number">15.17.1</span> Step 1: Data Transformation</h3>
+<section id="step-1-data-transformation" class="level3" data-number="15.15.16">
+<h3 data-number="15.15.16" class="anchored" data-anchor-id="step-1-data-transformation"><span class="header-section-number">15.15.16</span> Step 1: Data Transformation</h3>
 <p>First, calculate natural logarithms of variables:</p>
 <table class="caption-top table">
 <thead>
@@ -3736,8 +3732,8 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </tbody>
 </table>
 </section>
-<section id="step-2-compare-different-model-specifications" class="level3" data-number="15.17.2">
-<h3 data-number="15.17.2" class="anchored" data-anchor-id="step-2-compare-different-model-specifications"><span class="header-section-number">15.17.2</span> Step 2: Compare Different Model Specifications</h3>
+<section id="step-2-compare-different-model-specifications" class="level3" data-number="15.15.17">
+<h3 data-number="15.15.17" class="anchored" data-anchor-id="step-2-compare-different-model-specifications"><span class="header-section-number">15.15.17</span> Step 2: Compare Different Model Specifications</h3>
 <p>We estimate three alternative specifications:</p>
 <ol type="1">
 <li>Log-linear model: <span class="math inline">\(\ln(Y_i) = \beta_0 + \beta_1 X_i + \epsilon_i\)</span></li>
@@ -3777,8 +3773,8 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
 </div>
 </section>
-<section id="step-3-visual-comparison" class="level3" data-number="15.17.3">
-<h3 data-number="15.17.3" class="anchored" data-anchor-id="step-3-visual-comparison"><span class="header-section-number">15.17.3</span> Step 3: Visual Comparison</h3>
+<section id="step-3-visual-comparison" class="level3" data-number="15.15.18">
+<h3 data-number="15.15.18" class="anchored" data-anchor-id="step-3-visual-comparison"><span class="header-section-number">15.15.18</span> Step 3: Visual Comparison</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plots for each model</span></span>
 <span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
@@ -3823,8 +3819,8 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
 </div>
 </section>
-<section id="step-4-residual-analysis-for-best-model" class="level3" data-number="15.17.4">
-<h3 data-number="15.17.4" class="anchored" data-anchor-id="step-4-residual-analysis-for-best-model"><span class="header-section-number">15.17.4</span> Step 4: Residual Analysis for Best Model</h3>
+<section id="step-4-residual-analysis-for-best-model" class="level3" data-number="15.15.19">
+<h3 data-number="15.15.19" class="anchored" data-anchor-id="step-4-residual-analysis-for-best-model"><span class="header-section-number">15.15.19</span> Step 4: Residual Analysis for Best Model</h3>
 <p>Based on R-squared values, analyze residuals for the best-fitting model:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Residual plots for best model</span></span>
@@ -3839,8 +3835,8 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 </div>
 </div>
 </section>
-<section id="step-5-interpretation-of-best-model" class="level3" data-number="15.17.5">
-<h3 data-number="15.17.5" class="anchored" data-anchor-id="step-5-interpretation-of-best-model"><span class="header-section-number">15.17.5</span> Step 5: Interpretation of Best Model</h3>
+<section id="step-5-interpretation-of-best-model" class="level3" data-number="15.15.20">
+<h3 data-number="15.15.20" class="anchored" data-anchor-id="step-5-interpretation-of-best-model"><span class="header-section-number">15.15.20</span> Step 5: Interpretation of Best Model</h3>
 <p>The linear-log model coefficients:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_linearlog)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3867,8 +3863,8 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </div>
 <p>Interpretation: - <span class="math inline">\(\hat{\beta_0}\)</span> represents the expected Gallagher Index when ln(DM) = 0 (i.e., when DM = 1) - <span class="math inline">\(\hat{\beta_1}\)</span> represents the change in Gallagher Index associated with a one-unit increase in ln(DM)</p>
 </section>
-<section id="step-6-model-predictions" class="level3" data-number="15.17.6">
-<h3 data-number="15.17.6" class="anchored" data-anchor-id="step-6-model-predictions"><span class="header-section-number">15.17.6</span> Step 6: Model Predictions</h3>
+<section id="step-6-model-predictions" class="level3" data-number="15.15.21">
+<h3 data-number="15.15.21" class="anchored" data-anchor-id="step-6-model-predictions"><span class="header-section-number">15.15.21</span> Step 6: Model Predictions</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create prediction plot for best model</span></span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> log_DM, <span class="at">y =</span> GH)) <span class="sc">+</span></span>
@@ -3892,8 +3888,8 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </div>
 </div>
 </section>
-<section id="step-7-elasticity-analysis" class="level3" data-number="15.17.7">
-<h3 data-number="15.17.7" class="anchored" data-anchor-id="step-7-elasticity-analysis"><span class="header-section-number">15.17.7</span> Step 7: Elasticity Analysis</h3>
+<section id="step-7-elasticity-analysis" class="level3" data-number="15.15.22">
+<h3 data-number="15.15.22" class="anchored" data-anchor-id="step-7-elasticity-analysis"><span class="header-section-number">15.15.22</span> Step 7: Elasticity Analysis</h3>
 <p>For the log-log model, coefficients represent elasticities directly. Calculate average elasticity for the linear-log model:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate elasticity at means</span></span>
@@ -3910,10 +3906,10 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <p>This represents the percentage change in the Gallagher Index for a 1% change in District Magnitude.</p>
 </section>
 </section>
-<section id="appendix-a.5-understanding-pearson-spearman-and-kendall" class="level2" data-number="15.18">
-<h2 data-number="15.18" class="anchored" data-anchor-id="appendix-a.5-understanding-pearson-spearman-and-kendall"><span class="header-section-number">15.18</span> Appendix A.5: Understanding Pearson, Spearman, and Kendall</h2>
-<section id="dataset" class="level3" data-number="15.18.1">
-<h3 data-number="15.18.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">15.18.1</span> Dataset</h3>
+<section id="appendix-a.3-understanding-pearson-spearman-and-kendall" class="level2" data-number="15.16">
+<h2 data-number="15.16" class="anchored" data-anchor-id="appendix-a.3-understanding-pearson-spearman-and-kendall"><span class="header-section-number">15.16</span> Appendix A.3: Understanding Pearson, Spearman, and Kendall</h2>
+<section id="dataset" class="level3" data-number="15.16.1">
+<h3 data-number="15.16.1" class="anchored" data-anchor-id="dataset"><span class="header-section-number">15.16.1</span> Dataset</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>),</span>
@@ -3921,11 +3917,11 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <span id="cb124-4"><a href="#cb124-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="pearson-correlation-1" class="level3" data-number="15.18.2">
-<h3 data-number="15.18.2" class="anchored" data-anchor-id="pearson-correlation-1"><span class="header-section-number">15.18.2</span> Pearson Correlation</h3>
+<section id="pearson-correlation-1" class="level3" data-number="15.16.2">
+<h3 data-number="15.16.2" class="anchored" data-anchor-id="pearson-correlation-1"><span class="header-section-number">15.16.2</span> Pearson Correlation</h3>
 <p><span class="math display">\[ r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}} \]</span></p>
-<section id="step-by-step-calculations" class="level4" data-number="15.18.2.1">
-<h4 data-number="15.18.2.1" class="anchored" data-anchor-id="step-by-step-calculations"><span class="header-section-number">15.18.2.1</span> Step-by-Step Calculations:</h4>
+<section id="step-by-step-calculations" class="level4" data-number="15.16.2.1">
+<h4 data-number="15.16.2.1" class="anchored" data-anchor-id="step-by-step-calculations"><span class="header-section-number">15.16.2.1</span> Step-by-Step Calculations:</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
@@ -4016,11 +4012,11 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <p><span class="math display">\[ r = \frac{12.8}{\sqrt{21.2 \times 9.2}} = \frac{12.8}{\sqrt{195.04}} = \frac{12.8}{13.97} = 0.92 \]</span></p>
 </section>
 </section>
-<section id="spearman-correlation-1" class="level3" data-number="15.18.3">
-<h3 data-number="15.18.3" class="anchored" data-anchor-id="spearman-correlation-1"><span class="header-section-number">15.18.3</span> Spearman Correlation</h3>
+<section id="spearman-correlation-1" class="level3" data-number="15.16.3">
+<h3 data-number="15.16.3" class="anchored" data-anchor-id="spearman-correlation-1"><span class="header-section-number">15.16.3</span> Spearman Correlation</h3>
 <p><span class="math display">\[ \rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)} \]</span></p>
-<section id="step-by-step-calculations-1" class="level4" data-number="15.18.3.1">
-<h4 data-number="15.18.3.1" class="anchored" data-anchor-id="step-by-step-calculations-1"><span class="header-section-number">15.18.3.1</span> Step-by-Step Calculations:</h4>
+<section id="step-by-step-calculations-1" class="level4" data-number="15.16.3.1">
+<h4 data-number="15.16.3.1" class="anchored" data-anchor-id="step-by-step-calculations-1"><span class="header-section-number">15.16.3.1</span> Step-by-Step Calculations:</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -4093,11 +4089,11 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <p><span class="math display">\[ \rho = 1 - \frac{6(7.5)}{5(25-1)} = 1 - \frac{45}{120} = 0.82 \]</span></p>
 </section>
 </section>
-<section id="kendalls-tau-1" class="level3" data-number="15.18.4">
-<h3 data-number="15.18.4" class="anchored" data-anchor-id="kendalls-tau-1"><span class="header-section-number">15.18.4</span> Kendall’s Tau</h3>
+<section id="kendalls-tau-1" class="level3" data-number="15.16.4">
+<h3 data-number="15.16.4" class="anchored" data-anchor-id="kendalls-tau-1"><span class="header-section-number">15.16.4</span> Kendall’s Tau</h3>
 <p><span class="math display">\[ \tau = \frac{\text{number of concordant pairs} - \text{number of discordant pairs}}{\frac{1}{2}n(n-1)} \]</span></p>
-<section id="step-by-step-calculations-2" class="level4" data-number="15.18.4.1">
-<h4 data-number="15.18.4.1" class="anchored" data-anchor-id="step-by-step-calculations-2"><span class="header-section-number">15.18.4.1</span> Step-by-Step Calculations:</h4>
+<section id="step-by-step-calculations-2" class="level4" data-number="15.16.4.1">
+<h4 data-number="15.16.4.1" class="anchored" data-anchor-id="step-by-step-calculations-2"><span class="header-section-number">15.16.4.1</span> Step-by-Step Calculations:</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -4195,8 +4191,8 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <p>Number of concordant pairs = 8 Number of discordant pairs = 2 <span class="math display">\[ \tau = \frac{8-2}{10} = 0.74 \]</span></p>
 </section>
 </section>
-<section id="verification-in-r" class="level3" data-number="15.18.5">
-<h3 data-number="15.18.5" class="anchored" data-anchor-id="verification-in-r"><span class="header-section-number">15.18.5</span> Verification in R</h3>
+<section id="verification-in-r" class="level3" data-number="15.16.5">
+<h3 data-number="15.16.5" class="anchored" data-anchor-id="verification-in-r"><span class="header-section-number">15.16.5</span> Verification in R</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Pearson:"</span>, <span class="fu">round</span>(<span class="fu">cor</span>(data<span class="sc">$</span>x, data<span class="sc">$</span>y, <span class="at">method=</span><span class="st">"pearson"</span>), <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -4212,8 +4208,8 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretation-of-results" class="level3" data-number="15.18.6">
-<h3 data-number="15.18.6" class="anchored" data-anchor-id="interpretation-of-results"><span class="header-section-number">15.18.6</span> Interpretation of Results</h3>
+<section id="interpretation-of-results" class="level3" data-number="15.16.6">
+<h3 data-number="15.16.6" class="anchored" data-anchor-id="interpretation-of-results"><span class="header-section-number">15.16.6</span> Interpretation of Results</h3>
 <ol type="1">
 <li><strong>Pearson Correlation (r = 0.92)</strong>
 <ul>
@@ -4232,8 +4228,8 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="comparison-of-measures" class="level3" data-number="15.18.7">
-<h3 data-number="15.18.7" class="anchored" data-anchor-id="comparison-of-measures"><span class="header-section-number">15.18.7</span> Comparison of Measures</h3>
+<section id="comparison-of-measures" class="level3" data-number="15.16.7">
+<h3 data-number="15.16.7" class="anchored" data-anchor-id="comparison-of-measures"><span class="header-section-number">15.16.7</span> Comparison of Measures</h3>
 <ol type="1">
 <li><strong>Differences in Values:</strong>
 <ul>
@@ -4249,16 +4245,16 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="exercises" class="level3" data-number="15.18.8">
-<h3 data-number="15.18.8" class="anchored" data-anchor-id="exercises"><span class="header-section-number">15.18.8</span> Exercises</h3>
+<section id="exercises" class="level3" data-number="15.16.8">
+<h3 data-number="15.16.8" class="anchored" data-anchor-id="exercises"><span class="header-section-number">15.16.8</span> Exercises</h3>
 <ol type="1">
 <li>Change y[3] from 4 to 6 and recalculate all three correlations</li>
 <li>Add an outlier (x=10, y=2) and recalculate correlations</li>
 <li>Compare which measure is most sensitive to changes in the data</li>
 </ol>
 </section>
-<section id="key-points-to-remember" class="level3" data-number="15.18.9">
-<h3 data-number="15.18.9" class="anchored" data-anchor-id="key-points-to-remember"><span class="header-section-number">15.18.9</span> Key Points to Remember</h3>
+<section id="key-points-to-remember" class="level3" data-number="15.16.9">
+<h3 data-number="15.16.9" class="anchored" data-anchor-id="key-points-to-remember"><span class="header-section-number">15.16.9</span> Key Points to Remember</h3>
 <ol type="1">
 <li><strong>Pearson Correlation:</strong>
 <ul>
@@ -4281,12 +4277,12 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </ol>
 </section>
 </section>
-<section id="appendix-b-bias-in-ols-estimation-with-endogenous-regressors" class="level2" data-number="15.19">
-<h2 data-number="15.19" class="anchored" data-anchor-id="appendix-b-bias-in-ols-estimation-with-endogenous-regressors"><span class="header-section-number">15.19</span> Appendix B: Bias in OLS Estimation with Endogenous Regressors</h2>
+<section id="appendix-b-bias-in-ols-estimation-with-endogenous-regressors" class="level2" data-number="15.17">
+<h2 data-number="15.17" class="anchored" data-anchor-id="appendix-b-bias-in-ols-estimation-with-endogenous-regressors"><span class="header-section-number">15.17</span> Appendix B: Bias in OLS Estimation with Endogenous Regressors</h2>
 <p>In this tutorial, we will explore the bias in Ordinary Least Squares (OLS) estimation when the error term is correlated with the explanatory variable, a situation known as endogeneity. We will first derive the bias mathematically and then illustrate it using a simulated dataset in R.</p>
 </section>
-<section id="theoretical-derivation" class="level2" data-number="15.20">
-<h2 data-number="15.20" class="anchored" data-anchor-id="theoretical-derivation"><span class="header-section-number">15.20</span> Theoretical Derivation</h2>
+<section id="theoretical-derivation" class="level2" data-number="15.18">
+<h2 data-number="15.18" class="anchored" data-anchor-id="theoretical-derivation"><span class="header-section-number">15.18</span> Theoretical Derivation</h2>
 <p>Consider a data generating process (DGP) where the true relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is:</p>
 <p><span class="math display">\[ y = 2x + e \]</span></p>
 <p>However, there is an endogeneity problem because the error term <span class="math inline">\(e\)</span> is correlated with <span class="math inline">\(x\)</span> in the following way:</p>
@@ -4309,8 +4305,8 @@ E[\hat{\beta}_1] &amp;= E[(X'X)^{-1}X'y] \\
 \end{align*}\]</span></p>
 <p>The direction and magnitude of the bias will depend on the correlation between <span class="math inline">\(x\)</span> and <span class="math inline">\(u\)</span>. If <span class="math inline">\(x\)</span> and <span class="math inline">\(u\)</span> are positively correlated, the bias will be positive, and the OLS estimator will overestimate the true coefficient. Conversely, if <span class="math inline">\(x\)</span> and <span class="math inline">\(u\)</span> are negatively correlated, the bias will be negative, and the OLS estimator will underestimate the true coefficient.</p>
 </section>
-<section id="simulation-in-r" class="level2" data-number="15.21">
-<h2 data-number="15.21" class="anchored" data-anchor-id="simulation-in-r"><span class="header-section-number">15.21</span> Simulation in R</h2>
+<section id="simulation-in-r" class="level2" data-number="15.19">
+<h2 data-number="15.19" class="anchored" data-anchor-id="simulation-in-r"><span class="header-section-number">15.19</span> Simulation in R</h2>
 <p>Let’s create a simple dataset with 10 observations where <span class="math inline">\(x\)</span> is in the interval 1:10, and generate <span class="math inline">\(y\)</span> values based on the given DGP: <span class="math inline">\(y = 2x + e\)</span>, where <span class="math inline">\(e = 1x + u\)</span>, and <span class="math inline">\(u\)</span> is a random error term.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># for reproducibility</span></span>
@@ -4375,12 +4371,12 @@ F-statistic: 736.3 on 1 and 8 DF,  p-value: 3.666e-09</code></pre>
 </div>
 <p>The plot will show that the estimated OLS line (red) is steeper than the true relationship line (blue), illustrating the upward bias in the estimated coefficient.</p>
 </section>
-<section id="conclusion-2" class="level2" data-number="15.22">
-<h2 data-number="15.22" class="anchored" data-anchor-id="conclusion-2"><span class="header-section-number">15.22</span> Conclusion</h2>
+<section id="conclusion-2" class="level2" data-number="15.20">
+<h2 data-number="15.20" class="anchored" data-anchor-id="conclusion-2"><span class="header-section-number">15.20</span> Conclusion</h2>
 <p>In summary, when the error term is correlated with the explanatory variable (endogeneity), the OLS estimator will be biased. The direction and magnitude of the bias depend on the nature of the correlation between the error term and the explanatory variable. This tutorial demonstrated the bias both mathematically and through a simulated example in R, using ggplot2 for visualization.</p>
 </section>
-<section id="appendix-c.-examples" class="level2" data-number="15.23">
-<h2 data-number="15.23" class="anchored" data-anchor-id="appendix-c.-examples"><span class="header-section-number">15.23</span> Appendix C. Examples</h2>
+<section id="appendix-c.-examples" class="level2" data-number="15.21">
+<h2 data-number="15.21" class="anchored" data-anchor-id="appendix-c.-examples"><span class="header-section-number">15.21</span> Appendix C. Examples</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -4402,8 +4398,8 @@ Descriptive Statistics and OLS Example - Income and Voter Turnout
 <li>Income: Average annual household income per capita (thousands €)</li>
 <li>Turnout: Percentage of registered voters who voted in the election</li>
 </ul>
-<section id="initial-r-output-for-reference" class="level3" data-number="15.23.1">
-<h3 data-number="15.23.1" class="anchored" data-anchor-id="initial-r-output-for-reference"><span class="header-section-number">15.23.1</span> Initial R Output for Reference</h3>
+<section id="initial-r-output-for-reference" class="level3" data-number="15.21.1">
+<h3 data-number="15.21.1" class="anchored" data-anchor-id="initial-r-output-for-reference"><span class="header-section-number">15.21.1</span> Initial R Output for Reference</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data</span></span>
 <span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>income <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">45</span>, <span class="dv">56</span>, <span class="dv">40</span>, <span class="dv">60</span>)  <span class="co"># thousands €</span></span>
@@ -4434,8 +4430,8 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 </section>
-<section id="dispersion-measures" class="level3" data-number="15.23.2">
-<h3 data-number="15.23.2" class="anchored" data-anchor-id="dispersion-measures"><span class="header-section-number">15.23.2</span> Dispersion Measures</h3>
+<section id="dispersion-measures" class="level3" data-number="15.21.2">
+<h3 data-number="15.21.2" class="anchored" data-anchor-id="dispersion-measures"><span class="header-section-number">15.21.2</span> Dispersion Measures</h3>
 <p><strong>Means:</strong></p>
 <p><span class="math display">\[\bar{X} = \frac{\sum_{i=1}^n X_i}{n} = \frac{50 + 45 + 56 + 40 + 60}{5} = \frac{251}{5} = 50.2\]</span></p>
 <p><span class="math display">\[\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n} = \frac{60 + 56 + 70 + 50 + 75}{5} = \frac{311}{5} = 62.2\]</span></p>
@@ -4468,8 +4464,8 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 </section>
-<section id="covariance-and-correlation" class="level3" data-number="15.23.3">
-<h3 data-number="15.23.3" class="anchored" data-anchor-id="covariance-and-correlation"><span class="header-section-number">15.23.3</span> Covariance and Correlation</h3>
+<section id="covariance-and-correlation" class="level3" data-number="15.21.3">
+<h3 data-number="15.21.3" class="anchored" data-anchor-id="covariance-and-correlation"><span class="header-section-number">15.21.3</span> Covariance and Correlation</h3>
 <p><strong>Covariance:</strong></p>
 <p><span class="math display">\[s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\]</span></p>
 <p>Products of deviations:</p>
@@ -4492,8 +4488,8 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 </section>
-<section id="ols-regression-haty-hatbeta_0-hatbeta_1x" class="level3" data-number="15.23.4">
-<h3 data-number="15.23.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x"><span class="header-section-number">15.23.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
+<section id="ols-regression-haty-hatbeta_0-hatbeta_1x" class="level3" data-number="15.21.4">
+<h3 data-number="15.21.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x"><span class="header-section-number">15.21.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
 <p><strong>Slope coefficient:</strong></p>
 <p><span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{81.95}{65.2} = 1.2571429\]</span></p>
 <p><strong>Intercept:</strong></p>
@@ -4512,16 +4508,36 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 </section>
-<section id="detailed-decomposition-of-variance-and-r-squared" class="level3" data-number="15.23.5">
-<h3 data-number="15.23.5" class="anchored" data-anchor-id="detailed-decomposition-of-variance-and-r-squared"><span class="header-section-number">15.23.5</span> Detailed Decomposition of Variance and R-squared</h3>
+<section id="detailed-decomposition-of-variance-and-r-squared" class="level3" data-number="15.21.5">
+<h3 data-number="15.21.5" class="anchored" data-anchor-id="detailed-decomposition-of-variance-and-r-squared"><span class="header-section-number">15.21.5</span> Detailed Decomposition of Variance and R-squared</h3>
 <p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>:</p>
 <p><span class="math display">\[ \hat{Y} = -0.9085714 + 1.2571429X\]</span></p>
-<p>For each X:</p>
-<p><span class="math display">\[ \hat{Y} = -0.9085714 + 1.2571429(50) = 61.9485736\]</span></p>
-<p><span class="math display">\[ \hat{Y} = -0.9085714 + 1.2571429(45) = 55.6535591\]</span></p>
-<p><span class="math display">\[ \hat{Y} = -0.9085714 + 1.2571429(56) = 69.5114310\]</span></p>
-<p><span class="math display">\[ \hat{Y} = -0.9085714 + 1.2571429(40) = 49.3571446\]</span></p>
-<p><span class="math display">\[ \hat{Y} = -0.9085714 + 1.2571429(60) = 74.5200026\]</span></p>
+<p>The predicted values <span class="math inline">\(\hat{Y}\)</span> for each <span class="math inline">\(X\)</span> value:</p>
+<p>For <span class="math inline">\(X = 50\)</span>: <span class="math display">\[\begin{aligned}
+\hat{Y} &amp;= -0.9085714 + 1.2571429(50) \\
+        &amp;= -0.9085714 + 62.857145 \\
+        &amp;= 61.9485736
+\end{aligned}\]</span></p>
+<p>For <span class="math inline">\(X = 45\)</span>: <span class="math display">\[\begin{aligned}
+\hat{Y} &amp;= -0.9085714 + 1.2571429(45) \\
+        &amp;= -0.9085714 + 56.5714305 \\
+        &amp;= 55.6535591
+\end{aligned}\]</span></p>
+<p>For <span class="math inline">\(X = 56\)</span>: <span class="math display">\[\begin{aligned}
+\hat{Y} &amp;= -0.9085714 + 1.2571429(56) \\
+        &amp;= -0.9085714 + 70.4200024 \\
+        &amp;= 69.5114310
+\end{aligned}\]</span></p>
+<p>For <span class="math inline">\(X = 40\)</span>: <span class="math display">\[\begin{aligned}
+\hat{Y} &amp;= -0.9085714 + 1.2571429(40) \\
+        &amp;= -0.9085714 + 50.2657160 \\
+        &amp;= 49.3571446
+\end{aligned}\]</span></p>
+<p>For <span class="math inline">\(X = 60\)</span>: <span class="math display">\[\begin{aligned}
+\hat{Y} &amp;= -0.9085714 + 1.2571429(60) \\
+        &amp;= -0.9085714 + 75.4285740 \\
+        &amp;= 74.5200026
+\end{aligned}\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification of predicted values</span></span>
 <span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.9085714</span> <span class="sc">+</span> <span class="fl">1.2571429</span> <span class="sc">*</span> income</span>
@@ -4564,8 +4580,8 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 </section>
-<section id="visualization-1" class="level3" data-number="15.23.6">
-<h3 data-number="15.23.6" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">15.23.6</span> Visualization</h3>
+<section id="visualization-1" class="level3" data-number="15.21.6">
+<h3 data-number="15.21.6" class="anchored" data-anchor-id="visualization-1"><span class="header-section-number">15.21.6</span> Visualization</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">income =</span> income, <span class="at">turnout =</span> turnout)</span>
@@ -4592,8 +4608,8 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretation-1" class="level3" data-number="15.23.7">
-<h3 data-number="15.23.7" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">15.23.7</span> Interpretation</h3>
+<section id="interpretation-1" class="level3" data-number="15.21.7">
+<h3 data-number="15.21.7" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">15.21.7</span> Interpretation</h3>
 <p>The analysis shows:</p>
 <ol type="1">
 <li><p>A very strong positive correlation (<span class="math inline">\(r = 0.994\)</span>) between income and voter turnout</p></li>
@@ -4617,8 +4633,8 @@ Anxiety Levels and Cognitive Performance: A Laboratory Study
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="data-and-context" class="level3" data-number="15.23.8">
-<h3 data-number="15.23.8" class="anchored" data-anchor-id="data-and-context"><span class="header-section-number">15.23.8</span> Data and Context</h3>
+<section id="data-and-context" class="level3" data-number="15.21.8">
+<h3 data-number="15.21.8" class="anchored" data-anchor-id="data-and-context"><span class="header-section-number">15.21.8</span> Data and Context</h3>
 <p>In a psychology experiment, researchers measured the relationship between anxiety levels (measured by galvanic skin response, GSR) and cognitive performance (score on a working memory task).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data</span></span>
@@ -4650,8 +4666,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </div>
 </section>
-<section id="descriptive-statistics" class="level3" data-number="15.23.9">
-<h3 data-number="15.23.9" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">15.23.9</span> Descriptive Statistics</h3>
+<section id="descriptive-statistics" class="level3" data-number="15.21.9">
+<h3 data-number="15.21.9" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">15.21.9</span> Descriptive Statistics</h3>
 <p><strong>Means:</strong> <span class="math display">\[\bar{X} = \frac{2.1 + 3.4 + 4.2 + 5.1 + 5.8 + 6.4 + 7.2 + 8.0}{8} = \frac{42.2}{8} = 5.275\]</span></p>
 <p><span class="math display">\[\bar{Y} = \frac{92 + 88 + 84 + 78 + 74 + 70 + 65 + 62}{8} = \frac{613}{8} = 76.625\]</span></p>
 <div class="cell">
@@ -4687,8 +4703,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </div>
 </section>
-<section id="covariance-and-correlation-1" class="level3" data-number="15.23.10">
-<h3 data-number="15.23.10" class="anchored" data-anchor-id="covariance-and-correlation-1"><span class="header-section-number">15.23.10</span> Covariance and Correlation</h3>
+<section id="covariance-and-correlation-1" class="level3" data-number="15.21.10">
+<h3 data-number="15.21.10" class="anchored" data-anchor-id="covariance-and-correlation-1"><span class="header-section-number">15.21.10</span> Covariance and Correlation</h3>
 <p><strong>Covariance:</strong> <span class="math display">\[s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\]</span></p>
 <p>Products of deviations:</p>
 <p>(-3.175 × 15.375) = -48.815625</p>
@@ -4717,8 +4733,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </div>
 </section>
-<section id="ols-regression-haty-hatbeta_0-hatbeta_1x-1" class="level3" data-number="15.23.11">
-<h3 data-number="15.23.11" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-1"><span class="header-section-number">15.23.11</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
+<section id="ols-regression-haty-hatbeta_0-hatbeta_1x-1" class="level3" data-number="15.21.11">
+<h3 data-number="15.21.11" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-1"><span class="header-section-number">15.21.11</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
 <p><strong>Slope coefficient:</strong> <span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-21.33929}{3.922143} = -5.4407\]</span></p>
 <p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps:</p>
 <ol type="1">
@@ -4734,8 +4750,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </div>
 </section>
-<section id="r-squared-calculation" class="level3" data-number="15.23.12">
-<h3 data-number="15.23.12" class="anchored" data-anchor-id="r-squared-calculation"><span class="header-section-number">15.23.12</span> 4. R-squared Calculation</h3>
+<section id="r-squared-calculation" class="level3" data-number="15.21.12">
+<h3 data-number="15.21.12" class="anchored" data-anchor-id="r-squared-calculation"><span class="header-section-number">15.21.12</span> 4. R-squared Calculation</h3>
 <p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>: <span class="math display">\[\hat{Y} = 105.3247 - 5.4407X\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb171"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicted values</span></span>
@@ -4771,8 +4787,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </div>
 </section>
-<section id="visualization-2" class="level3" data-number="15.23.13">
-<h3 data-number="15.23.13" class="anchored" data-anchor-id="visualization-2"><span class="header-section-number">15.23.13</span> Visualization</h3>
+<section id="visualization-2" class="level3" data-number="15.21.13">
+<h3 data-number="15.21.13" class="anchored" data-anchor-id="visualization-2"><span class="header-section-number">15.21.13</span> Visualization</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -4794,8 +4810,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretation-2" class="level3" data-number="15.23.14">
-<h3 data-number="15.23.14" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">15.23.14</span> Interpretation</h3>
+<section id="interpretation-2" class="level3" data-number="15.21.14">
+<h3 data-number="15.21.14" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">15.21.14</span> Interpretation</h3>
 <ol type="1">
 <li>Strong negative correlation (r = -0.993) between anxiety and cognitive performance</li>
 <li>For each unit increase in GSR (anxiety), performance decreases by approximately 5.44 points</li>
@@ -4804,8 +4820,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <li>The high intercept (105.32) represents the theoretical maximum performance at zero anxiety</li>
 </ol>
 </section>
-<section id="study-limitations" class="level3" data-number="15.23.15">
-<h3 data-number="15.23.15" class="anchored" data-anchor-id="study-limitations"><span class="header-section-number">15.23.15</span> Study Limitations</h3>
+<section id="study-limitations" class="level3" data-number="15.21.15">
+<h3 data-number="15.21.15" class="anchored" data-anchor-id="study-limitations"><span class="header-section-number">15.21.15</span> Study Limitations</h3>
 <ol type="1">
 <li>Small sample size (n=8)</li>
 <li>Possible other confounding variables</li>
@@ -4825,8 +4841,8 @@ District Magnitude and Electoral Disproportionality: A Comparative Analysis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="data-generating-process" class="level3" data-number="15.23.16">
-<h3 data-number="15.23.16" class="anchored" data-anchor-id="data-generating-process"><span class="header-section-number">15.23.16</span> Data Generating Process</h3>
+<section id="data-generating-process" class="level3" data-number="15.21.16">
+<h3 data-number="15.21.16" class="anchored" data-anchor-id="data-generating-process"><span class="header-section-number">15.21.16</span> Data Generating Process</h3>
 <p>Let’s set up a DGP where:</p>
 <ul>
 <li>Y (Gallagher Index) = 12 - 0.8X (District Magnitude) + ε</li>
@@ -4881,8 +4897,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </div>
 </div>
 </section>
-<section id="descriptive-statistics-1" class="level3" data-number="15.23.17">
-<h3 data-number="15.23.17" class="anchored" data-anchor-id="descriptive-statistics-1"><span class="header-section-number">15.23.17</span> Descriptive Statistics</h3>
+<section id="descriptive-statistics-1" class="level3" data-number="15.21.17">
+<h3 data-number="15.21.17" class="anchored" data-anchor-id="descriptive-statistics-1"><span class="header-section-number">15.21.17</span> Descriptive Statistics</h3>
 <p><strong>Means:</strong> <span class="math display">\[\bar{X} = \frac{3 + 5 + 7 + 10 + 12 + 15}{6} = \frac{52}{6} = 8.6667\]</span></p>
 <p><span class="math display">\[\bar{Y} = \frac{9.0 + 7.8 + 9.2 + 4.1 + 2.5 + 1.7}{6} = \frac{34.3}{6} = 5.7167\]</span></p>
 <div class="cell">
@@ -4922,8 +4938,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </div>
 </div>
 </section>
-<section id="covariance-and-correlation-2" class="level3" data-number="15.23.18">
-<h3 data-number="15.23.18" class="anchored" data-anchor-id="covariance-and-correlation-2"><span class="header-section-number">15.23.18</span> Covariance and Correlation</h3>
+<section id="covariance-and-correlation-2" class="level3" data-number="15.21.18">
+<h3 data-number="15.21.18" class="anchored" data-anchor-id="covariance-and-correlation-2"><span class="header-section-number">15.21.18</span> Covariance and Correlation</h3>
 <p><strong>Covariance:</strong> <span class="math display">\[s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\]</span></p>
 <p>Products of deviations:</p>
 <ul>
@@ -4952,8 +4968,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </div>
 </div>
 </section>
-<section id="ols-regression-haty-hatbeta_0-hatbeta_1x-2" class="level3" data-number="15.23.19">
-<h3 data-number="15.23.19" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-2"><span class="header-section-number">15.23.19</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
+<section id="ols-regression-haty-hatbeta_0-hatbeta_1x-2" class="level3" data-number="15.21.19">
+<h3 data-number="15.21.19" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-2"><span class="header-section-number">15.21.19</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
 <p><strong>Slope coefficient:</strong> <span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-14.0734}{20.2666} = -0.6944\]</span></p>
 <p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps:</p>
 <ol type="1">
@@ -4969,8 +4985,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </div>
 </div>
 </section>
-<section id="r-squared-calculation-1" class="level3" data-number="15.23.20">
-<h3 data-number="15.23.20" class="anchored" data-anchor-id="r-squared-calculation-1"><span class="header-section-number">15.23.20</span> R-squared Calculation</h3>
+<section id="r-squared-calculation-1" class="level3" data-number="15.21.20">
+<h3 data-number="15.21.20" class="anchored" data-anchor-id="r-squared-calculation-1"><span class="header-section-number">15.21.20</span> R-squared Calculation</h3>
 <p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>: <span class="math display">\[\hat{Y} = 11.7348 - 0.6944X\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb194"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb194-1"><a href="#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicted values</span></span>
@@ -5001,8 +5017,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </div>
 </div>
 </section>
-<section id="visualization---true-vs.-estimated-parameters" class="level3" data-number="15.23.21">
-<h3 data-number="15.23.21" class="anchored" data-anchor-id="visualization---true-vs.-estimated-parameters"><span class="header-section-number">15.23.21</span> Visualization - True vs.&nbsp;Estimated Parameters</h3>
+<section id="visualization---true-vs.-estimated-parameters" class="level3" data-number="15.21.21">
+<h3 data-number="15.21.21" class="anchored" data-anchor-id="visualization---true-vs.-estimated-parameters"><span class="header-section-number">15.21.21</span> Visualization - True vs.&nbsp;Estimated Parameters</h3>
 <ul>
 <li>True DGP: Y = 12 - 0.8X + ε</li>
 <li>Estimated Model: Y = 11.7348 - 0.6944X</li>
@@ -5062,8 +5078,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </div>
 </div>
 </section>
-<section id="observations-about-model-fit" class="level3" data-number="15.23.22">
-<h3 data-number="15.23.22" class="anchored" data-anchor-id="observations-about-model-fit"><span class="header-section-number">15.23.22</span> Observations about Model Fit</h3>
+<section id="observations-about-model-fit" class="level3" data-number="15.21.22">
+<h3 data-number="15.21.22" class="anchored" data-anchor-id="observations-about-model-fit"><span class="header-section-number">15.21.22</span> Observations about Model Fit</h3>
 <ol type="1">
 <li><strong>Slope Comparison</strong>
 <ul>
@@ -5092,8 +5108,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="interpretation-3" class="level3" data-number="15.23.23">
-<h3 data-number="15.23.23" class="anchored" data-anchor-id="interpretation-3"><span class="header-section-number">15.23.23</span> Interpretation</h3>
+<section id="interpretation-3" class="level3" data-number="15.21.23">
+<h3 data-number="15.21.23" class="anchored" data-anchor-id="interpretation-3"><span class="header-section-number">15.21.23</span> Interpretation</h3>
 <ol type="1">
 <li>Strong negative correlation (r = -0.93) between district magnitude and electoral disproportionality</li>
 <li>For each unit increase in district magnitude, the Gallagher index decreases by approximately 0.69 points</li>
@@ -5102,16 +5118,16 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <li>The intercept (11.73) represents the expected disproportionality in a hypothetical single-member district system</li>
 </ol>
 </section>
-<section id="study-context" class="level3" data-number="15.23.24">
-<h3 data-number="15.23.24" class="anchored" data-anchor-id="study-context"><span class="header-section-number">15.23.24</span> Study Context</h3>
+<section id="study-context" class="level3" data-number="15.21.24">
+<h3 data-number="15.21.24" class="anchored" data-anchor-id="study-context"><span class="header-section-number">15.21.24</span> Study Context</h3>
 <ul>
 <li>Data represents simulated observations from a DGP with moderate noise</li>
 <li>Sample shows how increasing district magnitude tends to reduce disproportionality</li>
 <li>Random component reflects other institutional and political factors affecting disproportionality</li>
 </ul>
 </section>
-<section id="limitations" class="level3" data-number="15.23.25">
-<h3 data-number="15.23.25" class="anchored" data-anchor-id="limitations"><span class="header-section-number">15.23.25</span> Limitations</h3>
+<section id="limitations" class="level3" data-number="15.21.25">
+<h3 data-number="15.21.25" class="anchored" data-anchor-id="limitations"><span class="header-section-number">15.21.25</span> Limitations</h3>
 <ol type="1">
 <li>Small sample size (n=6)</li>
 <li>Simulated rather than real-world data</li>
