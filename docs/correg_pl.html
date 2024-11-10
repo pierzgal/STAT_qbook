@@ -4030,15 +4030,15 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429X\]</span></p>
 <p>The predicted values <span class="math inline">\(\hat{Y}\)</span> for each <span class="math inline">\(X\)</span> value:</p>
 <p>For <span class="math inline">\(X = 50\)</span>:</p>
-<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(50)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 62.857145\]</span> <span class="math display">\[\hat{Y} = 61.9485736\]</span></p>
+<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429 \times (50)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 62.857145\]</span> <span class="math display">\[\hat{Y} = 61.9485736\]</span></p>
 <p>For <span class="math inline">\(X = 45\)</span>:</p>
-<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(45)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 56.5714305\]</span> <span class="math display">\[\hat{Y} = 55.6535591\]</span></p>
+<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429 \times (45)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 56.5714305\]</span> <span class="math display">\[\hat{Y} = 55.6535591\]</span></p>
 <p>For <span class="math inline">\(X = 56\)</span>:</p>
-<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(56)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 70.4200024\]</span> <span class="math display">\[\hat{Y} = 69.5114310\]</span></p>
+<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429 \times (56)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 70.4200024\]</span> <span class="math display">\[\hat{Y} = 69.5114310\]</span></p>
 <p>For <span class="math inline">\(X = 40\)</span>:</p>
-<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(40)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 50.2657160\]</span> <span class="math display">\[\hat{Y} = 49.3571446\]</span></p>
+<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429 \times (40)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 50.2657160\]</span> <span class="math display">\[\hat{Y} = 49.3571446\]</span></p>
 <p>For <span class="math inline">\(X = 60\)</span>:</p>
-<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429(60)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 75.4285740\]</span> <span class="math display">\[\hat{Y} = 74.5200026\]</span></p>
+<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429 \times (60)\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 75.4285740\]</span> <span class="math display">\[\hat{Y} = 74.5200026\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification of predicted values</span></span>
 <span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.9085714</span> <span class="sc">+</span> <span class="fl">1.2571429</span> <span class="sc">*</span> income</span>
@@ -4175,14 +4175,22 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 <p><strong>Variances:</strong> <span class="math display">\[s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}\]</span></p>
 <p>Deviations for X:</p>
-<p><span class="math display">\[(2.1 - 5.275) = -3.175 (3.4 - 5.275) = -1.875 (4.2 - 5.275) = -1.075\]</span></p>
-<p><span class="math display">\[(5.1 - 5.275) = -0.175 (5.8 - 5.275) = 0.525 (6.4 - 5.275) = 1.125\]</span></p>
-<p><span class="math display">\[(7.2 - 5.275) = 1.925 (8.0 - 5.275) = 2.725\]</span></p>
+<ul>
+<li><span class="math inline">\((2.1 - 5.275) = -3.175\)</span></li>
+<li><span class="math inline">\((3.4 - 5.275) = -1.875\)</span></li>
+<li><span class="math inline">\((4.2 - 5.275) = -1.075\)</span></li>
+<li><span class="math inline">\((5.1 - 5.275) = -0.175\)</span></li>
+<li><span class="math inline">\((5.8 - 5.275) = 0.525\)</span></li>
+<li><span class="math inline">\((6.4 - 5.275) = 1.125\)</span></li>
+<li><span class="math inline">\((7.2 - 5.275) = 1.925\)</span></li>
+<li><span class="math inline">\((8.0 - 5.275) = 2.725\)</span></li>
+</ul>
 <p>Squared deviations:</p>
 <p><span class="math display">\[10.08063 + 3.51563 + 1.15563 + 0.03063 + 0.27563 + 1.26563 + 3.70563 +
 7.42563 = 27.45500\]</span></p>
 <p><span class="math display">\[s^2_X = \frac{27.45500}{7} = 3.922143\]</span></p>
-<p>Similarly for Y: Deviations: 15.375, 11.375, 7.375, 1.375, -2.625, -6.625, -11.625, -14.625</p>
+<p>Similarly for Y: Deviations:</p>
+<p><span class="math display">\[15.375, 11.375, 7.375, 1.375, -2.625, -6.625, -11.625, -14.625\]</span></p>
 <p><span class="math display">\[s^2_Y = \frac{236.875 + 129.391 + 54.391 + 1.891 + 6.891 + 43.891 + 135.141 + 213.891}{7} = \frac{822.362}{7} = 117.4803\]</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
