@@ -106,8 +106,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -704,9 +718,9 @@ Objaśnienie diagramu PGD, Populacji i Próby
 </ol>
 <p>Typowe parametry populacji to:</p>
 <ul>
-<li>Średnia populacji (Population mean) (<span class="math inline">\(\mu\)</span>): Średnia/oczekiwana wartość zmiennej w populacji.</li>
-<li>Wariancja populacji (Population variance) (<span class="math inline">\(\sigma^2\)</span>): Miara zmienności w populacji.</li>
-<li>Proporcja populacji (Population proportion) (<span class="math inline">\(p\)</span>): Proporcja osób w populacji posiadających daną cechę.</li>
+<li>Średnia populacji (Population mean) (<span class="math inline">\mu</span>): Średnia/oczekiwana wartość zmiennej w populacji.</li>
+<li>Wariancja populacji (Population variance) (<span class="math inline">\sigma^2</span>): Miara zmienności w populacji.</li>
+<li>Proporcja populacji (Population proportion) (<span class="math inline">p</span>): Proporcja osób w populacji posiadających daną cechę.</li>
 </ul>
 <p>Estymand (Estimand) to cel estymacji - konkretny parametr populacji lub funkcja parametrów, którą chcemy oszacować. Definiuje to, co chcemy wiedzieć o populacji.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -721,8 +735,8 @@ Przykład: Wzrost Studentów Uniwersyteckich
 <div class="callout-body-container callout-body">
 <p>Rozważmy wzrost wszystkich studentów uniwersyteckich w kraju:</p>
 <ul>
-<li><span class="math inline">\(\mu\)</span> (estymand): Prawdziwa średnia wysokość wszystkich studentów uniwersyteckich (średnia populacji)</li>
-<li><span class="math inline">\(\sigma^2\)</span> (estymand): Prawdziwa wariancja wysokości w populacji</li>
+<li><span class="math inline">\mu</span> (estymand): Prawdziwa średnia wysokość wszystkich studentów uniwersyteckich (średnia populacji)</li>
+<li><span class="math inline">\sigma^2</span> (estymand): Prawdziwa wariancja wysokości w populacji</li>
 </ul>
 <p>Te parametry są nieznanymi estymandami, które chcemy oszacować na podstawie danych z próby.</p>
 </div>
@@ -734,15 +748,15 @@ Przykład: Wzrost Studentów Uniwersyteckich
 <p>Gdy statystyka jest używana do oszacowania estymandy (parametru populacji), nazywana jest estymatorem. Estymatory są funkcjami danych z próby, które dostarczają przybliżonych wartości dla nieznanych parametrów populacji.</p>
 <p>Przykłady statystyk/estymatorów:</p>
 <ul>
-<li>Średnia z próby (Sample mean): <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span> (szacuje <span class="math inline">\(\mu\)</span>)</li>
-<li>Wariancja z próby (Sample variance): <span class="math inline">\(s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2\)</span> (szacuje <span class="math inline">\(\sigma^2\)</span>)</li>
-<li>Proporcja z próby (Sample proportion): <span class="math inline">\(\hat{p} = \frac{x}{n}\)</span> (szacuje <span class="math inline">\(p\)</span>)</li>
+<li>Średnia z próby (Sample mean): <span class="math inline">\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i</span> (szacuje <span class="math inline">\mu</span>)</li>
+<li>Wariancja z próby (Sample variance): <span class="math inline">s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2</span> (szacuje <span class="math inline">\sigma^2</span>)</li>
+<li>Proporcja z próby (Sample proportion): <span class="math inline">\hat{p} = \frac{x}{n}</span> (szacuje <span class="math inline">p</span>)</li>
 </ul>
 </section>
 <section id="oszacowania-estimates" class="level3" data-number="2.3.5">
 <h3 data-number="2.3.5" class="anchored" data-anchor-id="oszacowania-estimates"><span class="header-section-number">2.3.5</span> Oszacowania (Estimates)</h3>
 <p>Oszacowanie to konkretna wartość uzyskana przez zastosowanie estymatora do konkretnej próby. Jest to wartość punktowa, która przybliża prawdziwą estymandę (parametr populacji).</p>
-<p>Przykład: Jeśli obliczamy średnią wysokość z próby wynoszącą 173 cm, to 173 cm jest naszym oszacowaniem estymandy <span class="math inline">\(\mu\)</span> (średniej wysokości populacji).</p>
+<p>Przykład: Jeśli obliczamy średnią wysokość z próby wynoszącą 173 cm, to 173 cm jest naszym oszacowaniem estymandy <span class="math inline">\mu</span> (średniej wysokości populacji).</p>
 </section>
 <section id="modele-statystyczne-statistical-models" class="level3" data-number="2.3.6">
 <h3 data-number="2.3.6" class="anchored" data-anchor-id="modele-statystyczne-statistical-models"><span class="header-section-number">2.3.6</span> Modele Statystyczne (Statistical Models)</h3>
@@ -760,12 +774,12 @@ Note
 </div>
 </div>
 <p>Modele statystyczne reprezentują relacje między zmiennymi i pomagają w przewidywaniu lub wnioskowaniu o estymandach (parametrach populacji).</p>
-<p>Przykład: Model regresji liniowej <span class="math inline">\(y = \beta_0 + \beta_1x + \epsilon\)</span> opisuje relację między zmienną niezależną <span class="math inline">\(x\)</span> a zmienną zależną <span class="math inline">\(y\)</span>, gdzie:</p>
+<p>Przykład: Model regresji liniowej <span class="math inline">y = \beta_0 + \beta_1x + \epsilon</span> opisuje relację między zmienną niezależną <span class="math inline">x</span> a zmienną zależną <span class="math inline">y</span>, gdzie:</p>
 <ul>
-<li><span class="math inline">\(y\)</span> to zmienna zależna (np. wielkość popytu na dobro)</li>
-<li><span class="math inline">\(x\)</span> to zmienna niezależna (np. cena lub dochód konsumenta)</li>
-<li><span class="math inline">\(\beta_0\)</span> i <span class="math inline">\(\beta_1\)</span> to parametry, estymandy do oszacowania</li>
-<li><span class="math inline">\(\epsilon\)</span> to składnik błędu, reprezentujący niewyjaśnioną zmienność</li>
+<li><span class="math inline">y</span> to zmienna zależna (np. wielkość popytu na dobro)</li>
+<li><span class="math inline">x</span> to zmienna niezależna (np. cena lub dochód konsumenta)</li>
+<li><span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span> to parametry, estymandy do oszacowania</li>
+<li><span class="math inline">\epsilon</span> to składnik błędu, reprezentujący niewyjaśnioną zmienność</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -914,17 +928,17 @@ Przykład: Badanie Zachowań Wyborczych
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Populacja</strong>: Wszyscy uprawnieni wyborcy w kraju</li>
-<li><strong>Estymanda</strong>: <span class="math inline">\(p\)</span> = rzeczywista proporcja wyborców popierających danego kandydata</li>
+<li><strong>Estymanda</strong>: <span class="math inline">p</span> = rzeczywista proporcja wyborców popierających danego kandydata</li>
 <li><strong>Próba</strong>: 1000 losowo wybranych uprawnionych wyborców</li>
-<li><strong>Estymator</strong>: <span class="math inline">\(\hat{p}\)</span> = proporcja wyborców z próby popierających kandydata</li>
-<li><strong>Oszacowanie</strong>: Konkretna wartość <span class="math inline">\(\hat{p}\)</span> obliczona z próby (np. 0,52)</li>
+<li><strong>Estymator</strong>: <span class="math inline">\hat{p}</span> = proporcja wyborców z próby popierających kandydata</li>
+<li><strong>Oszacowanie</strong>: Konkretna wartość <span class="math inline">\hat{p}</span> obliczona z próby (np. 0,52)</li>
 <li><strong>DGP</strong>: Złożona interakcja czynników wpływających na decyzje wyborcze, takich jak przekonania polityczne, warunki ekonomiczne, ekspozycja na media i sieci społeczne.</li>
 </ul>
-<p>Zrozumienie DGP pomaga badaczom interpretować, dlaczego estymanda <span class="math inline">\(p\)</span> ma określoną wartość i jak może się zmieniać w czasie. Na przykład, nagła zmiana w gospodarce może wpłynąć na preferencje wyborców, zmieniając tym samym wartość <span class="math inline">\(p\)</span>.</p>
+<p>Zrozumienie DGP pomaga badaczom interpretować, dlaczego estymanda <span class="math inline">p</span> ma określoną wartość i jak może się zmieniać w czasie. Na przykład, nagła zmiana w gospodarce może wpłynąć na preferencje wyborców, zmieniając tym samym wartość <span class="math inline">p</span>.</p>
 <p><strong>Obciążenie i efektywność w kontekście przykładu</strong>:</p>
 <ul>
-<li>Jeśli <span class="math inline">\(\hat{p}\)</span> jest nieobciążonym estymatorem, oznacza to, że przy wielokrotnym powtórzeniu badania na różnych próbach, średnia wartość <span class="math inline">\(\hat{p}\)</span> będzie bliska rzeczywistej wartości <span class="math inline">\(p\)</span>.</li>
-<li>Efektywność <span class="math inline">\(\hat{p}\)</span> określa, jak bardzo rozproszone są wyniki poszczególnych badań wokół tej średniej. Im mniejsze rozproszenie, tym estymator jest bardziej efektywny.</li>
+<li>Jeśli <span class="math inline">\hat{p}</span> jest nieobciążonym estymatorem, oznacza to, że przy wielokrotnym powtórzeniu badania na różnych próbach, średnia wartość <span class="math inline">\hat{p}</span> będzie bliska rzeczywistej wartości <span class="math inline">p</span>.</li>
+<li>Efektywność <span class="math inline">\hat{p}</span> określa, jak bardzo rozproszone są wyniki poszczególnych badań wokół tej średniej. Im mniejsze rozproszenie, tym estymator jest bardziej efektywny.</li>
 </ul>
 </div>
 </div>
@@ -1289,24 +1303,24 @@ Pamiętaj: Korelacja nie implikuje przyczynowości
 <h5 data-number="2.7.1.2.1" class="anchored" data-anchor-id="i.-klasyczne-modele-stochastyczne"><span class="header-section-number">2.7.1.2.1</span> i. Klasyczne Modele Stochastyczne</h5>
 <p>Te modele zajmują się losowością wynikającą z niepełnej informacji lub złożonych interakcji w systemach klasycznych. Podstawowy system jest deterministyczny, ale praktyczne ograniczenia w pomiarach lub obliczeniach prowadzą do użycia opisów probabilistycznych.</p>
 <p><strong>Przykład:</strong> Modele regresji w statystyce, gdzie losowość reprezentuje niewyjaśnioną zmienność lub błąd pomiaru:</p>
-<p><span class="math display">\[y = β_0 + β_1x + ε\]</span></p>
+<p><span class="math display">y = β_0 + β_1x + ε</span></p>
 <p>Gdzie:</p>
 <ul>
-<li><span class="math inline">\(y\)</span> to zmienna zależna (np. wielkość popytu na dobro)</li>
-<li><span class="math inline">\(x\)</span> to zmienna niezależna (np. cena lub dochód konsumenta)</li>
-<li><span class="math inline">\(β_0\)</span> i <span class="math inline">\(β_1\)</span> to parametry</li>
-<li><span class="math inline">\(ε\)</span> to składnik błędu, reprezentujący niewyjaśnioną zmienność</li>
+<li><span class="math inline">y</span> to zmienna zależna (np. wielkość popytu na dobro)</li>
+<li><span class="math inline">x</span> to zmienna niezależna (np. cena lub dochód konsumenta)</li>
+<li><span class="math inline">β_0</span> i <span class="math inline">β_1</span> to parametry</li>
+<li><span class="math inline">ε</span> to składnik błędu, reprezentujący niewyjaśnioną zmienność</li>
 </ul>
 </section>
 <section id="ii.-kwantowe-modele-stochastyczne" class="level5" data-number="2.7.1.2.2">
 <h5 data-number="2.7.1.2.2" class="anchored" data-anchor-id="ii.-kwantowe-modele-stochastyczne"><span class="header-section-number">2.7.1.2.2</span> ii. Kwantowe Modele Stochastyczne</h5>
 <p>Te modele zajmują się fundamentalną, nieredukowalną losowością nieodłącznie związaną z systemami mechaniki kwantowej. Ta losowość nie wynika z braku informacji, ale jest podstawową cechą rzeczywistości kwantowej.</p>
 <p><strong>Przykład:</strong> Model Standardowy w fizyce cząstek elementarnych, który opisuje interakcje cząstek za pomocą kwantowej teorii pola. Na przykład, rozpad cząstki jest z natury probabilistyczny:</p>
-<p><span class="math display">\[P(t) = e^{-t/τ}\]</span></p>
+<p><span class="math display">P(t) = e^{-t/τ}</span></p>
 <p>Gdzie:</p>
 <ul>
-<li><span class="math inline">\(P(t)\)</span> to prawdopodobieństwo, że cząstka nie rozpadła się po czasie t</li>
-<li><span class="math inline">\(τ\)</span> to średni czas życia cząstki</li>
+<li><span class="math inline">P(t)</span> to prawdopodobieństwo, że cząstka nie rozpadła się po czasie t</li>
+<li><span class="math inline">τ</span> to średni czas życia cząstki</li>
 </ul>
 </section>
 </section>
@@ -1588,7 +1602,7 @@ Warning
 <ul>
 <li><strong>Źródło</strong>: Niekompletna informacja lub złożone interakcje w systemie, który w zasadzie jest deterministyczny.</li>
 <li><strong>Natura</strong>: Niepewność epistemiczna (wynikająca z braku wiedzy).</li>
-<li><strong>Przykład</strong>: W modelu regresji, <span class="math inline">\(y = β_0 + β_1x + ε\)</span>, składnik błędu ε reprezentuje niewyjaśnioną zmienność.</li>
+<li><strong>Przykład</strong>: W modelu regresji, <span class="math inline">y = β_0 + β_1x + ε</span>, składnik błędu ε reprezentuje niewyjaśnioną zmienność.</li>
 </ul>
 </section>
 <section id="losowość-kwantowa" class="level4" data-number="2.10.1.2">
@@ -1800,14 +1814,14 @@ Warning
 <section id="przykład-ruch-jednostajnie-przyspieszony" class="level3" data-number="2.12.2">
 <h3 data-number="2.12.2" class="anchored" data-anchor-id="przykład-ruch-jednostajnie-przyspieszony"><span class="header-section-number">2.12.2</span> Przykład: Ruch Jednostajnie Przyspieszony</h3>
 <p>Klasycznym przykładem modelu deterministycznego jest ruch jednostajnie przyspieszony, opisany równaniem:</p>
-<p><span class="math display">\[x(t) = x_0 + v_0t + \frac{1}{2}at^2\]</span></p>
+<p><span class="math display">x(t) = x_0 + v_0t + \frac{1}{2}at^2</span></p>
 <p>Gdzie:</p>
 <ul>
-<li><span class="math inline">\(x(t)\)</span> to położenie w czasie <span class="math inline">\(t\)</span></li>
-<li><span class="math inline">\(x_0\)</span> to położenie początkowe</li>
-<li><span class="math inline">\(v_0\)</span> to prędkość początkowa</li>
-<li><span class="math inline">\(a\)</span> to przyspieszenie</li>
-<li><span class="math inline">\(t\)</span> to czas</li>
+<li><span class="math inline">x(t)</span> to położenie w czasie <span class="math inline">t</span></li>
+<li><span class="math inline">x_0</span> to położenie początkowe</li>
+<li><span class="math inline">v_0</span> to prędkość początkowa</li>
+<li><span class="math inline">a</span> to przyspieszenie</li>
+<li><span class="math inline">t</span> to czas</li>
 </ul>
 <p>Zasymulujmy to w R:</p>
 <div class="cell">
@@ -1840,13 +1854,13 @@ Warning
 <section id="przykład-regresja-metodą-najmniejszych-kwadratów-ols" class="level3" data-number="2.12.4">
 <h3 data-number="2.12.4" class="anchored" data-anchor-id="przykład-regresja-metodą-najmniejszych-kwadratów-ols"><span class="header-section-number">2.12.4</span> Przykład: Regresja Metodą Najmniejszych Kwadratów (OLS)</h3>
 <p>OLS to podstawowy model stochastyczny w naukach społecznych. Jest reprezentowany jako:</p>
-<p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
+<p><span class="math display">Y = \beta_0 + \beta_1X + \epsilon</span></p>
 <p>Gdzie:</p>
 <ul>
-<li><span class="math inline">\(Y\)</span> to zmienna zależna</li>
-<li><span class="math inline">\(X\)</span> to zmienna niezależna</li>
-<li><span class="math inline">\(\beta_0\)</span> i <span class="math inline">\(\beta_1\)</span> to parametry</li>
-<li><span class="math inline">\(\epsilon\)</span> to składnik błędu (komponent stochastyczny)</li>
+<li><span class="math inline">Y</span> to zmienna zależna</li>
+<li><span class="math inline">X</span> to zmienna niezależna</li>
+<li><span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span> to parametry</li>
+<li><span class="math inline">\epsilon</span> to składnik błędu (komponent stochastyczny)</li>
 </ul>
 <p>Zademonstrujmy OLS w R:</p>
 <div class="cell">
@@ -1904,12 +1918,12 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Duże Modele Językowe (LLM), takie jak GPT-3, to złożone modele stochastyczne używane w przetwarzaniu języka naturalnego. Chociaż nie możemy zaimplementować pełnego LLM w tym tutorialu, możemy omówić jego zasady.</p>
 <p>LLM opierają się na architekturze transformatora i wykorzystują mechanizmy samouwagi. Są trenowane na ogromnych ilościach danych tekstowych i uczą się przewidywać następny token w sekwencji.</p>
 <p>Rdzeń LLM można postrzegać jako warunkowy rozkład prawdopodobieństwa:</p>
-<p><span class="math display">\[P(x_t | x_{&lt;t}, \theta)\]</span></p>
+<p><span class="math display">P(x_t | x_{&lt;t}, \theta)</span></p>
 <p>Gdzie:</p>
 <ul>
-<li><span class="math inline">\(x_t\)</span> to aktualny token</li>
-<li><span class="math inline">\(x_{&lt;t}\)</span> reprezentuje wszystkie poprzednie tokeny</li>
-<li><span class="math inline">\(\theta\)</span> to parametry modelu</li>
+<li><span class="math inline">x_t</span> to aktualny token</li>
+<li><span class="math inline">x_{&lt;t}</span> reprezentuje wszystkie poprzednie tokeny</li>
+<li><span class="math inline">\theta</span> to parametry modelu</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1924,8 +1938,8 @@ Note
 <p>Tokeny w Dużych Modelach Językowych (LLM) to podstawowe jednostki tekstu, które model przetwarza. Można je postrzegać jako części słów lub znaki interpunkcyjne. Oto kluczowe informacje o tokenach:</p>
 <p>Definicja: Tokeny to najmniejsze jednostki tekstu, które LLM przetwarza. Mogą to być całe słowa, części słów, a nawet pojedyncze znaki lub znaki interpunkcyjne. Tokenizacja: Proces dzielenia tekstu na tokeny nazywa się tokenizacją. LLM używają specyficznych algorytmów do wykonania tego zadania. Przykłady:</p>
 <p>Słowo “kot” może być pojedynczym tokenem. Dłuższe słowo jak “zrozumienie” może być podzielone na wiele tokenów, np. “zrozum” i “ienie”. Znaki interpunkcyjne jak “.” czy “?” są często oddzielnymi tokenami. Powszechne przedrostki lub przyrostki mogą być własnymi tokenami.</p>
-<p>Słownictwo: LLM mają ustalone słownictwo tokenów, które rozpoznają. To słownictwo zazwyczaj obejmuje od dziesiątek tysięcy do setek tysięcy tokenów. Znaczenie: Sposób tokenizacji tekstu może wpływać na to, jak model rozumie i generuje język. Jest to szczególnie ważne przy obsłudze różnych języków, rzadkich słów lub specjalistycznego słownictwa. Kontekst: W równaniu dla LLM: <span class="math display">\[P(x_t | x_{&lt;t}, \theta)\]</span> Gdzie:</p>
-<p><span class="math inline">\(x_t\)</span> reprezentuje bieżący token <span class="math inline">\(x_{&lt;t}\)</span> reprezentuje wszystkie poprzednie tokeny w sekwencji <span class="math inline">\(\theta\)</span> reprezentuje parametry modelu</p>
+<p>Słownictwo: LLM mają ustalone słownictwo tokenów, które rozpoznają. To słownictwo zazwyczaj obejmuje od dziesiątek tysięcy do setek tysięcy tokenów. Znaczenie: Sposób tokenizacji tekstu może wpływać na to, jak model rozumie i generuje język. Jest to szczególnie ważne przy obsłudze różnych języków, rzadkich słów lub specjalistycznego słownictwa. Kontekst: W równaniu dla LLM: <span class="math display">P(x_t | x_{&lt;t}, \theta)</span> Gdzie:</p>
+<p><span class="math inline">x_t</span> reprezentuje bieżący token <span class="math inline">x_{&lt;t}</span> reprezentuje wszystkie poprzednie tokeny w sekwencji <span class="math inline">\theta</span> reprezentuje parametry modelu</p>
 </div>
 </div>
 <p>W przeciwieństwie do modeli deterministycznych, LLM produkują różne wyniki nawet dla tego samego wejścia ze względu na ich stochastyczną naturę.</p>

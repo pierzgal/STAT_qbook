@@ -105,8 +105,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -439,7 +453,7 @@ window.Quarto = {
   <li><a href="#initial-r-output-for-reference" id="toc-initial-r-output-for-reference" class="nav-link" data-scroll-target="#initial-r-output-for-reference"><span class="header-section-number">16.19.1</span> Initial R Output for Reference</a></li>
   <li><a href="#dispersion-measures" id="toc-dispersion-measures" class="nav-link" data-scroll-target="#dispersion-measures"><span class="header-section-number">16.19.2</span> Dispersion Measures</a></li>
   <li><a href="#covariance-and-correlation" id="toc-covariance-and-correlation" class="nav-link" data-scroll-target="#covariance-and-correlation"><span class="header-section-number">16.19.3</span> Covariance and Correlation</a></li>
-  <li><a href="#ols-regression-haty-hatbeta_0-hatbeta_1x" id="toc-ols-regression-haty-hatbeta_0-hatbeta_1x" class="nav-link" data-scroll-target="#ols-regression-haty-hatbeta_0-hatbeta_1x"><span class="header-section-number">16.19.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></a></li>
+  <li><a href="#ols-regression-haty-hatbeta_0-hatbeta_1x" id="toc-ols-regression-haty-hatbeta_0-hatbeta_1x" class="nav-link" data-scroll-target="#ols-regression-haty-hatbeta_0-hatbeta_1x"><span class="header-section-number">16.19.4</span> OLS Regression <span class="math inline">(\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)</span></a></li>
   <li><a href="#detailed-decomposition-of-variance-and-r-squared" id="toc-detailed-decomposition-of-variance-and-r-squared" class="nav-link" data-scroll-target="#detailed-decomposition-of-variance-and-r-squared"><span class="header-section-number">16.19.5</span> Detailed Decomposition of Variance and R-squared</a></li>
   <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization"><span class="header-section-number">16.19.6</span> Visualization</a></li>
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation"><span class="header-section-number">16.19.7</span> Interpretation</a></li>
@@ -449,7 +463,7 @@ window.Quarto = {
   <li><a href="#data-and-context" id="toc-data-and-context" class="nav-link" data-scroll-target="#data-and-context"><span class="header-section-number">16.20.1</span> Data and Context</a></li>
   <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"><span class="header-section-number">16.20.2</span> Descriptive Statistics</a></li>
   <li><a href="#covariance-and-correlation-1" id="toc-covariance-and-correlation-1" class="nav-link" data-scroll-target="#covariance-and-correlation-1"><span class="header-section-number">16.20.3</span> Covariance and Correlation</a></li>
-  <li><a href="#ols-regression-haty-hatbeta_0-hatbeta_1x-1" id="toc-ols-regression-haty-hatbeta_0-hatbeta_1x-1" class="nav-link" data-scroll-target="#ols-regression-haty-hatbeta_0-hatbeta_1x-1"><span class="header-section-number">16.20.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></a></li>
+  <li><a href="#ols-regression-haty-hatbeta_0-hatbeta_1x-1" id="toc-ols-regression-haty-hatbeta_0-hatbeta_1x-1" class="nav-link" data-scroll-target="#ols-regression-haty-hatbeta_0-hatbeta_1x-1"><span class="header-section-number">16.20.4</span> OLS Regression <span class="math inline">(\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)</span></a></li>
   <li><a href="#r-squared-calculation" id="toc-r-squared-calculation" class="nav-link" data-scroll-target="#r-squared-calculation"><span class="header-section-number">16.20.5</span> 4. R-squared Calculation</a></li>
   <li><a href="#visualization-1" id="toc-visualization-1" class="nav-link" data-scroll-target="#visualization-1"><span class="header-section-number">16.20.6</span> Visualization</a></li>
   <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1"><span class="header-section-number">16.20.7</span> Interpretation</a></li>
@@ -460,7 +474,7 @@ window.Quarto = {
   <li><a href="#data-generating-process" id="toc-data-generating-process" class="nav-link" data-scroll-target="#data-generating-process"><span class="header-section-number">16.21.1</span> Data Generating Process</a></li>
   <li><a href="#descriptive-statistics-1" id="toc-descriptive-statistics-1" class="nav-link" data-scroll-target="#descriptive-statistics-1"><span class="header-section-number">16.21.2</span> Descriptive Statistics</a></li>
   <li><a href="#covariance-and-correlation-2" id="toc-covariance-and-correlation-2" class="nav-link" data-scroll-target="#covariance-and-correlation-2"><span class="header-section-number">16.21.3</span> Covariance and Correlation</a></li>
-  <li><a href="#ols-regression-haty-hatbeta_0-hatbeta_1x-2" id="toc-ols-regression-haty-hatbeta_0-hatbeta_1x-2" class="nav-link" data-scroll-target="#ols-regression-haty-hatbeta_0-hatbeta_1x-2"><span class="header-section-number">16.21.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></a></li>
+  <li><a href="#ols-regression-haty-hatbeta_0-hatbeta_1x-2" id="toc-ols-regression-haty-hatbeta_0-hatbeta_1x-2" class="nav-link" data-scroll-target="#ols-regression-haty-hatbeta_0-hatbeta_1x-2"><span class="header-section-number">16.21.4</span> OLS Regression <span class="math inline">(\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)</span></a></li>
   <li><a href="#r-squared-calculation-1" id="toc-r-squared-calculation-1" class="nav-link" data-scroll-target="#r-squared-calculation-1"><span class="header-section-number">16.21.5</span> R-squared Calculation</a></li>
   <li><a href="#visualization---true-vs.-estimated-parameters" id="toc-visualization---true-vs.-estimated-parameters" class="nav-link" data-scroll-target="#visualization---true-vs.-estimated-parameters"><span class="header-section-number">16.21.6</span> Visualization - True vs.&nbsp;Estimated Parameters</a></li>
   <li><a href="#observations-about-model-fit" id="toc-observations-about-model-fit" class="nav-link" data-scroll-target="#observations-about-model-fit"><span class="header-section-number">16.21.7</span> Observations about Model Fit</a></li>
@@ -661,7 +675,7 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <section id="kowariancja" class="level3" data-number="16.1.5">
 <h3 data-number="16.1.5" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">16.1.5</span> Kowariancja</h3>
 <p>Kowariancja mierzy, jak dwie zmienne zmieniają się razem.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(cov(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n - 1}\)</span></p>
+<p><strong>Wzór:</strong> <span class="math inline">cov(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n - 1}</span></p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
 <p>Obliczmy kowariancję dla dwóch zmiennych:</p>
 <ul>
@@ -685,42 +699,42 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <tr class="odd">
 <td>1</td>
 <td>Oblicz średnie</td>
-<td><span class="math inline">\(\bar{x} = 3, \bar{y} = 4\)</span></td>
+<td><span class="math inline">\bar{x} = 3, \bar{y} = 4</span></td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Oblicz <span class="math inline">\((x_i - \bar{x})(y_i - \bar{y})\)</span> dla każdej pary</td>
-<td><span class="math inline">\((-2)(-2) = 4\)</span></td>
+<td>Oblicz <span class="math inline">(x_i - \bar{x})(y_i - \bar{y})</span> dla każdej pary</td>
+<td><span class="math inline">(-2)(-2) = 4</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td><span class="math inline">\((-1)(0) = 0\)</span></td>
+<td><span class="math inline">(-1)(0) = 0</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td></td>
-<td><span class="math inline">\((0)(1) = 0\)</span></td>
+<td><span class="math inline">(0)(1) = 0</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td><span class="math inline">\((1)(0) = 0\)</span></td>
+<td><span class="math inline">(1)(0) = 0</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td></td>
-<td><span class="math inline">\((2)(1) = 2\)</span></td>
+<td><span class="math inline">(2)(1) = 2</span></td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Zsumuj wyniki</td>
-<td><span class="math inline">\(4 + 0 + 0 + 0 + 2 = 6\)</span></td>
+<td><span class="math inline">4 + 0 + 0 + 0 + 2 = 6</span></td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td>Podziel przez (n-1)</td>
-<td><span class="math inline">\(6 / 4 = 1,5\)</span></td>
+<td><span class="math inline">6 / 4 = 1,5</span></td>
 </tr>
 </tbody>
 </table>
@@ -748,7 +762,7 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <section id="korelacja-pearsona" class="level3" data-number="16.1.6">
 <h3 data-number="16.1.6" class="anchored" data-anchor-id="korelacja-pearsona"><span class="header-section-number">16.1.6</span> Korelacja Pearsona</h3>
 <p>Korelacja Pearsona mierzy siłę i kierunek liniowego związku między dwiema zmiennymi ciągłymi.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(r = \frac{cov(X,Y)}{s_X s_Y} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}\)</span></p>
+<p><strong>Wzór:</strong> <span class="math inline">r = \frac{cov(X,Y)}{s_X s_Y} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}</span></p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
 <p>Używając tych samych danych co wyżej:</p>
 <table class="caption-top table">
@@ -773,12 +787,12 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <tr class="even">
 <td>2</td>
 <td>Oblicz odchylenia standardowe</td>
-<td><span class="math inline">\(s_X = \sqrt{\frac{10}{4}} = 1,58, s_Y = \sqrt{\frac{6}{4}} = 1,22\)</span></td>
+<td><span class="math inline">s_X = \sqrt{\frac{10}{4}} = 1,58, s_Y = \sqrt{\frac{6}{4}} = 1,22</span></td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Podziel kowariancję przez iloczyn odchyleń standardowych</td>
-<td><span class="math inline">\(1,5 / (1,58 * 1,22) = 0,7746\)</span></td>
+<td><span class="math inline">1,5 / (1,58 * 1,22) = 0,7746</span></td>
 </tr>
 </tbody>
 </table>
@@ -806,7 +820,7 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <section id="korelacja-spearmana" class="level3" data-number="16.1.7">
 <h3 data-number="16.1.7" class="anchored" data-anchor-id="korelacja-spearmana"><span class="header-section-number">16.1.7</span> Korelacja Spearmana</h3>
 <p>Korelacja Spearmana mierzy siłę i kierunek monotonicznego związku między dwiema zmiennymi, które mogą być ciągłe lub porządkowe.</p>
-<p><strong>Wzór:</strong> <span class="math inline">\(\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}\)</span>, gdzie <span class="math inline">\(d_i\)</span> to różnica między rangami.</p>
+<p><strong>Wzór:</strong> <span class="math inline">\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}</span>, gdzie <span class="math inline">d_i</span> to różnica między rangami.</p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
 <p>Użyjmy nieco innych danych:</p>
 <ul>
@@ -845,12 +859,12 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości!
 <tr class="odd">
 <td>4</td>
 <td>Zsumuj kwadraty różnic</td>
-<td><span class="math inline">\(\sum d_i^2 = 4\)</span></td>
+<td><span class="math inline">\sum d_i^2 = 4</span></td>
 </tr>
 <tr class="even">
 <td>5</td>
 <td>Zastosuj wzór</td>
-<td><span class="math inline">\(\rho = 1 - \frac{6(4)}{5(5^2 - 1)} = 0,8\)</span></td>
+<td><span class="math inline">\rho = 1 - \frac{6(4)}{5(5^2 - 1)} = 0,8</span></td>
 </tr>
 </tbody>
 </table>
@@ -957,28 +971,28 @@ wyksztalcenie Bezrobotny Zatrudniony
 <section id="współczynnik-korelacji-pearsona" class="level4" data-number="16.2.1.1">
 <h4 data-number="16.2.1.1" class="anchored" data-anchor-id="współczynnik-korelacji-pearsona"><span class="header-section-number">16.2.1.1</span> Współczynnik Korelacji Pearsona</h4>
 <p>Współczynnik korelacji Pearsona mierzy zależność liniową między dwiema zmiennymi ciągłymi.</p>
-<p><span class="math display">\[ r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \sum_{i=1}^{n} (y_i - \bar{y})^2}} \]</span></p>
+<p><span class="math display"> r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \sum_{i=1}^{n} (y_i - \bar{y})^2}} </span></p>
 <p>gdzie:</p>
 <ul>
-<li><span class="math inline">\(x_i, y_i\)</span> to poszczególne obserwacje</li>
-<li><span class="math inline">\(\bar{x}, \bar{y}\)</span> to średnie arytmetyczne</li>
-<li><span class="math inline">\(n\)</span> to liczebność próby</li>
+<li><span class="math inline">x_i, y_i</span> to poszczególne obserwacje</li>
+<li><span class="math inline">\bar{x}, \bar{y}</span> to średnie arytmetyczne</li>
+<li><span class="math inline">n</span> to liczebność próby</li>
 </ul>
 </section>
 <section id="korelacja-rangowa-spearmana" class="level4" data-number="16.2.1.2">
 <h4 data-number="16.2.1.2" class="anchored" data-anchor-id="korelacja-rangowa-spearmana"><span class="header-section-number">16.2.1.2</span> Korelacja Rangowa Spearmana</h4>
 <p>Współczynnik ρ Spearmana ocenia zależności monotoniczne wykorzystując rangi.</p>
-<p><span class="math display">\[ \rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)} \]</span></p>
+<p><span class="math display"> \rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)} </span></p>
 <p>gdzie:</p>
 <ul>
-<li><span class="math inline">\(d_i\)</span> to różnica między rangami dla i-tej obserwacji</li>
-<li><span class="math inline">\(n\)</span> to liczebność próby</li>
+<li><span class="math inline">d_i</span> to różnica między rangami dla i-tej obserwacji</li>
+<li><span class="math inline">n</span> to liczebność próby</li>
 </ul>
 </section>
 <section id="współczynnik-τ-kendalla" class="level4" data-number="16.2.1.3">
 <h4 data-number="16.2.1.3" class="anchored" data-anchor-id="współczynnik-τ-kendalla"><span class="header-section-number">16.2.1.3</span> Współczynnik τ Kendalla</h4>
 <p>Tau Kendalla mierzy związek porządkowy na podstawie par zgodnych i niezgodnych.</p>
-<p><span class="math display">\[ \tau = \frac{2(P - Q)}{n(n-1)} \]</span></p>
+<p><span class="math display"> \tau = \frac{2(P - Q)}{n(n-1)} </span></p>
 <p>gdzie:</p>
 <ul>
 <li>P to liczba par zgodnych</li>
@@ -1408,17 +1422,17 @@ The following object is masked from 'package:dplyr':
 <li>Nazywana również: predyktor, zmienna objaśniająca, regresor</li>
 <li>Przykłady: lata edukacji, budżet reklamowy, godziny nauki</li>
 </ul></li>
-<li><strong>Parametry Populacji (<span class="math inline">\(\beta\)</span>)</strong>:
+<li><strong>Parametry Populacji (<span class="math inline">\beta</span>)</strong>:
 <ul>
 <li>Prawdziwe podstawowe zależności, które chcemy zrozumieć</li>
 <li>Zazwyczaj nieznane w praktyce</li>
-<li>Przykłady: <span class="math inline">\(\beta_0\)</span> (prawdziwy wyraz wolny), <span class="math inline">\(\beta_1\)</span> (prawdziwe nachylenie)</li>
+<li>Przykłady: <span class="math inline">\beta_0</span> (prawdziwy wyraz wolny), <span class="math inline">\beta_1</span> (prawdziwe nachylenie)</li>
 </ul></li>
-<li><strong>Oszacowania Parametrów (<span class="math inline">\(\hat{\beta}\)</span>)</strong>:
+<li><strong>Oszacowania Parametrów (<span class="math inline">\hat{\beta}</span>)</strong>:
 <ul>
 <li>Nasze najlepsze przypuszczenia dotyczące prawdziwych parametrów na podstawie danych</li>
 <li>Obliczane na podstawie danych próby</li>
-<li>Przykłady: <span class="math inline">\(\hat{\beta}_0\)</span> (oszacowany wyraz wolny), <span class="math inline">\(\hat{\beta}_1\)</span> (oszacowane nachylenie)</li>
+<li>Przykłady: <span class="math inline">\hat{\beta}_0</span> (oszacowany wyraz wolny), <span class="math inline">\hat{\beta}_1</span> (oszacowane nachylenie)</li>
 </ul></li>
 </ul>
 </section>
@@ -1469,15 +1483,15 @@ Figure&nbsp;16.1: Podstawowa Idea Regresji: Dopasowanie Linii do Danych
 <section id="model-populacyjny-vs.-oszacowania-próby" class="level3" data-number="16.5.1">
 <h3 data-number="16.5.1" class="anchored" data-anchor-id="model-populacyjny-vs.-oszacowania-próby"><span class="header-section-number">16.5.1</span> Model Populacyjny vs.&nbsp;Oszacowania Próby</h3>
 <p>W teorii istnieje prawdziwa zależność populacyjna:</p>
-<p><span class="math display">\[Y = \beta_0 + \beta_1X + \varepsilon\]</span></p>
+<p><span class="math display">Y = \beta_0 + \beta_1X + \varepsilon</span></p>
 <p>gdzie:</p>
 <ul>
-<li><span class="math inline">\(\beta_0\)</span> to prawdziwy wyraz wolny populacji</li>
-<li><span class="math inline">\(\beta_1\)</span> to prawdziwe nachylenie populacji</li>
-<li><span class="math inline">\(\varepsilon\)</span> to składnik losowy błędu</li>
+<li><span class="math inline">\beta_0</span> to prawdziwy wyraz wolny populacji</li>
+<li><span class="math inline">\beta_1</span> to prawdziwe nachylenie populacji</li>
+<li><span class="math inline">\varepsilon</span> to składnik losowy błędu</li>
 </ul>
 <p>W praktyce pracujemy z danymi próby, aby oszacować tę zależność:</p>
-<p><span class="math display">\[\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X\]</span></p>
+<p><span class="math display">\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X</span></p>
 <p>Zobaczmy wizualizację różnicy między zależnościami populacyjnymi a próbkowymi:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate population data</span></span>
@@ -1544,7 +1558,7 @@ Figure&nbsp;16.2: Linie Regresji: Populacyjna vs.&nbsp;Próbkowe
 <section id="ścisła-egzogeniczność-podstawowe-założenie" class="level3" data-number="16.6.1">
 <h3 data-number="16.6.1" class="anchored" data-anchor-id="ścisła-egzogeniczność-podstawowe-założenie"><span class="header-section-number">16.6.1</span> Ścisła Egzogeniczność: Podstawowe Założenie</h3>
 <p>Najważniejszym założeniem w regresji jest ścisła egzogeniczność:</p>
-<p><span class="math display">\[E[\varepsilon|X] = 0\]</span></p>
+<p><span class="math display">E[\varepsilon|X] = 0</span></p>
 <p>Oznacza to:</p>
 <ol type="1">
 <li>Wartość oczekiwana składnika błędu warunkowego względem X wynosi zero</li>
@@ -1630,7 +1644,7 @@ Figure&nbsp;16.3: Przykłady Egzogeniczności vs.&nbsp;Nieegzogeniczności
 <section id="liniowość-założenie-o-formie" class="level3" data-number="16.6.2">
 <h3 data-number="16.6.2" class="anchored" data-anchor-id="liniowość-założenie-o-formie"><span class="header-section-number">16.6.2</span> Liniowość: Założenie o Formie</h3>
 <p>Zależność między X a Y powinna być liniowa w parametrach:</p>
-<p><span class="math display">\[E[Y|X] = \beta_0 + \beta_1X\]</span></p>
+<p><span class="math display">E[Y|X] = \beta_0 + \beta_1X</span></p>
 <p>Zauważ, że nie oznacza to, że X i Y muszą mieć zależność w postaci linii prostej - możemy transformować zmienne. Zobaczmy różne rodzaje zależności:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data</span></span>
@@ -1749,11 +1763,11 @@ Figure&nbsp;16.5: Efekt Transformacji Zmiennych
 <h2 data-number="16.7" class="anchored" data-anchor-id="metody-estymacji"><span class="header-section-number">16.7</span> Metody Estymacji</h2>
 <section id="metoda-najmniejszych-kwadratów-ols" class="level3" data-number="16.7.1">
 <h3 data-number="16.7.1" class="anchored" data-anchor-id="metoda-najmniejszych-kwadratów-ols"><span class="header-section-number">16.7.1</span> Metoda Najmniejszych Kwadratów (OLS)</h3>
-<p>OLS znajduje <span class="math inline">\(\hat{\beta}_0\)</span> i <span class="math inline">\(\hat{\beta}_1\)</span> minimalizując sumę kwadratów reszt:</p>
-<p><span class="math display">\[\min_{\hat{\beta}_0, \hat{\beta}_1} \sum_{i=1}^n (Y_i - \hat{\beta}_0 - \hat{\beta}_1X_i)^2\]</span></p>
+<p>OLS znajduje <span class="math inline">\hat{\beta}_0</span> i <span class="math inline">\hat{\beta}_1</span> minimalizując sumę kwadratów reszt:</p>
+<p><span class="math display">\min_{\hat{\beta}_0, \hat{\beta}_1} \sum_{i=1}^n (Y_i - \hat{\beta}_0 - \hat{\beta}_1X_i)^2</span></p>
 <p>Rozwiązania to:</p>
-<p><span class="math display">\[\hat{\beta}_1 = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^n (X_i - \bar{X})^2}\]</span></p>
-<p><span class="math display">\[\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}\]</span></p>
+<p><span class="math display">\hat{\beta}_1 = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^n (X_i - \bar{X})^2}</span></p>
+<p><span class="math display">\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}</span></p>
 <p>Zobaczmy wizualizację działania OLS:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
@@ -1795,7 +1809,7 @@ Figure&nbsp;16.6: OLS Minimalizująca Kwadraty Reszt
 <section id="dekompozycja-wariancji" class="level3" data-number="16.8.1">
 <h3 data-number="16.8.1" class="anchored" data-anchor-id="dekompozycja-wariancji"><span class="header-section-number">16.8.1</span> Dekompozycja Wariancji</h3>
 <p>Całkowita zmienność Y może być rozłożona na komponenty wyjaśnione i niewyjaśnione:</p>
-<p><span class="math display">\[\underbrace{\sum_{i=1}^n (Y_i - \bar{Y})^2}_{SST} = \underbrace{\sum_{i=1}^n (\hat{Y}_i - \bar{Y})^2}_{SSR} + \underbrace{\sum_{i=1}^n (Y_i - \hat{Y}_i)^2}_{SSE}\]</span></p>
+<p><span class="math display">\underbrace{\sum_{i=1}^n (Y_i - \bar{Y})^2}_{SST} = \underbrace{\sum_{i=1}^n (\hat{Y}_i - \bar{Y})^2}_{SSR} + \underbrace{\sum_{i=1}^n (Y_i - \hat{Y}_i)^2}_{SSE}</span></p>
 <p>gdzie:</p>
 <ul>
 <li>SST (Całkowita Suma Kwadratów): Całkowita zmienność Y</li>
@@ -1871,9 +1885,9 @@ Figure&nbsp;16.7: Dekompozycja Wariancji w Regresji Liniowej
 <section id="miary-dopasowania" class="level3" data-number="16.8.2">
 <h3 data-number="16.8.2" class="anchored" data-anchor-id="miary-dopasowania"><span class="header-section-number">16.8.2</span> Miary Dopasowania</h3>
 <ol type="1">
-<li><p><strong>R-kwadrat (<span class="math inline">\(R^2\)</span>)</strong>: <span class="math display">\[R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}\]</span></p></li>
-<li><p><strong>Pierwiastek Błędu Średniokwadratowego (RMSE)</strong>: <span class="math display">\[RMSE = \sqrt{\frac{SSE}{n}}\]</span></p></li>
-<li><p><strong>Średni Błąd Bezwzględny (MAE)</strong>: <span class="math display">\[MAE = \frac{1}{n}\sum_{i=1}^n |Y_i - \hat{Y}_i|\]</span></p></li>
+<li><p><strong>R-kwadrat (<span class="math inline">R^2</span>)</strong>: <span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p></li>
+<li><p><strong>Pierwiastek Błędu Średniokwadratowego (RMSE)</strong>: <span class="math display">RMSE = \sqrt{\frac{SSE}{n}}</span></p></li>
+<li><p><strong>Średni Błąd Bezwzględny (MAE)</strong>: <span class="math display">MAE = \frac{1}{n}\sum_{i=1}^n |Y_i - \hat{Y}_i|</span></p></li>
 </ol>
 <p>Zobaczmy obliczenie i wizualizację tych miar:</p>
 <div class="cell">
@@ -2008,8 +2022,8 @@ Figure&nbsp;16.9: Kluczowe Wykresy Diagnostyczne dla Regresji Liniowej
 <section id="rozszerzenie-do-wielu-predyktorów" class="level3" data-number="16.10.1">
 <h3 data-number="16.10.1" class="anchored" data-anchor-id="rozszerzenie-do-wielu-predyktorów"><span class="header-section-number">16.10.1</span> Rozszerzenie do Wielu Predyktorów</h3>
 <p>Model regresji wielorakiej rozszerza nasz prosty model o kilka predyktorów:</p>
-<p>Model Populacyjny: <span class="math display">\[Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_kX_k + \varepsilon\]</span></p>
-<p>Oszacowanie Próbkowe: <span class="math display">\[\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + ... + \hat{\beta}_kX_k\]</span></p>
+<p>Model Populacyjny: <span class="math display">Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + ... + \beta_kX_k + \varepsilon</span></p>
+<p>Oszacowanie Próbkowe: <span class="math display">\hat{Y} = \hat{\beta}_0 + \hat{\beta}_1X_1 + \hat{\beta}_2X_2 + ... + \hat{\beta}_kX_k</span></p>
 <p>Stwórzmy przykład z wieloma predyktorami:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data with two predictors</span></span>
@@ -2077,7 +2091,7 @@ F-statistic: 49.72 on 2 and 97 DF,  p-value: 1.367e-15</code></pre>
 </section>
 <section id="interpretacja-współczynników" class="level3" data-number="16.10.2">
 <h3 data-number="16.10.2" class="anchored" data-anchor-id="interpretacja-współczynników"><span class="header-section-number">16.10.2</span> Interpretacja Współczynników</h3>
-<p>W regresji wielorakiej, każdy <span class="math inline">\(\hat{\beta}_k\)</span> reprezentuje oczekiwaną zmianę w Y przy jednostkowym wzroście <span class="math inline">\(X_k\)</span>, przy utrzymaniu wszystkich innych zmiennych na stałym poziomie.</p>
+<p>W regresji wielorakiej, każdy <span class="math inline">\hat{\beta}_k</span> reprezentuje oczekiwaną zmianę w Y przy jednostkowym wzroście <span class="math inline">X_k</span>, przy utrzymaniu wszystkich innych zmiennych na stałym poziomie.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create prediction grid for X1 (holding X2 at its mean)</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>X1_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(X1), <span class="fu">max</span>(X1), <span class="at">length.out =</span> <span class="dv">100</span>)</span>
@@ -2191,7 +2205,7 @@ Attaching package: 'car'</code></pre>
 <section id="efekty-interakcji" class="level3" data-number="16.11.1">
 <h3 data-number="16.11.1" class="anchored" data-anchor-id="efekty-interakcji"><span class="header-section-number">16.11.1</span> Efekty Interakcji</h3>
 <p>Efekty interakcji pozwalają na to, by wpływ jednego predyktora zależał od innego:</p>
-<p><span class="math display">\[Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3(X_1 \times X_2) + \varepsilon\]</span></p>
+<p><span class="math display">Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3(X_1 \times X_2) + \varepsilon</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data with interaction</span></span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">107</span>)</span>
@@ -2233,7 +2247,7 @@ Attaching package: 'car'</code></pre>
 <section id="wyrazy-wielomianowe" class="level3" data-number="16.11.2">
 <h3 data-number="16.11.2" class="anchored" data-anchor-id="wyrazy-wielomianowe"><span class="header-section-number">16.11.2</span> Wyrazy Wielomianowe</h3>
 <p>Gdy zależności są nieliniowe, możemy dodać wyrazy wielomianowe:</p>
-<p><span class="math display">\[Y = \beta_0 + \beta_1X + \beta_2X^2 + \varepsilon\]</span></p>
+<p><span class="math display">Y = \beta_0 + \beta_1X + \beta_2X^2 + \varepsilon</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data with quadratic relationship</span></span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">108</span>)</span>
@@ -2640,12 +2654,12 @@ Attaching package: 'kableExtra'</code></pre>
 </section>
 <section id="dodatek-a.1-obliczanie-kowariancji-oraz-korelacji-pearsona-i-spearmana---przykład-z-obliczeniami" class="level2" data-number="16.15">
 <h2 data-number="16.15" class="anchored" data-anchor-id="dodatek-a.1-obliczanie-kowariancji-oraz-korelacji-pearsona-i-spearmana---przykład-z-obliczeniami"><span class="header-section-number">16.15</span> Dodatek A.1: Obliczanie Kowariancji oraz Korelacji Pearsona i Spearmana - przykład z obliczeniami</h2>
-<p>Dane dotyczące wielkości okręgu wyborczego (<span class="math inline">\(\text{DM}\)</span>) i indeksu Gallaghera:</p>
+<p>Dane dotyczące wielkości okręgu wyborczego (<span class="math inline">\text{DM}</span>) i indeksu Gallaghera:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th><span class="math inline">\(\text{DM}\)</span> (<span class="math inline">\(X\)</span>)</th>
-<th>Gallagher (<span class="math inline">\(Y\)</span>)</th>
+<th><span class="math inline">\text{DM}</span> (<span class="math inline">X</span>)</th>
+<th>Gallagher (<span class="math inline">Y</span>)</th>
 </tr>
 </thead>
 <tbody>
@@ -2694,12 +2708,12 @@ Attaching package: 'kableExtra'</code></pre>
 <section id="krok-1-obliczanie-podstawowych-statystyk" class="level3" data-number="16.15.1">
 <h3 data-number="16.15.1" class="anchored" data-anchor-id="krok-1-obliczanie-podstawowych-statystyk"><span class="header-section-number">16.15.1</span> Krok 1: Obliczanie Podstawowych Statystyk</h3>
 <p>Obliczanie średnich:</p>
-<p>Dla <span class="math inline">\(\text{DM}\)</span> (<span class="math inline">\(X\)</span>): <span class="math display">\[\bar{X} = \frac{\sum_{i=1}^n X_i}{n}\]</span></p>
+<p>Dla <span class="math inline">\text{DM}</span> (<span class="math inline">X</span>): <span class="math display">\bar{X} = \frac{\sum_{i=1}^n X_i}{n}</span></p>
 <p>Szczegółowe obliczenia:</p>
-<p><span class="math display">\[2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 = 65\]</span> <span class="math display">\[\bar{x} = \frac{65}{10} = 6,5\]</span></p>
-<p>Dla indeksu Gallaghera (<span class="math inline">\(Y\)</span>): <span class="math display">\[\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n}\]</span></p>
+<p><span class="math display">2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 = 65</span> <span class="math display">\bar{x} = \frac{65}{10} = 6,5</span></p>
+<p>Dla indeksu Gallaghera (<span class="math inline">Y</span>): <span class="math display">\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n}</span></p>
 <p>Szczegółowe obliczenia:</p>
-<p><span class="math display">\[18,2 + 16,7 + 15,8 + 15,3 + 15,0 + 14,8 + 14,7 + 14,6 + 14,55 + 14,52 = 154,17\]</span> <span class="math display">\[\bar{y} = \frac{154,17}{10} = 15,417\]</span></p>
+<p><span class="math display">18,2 + 16,7 + 15,8 + 15,3 + 15,0 + 14,8 + 14,7 + 14,6 + 14,55 + 14,52 = 154,17</span> <span class="math display">\bar{y} = \frac{154,17}{10} = 15,417</span></p>
 </section>
 <section id="krok-2-szczegółowe-obliczenia-kowariancji" class="level3" data-number="16.15.2">
 <h3 data-number="16.15.2" class="anchored" data-anchor-id="krok-2-szczegółowe-obliczenia-kowariancji"><span class="header-section-number">16.15.2</span> Krok 2: Szczegółowe Obliczenia Kowariancji</h3>
@@ -2717,14 +2731,14 @@ Attaching package: 'kableExtra'</code></pre>
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(i\)</span></th>
-<th><span class="math inline">\(X_i\)</span></th>
-<th><span class="math inline">\(Y_i\)</span></th>
-<th><span class="math inline">\((X_i - \bar{X})\)</span></th>
-<th><span class="math inline">\((Y_i - \bar{Y})\)</span></th>
-<th><span class="math inline">\((X_i - \bar{X})(Y_i - \bar{Y})\)</span></th>
-<th><span class="math inline">\((X_i - \bar{X})^2\)</span></th>
-<th><span class="math inline">\((Y_i - \bar{Y})^2\)</span></th>
+<th><span class="math inline">i</span></th>
+<th><span class="math inline">X_i</span></th>
+<th><span class="math inline">Y_i</span></th>
+<th><span class="math inline">(X_i - \bar{X})</span></th>
+<th><span class="math inline">(Y_i - \bar{Y})</span></th>
+<th><span class="math inline">(X_i - \bar{X})(Y_i - \bar{Y})</span></th>
+<th><span class="math inline">(X_i - \bar{X})^2</span></th>
+<th><span class="math inline">(Y_i - \bar{Y})^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -2732,9 +2746,9 @@ Attaching package: 'kableExtra'</code></pre>
 <td>1</td>
 <td>2</td>
 <td>18,2</td>
-<td><span class="math inline">\(-4,5\)</span></td>
+<td><span class="math inline">-4,5</span></td>
 <td>2,783</td>
-<td><span class="math inline">\(-12,5235\)</span></td>
+<td><span class="math inline">-12,5235</span></td>
 <td>20,25</td>
 <td>7,7451</td>
 </tr>
@@ -2742,9 +2756,9 @@ Attaching package: 'kableExtra'</code></pre>
 <td>2</td>
 <td>3</td>
 <td>16,7</td>
-<td><span class="math inline">\(-3,5\)</span></td>
+<td><span class="math inline">-3,5</span></td>
 <td>1,283</td>
-<td><span class="math inline">\(-4,4905\)</span></td>
+<td><span class="math inline">-4,4905</span></td>
 <td>12,25</td>
 <td>1,6461</td>
 </tr>
@@ -2752,9 +2766,9 @@ Attaching package: 'kableExtra'</code></pre>
 <td>3</td>
 <td>4</td>
 <td>15,8</td>
-<td><span class="math inline">\(-2,5\)</span></td>
+<td><span class="math inline">-2,5</span></td>
 <td>0,383</td>
-<td><span class="math inline">\(-0,9575\)</span></td>
+<td><span class="math inline">-0,9575</span></td>
 <td>6,25</td>
 <td>0,1467</td>
 </tr>
@@ -2762,8 +2776,8 @@ Attaching package: 'kableExtra'</code></pre>
 <td>4</td>
 <td>5</td>
 <td>15,3</td>
-<td><span class="math inline">\(-1,5\)</span></td>
-<td><span class="math inline">\(-0,117\)</span></td>
+<td><span class="math inline">-1,5</span></td>
+<td><span class="math inline">-0,117</span></td>
 <td>0,1755</td>
 <td>2,25</td>
 <td>0,0137</td>
@@ -2772,8 +2786,8 @@ Attaching package: 'kableExtra'</code></pre>
 <td>5</td>
 <td>6</td>
 <td>15,0</td>
-<td><span class="math inline">\(-0,5\)</span></td>
-<td><span class="math inline">\(-0,417\)</span></td>
+<td><span class="math inline">-0,5</span></td>
+<td><span class="math inline">-0,417</span></td>
 <td>0,2085</td>
 <td>0,25</td>
 <td>0,1739</td>
@@ -2783,8 +2797,8 @@ Attaching package: 'kableExtra'</code></pre>
 <td>7</td>
 <td>14,8</td>
 <td>0,5</td>
-<td><span class="math inline">\(-0,617\)</span></td>
-<td><span class="math inline">\(-0,3085\)</span></td>
+<td><span class="math inline">-0,617</span></td>
+<td><span class="math inline">-0,3085</span></td>
 <td>0,25</td>
 <td>0,3807</td>
 </tr>
@@ -2793,8 +2807,8 @@ Attaching package: 'kableExtra'</code></pre>
 <td>8</td>
 <td>14,7</td>
 <td>1,5</td>
-<td><span class="math inline">\(-0,717\)</span></td>
-<td><span class="math inline">\(-1,0755\)</span></td>
+<td><span class="math inline">-0,717</span></td>
+<td><span class="math inline">-1,0755</span></td>
 <td>2,25</td>
 <td>0,5141</td>
 </tr>
@@ -2803,8 +2817,8 @@ Attaching package: 'kableExtra'</code></pre>
 <td>9</td>
 <td>14,6</td>
 <td>2,5</td>
-<td><span class="math inline">\(-0,817\)</span></td>
-<td><span class="math inline">\(-2,0425\)</span></td>
+<td><span class="math inline">-0,817</span></td>
+<td><span class="math inline">-2,0425</span></td>
 <td>6,25</td>
 <td>0,6675</td>
 </tr>
@@ -2813,8 +2827,8 @@ Attaching package: 'kableExtra'</code></pre>
 <td>10</td>
 <td>14,55</td>
 <td>3,5</td>
-<td><span class="math inline">\(-0,867\)</span></td>
-<td><span class="math inline">\(-3,0345\)</span></td>
+<td><span class="math inline">-0,867</span></td>
+<td><span class="math inline">-3,0345</span></td>
 <td>12,25</td>
 <td>0,7517</td>
 </tr>
@@ -2823,8 +2837,8 @@ Attaching package: 'kableExtra'</code></pre>
 <td>11</td>
 <td>14,52</td>
 <td>4,5</td>
-<td><span class="math inline">\(-0,897\)</span></td>
-<td><span class="math inline">\(-4,0365\)</span></td>
+<td><span class="math inline">-0,897</span></td>
+<td><span class="math inline">-4,0365</span></td>
 <td>20,25</td>
 <td>0,8047</td>
 </tr>
@@ -2834,26 +2848,26 @@ Attaching package: 'kableExtra'</code></pre>
 <td>154,17</td>
 <td>0</td>
 <td>0</td>
-<td><span class="math inline">\(-28,085\)</span></td>
+<td><span class="math inline">-28,085</span></td>
 <td>82,5</td>
 <td>12,8442</td>
 </tr>
 </tbody>
 </table>
-<p>Obliczanie kowariancji: <span class="math display">\[\text{Cov}(X,Y) = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\]</span></p>
-<p><span class="math display">\[\text{Cov}(X,Y) = \frac{-28,085}{9} = -3,120556\]</span></p>
+<p>Obliczanie kowariancji: <span class="math display">\text{Cov}(X,Y) = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{n-1}</span></p>
+<p><span class="math display">\text{Cov}(X,Y) = \frac{-28,085}{9} = -3,120556</span></p>
 </section>
 <section id="krok-3-obliczanie-odchylenia-standardowego" class="level3" data-number="16.15.3">
 <h3 data-number="16.15.3" class="anchored" data-anchor-id="krok-3-obliczanie-odchylenia-standardowego"><span class="header-section-number">16.15.3</span> Krok 3: Obliczanie Odchylenia Standardowego</h3>
-<p>Dla <span class="math inline">\(\text{DM}\)</span> (<span class="math inline">\(X\)</span>): <span class="math display">\[\sigma_X = \sqrt{\frac{\sum_{i=1}^n (X_i - \bar{X})^2}{n-1}}\]</span></p>
-<p><span class="math display">\[\sigma_x = \sqrt{\frac{82,5}{9}} = \sqrt{9,1667} = 3,026582\]</span></p>
-<p>Dla Gallaghera (<span class="math inline">\(Y\)</span>): <span class="math display">\[\sigma_Y = \sqrt{\frac{\sum_{i=1}^n (Y_i - \bar{Y})^2}{n-1}}\]</span></p>
-<p><span class="math display">\[\sigma_y = \sqrt{\frac{12,8442}{9}} = \sqrt{1,4271} = 1,194612\]</span></p>
+<p>Dla <span class="math inline">\text{DM}</span> (<span class="math inline">X</span>): <span class="math display">\sigma_X = \sqrt{\frac{\sum_{i=1}^n (X_i - \bar{X})^2}{n-1}}</span></p>
+<p><span class="math display">\sigma_x = \sqrt{\frac{82,5}{9}} = \sqrt{9,1667} = 3,026582</span></p>
+<p>Dla Gallaghera (<span class="math inline">Y</span>): <span class="math display">\sigma_Y = \sqrt{\frac{\sum_{i=1}^n (Y_i - \bar{Y})^2}{n-1}}</span></p>
+<p><span class="math display">\sigma_y = \sqrt{\frac{12,8442}{9}} = \sqrt{1,4271} = 1,194612</span></p>
 </section>
 <section id="krok-4-obliczanie-korelacji-pearsona" class="level3" data-number="16.15.4">
 <h3 data-number="16.15.4" class="anchored" data-anchor-id="krok-4-obliczanie-korelacji-pearsona"><span class="header-section-number">16.15.4</span> Krok 4: Obliczanie Korelacji Pearsona</h3>
-<p><span class="math display">\[r = \frac{\text{Cov}(X,Y)}{\sigma_X \sigma_Y}\]</span></p>
-<p><span class="math display">\[r = \frac{-3,120556}{3,026582 \times 1,194612} = \frac{-3,120556}{3,615752} = -0,863044\]</span></p>
+<p><span class="math display">r = \frac{\text{Cov}(X,Y)}{\sigma_X \sigma_Y}</span></p>
+<p><span class="math display">r = \frac{-3,120556}{3,026582 \times 1,194612} = \frac{-3,120556}{3,615752} = -0,863044</span></p>
 </section>
 <section id="krok-5-obliczanie-korelacji-rangowej-spearmana" class="level3" data-number="16.15.5">
 <h3 data-number="16.15.5" class="anchored" data-anchor-id="krok-5-obliczanie-korelacji-rangowej-spearmana"><span class="header-section-number">16.15.5</span> Krok 5: Obliczanie Korelacji Rangowej Spearmana</h3>
@@ -2861,13 +2875,13 @@ Attaching package: 'kableExtra'</code></pre>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th><span class="math inline">\(i\)</span></th>
-<th><span class="math inline">\(X_i\)</span></th>
-<th><span class="math inline">\(Y_i\)</span></th>
-<th>Ranga <span class="math inline">\(X_i\)</span></th>
-<th>Ranga <span class="math inline">\(Y_i\)</span></th>
-<th><span class="math inline">\(d_i\)</span></th>
-<th><span class="math inline">\(d_i^2\)</span></th>
+<th><span class="math inline">i</span></th>
+<th><span class="math inline">X_i</span></th>
+<th><span class="math inline">Y_i</span></th>
+<th>Ranga <span class="math inline">X_i</span></th>
+<th>Ranga <span class="math inline">Y_i</span></th>
+<th><span class="math inline">d_i</span></th>
+<th><span class="math inline">d_i^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -2877,7 +2891,7 @@ Attaching package: 'kableExtra'</code></pre>
 <td>18,2</td>
 <td>1</td>
 <td>10</td>
-<td><span class="math inline">\(-9\)</span></td>
+<td><span class="math inline">-9</span></td>
 <td>81</td>
 </tr>
 <tr class="even">
@@ -2886,7 +2900,7 @@ Attaching package: 'kableExtra'</code></pre>
 <td>16,7</td>
 <td>2</td>
 <td>9</td>
-<td><span class="math inline">\(-7\)</span></td>
+<td><span class="math inline">-7</span></td>
 <td>49</td>
 </tr>
 <tr class="odd">
@@ -2895,7 +2909,7 @@ Attaching package: 'kableExtra'</code></pre>
 <td>15,8</td>
 <td>3</td>
 <td>8</td>
-<td><span class="math inline">\(-5\)</span></td>
+<td><span class="math inline">-5</span></td>
 <td>25</td>
 </tr>
 <tr class="even">
@@ -2904,7 +2918,7 @@ Attaching package: 'kableExtra'</code></pre>
 <td>15,3</td>
 <td>4</td>
 <td>7</td>
-<td><span class="math inline">\(-3\)</span></td>
+<td><span class="math inline">-3</span></td>
 <td>9</td>
 </tr>
 <tr class="odd">
@@ -2913,7 +2927,7 @@ Attaching package: 'kableExtra'</code></pre>
 <td>15,0</td>
 <td>5</td>
 <td>6</td>
-<td><span class="math inline">\(-1\)</span></td>
+<td><span class="math inline">-1</span></td>
 <td>1</td>
 </tr>
 <tr class="even">
@@ -2972,8 +2986,8 @@ Attaching package: 'kableExtra'</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Obliczanie korelacji Spearmana: <span class="math display">\[\rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)}\]</span></p>
-<p><span class="math display">\[\rho = 1 - \frac{6 \times 330}{10(100 - 1)} = 1 - \frac{1980}{990} = 1 - 2 = -1\]</span></p>
+<p>Obliczanie korelacji Spearmana: <span class="math display">\rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)}</span></p>
+<p><span class="math display">\rho = 1 - \frac{6 \times 330}{10(100 - 1)} = 1 - \frac{1980}{990} = 1 - 2 = -1</span></p>
 </section>
 <section id="krok-6-weryfikacja-w-r" class="level3" data-number="16.15.6">
 <h3 data-number="16.15.6" class="anchored" data-anchor-id="krok-6-weryfikacja-w-r"><span class="header-section-number">16.15.6</span> Krok 6: Weryfikacja w R</h3>
@@ -3035,19 +3049,19 @@ Attaching package: 'kableExtra'</code></pre>
 <h3 data-number="16.15.9" class="anchored" data-anchor-id="krok-1-obliczanie-estymatorów-ols"><span class="header-section-number">16.15.9</span> Krok 1: Obliczanie Estymatorów OLS</h3>
 <p>Korzystając z wcześniej obliczonych wartości:</p>
 <ul>
-<li><span class="math inline">\(\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28,085\)</span></li>
-<li><span class="math inline">\(\sum(X_i - \bar{X})^2 = 82,5\)</span></li>
-<li><span class="math inline">\(\bar{X} = 6,5\)</span></li>
-<li><span class="math inline">\(\bar{Y} = 15,417\)</span></li>
+<li><span class="math inline">\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28,085</span></li>
+<li><span class="math inline">\sum(X_i - \bar{X})^2 = 82,5</span></li>
+<li><span class="math inline">\bar{X} = 6,5</span></li>
+<li><span class="math inline">\bar{Y} = 15,417</span></li>
 </ul>
-<p>Obliczanie nachylenia (<span class="math inline">\(\hat{\beta_1}\)</span>):</p>
-<p><span class="math inline">\(\hat{\beta_1} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}\)</span></p>
-<p><span class="math display">\[\hat{\beta_1} = -28,085 ÷ 82,5 = -0,3404\]</span></p>
-<p>Obliczanie wyrazu wolnego (<span class="math inline">\(\hat{\beta_0}\)</span>): <span class="math inline">\(\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\)</span></p>
-<p><span class="math display">\[\hat{\beta_0} = 15,417 - (-0,3404 × 6,5)
+<p>Obliczanie nachylenia (<span class="math inline">\hat{\beta_1}</span>):</p>
+<p><span class="math inline">\hat{\beta_1} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}</span></p>
+<p><span class="math display">\hat{\beta_1} = -28,085 ÷ 82,5 = -0,3404</span></p>
+<p>Obliczanie wyrazu wolnego (<span class="math inline">\hat{\beta_0}</span>): <span class="math inline">\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}</span></p>
+<p><span class="math display">\hat{\beta_0} = 15,417 - (-0,3404 × 6,5)
    = 15,417 + 2,2126
-   = 17,6296\]</span></p>
-<p>Zatem równanie regresji OLS ma postać: <span class="math inline">\(\hat{Y} = 17,6296 - 0,3404X\)</span></p>
+   = 17,6296</span></p>
+<p>Zatem równanie regresji OLS ma postać: <span class="math inline">\hat{Y} = 17,6296 - 0,3404X</span></p>
 </section>
 <section id="krok-2-obliczanie-wartości-dopasowanych-i-reszt" class="level3" data-number="16.15.10">
 <h3 data-number="16.15.10" class="anchored" data-anchor-id="krok-2-obliczanie-wartości-dopasowanych-i-reszt"><span class="header-section-number">16.15.10</span> Krok 2: Obliczanie Wartości Dopasowanych i Reszt</h3>
@@ -3065,14 +3079,14 @@ Attaching package: 'kableExtra'</code></pre>
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(i\)</span></th>
-<th><span class="math inline">\(X_i\)</span></th>
-<th><span class="math inline">\(Y_i\)</span></th>
-<th><span class="math inline">\(\hat{Y}_i\)</span></th>
-<th><span class="math inline">\(e_i = Y_i - \hat{Y}_i\)</span></th>
-<th><span class="math inline">\(e_i^2\)</span></th>
-<th><span class="math inline">\((Y_i - \bar{Y})^2\)</span></th>
-<th><span class="math inline">\((\hat{Y}_i - \bar{Y})^2\)</span></th>
+<th><span class="math inline">i</span></th>
+<th><span class="math inline">X_i</span></th>
+<th><span class="math inline">Y_i</span></th>
+<th><span class="math inline">\hat{Y}_i</span></th>
+<th><span class="math inline">e_i = Y_i - \hat{Y}_i</span></th>
+<th><span class="math inline">e_i^2</span></th>
+<th><span class="math inline">(Y_i - \bar{Y})^2</span></th>
+<th><span class="math inline">(\hat{Y}_i - \bar{Y})^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3199,15 +3213,15 @@ Dla X = 3:
 </section>
 <section id="krok-3-obliczanie-miar-dopasowania" class="level3" data-number="16.15.11">
 <h3 data-number="16.15.11" class="anchored" data-anchor-id="krok-3-obliczanie-miar-dopasowania"><span class="header-section-number">16.15.11</span> Krok 3: Obliczanie Miar Dopasowania</h3>
-<p>Suma kwadratów reszt (SSE): <span class="math inline">\(SSE = \sum e_i^2\)</span></p>
+<p>Suma kwadratów reszt (SSE): <span class="math inline">SSE = \sum e_i^2</span></p>
 <pre><code>SSE = 3,2832</code></pre>
-<p>Całkowita suma kwadratów (SST): <span class="math inline">\(SST = \sum(Y_i - \bar{Y})^2\)</span></p>
+<p>Całkowita suma kwadratów (SST): <span class="math inline">SST = \sum(Y_i - \bar{Y})^2</span></p>
 <pre><code>SST = 12,8442</code></pre>
-<p>Suma kwadratów regresji (SSR): <span class="math inline">\(SSR = \sum(\hat{Y}_i - \bar{Y})^2\)</span></p>
+<p>Suma kwadratów regresji (SSR): <span class="math inline">SSR = \sum(\hat{Y}_i - \bar{Y})^2</span></p>
 <pre><code>SSR = 9,5524</code></pre>
-<p>Weryfikacja dekompozycji: <span class="math inline">\(SST = SSR + SSE\)</span></p>
+<p>Weryfikacja dekompozycji: <span class="math inline">SST = SSR + SSE</span></p>
 <pre><code>12,8442 = 9,5524 + 3,2832 (w granicach błędu zaokrąglenia)</code></pre>
-<p>Obliczanie współczynnika determinacji R-kwadrat: <span class="math inline">\(R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}\)</span></p>
+<p>Obliczanie współczynnika determinacji R-kwadrat: <span class="math inline">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p>
 <pre><code>R² = 9,5524 ÷ 12,8442
    = 0,7438</code></pre>
 </section>
@@ -3299,11 +3313,11 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th><span class="math inline">\(i\)</span></th>
-<th><span class="math inline">\(X_i\)</span></th>
-<th><span class="math inline">\(Y_i\)</span></th>
-<th><span class="math inline">\(\ln(X_i)\)</span></th>
-<th><span class="math inline">\(\ln(Y_i)\)</span></th>
+<th><span class="math inline">i</span></th>
+<th><span class="math inline">X_i</span></th>
+<th><span class="math inline">Y_i</span></th>
+<th><span class="math inline">\ln(X_i)</span></th>
+<th><span class="math inline">\ln(Y_i)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3384,9 +3398,9 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <h3 data-number="16.15.17" class="anchored" data-anchor-id="krok-2-porównanie-różnych-specyfikacji-modelu"><span class="header-section-number">16.15.17</span> Krok 2: Porównanie Różnych Specyfikacji Modelu</h3>
 <p>Szacujemy trzy alternatywne specyfikacje:</p>
 <ol type="1">
-<li>Model log-liniowy: <span class="math inline">\(\ln(Y_i) = \beta_0 + \beta_1 X_i + \epsilon_i\)</span></li>
-<li>Model liniowo-logarytmiczny: <span class="math inline">\(Y_i = \beta_0 + \beta_1\ln(X_i) + \epsilon_i\)</span></li>
-<li>Model log-log: <span class="math inline">\(\ln(Y_i) = \beta_0 + \beta_1\ln(X_i) + \epsilon_i\)</span></li>
+<li>Model log-liniowy: <span class="math inline">\ln(Y_i) = \beta_0 + \beta_1 X_i + \epsilon_i</span></li>
+<li>Model liniowo-logarytmiczny: <span class="math inline">Y_i = \beta_0 + \beta_1\ln(X_i) + \epsilon_i</span></li>
+<li>Model log-log: <span class="math inline">\ln(Y_i) = \beta_0 + \beta_1\ln(X_i) + \epsilon_i</span></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tworzenie zmiennych transformowanych</span></span>
@@ -3509,7 +3523,7 @@ Multiple R-squared:  0.9142,    Adjusted R-squared:  0.9034
 F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </div>
 </div>
-<p>Interpretacja: - <span class="math inline">\(\hat{\beta_0}\)</span> reprezentuje oczekiwany Indeks Gallaghera, gdy ln(DM) = 0 (czyli gdy DM = 1) - <span class="math inline">\(\hat{\beta_1}\)</span> reprezentuje zmianę Indeksu Gallaghera związaną z jednostkowym wzrostem ln(DM)</p>
+<p>Interpretacja: - <span class="math inline">\hat{\beta_0}</span> reprezentuje oczekiwany Indeks Gallaghera, gdy ln(DM) = 0 (czyli gdy DM = 1) - <span class="math inline">\hat{\beta_1}</span> reprezentuje zmianę Indeksu Gallaghera związaną z jednostkowym wzrostem ln(DM)</p>
 </section>
 <section id="krok-6-predykcje-modelu" class="level3" data-number="16.15.21">
 <h3 data-number="16.15.21" class="anchored" data-anchor-id="krok-6-predykcje-modelu"><span class="header-section-number">16.15.21</span> Krok 6: Predykcje Modelu</h3>
@@ -3567,7 +3581,7 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </section>
 <section id="korelacja-pearsona-1" class="level3" data-number="16.16.2">
 <h3 data-number="16.16.2" class="anchored" data-anchor-id="korelacja-pearsona-1"><span class="header-section-number">16.16.2</span> Korelacja Pearsona</h3>
-<p><span class="math display">\[ r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}} \]</span></p>
+<p><span class="math display"> r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}} </span></p>
 <section id="obliczenia-krok-po-kroku" class="level4" data-number="16.16.2.1">
 <h4 data-number="16.16.2.1" class="anchored" data-anchor-id="obliczenia-krok-po-kroku"><span class="header-section-number">16.16.2.1</span> Obliczenia krok po kroku:</h4>
 <table class="caption-top table">
@@ -3584,13 +3598,13 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <thead>
 <tr class="header">
 <th>i</th>
-<th><span class="math inline">\(x_i\)</span></th>
-<th><span class="math inline">\(y_i\)</span></th>
-<th><span class="math inline">\(x_i - \bar{x}\)</span></th>
-<th><span class="math inline">\(y_i - \bar{y}\)</span></th>
-<th><span class="math inline">\((x_i - \bar{x})(y_i - \bar{y})\)</span></th>
-<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
-<th><span class="math inline">\((y_i - \bar{y})^2\)</span></th>
+<th><span class="math inline">x_i</span></th>
+<th><span class="math inline">y_i</span></th>
+<th><span class="math inline">x_i - \bar{x}</span></th>
+<th><span class="math inline">y_i - \bar{y}</span></th>
+<th><span class="math inline">(x_i - \bar{x})(y_i - \bar{y})</span></th>
+<th><span class="math inline">(x_i - \bar{x})^2</span></th>
+<th><span class="math inline">(y_i - \bar{y})^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3656,25 +3670,25 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(\bar{x} = 4,4\)</span> <span class="math inline">\(\bar{y} = 4,6\)</span></p>
-<p><span class="math display">\[ r = \frac{12,8}{\sqrt{21,2 \times 9,2}} = \frac{12,8}{\sqrt{195,04}} = \frac{12,8}{13,97} = 0,92 \]</span></p>
+<p><span class="math inline">\bar{x} = 4,4</span> <span class="math inline">\bar{y} = 4,6</span></p>
+<p><span class="math display"> r = \frac{12,8}{\sqrt{21,2 \times 9,2}} = \frac{12,8}{\sqrt{195,04}} = \frac{12,8}{13,97} = 0,92 </span></p>
 </section>
 </section>
 <section id="korelacja-spearmana-1" class="level3" data-number="16.16.3">
 <h3 data-number="16.16.3" class="anchored" data-anchor-id="korelacja-spearmana-1"><span class="header-section-number">16.16.3</span> Korelacja Spearmana</h3>
-<p><span class="math display">\[ \rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)} \]</span></p>
+<p><span class="math display"> \rho = 1 - \frac{6\sum d_i^2}{n(n^2-1)} </span></p>
 <section id="obliczenia-krok-po-kroku-1" class="level4" data-number="16.16.3.1">
 <h4 data-number="16.16.3.1" class="anchored" data-anchor-id="obliczenia-krok-po-kroku-1"><span class="header-section-number">16.16.3.1</span> Obliczenia krok po kroku:</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>i</th>
-<th><span class="math inline">\(x_i\)</span></th>
-<th><span class="math inline">\(y_i\)</span></th>
-<th>Ranga <span class="math inline">\(x_i\)</span></th>
-<th>Ranga <span class="math inline">\(y_i\)</span></th>
-<th><span class="math inline">\(d_i\)</span></th>
-<th><span class="math inline">\(d_i^2\)</span></th>
+<th><span class="math inline">x_i</span></th>
+<th><span class="math inline">y_i</span></th>
+<th>Ranga <span class="math inline">x_i</span></th>
+<th>Ranga <span class="math inline">y_i</span></th>
+<th><span class="math inline">d_i</span></th>
+<th><span class="math inline">d_i^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3734,22 +3748,22 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[ \rho = 1 - \frac{6(7,5)}{5(25-1)} = 1 - \frac{45}{120} = 0,82 \]</span></p>
+<p><span class="math display"> \rho = 1 - \frac{6(7,5)}{5(25-1)} = 1 - \frac{45}{120} = 0,82 </span></p>
 </section>
 </section>
 <section id="tau-kendalla" class="level3" data-number="16.16.4">
 <h3 data-number="16.16.4" class="anchored" data-anchor-id="tau-kendalla"><span class="header-section-number">16.16.4</span> Tau Kendalla</h3>
-<p><span class="math display">\[ \tau = \frac{\text{liczba par zgodnych} - \text{liczba par niezgodnych}}{\frac{1}{2}n(n-1)} \]</span></p>
+<p><span class="math display"> \tau = \frac{\text{liczba par zgodnych} - \text{liczba par niezgodnych}}{\frac{1}{2}n(n-1)} </span></p>
 <section id="obliczenia-krok-po-kroku-2" class="level4" data-number="16.16.4.1">
 <h4 data-number="16.16.4.1" class="anchored" data-anchor-id="obliczenia-krok-po-kroku-2"><span class="header-section-number">16.16.4.1</span> Obliczenia krok po kroku:</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Para (i,j)</th>
-<th><span class="math inline">\(x_i,x_j\)</span></th>
-<th><span class="math inline">\(y_i,y_j\)</span></th>
-<th><span class="math inline">\(x_j-x_i\)</span></th>
-<th><span class="math inline">\(y_j-y_i\)</span></th>
+<th><span class="math inline">x_i,x_j</span></th>
+<th><span class="math inline">y_i,y_j</span></th>
+<th><span class="math inline">x_j-x_i</span></th>
+<th><span class="math inline">y_j-y_i</span></th>
 <th>Wynik</th>
 </tr>
 </thead>
@@ -3836,7 +3850,7 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Liczba par zgodnych = 8 Liczba par niezgodnych = 2 <span class="math display">\[ \tau = \frac{8-2}{10} = 0,74 \]</span></p>
+<p>Liczba par zgodnych = 8 Liczba par niezgodnych = 2 <span class="math display"> \tau = \frac{8-2}{10} = 0,74 </span></p>
 </section>
 </section>
 <section id="weryfikacja-w-r" class="level3" data-number="16.16.5">
@@ -3949,8 +3963,8 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <section id="dispersion-measures" class="level3" data-number="16.19.2">
 <h3 data-number="16.19.2" class="anchored" data-anchor-id="dispersion-measures"><span class="header-section-number">16.19.2</span> Dispersion Measures</h3>
 <p><strong>Means:</strong></p>
-<p><span class="math display">\[\bar{X} = \frac{\sum_{i=1}^n X_i}{n} = \frac{50 + 45 + 56 + 40 + 60}{5} = \frac{251}{5} = 50.2\]</span></p>
-<p><span class="math display">\[\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n} = \frac{60 + 56 + 70 + 50 + 75}{5} = \frac{311}{5} = 62.2\]</span></p>
+<p><span class="math display">\bar{X} = \frac{\sum_{i=1}^n X_i}{n} = \frac{50 + 45 + 56 + 40 + 60}{5} = \frac{251}{5} = 50.2</span></p>
+<p><span class="math display">\bar{Y} = \frac{\sum_{i=1}^n Y_i}{n} = \frac{60 + 56 + 70 + 50 + 75}{5} = \frac{311}{5} = 62.2</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(income)  <span class="co"># 50.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3963,11 +3977,11 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 <p><strong>Variances:</strong></p>
-<p><span class="math display">\[s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}\]</span></p>
-<p>Deviations for X: <span class="math inline">\((-0.2, -5.2, 5.8, -10.2, 9.8)\)</span></p>
-<p><span class="math display">\[s^2_X = \frac{0.04 + 27.04 + 33.64 + 104.04 + 96.04}{4} = \frac{260.8}{4} = 65.2\]</span></p>
-<p>Deviations for Y: <span class="math inline">\((-2.2, -6.2, 7.8, -12.2, 12.8)\)</span></p>
-<p><span class="math display">\[s^2_Y = \frac{4.84 + 38.44 + 60.84 + 148.84 + 163.84}{4} = \frac{416.8}{4} = 104.2\]</span></p>
+<p><span class="math display">s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}</span></p>
+<p>Deviations for X: <span class="math inline">(-0.2, -5.2, 5.8, -10.2, 9.8)</span></p>
+<p><span class="math display">s^2_X = \frac{0.04 + 27.04 + 33.64 + 104.04 + 96.04}{4} = \frac{260.8}{4} = 65.2</span></p>
+<p>Deviations for Y: <span class="math inline">(-2.2, -6.2, 7.8, -12.2, 12.8)</span></p>
+<p><span class="math display">s^2_Y = \frac{4.84 + 38.44 + 60.84 + 148.84 + 163.84}{4} = \frac{416.8}{4} = 104.2</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(income)  <span class="co"># 65.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3983,10 +3997,10 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <section id="covariance-and-correlation" class="level3" data-number="16.19.3">
 <h3 data-number="16.19.3" class="anchored" data-anchor-id="covariance-and-correlation"><span class="header-section-number">16.19.3</span> Covariance and Correlation</h3>
 <p><strong>Covariance:</strong></p>
-<p><span class="math display">\[s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\]</span></p>
+<p><span class="math display">s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}</span></p>
 <p>Products of deviations:</p>
-<p><span class="math display">\[(-0.2 \times -2.2) = 0.44\]</span> <span class="math display">\[(-5.2 \times -6.2) = 32.24\]</span> <span class="math display">\[(5.8 \times 7.8) = 45.24\]</span> <span class="math display">\[(-10.2 \times -12.2) = 124.44\]</span> <span class="math display">\[(9.8 \times 12.8) = 125.44\]</span></p>
-<p><span class="math display">\[s_{XY} = \frac{327.8}{4} = 81.95\]</span></p>
+<p><span class="math display">(-0.2 \times -2.2) = 0.44</span> <span class="math display">(-5.2 \times -6.2) = 32.24</span> <span class="math display">(5.8 \times 7.8) = 45.24</span> <span class="math display">(-10.2 \times -12.2) = 124.44</span> <span class="math display">(9.8 \times 12.8) = 125.44</span></p>
+<p><span class="math display">s_{XY} = \frac{327.8}{4} = 81.95</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(income, turnout) <span class="co"># 81.95</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3995,7 +4009,7 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 <p><strong>Correlation:</strong></p>
-<p><span class="math display">\[r_{XY} = \frac{s_{XY}}{\sqrt{s^2_X}\sqrt{s^2_Y}} = \frac{81.95}{\sqrt{65.2}\sqrt{104.2}} = 0.994\]</span></p>
+<p><span class="math display">r_{XY} = \frac{s_{XY}}{\sqrt{s^2_X}\sqrt{s^2_Y}} = \frac{81.95}{\sqrt{65.2}\sqrt{104.2}} = 0.994</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(income, turnout) <span class="co"># 0.994</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4005,15 +4019,15 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </section>
 <section id="ols-regression-haty-hatbeta_0-hatbeta_1x" class="level3" data-number="16.19.4">
-<h3 data-number="16.19.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x"><span class="header-section-number">16.19.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
+<h3 data-number="16.19.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x"><span class="header-section-number">16.19.4</span> OLS Regression <span class="math inline">(\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)</span></h3>
 <p><strong>Slope coefficient:</strong></p>
-<p><span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{81.95}{65.2} = 1.2571429\]</span></p>
+<p><span class="math display">\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{81.95}{65.2} = 1.2571429</span></p>
 <p><strong>Intercept:</strong></p>
-<p><span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span></p>
+<p><span class="math display">\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}</span></p>
 <p>Step by step:</p>
 <ol type="1">
-<li><span class="math display">\[1.2571429 \times 50.2 = 63.1085714\]</span></li>
-<li><span class="math display">\[\hat{\beta_0} = 62.2 - 63.1085714 = -0.9085714\]</span></li>
+<li><span class="math display">1.2571429 \times 50.2 = 63.1085714</span></li>
+<li><span class="math display">\hat{\beta_0} = 62.2 - 63.1085714 = -0.9085714</span></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
@@ -4026,29 +4040,29 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </section>
 <section id="detailed-decomposition-of-variance-and-r-squared" class="level3" data-number="16.19.5">
 <h3 data-number="16.19.5" class="anchored" data-anchor-id="detailed-decomposition-of-variance-and-r-squared"><span class="header-section-number">16.19.5</span> Detailed Decomposition of Variance and R-squared</h3>
-<p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>:</p>
-<p><span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429X\]</span></p>
-<p>The predicted values <span class="math inline">\(\hat{Y}\)</span> for each <span class="math inline">\(X\)</span> value:</p>
-<p>For <span class="math inline">\(X = 50\)</span>:</p>
-<p><span class="math display">\[
+<p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">(\hat{Y})</span>:</p>
+<p><span class="math display">\hat{Y} = -0.9085714 + 1.2571429X</span></p>
+<p>The predicted values <span class="math inline">\hat{Y}</span> for each <span class="math inline">X</span> value:</p>
+<p>For <span class="math inline">X = 50</span>:</p>
+<p><span class="math display">
 \hat{Y} = -0.9085714 + 1.2571429 \times (50)
-\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 62.857145\]</span> <span class="math display">\[\hat{Y} = 61.9485736\]</span></p>
-<p>For <span class="math inline">\(X = 45\)</span>:</p>
-<p><span class="math display">\[
+</span> <span class="math display">\hat{Y} = -0.9085714 + 62.857145</span> <span class="math display">\hat{Y} = 61.9485736</span></p>
+<p>For <span class="math inline">X = 45</span>:</p>
+<p><span class="math display">
 \hat{Y} = -0.9085714 + 1.2571429 \times (45)
-\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 56.5714305\]</span> <span class="math display">\[\hat{Y} = 55.6535591\]</span></p>
-<p>For <span class="math inline">\(X = 56\)</span>:</p>
-<p><span class="math display">\[
+</span> <span class="math display">\hat{Y} = -0.9085714 + 56.5714305</span> <span class="math display">\hat{Y} = 55.6535591</span></p>
+<p>For <span class="math inline">X = 56</span>:</p>
+<p><span class="math display">
 \hat{Y} = -0.9085714 + 1.2571429 \times (56)
-\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 70.4200024\]</span> <span class="math display">\[\hat{Y} = 69.5114310\]</span></p>
-<p>For <span class="math inline">\(X = 40\)</span>:</p>
-<p><span class="math display">\[
+</span> <span class="math display">\hat{Y} = -0.9085714 + 70.4200024</span> <span class="math display">\hat{Y} = 69.5114310</span></p>
+<p>For <span class="math inline">X = 40</span>:</p>
+<p><span class="math display">
 \hat{Y} = -0.9085714 + 1.2571429 \times (40)
-\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 50.2657160\]</span> <span class="math display">\[\hat{Y} = 49.3571446\]</span></p>
-<p>For <span class="math inline">\(X = 60\)</span>:</p>
-<p><span class="math display">\[
+</span> <span class="math display">\hat{Y} = -0.9085714 + 50.2657160</span> <span class="math display">\hat{Y} = 49.3571446</span></p>
+<p>For <span class="math inline">X = 60</span>:</p>
+<p><span class="math display">
 \hat{Y} = -0.9085714 + 1.2571429 \times (60)
-\]</span> <span class="math display">\[\hat{Y} = -0.9085714 + 75.4285740\]</span> <span class="math display">\[\hat{Y} = 74.5200026\]</span></p>
+</span> <span class="math display">\hat{Y} = -0.9085714 + 75.4285740</span> <span class="math display">\hat{Y} = 74.5200026</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification of predicted values</span></span>
 <span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.9085714</span> <span class="sc">+</span> <span class="fl">1.2571429</span> <span class="sc">*</span> income</span>
@@ -4068,21 +4082,21 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 </div>
 </div>
 <p><strong>Step 2: Calculate SST (Total Sum of Squares)</strong></p>
-<p><span class="math display">\[SST = \sum(Y_i - \bar{Y})^2 \text{ where } \bar{Y} = 62.2\]</span></p>
-<p><span class="math display">\[(60 - 62.2)^2 = (-2.2)^2 = 4.84\]</span> <span class="math display">\[(56 - 62.2)^2 = (-6.2)^2 = 38.44\]</span> <span class="math display">\[(70 - 62.2)^2 = (7.8)^2 = 60.84\]</span> <span class="math display">\[(50 - 62.2)^2 = (-12.2)^2 = 148.84\]</span> <span class="math display">\[(75 - 62.2)^2 = (12.8)^2 = 163.84\]</span></p>
-<p><span class="math display">\[SST = 4.84 + 38.44 + 60.84 + 148.84 + 163.84 = 416.8\]</span></p>
+<p><span class="math display">SST = \sum(Y_i - \bar{Y})^2 \text{ where } \bar{Y} = 62.2</span></p>
+<p><span class="math display">(60 - 62.2)^2 = (-2.2)^2 = 4.84</span> <span class="math display">(56 - 62.2)^2 = (-6.2)^2 = 38.44</span> <span class="math display">(70 - 62.2)^2 = (7.8)^2 = 60.84</span> <span class="math display">(50 - 62.2)^2 = (-12.2)^2 = 148.84</span> <span class="math display">(75 - 62.2)^2 = (12.8)^2 = 163.84</span></p>
+<p><span class="math display">SST = 4.84 + 38.44 + 60.84 + 148.84 + 163.84 = 416.8</span></p>
 <p><strong>Step 3: Calculate SSR (Regression Sum of Squares)</strong></p>
-<p><span class="math display">\[SSR = \sum(\hat{Y}_i - \bar{Y})^2\]</span></p>
-<p><span class="math display">\[(61.9485736 - 62.2)^2 = (-0.2514264)^2 = 0.0632151\]</span> <span class="math display">\[(55.6535591 - 62.2)^2 = (-6.5464409)^2 = 42.8558689\]</span> <span class="math display">\[(69.5114310 - 62.2)^2 = (7.3114310)^2 = 53.4570178\]</span> <span class="math display">\[(49.3571446 - 62.2)^2 = (-12.8428554)^2 = 164.9389370\]</span> <span class="math display">\[(74.5200026 - 62.2)^2 = (12.3200026)^2 = 151.7824640\]</span></p>
-<p><span class="math display">\[SSR = 413.0975028\]</span></p>
+<p><span class="math display">SSR = \sum(\hat{Y}_i - \bar{Y})^2</span></p>
+<p><span class="math display">(61.9485736 - 62.2)^2 = (-0.2514264)^2 = 0.0632151</span> <span class="math display">(55.6535591 - 62.2)^2 = (-6.5464409)^2 = 42.8558689</span> <span class="math display">(69.5114310 - 62.2)^2 = (7.3114310)^2 = 53.4570178</span> <span class="math display">(49.3571446 - 62.2)^2 = (-12.8428554)^2 = 164.9389370</span> <span class="math display">(74.5200026 - 62.2)^2 = (12.3200026)^2 = 151.7824640</span></p>
+<p><span class="math display">SSR = 413.0975028</span></p>
 <p><strong>Step 4: Calculate SSE (Error Sum of Squares)</strong></p>
-<p><span class="math display">\[SSE = \sum(Y_i - \hat{Y}_i)^2\]</span></p>
-<p><span class="math display">\[(60 - 61.9485736)^2 = (-1.9485736)^2 = 3.7969384\]</span> <span class="math display">\[(56 - 55.6535591)^2 = (0.3464409)^2 = 0.1200212\]</span> <span class="math display">\[(70 - 69.5114310)^2 = (0.4885690)^2 = 0.2387198\]</span> <span class="math display">\[(50 - 49.3571446)^2 = (0.6428554)^2 = 0.4132631\]</span> <span class="math display">\[(75 - 74.5200026)^2 = (0.4799974)^2 = 0.2303975\]</span></p>
-<p><span class="math display">\[SSE = 4.7024972\]</span></p>
+<p><span class="math display">SSE = \sum(Y_i - \hat{Y}_i)^2</span></p>
+<p><span class="math display">(60 - 61.9485736)^2 = (-1.9485736)^2 = 3.7969384</span> <span class="math display">(56 - 55.6535591)^2 = (0.3464409)^2 = 0.1200212</span> <span class="math display">(70 - 69.5114310)^2 = (0.4885690)^2 = 0.2387198</span> <span class="math display">(50 - 49.3571446)^2 = (0.6428554)^2 = 0.4132631</span> <span class="math display">(75 - 74.5200026)^2 = (0.4799974)^2 = 0.2303975</span></p>
+<p><span class="math display">SSE = 4.7024972</span></p>
 <p><strong>Step 5: Verify decomposition</strong></p>
-<p><span class="math display">\[SST = SSR + SSE\]</span> <span class="math display">\[416.8 = 413.0975028 + 4.7024972\]</span></p>
+<p><span class="math display">SST = SSR + SSE</span> <span class="math display">416.8 = 413.0975028 + 4.7024972</span></p>
 <p><strong>Step 6: Calculate R-squared</strong></p>
-<p><span class="math display">\[R^2 = \frac{SSR}{SST} = \frac{413.0975028}{416.8} = 0.9916\]</span></p>
+<p><span class="math display">R^2 = \frac{SSR}{SST} = \frac{413.0975028}{416.8} = 0.9916</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>r.squared  <span class="co"># Should match our calculation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4123,11 +4137,11 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <h3 data-number="16.19.7" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">16.19.7</span> Interpretation</h3>
 <p>The analysis shows:</p>
 <ol type="1">
-<li><p>A very strong positive correlation (<span class="math inline">\(r = 0.994\)</span>) between income and voter turnout</p></li>
-<li><p>The regression equation <span class="math display">\[\hat{Y} = -0.9085714 + 1.2571429X\]</span> indicates that:</p>
+<li><p>A very strong positive correlation (<span class="math inline">r = 0.994</span>) between income and voter turnout</p></li>
+<li><p>The regression equation <span class="math display">\hat{Y} = -0.9085714 + 1.2571429X</span> indicates that:</p>
 <ul>
 <li>For each €1,000 increase in income, turnout increases by about 1.26 percentage points</li>
-<li>The intercept (<span class="math inline">\(-0.9086\)</span>) has little practical meaning as income is never zero</li>
+<li>The intercept (<span class="math inline">-0.9086</span>) has little practical meaning as income is never zero</li>
 </ul></li>
 <li><p>The R-squared of 0.9916 indicates that 99.16% of the variance in turnout is explained by income</p></li>
 </ol>
@@ -4170,8 +4184,8 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </section>
 <section id="descriptive-statistics" class="level3" data-number="16.20.2">
 <h3 data-number="16.20.2" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">16.20.2</span> Descriptive Statistics</h3>
-<p><strong>Means:</strong> <span class="math display">\[\bar{X} = \frac{2.1 + 3.4 + 4.2 + 5.1 + 5.8 + 6.4 + 7.2 + 8.0}{8} = \frac{42.2}{8} = 5.275\]</span></p>
-<p><span class="math display">\[\bar{Y} = \frac{92 + 88 + 84 + 78 + 74 + 70 + 65 + 62}{8} = \frac{613}{8} = 76.625\]</span></p>
+<p><strong>Means:</strong> <span class="math display">\bar{X} = \frac{2.1 + 3.4 + 4.2 + 5.1 + 5.8 + 6.4 + 7.2 + 8.0}{8} = \frac{42.2}{8} = 5.275</span></p>
+<p><span class="math display">\bar{Y} = \frac{92 + 88 + 84 + 78 + 74 + 70 + 65 + 62}{8} = \frac{613}{8} = 76.625</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(anxiety)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4183,25 +4197,25 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <pre><code>[1] 76.625</code></pre>
 </div>
 </div>
-<p><strong>Variances:</strong> <span class="math display">\[s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}\]</span></p>
+<p><strong>Variances:</strong> <span class="math display">s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}</span></p>
 <p>Deviations for X:</p>
 <ul>
-<li><span class="math inline">\((2.1 - 5.275) = -3.175\)</span></li>
-<li><span class="math inline">\((3.4 - 5.275) = -1.875\)</span></li>
-<li><span class="math inline">\((4.2 - 5.275) = -1.075\)</span></li>
-<li><span class="math inline">\((5.1 - 5.275) = -0.175\)</span></li>
-<li><span class="math inline">\((5.8 - 5.275) = 0.525\)</span></li>
-<li><span class="math inline">\((6.4 - 5.275) = 1.125\)</span></li>
-<li><span class="math inline">\((7.2 - 5.275) = 1.925\)</span></li>
-<li><span class="math inline">\((8.0 - 5.275) = 2.725\)</span></li>
+<li><span class="math inline">(2.1 - 5.275) = -3.175</span></li>
+<li><span class="math inline">(3.4 - 5.275) = -1.875</span></li>
+<li><span class="math inline">(4.2 - 5.275) = -1.075</span></li>
+<li><span class="math inline">(5.1 - 5.275) = -0.175</span></li>
+<li><span class="math inline">(5.8 - 5.275) = 0.525</span></li>
+<li><span class="math inline">(6.4 - 5.275) = 1.125</span></li>
+<li><span class="math inline">(7.2 - 5.275) = 1.925</span></li>
+<li><span class="math inline">(8.0 - 5.275) = 2.725</span></li>
 </ul>
 <p>Squared deviations:</p>
-<p><span class="math display">\[10.08063 + 3.51563 + 1.15563 + 0.03063 + 0.27563 + 1.26563 + 3.70563 +
-7.42563 = 27.45500\]</span></p>
-<p><span class="math display">\[s^2_X = \frac{27.45500}{7} = 3.922143\]</span></p>
+<p><span class="math display">10.08063 + 3.51563 + 1.15563 + 0.03063 + 0.27563 + 1.26563 + 3.70563 +
+7.42563 = 27.45500</span></p>
+<p><span class="math display">s^2_X = \frac{27.45500}{7} = 3.922143</span></p>
 <p>Similarly for Y: Deviations:</p>
-<p><span class="math display">\[15.375, 11.375, 7.375, 1.375, -2.625, -6.625, -11.625, -14.625\]</span></p>
-<p><span class="math display">\[s^2_Y = \frac{236.875 + 129.391 + 54.391 + 1.891 + 6.891 + 43.891 + 135.141 + 213.891}{7} = \frac{822.362}{7} = 117.4803\]</span></p>
+<p><span class="math display">15.375, 11.375, 7.375, 1.375, -2.625, -6.625, -11.625, -14.625</span></p>
+<p><span class="math display">s^2_Y = \frac{236.875 + 129.391 + 54.391 + 1.891 + 6.891 + 43.891 + 135.141 + 213.891}{7} = \frac{822.362}{7} = 117.4803</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(anxiety)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4216,18 +4230,18 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </section>
 <section id="covariance-and-correlation-1" class="level3" data-number="16.20.3">
 <h3 data-number="16.20.3" class="anchored" data-anchor-id="covariance-and-correlation-1"><span class="header-section-number">16.20.3</span> Covariance and Correlation</h3>
-<p><strong>Covariance:</strong> <span class="math display">\[s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\]</span></p>
+<p><strong>Covariance:</strong> <span class="math display">s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}</span></p>
 <p>Products of deviations:</p>
-<p><span class="math display">\[(-3.175 × 15.375) = -48.815625\]</span></p>
-<p><span class="math display">\[(-1.875 × 11.375) = -21.328125\]</span></p>
-<p><span class="math display">\[(-1.075 × 7.375) = -7.928125\]</span></p>
-<p><span class="math display">\[(-0.175 × 1.375) = -0.240625\]</span></p>
-<p><span class="math display">\[(0.525 × -2.625) = -1.378125\]</span></p>
-<p><span class="math display">\[(1.125 × -6.625) = -7.453125\]</span></p>
-<p><span class="math display">\[(1.925 × -11.625) = -22.378125\]</span></p>
-<p><span class="math display">\[(2.725 × -14.625) = -39.853125\]</span></p>
-<p>Sum <span class="math inline">\(= -149.375\)</span></p>
-<p><span class="math display">\[s_{XY} = \frac{-149.375}{7} = -21.33929\]</span></p>
+<p><span class="math display">(-3.175 × 15.375) = -48.815625</span></p>
+<p><span class="math display">(-1.875 × 11.375) = -21.328125</span></p>
+<p><span class="math display">(-1.075 × 7.375) = -7.928125</span></p>
+<p><span class="math display">(-0.175 × 1.375) = -0.240625</span></p>
+<p><span class="math display">(0.525 × -2.625) = -1.378125</span></p>
+<p><span class="math display">(1.125 × -6.625) = -7.453125</span></p>
+<p><span class="math display">(1.925 × -11.625) = -22.378125</span></p>
+<p><span class="math display">(2.725 × -14.625) = -39.853125</span></p>
+<p>Sum <span class="math inline">= -149.375</span></p>
+<p><span class="math display">s_{XY} = \frac{-149.375}{7} = -21.33929</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(anxiety, performance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4235,7 +4249,7 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <pre><code>[1] -21.33929</code></pre>
 </div>
 </div>
-<p><strong>Correlation:</strong> <span class="math display">\[r_{XY} = \frac{s_{XY}}{\sqrt{s^2_X}\sqrt{s^2_Y}} = \frac{-21.33929}{\sqrt{3.922143}\sqrt{117.4803}} = -0.9932\]</span></p>
+<p><strong>Correlation:</strong> <span class="math display">r_{XY} = \frac{s_{XY}}{\sqrt{s^2_X}\sqrt{s^2_Y}} = \frac{-21.33929}{\sqrt{3.922143}\sqrt{117.4803}} = -0.9932</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb159"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(anxiety, performance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4245,12 +4259,12 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </section>
 <section id="ols-regression-haty-hatbeta_0-hatbeta_1x-1" class="level3" data-number="16.20.4">
-<h3 data-number="16.20.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-1"><span class="header-section-number">16.20.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
-<p><strong>Slope coefficient:</strong> <span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-21.33929}{3.922143} = -5.4407\]</span></p>
-<p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps:</p>
+<h3 data-number="16.20.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-1"><span class="header-section-number">16.20.4</span> OLS Regression <span class="math inline">(\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)</span></h3>
+<p><strong>Slope coefficient:</strong> <span class="math display">\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-21.33929}{3.922143} = -5.4407</span></p>
+<p><strong>Intercept:</strong> <span class="math display">\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}</span> Steps:</p>
 <ol type="1">
-<li><span class="math inline">\(-5.4407 × 5.275 = -28.6997\)</span></li>
-<li><span class="math inline">\(\hat{\beta_0} = 76.625 - (-28.6997) = 105.3247\)</span></li>
+<li><span class="math inline">-5.4407 × 5.275 = -28.6997</span></li>
+<li><span class="math inline">\hat{\beta_0} = 76.625 - (-28.6997) = 105.3247</span></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb161"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
@@ -4263,7 +4277,7 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </section>
 <section id="r-squared-calculation" class="level3" data-number="16.20.5">
 <h3 data-number="16.20.5" class="anchored" data-anchor-id="r-squared-calculation"><span class="header-section-number">16.20.5</span> 4. R-squared Calculation</h3>
-<p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>: <span class="math display">\[\hat{Y} = 105.3247 - 5.4407X\]</span></p>
+<p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">(\hat{Y})</span>: <span class="math display">\hat{Y} = 105.3247 - 5.4407X</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicted values</span></span>
 <span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="fl">105.3247</span> <span class="sc">-</span> <span class="fl">5.4407</span> <span class="sc">*</span> anxiety</span>
@@ -4286,10 +4300,10 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 </div>
 </div>
 <p><strong>Step 2: Sum of Squares</strong></p>
-<p><span class="math inline">\(SST = \sum(Y_i - \bar{Y})^2 = 822.362\)</span></p>
-<p><span class="math inline">\(SSR = \sum(\hat{Y}_i - \bar{Y})^2 = 816.3094\)</span></p>
-<p><span class="math inline">\(SSE = \sum(Y_i - \hat{Y}_i)^2 = 6.0526\)</span></p>
-<p><strong>R-squared:</strong> <span class="math display">\[R^2 = \frac{SSR}{SST} = \frac{816.3094}{822.362} = 0.9926\]</span></p>
+<p><span class="math inline">SST = \sum(Y_i - \bar{Y})^2 = 822.362</span></p>
+<p><span class="math inline">SSR = \sum(\hat{Y}_i - \bar{Y})^2 = 816.3094</span></p>
+<p><span class="math inline">SSE = \sum(Y_i - \hat{Y}_i)^2 = 6.0526</span></p>
+<p><strong>R-squared:</strong> <span class="math display">R^2 = \frac{SSR}{SST} = \frac{816.3094}{822.362} = 0.9926</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4346,11 +4360,11 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <section id="data-generating-process" class="level3" data-number="16.21.1">
 <h3 data-number="16.21.1" class="anchored" data-anchor-id="data-generating-process"><span class="header-section-number">16.21.1</span> Data Generating Process</h3>
 <p>Let’s set up a DGP where:</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\begin{aligned}
 &amp; Y_{\text{Gallagher}} = 12 - 0.8X_{\text{DM}} + \varepsilon \\
 &amp; \varepsilon \sim \mathcal{N}(0, 1) \\
 &amp; X_{\text{DM}} \in \{3, 5, 7, 10, 12, 15\}
-\end{aligned}\]</span></p>
+\end{aligned}</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb168"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DGP</span></span>
 <span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a>magnitude <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">15</span>)</span>
@@ -4401,8 +4415,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </section>
 <section id="descriptive-statistics-1" class="level3" data-number="16.21.2">
 <h3 data-number="16.21.2" class="anchored" data-anchor-id="descriptive-statistics-1"><span class="header-section-number">16.21.2</span> Descriptive Statistics</h3>
-<p><strong>Means:</strong> <span class="math display">\[\bar{X} = \frac{3 + 5 + 7 + 10 + 12 + 15}{6} = \frac{52}{6} = 8.6667\]</span></p>
-<p><span class="math display">\[\bar{Y} = \frac{9.0 + 7.8 + 9.2 + 4.1 + 2.5 + 1.7}{6} = \frac{34.3}{6} = 5.7167\]</span></p>
+<p><strong>Means:</strong> <span class="math display">\bar{X} = \frac{3 + 5 + 7 + 10 + 12 + 15}{6} = \frac{52}{6} = 8.6667</span></p>
+<p><span class="math display">\bar{Y} = \frac{9.0 + 7.8 + 9.2 + 4.1 + 2.5 + 1.7}{6} = \frac{34.3}{6} = 5.7167</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb172"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(magnitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4414,7 +4428,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <pre><code>[1] 5.716667</code></pre>
 </div>
 </div>
-<p><strong>Variances:</strong> <span class="math display">\[s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}\]</span></p>
+<p><strong>Variances:</strong> <span class="math display">s^2_X = \frac{\sum(X_i - \bar{X})^2}{n-1}</span></p>
 <p>Deviations for X:</p>
 <ul>
 <li>(3 - 8.6667) = -5.6667</li>
@@ -4425,12 +4439,12 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <li>(15 - 8.6667) = 6.3333</li>
 </ul>
 <p>Squared deviations:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 32.1115 + 13.4445 + 2.7779 + 1.7777 + 11.1109 + 40.1107 = 101.3332
-\]</span></p>
-<p><span class="math display">\[s^2_X = \frac{101.3332}{5} = 20.2666\]</span></p>
+</span></p>
+<p><span class="math display">s^2_X = \frac{101.3332}{5} = 20.2666</span></p>
 <p>For Y: Deviations: 3.2833, 2.0833, 3.4833, -1.6167, -3.2167, -4.0167</p>
-<p><span class="math display">\[s^2_Y = \frac{56.3483}{5} = 11.2697\]</span></p>
+<p><span class="math display">s^2_Y = \frac{56.3483}{5} = 11.2697</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb176"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb176-2"><a href="#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(magnitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4445,7 +4459,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </section>
 <section id="covariance-and-correlation-2" class="level3" data-number="16.21.3">
 <h3 data-number="16.21.3" class="anchored" data-anchor-id="covariance-and-correlation-2"><span class="header-section-number">16.21.3</span> Covariance and Correlation</h3>
-<p><strong>Covariance:</strong> <span class="math display">\[s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}\]</span></p>
+<p><strong>Covariance:</strong> <span class="math display">s_{XY} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{n-1}</span></p>
 <p>Products of deviations:</p>
 <ul>
 <li>(-5.6667 × 3.2833) = -18.6057</li>
@@ -4456,7 +4470,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <li>(6.3333 × -4.0167) = -25.4391</li>
 </ul>
 <p>Sum = -70.3670</p>
-<p><span class="math display">\[s_{XY} = \frac{-70.3670}{5} = -14.0734\]</span></p>
+<p><span class="math display">s_{XY} = \frac{-70.3670}{5} = -14.0734</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb180"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb180-1"><a href="#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb180-2"><a href="#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(magnitude, gallagher)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4464,7 +4478,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <pre><code>[1] -14.07333</code></pre>
 </div>
 </div>
-<p><strong>Correlation:</strong> <span class="math display">\[r_{XY} = \frac{s_{XY}}{\sqrt{s^2_X}\sqrt{s^2_Y}} = \frac{-14.0734}{\sqrt{20.2666}\sqrt{11.2697}} = -0.9279\]</span></p>
+<p><strong>Correlation:</strong> <span class="math display">r_{XY} = \frac{s_{XY}}{\sqrt{s^2_X}\sqrt{s^2_Y}} = \frac{-14.0734}{\sqrt{20.2666}\sqrt{11.2697}} = -0.9279</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb182"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb182-1"><a href="#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb182-2"><a href="#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(magnitude, gallagher)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4474,12 +4488,12 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </div>
 </section>
 <section id="ols-regression-haty-hatbeta_0-hatbeta_1x-2" class="level3" data-number="16.21.4">
-<h3 data-number="16.21.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-2"><span class="header-section-number">16.21.4</span> OLS Regression <span class="math inline">\((\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)\)</span></h3>
-<p><strong>Slope coefficient:</strong> <span class="math display">\[\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-14.0734}{20.2666} = -0.6944\]</span></p>
-<p><strong>Intercept:</strong> <span class="math display">\[\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}\]</span> Steps:</p>
+<h3 data-number="16.21.4" class="anchored" data-anchor-id="ols-regression-haty-hatbeta_0-hatbeta_1x-2"><span class="header-section-number">16.21.4</span> OLS Regression <span class="math inline">(\hat{Y} = \hat{\beta_0} + \hat{\beta_1}X)</span></h3>
+<p><strong>Slope coefficient:</strong> <span class="math display">\hat{\beta_1} = \frac{s_{XY}}{s^2_X} = \frac{-14.0734}{20.2666} = -0.6944</span></p>
+<p><strong>Intercept:</strong> <span class="math display">\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}</span> Steps:</p>
 <ol type="1">
-<li><span class="math inline">\(-0.6944 × 8.6667 = -6.0181\)</span></li>
-<li><span class="math inline">\(\hat{\beta_0} = 5.7167 - (-6.0181) = 11.7348\)</span></li>
+<li><span class="math inline">-0.6944 × 8.6667 = -6.0181</span></li>
+<li><span class="math inline">\hat{\beta_0} = 5.7167 - (-6.0181) = 11.7348</span></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb184"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb184-1"><a href="#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
@@ -4492,7 +4506,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 </section>
 <section id="r-squared-calculation-1" class="level3" data-number="16.21.5">
 <h3 data-number="16.21.5" class="anchored" data-anchor-id="r-squared-calculation-1"><span class="header-section-number">16.21.5</span> R-squared Calculation</h3>
-<p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">\((\hat{Y})\)</span>: <span class="math display">\[\hat{Y} = 11.7348 - 0.6944X\]</span></p>
+<p><strong>Step 1: Calculate predicted values</strong> <span class="math inline">(\hat{Y})</span>: <span class="math display">\hat{Y} = 11.7348 - 0.6944X</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb186"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb186-1"><a href="#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicted values</span></span>
 <span id="cb186-2"><a href="#cb186-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="ot">&lt;-</span> <span class="fl">11.7348</span> <span class="sc">-</span> <span class="fl">0.6944</span> <span class="sc">*</span> magnitude</span>
@@ -4512,8 +4526,8 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 6        15       1.7    1.3188</code></pre>
 </div>
 </div>
-<p><strong>Step 2: Sum of Squares</strong> <span class="math inline">\(SST = \sum(Y_i - \bar{Y})^2 = 56.3483\)</span> <span class="math inline">\(SSR = \sum(\hat{Y}_i - \bar{Y})^2 = 48.5271\)</span> <span class="math inline">\(SSE = \sum(Y_i - \hat{Y}_i)^2 = 7.8212\)</span></p>
-<p><strong>R-squared:</strong> <span class="math display">\[R^2 = \frac{SSR}{SST} = \frac{48.5271}{56.3483} = 0.8612\]</span></p>
+<p><strong>Step 2: Sum of Squares</strong> <span class="math inline">SST = \sum(Y_i - \bar{Y})^2 = 56.3483</span> <span class="math inline">SSR = \sum(\hat{Y}_i - \bar{Y})^2 = 48.5271</span> <span class="math inline">SSE = \sum(Y_i - \hat{Y}_i)^2 = 7.8212</span></p>
+<p><strong>R-squared:</strong> <span class="math display">R^2 = \frac{SSR}{SST} = \frac{48.5271}{56.3483} = 0.8612</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb188"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb188-1"><a href="#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verification</span></span>
 <span id="cb188-2"><a href="#cb188-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

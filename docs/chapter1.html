@@ -106,8 +106,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -707,9 +721,9 @@ Explanation of the DGP, Population, and Sample Diagram
 </ol>
 <p>Common population parameters include:</p>
 <ul>
-<li>Population mean (<span class="math inline">\(\mu\)</span>): The average value of a variable in the population.</li>
-<li>Population variance (<span class="math inline">\(\sigma^2\)</span>): A measure of variability in the population.</li>
-<li>Population proportion (<span class="math inline">\(p\)</span>): The proportion of individuals in the population with a certain characteristic.</li>
+<li>Population mean (<span class="math inline">\mu</span>): The average value of a variable in the population.</li>
+<li>Population variance (<span class="math inline">\sigma^2</span>): A measure of variability in the population.</li>
+<li>Population proportion (<span class="math inline">p</span>): The proportion of individuals in the population with a certain characteristic.</li>
 </ul>
 <p>An estimand is the target of estimation - the specific population parameter or function of parameters that we aim to estimate. It defines what we want to know about the population.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -724,8 +738,8 @@ Example: Height of University Students
 <div class="callout-body-container callout-body">
 <p>Consider the height of all university students in a country:</p>
 <ul>
-<li><span class="math inline">\(\mu\)</span> (estimand): The true average height of all university students (population mean)</li>
-<li><span class="math inline">\(\sigma^2\)</span> (estimand): The true variance of heights in the population</li>
+<li><span class="math inline">\mu</span> (estimand): The true average height of all university students (population mean)</li>
+<li><span class="math inline">\sigma^2</span> (estimand): The true variance of heights in the population</li>
 </ul>
 <p>These parameters are unknown estimands that we aim to estimate using sample data.</p>
 </div>
@@ -737,15 +751,15 @@ Example: Height of University Students
 <p>When a statistic is used for estimating an estimand (population parameter), it is called an estimator. Estimators are functions of sample data that provide approximate values for unknown population parameters.</p>
 <p>Examples of statistics/estimators:</p>
 <ul>
-<li>Sample mean: <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span> (estimates <span class="math inline">\(\mu\)</span>)</li>
-<li>Sample variance: <span class="math inline">\(s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2\)</span> (estimates <span class="math inline">\(\sigma^2\)</span>)</li>
-<li>Sample proportion: <span class="math inline">\(\hat{p} = \frac{x}{n}\)</span> (estimates <span class="math inline">\(p\)</span>)</li>
+<li>Sample mean: <span class="math inline">\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i</span> (estimates <span class="math inline">\mu</span>)</li>
+<li>Sample variance: <span class="math inline">s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i - \bar{x})^2</span> (estimates <span class="math inline">\sigma^2</span>)</li>
+<li>Sample proportion: <span class="math inline">\hat{p} = \frac{x}{n}</span> (estimates <span class="math inline">p</span>)</li>
 </ul>
 </section>
 <section id="estimates" class="level3" data-number="1.3.5">
 <h3 data-number="1.3.5" class="anchored" data-anchor-id="estimates"><span class="header-section-number">1.3.5</span> Estimates</h3>
 <p>An estimate is the specific value obtained by applying an estimator to a particular sample. It is a point value that approximates the true estimand (population parameter).</p>
-<p>Example: If we calculate a sample mean height of 68 inches from our data, then 68 inches is our estimate of the estimand <span class="math inline">\(\mu\)</span> (population mean height).</p>
+<p>Example: If we calculate a sample mean height of 68 inches from our data, then 68 inches is our estimate of the estimand <span class="math inline">\mu</span> (population mean height).</p>
 </section>
 <section id="statistical-models" class="level3" data-number="1.3.6">
 <h3 data-number="1.3.6" class="anchored" data-anchor-id="statistical-models"><span class="header-section-number">1.3.6</span> Statistical Models</h3>
@@ -763,12 +777,12 @@ Note
 </div>
 </div>
 <p>Statistical models represent relationships between variables and help in making predictions or inferences about estimands (population parameters).</p>
-<p>Example: A linear regression model <span class="math inline">\(y = \beta_0 + \beta_1x + \epsilon\)</span> describes the relationship between an independent variable <span class="math inline">\(x\)</span> and a dependent variable <span class="math inline">\(y\)</span>, where:</p>
+<p>Example: A linear regression model <span class="math inline">y = \beta_0 + \beta_1x + \epsilon</span> describes the relationship between an independent variable <span class="math inline">x</span> and a dependent variable <span class="math inline">y</span>, where:</p>
 <ul>
-<li><span class="math inline">\(y\)</span> is the dependent variable (e.g.&nbsp;quantity demanded)</li>
-<li><span class="math inline">\(x\)</span> is the independent variable (e.g.&nbsp;price, income level of the consumer)</li>
-<li><span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are parameters, estimands to be estimated</li>
-<li><span class="math inline">\(\epsilon\)</span> is the error term, representing unexplained variation</li>
+<li><span class="math inline">y</span> is the dependent variable (e.g.&nbsp;quantity demanded)</li>
+<li><span class="math inline">x</span> is the independent variable (e.g.&nbsp;price, income level of the consumer)</li>
+<li><span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span> are parameters, estimands to be estimated</li>
+<li><span class="math inline">\epsilon</span> is the error term, representing unexplained variation</li>
 </ul>
 <p>I’ll help you create a callout note about causal inference and counterfactuals for Quarto.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -915,17 +929,17 @@ Example: Studying Voting Behavior
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Population</strong>: All eligible voters in a country</li>
-<li><strong>Estimand</strong>: <span class="math inline">\(p\)</span> = true proportion of voters supporting a given candidate</li>
+<li><strong>Estimand</strong>: <span class="math inline">p</span> = true proportion of voters supporting a given candidate</li>
 <li><strong>Sample</strong>: 1000 randomly selected eligible voters</li>
-<li><strong>Estimator</strong>: <span class="math inline">\(\hat{p}\)</span> = proportion of voters in the sample supporting the candidate</li>
-<li><strong>Estimate</strong>: Specific value of <span class="math inline">\(\hat{p}\)</span> calculated from the sample (e.g., 0.52)</li>
+<li><strong>Estimator</strong>: <span class="math inline">\hat{p}</span> = proportion of voters in the sample supporting the candidate</li>
+<li><strong>Estimate</strong>: Specific value of <span class="math inline">\hat{p}</span> calculated from the sample (e.g., 0.52)</li>
 <li><strong>DGP</strong>: Complex interaction of factors influencing voting decisions, such as political beliefs, economic conditions, media exposure, and social networks.</li>
 </ul>
-<p>Understanding the DGP helps researchers interpret why the estimand <span class="math inline">\(p\)</span> has a certain value and how it might change over time. For example, a sudden change in the economy might affect voters’ preferences, thereby changing the value of <span class="math inline">\(p\)</span>.</p>
+<p>Understanding the DGP helps researchers interpret why the estimand <span class="math inline">p</span> has a certain value and how it might change over time. For example, a sudden change in the economy might affect voters’ preferences, thereby changing the value of <span class="math inline">p</span>.</p>
 <p><strong>Bias and efficiency in the context of the example</strong>:</p>
 <ul>
-<li>If <span class="math inline">\(\hat{p}\)</span> is an unbiased estimator, it means that when the survey is repeated multiple times with different samples, the average value of <span class="math inline">\(\hat{p}\)</span> will be close to the true value of <span class="math inline">\(p\)</span>.</li>
-<li>The efficiency of <span class="math inline">\(\hat{p}\)</span> determines how dispersed the results of individual surveys are around this average. The less dispersion, the more efficient the estimator.</li>
+<li>If <span class="math inline">\hat{p}</span> is an unbiased estimator, it means that when the survey is repeated multiple times with different samples, the average value of <span class="math inline">\hat{p}</span> will be close to the true value of <span class="math inline">p</span>.</li>
+<li>The efficiency of <span class="math inline">\hat{p}</span> determines how dispersed the results of individual surveys are around this average. The less dispersion, the more efficient the estimator.</li>
 </ul>
 </div>
 </div>
@@ -1289,24 +1303,24 @@ Remember: Correlation Does Not Imply Causation
 <h5 data-number="1.7.1.2.1" class="anchored" data-anchor-id="i.-classical-stochastic-models"><span class="header-section-number">1.7.1.2.1</span> i. Classical Stochastic Models</h5>
 <p>These models deal with randomness arising from incomplete information or complex interactions in classical systems. The underlying system is deterministic, but practical limitations in measurement or computation lead to the use of probabilistic descriptions.</p>
 <p><strong>Example:</strong> Regression models in statistics, where the randomness represents unexplained variation or measurement error:</p>
-<p><span class="math display">\[y = β_0 + β_1x + ε\]</span></p>
+<p><span class="math display">y = β_0 + β_1x + ε</span></p>
 <p>Where:</p>
 <ul>
-<li><span class="math inline">\(y\)</span> is the dependent variable (e.g.&nbsp;quantity demanded)</li>
-<li><span class="math inline">\(x\)</span> is the independent variable (e.g.&nbsp;price, income level of the consumer)</li>
-<li><span class="math inline">\(β_0\)</span> and <span class="math inline">\(β_1\)</span> are parameters</li>
-<li><span class="math inline">\(ε\)</span> is the error term, representing unexplained variation</li>
+<li><span class="math inline">y</span> is the dependent variable (e.g.&nbsp;quantity demanded)</li>
+<li><span class="math inline">x</span> is the independent variable (e.g.&nbsp;price, income level of the consumer)</li>
+<li><span class="math inline">β_0</span> and <span class="math inline">β_1</span> are parameters</li>
+<li><span class="math inline">ε</span> is the error term, representing unexplained variation</li>
 </ul>
 </section>
 <section id="ii.-quantum-stochastic-models" class="level5" data-number="1.7.1.2.2">
 <h5 data-number="1.7.1.2.2" class="anchored" data-anchor-id="ii.-quantum-stochastic-models"><span class="header-section-number">1.7.1.2.2</span> ii. Quantum Stochastic Models</h5>
 <p>These models deal with the fundamental, irreducible randomness inherent in quantum mechanical systems. This randomness is not due to lack of information, but is a core feature of quantum reality.</p>
 <p><strong>Example:</strong> The Standard Model in particle physics, which describes particle interactions using quantum field theory. For instance, the decay of a particle is inherently probabilistic:</p>
-<p><span class="math display">\[P(t) = e^{-t/τ}\]</span></p>
+<p><span class="math display">P(t) = e^{-t/τ}</span></p>
 <p>Where:</p>
 <ul>
-<li><span class="math inline">\(P(t)\)</span> is the probability that the particle has not decayed after time t</li>
-<li><span class="math inline">\(τ\)</span> is the mean lifetime of the particle</li>
+<li><span class="math inline">P(t)</span> is the probability that the particle has not decayed after time t</li>
+<li><span class="math inline">τ</span> is the mean lifetime of the particle</li>
 </ul>
 </section>
 </section>
@@ -1587,7 +1601,7 @@ Important
 <ul>
 <li><strong>Source</strong>: Incomplete information or complex interactions in an otherwise deterministic system.</li>
 <li><strong>Nature</strong>: Epistemic uncertainty (due to lack of knowledge).</li>
-<li><strong>Example</strong>: In a regression model, <span class="math inline">\(y = β_0 + β_1x + ε\)</span>, the error term ε represents unexplained variation.</li>
+<li><strong>Example</strong>: In a regression model, <span class="math inline">y = β_0 + β_1x + ε</span>, the error term ε represents unexplained variation.</li>
 </ul>
 </section>
 <section id="quantum-randomness" class="level4" data-number="1.11.1.2">
@@ -1799,14 +1813,14 @@ Important
 <section id="example-uniformly-accelerated-motion" class="level3" data-number="1.13.2">
 <h3 data-number="1.13.2" class="anchored" data-anchor-id="example-uniformly-accelerated-motion"><span class="header-section-number">1.13.2</span> Example: Uniformly Accelerated Motion</h3>
 <p>A classic example of a deterministic model is uniformly accelerated motion, described by the equation:</p>
-<p><span class="math display">\[x(t) = x_0 + v_0t + \frac{1}{2}at^2\]</span></p>
+<p><span class="math display">x(t) = x_0 + v_0t + \frac{1}{2}at^2</span></p>
 <p>Where:</p>
 <ul>
-<li><span class="math inline">\(x(t)\)</span> is the position at time <span class="math inline">\(t\)</span></li>
-<li><span class="math inline">\(x_0\)</span> is the initial position</li>
-<li><span class="math inline">\(v_0\)</span> is the initial velocity</li>
-<li><span class="math inline">\(a\)</span> is the acceleration</li>
-<li><span class="math inline">\(t\)</span> is time</li>
+<li><span class="math inline">x(t)</span> is the position at time <span class="math inline">t</span></li>
+<li><span class="math inline">x_0</span> is the initial position</li>
+<li><span class="math inline">v_0</span> is the initial velocity</li>
+<li><span class="math inline">a</span> is the acceleration</li>
+<li><span class="math inline">t</span> is time</li>
 </ul>
 <p>Let’s simulate this in R:</p>
 <div class="cell">
@@ -1839,13 +1853,13 @@ Important
 <section id="example-ordinary-least-squares-ols-regression" class="level3" data-number="1.13.4">
 <h3 data-number="1.13.4" class="anchored" data-anchor-id="example-ordinary-least-squares-ols-regression"><span class="header-section-number">1.13.4</span> Example: Ordinary Least Squares (OLS) Regression</h3>
 <p>OLS is a fundamental stochastic model in social sciences. It’s represented as:</p>
-<p><span class="math display">\[Y = \beta_0 + \beta_1X + \epsilon\]</span></p>
+<p><span class="math display">Y = \beta_0 + \beta_1X + \epsilon</span></p>
 <p>Where:</p>
 <ul>
-<li><span class="math inline">\(Y\)</span> is the dependent variable</li>
-<li><span class="math inline">\(X\)</span> is the independent variable</li>
-<li><span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are parameters</li>
-<li><span class="math inline">\(\epsilon\)</span> is the error term (stochastic component)</li>
+<li><span class="math inline">Y</span> is the dependent variable</li>
+<li><span class="math inline">X</span> is the independent variable</li>
+<li><span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span> are parameters</li>
+<li><span class="math inline">\epsilon</span> is the error term (stochastic component)</li>
 </ul>
 <p>Let’s demonstrate OLS in R:</p>
 <div class="cell">
@@ -1903,8 +1917,8 @@ F-statistic:  3097 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Large Language Models (LLMs) like GPT-3 are complex stochastic models used in natural language processing. While we can’t implement a full LLM in this tutorial, we can discuss its principles.</p>
 <p>LLMs are based on the transformer architecture and use self-attention mechanisms. They’re trained on vast amounts of text data and learn to predict the next token in a sequence.</p>
 <p>The core of an LLM can be thought of as a conditional probability distribution:</p>
-<p><span class="math display">\[P(x_t | x_{&lt;t}, \theta)\]</span></p>
-<p>Where: - <span class="math inline">\(x_t\)</span> is the current token - <span class="math inline">\(x_{&lt;t}\)</span> represents all previous tokens - <span class="math inline">\(\theta\)</span> are the model parameters</p>
+<p><span class="math display">P(x_t | x_{&lt;t}, \theta)</span></p>
+<p>Where: - <span class="math inline">x_t</span> is the current token - <span class="math inline">x_{&lt;t}</span> represents all previous tokens - <span class="math inline">\theta</span> are the model parameters</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1918,8 +1932,8 @@ Note
 <p>Tokens in Large Language Models (LLMs) are the basic units of text that the model processes. They can be thought of as pieces of words or punctuation marks. Here are key points about tokens:</p>
 <p>Definition: Tokens are the smallest units of text that an LLM processes. They can be whole words, parts of words, or even individual characters or punctuation marks. Tokenization: The process of breaking text into tokens is called tokenization. LLMs use specific algorithms to perform this task. Examples:</p>
 <p>The word “cat” might be a single token. A longer word like “understanding” might be broken into multiple tokens, e.g., “under” and “standing”. Punctuation marks like “.” or “?” are often individual tokens. Common prefixes or suffixes might be their own tokens.</p>
-<p>Vocabulary: LLMs have a fixed vocabulary of tokens they recognize. This vocabulary typically ranges from tens of thousands to hundreds of thousands of tokens. Significance: The way text is tokenized can affect how the model understands and generates language. It’s particularly important for handling different languages, rare words, or specialized vocabulary. Context: In the equation for LLMs: <span class="math display">\[P(x_t | x_{&lt;t}, \theta)\]</span> Where:</p>
-<p><span class="math inline">\(x_t\)</span> represents the current token <span class="math inline">\(x_{&lt;t}\)</span> represents all previous tokens in the sequence <span class="math inline">\(\theta\)</span> represents the model parameters</p>
+<p>Vocabulary: LLMs have a fixed vocabulary of tokens they recognize. This vocabulary typically ranges from tens of thousands to hundreds of thousands of tokens. Significance: The way text is tokenized can affect how the model understands and generates language. It’s particularly important for handling different languages, rare words, or specialized vocabulary. Context: In the equation for LLMs: <span class="math display">P(x_t | x_{&lt;t}, \theta)</span> Where:</p>
+<p><span class="math inline">x_t</span> represents the current token <span class="math inline">x_{&lt;t}</span> represents all previous tokens in the sequence <span class="math inline">\theta</span> represents the model parameters</p>
 </div>
 </div>
 <p>Unlike deterministic models, LLMs produce different outputs even for the same input due to their stochastic nature.</p>

@@ -103,8 +103,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -435,12 +449,12 @@ window.Quarto = {
 <ul>
 <li>The general form of a sigma notation is: | Ogólna forma notacji sigma to:</li>
 </ul>
-<p><span class="math display">\[\sum_{i=a}^{b} f(i)\]</span></p>
+<p><span class="math display">\sum_{i=a}^{b} f(i)</span></p>
 <ul>
-<li><strong>Index of Summation: | Indeks sumowania:</strong> <span class="math inline">\(i\)</span></li>
-<li><strong>Lower Limit: | Dolna granica:</strong> <span class="math inline">\(a\)</span></li>
-<li><strong>Upper Limit: | Górna granica:</strong> <span class="math inline">\(b\)</span></li>
-<li><strong>Function: | Funkcja:</strong> <span class="math inline">\(f(i)\)</span></li>
+<li><strong>Index of Summation: | Indeks sumowania:</strong> <span class="math inline">i</span></li>
+<li><strong>Lower Limit: | Dolna granica:</strong> <span class="math inline">a</span></li>
+<li><strong>Upper Limit: | Górna granica:</strong> <span class="math inline">b</span></li>
+<li><strong>Function: | Funkcja:</strong> <span class="math inline">f(i)</span></li>
 </ul>
 </section>
 <section id="simple-example-prosty-przykład" class="level3" data-number="11.1.2">
@@ -448,7 +462,7 @@ window.Quarto = {
 <ul>
 <li>Consider you want to add the first five positive integers: | Załóżmy, że chcesz dodać pierwsze pięć dodatnich liczb całkowitych:</li>
 </ul>
-<p><span class="math display">\[\sum_{i=1}^{5} i = 1 + 2 + 3 + 4 + 5 = 15\]</span></p>
+<p><span class="math display">\sum_{i=1}^{5} i = 1 + 2 + 3 + 4 + 5 = 15</span></p>
 <ul>
 <li>Adds the first five positive integers. | Dodaje pierwsze pięć dodatnich liczb całkowitych.</li>
 </ul>
@@ -458,7 +472,7 @@ window.Quarto = {
 <ul>
 <li>Suppose you want to sum the squares of the first four positive integers: | Załóżmy, że chcesz zsumować kwadraty pierwszych czterech dodatnich liczb całkowitych:</li>
 </ul>
-<p><span class="math display">\[\sum_{i=1}^{4} i^2 = 1^2 + 2^2 + 3^2 + 4^2 = 30\]</span></p>
+<p><span class="math display">\sum_{i=1}^{4} i^2 = 1^2 + 2^2 + 3^2 + 4^2 = 30</span></p>
 <ul>
 <li>Sum of the squares of the first four positive integers. | Suma kwadratów pierwszych czterech dodatnich liczb całkowitych.</li>
 </ul>
@@ -468,15 +482,15 @@ window.Quarto = {
 <ul>
 <li><p><strong>Calculating the Mean: | Obliczanie średniej:</strong></p>
 <ul>
-<li>Data Points: | Punkty danych: <span class="math inline">\(x_1, x_2, ..., x_n\)</span></li>
-<li>Mean <span class="math inline">\(\bar{x}\)</span>: | Średnia <span class="math inline">\(\bar{x}\)</span>:</li>
+<li>Data Points: | Punkty danych: <span class="math inline">x_1, x_2, ..., x_n</span></li>
+<li>Mean <span class="math inline">\bar{x}</span>: | Średnia <span class="math inline">\bar{x}</span>:</li>
 </ul></li>
 </ul>
-<p><span class="math display">\[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i\]</span></p>
+<p><span class="math display">\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i</span></p>
 <ul>
-<li>Example: | Przykład: <span class="math inline">\(x_1, x_2, x_3, x_4\)</span> are 4, 8, 15, 16 | <span class="math inline">\(x_1, x_2, x_3, x_4\)</span> to 4, 8, 15, 16</li>
+<li>Example: | Przykład: <span class="math inline">x_1, x_2, x_3, x_4</span> are 4, 8, 15, 16 | <span class="math inline">x_1, x_2, x_3, x_4</span> to 4, 8, 15, 16</li>
 </ul>
-<p><span class="math display">\[\bar{x} = \frac{43}{4} = 10.75\]</span></p>
+<p><span class="math display">\bar{x} = \frac{43}{4} = 10.75</span></p>
 </section>
 <section id="benefits-of-using-sigma-notation-korzyści-z-używania-notacji-sigma" class="level3" data-number="11.1.5">
 <h3 data-number="11.1.5" class="anchored" data-anchor-id="benefits-of-using-sigma-notation-korzyści-z-używania-notacji-sigma"><span class="header-section-number">11.1.5</span> Benefits of Using Sigma Notation | Korzyści z używania notacji Sigma</h3>
@@ -495,15 +509,15 @@ Summation (Σ) and Product (Π) Operators
 <div class="callout-body-container callout-body">
 <section id="sigma-σ-operator" class="level4" data-number="11.1.5.1">
 <h4 data-number="11.1.5.1" class="anchored" data-anchor-id="sigma-σ-operator"><span class="header-section-number">11.1.5.1</span> Sigma (Σ) Operator</h4>
-<p><span class="math inline">\(\sum\)</span> is a <strong>summation operator</strong> that instructs us to add terms:</p>
-<p><span class="math inline">\(\sum_{i=1}^{n} x_i = x_1 + x_2 + ... + x_n\)</span></p>
-<p>where: - <span class="math inline">\(i\)</span> is the index variable - The lower value under Σ (here <span class="math inline">\(i=1\)</span>) is the starting point - The upper value (here <span class="math inline">\(n\)</span>) is the ending point</p>
+<p><span class="math inline">\sum</span> is a <strong>summation operator</strong> that instructs us to add terms:</p>
+<p><span class="math inline">\sum_{i=1}^{n} x_i = x_1 + x_2 + ... + x_n</span></p>
+<p>where: - <span class="math inline">i</span> is the index variable - The lower value under Σ (here <span class="math inline">i=1</span>) is the starting point - The upper value (here <span class="math inline">n</span>) is the ending point</p>
 </section>
 <section id="pi-π-operator" class="level4" data-number="11.1.5.2">
 <h4 data-number="11.1.5.2" class="anchored" data-anchor-id="pi-π-operator"><span class="header-section-number">11.1.5.2</span> Pi (Π) Operator</h4>
-<p><span class="math inline">\(\prod\)</span> is a <strong>product operator</strong> that instructs us to multiply terms:</p>
-<p><span class="math inline">\(\prod_{i=1}^{n} x_i = x_1 \times x_2 \times ... \times x_n\)</span></p>
-<p>where: - <span class="math inline">\(i\)</span> is the index variable - The lower value under Π (here <span class="math inline">\(i=1\)</span>) is the starting point - The upper value (here <span class="math inline">\(n\)</span>) is the ending point</p>
+<p><span class="math inline">\prod</span> is a <strong>product operator</strong> that instructs us to multiply terms:</p>
+<p><span class="math inline">\prod_{i=1}^{n} x_i = x_1 \times x_2 \times ... \times x_n</span></p>
+<p>where: - <span class="math inline">i</span> is the index variable - The lower value under Π (here <span class="math inline">i=1</span>) is the starting point - The upper value (here <span class="math inline">n</span>) is the ending point</p>
 </section>
 </div>
 </div>
@@ -517,7 +531,7 @@ Example of Σ
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(\sum_{i=1}^{4} i = 1 + 2 + 3 + 4 = 10\)</span></p>
+<p><span class="math inline">\sum_{i=1}^{4} i = 1 + 2 + 3 + 4 = 10</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -530,7 +544,7 @@ Example of Π
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(\prod_{i=1}^{4} i = 1 \times 2 \times 3 \times 4 = 24\)</span></p>
+<p><span class="math inline">\prod_{i=1}^{4} i = 1 \times 2 \times 3 \times 4 = 24</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -702,6 +716,25 @@ Important
 <p>Let’s use the <code>palmerpenguins</code> dataset to explore real-world data distributions.</p>
 <section id="histogram-and-density-plot" class="level3" data-number="11.3.1">
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="histogram-and-density-plot"><span class="header-section-number">11.3.1</span> Histogram and Density Plot</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding Histograms and Density
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>⭐ A histogram is a special graph for numerical data where: * Data is grouped into ranges (called “bins”) * Bars touch each other (unlike bar charts!) because the data is continuous * Each bar’s height shows how many values fall into that range</p>
+<p>Think of density as showing how <em>common</em> or <em>concentrated</em> certain values are in your data:</p>
+<ul>
+<li>A higher point on a density curve (or taller bar in a histogram) means those values appear more frequently in your data</li>
+<li>A lower point means those values are less common</li>
+</ul>
+<p>Just like a crowded area has more people per space (higher density), a taller part of the graph shows values that appear more often in your dataset!</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm)) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), <span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
@@ -1077,117 +1110,117 @@ Understanding Different Types of Data Sets and Their Formats
 <tbody>
 <tr class="odd">
 <td>Size</td>
-<td><span class="math inline">\(N\)</span></td>
-<td><span class="math inline">\(n\)</span></td>
+<td><span class="math inline">N</span></td>
+<td><span class="math inline">n</span></td>
 <td>-</td>
 <td>Total count of observations</td>
 </tr>
 <tr class="even">
 <td>Mean</td>
-<td><span class="math inline">\(\mu\)</span></td>
-<td><span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(m\)</span></td>
-<td><span class="math inline">\(M\)</span>, <span class="math inline">\(E(X)\)</span></td>
-<td><span class="math inline">\(E(X)\)</span> used in probability theory</td>
+<td><span class="math inline">\mu</span></td>
+<td><span class="math inline">\bar{x}</span>, <span class="math inline">m</span></td>
+<td><span class="math inline">M</span>, <span class="math inline">E(X)</span></td>
+<td><span class="math inline">E(X)</span> used in probability theory</td>
 </tr>
 <tr class="odd">
 <td>Variance</td>
-<td><span class="math inline">\(\sigma^2\)</span></td>
-<td><span class="math inline">\(s^2\)</span></td>
-<td><span class="math inline">\(\text{Var}(X)\)</span>, <span class="math inline">\(V(X)\)</span></td>
+<td><span class="math inline">\sigma^2</span></td>
+<td><span class="math inline">s^2</span></td>
+<td><span class="math inline">\text{Var}(X)</span>, <span class="math inline">V(X)</span></td>
 <td>Squared deviations from mean</td>
 </tr>
 <tr class="even">
 <td>Standard Deviation</td>
-<td><span class="math inline">\(\sigma\)</span></td>
-<td><span class="math inline">\(s\)</span></td>
-<td><span class="math inline">\(\text{SD}\)</span>, <span class="math inline">\(\text{std}\)</span></td>
+<td><span class="math inline">\sigma</span></td>
+<td><span class="math inline">s</span></td>
+<td><span class="math inline">\text{SD}</span>, <span class="math inline">\text{std}</span></td>
 <td>Square root of variance</td>
 </tr>
 <tr class="odd">
 <td>Proportion</td>
-<td><span class="math inline">\(\pi\)</span>, <span class="math inline">\(P\)</span></td>
-<td><span class="math inline">\(\hat{p}\)</span></td>
-<td><span class="math inline">\(\text{prop}\)</span></td>
+<td><span class="math inline">\pi</span>, <span class="math inline">P</span></td>
+<td><span class="math inline">\hat{p}</span></td>
+<td><span class="math inline">\text{prop}</span></td>
 <td>Relative frequencies</td>
 </tr>
 <tr class="even">
 <td>Correlation</td>
-<td><span class="math inline">\(\rho\)</span></td>
-<td><span class="math inline">\(r\)</span></td>
-<td><span class="math inline">\(\text{corr}(x,y)\)</span></td>
+<td><span class="math inline">\rho</span></td>
+<td><span class="math inline">r</span></td>
+<td><span class="math inline">\text{corr}(x,y)</span></td>
 <td>Ranges from -1 to +1</td>
 </tr>
 <tr class="odd">
 <td>Standard Error</td>
-<td><span class="math inline">\(\sigma_{\bar{x}}\)</span></td>
-<td><span class="math inline">\(s_{\bar{x}}\)</span></td>
-<td><span class="math inline">\(\text{SE}\)</span></td>
+<td><span class="math inline">\sigma_{\bar{x}}</span></td>
+<td><span class="math inline">s_{\bar{x}}</span></td>
+<td><span class="math inline">\text{SE}</span></td>
 <td>Standard error of mean</td>
 </tr>
 <tr class="even">
 <td>Sum</td>
-<td><span class="math inline">\(\sum\)</span></td>
-<td><span class="math inline">\(\sum\)</span></td>
-<td><span class="math inline">\(\sum_{i=1}^n\)</span></td>
+<td><span class="math inline">\sum</span></td>
+<td><span class="math inline">\sum</span></td>
+<td><span class="math inline">\sum_{i=1}^n</span></td>
 <td>With indexing</td>
 </tr>
 <tr class="odd">
 <td>Individual Value</td>
-<td><span class="math inline">\(X_i\)</span></td>
-<td><span class="math inline">\(x_i\)</span></td>
+<td><span class="math inline">X_i</span></td>
+<td><span class="math inline">x_i</span></td>
 <td>-</td>
-<td><span class="math inline">\(i\)</span>th observation</td>
+<td><span class="math inline">i</span>th observation</td>
 </tr>
 <tr class="even">
 <td>Covariance</td>
-<td><span class="math inline">\(\sigma_{xy}\)</span></td>
-<td><span class="math inline">\(s_{xy}\)</span></td>
-<td><span class="math inline">\(\text{Cov}(X,Y)\)</span></td>
+<td><span class="math inline">\sigma_{xy}</span></td>
+<td><span class="math inline">s_{xy}</span></td>
+<td><span class="math inline">\text{Cov}(X,Y)</span></td>
 <td>Joint variation</td>
 </tr>
 <tr class="odd">
 <td>Median</td>
-<td><span class="math inline">\(\eta\)</span></td>
-<td><span class="math inline">\(\text{Med}\)</span></td>
-<td><span class="math inline">\(M\)</span></td>
+<td><span class="math inline">\eta</span></td>
+<td><span class="math inline">\text{Med}</span></td>
+<td><span class="math inline">M</span></td>
 <td>Central value</td>
 </tr>
 <tr class="even">
 <td>Range</td>
-<td><span class="math inline">\(R\)</span></td>
-<td><span class="math inline">\(r\)</span></td>
-<td><span class="math inline">\(\text{max}(X) - \text{min}(X)\)</span></td>
+<td><span class="math inline">R</span></td>
+<td><span class="math inline">r</span></td>
+<td><span class="math inline">\text{max}(X) - \text{min}(X)</span></td>
 <td>Spread measure</td>
 </tr>
 <tr class="odd">
 <td>Mode</td>
-<td><span class="math inline">\(\text{Mo}\)</span></td>
-<td><span class="math inline">\(\text{mo}\)</span></td>
-<td><span class="math inline">\(\text{mod}\)</span></td>
+<td><span class="math inline">\text{Mo}</span></td>
+<td><span class="math inline">\text{mo}</span></td>
+<td><span class="math inline">\text{mod}</span></td>
 <td>Most frequent value</td>
 </tr>
 <tr class="even">
 <td>Skewness</td>
-<td><span class="math inline">\(\gamma_1\)</span></td>
-<td><span class="math inline">\(g_1\)</span></td>
-<td><span class="math inline">\(\text{SK}\)</span></td>
+<td><span class="math inline">\gamma_1</span></td>
+<td><span class="math inline">g_1</span></td>
+<td><span class="math inline">\text{SK}</span></td>
 <td>Distribution asymmetry</td>
 </tr>
 <tr class="odd">
 <td>Kurtosis</td>
-<td><span class="math inline">\(\gamma_2\)</span></td>
-<td><span class="math inline">\(g_2\)</span></td>
-<td><span class="math inline">\(\text{KU}\)</span></td>
+<td><span class="math inline">\gamma_2</span></td>
+<td><span class="math inline">g_2</span></td>
+<td><span class="math inline">\text{KU}</span></td>
 <td>Distribution peakedness</td>
 </tr>
 </tbody>
 </table>
 <p>Additional useful notations:</p>
 <ul>
-<li>Sample moments: <span class="math inline">\(m_k = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^k\)</span></li>
-<li>Population moments: <span class="math inline">\(\mu_k = E[(X - \mu)^k]\)</span></li>
-<li>Population standard error: <span class="math inline">\(\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}\)</span></li>
-<li>Sample standard error: <span class="math inline">\(s_{\bar{x}} = \frac{s}{\sqrt{n}}\)</span></li>
+<li>Sample moments: <span class="math inline">m_k = \frac{1}{n}\sum_{i=1}^n (x_i - \bar{x})^k</span></li>
+<li>Population moments: <span class="math inline">\mu_k = E[(X - \mu)^k]</span></li>
+<li>Population standard error: <span class="math inline">\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}</span></li>
+<li>Sample standard error: <span class="math inline">s_{\bar{x}} = \frac{s}{\sqrt{n}}</span></li>
 </ul>
 </section>
 <section id="measures-of-central-tendency" class="level2" data-number="11.6">
@@ -1196,9 +1229,9 @@ Understanding Different Types of Data Sets and Their Formats
 <section id="arithmetic-mean" class="level3" data-number="11.6.1">
 <h3 data-number="11.6.1" class="anchored" data-anchor-id="arithmetic-mean"><span class="header-section-number">11.6.1</span> Arithmetic Mean</h3>
 <p>The arithmetic mean is the sum of all values divided by the number of values.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i</span></p>
 <p><strong>Important Property:</strong> The mean is a balancing point in the data. The sum of deviations from the mean is always zero:</p>
-<p><span class="math inline">\(\sum_{i=1}^n (x_i - \bar{x}) = 0\)</span></p>
+<p><span class="math inline">\sum_{i=1}^n (x_i - \bar{x}) = 0</span></p>
 <p>This property makes the mean useful in many statistical calculations.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1210,15 +1243,15 @@ Understanding Mean as a Balance Point 🎯
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let’s consider a dataset <span class="math inline">\(X = \{1, 2, 6, 7, 9\}\)</span> on a number line, imagining it as a seesaw:</p>
+<p>Let’s consider a dataset <span class="math inline">X = \{1, 2, 6, 7, 9\}</span> on a number line, imagining it as a seesaw:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="stat_imgs/IMG_4336.jpg" class="img-fluid figure-img"></p>
 <figcaption>https://www.gastonsanchez.com/matrix4sl/mean-as-a-balancing-point.html</figcaption>
 </figure>
 </div>
-<p>The mean (<span class="math inline">\(\mu\)</span>) acts as the perfect <strong>balance point</strong> of this seesaw. For our data:</p>
-<p><span class="math inline">\(\mu = \frac{1 + 2 + 6 + 7 + 9}{5} = 5\)</span></p>
+<p>The mean (<span class="math inline">\mu</span>) acts as the perfect <strong>balance point</strong> of this seesaw. For our data:</p>
+<p><span class="math inline">\mu = \frac{1 + 2 + 6 + 7 + 9}{5} = 5</span></p>
 <section id="what-happens-at-different-support-points" class="level3" data-number="11.6.2">
 <h3 data-number="11.6.2" class="anchored" data-anchor-id="what-happens-at-different-support-points"><span class="header-section-number">11.6.2</span> What happens at different support points? 🤔</h3>
 <ol type="1">
@@ -1226,27 +1259,27 @@ Understanding Mean as a Balance Point 🎯
 <ul>
 <li>Left side: Values (1, 2) are below</li>
 <li>Right side: Values (7, 9) are above</li>
-<li><span class="math inline">\(\sum\)</span> distances from left = (6-1) + (6-2) = 9</li>
-<li><span class="math inline">\(\sum\)</span> distances from right = (7-6) + (9-6) = 4</li>
+<li><span class="math inline">\sum</span> distances from left = (6-1) + (6-2) = 9</li>
+<li><span class="math inline">\sum</span> distances from right = (7-6) + (9-6) = 4</li>
 <li>The seesaw tilts left! ⬅️ because 9 &gt; 4</li>
 </ul></li>
 <li><strong>Support point at 4</strong> (too low):
 <ul>
 <li>Left side: Values (1, 2) are below</li>
 <li>Right side: Values (6, 7, 9) are above</li>
-<li><span class="math inline">\(\sum\)</span> distances from left = (4-1) + (4-2) = 5</li>
-<li><span class="math inline">\(\sum\)</span> distances from right = (6-4) + (7-4) + (9-4) = 10</li>
+<li><span class="math inline">\sum</span> distances from left = (4-1) + (4-2) = 5</li>
+<li><span class="math inline">\sum</span> distances from right = (6-4) + (7-4) + (9-4) = 10</li>
 <li>The seesaw tilts right! ➡️ because 5 &lt; 10</li>
 </ul></li>
 <li><strong>Support point at mean (5)</strong> (perfect balance):
 <ul>
-<li><span class="math inline">\(\sum\)</span> distances below = <span class="math inline">\(\sum\)</span> distances above</li>
-<li><span class="math inline">\(((5-1) + (5-2)) = ((6-5) + (7-5) + (9-5))\)</span></li>
-<li><span class="math inline">\(7 = 7\)</span> ✨ Perfect balance!</li>
+<li><span class="math inline">\sum</span> distances below = <span class="math inline">\sum</span> distances above</li>
+<li><span class="math inline">((5-1) + (5-2)) = ((6-5) + (7-5) + (9-5))</span></li>
+<li><span class="math inline">7 = 7</span> ✨ Perfect balance!</li>
 </ul></li>
 </ol>
 <p>This shows why the mean is the unique balance point, where:</p>
-<p><span class="math inline">\(\sum_{i=1}^n (x_i - \mu) = 0\)</span></p>
+<p><span class="math inline">\sum_{i=1}^n (x_i - \mu) = 0</span></p>
 <p>The seesaw will always tilt unless the support point is placed exactly at the mean! 🎪</p>
 </section>
 </div>
@@ -1410,19 +1443,19 @@ Warning
 <li><p>First sort the data in ascending order</p></li>
 <li><p>If n is odd:</p>
 <ul>
-<li>Median position = <span class="math inline">\(\frac{n + 1}{2}\)</span></li>
+<li>Median position = <span class="math inline">\frac{n + 1}{2}</span></li>
 </ul></li>
 <li><p>If n is even:</p>
 <ul>
-<li>First median position = <span class="math inline">\(\frac{n}{2}\)</span></li>
-<li>Second median position = <span class="math inline">\(\frac{n}{2} + 1\)</span></li>
-<li>Median = <span class="math inline">\(\frac{\text{value at }\frac{n}{2} + \text{value at }(\frac{n}{2}+1)}{2}\)</span></li>
+<li>First median position = <span class="math inline">\frac{n}{2}</span></li>
+<li>Second median position = <span class="math inline">\frac{n}{2} + 1</span></li>
+<li>Median = <span class="math inline">\frac{\text{value at }\frac{n}{2} + \text{value at }(\frac{n}{2}+1)}{2}</span></li>
 </ul></li>
 </ol>
 <p>For example:</p>
 <ul>
-<li>Odd n=7: position = <span class="math inline">\(\frac{7+1}{2} = 4\)</span>th value</li>
-<li>Even n=8: positions = <span class="math inline">\(\frac{8}{2} = 4\)</span>th and <span class="math inline">\(4+1 = 5\)</span>th value</li>
+<li>Odd n=7: position = <span class="math inline">\frac{7+1}{2} = 4</span>th value</li>
+<li>Even n=8: positions = <span class="math inline">\frac{8}{2} = 4</span>th and <span class="math inline">4+1 = 5</span>th value</li>
 </ul>
 </div>
 </div>
@@ -1488,7 +1521,7 @@ Warning
 <section id="weighted-mean-with-not-normalized-weights" class="level4" data-number="11.6.5.1">
 <h4 data-number="11.6.5.1" class="anchored" data-anchor-id="weighted-mean-with-not-normalized-weights"><span class="header-section-number">11.6.5.1</span> Weighted Mean with Not Normalized Weights</h4>
 <p>This is the standard form of the weighted mean, where weights can be any positive numbers representing the importance of each data point.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">\bar{x}_w = \frac{\sum_{i=1}^n w_i x_i}{\sum_{i=1}^n w_i}</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Let’s calculate the weighted mean for the dataset: 2, 4, 5, 7 with weights 1, 2, 3, 1</p>
 <table class="caption-top table">
@@ -1535,7 +1568,7 @@ Warning
 <section id="weighted-mean-with-normalized-weights-fractions" class="level4" data-number="11.6.5.2">
 <h4 data-number="11.6.5.2" class="anchored" data-anchor-id="weighted-mean-with-normalized-weights-fractions"><span class="header-section-number">11.6.5.2</span> Weighted Mean with Normalized Weights (Fractions)</h4>
 <p>In this case, the weights are fractions that sum to 1, representing the proportion of importance for each data point.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(\bar{x}_w = \sum_{i=1}^n w_i x_i\)</span>, where <span class="math inline">\(\sum_{i=1}^n w_i = 1\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">\bar{x}_w = \sum_{i=1}^n w_i x_i</span>, where <span class="math inline">\sum_{i=1}^n w_i = 1</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Let’s calculate the weighted mean for the dataset: 2, 4, 5, 7 with normalized weights 0.1, 0.3, 0.4, 0.2</p>
 <table class="caption-top table">
@@ -1669,7 +1702,7 @@ Understanding Different Levels of Variability
 <section id="range" class="level3" data-number="11.7.1">
 <h3 data-number="11.7.1" class="anchored" data-anchor-id="range"><span class="header-section-number">11.7.1</span> Range</h3>
 <p>The range is the difference between the maximum and minimum values.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(R = x_{max} - x_{min}\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">R = x_{max} - x_{min}</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
@@ -1724,7 +1757,7 @@ Understanding Different Levels of Variability
 <section id="interquartile-range-iqr" class="level3" data-number="11.7.2">
 <h3 data-number="11.7.2" class="anchored" data-anchor-id="interquartile-range-iqr"><span class="header-section-number">11.7.2</span> Interquartile Range (IQR)</h3>
 <p>The IQR is the difference between the 75th and 25th percentiles.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(IQR = Q_3 - Q_1\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">IQR = Q_3 - Q_1</span></p>
 <p>To find quartiles manually:</p>
 <ol type="1">
 <li>For odd number of values:
@@ -1809,7 +1842,7 @@ Understanding Different Levels of Variability
 <section id="variance" class="level3" data-number="11.7.3">
 <h3 data-number="11.7.3" class="anchored" data-anchor-id="variance"><span class="header-section-number">11.7.3</span> Variance</h3>
 <p>Variance measures the average squared deviation from the mean.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1821,8 +1854,8 @@ Variance: Understanding Average Squared Deviations
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>What is Variance?</strong> Variance measures how “spread out” numbers are from their mean - it’s the average of squared deviations from the mean.</p>
-<p>Formula: <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></p>
-<p><strong>Simple Example:</strong> Consider numbers: 2, 4, 6, 8, 10 Mean (<span class="math inline">\(\bar{x}\)</span>) = 6</p>
+<p>Formula: <span class="math inline">s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}</span></p>
+<p><strong>Simple Example:</strong> Consider numbers: 2, 4, 6, 8, 10 Mean (<span class="math inline">\bar{x}</span>) = 6</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -1878,7 +1911,7 @@ Variance: Understanding Average Squared Deviations
 </tr>
 </tbody>
 </table>
-<p>Variance = <span class="math inline">\(\frac{16 + 4 + 0 + 4 + 16}{4} = 10\)</span></p>
+<p>Variance = <span class="math inline">\frac{16 + 4 + 0 + 4 + 16}{4} = 10</span></p>
 <p><strong>Key Points:</strong></p>
 <ol type="1">
 <li>Mean acts as a reference line (blue dashed line)</li>
@@ -1907,42 +1940,42 @@ Variance: Understanding Average Squared Deviations
 <tr class="odd">
 <td>1</td>
 <td>Calculate the mean</td>
-<td><span class="math inline">\(\bar{x} = 5.14\)</span></td>
+<td><span class="math inline">\bar{x} = 5.14</span></td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>Subtract the mean from each value and square the result</td>
-<td><span class="math inline">\((2 - 5.14)^2 = 9.86\)</span></td>
+<td><span class="math inline">(2 - 5.14)^2 = 9.86</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td><span class="math inline">\((4 - 5.14)^2 = 1.30\)</span></td>
+<td><span class="math inline">(4 - 5.14)^2 = 1.30</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td></td>
-<td><span class="math inline">\((4 - 5.14)^2 = 1.30\)</span></td>
+<td><span class="math inline">(4 - 5.14)^2 = 1.30</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td><span class="math inline">\((5 - 5.14)^2 = 0.02\)</span></td>
+<td><span class="math inline">(5 - 5.14)^2 = 0.02</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td></td>
-<td><span class="math inline">\((5 - 5.14)^2 = 0.02\)</span></td>
+<td><span class="math inline">(5 - 5.14)^2 = 0.02</span></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td></td>
-<td><span class="math inline">\((7 - 5.14)^2 = 3.46\)</span></td>
+<td><span class="math inline">(7 - 5.14)^2 = 3.46</span></td>
 </tr>
 <tr class="even">
 <td></td>
 <td></td>
-<td><span class="math inline">\((9 - 5.14)^2 = 14.90\)</span></td>
+<td><span class="math inline">(9 - 5.14)^2 = 14.90</span></td>
 </tr>
 <tr class="odd">
 <td>3</td>
@@ -1984,7 +2017,7 @@ Bessel’s Correction: Why We Divide by (n-1) And Not by n
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>The Key Insight:</strong></p>
-<p>When we calculate deviations from the mean, they must sum to zero. This is a mathematical fact: <span class="math inline">\(\sum(x_i - \bar{x}) = 0\)</span></p>
+<p>When we calculate deviations from the mean, they must sum to zero. This is a mathematical fact: <span class="math inline">\sum(x_i - \bar{x}) = 0</span></p>
 <p><strong>Think of it Like This:</strong></p>
 <p>If you have 5 numbers and their mean:</p>
 <ul>
@@ -2003,7 +2036,7 @@ Bessel’s Correction: Why We Divide by (n-1) And Not by n
 </ul>
 <p><strong>This is Why:</strong></p>
 <ul>
-<li>When calculating variance: <span class="math inline">\(s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></li>
+<li>When calculating variance: <span class="math inline">s^2 = \frac{\sum(x_i - \bar{x})^2}{n-1}</span></li>
 <li>We divide by (n-1) not n</li>
 <li>Because only (n-1) deviations are truly independent</li>
 <li>The last one is determined by the others</li>
@@ -2035,7 +2068,7 @@ Bessel’s Correction: Why We Divide by (n-1) And Not by n
 <section id="standard-deviation" class="level3" data-number="11.7.4">
 <h3 data-number="11.7.4" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">11.7.4</span> Standard Deviation</h3>
 <p>The standard deviation is the square root of the variance and measures the average dispersion of the data about their arithmetic mean. In contrast to the variance, it has the advantage of being expressed in the same units as the original measurements, making its interpretation more intuitive.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(s = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">s = \sqrt{\frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n - 1}}</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
@@ -2055,12 +2088,12 @@ Bessel’s Correction: Why We Divide by (n-1) And Not by n
 <tr class="odd">
 <td>1</td>
 <td>Calculate the variance</td>
-<td><span class="math inline">\(s^2 = 5.14\)</span> (from previous calculation)</td>
+<td><span class="math inline">s^2 = 5.14</span> (from previous calculation)</td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>Take the square root</td>
-<td><span class="math inline">\(s = \sqrt{5.14} = 2.27\)</span></td>
+<td><span class="math inline">s = \sqrt{5.14} = 2.27</span></td>
 </tr>
 </tbody>
 </table>
@@ -2085,7 +2118,7 @@ Bessel’s Correction: Why We Divide by (n-1) And Not by n
 <section id="coefficient-of-variation" class="level3" data-number="11.7.5">
 <h3 data-number="11.7.5" class="anchored" data-anchor-id="coefficient-of-variation"><span class="header-section-number">11.7.5</span> Coefficient of Variation (*)</h3>
 <p>The coefficient of variation is the standard deviation divided by the mean, often expressed as a percentage.</p>
-<p><strong>Formula:</strong> <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
+<p><strong>Formula:</strong> <span class="math inline">CV = \frac{s}{\bar{x}} \times 100\%</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
 <p>Using the dataset: 2, 4, 4, 5, 5, 7, 9</p>
 <table class="caption-top table">
@@ -2105,17 +2138,17 @@ Bessel’s Correction: Why We Divide by (n-1) And Not by n
 <tr class="odd">
 <td>1</td>
 <td>Calculate the mean</td>
-<td><span class="math inline">\(\bar{x} = 5.14\)</span></td>
+<td><span class="math inline">\bar{x} = 5.14</span></td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td>Calculate the standard deviation</td>
-<td><span class="math inline">\(s = 2.27\)</span></td>
+<td><span class="math inline">s = 2.27</span></td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td>Divide s by the mean and multiply by 100</td>
-<td><span class="math inline">\((2.27 / 5.14) * 100 = 44.16\%\)</span></td>
+<td><span class="math inline">(2.27 / 5.14) * 100 = 44.16\%</span></td>
 </tr>
 </tbody>
 </table>
@@ -2146,7 +2179,7 @@ Limitations of Coefficient of Variation (CV)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The coefficient of variation, calculated as <span class="math inline">\((σ/μ) × 100\%\)</span>, has two important limitations:</p>
+<p>The coefficient of variation, calculated as <span class="math inline">(σ/μ) × 100\%</span>, has two important limitations:</p>
 <section id="not-meaningful-for-data-with-both-positive-and-negative-values" class="level4" data-number="11.7.5.1">
 <h4 data-number="11.7.5.1" class="anchored" data-anchor-id="not-meaningful-for-data-with-both-positive-and-negative-values"><span class="header-section-number">11.7.5.1</span> Not meaningful for data with both positive and negative values</h4>
 <ul>
@@ -2163,7 +2196,7 @@ Limitations of Coefficient of Variation (CV)
 <section id="misleading-when-mean-is-close-to-zero" class="level4" data-number="11.7.5.2">
 <h4 data-number="11.7.5.2" class="anchored" data-anchor-id="misleading-when-mean-is-close-to-zero"><span class="header-section-number">11.7.5.2</span> Misleading when mean is close to zero</h4>
 <ul>
-<li>Since CV = <span class="math inline">\((σ/μ) × 100\%\)</span>, as <span class="math inline">\(μ\)</span> approaches zero:
+<li>Since CV = <span class="math inline">(σ/μ) × 100\%</span>, as <span class="math inline">μ</span> approaches zero:
 <ul>
 <li>The denominator becomes very small</li>
 <li>Results in extremely large CV values</li>
@@ -2325,35 +2358,35 @@ Manual Construction of Tukey Boxplot
 <div class="callout-body-container callout-body">
 <p><strong>Step 1: Calculate Key Components</strong></p>
 <ol type="1">
-<li>Find quartiles: <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_2\)</span> (median), <span class="math inline">\(Q_3\)</span></li>
-<li>Calculate Interquartile Range: <span class="math inline">\(IQR = Q_3 - Q_1\)</span></li>
+<li>Find quartiles: <span class="math inline">Q_1</span>, <span class="math inline">Q_2</span> (median), <span class="math inline">Q_3</span></li>
+<li>Calculate Interquartile Range: <span class="math inline">IQR = Q_3 - Q_1</span></li>
 </ol>
 <p><strong>Step 2: Determine Whisker Boundaries</strong></p>
 <ul>
-<li>Lower fence: <span class="math inline">\(Q_1 - 1.5 \times IQR\)</span></li>
-<li>Upper fence: <span class="math inline">\(Q_3 + 1.5 \times IQR\)</span></li>
+<li>Lower fence: <span class="math inline">Q_1 - 1.5 \times IQR</span></li>
+<li>Upper fence: <span class="math inline">Q_3 + 1.5 \times IQR</span></li>
 </ul>
 <p><strong>Step 3: Identify Outliers</strong> Data points are outliers if they are:</p>
 <ul>
-<li>Below lower fence: <span class="math inline">\(x &lt; Q_1 - 1.5 \times IQR\)</span></li>
-<li>Above upper fence: <span class="math inline">\(x &gt; Q_3 + 1.5 \times IQR\)</span></li>
+<li>Below lower fence: <span class="math inline">x &lt; Q_1 - 1.5 \times IQR</span></li>
+<li>Above upper fence: <span class="math inline">x &gt; Q_3 + 1.5 \times IQR</span></li>
 </ul>
 <p><strong>Example:</strong> Given data: 2, 4, 6, 8, 9, 10, 11, 12, 14, 16, 50</p>
 <ol type="1">
 <li><p>Find quartiles:</p>
 <ul>
-<li><span class="math inline">\(Q_1 = 6\)</span></li>
-<li><span class="math inline">\(Q_2 = 10\)</span></li>
-<li><span class="math inline">\(Q_3 = 14\)</span></li>
+<li><span class="math inline">Q_1 = 6</span></li>
+<li><span class="math inline">Q_2 = 10</span></li>
+<li><span class="math inline">Q_3 = 14</span></li>
 </ul></li>
-<li><p>Calculate <span class="math inline">\(IQR\)</span>:</p>
+<li><p>Calculate <span class="math inline">IQR</span>:</p>
 <ul>
-<li><span class="math inline">\(IQR = 14 - 6 = 8\)</span></li>
+<li><span class="math inline">IQR = 14 - 6 = 8</span></li>
 </ul></li>
 <li><p>Calculate fences:</p>
 <ul>
-<li>Lower: <span class="math inline">\(6 - (1.5 \times 8) = -6\)</span></li>
-<li>Upper: <span class="math inline">\(14 + (1.5 \times 8) = 26\)</span></li>
+<li>Lower: <span class="math inline">6 - (1.5 \times 8) = -6</span></li>
+<li>Upper: <span class="math inline">14 + (1.5 \times 8) = 26</span></li>
 </ul></li>
 <li><p>Identify outliers:</p>
 <ul>
@@ -2362,8 +2395,8 @@ Manual Construction of Tukey Boxplot
 </ol>
 <p><strong>Graphical Elements:</strong></p>
 <ol type="1">
-<li>Box: Draw from <span class="math inline">\(Q_1\)</span> to <span class="math inline">\(Q_3\)</span></li>
-<li>Line inside box: Draw at <span class="math inline">\(Q_2\)</span></li>
+<li>Box: Draw from <span class="math inline">Q_1</span> to <span class="math inline">Q_3</span></li>
+<li>Line inside box: Draw at <span class="math inline">Q_2</span></li>
 <li>Whiskers: Extend to most extreme non-outlier points</li>
 <li>Points: Plot outliers individually beyond whiskers</li>
 </ol>
@@ -2385,10 +2418,10 @@ Manual Construction of Tukey Boxplot
 </section>
 <section id="calculating-percentiles" class="level4" data-number="11.8.2.2">
 <h4 data-number="11.8.2.2" class="anchored" data-anchor-id="calculating-percentiles"><span class="header-section-number">11.8.2.2</span> Calculating Percentiles</h4>
-<p>The Formula: <span class="math inline">\(P_k = \frac{k(n+1)}{100}\)</span></p>
+<p>The Formula: <span class="math inline">P_k = \frac{k(n+1)}{100}</span></p>
 <p>Where:</p>
 <ul>
-<li><span class="math inline">\(P_k\)</span> is the position for the kth percentile</li>
+<li><span class="math inline">P_k</span> is the position for the kth percentile</li>
 <li>k is the percentile we want (1-100)</li>
 <li>n is the number of observations</li>
 </ul>
@@ -2396,7 +2429,7 @@ Manual Construction of Tukey Boxplot
 <p>Step 1: Calculate position</p>
 <ul>
 <li>n = 10 scores</li>
-<li>For 60th percentile: <span class="math inline">\(P_{60} = \frac{60(10+1)}{100} = 6.6\)</span></li>
+<li>For 60th percentile: <span class="math inline">P_{60} = \frac{60(10+1)}{100} = 6.6</span></li>
 </ul>
 <p>Step 2: Find surrounding values</p>
 <ul>
@@ -2405,7 +2438,7 @@ Manual Construction of Tukey Boxplot
 </ul>
 <p>Step 3: Interpolate (important: percentiles use linear interpolation)</p>
 <ul>
-<li>We need to go 0.6 of the way between 85 and 88 <span class="math inline">\(P_{60} = 85 + 0.6(88-85)\)</span> <span class="math inline">\(P_{60} = 85 + 0.6(3)\)</span> <span class="math inline">\(P_{60} = 85 + 1.8 = 86.8\)</span></li>
+<li>We need to go 0.6 of the way between 85 and 88 <span class="math inline">P_{60} = 85 + 0.6(88-85)</span> <span class="math inline">P_{60} = 85 + 0.6(3)</span> <span class="math inline">P_{60} = 85 + 1.8 = 86.8</span></li>
 </ul>
 <p>What this means: 60% of students scored 86.8 or below.</p>
 </section>
@@ -2415,7 +2448,7 @@ Manual Construction of Tukey Boxplot
 <section id="what-is-a-percentile-rank" class="level4" data-number="11.8.3.1">
 <h4 data-number="11.8.3.1" class="anchored" data-anchor-id="what-is-a-percentile-rank"><span class="header-section-number">11.8.3.1</span> What is a Percentile Rank?</h4>
 <p>While percentiles tell us the value at a certain position, percentile rank tells us what percentage of values fall below a specific score. Think of it as answering the question “What percentage of the class did I score higher than?”</p>
-<p><span class="math inline">\(PR = \frac{\text{number of values below } + 0.5 \times \text{number of equal values}}{\text{total number of values}} \times 100\)</span></p>
+<p><span class="math inline">PR = \frac{\text{number of values below } + 0.5 \times \text{number of equal values}}{\text{total number of values}} \times 100</span></p>
 <p><strong>Example 4: Finding a Percentile Rank</strong> Consider these exam scores:</p>
 <p>65, 70, 70, 75, 75, 75, 80, 85, 85, 90</p>
 <p>Let’s find the PR for a score of 75.</p>
@@ -2426,7 +2459,7 @@ Manual Construction of Tukey Boxplot
 <li>Total values: 10</li>
 </ul>
 <p>Step 2: Apply the formula</p>
-<p><span class="math inline">\(PR = \frac{3 + 0.5(3)}{10} \times 100\)</span> <span class="math inline">\(PR = \frac{3 + 1.5}{10} \times 100\)</span> <span class="math inline">\(PR = \frac{4.5}{10} \times 100 = 45\%\)</span></p>
+<p><span class="math inline">PR = \frac{3 + 0.5(3)}{10} \times 100</span> <span class="math inline">PR = \frac{3 + 1.5}{10} \times 100</span> <span class="math inline">PR = \frac{4.5}{10} \times 100 = 45\%</span></p>
 <p>Interpretation: A score of 75 is higher than 45% of the class scores.</p>
 </section>
 </section>
@@ -2453,13 +2486,13 @@ Manual Construction of Tukey Boxplot
 </section>
 <section id="mathematical-expression" class="level4" data-number="11.9.1.2">
 <h4 data-number="11.9.1.2" class="anchored" data-anchor-id="mathematical-expression"><span class="header-section-number">11.9.1.2</span> Mathematical Expression</h4>
-<p><span class="math inline">\(SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3\)</span></p>
+<p><span class="math inline">SK = \frac{n}{(n-1)(n-2)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^3</span></p>
 <p>where:</p>
 <ul>
-<li><span class="math inline">\(n\)</span> is the sample size</li>
-<li><span class="math inline">\(x_i\)</span> is the i-th observation</li>
-<li><span class="math inline">\(\bar{x}\)</span> is the sample mean</li>
-<li><span class="math inline">\(s\)</span> is the sample standard deviation</li>
+<li><span class="math inline">n</span> is the sample size</li>
+<li><span class="math inline">x_i</span> is the i-th observation</li>
+<li><span class="math inline">\bar{x}</span> is the sample mean</li>
+<li><span class="math inline">s</span> is the sample standard deviation</li>
 </ul>
 </section>
 <section id="example-voter-turnout-analysis" class="level4" data-number="11.9.1.3">
@@ -2535,7 +2568,7 @@ Attaching package: 'moments'</code></pre>
 <p>Kurtosis measures the “tailedness” of a distribution, indicating the presence of extreme values relative to a normal distribution.</p>
 <section id="mathematical-expression-1" class="level4" data-number="11.9.3.1">
 <h4 data-number="11.9.3.1" class="anchored" data-anchor-id="mathematical-expression-1"><span class="header-section-number">11.9.3.1</span> Mathematical Expression</h4>
-<p><span class="math inline">\(K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}\)</span></p>
+<p><span class="math inline">K = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum_{i=1}^n (\frac{x_i - \bar{x}}{s})^4 - \frac{3(n-1)^2}{(n-2)(n-3)}</span></p>
 </section>
 <section id="example-legislative-voting-analysis" class="level4" data-number="11.9.3.2">
 <h4 data-number="11.9.3.2" class="anchored" data-anchor-id="example-legislative-voting-analysis"><span class="header-section-number">11.9.3.2</span> Example: Legislative Voting Analysis</h4>
@@ -2728,15 +2761,15 @@ Attaching package: 'moments'</code></pre>
 <section id="mean" class="level4" data-number="11.10.2.1">
 <h4 data-number="11.10.2.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">11.10.2.1</span> Mean</h4>
 <p>The mean is the average of all values in a dataset.</p>
-<p>Formula: <span class="math inline">\(\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}\)</span></p>
+<p>Formula: <span class="math inline">\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}</span></p>
 <section id="manual-calculation-for-company-x" class="level5" data-number="11.10.2.1.1">
 <h5 data-number="11.10.2.1.1" class="anchored" data-anchor-id="manual-calculation-for-company-x"><span class="header-section-number">11.10.2.1.1</span> Manual Calculation for Company X</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Value (<span class="math inline">\(x_i\)</span>)</th>
-<th>Frequency (<span class="math inline">\(f_i\)</span>)</th>
-<th><span class="math inline">\(x_i \cdot f_i\)</span></th>
+<th>Value (<span class="math inline">x_i</span>)</th>
+<th>Frequency (<span class="math inline">f_i</span>)</th>
+<th><span class="math inline">x_i \cdot f_i</span></th>
 </tr>
 </thead>
 <tbody>
@@ -2777,16 +2810,16 @@ Attaching package: 'moments'</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(\bar{x} = \frac{119}{20} = 5.95\)</span></p>
+<p><span class="math inline">\bar{x} = \frac{119}{20} = 5.95</span></p>
 </section>
 <section id="manual-calculation-for-company-y" class="level5" data-number="11.10.2.1.2">
 <h5 data-number="11.10.2.1.2" class="anchored" data-anchor-id="manual-calculation-for-company-y"><span class="header-section-number">11.10.2.1.2</span> Manual Calculation for Company Y</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Value (<span class="math inline">\(x_i\)</span>)</th>
-<th>Frequency (<span class="math inline">\(f_i\)</span>)</th>
-<th><span class="math inline">\(x_i \cdot f_i\)</span></th>
+<th>Value (<span class="math inline">x_i</span>)</th>
+<th>Frequency (<span class="math inline">f_i</span>)</th>
+<th><span class="math inline">x_i \cdot f_i</span></th>
 </tr>
 </thead>
 <tbody>
@@ -2827,7 +2860,7 @@ Attaching package: 'moments'</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(\bar{y} = \frac{100}{20} = 5\)</span></p>
+<p><span class="math inline">\bar{y} = \frac{100}{20} = 5</span></p>
 </section>
 <section id="r-verification" class="level5" data-number="11.10.2.1.3">
 <h5 data-number="11.10.2.1.3" class="anchored" data-anchor-id="r-verification"><span class="header-section-number">11.10.2.1.3</span> R Verification</h5>
@@ -2853,13 +2886,13 @@ Attaching package: 'moments'</code></pre>
 <h5 data-number="11.10.2.2.1" class="anchored" data-anchor-id="manual-calculation-for-company-x-1"><span class="header-section-number">11.10.2.2.1</span> Manual Calculation for Company X</h5>
 <p>Ordered data: 2,2,2,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,20,35</p>
 <p>n = 20 (even), so we take the average of the 10th and 11th values:</p>
-<p>Median = <span class="math inline">\(\frac{4 + 4}{2} = 4\)</span></p>
+<p>Median = <span class="math inline">\frac{4 + 4}{2} = 4</span></p>
 </section>
 <section id="manual-calculation-for-company-y-1" class="level5" data-number="11.10.2.2.2">
 <h5 data-number="11.10.2.2.2" class="anchored" data-anchor-id="manual-calculation-for-company-y-1"><span class="header-section-number">11.10.2.2.2</span> Manual Calculation for Company Y</h5>
 <p>Ordered data: 3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,7,7,8</p>
 <p>n = 20 (even), so we take the average of the 10th and 11th values:</p>
-<p>Median = <span class="math inline">\(\frac{5 + 5}{2} = 5\)</span></p>
+<p>Median = <span class="math inline">\frac{5 + 5}{2} = 5</span></p>
 </section>
 <section id="r-verification-1" class="level5" data-number="11.10.2.2.3">
 <h5 data-number="11.10.2.2.3" class="anchored" data-anchor-id="r-verification-1"><span class="header-section-number">11.10.2.2.3</span> R Verification</h5>
@@ -2902,7 +2935,7 @@ Attaching package: 'moments'</code></pre>
 <section id="variance-1" class="level4" data-number="11.10.3.1">
 <h4 data-number="11.10.3.1" class="anchored" data-anchor-id="variance-1"><span class="header-section-number">11.10.3.1</span> Variance</h4>
 <p>The variance measures the average squared deviation from the mean.</p>
-<p>Formula: <span class="math inline">\(s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)</span></p>
+<p>Formula: <span class="math inline">s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}</span></p>
 <section id="manual-calculation-for-company-x-2" class="level5" data-number="11.10.3.1.1">
 <h5 data-number="11.10.3.1.1" class="anchored" data-anchor-id="manual-calculation-for-company-x-2"><span class="header-section-number">11.10.3.1.1</span> Manual Calculation for Company X</h5>
 <table class="caption-top table">
@@ -2915,11 +2948,11 @@ Attaching package: 'moments'</code></pre>
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x_i\)</span></th>
-<th><span class="math inline">\(f_i\)</span></th>
-<th><span class="math inline">\(x_i - \bar{x}\)</span></th>
-<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
-<th><span class="math inline">\(f_i(x_i - \bar{x})^2\)</span></th>
+<th><span class="math inline">x_i</span></th>
+<th><span class="math inline">f_i</span></th>
+<th><span class="math inline">x_i - \bar{x}</span></th>
+<th><span class="math inline">(x_i - \bar{x})^2</span></th>
+<th><span class="math inline">f_i(x_i - \bar{x})^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -2974,7 +3007,7 @@ Attaching package: 'moments'</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(s^2 = \frac{1162.95}{19} = 61.21\)</span></p>
+<p><span class="math inline">s^2 = \frac{1162.95}{19} = 61.21</span></p>
 </section>
 <section id="manual-calculation-for-company-y-2" class="level5" data-number="11.10.3.1.2">
 <h5 data-number="11.10.3.1.2" class="anchored" data-anchor-id="manual-calculation-for-company-y-2"><span class="header-section-number">11.10.3.1.2</span> Manual Calculation for Company Y</h5>
@@ -2988,11 +3021,11 @@ Attaching package: 'moments'</code></pre>
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="math inline">\(y_i\)</span></th>
-<th><span class="math inline">\(f_i\)</span></th>
-<th><span class="math inline">\(y_i - \bar{y}\)</span></th>
-<th><span class="math inline">\((y_i - \bar{y})^2\)</span></th>
-<th><span class="math inline">\(f_i(y_i - \bar{y})^2\)</span></th>
+<th><span class="math inline">y_i</span></th>
+<th><span class="math inline">f_i</span></th>
+<th><span class="math inline">y_i - \bar{y}</span></th>
+<th><span class="math inline">(y_i - \bar{y})^2</span></th>
+<th><span class="math inline">f_i(y_i - \bar{y})^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3047,7 +3080,7 @@ Attaching package: 'moments'</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(s^2 = \frac{34}{19} = 1.79\)</span></p>
+<p><span class="math inline">s^2 = \frac{34}{19} = 1.79</span></p>
 </section>
 <section id="r-verification-2" class="level5" data-number="11.10.3.1.3">
 <h5 data-number="11.10.3.1.3" class="anchored" data-anchor-id="r-verification-2"><span class="header-section-number">11.10.3.1.3</span> R Verification</h5>
@@ -3066,10 +3099,10 @@ Attaching package: 'moments'</code></pre>
 <section id="standard-deviation-1" class="level4" data-number="11.10.3.2">
 <h4 data-number="11.10.3.2" class="anchored" data-anchor-id="standard-deviation-1"><span class="header-section-number">11.10.3.2</span> Standard Deviation</h4>
 <p>The standard deviation is the square root of the variance.</p>
-<p>Formula: <span class="math inline">\(s = \sqrt{s^2}\)</span></p>
+<p>Formula: <span class="math inline">s = \sqrt{s^2}</span></p>
 <ul>
-<li>For Company X: <span class="math inline">\(s = \sqrt{61.21} = 7.82\)</span></li>
-<li>For Company Y: <span class="math inline">\(s = \sqrt{1.79} = 1.34\)</span></li>
+<li>For Company X: <span class="math inline">s = \sqrt{61.21} = 7.82</span></li>
+<li>For Company Y: <span class="math inline">s = \sqrt{1.79} = 1.34</span></li>
 </ul>
 <section id="r-verification-3" class="level5" data-number="11.10.3.2.1">
 <h5 data-number="11.10.3.2.1" class="anchored" data-anchor-id="r-verification-3"><span class="header-section-number">11.10.3.2.1</span> R Verification</h5>
@@ -3296,7 +3329,7 @@ Attaching package: 'moments'</code></pre>
 <h3 data-number="11.11.2" class="anchored" data-anchor-id="measures-of-central-tendency-2"><span class="header-section-number">11.11.2</span> Measures of Central Tendency</h3>
 <section id="arithmetic-mean-1" class="level4" data-number="11.11.2.1">
 <h4 data-number="11.11.2.1" class="anchored" data-anchor-id="arithmetic-mean-1"><span class="header-section-number">11.11.2.1</span> Arithmetic Mean</h4>
-<p>Formula: <span class="math inline">\(\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}\)</span></p>
+<p>Formula: <span class="math inline">\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}</span></p>
 <section id="calculations-for-country-x" class="level5" data-number="11.11.2.1.1">
 <h5 data-number="11.11.2.1.1" class="anchored" data-anchor-id="calculations-for-country-x"><span class="header-section-number">11.11.2.1.1</span> Calculations for Country X</h5>
 <table class="caption-top table">
@@ -3353,7 +3386,7 @@ Attaching package: 'moments'</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(\bar{x} = \frac{100}{10} = 10\)</span></p>
+<p><span class="math inline">\bar{x} = \frac{100}{10} = 10</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>mean_x <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"R"</span> <span class="ot">=</span> mean_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3419,7 +3452,7 @@ Attaching package: 'moments'</code></pre>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(\bar{y} = \frac{105}{10} = 10.5\)</span></p>
+<p><span class="math inline">\bar{y} = \frac{105}{10} = 10.5</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>mean_y <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">10.5</span>, <span class="st">"R"</span> <span class="ot">=</span> mean_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3437,7 +3470,7 @@ Attaching package: 'moments'</code></pre>
 <h5 data-number="11.11.2.2.1" class="anchored" data-anchor-id="calculations-for-country-x-1"><span class="header-section-number">11.11.2.2.1</span> Calculations for Country X</h5>
 <p>Ordered data: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19</p>
 <p>For n = 10 (even number of observations): Middle positions: 5 and 6 Middle values: 9 and 11</p>
-<p>Median = <span class="math inline">\(\frac{9 + 11}{2} = 10\)</span></p>
+<p>Median = <span class="math inline">\frac{9 + 11}{2} = 10</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>median_x <span class="ot">&lt;-</span> <span class="fu">median</span>(x)</span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="dv">10</span>, <span class="st">"R"</span> <span class="ot">=</span> median_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3451,7 +3484,7 @@ Attaching package: 'moments'</code></pre>
 <h5 data-number="11.11.2.2.2" class="anchored" data-anchor-id="calculations-for-country-y-1"><span class="header-section-number">11.11.2.2.2</span> Calculations for Country Y</h5>
 <p>Ordered data: 8, 9, 9, 10, 10, 11, 11, 12, 12, 13</p>
 <p>For n = 10 (even number of observations): Middle positions: 5 and 6 Middle values: 10 and 11</p>
-<p>Median = <span class="math inline">\(\frac{10 + 11}{2} = 10.5\)</span></p>
+<p>Median = <span class="math inline">\frac{10 + 11}{2} = 10.5</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>median_y <span class="ot">&lt;-</span> <span class="fu">median</span>(y)</span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">10.5</span>, <span class="st">"R"</span> <span class="ot">=</span> median_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3581,15 +3614,15 @@ y
 <section id="variance-2" class="level4" data-number="11.11.2.4">
 <h4 data-number="11.11.2.4" class="anchored" data-anchor-id="variance-2"><span class="header-section-number">11.11.2.4</span> Variance</h4>
 <p>Variance measures the average squared deviation from the mean.</p>
-<p>Formula: <span class="math inline">\(s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)</span></p>
+<p>Formula: <span class="math inline">s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}</span></p>
 <section id="calculations-for-country-x-3" class="level5" data-number="11.11.2.4.1">
 <h5 data-number="11.11.2.4.1" class="anchored" data-anchor-id="calculations-for-country-x-3"><span class="header-section-number">11.11.2.4.1</span> Calculations for Country X</h5>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x_i\)</span></th>
-<th><span class="math inline">\((x_i - \bar{x})\)</span></th>
-<th><span class="math inline">\((x_i - \bar{x})^2\)</span></th>
+<th><span class="math inline">x_i</span></th>
+<th><span class="math inline">(x_i - \bar{x})</span></th>
+<th><span class="math inline">(x_i - \bar{x})^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3650,7 +3683,7 @@ y
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(s^2_X = \frac{330}{9} = 36.67\)</span></p>
+<p><span class="math inline">s^2_X = \frac{330}{9} = 36.67</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>var_x <span class="ot">&lt;-</span> <span class="fu">var</span>(x)</span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">36.67</span>, <span class="st">"R"</span> <span class="ot">=</span> var_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3665,9 +3698,9 @@ y
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th><span class="math inline">\(x_i\)</span></th>
-<th><span class="math inline">\((y_i - \bar{y})\)</span></th>
-<th><span class="math inline">\((y_i - \bar{y})^2\)</span></th>
+<th><span class="math inline">x_i</span></th>
+<th><span class="math inline">(y_i - \bar{y})</span></th>
+<th><span class="math inline">(y_i - \bar{y})^2</span></th>
 </tr>
 </thead>
 <tbody>
@@ -3728,7 +3761,7 @@ y
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(s^2_Y = \frac{22.5}{9} = 2.5\)</span></p>
+<p><span class="math inline">s^2_Y = \frac{22.5}{9} = 2.5</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>var_y <span class="ot">&lt;-</span> <span class="fu">var</span>(y)</span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="st">"Manual"</span> <span class="ot">=</span> <span class="fl">2.5</span>, <span class="st">"R"</span> <span class="ot">=</span> var_y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3742,11 +3775,11 @@ y
 <section id="standard-deviation-2" class="level4" data-number="11.11.2.5">
 <h4 data-number="11.11.2.5" class="anchored" data-anchor-id="standard-deviation-2"><span class="header-section-number">11.11.2.5</span> Standard Deviation</h4>
 <p>Standard deviation is the square root of variance. It measures variability in the same units as the data.</p>
-<p>Formula: <span class="math inline">\(s = \sqrt{s^2}\)</span></p>
+<p>Formula: <span class="math inline">s = \sqrt{s^2}</span></p>
 <section id="calculations-for-country-x-4" class="level5" data-number="11.11.2.5.1">
 <h5 data-number="11.11.2.5.1" class="anchored" data-anchor-id="calculations-for-country-x-4"><span class="header-section-number">11.11.2.5.1</span> Calculations for Country X</h5>
-<p>Using previously calculated variance: <span class="math inline">\(s^2_X = 36.67\)</span></p>
-<p>Calculate square root: <span class="math inline">\(s_X = \sqrt{36.67} \approx 6.06\)</span></p>
+<p>Using previously calculated variance: <span class="math inline">s^2_X = 36.67</span></p>
+<p>Calculate square root: <span class="math inline">s_X = \sqrt{36.67} \approx 6.06</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -3758,12 +3791,12 @@ y
 <tbody>
 <tr class="odd">
 <td>1. Variance</td>
-<td><span class="math inline">\(s^2_X\)</span></td>
+<td><span class="math inline">s^2_X</span></td>
 <td>36.67</td>
 </tr>
 <tr class="even">
 <td>2. Square root</td>
-<td><span class="math inline">\(\sqrt{36.67}\)</span></td>
+<td><span class="math inline">\sqrt{36.67}</span></td>
 <td>6.06</td>
 </tr>
 </tbody>
@@ -3779,8 +3812,8 @@ y
 </section>
 <section id="calculations-for-country-y-4" class="level5" data-number="11.11.2.5.2">
 <h5 data-number="11.11.2.5.2" class="anchored" data-anchor-id="calculations-for-country-y-4"><span class="header-section-number">11.11.2.5.2</span> Calculations for Country Y</h5>
-<p>Using previously calculated variance: <span class="math inline">\(s^2_Y = 2.5\)</span></p>
-<p>Calculate square root: <span class="math inline">\(s_Y = \sqrt{2.5} \approx 1.58\)</span></p>
+<p>Using previously calculated variance: <span class="math inline">s^2_Y = 2.5</span></p>
+<p>Calculate square root: <span class="math inline">s_Y = \sqrt{2.5} \approx 1.58</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -3792,12 +3825,12 @@ y
 <tbody>
 <tr class="odd">
 <td>1. Variance</td>
-<td><span class="math inline">\(s^2_Y\)</span></td>
+<td><span class="math inline">s^2_Y</span></td>
 <td>2.5</td>
 </tr>
 <tr class="even">
 <td>2. Square root</td>
-<td><span class="math inline">\(\sqrt{2.5}\)</span></td>
+<td><span class="math inline">\sqrt{2.5}</span></td>
 <td>1.58</td>
 </tr>
 </tbody>
@@ -3821,10 +3854,10 @@ y
 <section id="coefficient-of-variation-cv" class="level3" data-number="11.11.3">
 <h3 data-number="11.11.3" class="anchored" data-anchor-id="coefficient-of-variation-cv"><span class="header-section-number">11.11.3</span> Coefficient of Variation (CV)</h3>
 <p>The coefficient of variation is the ratio of standard deviation to mean, expressed as a percentage.</p>
-<p>Formula: <span class="math inline">\(CV = \frac{s}{\bar{x}} \times 100\%\)</span></p>
+<p>Formula: <span class="math inline">CV = \frac{s}{\bar{x}} \times 100\%</span></p>
 <section id="calculations-for-country-x-5" class="level4" data-number="11.11.3.1">
 <h4 data-number="11.11.3.1" class="anchored" data-anchor-id="calculations-for-country-x-5"><span class="header-section-number">11.11.3.1</span> Calculations for Country X</h4>
-<p><span class="math inline">\(CV_X = \frac{6.06}{10} \times 100\% = 60.6\%\)</span></p>
+<p><span class="math inline">CV_X = \frac{6.06}{10} \times 100\% = 60.6\%</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -3834,11 +3867,11 @@ y
 </thead>
 <tbody>
 <tr class="odd">
-<td>Standard deviation (<span class="math inline">\(s\)</span>)</td>
+<td>Standard deviation (<span class="math inline">s</span>)</td>
 <td>6.06</td>
 </tr>
 <tr class="even">
-<td>Mean (<span class="math inline">\(\bar{x}\)</span>)</td>
+<td>Mean (<span class="math inline">\bar{x}</span>)</td>
 <td>10</td>
 </tr>
 <tr class="odd">
@@ -3858,7 +3891,7 @@ y
 </section>
 <section id="calculations-for-country-y-5" class="level4" data-number="11.11.3.2">
 <h4 data-number="11.11.3.2" class="anchored" data-anchor-id="calculations-for-country-y-5"><span class="header-section-number">11.11.3.2</span> Calculations for Country Y</h4>
-<p><span class="math inline">\(CV_Y = \frac{1.58}{10.5} \times 100\% = 15.0\%\)</span></p>
+<p><span class="math inline">CV_Y = \frac{1.58}{10.5} \times 100\% = 15.0\%</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -3868,11 +3901,11 @@ y
 </thead>
 <tbody>
 <tr class="odd">
-<td>Standard deviation (<span class="math inline">\(s\)</span>)</td>
+<td>Standard deviation (<span class="math inline">s</span>)</td>
 <td>1.58</td>
 </tr>
 <tr class="even">
-<td>Mean (<span class="math inline">\(\bar{x}\)</span>)</td>
+<td>Mean (<span class="math inline">\bar{x}</span>)</td>
 <td>10.5</td>
 </tr>
 <tr class="odd">
