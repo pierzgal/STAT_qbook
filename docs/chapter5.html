@@ -410,15 +410,15 @@ window.Quarto = {
   <li><a href="#spread-and-variation" id="toc-spread-and-variation" class="nav-link" data-scroll-target="#spread-and-variation"><span class="header-section-number">11.14.2</span> Spread and Variation</a></li>
   <li><a href="#outliers-and-extremes" id="toc-outliers-and-extremes" class="nav-link" data-scroll-target="#outliers-and-extremes"><span class="header-section-number">11.14.3</span> Outliers and Extremes</a></li>
   </ul></li>
-  <li><a href="#answers" id="toc-answers" class="nav-link" data-scroll-target="#answers"><span class="header-section-number">11.15</span> Answers</a>
+  <li><a href="#changes-over-time" id="toc-changes-over-time" class="nav-link" data-scroll-target="#changes-over-time"><span class="header-section-number">11.15</span> Changes Over Time</a>
   <ul class="collapse">
-  <li><a href="#median-and-distribution-1" id="toc-median-and-distribution-1" class="nav-link" data-scroll-target="#median-and-distribution-1"><span class="header-section-number">11.15.1</span> Median and Distribution</a></li>
-  <li><a href="#spread-and-variation-1" id="toc-spread-and-variation-1" class="nav-link" data-scroll-target="#spread-and-variation-1"><span class="header-section-number">11.15.2</span> Spread and Variation</a></li>
-  <li><a href="#outliers-and-extremes-1" id="toc-outliers-and-extremes-1" class="nav-link" data-scroll-target="#outliers-and-extremes-1"><span class="header-section-number">11.15.3</span> Outliers and Extremes</a></li>
+  <li><a href="#time-comparison-questions" id="toc-time-comparison-questions" class="nav-link" data-scroll-target="#time-comparison-questions"><span class="header-section-number">11.15.1</span> Time Comparison Questions</a></li>
+  <li><a href="#statistical-summary" id="toc-statistical-summary" class="nav-link" data-scroll-target="#statistical-summary"><span class="header-section-number">11.15.2</span> Statistical Summary</a></li>
   </ul></li>
-  <li><a href="#appendix-summary-tables-for-data-types-and-applicable-statistical-measures" id="toc-appendix-summary-tables-for-data-types-and-applicable-statistical-measures" class="nav-link" data-scroll-target="#appendix-summary-tables-for-data-types-and-applicable-statistical-measures"><span class="header-section-number">11.16</span> Appendix: Summary Tables for Data Types and Applicable Statistical Measures</a>
+  <li><a href="#key-learning-points" id="toc-key-learning-points" class="nav-link" data-scroll-target="#key-learning-points"><span class="header-section-number">11.16</span> Key Learning Points</a></li>
+  <li><a href="#appendix-summary-tables-for-data-types-and-applicable-statistical-measures" id="toc-appendix-summary-tables-for-data-types-and-applicable-statistical-measures" class="nav-link" data-scroll-target="#appendix-summary-tables-for-data-types-and-applicable-statistical-measures"><span class="header-section-number">11.17</span> Appendix: Summary Tables for Data Types and Applicable Statistical Measures</a>
   <ul class="collapse">
-  <li><a href="#table-1-pros-and-cons-of-various-statistical-measures" id="toc-table-1-pros-and-cons-of-various-statistical-measures" class="nav-link" data-scroll-target="#table-1-pros-and-cons-of-various-statistical-measures"><span class="header-section-number">11.16.1</span> Table 1: Pros and Cons of Various Statistical Measures</a></li>
+  <li><a href="#table-1-pros-and-cons-of-various-statistical-measures" id="toc-table-1-pros-and-cons-of-various-statistical-measures" class="nav-link" data-scroll-target="#table-1-pros-and-cons-of-various-statistical-measures"><span class="header-section-number">11.17.1</span> Table 1: Pros and Cons of Various Statistical Measures</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -4467,53 +4467,219 @@ y
 <h3 data-number="11.14.3" class="anchored" data-anchor-id="outliers-and-extremes"><span class="header-section-number">11.14.3</span> Outliers and Extremes</h3>
 <p>Answer True or False:</p>
 <ol type="1">
-<li>Africa has two countries with unusually low life expectancy (outliers)</li>
+<li>Africa has two countries with unusually low life expectancy</li>
 <li>There are no outliers in Oceania’s distribution</li>
 <li>Asia has both high and low outliers</li>
-<li>The lowest life expectancy outlier is approximately 40 years</li>
-<li>Europe has no low outliers but one high outlier</li>
 </ol>
 </section>
 </section>
-<section id="answers" class="level2" data-number="11.15">
-<h2 data-number="11.15" class="anchored" data-anchor-id="answers"><span class="header-section-number">11.15</span> Answers</h2>
-<section id="median-and-distribution-1" class="level3" data-number="11.15.1">
-<h3 data-number="11.15.1" class="anchored" data-anchor-id="median-and-distribution-1"><span class="header-section-number">11.15.1</span> Median and Distribution</h3>
+<section id="changes-over-time" class="level2" data-number="11.15">
+<h2 data-number="11.15" class="anchored" data-anchor-id="changes-over-time"><span class="header-section-number">11.15</span> Changes Over Time</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>time_comparison <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1957</span>, <span class="dv">2007</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">factor</span>(year))</span>
+<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-5"><a href="#cb110-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(time_comparison, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp, <span class="at">fill =</span> year)) <span class="sc">+</span></span>
+<span id="cb110-6"><a href="#cb110-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">outlier.shape =</span> <span class="dv">21</span>,</span>
+<span id="cb110-7"><a href="#cb110-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">outlier.alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb110-8"><a href="#cb110-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Life Expectancy: 1957 vs 2007"</span>,</span>
+<span id="cb110-9"><a href="#cb110-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Comparing distribution changes over 50 years"</span>,</span>
+<span id="cb110-10"><a href="#cb110-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Continent"</span>,</span>
+<span id="cb110-11"><a href="#cb110-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
+<span id="cb110-12"><a href="#cb110-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Year"</span>) <span class="sc">+</span></span>
+<span id="cb110-13"><a href="#cb110-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb110-14"><a href="#cb110-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb110-15"><a href="#cb110-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb110-16"><a href="#cb110-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb110-17"><a href="#cb110-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)</span>
+<span id="cb110-18"><a href="#cb110-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb110-19"><a href="#cb110-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb110-20"><a href="#cb110-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>, <span class="dv">85</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="time-comparison-questions" class="level3" data-number="11.15.1">
+<h3 data-number="11.15.1" class="anchored" data-anchor-id="time-comparison-questions"><span class="header-section-number">11.15.1</span> Time Comparison Questions</h3>
+<p>Answer True or False:</p>
 <ol type="1">
-<li>True - The median line for Africa is at approximately 52.9 years</li>
-<li>True - The median line for Europe is at approximately 78.6 years</li>
-<li>True - The lower quartile (Q1) for Oceania is above 74.5 years</li>
-<li>True - The bottom of the box (Q1) for Asia is at approximately 67.3 years</li>
-<li>True - The box for Europe spans from approximately 76.5 to 79.8 years</li>
+<li>The median life expectancy increased in all continents between 1957 and 2007</li>
+<li>The variation in life expectancy (IQR) decreased in most continents over time</li>
+<li>Africa showed the smallest improvement in median life expectancy</li>
+<li>The spread of life expectancies in Asia decreased substantially from 1957 to 2007</li>
+<li>Oceania maintained the highest median life expectancy in both time periods</li>
 </ol>
 </section>
-<section id="spread-and-variation-1" class="level3" data-number="11.15.2">
-<h3 data-number="11.15.2" class="anchored" data-anchor-id="spread-and-variation-1"><span class="header-section-number">11.15.2</span> Spread and Variation</h3>
+<section id="statistical-summary" class="level3" data-number="11.15.2">
+<h3 data-number="11.15.2" class="anchored" data-anchor-id="statistical-summary"><span class="header-section-number">11.15.2</span> Statistical Summary</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate summary statistics</span></span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1957</span>, <span class="dv">2007</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(continent, year) <span class="sc">%&gt;%</span></span>
+<span id="cb111-5"><a href="#cb111-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb111-6"><a href="#cb111-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">median =</span> <span class="fu">median</span>(lifeExp),</span>
+<span id="cb111-7"><a href="#cb111-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">q1 =</span> <span class="fu">quantile</span>(lifeExp, <span class="fl">0.25</span>),</span>
+<span id="cb111-8"><a href="#cb111-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">q3 =</span> <span class="fu">quantile</span>(lifeExp, <span class="fl">0.75</span>),</span>
+<span id="cb111-9"><a href="#cb111-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr =</span> <span class="fu">IQR</span>(lifeExp),</span>
+<span id="cb111-10"><a href="#cb111-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_outliers =</span> <span class="fu">sum</span>(lifeExp <span class="sc">&lt;</span> (q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr) <span class="sc">|</span> lifeExp <span class="sc">&gt;</span> (q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> iqr))</span>
+<span id="cb111-11"><a href="#cb111-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb111-12"><a href="#cb111-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(continent, year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'continent'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(summary_stats, <span class="at">digits =</span> <span class="dv">1</span>,</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">"Summary Statistics by Continent and Year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Summary Statistics by Continent and Year</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">continent</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: right;">median</th>
+<th style="text-align: right;">q1</th>
+<th style="text-align: right;">q3</th>
+<th style="text-align: right;">iqr</th>
+<th style="text-align: right;">n_outliers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Africa</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">40.6</td>
+<td style="text-align: right;">37.4</td>
+<td style="text-align: right;">44.8</td>
+<td style="text-align: right;">7.4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Africa</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">52.9</td>
+<td style="text-align: right;">47.8</td>
+<td style="text-align: right;">59.4</td>
+<td style="text-align: right;">11.6</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Americas</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">56.1</td>
+<td style="text-align: right;">48.6</td>
+<td style="text-align: right;">62.6</td>
+<td style="text-align: right;">14.0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Americas</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">72.9</td>
+<td style="text-align: right;">71.8</td>
+<td style="text-align: right;">76.4</td>
+<td style="text-align: right;">4.6</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">48.3</td>
+<td style="text-align: right;">41.9</td>
+<td style="text-align: right;">54.1</td>
+<td style="text-align: right;">12.2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Asia</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">72.4</td>
+<td style="text-align: right;">65.5</td>
+<td style="text-align: right;">75.6</td>
+<td style="text-align: right;">10.2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Europe</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">67.7</td>
+<td style="text-align: right;">65.0</td>
+<td style="text-align: right;">69.2</td>
+<td style="text-align: right;">4.2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Europe</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">78.6</td>
+<td style="text-align: right;">75.0</td>
+<td style="text-align: right;">79.8</td>
+<td style="text-align: right;">4.8</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Oceania</td>
+<td style="text-align: right;">1957</td>
+<td style="text-align: right;">70.3</td>
+<td style="text-align: right;">70.3</td>
+<td style="text-align: right;">70.3</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oceania</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: right;">80.7</td>
+<td style="text-align: right;">80.5</td>
+<td style="text-align: right;">81.0</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="key-learning-points" class="level2" data-number="11.16">
+<h2 data-number="11.16" class="anchored" data-anchor-id="key-learning-points"><span class="header-section-number">11.16</span> Key Learning Points</h2>
 <ol type="1">
-<li>False - While Asia shows substantial spread (IQR ≈ 10.3 years), Africa has the largest IQR</li>
-<li>False - Oceania has the smallest IQR</li>
-<li>True - Africa’s box and whiskers span a larger range than the Americas</li>
-<li>True - Oceania shows the most compact distribution with an IQR of approximately 2.5 years</li>
-<li>True - The whiskers in Asia span approximately from 58.0 to 82.0 years (excluding outliers)</li>
+<li><strong>Distribution Center</strong>:
+<ul>
+<li>Median shows the typical life expectancy</li>
+<li>Changes in median reflect overall improvements</li>
+</ul></li>
+<li><strong>Spread and Variation</strong>:
+<ul>
+<li>IQR (box height) indicates data dispersion</li>
+<li>Wider boxes suggest more inequality in life expectancy</li>
+<li>Narrower boxes indicate more uniform conditions</li>
+</ul></li>
+<li><strong>Outliers and Extremes</strong>:
+<ul>
+<li>Outliers often represent countries with unique circumstances</li>
+<li>Can indicate both progress and challenges in different regions</li>
+</ul></li>
+<li><strong>Time Comparison</strong>:
+<ul>
+<li>Shows both absolute improvements and changes in variation</li>
+<li>Highlights persistent regional disparities</li>
+<li>Reveals different rates of progress across continents</li>
+</ul></li>
 </ol>
 </section>
-<section id="outliers-and-extremes-1" class="level3" data-number="11.15.3">
-<h3 data-number="11.15.3" class="anchored" data-anchor-id="outliers-and-extremes-1"><span class="header-section-number">11.15.3</span> Outliers and Extremes</h3>
-<ol type="1">
-<li>True - Two points appear below the lower whisker in Africa (approximately 39.6 and 42.7 years)</li>
-<li>True - No points beyond the whiskers in Oceania</li>
-<li>True - Asia has outliers at both ends (approximately 40.5 and 82.6 years)</li>
-<li>True - The lowest outlier is approximately 39.6 years (in Africa)</li>
-<li>True - Europe has one high outlier (approximately 81.7 years) but no low outliers</li>
-</ol>
-</section>
-</section>
-<section id="appendix-summary-tables-for-data-types-and-applicable-statistical-measures" class="level2" data-number="11.16">
-<h2 data-number="11.16" class="anchored" data-anchor-id="appendix-summary-tables-for-data-types-and-applicable-statistical-measures"><span class="header-section-number">11.16</span> Appendix: Summary Tables for Data Types and Applicable Statistical Measures</h2>
-<section id="table-1-pros-and-cons-of-various-statistical-measures" class="level3" data-number="11.16.1">
-<h3 data-number="11.16.1" class="anchored" data-anchor-id="table-1-pros-and-cons-of-various-statistical-measures"><span class="header-section-number">11.16.1</span> Table 1: Pros and Cons of Various Statistical Measures</h3>
-<section id="measures-of-center" class="level4" data-number="11.16.1.1">
-<h4 data-number="11.16.1.1" class="anchored" data-anchor-id="measures-of-center"><span class="header-section-number">11.16.1.1</span> Measures of Center</h4>
+<section id="appendix-summary-tables-for-data-types-and-applicable-statistical-measures" class="level2" data-number="11.17">
+<h2 data-number="11.17" class="anchored" data-anchor-id="appendix-summary-tables-for-data-types-and-applicable-statistical-measures"><span class="header-section-number">11.17</span> Appendix: Summary Tables for Data Types and Applicable Statistical Measures</h2>
+<section id="table-1-pros-and-cons-of-various-statistical-measures" class="level3" data-number="11.17.1">
+<h3 data-number="11.17.1" class="anchored" data-anchor-id="table-1-pros-and-cons-of-various-statistical-measures"><span class="header-section-number">11.17.1</span> Table 1: Pros and Cons of Various Statistical Measures</h3>
+<section id="measures-of-center" class="level4" data-number="11.17.1.1">
+<h4 data-number="11.17.1.1" class="anchored" data-anchor-id="measures-of-center"><span class="header-section-number">11.17.1.1</span> Measures of Center</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 23%">
@@ -4551,8 +4717,8 @@ y
 </tbody>
 </table>
 </section>
-<section id="measures-of-variability-1" class="level4" data-number="11.16.1.2">
-<h4 data-number="11.16.1.2" class="anchored" data-anchor-id="measures-of-variability-1"><span class="header-section-number">11.16.1.2</span> Measures of Variability</h4>
+<section id="measures-of-variability-1" class="level4" data-number="11.17.1.2">
+<h4 data-number="11.17.1.2" class="anchored" data-anchor-id="measures-of-variability-1"><span class="header-section-number">11.17.1.2</span> Measures of Variability</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 23%">
@@ -4602,8 +4768,8 @@ y
 </tbody>
 </table>
 </section>
-<section id="measures-of-correlationassociation" class="level4" data-number="11.16.1.3">
-<h4 data-number="11.16.1.3" class="anchored"><span class="header-section-number">11.16.1.3</span> Measures of Correlation/Association</h4>
+<section id="measures-of-correlationassociation" class="level4" data-number="11.17.1.3">
+<h4 data-number="11.17.1.3" class="anchored"><span class="header-section-number">11.17.1.3</span> Measures of Correlation/Association</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 23%">
@@ -4837,8 +5003,8 @@ Statistical Measures Applicability / Zastosowanie miar statystycznych
 </tbody>
 </table>
 <p>* Theoretically problematic but commonly used in practice / Teoretycznie problematyczne, ale powszechnie stosowane w praktyce</p>
-<section id="notes-uwagi" class="level3" data-number="11.16.2">
-<h3 data-number="11.16.2" class="anchored" data-anchor-id="notes-uwagi"><span class="header-section-number">11.16.2</span> Notes / Uwagi:</h3>
+<section id="notes-uwagi" class="level3" data-number="11.17.2">
+<h3 data-number="11.17.2" class="anchored" data-anchor-id="notes-uwagi"><span class="header-section-number">11.17.2</span> Notes / Uwagi:</h3>
 <ol type="1">
 <li>Measurement Scales / Skale pomiarowe:</li>
 </ol>
