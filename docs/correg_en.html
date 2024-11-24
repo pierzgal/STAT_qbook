@@ -2542,7 +2542,7 @@ Attaching package: 'patchwork'</code></pre>
 <span id="cb71-29"><a href="#cb71-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Total deviation (purple)</span></span>
 <span id="cb71-30"><a href="#cb71-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
 <span id="cb71-31"><a href="#cb71-31" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> y, <span class="at">yend =</span> mean_y),</span>
-<span id="cb71-32"><a href="#cb71-32" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#984EA3"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb71-32"><a href="#cb71-32" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#984EA3"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
 <span id="cb71-33"><a href="#cb71-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Explained component (green)</span></span>
 <span id="cb71-34"><a href="#cb71-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
 <span id="cb71-35"><a href="#cb71-35" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> mean_y, <span class="at">yend =</span> predicted),</span>
@@ -2636,7 +2636,7 @@ Attaching package: 'patchwork'</code></pre>
 <ul>
 <li><strong>Question:</strong> How much do the data points vary from the mean?</li>
 <li><strong>Formula:</strong> <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li><strong>Visual:</strong> Purple dashed lines in the plot</li>
+<li><strong>Visual:</strong> Purple points in the plot</li>
 <li><strong>Intuition:</strong> This is the overall “spread” of the data around its average.</li>
 </ul></li>
 <li><strong>Explained Variation (SSR)</strong>

@@ -2359,8 +2359,8 @@ Dekompozycja Wariancji w Regresji Liniowej: Intuicyjny Przewodnik
 </ul>
 </section>
 </section>
-<section id="wizualne-zrozumienie" class="level3" data-number="16.9.19">
-<h3 data-number="16.9.19" class="anchored" data-anchor-id="wizualne-zrozumienie"><span class="header-section-number">16.9.19</span> Wizualne Zrozumienie</h3>
+<section id="wizualizacja-dekompozycji-wariancji" class="level3" data-number="16.9.19">
+<h3 data-number="16.9.19" class="anchored" data-anchor-id="wizualizacja-dekompozycji-wariancji"><span class="header-section-number">16.9.19</span> Wizualizacja Dekompozycji Wariancji</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -2405,7 +2405,7 @@ Attaching package: 'patchwork'</code></pre>
 <span id="cb71-29"><a href="#cb71-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Total deviation (purple)</span></span>
 <span id="cb71-30"><a href="#cb71-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
 <span id="cb71-31"><a href="#cb71-31" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> y, <span class="at">yend =</span> mean_y),</span>
-<span id="cb71-32"><a href="#cb71-32" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#984EA3"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb71-32"><a href="#cb71-32" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#984EA3"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
 <span id="cb71-33"><a href="#cb71-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Explained component (green)</span></span>
 <span id="cb71-34"><a href="#cb71-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
 <span id="cb71-35"><a href="#cb71-35" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> mean_y, <span class="at">yend =</span> predicted),</span>
@@ -2499,7 +2499,7 @@ Attaching package: 'patchwork'</code></pre>
 <ul>
 <li>Pytanie: “Jak bardzo obserwacje różnią się od średniej?”</li>
 <li>Wzór: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li>Wizualizacja: Fioletowe przerywane linie na wykresie</li>
+<li>Wizualizacja: Fioletowe punkty na wykresie</li>
 <li>Intuicja: “Rozrzut” naszych danych wokół średniej</li>
 </ul></li>
 <li><strong>Wariancja Wyjaśniona (SSR)</strong>
