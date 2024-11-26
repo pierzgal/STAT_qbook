@@ -1015,7 +1015,7 @@ Understanding Linear Regression (OLS): Quickstart guide
 <h3 data-number="15.1.13" class="anchored" data-anchor-id="example-education-and-wages"><span class="header-section-number">15.1.13</span> Example: Education and Wages</h3>
 <p>Consider studying the effect of education (x) on wages (y). Let’s say we estimate:</p>
 <p><span class="math display">wages = \beta_0 + \beta_1 \cdot education + \epsilon</span></p>
-<p>The error term <span class="math display">\epsilon</span> contains all other factors affecting wages. Strict exogeneity is violated if we omit an important variable like “ability” that affects both education and wages. Why? Because more able people tend to get more education AND higher wages, making our estimate of education’s effect biased upward.</p>
+<p>The error term <span class="math inline">\epsilon</span> contains all other factors affecting wages. Strict exogeneity is violated if we omit an important variable like “ability” that affects both education and wages. Why? Because more able people tend to get more education AND higher wages, making our estimate of education’s effect biased upward.</p>
 </section>
 <section id="the-optimization-problem" class="level3" data-number="15.1.14">
 <h3 data-number="15.1.14" class="anchored" data-anchor-id="the-optimization-problem"><span class="header-section-number">15.1.14</span> The Optimization Problem</h3>
@@ -1032,8 +1032,8 @@ Understanding Linear Regression (OLS): Quickstart guide
 <section id="finding-the-best-line" class="level3" data-number="15.1.15">
 <h3 data-number="15.1.15" class="anchored" data-anchor-id="finding-the-best-line"><span class="header-section-number">15.1.15</span> Finding the Best Line</h3>
 <p>The solution to this minimization gives us:</p>
-<p><span class="math display">\beta_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2}</span></p>
-<p><span class="math display">\beta_0 = \bar{y} - \beta_1\bar{x}</span></p>
+<p><span class="math display">\hat{\beta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{cov(X, Y)}{var(X)}</span></p>
+<p><span class="math display">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
 </section>
 <section id="key-points-1" class="level3" data-number="15.1.16">
 <h3 data-number="15.1.16" class="anchored" data-anchor-id="key-points-1"><span class="header-section-number">15.1.16</span> Key Points</h3>

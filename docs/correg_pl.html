@@ -990,7 +990,7 @@ Zrozumienie Regresji Liniowej (MNK): Szybki Start
 <h3 data-number="16.1.13" class="anchored" data-anchor-id="przykład-edukacja-i-wynagrodzenia"><span class="header-section-number">16.1.13</span> Przykład: Edukacja i Wynagrodzenia</h3>
 <p>Rozważmy badanie wpływu edukacji (x) na wynagrodzenia (y). Powiedzmy, że szacujemy:</p>
 <p><span class="math display">wynagrodzenia = \beta_0 + \beta_1 \cdot edukacja + \epsilon</span></p>
-<p>Składnik błędu <span class="math display">\epsilon</span> zawiera wszystkie inne czynniki wpływające na wynagrodzenia. Ścisła egzogeniczność jest naruszona, jeśli pominiemy ważną zmienną, jak “zdolności”, która wpływa zarówno na edukację, jak i wynagrodzenia. Dlaczego? Ponieważ bardziej zdolni ludzie mają tendencję do zdobywania lepszego wykształcenia I wyższych wynagrodzeń, co powoduje zawyżenie szacowanego efektu edukacji.</p>
+<p>Składnik błędu <span class="math inline">\epsilon</span> zawiera wszystkie inne czynniki wpływające na wynagrodzenia. Ścisła egzogeniczność jest naruszona, jeśli pominiemy ważną zmienną, jak “zdolności”, która wpływa zarówno na edukację, jak i wynagrodzenia. Dlaczego? Ponieważ bardziej zdolni ludzie mają tendencję do zdobywania lepszego wykształcenia I wyższych wynagrodzeń, co powoduje zawyżenie szacowanego efektu edukacji.</p>
 </section>
 <section id="problem-optymalizacji" class="level3" data-number="16.1.14">
 <h3 data-number="16.1.14" class="anchored" data-anchor-id="problem-optymalizacji"><span class="header-section-number">16.1.14</span> Problem Optymalizacji</h3>
@@ -1007,8 +1007,8 @@ Zrozumienie Regresji Liniowej (MNK): Szybki Start
 <section id="znalezienie-najlepszej-linii" class="level3" data-number="16.1.15">
 <h3 data-number="16.1.15" class="anchored" data-anchor-id="znalezienie-najlepszej-linii"><span class="header-section-number">16.1.15</span> Znalezienie Najlepszej Linii</h3>
 <p>Rozwiązanie tego problemu minimalizacji daje nam:</p>
-<p><span class="math display">\beta_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2}</span></p>
-<p><span class="math display">\beta_0 = \bar{y} - \beta_1\bar{x}</span></p>
+<p><span class="math display">\hat{\beta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{cov(X, Y)}{var(X)}</span></p>
+<p><span class="math display">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
 </section>
 <section id="kluczowe-punkty" class="level3" data-number="16.1.16">
 <h3 data-number="16.1.16" class="anchored" data-anchor-id="kluczowe-punkty"><span class="header-section-number">16.1.16</span> Kluczowe Punkty</h3>
