@@ -329,11 +329,11 @@ window.Quarto = {
   <ul>
   <li><a href="#bivariate-statistics---introduction" id="toc-bivariate-statistics---introduction" class="nav-link active" data-scroll-target="#bivariate-statistics---introduction"><span class="header-section-number">15.1</span> Bivariate Statistics - introduction</a>
   <ul class="collapse">
-  <li><a href="#covariance" id="toc-covariance" class="nav-link" data-scroll-target="#covariance"><span class="header-section-number">15.1.17</span> Covariance</a></li>
-  <li><a href="#pearson-correlation" id="toc-pearson-correlation" class="nav-link" data-scroll-target="#pearson-correlation"><span class="header-section-number">15.1.18</span> Pearson Correlation</a></li>
-  <li><a href="#spearman-correlation" id="toc-spearman-correlation" class="nav-link" data-scroll-target="#spearman-correlation"><span class="header-section-number">15.1.19</span> Spearman Correlation</a></li>
-  <li><a href="#cross-tabulation" id="toc-cross-tabulation" class="nav-link" data-scroll-target="#cross-tabulation"><span class="header-section-number">15.1.20</span> Cross-tabulation</a></li>
-  <li><a href="#choosing-the-appropriate-measure" id="toc-choosing-the-appropriate-measure" class="nav-link" data-scroll-target="#choosing-the-appropriate-measure"><span class="header-section-number">15.1.21</span> Choosing the Appropriate Measure</a></li>
+  <li><a href="#covariance" id="toc-covariance" class="nav-link" data-scroll-target="#covariance"><span class="header-section-number">15.1.5</span> Covariance</a></li>
+  <li><a href="#pearson-correlation" id="toc-pearson-correlation" class="nav-link" data-scroll-target="#pearson-correlation"><span class="header-section-number">15.1.13</span> Pearson Correlation</a></li>
+  <li><a href="#spearman-correlation" id="toc-spearman-correlation" class="nav-link" data-scroll-target="#spearman-correlation"><span class="header-section-number">15.1.14</span> Spearman Correlation</a></li>
+  <li><a href="#cross-tabulation" id="toc-cross-tabulation" class="nav-link" data-scroll-target="#cross-tabulation"><span class="header-section-number">15.1.15</span> Cross-tabulation</a></li>
+  <li><a href="#choosing-the-appropriate-measure" id="toc-choosing-the-appropriate-measure" class="nav-link" data-scroll-target="#choosing-the-appropriate-measure"><span class="header-section-number">15.1.16</span> Choosing the Appropriate Measure</a></li>
   </ul></li>
   <li><a href="#understanding-pearson-spearman-and-kendall-correlations" id="toc-understanding-pearson-spearman-and-kendall-correlations" class="nav-link" data-scroll-target="#understanding-pearson-spearman-and-kendall-correlations"><span class="header-section-number">15.2</span> Understanding Pearson, Spearman, and Kendall Correlations</a>
   <ul class="collapse">
@@ -359,8 +359,8 @@ window.Quarto = {
   <li><a href="#introduction-to-regression-analysis" id="toc-introduction-to-regression-analysis" class="nav-link" data-scroll-target="#introduction-to-regression-analysis"><span class="header-section-number">15.4</span> Introduction to Regression Analysis</a>
   <ul class="collapse">
   <li><a href="#why-study-regression" id="toc-why-study-regression" class="nav-link" data-scroll-target="#why-study-regression"><span class="header-section-number">15.4.1</span> Why Study Regression?</a></li>
-  <li><a href="#basic-concepts-and-terminology" id="toc-basic-concepts-and-terminology" class="nav-link" data-scroll-target="#basic-concepts-and-terminology"><span class="header-section-number">15.4.2</span> Basic Concepts and Terminology</a></li>
-  <li><a href="#the-core-idea" id="toc-the-core-idea" class="nav-link" data-scroll-target="#the-core-idea"><span class="header-section-number">15.4.3</span> The Core Idea</a></li>
+  <li><a href="#basic-concepts-and-terminology" id="toc-basic-concepts-and-terminology" class="nav-link" data-scroll-target="#basic-concepts-and-terminology"><span class="header-section-number">15.4.7</span> Basic Concepts and Terminology</a></li>
+  <li><a href="#the-core-idea" id="toc-the-core-idea" class="nav-link" data-scroll-target="#the-core-idea"><span class="header-section-number">15.4.8</span> The Core Idea</a></li>
   </ul></li>
   <li><a href="#the-linear-regression-model" id="toc-the-linear-regression-model" class="nav-link" data-scroll-target="#the-linear-regression-model"><span class="header-section-number">15.5</span> The Linear Regression Model</a>
   <ul class="collapse">
@@ -663,8 +663,9 @@ Warning: Correlation Does Not Mean Causation! [https://www.tylervigen.com/spurio
 <li>Both trends happened over time but are completely unrelated</li>
 <li>This is called “temporal correlation” - things changing together over time by chance</li>
 </ul>
-<section id="understanding-misleading-correlations" class="level4" data-number="15.1.2.1">
-<h4 data-number="15.1.2.1" class="anchored" data-anchor-id="understanding-misleading-correlations"><span class="header-section-number">15.1.2.1</span> Understanding Misleading Correlations</h4>
+</section>
+<section id="understanding-misleading-correlations" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="understanding-misleading-correlations"><span class="header-section-number">15.1.3</span> Understanding Misleading Correlations</h3>
 <p>Here are three common ways correlations can trick us, explained with everyday examples.</p>
 <ol type="1">
 <li>Hidden Common Cause (Confounding)</li>
@@ -673,7 +674,6 @@ Warning: Correlation Does Not Mean Causation! [https://www.tylervigen.com/spurio
 <p>Key Points:</p>
 <ul>
 <li>The hidden factor is called a “confounder”</li>
-<li>Both observed variables are like “siblings” influenced by the same “parent”</li>
 <li>Ignoring the common cause can lead to wrong conclusions</li>
 </ul>
 <p>Real-Life Examples:</p>
@@ -740,9 +740,8 @@ Warning: Correlation Does Not Mean Causation! [https://www.tylervigen.com/spurio
 <li>Lesson: Tutoring doesn’t cause bad grades; it’s a response to them!</li>
 </ul>
 </section>
-</section>
-<section id="how-to-think-critically-about-correlations" class="level3" data-number="15.1.3">
-<h3 data-number="15.1.3" class="anchored" data-anchor-id="how-to-think-critically-about-correlations"><span class="header-section-number">15.1.3</span> How to Think Critically About Correlations</h3>
+<section id="how-to-think-critically-about-correlations" class="level3" data-number="15.1.4">
+<h3 data-number="15.1.4" class="anchored" data-anchor-id="how-to-think-critically-about-correlations"><span class="header-section-number">15.1.4</span> How to Think Critically About Correlations</h3>
 <p>✅ Always ask:</p>
 <ul>
 <li>What else might explain this relationship?</li>
@@ -760,6 +759,8 @@ Warning: Correlation Does Not Mean Causation! [https://www.tylervigen.com/spurio
 </section>
 </div>
 </div>
+<section id="covariance" class="level3" data-number="15.1.5">
+<h3 data-number="15.1.5" class="anchored" data-anchor-id="covariance"><span class="header-section-number">15.1.5</span> Covariance</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -825,12 +826,12 @@ Attaching package: 'gridExtra'</code></pre>
 </div>
 </div>
 </div>
-<section id="the-concept-of-correlation" class="level3" data-number="15.1.4">
-<h3 data-number="15.1.4" class="anchored" data-anchor-id="the-concept-of-correlation"><span class="header-section-number">15.1.4</span> The Concept of Correlation</h3>
+<section id="the-concept-of-correlation" class="level3" data-number="15.1.6">
+<h3 data-number="15.1.6" class="anchored" data-anchor-id="the-concept-of-correlation"><span class="header-section-number">15.1.6</span> The Concept of Correlation</h3>
 <p>Correlation is a broad concept that describes how variables are related to each other. This relationship can take many forms, as shown in our plots.</p>
 </section>
-<section id="starting-with-covariance" class="level3" data-number="15.1.5">
-<h3 data-number="15.1.5" class="anchored" data-anchor-id="starting-with-covariance"><span class="header-section-number">15.1.5</span> Starting with Covariance</h3>
+<section id="starting-with-covariance" class="level3" data-number="15.1.7">
+<h3 data-number="15.1.7" class="anchored" data-anchor-id="starting-with-covariance"><span class="header-section-number">15.1.7</span> Starting with Covariance</h3>
 <p>Covariance is the fundamental measure of how variables move together:</p>
 <p><span class="math display">Cov(X,Y) = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{n-1}</span></p>
 <p>It tells us:</p>
@@ -846,8 +847,8 @@ Attaching package: 'gridExtra'</code></pre>
 <li>Same relationship, different scales!</li>
 </ul>
 </section>
-<section id="standardizing-to-get-correlation-measures" class="level3" data-number="15.1.6">
-<h3 data-number="15.1.6" class="anchored" data-anchor-id="standardizing-to-get-correlation-measures"><span class="header-section-number">15.1.6</span> Standardizing to Get Correlation Measures</h3>
+<section id="standardizing-to-get-correlation-measures" class="level3" data-number="15.1.8">
+<h3 data-number="15.1.8" class="anchored" data-anchor-id="standardizing-to-get-correlation-measures"><span class="header-section-number">15.1.8</span> Standardizing to Get Correlation Measures</h3>
 <ol type="1">
 <li>Pearson’s correlation coefficient standardizes covariance: <span class="math display">r = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}</span></li>
 </ol>
@@ -865,8 +866,8 @@ Attaching package: 'gridExtra'</code></pre>
 <li>Also ranges from -1 to 1</li>
 </ul>
 </section>
-<section id="example" class="level3" data-number="15.1.7">
-<h3 data-number="15.1.7" class="anchored" data-anchor-id="example"><span class="header-section-number">15.1.7</span> Example</h3>
+<section id="example" class="level3" data-number="15.1.9">
+<h3 data-number="15.1.9" class="anchored" data-anchor-id="example"><span class="header-section-number">15.1.9</span> Example</h3>
 <p>Consider student heights and weights:</p>
 <ul>
 <li>Covariance might be 120 kg·cm</li>
@@ -875,8 +876,8 @@ Attaching package: 'gridExtra'</code></pre>
 <li>Spearman’s coefficient might be 0.75 (capturing possible nonlinearity)</li>
 </ul>
 </section>
-<section id="key-points" class="level3" data-number="15.1.8">
-<h3 data-number="15.1.8" class="anchored" data-anchor-id="key-points"><span class="header-section-number">15.1.8</span> Key Points</h3>
+<section id="key-points" class="level3" data-number="15.1.10">
+<h3 data-number="15.1.10" class="anchored" data-anchor-id="key-points"><span class="header-section-number">15.1.10</span> Key Points</h3>
 <ol type="1">
 <li>Start with covariance to understand joint movement</li>
 <li>Use correlation coefficients for standardized measures</li>
@@ -902,8 +903,8 @@ Ranks: Positions in an Ordered Sequence
 </div>
 <div class="callout-body-container callout-body">
 <p>Ranks are simply position numbers in an ordered dataset:</p>
-<section id="how-to-determine-ranks" class="level3" data-number="15.1.9">
-<h3 data-number="15.1.9" class="anchored" data-anchor-id="how-to-determine-ranks"><span class="header-section-number">15.1.9</span> How to Determine Ranks?</h3>
+<section id="how-to-determine-ranks" class="level3" data-number="15.1.11">
+<h3 data-number="15.1.11" class="anchored" data-anchor-id="how-to-determine-ranks"><span class="header-section-number">15.1.11</span> How to Determine Ranks?</h3>
 <ol type="1">
 <li><p>Order data from smallest to largest value</p></li>
 <li><p>Assign consecutive natural numbers:</p>
@@ -915,8 +916,8 @@ Ranks: Positions in an Ordered Sequence
 </ul></li>
 </ol>
 </section>
-<section id="example-1" class="level3" data-number="15.1.10">
-<h3 data-number="15.1.10" class="anchored" data-anchor-id="example-1"><span class="header-section-number">15.1.10</span> Example</h3>
+<section id="example-1" class="level3" data-number="15.1.12">
+<h3 data-number="15.1.12" class="anchored" data-anchor-id="example-1"><span class="header-section-number">15.1.12</span> Example</h3>
 <p>We have 5 students with heights:</p>
 <pre><code>Height:    165, 182, 170, 168, 175
 Ranks:      1,   5,   3,   2,   4</code></pre>
@@ -924,129 +925,8 @@ Ranks:      1,   5,   3,   2,   4</code></pre>
 <pre><code>Grades:     2,   3,   3,   4,   5
 Ranks:      1,  2.5, 2.5,  4,   5</code></pre>
 </section>
-<section id="benefits" class="level3" data-number="15.1.11">
-<h3 data-number="15.1.11" class="anchored" data-anchor-id="benefits"><span class="header-section-number">15.1.11</span> Benefits</h3>
-<ul>
-<li>Eliminate measurement scale effects</li>
-<li>Robust to outliers</li>
-<li>Allow detection of monotonic relationships</li>
-</ul>
-</section>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Understanding Linear Regression (OLS): Quickstart guide
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> n)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate OLS parameters</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> <span class="fu">cov</span>(x, y) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>beta0 <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="sc">-</span> beta1 <span class="sc">*</span> <span class="fu">mean</span>(x)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create alternative lines</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>lines_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">intercept =</span> <span class="fu">c</span>(beta0, beta0 <span class="sc">+</span> <span class="dv">1</span>, beta0 <span class="sc">-</span> <span class="dv">1</span>),</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">slope =</span> <span class="fu">c</span>(beta1, beta1 <span class="sc">+</span> <span class="fl">0.3</span>, beta1 <span class="sc">-</span> <span class="fl">0.3</span>),</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">line_type =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span>, <span class="st">"Suboptimal 1"</span>, <span class="st">"Suboptimal 2"</span>)</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> lines_data,</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">intercept =</span> intercept, </span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                  <span class="at">slope =</span> slope,</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> line_type,</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                  <span class="at">linetype =</span> line_type),</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span> <span class="ot">=</span> <span class="st">"#FF4500"</span>,</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 1"</span> <span class="ot">=</span> <span class="st">"#4169E1"</span>,</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 2"</span> <span class="ot">=</span> <span class="st">"#228B22"</span>)) <span class="sc">+</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Finding the Best-Fitting Line"</span>,</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Orange line minimizes the sum of squared errors"</span>,</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X Variable"</span>,</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y Variable"</span>,</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Line Type"</span>,</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Line Type"</span>) <span class="sc">+</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="the-model-concept" class="level3" data-number="15.1.12">
-<h3 data-number="15.1.12" class="anchored" data-anchor-id="the-model-concept"><span class="header-section-number">15.1.12</span> The Model Concept</h3>
-<p>OLS regression is a statistical model that describes the relationship between variables. Two key assumptions define this model:</p>
-<ol type="1">
-<li>The relationship can be described by a straight line (linearity)</li>
-<li>The errors in our predictions are not systematically related to our x-variable (strict exogeneity)</li>
-</ol>
-</section>
-<section id="example-education-and-wages" class="level3" data-number="15.1.13">
-<h3 data-number="15.1.13" class="anchored" data-anchor-id="example-education-and-wages"><span class="header-section-number">15.1.13</span> Example: Education and Wages</h3>
-<p>Consider studying the effect of education (x) on wages (y). Let’s say we estimate:</p>
-<p><span class="math display">wages = \beta_0 + \beta_1 \cdot education + \epsilon</span></p>
-<p>The error term <span class="math inline">\epsilon</span> contains all other factors affecting wages. Strict exogeneity is violated if we omit an important variable like “ability” that affects both education and wages. Why? Because more able people tend to get more education AND higher wages, making our estimate of education’s effect biased upward.</p>
-</section>
-<section id="the-optimization-problem" class="level3" data-number="15.1.14">
-<h3 data-number="15.1.14" class="anchored" data-anchor-id="the-optimization-problem"><span class="header-section-number">15.1.14</span> The Optimization Problem</h3>
-<p>OLS finds the line that minimizes the sum of squared errors:</p>
-<p><span class="math display">\min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
-<p>Looking at our plot:</p>
-<ul>
-<li>Each point represents one person (education level, wage)</li>
-<li>Each line suggests a different relationship</li>
-<li>The orange line yields the smallest total squared error</li>
-<li>The blue and green lines have larger errors</li>
-</ul>
-</section>
-<section id="finding-the-best-line" class="level3" data-number="15.1.15">
-<h3 data-number="15.1.15" class="anchored" data-anchor-id="finding-the-best-line"><span class="header-section-number">15.1.15</span> Finding the Best Line</h3>
-<p>The solution to this minimization gives us:</p>
-<p><span class="math display">\hat{\beta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{cov(X, Y)}{var(X)}</span></p>
-<p><span class="math display">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
-</section>
-<section id="key-points-1" class="level3" data-number="15.1.16">
-<h3 data-number="15.1.16" class="anchored" data-anchor-id="key-points-1"><span class="header-section-number">15.1.16</span> Key Points</h3>
-<ol type="1">
-<li>OLS finds the line that minimizes squared prediction errors</li>
-<li>This line is “best” in terms of fit, but might not capture true relationships if important variables are omitted</li>
-<li>In the education-wages example, omitting ability means we attribute all the wage increase to education alone</li>
-</ol>
-</section>
-</div>
-</div>
-<section id="covariance" class="level3" data-number="15.1.17">
-<h3 data-number="15.1.17" class="anchored" data-anchor-id="covariance"><span class="header-section-number">15.1.17</span> Covariance</h3>
 <p>Covariance measures how two variables vary together.</p>
 <p><strong>Formula:</strong> <span class="math inline">cov(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n - 1}</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
@@ -1113,9 +993,9 @@ Understanding Linear Regression (OLS): Quickstart guide
 </table>
 <p><strong>R calculation:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.5</code></pre>
 </div>
@@ -1132,8 +1012,8 @@ Understanding Linear Regression (OLS): Quickstart guide
 <li>Doesn’t provide information about the strength of the relationship</li>
 </ul>
 </section>
-<section id="pearson-correlation" class="level3" data-number="15.1.18">
-<h3 data-number="15.1.18" class="anchored" data-anchor-id="pearson-correlation"><span class="header-section-number">15.1.18</span> Pearson Correlation</h3>
+<section id="pearson-correlation" class="level3" data-number="15.1.13">
+<h3 data-number="15.1.13" class="anchored" data-anchor-id="pearson-correlation"><span class="header-section-number">15.1.13</span> Pearson Correlation</h3>
 <p>Pearson correlation measures the strength and direction of the linear relationship between two continuous variables.</p>
 <p><strong>Formula:</strong> <span class="math inline">r = \frac{cov(X,Y)}{s_X s_Y} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}</span></p>
 <p><strong>Manual Calculation Example:</strong></p>
@@ -1171,7 +1051,7 @@ Understanding Linear Regression (OLS): Quickstart guide
 </table>
 <p><strong>R calculation:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7745967</code></pre>
 </div>
@@ -1190,8 +1070,8 @@ Understanding Linear Regression (OLS): Quickstart guide
 <li>Assumes normally distributed variables</li>
 </ul>
 </section>
-<section id="spearman-correlation" class="level3" data-number="15.1.19">
-<h3 data-number="15.1.19" class="anchored" data-anchor-id="spearman-correlation"><span class="header-section-number">15.1.19</span> Spearman Correlation</h3>
+<section id="spearman-correlation" class="level3" data-number="15.1.14">
+<h3 data-number="15.1.14" class="anchored" data-anchor-id="spearman-correlation"><span class="header-section-number">15.1.14</span> Spearman Correlation</h3>
 <p>Spearman correlation measures the strength and direction of the monotonic relationship between two variables, which can be continuous or ordinal.</p>
 <p><strong>Formula:</strong> <span class="math inline">\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}</span>, where <span class="math inline">d_i</span> is the difference between ranks.</p>
 <p><strong>Manual Calculation Example:</strong></p>
@@ -1243,9 +1123,9 @@ Understanding Linear Regression (OLS): Quickstart guide
 </table>
 <p><strong>R calculation:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.8</code></pre>
 </div>
@@ -1263,16 +1143,16 @@ Understanding Linear Regression (OLS): Quickstart guide
 <li>Doesn’t provide information about the shape of the relationship beyond monotonicity</li>
 </ul>
 </section>
-<section id="cross-tabulation" class="level3" data-number="15.1.20">
-<h3 data-number="15.1.20" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">15.1.20</span> Cross-tabulation</h3>
+<section id="cross-tabulation" class="level3" data-number="15.1.15">
+<h3 data-number="15.1.15" class="anchored" data-anchor-id="cross-tabulation"><span class="header-section-number">15.1.15</span> Cross-tabulation</h3>
 <p>Cross-tabulation (contingency table) shows the relationship between two categorical variables.</p>
 <p><strong>Example:</strong></p>
 <p>Let’s create a cross-tabulation of two variables: - Education level: High School, College, Graduate - Employment status: Employed, Unemployed</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>education <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"High School"</span>, <span class="st">"College"</span>, <span class="st">"Graduate"</span>, <span class="st">"High School"</span>, <span class="st">"College"</span>, <span class="st">"Graduate"</span>, <span class="st">"High School"</span>, <span class="st">"College"</span>, <span class="st">"Graduate"</span>))</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>employment <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Employed"</span>, <span class="st">"Employed"</span>, <span class="st">"Employed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Employed"</span>, <span class="st">"Employed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Employed"</span>))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(education, employment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>education <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"High School"</span>, <span class="st">"College"</span>, <span class="st">"Graduate"</span>, <span class="st">"High School"</span>, <span class="st">"College"</span>, <span class="st">"Graduate"</span>, <span class="st">"High School"</span>, <span class="st">"College"</span>, <span class="st">"Graduate"</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>employment <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"Employed"</span>, <span class="st">"Employed"</span>, <span class="st">"Employed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Employed"</span>, <span class="st">"Employed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Unemployed"</span>, <span class="st">"Employed"</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(education, employment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             employment
 education     Employed Unemployed
@@ -1299,8 +1179,8 @@ education     Employed Unemployed
 <li>Doesn’t provide a single summary statistic of association strength</li>
 </ul>
 </section>
-<section id="choosing-the-appropriate-measure" class="level3" data-number="15.1.21">
-<h3 data-number="15.1.21" class="anchored" data-anchor-id="choosing-the-appropriate-measure"><span class="header-section-number">15.1.21</span> Choosing the Appropriate Measure</h3>
+<section id="choosing-the-appropriate-measure" class="level3" data-number="15.1.16">
+<h3 data-number="15.1.16" class="anchored" data-anchor-id="choosing-the-appropriate-measure"><span class="header-section-number">15.1.16</span> Choosing the Appropriate Measure</h3>
 <p>When deciding which bivariate statistic to use, consider:</p>
 <ol type="1">
 <li><p>Data type:</p>
@@ -1377,27 +1257,27 @@ education     Employed Unemployed
 <section id="implementation-in-r" class="level3" data-number="15.2.2">
 <h3 data-number="15.2.2" class="anchored" data-anchor-id="implementation-in-r"><span class="header-section-number">15.2.2</span> Implementation in R</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">7</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlations</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>pearson_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>spearman_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>kendall_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"kendall"</span>)</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Pearson correlation:"</span>, <span class="fu">round</span>(pearson_cor, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">7</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlations</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>pearson_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>spearman_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>kendall_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"kendall"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Pearson correlation:"</span>, <span class="fu">round</span>(pearson_cor, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Pearson correlation: 0.917 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Spearman correlation:"</span>, <span class="fu">round</span>(spearman_cor, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Spearman correlation:"</span>, <span class="fu">round</span>(spearman_cor, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Spearman correlation: 0.821 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Kendall correlation:"</span>, <span class="fu">round</span>(kendall_cor, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Kendall correlation:"</span>, <span class="fu">round</span>(kendall_cor, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Kendall correlation: 0.738 </code></pre>
 </div>
@@ -1406,23 +1286,23 @@ education     Employed Unemployed
 <section id="visualization" class="level3" data-number="15.2.3">
 <h3 data-number="15.2.3" class="anchored" data-anchor-id="visualization"><span class="header-section-number">15.2.3</span> Visualization</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Correlation Example"</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Pearson r ="</span>, <span class="fu">round</span>(pearson_cor, <span class="dv">3</span>)),</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X variable"</span>,</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y variable"</span>) <span class="sc">+</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Correlation Example"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"Pearson r ="</span>, <span class="fu">round</span>(pearson_cor, <span class="dv">3</span>)),</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X variable"</span>,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y variable"</span>) <span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1496,45 +1376,45 @@ education     Employed Unemployed
 <section id="example-analysis" class="level3" data-number="15.2.6">
 <h3 data-number="15.2.6" class="anchored" data-anchor-id="example-analysis"><span class="header-section-number">15.2.6</span> Example Analysis</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate non-linear relationship</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">20</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> x2<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x2, <span class="at">y =</span> y2)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlations</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>cor_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Method =</span> <span class="fu">c</span>(<span class="st">"Pearson"</span>, <span class="st">"Spearman"</span>, <span class="st">"Kendall"</span>),</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Correlation =</span> <span class="fu">c</span>(</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cor</span>(x2, y2, <span class="at">method =</span> <span class="st">"pearson"</span>),</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cor</span>(x2, y2, <span class="at">method =</span> <span class="st">"spearman"</span>),</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cor</span>(x2, y2, <span class="at">method =</span> <span class="st">"kendall"</span>)</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate non-linear relationship</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">20</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> x2<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x2, <span class="at">y =</span> y2)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate correlations</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>cor_results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Method =</span> <span class="fu">c</span>(<span class="st">"Pearson"</span>, <span class="st">"Spearman"</span>, <span class="st">"Kendall"</span>),</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Correlation =</span> <span class="fu">c</span>(</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cor</span>(x2, y2, <span class="at">method =</span> <span class="st">"pearson"</span>),</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cor</span>(x2, y2, <span class="at">method =</span> <span class="st">"spearman"</span>),</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cor</span>(x2, y2, <span class="at">method =</span> <span class="st">"kendall"</span>)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Method Correlation
 1  Pearson   0.9699718
 2 Spearman   0.9849624
 3  Kendall   0.9368421</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data2, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Non-linear Relationship Example"</span>,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Compare different correlation measures"</span>,</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X variable"</span>,</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y variable"</span>) <span class="sc">+</span></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data2, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Non-linear Relationship Example"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Compare different correlation measures"</span>,</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X variable"</span>,</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y variable"</span>) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1587,16 +1467,16 @@ education     Employed Unemployed
 <p>A correlation matrix is a table showing the pairwise correlations of several variables. It’s a fundamental tool in multivariate analysis.</p>
 <p><strong>Example:</strong> Let’s create a correlation matrix for four variables: height, weight, age, and income.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">170</span>, <span class="dv">10</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> height <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">40</span>, <span class="dv">10</span>)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>income <span class="ot">&lt;-</span> age <span class="sc">*</span> <span class="dv">1000</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">10000</span>)</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(height, weight, age, income)</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data)</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>height <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">170</span>, <span class="dv">10</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>weight <span class="ot">&lt;-</span> height <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">40</span>, <span class="dv">10</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>income <span class="ot">&lt;-</span> age <span class="sc">*</span> <span class="dv">1000</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">10000</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(height, weight, age, income)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(data)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cor_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           height      weight         age      income
 height  1.0000000  0.66712996 -0.12917601 -0.12246786
@@ -1618,11 +1498,11 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <h4 data-number="15.3.2.1" class="anchored" data-anchor-id="scatterplot-matrix"><span class="header-section-number">15.3.2.1</span> Scatterplot Matrix</h4>
 <p>A scatterplot matrix shows pairwise relationships between multiple variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1638,15 +1518,15 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <h4 data-number="15.3.2.2" class="anchored" data-anchor-id="correlation-plot"><span class="header-section-number">15.3.2.2</span> Correlation Plot</h4>
 <p>A correlation plot provides a visual representation of the correlation matrix.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>corrplot 0.94 loaded</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">"color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">"color"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1663,8 +1543,8 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <p>Partial correlation measures the relationship between two variables while controlling for one or more other variables.</p>
 <p><strong>Example:</strong> Let’s calculate the partial correlation between height and weight, controlling for age.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pcor.test</span>(data<span class="sc">$</span>height, data<span class="sc">$</span>weight, data<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ppcor)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pcor.test</span>(data<span class="sc">$</span>height, data<span class="sc">$</span>weight, data<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   estimate      p.value statistic   n gp  Method
 1 0.6654367 5.758157e-14  8.779896 100  1 pearson</code></pre>
@@ -1681,9 +1561,9 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <p>Multiple correlation measures the strength of the relationship between a dependent variable and multiple independent variables.</p>
 <p><strong>Example:</strong> Let’s predict weight using height and age.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> height <span class="sc">+</span> age, <span class="at">data =</span> data)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>r.squared)</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Multiple correlation coefficient:"</span>, R))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(weight <span class="sc">~</span> height <span class="sc">+</span> age, <span class="at">data =</span> data)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">summary</span>(model)<span class="sc">$</span>r.squared)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Multiple correlation coefficient:"</span>, R))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Multiple correlation coefficient: 0.667377840470434"</code></pre>
 </div>
@@ -1699,7 +1579,7 @@ income -0.1224679 -0.04579492  0.65654902  1.00000000</code></pre>
 <p>Factor analysis is a technique used to reduce many variables to a smaller number of underlying factors.</p>
 <p><strong>Example:</strong> Let’s perform a simple factor analysis on our dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'psych'</code></pre>
@@ -1709,8 +1589,8 @@ Attaching package: 'psych'</code></pre>
 
     %+%, alpha</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fa_result <span class="ot">&lt;-</span> <span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa_result<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>fa_result <span class="ot">&lt;-</span> <span class="fu">fa</span>(data, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(fa_result<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Loadings:
@@ -1746,7 +1626,7 @@ Cumulative Var 0.336 0.671</code></pre>
 <h3 data-number="15.3.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">15.3.7</span> Conclusion</h3>
 <p>This introduction to multivariate statistics builds upon the concept of correlation to explore relationships among multiple variables. These techniques provide powerful tools for understanding complex datasets, but they also require careful consideration of assumptions and limitations. As you progress in your statistical journey, you’ll encounter more advanced multivariate techniques such as MANOVA, discriminant analysis, and structural equation modeling.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ forcats   1.0.0     ✔ readr     2.1.5
@@ -1761,9 +1641,9 @@ Cumulative Var 0.336 0.671</code></pre>
 ✖ MASS::select()       masks dplyr::select()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -1779,9 +1659,120 @@ Cumulative Var 0.336 0.671</code></pre>
 <li>Do study hours predict exam scores?</li>
 </ul>
 <p>These questions share a common structure: they all explore how changes in one variable relate to changes in another.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding Linear Regression (OLS): Quickstart guide
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> n)</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate OLS parameters</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> <span class="fu">cov</span>(x, y) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>beta0 <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="sc">-</span> beta1 <span class="sc">*</span> <span class="fu">mean</span>(x)</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create alternative lines</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>lines_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">intercept =</span> <span class="fu">c</span>(beta0, beta0 <span class="sc">+</span> <span class="dv">1</span>, beta0 <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">slope =</span> <span class="fu">c</span>(beta1, beta1 <span class="sc">+</span> <span class="fl">0.3</span>, beta1 <span class="sc">-</span> <span class="fl">0.3</span>),</span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">line_type =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span>, <span class="st">"Suboptimal 1"</span>, <span class="st">"Suboptimal 2"</span>)</span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> lines_data,</span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">intercept =</span> intercept, </span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>                  <span class="at">slope =</span> slope,</span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> line_type,</span>
+<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>                  <span class="at">linetype =</span> line_type),</span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span> <span class="ot">=</span> <span class="st">"#FF4500"</span>,</span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 1"</span> <span class="ot">=</span> <span class="st">"#4169E1"</span>,</span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 2"</span> <span class="ot">=</span> <span class="st">"#228B22"</span>)) <span class="sc">+</span></span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Finding the Best-Fitting Line"</span>,</span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Orange line minimizes the sum of squared errors"</span>,</span>
+<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X Variable"</span>,</span>
+<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y Variable"</span>,</span>
+<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Line Type"</span>,</span>
+<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Line Type"</span>) <span class="sc">+</span></span>
+<span id="cb45-40"><a href="#cb45-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb45-41"><a href="#cb45-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb45-42"><a href="#cb45-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb45-43"><a href="#cb45-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb45-44"><a href="#cb45-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb45-45"><a href="#cb45-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb45-46"><a href="#cb45-46" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_en_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="the-model-concept" class="level3" data-number="15.4.2">
+<h3 data-number="15.4.2" class="anchored" data-anchor-id="the-model-concept"><span class="header-section-number">15.4.2</span> The Model Concept</h3>
+<p>OLS regression is a statistical model that describes the relationship between variables. Two key assumptions define this model:</p>
+<ol type="1">
+<li>The relationship can be described by a straight line (linearity)</li>
+<li>The errors in our predictions are not systematically related to our x-variable (strict exogeneity)</li>
+</ol>
 </section>
-<section id="basic-concepts-and-terminology" class="level3" data-number="15.4.2">
-<h3 data-number="15.4.2" class="anchored" data-anchor-id="basic-concepts-and-terminology"><span class="header-section-number">15.4.2</span> Basic Concepts and Terminology</h3>
+<section id="example-education-and-wages" class="level3" data-number="15.4.3">
+<h3 data-number="15.4.3" class="anchored" data-anchor-id="example-education-and-wages"><span class="header-section-number">15.4.3</span> Example: Education and Wages</h3>
+<p>Consider studying the effect of education (x) on wages (y). Let’s say we estimate:</p>
+<p><span class="math display">wages = \beta_0 + \beta_1 \cdot education + \epsilon</span></p>
+<p>The error term <span class="math inline">\epsilon</span> contains all other factors affecting wages. Strict exogeneity is violated if we omit an important variable like “ability” that affects both education and wages. Why? Because more able people tend to get more education AND higher wages, making our estimate of education’s effect biased upward.</p>
+</section>
+<section id="the-optimization-problem" class="level3" data-number="15.4.4">
+<h3 data-number="15.4.4" class="anchored" data-anchor-id="the-optimization-problem"><span class="header-section-number">15.4.4</span> The Optimization Problem</h3>
+<p>OLS finds the line that minimizes the sum of squared errors:</p>
+<p><span class="math display">\min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
+<p>Looking at our plot:</p>
+<ul>
+<li>Each point represents one person (education level, wage)</li>
+<li>Each line suggests a different relationship</li>
+<li>The orange line yields the smallest total squared error</li>
+<li>The blue and green lines have larger errors</li>
+</ul>
+</section>
+<section id="finding-the-best-line" class="level3" data-number="15.4.5">
+<h3 data-number="15.4.5" class="anchored" data-anchor-id="finding-the-best-line"><span class="header-section-number">15.4.5</span> Finding the Best Line</h3>
+<p>The solution to this minimization gives us:</p>
+<p><span class="math display">\hat{\beta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{cov(X, Y)}{var(X)}</span></p>
+<p><span class="math display">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
+</section>
+<section id="key-points-1" class="level3" data-number="15.4.6">
+<h3 data-number="15.4.6" class="anchored" data-anchor-id="key-points-1"><span class="header-section-number">15.4.6</span> Key Points</h3>
+<ol type="1">
+<li>OLS finds the line that minimizes squared prediction errors</li>
+<li>This line is “best” in terms of fit, but might not capture true relationships if important variables are omitted</li>
+<li>In the education-wages example, omitting ability means we attribute all the wage increase to education alone</li>
+</ol>
+</section>
+</div>
+</div>
+</section>
+<section id="basic-concepts-and-terminology" class="level3" data-number="15.4.7">
+<h3 data-number="15.4.7" class="anchored" data-anchor-id="basic-concepts-and-terminology"><span class="header-section-number">15.4.7</span> Basic Concepts and Terminology</h3>
 <p>Before we dive into the mathematics, let’s establish our key terms:</p>
 <ul>
 <li><strong>Dependent Variable (Y)</strong>:
@@ -1810,8 +1801,8 @@ Cumulative Var 0.336 0.671</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="the-core-idea" class="level3" data-number="15.4.3">
-<h3 data-number="15.4.3" class="anchored" data-anchor-id="the-core-idea"><span class="header-section-number">15.4.3</span> The Core Idea</h3>
+<section id="the-core-idea" class="level3" data-number="15.4.8">
+<h3 data-number="15.4.8" class="anchored" data-anchor-id="the-core-idea"><span class="header-section-number">15.4.8</span> The Core Idea</h3>
 <p>Let’s visualize what regression does with a simple example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some example data</span></span>
