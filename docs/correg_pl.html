@@ -329,11 +329,11 @@ window.Quarto = {
   <ul>
   <li><a href="#statystyki-dwuwymiarowe" id="toc-statystyki-dwuwymiarowe" class="nav-link active" data-scroll-target="#statystyki-dwuwymiarowe"><span class="header-section-number">16.1</span> Statystyki Dwuwymiarowe</a>
   <ul class="collapse">
-  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">16.1.4</span> Kowariancja</a></li>
-  <li><a href="#korelacja-pearsona" id="toc-korelacja-pearsona" class="nav-link" data-scroll-target="#korelacja-pearsona"><span class="header-section-number">16.1.12</span> Korelacja Pearsona</a></li>
-  <li><a href="#korelacja-spearmana" id="toc-korelacja-spearmana" class="nav-link" data-scroll-target="#korelacja-spearmana"><span class="header-section-number">16.1.13</span> Korelacja Spearmana</a></li>
-  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">16.1.14</span> Tabela Krzyżowa</a></li>
-  <li><a href="#wybór-odpowiedniej-miary" id="toc-wybór-odpowiedniej-miary" class="nav-link" data-scroll-target="#wybór-odpowiedniej-miary"><span class="header-section-number">16.1.15</span> Wybór Odpowiedniej Miary</a></li>
+  <li><a href="#kowariancja" id="toc-kowariancja" class="nav-link" data-scroll-target="#kowariancja"><span class="header-section-number">16.1.6</span> Kowariancja</a></li>
+  <li><a href="#korelacja-pearsona" id="toc-korelacja-pearsona" class="nav-link" data-scroll-target="#korelacja-pearsona"><span class="header-section-number">16.1.13</span> Korelacja Pearsona</a></li>
+  <li><a href="#korelacja-spearmana" id="toc-korelacja-spearmana" class="nav-link" data-scroll-target="#korelacja-spearmana"><span class="header-section-number">16.1.14</span> Korelacja Spearmana</a></li>
+  <li><a href="#tabela-krzyżowa" id="toc-tabela-krzyżowa" class="nav-link" data-scroll-target="#tabela-krzyżowa"><span class="header-section-number">16.1.15</span> Tabela Krzyżowa</a></li>
+  <li><a href="#wybór-odpowiedniej-miary" id="toc-wybór-odpowiedniej-miary" class="nav-link" data-scroll-target="#wybór-odpowiedniej-miary"><span class="header-section-number">16.1.16</span> Wybór Odpowiedniej Miary</a></li>
   </ul></li>
   <li><a href="#zrozumienie-korelacji-pearsona-spearmana-i-kendalla" id="toc-zrozumienie-korelacji-pearsona-spearmana-i-kendalla" class="nav-link" data-scroll-target="#zrozumienie-korelacji-pearsona-spearmana-i-kendalla"><span class="header-section-number">16.2</span> Zrozumienie Korelacji Pearsona, Spearmana i Kendalla</a>
   <ul class="collapse">
@@ -515,12 +515,11 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-How Variables Interplay Together: Understanding Relationships in Social Data
+Analiza Zależności Zmiennych w Badaniach Społecznych
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Imagine you’re observing how different aspects of society move together. Sometimes when one thing increases, another increases too. Other times, they move in opposite directions. And sometimes, they move in more complex patterns!</p>
-<p>Let’s explore some examples that show different ways variables can relate to each other:</p>
+<p>W tej sekcji przeanalizujemy, w jaki sposób różne zmienne społeczne wchodzą ze sobą w interakcje i korelują. Zbadamy cztery charakterystyczne typy zależności często obserwowane w naukach społecznych, wykorzystując empiryczne przykłady do zilustrowania kluczowych wzorców i ich znaczenia dla analizy danych.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -529,57 +528,29 @@ How Variables Interplay Together: Understanding Relationships in Social Data
 </figure>
 </div>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
 </div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Let’s break down what we’re seeing:</p>
+<p>Analiza Zależności między Zmiennymi:</p>
 <ol type="1">
-<li><strong>Moving Together</strong> (Education Spending &amp; Literacy)
-<ul>
-<li>As countries spend more on education, literacy rates tend to increase</li>
-<li>This shows a positive relationship - both variables move in the same direction</li>
-</ul></li>
-<li><strong>Moving Apart</strong> (Work Hours &amp; Life Satisfaction)
-<ul>
-<li>As weekly work hours increase, life satisfaction tends to decrease</li>
-<li>This shows a negative relationship - when one goes up, the other goes down</li>
-</ul></li>
-<li><strong>No Clear Pattern</strong> (Coffee Shops &amp; Voter Turnout)
-<ul>
-<li>More coffee shops in a city doesn’t seem to affect voter turnout</li>
-<li>This shows no relationship - the variables move independently</li>
-</ul></li>
-<li><strong>Complex Interplay</strong> (Income Inequality &amp; Social Trust)
-<ul>
-<li>The relationship isn’t straight - it curves!</li>
-<li>This shows a non-linear relationship - the pattern is more complex</li>
-</ul></li>
+<li><p><strong>Dodatnia Korelacja Liniowa</strong> (Dostęp do Opieki Zdrowotnej a Długość Życia) Dane wykazują dodatnią zależność liniową między dostępem do opieki zdrowotnej a oczekiwaną długością życia. Analiza statystyczna wskazuje, że wzrost dostępności opieki zdrowotnej o 10 punktów procentowych koreluje z wydłużeniem oczekiwanej długości życia o około 2,5 roku. Zależność ta utrzymuje istotność statystyczną w całym obserwowanym zakresie.</p></li>
+<li><p><strong>Ujemna Korelacja Liniowa</strong> (Użytkowanie Urządzeń Cyfrowych a Jakość Snu) Analiza ujawnia odwrotną zależność między czasem spędzonym przed ekranami urządzeń cyfrowych a wskaźnikami jakości snu. Dane wskazują, że każda dodatkowa godzina użytkowania urządzeń koreluje z mierzalnym spadkiem wskaźników jakości snu, wykazując spójną negatywną zależność liniową.</p></li>
+<li><p><strong>Brak Korelacji</strong> (Infrastruktura a Wskaźniki Ekonomiczne) Zależność między gęstością infrastruktury a wskaźnikami ekonomicznymi nie wykazuje statystycznie istotnej korelacji. Ten brak korelacji sugeruje, że zmienne te funkcjonują niezależnie w ramach obserwowanych parametrów, wskazując na obecność innych czynników determinujących, nieuwzględnionych w tej analizie.</p></li>
+<li><p><strong>Zależność Nieliniowa</strong> (Analiza Sieci Społecznych) Związek między wielkością sieci a miarami wynikowymi wykazuje charakterystykę nieliniową. Dane sugerują istnienie optymalnego zakresu wielkości sieci, poza którym korzyści krańcowe maleją i ostatecznie stają się ujemne. Wzorzec ten demonstruje znaczenie uwzględniania zależności nieliniowych w badaniach społecznych.</p></li>
 </ol>
-<p>Remember:</p>
+<p>Aspekty Metodologiczne:</p>
+<ol type="1">
+<li><p><strong>Istotność Statystyczna</strong>: Obserwowane zależności wymagają weryfikacji pod kątem istotności statystycznej przed wyciągnięciem wniosków.</p></li>
+<li><p><strong>Niezależność Zmiennych</strong>: Założenie o niezależności zmiennych wymaga weryfikacji poprzez odpowiednie testy statystyczne.</p></li>
+<li><p><strong>Zmienne Zakłócające</strong>: Analizy muszą uwzględniać potencjalne zmienne zakłócające, które mogą wpływać na obserwowane zależności.</p></li>
+<li><p><strong>Przyczynowość</strong>: Wzorce korelacji nie implikują koniecznie związków przyczynowych; ustalenie przyczynowości wymaga zastosowania dodatkowych metod badawczych.</p></li>
+</ol>
+<p>Zastosowania Badawcze:</p>
+<p>Zrozumienie tych wzorców zależności ma istotne znaczenie dla:</p>
 <ul>
-<li>Relationships can be strong or weak</li>
-<li>They can be simple (straight line) or complex (curves)</li>
-<li>Just because two things move together doesn’t mean one causes the other!</li>
+<li>Projektowania i metodologii badań</li>
+<li>Procedur analizy statystycznej</li>
+<li>Rozwoju i testowania teorii</li>
 </ul>
+<p>Krytyczna ocena tych zależności umożliwia bardziej rzetelne projektowanie badań i formułowanie wiarygodnych wniosków w naukach społecznych.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -588,7 +559,7 @@ How Variables Interplay Together: Understanding Relationships in Social Data
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Uwaga: Korelacja Nie Oznacza Przyczynowości! [https://www.tylervigen.com/spurious-correlations]
+Rozróżnienie między Korelacją a Przyczynowością [Zob. np. https://www.tylervigen.com/spurious-correlations]
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -604,9 +575,9 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości! [https://www.tylervigen.com/spurio
 <figcaption>https://sitn.hms.harvard.edu/flash/2021/when-correlation-does-not-imply-causation-why-your-gut-microbes-may-not-yet-be-a-silver-bullet-to-all-your-problems/</figcaption>
 </figure>
 </div>
-<p>To, że dwa zjawiska występują razem, nie oznacza, że jedno powoduje drugie. Przyjrzyjmy się przykładom “korelacji pozornych” - gdy zmienne wydają się być powiązane, ale w rzeczywistości nie ma między nimi związku przyczynowego.</p>
-<section id="przykład-1-sprzedaż-lodów-a-przestępczość" class="level3" data-number="16.1.1">
-<h3 data-number="16.1.1" class="anchored" data-anchor-id="przykład-1-sprzedaż-lodów-a-przestępczość"><span class="header-section-number">16.1.1</span> Przykład 1: Sprzedaż Lodów a Przestępczość</h3>
+<p>Zależności statystyczne między zmiennymi stanowią jeden z najczęściej błędnie interpretowanych aspektów analizy danych. Mimo że korelacje mogą ujawniać wzorce w danych, wymagają starannej interpretacji, aby uniknąć wyciągania nieprawidłowych wniosków przyczynowych. Przeanalizujmy to zagadnienie na przykładach.</p>
+<section id="wzorce-sezonowe-i-pozorne-korelacje-studium-przypadku" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="wzorce-sezonowe-i-pozorne-korelacje-studium-przypadku"><span class="header-section-number">16.1.1</span> Wzorce Sezonowe i Pozorne Korelacje: Studium Przypadku</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -616,19 +587,10 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości! [https://www.tylervigen.com/spurio
 </div>
 </div>
 </div>
-<p><strong>Dlaczego?</strong></p>
-<ul>
-<li>Sprzedaż lodów i wskaźnik przestępczości wydają się być silnie skorelowane</li>
-<li>Oba wskaźniki rosną w miesiącach letnich</li>
-<li>Prawdziwa przyczyna? Temperatura!
-<ul>
-<li>Ciepła pogoda → Więcej ludzi na zewnątrz → Większa sprzedaż lodów</li>
-<li>Ciepła pogoda → Więcej ludzi na zewnątrz → Więcej okazji do przestępstw</li>
-</ul></li>
-</ul>
+<p>Ta wizualizacja przedstawia klasyczny przykład zmiennej zakłócającej w analizie statystycznej. Pozorna korelacja między sprzedażą lodów a wskaźnikiem przestępczości (r = 0,85, p &lt; 0,001) pokazuje, jak wahania sezonowe mogą tworzyć mylące zależności statystyczne. Korelacja wynika ze wspólnego czynnika przyczynowego: sezonowych zmian temperatury, które niezależnie wpływają na obie zmienne poprzez odrębne mechanizmy.</p>
 </section>
-<section id="przykład-2-używanie-internet-explorera-a-wskaźnik-zabójstw" class="level3" data-number="16.1.2">
-<h3 data-number="16.1.2" class="anchored" data-anchor-id="przykład-2-używanie-internet-explorera-a-wskaźnik-zabójstw"><span class="header-section-number">16.1.2</span> Przykład 2: Używanie Internet Explorera a Wskaźnik Zabójstw</h3>
+<section id="trendy-czasowe-i-pozorne-związki" class="level3" data-number="16.1.2">
+<h3 data-number="16.1.2" class="anchored" data-anchor-id="trendy-czasowe-i-pozorne-związki"><span class="header-section-number">16.1.2</span> Trendy Czasowe i Pozorne Związki</h3>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -638,104 +600,44 @@ Uwaga: Korelacja Nie Oznacza Przyczynowości! [https://www.tylervigen.com/spurio
 </div>
 </div>
 </div>
-<p><strong>Dlaczego?</strong></p>
-<ul>
-<li>Wraz ze spadkiem użycia Internet Explorera, spadał również wskaźnik zabójstw</li>
-<li>Oba trendy zachodziły w tym samym czasie, ale są całkowicie niezwiązane</li>
-<li>To tzw. “korelacja czasowa” - zjawiska zmieniające się równolegle w czasie przez przypadek</li>
-</ul>
-<section id="zrozumienie-mylących-korelacji" class="level4" data-number="16.1.2.1">
-<h4 data-number="16.1.2.1" class="anchored" data-anchor-id="zrozumienie-mylących-korelacji"><span class="header-section-number">16.1.2.1</span> Zrozumienie Mylących Korelacji</h4>
+<p>Ta druga analiza ilustruje błąd korelacji czasowej, gdzie dwa niezależnie malejące trendy tworzą sztuczny związek statystyczny. Pomimo silnego współczynnika korelacji (r = 0,91, p &lt; 0,001), nie istnieje żaden wiarygodny mechanizm przyczynowy łączący te zmienne.</p>
+</section>
+<section id="mechanizmy-powstawania-pozornych-korelacji" class="level3" data-number="16.1.3">
+<h3 data-number="16.1.3" class="anchored" data-anchor-id="mechanizmy-powstawania-pozornych-korelacji"><span class="header-section-number">16.1.3</span> Mechanizmy Powstawania Pozornych Korelacji</h3>
+<p>Analiza statystyczna może być zakłócona przez kilka systematycznych błędów, które tworzą pozorne, ale pozbawione znaczenia korelacje. Oto główne mechanizmy:</p>
+<p><strong>1. Zmienne Zakłócające</strong></p>
+<p>Zmienna zakłócająca tworzy pozorny związek między niezależnymi zmiennymi poprzez niezależny wpływ na każdą z nich. To zjawisko statystyczne wymaga starannego planowania eksperymentów i analizy wielowymiarowej w celu wykrycia i kontroli potencjalnych czynników zakłócających.</p>
+<p><strong>2. Autokorelacja Czasowa</strong></p>
+<p>Gdy zmienne wykazują silne trendy czasowe, mogą wykazywać korelację po prostu dlatego, że zmieniają się w czasie, a nie z powodu jakiejkolwiek znaczącej relacji. Efekt ten można kontrolować poprzez metody takie jak usuwanie trendu lub różnicowanie szeregów czasowych.</p>
+<p><strong>3. Błąd Jednoczesnej Przyczynowości</strong></p>
+<p>Występuje, gdy kierunek przyczynowości jest niejednoznaczny lub dwukierunkowy. Na przykład, wzrost gospodarczy i stopy inwestycji mogą wykazywać jednoczesną przyczynowość, ponieważ każda zmienna potencjalnie wpływa na drugą poprzez złożone mechanizmy sprzężenia zwrotnego.</p>
+</section>
+<section id="metody-statystyczne-wnioskowania-przyczynowego" class="level3" data-number="16.1.4">
+<h3 data-number="16.1.4" class="anchored" data-anchor-id="metody-statystyczne-wnioskowania-przyczynowego"><span class="header-section-number">16.1.4</span> Metody Statystyczne Wnioskowania Przyczynowego</h3>
+<p>Współczesne podejścia statystyczne oferują kilka technik pozwalających wyjść poza prostą korelację w kierunku wnioskowania przyczynowego, np.:</p>
+<p><strong>1. Planowanie Eksperymentów</strong></p>
+<p>Randomizowane badania kontrolowane stanowią złoty standard wnioskowania przyczynowego, pozwalając badaczom na izolację wpływu pojedynczych zmiennych przy jednoczesnej kontroli czynników zakłócających.</p>
+<p><strong>2. Zmienne Instrumentalne</strong></p>
+<p>Ta technika statystyczna wykorzystuje zmienną, która wpływa na wynik wyłącznie poprzez jej wpływ na zmienną będącą przedmiotem zainteresowania, pomagając ustalić związki przyczynowe w danych obserwacyjnych.</p>
+<p><strong>3. Regresja Nieciągła</strong></p>
+<p>Ten quasi-eksperymentalny projekt wykorzystuje naturalnie występujące progi do przybliżenia eksperymentów randomizowanych, dostarczając dowodów na istnienie związków przyczynowych.</p>
+</section>
+<section id="ramy-krytycznej-analizy-korelacji" class="level3" data-number="16.1.5">
+<h3 data-number="16.1.5" class="anchored" data-anchor-id="ramy-krytycznej-analizy-korelacji"><span class="header-section-number">16.1.5</span> Ramy Krytycznej Analizy Korelacji</h3>
+<p>Przy ocenie wyników korelacyjnych należy wziąć pod uwagę następujące ramy analityczne:</p>
 <ol type="1">
-<li><strong>Ukryta Wspólna Przyczyna (Zmienna Zakłócająca)</strong></li>
+<li><p>Wiarygodność Teoretyczna: Zbadanie, czy istnieje logiczny mechanizm, poprzez który jedna zmienna mogłaby wpływać na drugą.</p></li>
+<li><p>Pierwszeństwo Czasowe: Weryfikacja, czy proponowana przyczyna poprzedza skutek w czasie.</p></li>
+<li><p>Zależność Dawka-Odpowiedź: Ocena, czy zmiany w wielkości proponowanej przyczyny odpowiadają proporcjonalnym zmianom w skutku.</p></li>
+<li><p>Spójność: Ocena, czy zależność utrzymuje się w różnych kontekstach i populacjach.</p></li>
+<li><p>Alternatywne Wyjaśnienia: Systematyczne rozważanie i testowanie alternatywnych wyjaśnień zaobserwowanej korelacji.</p></li>
 </ol>
-<p>Kiedy dwie rzeczy wydają się być powiązane, ponieważ ukryty trzeci czynnik wpływa na obie z nich.</p>
-<p>Kluczowe Punkty:</p>
-<ul>
-<li>Ukryty czynnik nazywamy “zmienną zakłócającą” (confounding)</li>
-<li>Ignorowanie wspólnej przyczyny może prowadzić do błędnych wniosków</li>
-</ul>
-<p>Przykład:</p>
-<p>Związek Między Spożyciem Lodów a Przestępczością:</p>
-<ul>
-<li>Obserwacja: Sprzedaż lodów i wskaźnik przestępczości rosną w tym samym czasie</li>
-<li>Rzeczywistość: Temperatura latem jest ukrytą przyczyną
-<ul>
-<li>Upał → Więcej osób kupuje lody</li>
-<li>Upał → Więcej osób na zewnątrz → Więcej okazji do przestępstw</li>
-</ul></li>
-<li>Wniosek: Lody nie powodują przestępczości; po prostu mają wspólny czynnik wpływu!</li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Czysty Przypadek (Korelacja Przypadkowa)</strong></li>
-</ol>
-<p>Czasami rzeczy układają się przypadkowo, szczególnie gdy analizujemy dużo danych.</p>
-<p>Kluczowe Punkty:</p>
-<ul>
-<li>Im więcej wzorców szukamy, tym bardziej prawdopodobne, że znajdziemy przypadkowe dopasowania</li>
-<li>Krótkoterminowe dopasowania często znikają w dłuższym okresie</li>
-<li>To, że dwa trendy się pokrywają, nie oznacza, że są znacząco powiązane</li>
-</ul>
-<p>Przykład:</p>
-<p>Internet Explorer i Wskaźniki Zabójstw - Ktoś odkrył, że wskaźniki użycia Internet Explorera pokrywały się ze wskaźnikami zabójstw - Rzeczywistość: To był czysty przypadek - Wniosek: Przy wystarczającej ilości danych można znaleźć wzorce, które nic nie znaczą!</p>
-<ol start="3" type="1">
-<li><strong>Odwrócona Przyczynowość (Jednoczesność)</strong></li>
-</ol>
-<p>Kiedy mylimy, która rzecz powoduje drugą, lub gdy obie rzeczy wpływają na siebie nawzajem.</p>
-<p>Kluczowe Punkty:</p>
-<ul>
-<li>Kierunek ma znaczenie w związku przyczynowo-skutkowym</li>
-<li>Czasami rzeczy wpływają na siebie nawzajem</li>
-<li>Analiza czasu wystąpienia zjawisk może pomóc lepiej zrozumieć badane zależności</li>
-</ul>
-<p>Przykłady:</p>
-<ol type="a">
-<li>Paradoks Szpitali</li>
-</ol>
-<ul>
-<li><p>Obserwacja: Miasta z większą liczbą szpitali mają wyższy wskaźnik zgonów</p></li>
-<li><p>Rzeczywistość:</p>
-<ul>
-<li>Więcej ludzi → Więcej naturalnych zgonów → Potrzeba więcej szpitali</li>
-<li>Więcej ludzi → Potrzeba więcej szpitali</li>
-</ul></li>
-<li><p>Wniosek: Szpitale nie powodują śmierci; są budowane tam, gdzie ludzie ich potrzebują!</p></li>
-</ul>
-<ol start="2" type="a">
-<li>Cykl Godzin Nauki</li>
-</ol>
-<ul>
-<li>Obserwacja: Uczniowie, którzy korzystają z korepetycji, mają gorsze oceny</li>
-<li>Rzeczywistość:
-<ul>
-<li>Gorsze oceny → Uczniowie szukają korepetycji</li>
-<li>Korepetycje → Oceny poprawiają się z czasem</li>
-</ul></li>
-<li>Wniosek: Korepetycje nie powodują złych ocen; są odpowiedzią na nie!</li>
-</ul>
-</section>
-</section>
-<section id="jak-krytycznie-myśleć-o-korelacjach" class="level3" data-number="16.1.3">
-<h3 data-number="16.1.3" class="anchored" data-anchor-id="jak-krytycznie-myśleć-o-korelacjach"><span class="header-section-number">16.1.3</span> Jak Krytycznie Myśleć o Korelacjach</h3>
-<p>✅ Zawsze pytaj:</p>
-<ul>
-<li>Co jeszcze mogłoby wyjaśniać tę relację?</li>
-<li>Czy istnieje logiczny związek?</li>
-<li>Czy relacja mogłaby działać w przeciwnym kierunku?</li>
-<li>Czy to może być tylko zbieg okoliczności?</li>
-</ul>
-<p>❌ Nie daj się zwieść:</p>
-<ul>
-<li>Prostym wyjaśnieniom złożonych zjawisk</li>
-<li>Związkom pozbawionym logicznego mechanizmu</li>
-<li>Korelacjom opartym na zbyt małej liczbie danych</li>
-</ul>
-<p>Pamiętaj: W naukach społecznych większość relacji jest złożona i obejmuje wiele czynników. Korelacja to tylko jeden element układanki!</p>
+<p>Pamiętaj: Korelacja statystyczna stanowi warunek konieczny, ale niewystarczający do ustalenia przyczynowości.</p>
 </section>
 </div>
 </div>
-<section id="kowariancja" class="level3" data-number="16.1.4">
-<h3 data-number="16.1.4" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">16.1.4</span> Kowariancja</h3>
+<section id="kowariancja" class="level3" data-number="16.1.6">
+<h3 data-number="16.1.6" class="anchored" data-anchor-id="kowariancja"><span class="header-section-number">16.1.6</span> Kowariancja</h3>
 <p>Kowariancja mierzy, jak dwie zmienne są powiązane (zmieniają się razem).</p>
 <p><strong>Wzór:</strong> <span class="math inline">cov(X,Y) = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{n - 1}</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -803,12 +705,12 @@ Attaching package: 'gridExtra'</code></pre>
 </div>
 </div>
 </div>
-<section id="pojęcie-korelacji" class="level3" data-number="16.1.5">
-<h3 data-number="16.1.5" class="anchored" data-anchor-id="pojęcie-korelacji"><span class="header-section-number">16.1.5</span> Pojęcie Korelacji</h3>
+<section id="pojęcie-korelacji" class="level3" data-number="16.1.7">
+<h3 data-number="16.1.7" class="anchored" data-anchor-id="pojęcie-korelacji"><span class="header-section-number">16.1.7</span> Pojęcie Korelacji</h3>
 <p>Korelacja to szerokie pojęcie opisujące, jak zmienne są ze sobą powiązane. Jak widać na wykresach, zależności te mogą przybierać różne formy.</p>
 </section>
-<section id="rozpoczynając-od-kowariancji" class="level3" data-number="16.1.6">
-<h3 data-number="16.1.6" class="anchored" data-anchor-id="rozpoczynając-od-kowariancji"><span class="header-section-number">16.1.6</span> Rozpoczynając od Kowariancji</h3>
+<section id="rozpoczynając-od-kowariancji" class="level3" data-number="16.1.8">
+<h3 data-number="16.1.8" class="anchored" data-anchor-id="rozpoczynając-od-kowariancji"><span class="header-section-number">16.1.8</span> Rozpoczynając od Kowariancji</h3>
 <p>Kowariancja jest podstawową miarą wspólnej zmienności zmiennych:</p>
 <p><span class="math display">Cov(X,Y) = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{n-1}</span></p>
 <p>Informuje nas o tym:</p>
@@ -824,8 +726,8 @@ Attaching package: 'gridExtra'</code></pre>
 <li>Ta sama zależność, różne skale!</li>
 </ul>
 </section>
-<section id="standaryzacja-i-miary-korelacji" class="level3" data-number="16.1.7">
-<h3 data-number="16.1.7" class="anchored" data-anchor-id="standaryzacja-i-miary-korelacji"><span class="header-section-number">16.1.7</span> Standaryzacja i Miary Korelacji</h3>
+<section id="standaryzacja-i-miary-korelacji" class="level3" data-number="16.1.9">
+<h3 data-number="16.1.9" class="anchored" data-anchor-id="standaryzacja-i-miary-korelacji"><span class="header-section-number">16.1.9</span> Standaryzacja i Miary Korelacji</h3>
 <ol type="1">
 <li>Współczynnik korelacji Pearsona standaryzuje kowariancję: <span class="math display">r = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}</span></li>
 </ol>
@@ -843,18 +745,8 @@ Attaching package: 'gridExtra'</code></pre>
 <li>Również przyjmuje wartości od -1 do 1</li>
 </ul>
 </section>
-<section id="przykład" class="level3" data-number="16.1.8">
-<h3 data-number="16.1.8" class="anchored" data-anchor-id="przykład"><span class="header-section-number">16.1.8</span> Przykład</h3>
-<p>Rozważmy wzrost i wagę studentów:</p>
-<ul>
-<li>Kowariancja może wynosić 120 kg·cm</li>
-<li>Trudna interpretacja: Czy to dużo czy mało?</li>
-<li>Współczynnik Pearsona może wynosić 0,7 (jaśniejsza interpretacja)</li>
-<li>Współczynnik Spearmana może wynosić 0,75 (uwzględniając nieliniowość)</li>
-</ul>
-</section>
-<section id="kluczowe-wnioski" class="level3" data-number="16.1.9">
-<h3 data-number="16.1.9" class="anchored" data-anchor-id="kluczowe-wnioski"><span class="header-section-number">16.1.9</span> Kluczowe Wnioski</h3>
+<section id="kluczowe-wnioski" class="level3" data-number="16.1.10">
+<h3 data-number="16.1.10" class="anchored" data-anchor-id="kluczowe-wnioski"><span class="header-section-number">16.1.10</span> Kluczowe Wnioski</h3>
 <ol type="1">
 <li>Kowariancja pokazuje wspólną zmienność</li>
 <li>Miary korelacji dają standaryzowane wartości</li>
@@ -880,8 +772,8 @@ Rangi: Pozycje w Uporządkowanym Ciągu
 </div>
 <div class="callout-body-container callout-body">
 <p>Rangi to po prostu numery pozycji w uporządkowanym zbiorze danych:</p>
-<section id="jak-wyznaczyć-rangi" class="level3" data-number="16.1.10">
-<h3 data-number="16.1.10" class="anchored" data-anchor-id="jak-wyznaczyć-rangi"><span class="header-section-number">16.1.10</span> Jak Wyznaczyć Rangi?</h3>
+<section id="jak-wyznaczyć-rangi" class="level3" data-number="16.1.11">
+<h3 data-number="16.1.11" class="anchored" data-anchor-id="jak-wyznaczyć-rangi"><span class="header-section-number">16.1.11</span> Jak Wyznaczyć Rangi?</h3>
 <ol type="1">
 <li><p>Porządkujemy dane od najmniejszej do największej wartości</p></li>
 <li><p>Przypisujemy kolejne liczby naturalne:</p>
@@ -893,8 +785,8 @@ Rangi: Pozycje w Uporządkowanym Ciągu
 </ul></li>
 </ol>
 </section>
-<section id="przykład-1" class="level3" data-number="16.1.11">
-<h3 data-number="16.1.11" class="anchored" data-anchor-id="przykład-1"><span class="header-section-number">16.1.11</span> Przykład</h3>
+<section id="przykład" class="level3" data-number="16.1.12">
+<h3 data-number="16.1.12" class="anchored" data-anchor-id="przykład"><span class="header-section-number">16.1.12</span> Przykład</h3>
 <p>Mamy 5 studentów o wzroście:</p>
 <pre><code>Wzrost:   165, 182, 170, 168, 175
 Rangi:     1,   5,   3,   2,   4</code></pre>
@@ -987,8 +879,8 @@ Rangi:     1,  2.5, 2.5,  4,   5</code></pre>
 <li>Nie dostarcza informacji o sile związku</li>
 </ul>
 </section>
-<section id="korelacja-pearsona" class="level3" data-number="16.1.12">
-<h3 data-number="16.1.12" class="anchored" data-anchor-id="korelacja-pearsona"><span class="header-section-number">16.1.12</span> Korelacja Pearsona</h3>
+<section id="korelacja-pearsona" class="level3" data-number="16.1.13">
+<h3 data-number="16.1.13" class="anchored" data-anchor-id="korelacja-pearsona"><span class="header-section-number">16.1.13</span> Korelacja Pearsona</h3>
 <p>Korelacja Pearsona mierzy siłę i kierunek liniowego związku między dwiema zmiennymi ciągłymi.</p>
 <p><strong>Wzór:</strong> <span class="math inline">r = \frac{cov(X,Y)}{s_X s_Y} = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \sum (y_i - \bar{y})^2}}</span></p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
@@ -1045,8 +937,8 @@ Rangi:     1,  2.5, 2.5,  4,   5</code></pre>
 <li>Zakłada normalnie rozłożone zmienne</li>
 </ul>
 </section>
-<section id="korelacja-spearmana" class="level3" data-number="16.1.13">
-<h3 data-number="16.1.13" class="anchored" data-anchor-id="korelacja-spearmana"><span class="header-section-number">16.1.13</span> Korelacja Spearmana</h3>
+<section id="korelacja-spearmana" class="level3" data-number="16.1.14">
+<h3 data-number="16.1.14" class="anchored" data-anchor-id="korelacja-spearmana"><span class="header-section-number">16.1.14</span> Korelacja Spearmana</h3>
 <p>Korelacja Spearmana mierzy siłę i kierunek monotonicznego związku między dwiema zmiennymi, które mogą być ciągłe lub porządkowe.</p>
 <p><strong>Wzór:</strong> <span class="math inline">\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}</span>, gdzie <span class="math inline">d_i</span> to różnica między rangami.</p>
 <p><strong>Przykład Ręcznego Obliczenia:</strong></p>
@@ -1118,8 +1010,8 @@ Rangi:     1,  2.5, 2.5,  4,   5</code></pre>
 <li>Nie dostarcza informacji o kształcie związku poza monotonicznością</li>
 </ul>
 </section>
-<section id="tabela-krzyżowa" class="level3" data-number="16.1.14">
-<h3 data-number="16.1.14" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">16.1.14</span> Tabela Krzyżowa</h3>
+<section id="tabela-krzyżowa" class="level3" data-number="16.1.15">
+<h3 data-number="16.1.15" class="anchored" data-anchor-id="tabela-krzyżowa"><span class="header-section-number">16.1.15</span> Tabela Krzyżowa</h3>
 <p>Tabela krzyżowa (tabela kontyngencji) pokazuje związek między dwiema zmiennymi kategorycznymi.</p>
 <p><strong>Przykład:</strong></p>
 <p>Stwórzmy tabelę krzyżową dla dwóch zmiennych: - Poziom wykształcenia: Średnie, Wyższe, Podyplomowe - Status zatrudnienia: Zatrudniony, Bezrobotny</p>
@@ -1154,8 +1046,8 @@ wyksztalcenie Bezrobotny Zatrudniony
 <li>Nie dostarcza pojedynczej statystyki podsumowującej siłę związku</li>
 </ul>
 </section>
-<section id="wybór-odpowiedniej-miary" class="level3" data-number="16.1.15">
-<h3 data-number="16.1.15" class="anchored" data-anchor-id="wybór-odpowiedniej-miary"><span class="header-section-number">16.1.15</span> Wybór Odpowiedniej Miary</h3>
+<section id="wybór-odpowiedniej-miary" class="level3" data-number="16.1.16">
+<h3 data-number="16.1.16" class="anchored" data-anchor-id="wybór-odpowiedniej-miary"><span class="header-section-number">16.1.16</span> Wybór Odpowiedniej Miary</h3>
 <p>Przy wyborze statystyki dwuwymiarowej należy wziąć pod uwagę:</p>
 <ol type="1">
 <li><p>Typ danych:</p>
