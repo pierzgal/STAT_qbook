@@ -536,9 +536,9 @@ Analiza Zależności Zmiennych w Badaniach Społecznych
 </ol>
 <p>Analiza ujawnia odwrotną zależność między czasem spędzonym przed ekranami urządzeń cyfrowych a wskaźnikami jakości snu. Dane wskazują, że każda dodatkowa godzina użytkowania urządzeń koreluje z mierzalnym spadkiem wskaźników jakości snu, wykazując spójną negatywną zależność liniową.</p>
 <ol start="3" type="1">
-<li><strong>Brak Korelacji</strong> (Infrastruktura a Wskaźniki Ekonomiczne)</li>
+<li><strong>Brak Korelacji</strong> (Infrastruktura a Wskaźniki Ekonomiczne (np. GDP per capita in PLN))</li>
 </ol>
-<p>Zależność między gęstością infrastruktury a wskaźnikami ekonomicznymi nie wykazuje statystycznie istotnej korelacji. Ten brak korelacji sugeruje, że zmienne te funkcjonują niezależnie w ramach obserwowanych parametrów, wskazując na obecność innych czynników determinujących, nieuwzględnionych w tej analizie.</p>
+<p>Zależność między gęstością infrastruktury a wskaźnikami ekonomicznymi (np. GDP per capita in PLN) nie wykazuje statystycznie istotnej korelacji. Ten brak korelacji sugeruje, że zmienne te funkcjonują niezależnie w ramach obserwowanych parametrów, wskazując na obecność innych czynników determinujących, nieuwzględnionych w tej analizie.</p>
 <ol start="4" type="1">
 <li><strong>Zależność Nieliniowa</strong> (Wielkość Zespołu a Produktywność)</li>
 </ol>
@@ -1607,17 +1607,28 @@ Zrozumienie Regresji Liniowej (MNK): Szybki Start
 <p><span class="math display">wynagrodzenia = \beta_0 + \beta_1 \cdot edukacja + \epsilon</span></p>
 <p>Składnik błędu <span class="math inline">\epsilon</span> zawiera wszystkie inne czynniki wpływające na wynagrodzenia. Ścisła egzogeniczność jest naruszona, jeśli pominiemy ważną zmienną, jak “zdolności”, która wpływa zarówno na edukację, jak i wynagrodzenia. Dlaczego? Ponieważ bardziej zdolni ludzie mają tendencję do zdobywania lepszego wykształcenia I wyższych wynagrodzeń, co powoduje zawyżenie szacowanego efektu edukacji.</p>
 </section>
-<section id="problem-optymalizacji" class="level3" data-number="16.3.3">
-<h3 data-number="16.3.3" class="anchored" data-anchor-id="problem-optymalizacji"><span class="header-section-number">16.3.3</span> Problem Optymalizacji</h3>
-<p>MNK znajduje linię, która minimalizuje sumę kwadratów błędów:</p>
-<p><span class="math display">\min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
-<p>Patrząc na nasz wykres:</p>
+<section id="problem-optymalizacji-zrozumienie-metody-najmniejszych-kwadratów-ols" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="problem-optymalizacji-zrozumienie-metody-najmniejszych-kwadratów-ols"><span class="header-section-number">16.3.3</span> Problem Optymalizacji Zrozumienie Metody Najmniejszych Kwadratów (OLS)</h3>
+<p>Kiedy analizujemy zależności między zmiennymi, takimi jak poziom wykształcenia a wynagrodzenie, potrzebujemy systematycznej metody znalezienia linii, która najlepiej odzwierciedla tę relację w naszych danych. Metoda Najmniejszych Kwadratów (OLS - Ordinary Least Squares) dostarcza nam takiego rozwiązania poprzez precyzyjne podejście matematyczne.</p>
+<p>Spójrzmy na nasz wykres poziomów wykształcenia i wynagrodzeń. Każdy punkt reprezentuje rzeczywiste dane - poziom wykształcenia danej osoby i odpowiadające mu wynagrodzenie. Naszym celem jest znalezienie pojedynczej linii, która najdokładniej uchwyci podstawową zależność między tymi zmiennymi.</p>
+<p>Dla każdej obserwacji <span class="math display">i</span> możemy wyrazić tę relację jako:</p>
+<p><span class="math display">y_i = \beta_0 + \beta_1x_i + \epsilon_i</span></p>
+<p>Gdzie:</p>
 <ul>
-<li>Każdy punkt reprezentuje jedną osobę (poziom edukacji, wynagrodzenie)</li>
-<li>Każda linia sugeruje inną relację</li>
-<li>Pomarańczowa linia daje najmniejszy całkowity błąd kwadratowy</li>
-<li>Niebieska i zielona linia mają większe błędy</li>
+<li><span class="math display">y_i</span> to rzeczywiste zaobserwowane wynagrodzenie</li>
+<li><span class="math display">\hat{y_i} = \beta_0 + \beta_1x_i</span> to przewidywane wynagrodzenie</li>
+<li><span class="math display">\epsilon_i = y_i - \hat{y_i}</span> to składnik błędu (reszta)</li>
 </ul>
+<p>Metoda OLS znajduje optymalne wartości dla <span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span> poprzez minimalizację sumy kwadratów błędów:</p>
+<p><span class="math display">\min_{\beta_0, \beta_1} \sum \epsilon_i^2 = \min_{\beta_0, \beta_1} \sum(y_i - \hat{y_i})^2 = \min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
+<p>Analizując naszą wizualizację:</p>
+<ul>
+<li>Rozproszone punkty pokazują rzeczywiste obserwacje <span class="math inline">(x_i, y_i)</span></li>
+<li>Pomarańczowa linia reprezentuje dopasowane wartości <span class="math inline">\hat{y_i}</span>, które minimalizują <span class="math inline">\sum \epsilon_i^2</span></li>
+<li>Niebieska i zielona linia przedstawiają alternatywne dopasowania o większych sumach kwadratów błędów</li>
+<li>Pionowe odległości od każdego punktu do tych linii reprezentują błędy <span class="math inline">\epsilon_i</span></li>
+</ul>
+<p>Rozwiązanie OLS dostarcza nam estymatorów <span class="math inline">\hat{\beta_0}</span> i <span class="math inline">\hat{\beta_1}</span>, które minimalizują całkowity błąd kwadratowy, dając nam najdokładniejszą liniową reprezentację zależności między poziomem wykształcenia a wynagrodzeniem na podstawie dostępnych danych.</p>
 </section>
 <section id="znalezienie-najlepszej-linii" class="level3" data-number="16.3.4">
 <h3 data-number="16.3.4" class="anchored" data-anchor-id="znalezienie-najlepszej-linii"><span class="header-section-number">16.3.4</span> Znalezienie Najlepszej Linii</h3>
