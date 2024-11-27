@@ -1641,13 +1641,19 @@ Understanding Linear Regression (OLS): Quickstart guide
 <p>For any given observation <span class="math inline">i</span>, we can express this relationship as: <span class="math display">y_i = \beta_0 + \beta_1x_i + \epsilon_i</span></p>
 <p>Where:</p>
 <ul>
-<li><span class="math display">y_i</span> is the actual observed wage</li>
-<li><span class="math display">\hat{y_i} = \beta_0 + \beta_1x_i</span> is our predicted wage</li>
-<li><span class="math display">\epsilon_i = y_i - \hat{y_i}</span> is the error term (or residual)</li>
+<li><span class="math inline">y_i</span> is the actual observed wage</li>
+<li><span class="math inline">\hat{y_i} = \beta_0 + \beta_1x_i</span> is our predicted wage</li>
+<li><span class="math inline">\epsilon_i = y_i - \hat{y_i}</span> is the error term (or residual)</li>
 </ul>
 <p>OLS finds the optimal values for <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span> by minimizing the sum of squared errors:</p>
 <p><span class="math display">\min_{\beta_0, \beta_1} \sum \epsilon_i^2 = \min_{\beta_0, \beta_1} \sum(y_i - \hat{y_i})^2 = \min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
-<p>Looking at our visualization: - The scattered points show our actual observations <span class="math inline">(x_i, y_i)</span> - The orange line represents our fitted values <span class="math inline">\hat{y_i}</span> that minimize <span class="math inline">\sum \epsilon_i^2</span> - The blue and green lines represent alternative fits with larger total squared errors - The vertical distances from each point to these lines represent the errors <span class="math inline">\epsilon_i</span></p>
+<p>Looking at our visualization:</p>
+<ul>
+<li>The scattered points show our actual observations <span class="math inline">(x_i, y_i)</span></li>
+<li>The orange line represents our fitted values <span class="math inline">\hat{y_i}</span> that minimize <span class="math inline">\sum \epsilon_i^2</span></li>
+<li>The blue and green lines represent alternative fits with larger total squared errors</li>
+<li>The vertical distances from each point to these lines represent the errors <span class="math inline">\epsilon_i</span></li>
+</ul>
 <p>The OLS solution provides us with estimates <span class="math inline">\hat{\beta_0}</span> and <span class="math inline">\hat{\beta_1}</span> that minimize the total squared error, giving us the most accurate linear representation of the relationship between education and wages based on our available data.</p>
 </section>
 <section id="finding-the-best-line" class="level3" data-number="15.3.5">

@@ -1530,7 +1530,7 @@ Cumulative Var 0.336 0.671</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Zrozumienie Regresji Liniowej (MNK): Szybki Start
+Model Regresji Liniowej (MNK): Szybki Start
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1607,17 +1607,17 @@ Zrozumienie Regresji Liniowej (MNK): Szybki Start
 <p><span class="math display">wynagrodzenia = \beta_0 + \beta_1 \cdot edukacja + \epsilon</span></p>
 <p>Składnik błędu <span class="math inline">\epsilon</span> zawiera wszystkie inne czynniki wpływające na wynagrodzenia. Ścisła egzogeniczność jest naruszona, jeśli pominiemy ważną zmienną, jak “zdolności”, która wpływa zarówno na edukację, jak i wynagrodzenia. Dlaczego? Ponieważ bardziej zdolni ludzie mają tendencję do zdobywania lepszego wykształcenia I wyższych wynagrodzeń, co powoduje zawyżenie szacowanego efektu edukacji.</p>
 </section>
-<section id="problem-optymalizacji-zrozumienie-metody-najmniejszych-kwadratów-ols" class="level3" data-number="16.3.3">
-<h3 data-number="16.3.3" class="anchored" data-anchor-id="problem-optymalizacji-zrozumienie-metody-najmniejszych-kwadratów-ols"><span class="header-section-number">16.3.3</span> Problem Optymalizacji Zrozumienie Metody Najmniejszych Kwadratów (OLS)</h3>
+<section id="problem-optymalizacji-metoda-najmniejszych-kwadratów-ols" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="problem-optymalizacji-metoda-najmniejszych-kwadratów-ols"><span class="header-section-number">16.3.3</span> Problem Optymalizacji: Metoda Najmniejszych Kwadratów (OLS)</h3>
 <p>Kiedy analizujemy zależności między zmiennymi, takimi jak poziom wykształcenia a wynagrodzenie, potrzebujemy systematycznej metody znalezienia linii, która najlepiej odzwierciedla tę relację w naszych danych. Metoda Najmniejszych Kwadratów (OLS - Ordinary Least Squares) dostarcza nam takiego rozwiązania poprzez precyzyjne podejście matematyczne.</p>
 <p>Spójrzmy na nasz wykres poziomów wykształcenia i wynagrodzeń. Każdy punkt reprezentuje rzeczywiste dane - poziom wykształcenia danej osoby i odpowiadające mu wynagrodzenie. Naszym celem jest znalezienie pojedynczej linii, która najdokładniej uchwyci podstawową zależność między tymi zmiennymi.</p>
 <p>Dla każdej obserwacji <span class="math display">i</span> możemy wyrazić tę relację jako:</p>
 <p><span class="math display">y_i = \beta_0 + \beta_1x_i + \epsilon_i</span></p>
 <p>Gdzie:</p>
 <ul>
-<li><span class="math display">y_i</span> to rzeczywiste zaobserwowane wynagrodzenie</li>
-<li><span class="math display">\hat{y_i} = \beta_0 + \beta_1x_i</span> to przewidywane wynagrodzenie</li>
-<li><span class="math display">\epsilon_i = y_i - \hat{y_i}</span> to składnik błędu (reszta)</li>
+<li><span class="math inline">y_i</span> to rzeczywiste zaobserwowane wynagrodzenie</li>
+<li><span class="math inline">\hat{y_i} = \beta_0 + \beta_1x_i</span> to przewidywane wynagrodzenie</li>
+<li><span class="math inline">\epsilon_i = y_i - \hat{y_i}</span> to składnik błędu (reszta)</li>
 </ul>
 <p>Metoda OLS znajduje optymalne wartości dla <span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span> poprzez minimalizację sumy kwadratów błędów:</p>
 <p><span class="math display">\min_{\beta_0, \beta_1} \sum \epsilon_i^2 = \min_{\beta_0, \beta_1} \sum(y_i - \hat{y_i})^2 = \min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
