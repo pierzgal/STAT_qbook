@@ -373,8 +373,7 @@ window.Quarto = {
   <li><a href="#when-to-be-cautious" id="toc-when-to-be-cautious" class="nav-link" data-scroll-target="#when-to-be-cautious"><span class="header-section-number">15.7.4</span> When to Be Cautious</a></li>
   <li><a href="#practical-tips-for-analysis" id="toc-practical-tips-for-analysis" class="nav-link" data-scroll-target="#practical-tips-for-analysis"><span class="header-section-number">15.7.5</span> Practical Tips for Analysis</a></li>
   <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">15.7.6</span> Key Takeaways</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">15.7.7</span> Further Reading</a></li>
-  <li><a href="#measures-of-fit" id="toc-measures-of-fit" class="nav-link" data-scroll-target="#measures-of-fit"><span class="header-section-number">15.7.8</span> Measures of Fit</a></li>
+  <li><a href="#measures-of-fit" id="toc-measures-of-fit" class="nav-link" data-scroll-target="#measures-of-fit"><span class="header-section-number">15.7.7</span> Measures of Fit</a></li>
   </ul></li>
   <li><a href="#diagnostic-plots" id="toc-diagnostic-plots" class="nav-link" data-scroll-target="#diagnostic-plots"><span class="header-section-number">15.8</span> Diagnostic Plots</a>
   <ul class="collapse">
@@ -400,7 +399,7 @@ window.Quarto = {
   <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">15.13</span> Conclusion</a>
   <ul class="collapse">
   <li><a href="#key-takeaways-2" id="toc-key-takeaways-2" class="nav-link" data-scroll-target="#key-takeaways-2"><span class="header-section-number">15.13.1</span> Key Takeaways</a></li>
-  <li><a href="#further-reading-2" id="toc-further-reading-2" class="nav-link" data-scroll-target="#further-reading-2">Further Reading</a></li>
+  <li><a href="#further-reading-1" id="toc-further-reading-1" class="nav-link" data-scroll-target="#further-reading-1">Further Reading</a></li>
   </ul></li>
   <li><a href="#appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" id="toc-appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" class="nav-link" data-scroll-target="#appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data"><span class="header-section-number">15.14</span> Appendix A.1: Understanding Correlation Measures: A Self-Study Tutorial (Using Stress Level and Cognitive Performance Data)</a>
   <ul class="collapse">
@@ -1392,7 +1391,7 @@ Understanding Linear Regression (OLS): Quickstart guide
 <li><span class="math inline">\epsilon_i = y_i - \hat{y_i}</span> is the error term (or residual)</li>
 </ul>
 <p>OLS finds the optimal values for <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span> by minimizing the sum of squared errors:</p>
-<p><span class="math display">\min_{\beta_0, \beta_1} \sum \epsilon_i^2 = \min_{\beta_0, \beta_1} \sum(y_i - \hat{y_i})^2 = \min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
+<p><span class="math display">\min_{\beta_0, \beta_1} \sum \epsilon_i^2 = \min_{\beta_0, \beta_1} \sum(y_i - \hat{y_i})^2 = \min_{\beta_0, \beta_1} \sum(y_i - (\hat{\beta_0} + \hat{\beta_1}x_i))^2</span></p>
 <p>Looking at our visualization:</p>
 <ul>
 <li>The scattered points show our actual observations <span class="math inline">(x_i, y_i)</span></li>
@@ -1944,11 +1943,6 @@ Figure&nbsp;15.7: Variance Decomposition in Linear Regression
 <li>Social sciences often have lower R² values</li>
 <li>Focus on practical significance</li>
 </ul></li>
-<li><strong>Sample Size Matters</strong>
-<ul>
-<li>Use adjusted R² for multiple regression: <span class="math display">R^2_{adj} = 1 - \frac{SSE/(n-p)}{SST/(n-1)}</span></li>
-<li>Penalizes for adding unnecessary predictors</li>
-</ul></li>
 </ol>
 </section>
 <section id="practical-tips-for-analysis" class="level3" data-number="15.7.5">
@@ -1984,17 +1978,8 @@ Figure&nbsp;15.7: Variance Decomposition in Linear Regression
 <li>Always combine R² with other diagnostic tools</li>
 </ol>
 </section>
-<section id="further-reading" class="level3" data-number="15.7.7">
-<h3 data-number="15.7.7" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">15.7.7</span> Further Reading</h3>
-<ul>
-<li>For deeper understanding of vector spaces and projections</li>
-<li>For multiple regression extensions</li>
-<li>For robust regression alternatives</li>
-<li>For non-linear relationships :::</li>
-</ul>
-</section>
-<section id="measures-of-fit" class="level3" data-number="15.7.8">
-<h3 data-number="15.7.8" class="anchored" data-anchor-id="measures-of-fit"><span class="header-section-number">15.7.8</span> Measures of Fit</h3>
+<section id="measures-of-fit" class="level3" data-number="15.7.7">
+<h3 data-number="15.7.7" class="anchored" data-anchor-id="measures-of-fit"><span class="header-section-number">15.7.7</span> Measures of Fit</h3>
 <ol type="1">
 <li><p><strong>R-squared (<span class="math inline">R^2</span>)</strong>: <span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p></li>
 <li><p><strong>Root Mean Square Error (RMSE)</strong>: <span class="math display">RMSE = \sqrt{\frac{SSE}{n}}</span></p></li>
@@ -2699,8 +2684,8 @@ Attaching package: 'patchwork'</code></pre>
 <li>Always use <strong>diagnostic tools</strong> along with <span class="math inline">R^2</span> to evaluate your model’s quality.</li>
 </ol>
 </section>
-<section id="further-reading-1" class="level3" data-number="15.8.24">
-<h3 data-number="15.8.24" class="anchored" data-anchor-id="further-reading-1"><span class="header-section-number">15.8.24</span> Further Reading</h3>
+<section id="further-reading" class="level3" data-number="15.8.24">
+<h3 data-number="15.8.24" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">15.8.24</span> Further Reading</h3>
 <ul>
 <li>Explore advanced topics like <strong>vector spaces</strong> and <strong>projections</strong>.</li>
 <li>Learn about <strong>multiple regression</strong> techniques and <strong>robust methods</strong>.</li>
@@ -3416,8 +3401,8 @@ Attaching package: 'kableExtra'</code></pre>
 <li>Report results clearly and completely</li>
 </ol>
 </section>
-<section id="further-reading-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="further-reading-2">Further Reading</h3>
+<section id="further-reading-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="further-reading-1">Further Reading</h3>
 <p>For deeper understanding:</p>
 <ul>
 <li>Wooldridge, J.M. “Introductory Econometrics: A Modern Approach”</li>
