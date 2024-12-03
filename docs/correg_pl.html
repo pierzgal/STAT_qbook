@@ -3256,8 +3256,8 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </div>
 <div class="callout-body-container callout-body">
 <section id="czym-jest-prosta-regresja-liniowa" class="level3" data-number="16.11.2">
-<h3 data-number="16.11.2" class="anchored" data-anchor-id="czym-jest-prosta-regresja-liniowa"><span class="header-section-number">16.11.2</span> 1. Czym jest Prosta Regresja Liniowa?</h3>
-<p>Rozważmy związek między czasem poświęconym na naukę a wynikami egzaminów. Prosta regresja liniowa tworzy optymalną linię prostą przechodzącą przez punkty danych, modelującą tę relację. Linia ta służy dwóm celom: prognozowaniu oraz kwantyfikacji związku między zmiennymi.</p>
+<h3 data-number="16.11.2" class="anchored" data-anchor-id="czym-jest-prosta-regresja-liniowa"><span class="header-section-number">16.11.2</span> Czym jest Prosta Regresja Liniowa?</h3>
+<p>Rozważmy związek między <strong>czasem poświęconym na naukę</strong> (predyktor, zmienna niezależna) a <strong>wynikami egzaminów</strong> (zmienna objaśniana, outcome/response variable). Prosta regresja liniowa tworzy optymalną linię prostą przechodzącą przez punkty danych, modelującą tę relację. Linia ta służy dwóm celom: prognozowaniu oraz kwantyfikacji związku między zmiennymi.</p>
 <p>Zależność matematyczna jest wyrażona jako:</p>
 <p><span class="math display"> Y_i = \beta_0 + \beta_1X_i + \epsilon_i </span></p>
 <p>Używając naszego przykładu z czasem nauki do zilustrowania każdego składnika:</p>
@@ -3271,8 +3271,8 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <p>Naszym celem jest znalezienie oszacowań <span class="math inline">\hat{\beta}_0</span> i <span class="math inline">\hat{\beta}_1</span>, które najlepiej przybliżają prawdziwe parametry <span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span>. Dopasowana linia regresji jest wtedy wyrażona jako:</p>
 <p><span class="math display"> \hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1X_i </span></p>
 </section>
-<section id="metoda-najmniejszych-kwadratów" class="level3" data-number="16.11.3">
-<h3 data-number="16.11.3" class="anchored" data-anchor-id="metoda-najmniejszych-kwadratów"><span class="header-section-number">16.11.3</span> 2. Metoda Najmniejszych Kwadratów</h3>
+<section id="metoda-najmniejszych-kwadratów-mnkols" class="level3" data-number="16.11.3">
+<h3 data-number="16.11.3" class="anchored" data-anchor-id="metoda-najmniejszych-kwadratów-mnkols"><span class="header-section-number">16.11.3</span> Metoda Najmniejszych Kwadratów (MNK/OLS)</h3>
 <p>Metoda “Najmniejszych Kwadratów” określa optymalne wartości dla <span class="math inline">\hat{\beta}_0</span> i <span class="math inline">\hat{\beta}_1</span> poprzez metodyczny proces. Choć współczesne oprogramowanie statystyczne wykonuje te obliczenia automatycznie, zrozumienie podstawowego procesu jest kluczowe:</p>
 <ol type="1">
 <li>Rozpocznij od wstępnego oszacowania linii regresji
@@ -3303,9 +3303,23 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <li>Gdy SSE przestaje się zmniejszać przy kolejnych niewielkich zmianach parametrów linii, oznacza to znalezienie optymalnego dopasowania</li>
 <li>To miejsce odpowiada najmniejszej możliwej wartości SSE, czyli najlepszemu dopasowaniu linii do danych</li>
 </ul>
+<p>Bardziej formalnie, MNK (Metoda Najmniejszych Kwadratów) znajduje optymalne wartości dla <span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span> poprzez minimalizację sumy kwadratów błędów:</p>
+<p><span class="math display">\min_{\beta_0, \beta_1} \sum \epsilon_i^2 = \min_{\beta_0, \beta_1} \sum(y_i - \hat{y_i})^2 = \min_{\beta_0, \beta_1} \sum(y_i - (\beta_0 + \beta_1x_i))^2</span></p>
+<p>Rozwiązanie tego problemu minimalizacji daje nam:</p>
+<p><span class="math display">\hat{\beta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{cov(X, Y)}{var(X)}</span> <span class="math display">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
+<p>Warto zauważyć, że w powyższych wzorach <span class="math inline">\hat{\beta}_1</span> reprezentuje nachylenie linii regresji i jest wyrażone jako stosunek kowariancji zmiennych X i Y do wariancji zmiennej X. Natomiast <span class="math inline">\hat{\beta}_0</span> to wyraz wolny (punkt przecięcia z osią Y), który możemy obliczyć używając średnich wartości zmiennych X i Y oraz już oszacowanego nachylenia. Symbol <span class="math inline">\bar{x}</span> oznacza średnią wartość zmiennej X, a <span class="math inline">\bar{y}</span> średnią wartość zmiennej Y.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="estymacja-parametrów" class="level3" data-number="16.11.4">
-<h3 data-number="16.11.4" class="anchored" data-anchor-id="estymacja-parametrów"><span class="header-section-number">16.11.4</span> 3. Estymacja Parametrów</h3>
+<h3 data-number="16.11.4" class="anchored" data-anchor-id="estymacja-parametrów"><span class="header-section-number">16.11.4</span> Estymacja Parametrów</h3>
 <p>Formuły do oszacowania parametrów wykorzystują podstawowe miary statystyczne:</p>
 <p><span class="math display"> \hat{\beta}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2} </span></p>
 <p>Ta formuła zawiera dwa istotne pojęcia statystyczne:</p>
@@ -3318,19 +3332,34 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <p><span class="math display"> \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X} </span></p>
 <p>Zapewnia to, że linia regresji przechodzi przez punkt średnich (<span class="math inline">\bar{X}</span>, <span class="math inline">\bar{Y}</span>).</p>
 </section>
-<section id="dekompozycja-wariancji-1" class="level3" data-number="16.11.5">
-<h3 data-number="16.11.5" class="anchored" data-anchor-id="dekompozycja-wariancji-1"><span class="header-section-number">16.11.5</span> 4. Dekompozycja Wariancji</h3>
-<p>Całkowita wariancja w naszych danych ma trzy ważne składniki:</p>
-<ol type="1">
-<li><p>Całkowita Suma Kwadratów (SST): Całkowita zmienność w Y <span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span> Reprezentuje to całkowitą zmienność, którą staramy się wyjaśnić</p></li>
-<li><p>Wyjaśniona Wariancja (SSR): Zmienność uchwycona przez nasz model <span class="math display"> SSR = \sum(\hat{Y}_i - \bar{Y})^2 </span> Mierzy to odchylenie przewidywanych wartości od średniej</p></li>
-<li><p>Niewyjaśniona Wariancja (SSE): Zmienność resztowa <span class="math display"> SSE = \sum(Y_i - \hat{Y}_i)^2 </span> Kwantyfikuje to odchylenie obserwowanych wartości od przewidywanych wartości</p></li>
-</ol>
+<section id="dekompozycja-wariancji-w-regresji" class="level3" data-number="16.11.5">
+<h3 data-number="16.11.5" class="anchored" data-anchor-id="dekompozycja-wariancji-w-regresji"><span class="header-section-number">16.11.5</span> Dekompozycja Wariancji w Regresji</h3>
+<p><strong>Całkowita wariancja w naszych danych składa się z trzech istotnych komponentów.</strong></p>
+<p><strong>Celem jest tutaj określenie, jaką część zmienności zmiennej wynikowej jesteśmy w stanie wyjaśnić za pomocą wszystkich zmiennych objaśniających!</strong></p>
+<p>Rozważmy próbę zrozumienia czynników wpływających na frekwencję wyborczą w różnych okręgach wyborczych. W niektórych okręgach frekwencja stabilnie utrzymuje się na poziomie 70%, podczas gdy w innych ledwo osiąga 35%. Co wyjaśnia te różnice?</p>
+<p><strong>Całkowita Wariancja (SST)</strong> reprezentuje wszystkie obserwowane różnice w frekwencji wyborczej między okręgami, mierząc jak bardzo wskaźniki frekwencji odbiegają od średniej krajowej:</p>
+<p><span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span></p>
+<p>Przykładowo, jeśli średnia krajowa frekwencja wynosi 50%, SST ujmuje wielkość odchyleń każdego okręgu od tej wartości bazowej - czy to okręgu podmiejskiego o wysokiej frekwencji 65%, czy miejskiego o niskiej frekwencji 35%.</p>
+<p>Politolodzy opracowują modele wyjaśniające te różnice, uwzględniając czynniki takie jak poziom wykształcenia, mediana dochodów czy struktura wiekowa. <strong>Wyjaśniona Wariancja (SSR)</strong> wskazuje, jak dużą część zmienności frekwencji udaje się wyjaśnić tym czynnikom demograficznym i społeczno-ekonomicznym:</p>
+<p><span class="math display"> SSR = \sum(\hat{Y}_i - \bar{Y})^2 </span></p>
+<p><strong>Niewyjaśniona Wariancja (SSE)</strong> reprezentuje te różnice w frekwencji, których nasz model nie potrafił uchwycić - być może ze względu na lokalną dynamikę polityczną, jakość kandydatów czy skuteczność kampanii wyborczej, które nie zostały uwzględnione w modelu:</p>
+<p><span class="math display"> SSE = \sum(Y_i - \hat{Y}_i)^2 </span></p>
+<p>Ta dekompozycja stanowi fundament oceny dopasowania modelu, ponieważ bezpośrednio odpowiada na pytanie: “Jaką część rzeczywistej zmienności w zachowaniach wyborczych potrafi wyjaśnić nasz model?”</p>
+<p>Jeśli nasz model wyjaśnia 80% wariancji (R² = SSR/SST = 0,8), możemy być pewni, że uchwycił większość głównych czynników wpływających na różnice w frekwencji. Natomiast jeśli wyjaśnia jedynie 30%, powinniśmy rozważyć uwzględnienie dodatkowych zmiennych lub alternatywne podejścia modelowania.</p>
 <p>Fundamentalna relacja w analizie regresji mówi, że całkowita zmienność równa się sumie zmienności wyjaśnionej i niewyjaśnionej:</p>
 <p><span class="math display"> SST = SSR + SSE </span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="współczynnik-determinacji-r2" class="level3" data-number="16.11.6">
-<h3 data-number="16.11.6" class="anchored" data-anchor-id="współczynnik-determinacji-r2"><span class="header-section-number">16.11.6</span> 5. Współczynnik Determinacji (<span class="math inline">R^2</span>)</h3>
+<h3 data-number="16.11.6" class="anchored" data-anchor-id="współczynnik-determinacji-r2"><span class="header-section-number">16.11.6</span> Współczynnik Determinacji (<span class="math inline">R^2</span>)</h3>
 <p><span class="math inline">R^2</span> służy jako miara dopasowania modelu, reprezentująca proporcję wariancji wyjaśnionej przez naszą regresję:</p>
 <p><span class="math display"> R^2 = \frac{SSR}{SST} = \frac{SSR}{SSR + SSE} = 1 - \frac{SSE}{SST} </span></p>
 <p>Aby zinterpretować <span class="math inline">R^2</span>:</p>
@@ -3734,7 +3763,7 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3971,7 +4000,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -3996,7 +4025,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-45-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4173,7 +4202,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4189,7 +4218,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4242,7 +4271,7 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-52-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4825,7 +4854,7 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-62-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-64-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5027,7 +5056,7 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-71-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-73-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5290,7 +5319,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_pl_files/figure-html/unnamed-chunk-80-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_pl_files/figure-html/unnamed-chunk-82-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
