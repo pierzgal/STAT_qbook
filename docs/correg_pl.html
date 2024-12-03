@@ -2080,7 +2080,7 @@ Intuicyjne zrozumienie Metody Najmniejszych Kwadratów (MNK)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Dekompozycja Wariancji w Regresji Liniowej: Intuicyjny Przewodnik
+Dekompozycja Wariancji w Regresji Liniowej
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3360,11 +3360,33 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <h3 data-number="16.11.5" class="anchored" data-anchor-id="dekompozycja-wariancji-w-regresji"><span class="header-section-number">16.11.5</span> Dekompozycja Wariancji w Regresji</h3>
 <p><strong>Całkowita wariancja w naszych danych składa się z trzech istotnych komponentów.</strong></p>
 <p><strong>Celem jest tutaj określenie, jaką część zmienności zmiennej wynikowej jesteśmy w stanie wyjaśnić za pomocą wszystkich zmiennych objaśniających!</strong></p>
+<p><strong>Trzy Komponenty Wariancji:</strong></p>
+<ol type="1">
+<li><strong>Wariancja Całkowita (SST - Suma Kwadratów Całkowita)</strong>
+<ul>
+<li>Pytanie: “Jak bardzo obserwacje różnią się od średniej?”</li>
+<li>Wzór: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
+<li>Intuicja: “Rozrzut” naszych danych wokół ich średniej</li>
+</ul></li>
+<li><strong>Wariancja Wyjaśniona (SSR - Suma Kwadratów Regresji)</strong>
+<ul>
+<li>Pytanie: “Ile wariancji wyjaśnił nasz model?”</li>
+<li>Wzór: <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
+<li>Intuicja: Poprawa, którą uzyskaliśmy dzięki użyciu X</li>
+</ul></li>
+<li><strong>Wariancja Niewyjaśniona (SSE - Suma Kwadratów Błędów)</strong>
+<ul>
+<li>Pytanie: “Jaka wariancja pozostaje niewyjaśniona?”</li>
+<li>Wzór: <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
+<li>Intuicja: Błędy, które pozostają po użyciu X</li>
+</ul></li>
+</ol>
 <p>Rozważmy próbę zrozumienia czynników wpływających na frekwencję wyborczą w różnych okręgach wyborczych. W niektórych okręgach frekwencja stabilnie utrzymuje się na poziomie 70%, podczas gdy w innych ledwo osiąga 35%. Co wyjaśnia te różnice?</p>
-<p><strong>Całkowita Wariancja (SST)</strong> reprezentuje wszystkie obserwowane różnice w frekwencji wyborczej między okręgami, mierząc jak bardzo wskaźniki frekwencji odbiegają od średniej krajowej:</p>
+<p><strong>Całkowita Wariancja (SST)</strong> reprezentuje wszystkie obserwowane różnice w frekwencji wyborczej między okręgami, mierząc jak bardzo wskaźniki frekwencji (<span class="math inline">Y_i</span>) odbiegają od średniej krajowej:</p>
 <p><span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span></p>
 <p>Przykładowo, jeśli średnia krajowa frekwencja wynosi 50%, SST ujmuje wielkość odchyleń każdego okręgu od tej wartości bazowej - czy to okręgu podmiejskiego o wysokiej frekwencji 65%, czy miejskiego o niskiej frekwencji 35%.</p>
-<p>Politolodzy opracowują modele wyjaśniające te różnice, uwzględniając czynniki takie jak poziom wykształcenia, mediana dochodów czy struktura wiekowa. <strong>Wyjaśniona Wariancja (SSR)</strong> wskazuje, jak dużą część zmienności frekwencji udaje się wyjaśnić tym czynnikom demograficznym i społeczno-ekonomicznym:</p>
+<p>Politolodzy opracowują modele wyjaśniające te różnice, uwzględniając czynniki takie jak poziom wykształcenia, mediana dochodów czy struktura wiekowa.</p>
+<p><strong>Wyjaśniona Wariancja (SSR)</strong> wskazuje, jak dużą część zmienności frekwencji udaje się wyjaśnić tym czynnikom demograficznym i społeczno-ekonomicznym:</p>
 <p><span class="math display"> SSR = \sum(\hat{Y}_i - \bar{Y})^2 </span></p>
 <p><strong>Niewyjaśniona Wariancja (SSE)</strong> reprezentuje te różnice w frekwencji, których nasz model nie potrafił uchwycić - być może ze względu na lokalną dynamikę polityczną, jakość kandydatów czy skuteczność kampanii wyborczej, które nie zostały uwzględnione w modelu:</p>
 <p><span class="math display"> SSE = \sum(Y_i - \hat{Y}_i)^2 </span></p>

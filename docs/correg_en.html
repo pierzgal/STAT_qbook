@@ -3401,9 +3401,30 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <p>This ensures the regression line intersects the point of means (<span class="math inline">\bar{X}</span>, <span class="math inline">\bar{Y}</span>).</p>
 </section>
 <section id="variance-decomposition-in-regression" class="level3" data-number="15.10.5">
-<h3 data-number="15.10.5" class="anchored" data-anchor-id="variance-decomposition-in-regression"><span class="header-section-number">15.10.5</span> Variance Decomposition in regression</h3>
+<h3 data-number="15.10.5" class="anchored" data-anchor-id="variance-decomposition-in-regression"><span class="header-section-number">15.10.5</span> Variance Decomposition in Regression</h3>
 <p><strong>The total variance in our data has three important components.</strong></p>
 <p><strong>The goal here is to identify how much variability in the outcome variable is explained by the all of the explanatory variables!</strong></p>
+<p><strong>Understanding the Three Types of Variation:</strong></p>
+<ol type="1">
+<li><strong>Total Variation (SST)</strong>
+<ul>
+<li>Question: “How much do observations vary from the mean?”</li>
+<li>Formula: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
+<li>Intuition: The “spread” of our data around its average</li>
+</ul></li>
+<li><strong>Explained Variation (SSR)</strong>
+<ul>
+<li>Question: “How much of the variation did our model explain?”</li>
+<li>Formula: <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
+<li>Intuition: The improvement we gained by using X</li>
+</ul></li>
+<li><strong>Unexplained Variation (SSE)</strong>
+<ul>
+<li>Question: “What variation remains unexplained?”</li>
+<li>Formula: <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
+<li>Intuition: The errors that remain after using X</li>
+</ul></li>
+</ol>
 <p>Consider trying to understand what drives voter turnout in different congressional districts. Some districts consistently see 70% turnout, while others struggle to reach 35%. What explains these differences?</p>
 <p><strong>The Total Variance (SST)</strong> represents all the variation we observe in voter turnout across districts, measuring how much turnout rates differ from the national average:</p>
 <p><span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span></p>
