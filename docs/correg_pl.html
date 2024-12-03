@@ -2084,58 +2084,49 @@ Dekompozycja Wariancji w Regresji Liniowej: Intuicyjny Przewodnik
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="szerszy-kontekst-dlaczego-to-jest-ważne" class="level3" data-number="16.6.8">
-<h3 data-number="16.6.8" class="anchored" data-anchor-id="szerszy-kontekst-dlaczego-to-jest-ważne"><span class="header-section-number">16.6.8</span> Szerszy Kontekst: Dlaczego To Jest Ważne?</h3>
-<p>Wyobraź sobie, że próbujesz przewidzieć ceny domów. Najprostszym przypuszczeniem byłoby użycie średniej ceny wszystkich domów. Ale co jeśli znamy również wielkość każdego domu? Czy ta informacja pomoże nam w lepszym prognozowaniu? Dekompozycja wariancji pomaga nam dokładnie określić, o ile lepsze stają się nasze prognozy, gdy wykorzystujemy dodatkowe informacje.</p>
+<section id="dlaczego-to-jest-ważne-zrozumienie-poprawy-prognoz-poprzez-dodatkowe-informacje" class="level3" data-number="16.6.8">
+<h3 data-number="16.6.8" class="anchored" data-anchor-id="dlaczego-to-jest-ważne-zrozumienie-poprawy-prognoz-poprzez-dodatkowe-informacje"><span class="header-section-number">16.6.8</span> Dlaczego To Jest Ważne: Zrozumienie Poprawy Prognoz Poprzez Dodatkowe Informacje</h3>
+<p>Rozważmy wyzwanie związane z przewidywaniem cen nieruchomości na rynku mieszkaniowym. Na najbardziej podstawowym poziomie można oszacować cenę dowolnego domu, używając średniej ceny rynkowej. Jednakże takie podejście pomija potencjalnie wartościowe informacje. Gdy uwzględnimy dodatkowe zmienne, takie jak powierzchnia użytkowa, lokalizacja czy liczba sypialni, nasze prognozy zazwyczaj stają się bardziej precyzyjne. <strong>Dekompozycja wariancji</strong> dostarcza matematycznych ram do dokładnego określenia, o ile poprawia się trafność prognoz, gdy włączamy takie dodatkowe informacje.</p>
 </section>
-<section id="główna-koncepcja-od-prostych-do-inteligentnych-prognoz" class="level3" data-number="16.6.9">
-<h3 data-number="16.6.9" class="anchored" data-anchor-id="główna-koncepcja-od-prostych-do-inteligentnych-prognoz"><span class="header-section-number">16.6.9</span> Główna Koncepcja: Od Prostych do Inteligentnych Prognoz</h3>
-<section id="krok-1-zaczynając-od-średniej" class="level4" data-number="16.6.9.1">
-<h4 data-number="16.6.9.1" class="anchored" data-anchor-id="krok-1-zaczynając-od-średniej"><span class="header-section-number">16.6.9.1</span> Krok 1: Zaczynając od Średniej</h4>
-<ul>
-<li>Naszą podstawową prognozą jest średnia (<span class="math inline">\bar{y}</span>)</li>
-<li>Traktuj to jako nasze “nieświadome przypuszczenie”</li>
-<li>Dla każdego domu przewidywalibyśmy tę samą cenę (średnią)</li>
-<li>To tworzy nasze podstawowe błędy</li>
-</ul>
+<section id="udoskonalenie-estymacji" class="level3" data-number="16.6.9">
+<h3 data-number="16.6.9" class="anchored" data-anchor-id="udoskonalenie-estymacji"><span class="header-section-number">16.6.9</span> Udoskonalenie Estymacji</h3>
+<section id="podejście-początkowe-uniwersalna-średnia" class="level4" data-number="16.6.9.1">
+<h4 data-number="16.6.9.1" class="anchored" data-anchor-id="podejście-początkowe-uniwersalna-średnia"><span class="header-section-number">16.6.9.1</span> Podejście Początkowe: Uniwersalna Średnia</h4>
+<p>Nasza podróż rozpoczyna się od najprostszej możliwej prognozy: średniej wszystkich cen domów (<span class="math inline">\bar{y}</span>). Stanowi to nasz punkt wyjścia – prognozę dokonaną bez żadnych szczególnych informacji o poszczególnych nieruchomościach. Choć podejście to zapewnia rozsądny punkt odniesienia, traktuje każdy dom identycznie, prowadząc do tzw. <strong>błędów bazowych</strong>. Błędy te powstają właśnie dlatego, że ignorujemy unikalne cechy każdej nieruchomości.</p>
 </section>
-<section id="krok-2-wykorzystanie-dodatkowych-informacji" class="level4" data-number="16.6.9.2">
-<h4 data-number="16.6.9.2" class="anchored" data-anchor-id="krok-2-wykorzystanie-dodatkowych-informacji"><span class="header-section-number">16.6.9.2</span> Krok 2: Wykorzystanie Dodatkowych Informacji</h4>
-<ul>
-<li>Włączamy informacje z naszego predyktora (X)</li>
-<li>Teraz możemy tworzyć różne prognozy dla różnych domów</li>
-<li>Każda prognoza (<span class="math inline">\hat{y}_i</span>) jest dostosowana na podstawie X</li>
-<li>To tworzy nasze nowe, miejmy nadzieję mniejsze, błędy</li>
-</ul>
+<section id="podejście-zaawansowane-włączenie-informacji-szczegółowych" class="level4" data-number="16.6.9.2">
+<h4 data-number="16.6.9.2" class="anchored" data-anchor-id="podejście-zaawansowane-włączenie-informacji-szczegółowych"><span class="header-section-number">16.6.9.2</span> Podejście Zaawansowane: Włączenie Informacji Szczegółowych</h4>
+<p>Gdy wprowadzamy charakterystyki specyficzne dla nieruchomości (oznaczone jako <span class="math inline">X</span>), takie jak powierzchnia użytkowa, możemy udoskonalić nasze prognozy. To udoskonalenie pozwala nam różnicować między nieruchomościami, tworząc spersonalizowane prognozy odzwierciedlające indywidualne cechy domów. Wynikające z tego błędy prognoz zazwyczaj maleją, demonstrując wartość włączenia dodatkowych informacji.</p>
 </section>
 </section>
-<section id="zrozumienie-trzech-rodzajów-wariancji" class="level3" data-number="16.6.10">
-<h3 data-number="16.6.10" class="anchored" data-anchor-id="zrozumienie-trzech-rodzajów-wariancji"><span class="header-section-number">16.6.10</span> Zrozumienie Trzech Rodzajów Wariancji</h3>
+<section id="zrozumienie-komponentów-wariancji" class="level3" data-number="16.6.10">
+<h3 data-number="16.6.10" class="anchored" data-anchor-id="zrozumienie-komponentów-wariancji"><span class="header-section-number">16.6.10</span> Zrozumienie Komponentów Wariancji</h3>
 <ol type="1">
-<li><strong>Wariancja Całkowita (SST)</strong>
+<li><strong>Wariancja Całkowita (SST)</strong> Wariancja całkowita określa ogólną zmienność cen domów wokół średniej rynkowej.
 <ul>
-<li>Pytanie: “Jak bardzo obserwacje różnią się od średniej?”</li>
-<li>Wzór: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li>Wizualizacja: Fioletowe punkty na wykresie</li>
-<li>Intuicja: “Rozrzut” naszych danych wokół średniej</li>
+<li><strong>Wyrażenie Matematyczne:</strong> <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
+<li><strong>Reprezentacja Wizualna:</strong> Zobrazowana przez fioletowe pionowe linie na wykresie, pokazujące odległość każdej rzeczywistej ceny domu od średniej ogólnej</li>
+<li><strong>Ramy Koncepcyjne:</strong> Można to rozumieć jako pomiar tego, jak bardzo ceny domów różnią się od siebie na rynku</li>
+<li><strong>Interpretacja Praktyczna:</strong> Większe SST wskazuje na bardziej zróżnicowany rynek mieszkaniowy z większą zmiennością cen</li>
 </ul></li>
-<li><strong>Wariancja Wyjaśniona (SSR)</strong>
+<li><strong>Wariancja Wyjaśniona (SSR)</strong> Ten komponent reprezentuje część zmienności cen, którą nasz model skutecznie wychwytuje poprzez uwzględnione zmienne.
 <ul>
-<li>Pytanie: “Ile wariancji wyjaśnił nasz model?”</li>
-<li>Wzór: <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
-<li>Wizualizacja: Zielone przerywane linie na wykresie</li>
-<li>Intuicja: Poprawa, którą uzyskaliśmy dzięki użyciu X</li>
+<li><strong>Wyrażenie Matematyczne:</strong> <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
+<li><strong>Reprezentacja Wizualna:</strong> Pokazana przez zielone przerywane linie, reprezentujące jak bardzo prognozy naszego modelu odbiegają od średniej</li>
+<li><strong>Ramy Koncepcyjne:</strong> Mierzy to, o ile lepsze stają się nasze prognozy, gdy uwzględniamy szczególne cechy domów</li>
+<li><strong>Interpretacja Praktyczna:</strong> Większe SSR w stosunku do SST wskazuje, że wybrane przez nas zmienne (jak powierzchnia użytkowa) silnie wpływają na ceny domów</li>
 </ul></li>
-<li><strong>Wariancja Niewyjaśniona (SSE)</strong>
+<li><strong>Wariancja Niewyjaśniona (SSE)</strong> Reprezentuje pozostałą zmienność cen, której nasz model nie może wyjaśnić przy użyciu uwzględnionych zmiennych.
 <ul>
-<li>Pytanie: “Jaka wariancja pozostaje niewyjaśniona?”</li>
-<li>Wzór: <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
-<li>Wizualizacja: Pomarańczowe przerywane linie na wykresie</li>
-<li>Intuicja: Błędy pozostające po użyciu X</li>
+<li><strong>Wyrażenie Matematyczne:</strong> <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
+<li><strong>Reprezentacja Wizualna:</strong> Zobrazowana przez pomarańczowe przerywane linie, pokazujące pozostałe błędy między naszymi prognozami a rzeczywistymi cenami</li>
+<li><strong>Ramy Koncepcyjne:</strong> Są to błędy prognoz, które utrzymują się nawet po uwzględnieniu wszystkich wybranych zmiennych</li>
+<li><strong>Interpretacja Praktyczna:</strong> Mniejsze SSE sugeruje, że nasz model wychwytuje większość głównych czynników wpływających na cenę</li>
 </ul></li>
 </ol>
-<section id="wizualizacja-dekompozycji-wariancji-zob.-rysunek-niżej" class="level4" data-number="16.6.10.1">
-<h4 data-number="16.6.10.1" class="anchored" data-anchor-id="wizualizacja-dekompozycji-wariancji-zob.-rysunek-niżej"><span class="header-section-number">16.6.10.1</span> Wizualizacja Dekompozycji Wariancji (zob. rysunek niżej)</h4>
+<p>Piękno tej dekompozycji tkwi w jej matematycznej kompletności: SST = SSR + SSE. Ta zależność mówi nam, że cała zmienność cen musi być albo wyjaśniona przez nasz model (SSR), albo pozostać niewyjaśniona (SSE), dostarczając kompleksowych ram do zrozumienia poprawy prognoz. Kolorowe linie na wykresie stanowią wizualne potwierdzenie tej zależności, pomagając zrozumieć, jak te komponenty współdziałają w praktyce.</p>
+<section id="wizualizacja-dekompozycji-wariancji" class="level4" data-number="16.6.10.1">
+<h4 data-number="16.6.10.1" class="anchored" data-anchor-id="wizualizacja-dekompozycji-wariancji"><span class="header-section-number">16.6.10.1</span> Wizualizacja Dekompozycji Wariancji</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -3254,6 +3245,109 @@ Attaching package: 'kableExtra'</code></pre>
 <li>Angrist, J.D. i Pischke, J.S. “W Większości Nieszkodliwa Ekonometria”</li>
 <li>Stock &amp; Watson “Wprowadzenie do Ekonometrii”</li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla Studentów
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="czym-jest-prosta-regresja-liniowa" class="level3" data-number="16.11.2">
+<h3 data-number="16.11.2" class="anchored" data-anchor-id="czym-jest-prosta-regresja-liniowa"><span class="header-section-number">16.11.2</span> 1. Czym jest Prosta Regresja Liniowa?</h3>
+<p>Rozważmy związek między czasem poświęconym na naukę a wynikami egzaminów. Prosta regresja liniowa tworzy optymalną linię prostą przechodzącą przez punkty danych, modelującą tę relację. Linia ta służy dwóm celom: prognozowaniu oraz kwantyfikacji związku między zmiennymi.</p>
+<p>Zależność matematyczna jest wyrażona jako:</p>
+<p><span class="math display"> Y_i = \beta_0 + \beta_1X_i + \epsilon_i </span></p>
+<p>Używając naszego przykładu z czasem nauki do zilustrowania każdego składnika:</p>
+<ul>
+<li><span class="math inline">Y_i</span> reprezentuje zmienną zależną (wyniki egzaminów)</li>
+<li><span class="math inline">X_i</span> reprezentuje zmienną niezależną (godziny nauki)</li>
+<li><span class="math inline">\beta_0</span> reprezentuje wyraz wolny - oczekiwany wynik egzaminu przy zerowym czasie nauki</li>
+<li><span class="math inline">\beta_1</span> reprezentuje nachylenie - zmianę wyniku egzaminu na każdą dodatkową godzinę nauki</li>
+<li><span class="math inline">\epsilon_i</span> reprezentuje składnik błędu, uwzględniający nieobserwowane czynniki</li>
+</ul>
+<p>Naszym celem jest znalezienie oszacowań <span class="math inline">\hat{\beta}_0</span> i <span class="math inline">\hat{\beta}_1</span>, które najlepiej przybliżają prawdziwe parametry <span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span>. Dopasowana linia regresji jest wtedy wyrażona jako:</p>
+<p><span class="math display"> \hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1X_i </span></p>
+</section>
+<section id="metoda-najmniejszych-kwadratów" class="level3" data-number="16.11.3">
+<h3 data-number="16.11.3" class="anchored" data-anchor-id="metoda-najmniejszych-kwadratów"><span class="header-section-number">16.11.3</span> 2. Metoda Najmniejszych Kwadratów</h3>
+<p>Metoda “Najmniejszych Kwadratów” określa optymalne wartości dla <span class="math inline">\hat{\beta}_0</span> i <span class="math inline">\hat{\beta}_1</span> poprzez metodyczny proces. Choć współczesne oprogramowanie statystyczne wykonuje te obliczenia automatycznie, zrozumienie podstawowego procesu jest kluczowe:</p>
+<ol type="1">
+<li>Rozpocznij od wstępnego oszacowania linii regresji
+<ul>
+<li>Zazwyczaj zaczynamy od linii poziomej na poziomie <span class="math inline">\bar{Y}</span> (średnia Y)</li>
+<li>Służy to jako punkt odniesienia, reprezentujący brak związku między X a Y</li>
+</ul></li>
+<li>Oblicz odległości pionowe (reszty) od każdego obserwowanego punktu do tej linii
+<ul>
+<li>Te reszty <span class="math inline">\hat{\epsilon}_i = Y_i - \hat{Y}_i</span> reprezentują nasze błędy predykcji</li>
+<li>Dodatnia reszta oznacza, że nasza linia niedoszacowuje prawdziwej wartości</li>
+<li>Ujemna reszta oznacza, że nasza linia przeszacowuje prawdziwą wartość</li>
+</ul></li>
+<li>Podnieś te odległości do kwadratu, aby:
+<ul>
+<li>Zapewnić, że dodatnie i ujemne odchylenia się nie znoszą</li>
+<li>Przypisać większą wagę większym odchyleniom</li>
+</ul></li>
+<li>Zsumuj wszystkie kwadraty odległości, aby otrzymać Sumę Kwadratów Błędów (SSE)
+<ul>
+<li><span class="math inline">SSE = \sum(Y_i - \hat{Y}_i)^2</span></li>
+<li>Reprezentuje to całkowite kwadratowe odchylenie obserwowanych wartości od naszych przewidywanych wartości</li>
+</ul></li>
+<li>Systematycznie dostosowuj nachylenie i wyraz wolny linii, aby zminimalizować SSE:</li>
+</ol>
+<ul>
+<li>Proces polega na stopniowym modyfikowaniu nachylenia i położenia linii, obserwując jak zmienia się suma kwadratów odchyłek (SSE) [formalnie wymaga to zastosowania pojęć z rachunku różniczkowego]</li>
+<li>Gdy SSE przestaje się zmniejszać przy kolejnych niewielkich zmianach parametrów linii, oznacza to znalezienie optymalnego dopasowania</li>
+<li>To miejsce odpowiada najmniejszej możliwej wartości SSE, czyli najlepszemu dopasowaniu linii do danych</li>
+</ul>
+</section>
+<section id="estymacja-parametrów" class="level3" data-number="16.11.4">
+<h3 data-number="16.11.4" class="anchored" data-anchor-id="estymacja-parametrów"><span class="header-section-number">16.11.4</span> 3. Estymacja Parametrów</h3>
+<p>Formuły do oszacowania parametrów wykorzystują podstawowe miary statystyczne:</p>
+<p><span class="math display"> \hat{\beta}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2} </span></p>
+<p>Ta formuła zawiera dwa istotne pojęcia statystyczne:</p>
+<ul>
+<li>Kowariancja (<span class="math inline">Cov</span>) kwantyfikuje wspólny ruch X i Y</li>
+<li>Wariancja (<span class="math inline">Var</span>) mierzy rozproszenie wartości X wokół ich średniej</li>
+<li><span class="math inline">\bar{X}</span> i <span class="math inline">\bar{Y}</span> reprezentują odpowiednio średnie X i Y</li>
+</ul>
+<p>Po obliczeniu <span class="math inline">\hat{\beta}_1</span> określamy <span class="math inline">\hat{\beta}_0</span>:</p>
+<p><span class="math display"> \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X} </span></p>
+<p>Zapewnia to, że linia regresji przechodzi przez punkt średnich (<span class="math inline">\bar{X}</span>, <span class="math inline">\bar{Y}</span>).</p>
+</section>
+<section id="dekompozycja-wariancji-1" class="level3" data-number="16.11.5">
+<h3 data-number="16.11.5" class="anchored" data-anchor-id="dekompozycja-wariancji-1"><span class="header-section-number">16.11.5</span> 4. Dekompozycja Wariancji</h3>
+<p>Całkowita wariancja w naszych danych ma trzy ważne składniki:</p>
+<ol type="1">
+<li><p>Całkowita Suma Kwadratów (SST): Całkowita zmienność w Y <span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span> Reprezentuje to całkowitą zmienność, którą staramy się wyjaśnić</p></li>
+<li><p>Wyjaśniona Wariancja (SSR): Zmienność uchwycona przez nasz model <span class="math display"> SSR = \sum(\hat{Y}_i - \bar{Y})^2 </span> Mierzy to odchylenie przewidywanych wartości od średniej</p></li>
+<li><p>Niewyjaśniona Wariancja (SSE): Zmienność resztowa <span class="math display"> SSE = \sum(Y_i - \hat{Y}_i)^2 </span> Kwantyfikuje to odchylenie obserwowanych wartości od przewidywanych wartości</p></li>
+</ol>
+<p>Fundamentalna relacja w analizie regresji mówi, że całkowita zmienność równa się sumie zmienności wyjaśnionej i niewyjaśnionej:</p>
+<p><span class="math display"> SST = SSR + SSE </span></p>
+</section>
+<section id="współczynnik-determinacji-r2" class="level3" data-number="16.11.6">
+<h3 data-number="16.11.6" class="anchored" data-anchor-id="współczynnik-determinacji-r2"><span class="header-section-number">16.11.6</span> 5. Współczynnik Determinacji (<span class="math inline">R^2</span>)</h3>
+<p><span class="math inline">R^2</span> służy jako miara dopasowania modelu, reprezentująca proporcję wariancji wyjaśnionej przez naszą regresję:</p>
+<p><span class="math display"> R^2 = \frac{SSR}{SST} = \frac{SSR}{SSR + SSE} = 1 - \frac{SSE}{SST} </span></p>
+<p>Aby zinterpretować <span class="math inline">R^2</span>:</p>
+<ul>
+<li><span class="math inline">R^2</span> równe 0,75 wskazuje, że model wyjaśnia 75% wariancji wyników egzaminów</li>
+<li><span class="math inline">R^2</span> równe 0,20 sugeruje, że godziny nauki odpowiadają za 20% zmienności wyników</li>
+<li><span class="math inline">R^2</span> równe 1,00 reprezentuje doskonałą predykcję (rzadko obserwowane w praktyce)</li>
+<li><span class="math inline">R^2</span> równe 0,00 wskazuje na brak mocy wyjaśniającej</li>
+</ul>
+<p>Uwaga: Niższa wartość <span class="math inline">R^2</span> niekoniecznie oznacza gorszy model - może po prostu odzwierciedlać złożoność badanej relacji.</p>
+</section>
+<section id="kluczowy-wniosek" class="level3" data-number="16.11.7">
+<h3 data-number="16.11.7" class="anchored" data-anchor-id="kluczowy-wniosek"><span class="header-section-number">16.11.7</span> Kluczowy Wniosek</h3>
+<p>Regresja liniowa ustala relacje między zmiennymi poprzez identyfikację optymalnego dopasowania liniowego przez punkty danych. Ta optymalizacja zachodzi poprzez minimalizację kwadratów reszt. Współczynnik determinacji (<span class="math inline">R^2</span>) kwantyfikuje następnie moc wyjaśniającą modelu poprzez porównanie wyjaśnionej zmienności z całkowitą zmiennością w naszych danych.</p>
+</section>
+</div>
+</div>
 </section>
 </section>
 <section id="dodatek-a.1-obliczanie-kowariancji-korelacji-pearsona-i-spearmana-oraz-modelowanie-ols---przykład-z-obliczeniami" class="level2" data-number="16.12">

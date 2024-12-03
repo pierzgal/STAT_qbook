@@ -2038,54 +2038,48 @@ Understanding Variance Decomposition in Linear Regression
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="why-it-matters-improving-predictions-with-extra-information" class="level3" data-number="15.6.3">
-<h3 data-number="15.6.3" class="anchored" data-anchor-id="why-it-matters-improving-predictions-with-extra-information"><span class="header-section-number">15.6.3</span> Why It Matters: Improving Predictions with Extra Information</h3>
-<p>Imagine you’re trying to predict house prices. A simple way to make predictions is by using the average price of all houses. But what if you know additional details, like the size of the house? Would that help improve your predictions? <strong>Variance decomposition</strong> helps us measure exactly how much better our predictions are when we include more information, like house size.</p>
+<section id="why-it-matters-understanding-prediction-improvement-through-additional-variables" class="level3" data-number="15.6.3">
+<h3 data-number="15.6.3" class="anchored" data-anchor-id="why-it-matters-understanding-prediction-improvement-through-additional-variables"><span class="header-section-number">15.6.3</span> Why It Matters: Understanding Prediction Improvement Through Additional Variables</h3>
+<p>In statistical analysis and modeling, we frequently encounter situations where we must assess the value of incorporating additional predictor variables. Consider the domain of real estate valuation: While one could estimate property values using the market-wide average price, incorporating specific property characteristics, such as square footage, can substantially enhance prediction accuracy. <strong>Variance decomposition</strong> provides a rigorous framework for quantifying the incremental improvement in predictive accuracy when we incorporate such additional variables.</p>
 </section>
-<section id="the-process-from-a-simple-guess-to-a-smarter-prediction" class="level3" data-number="15.6.4">
-<h3 data-number="15.6.4" class="anchored" data-anchor-id="the-process-from-a-simple-guess-to-a-smarter-prediction"><span class="header-section-number">15.6.4</span> The Process: From a Simple Guess to a Smarter Prediction</h3>
-<section id="step-1-starting-with-the-average" class="level4" data-number="15.6.4.1">
-<h4 data-number="15.6.4.1" class="anchored" data-anchor-id="step-1-starting-with-the-average"><span class="header-section-number">15.6.4.1</span> Step 1: Starting with the Average</h4>
-<ul>
-<li><strong>What’s our first guess?</strong> The mean of all house prices (<span class="math inline">\bar{y}</span>).</li>
-<li>Think of this as your “uninformed guess.”</li>
-<li>For every house, we predict the same price (the average), which leads to our <strong>baseline errors</strong>.</li>
-</ul>
+<section id="the-analytical-process-from-baseline-to-enhanced-predictions" class="level3" data-number="15.6.4">
+<h3 data-number="15.6.4" class="anchored" data-anchor-id="the-analytical-process-from-baseline-to-enhanced-predictions"><span class="header-section-number">15.6.4</span> The Analytical Process: From Baseline to Enhanced Predictions</h3>
+<section id="initial-estimation-the-unconditional-mean" class="level4" data-number="15.6.4.1">
+<h4 data-number="15.6.4.1" class="anchored" data-anchor-id="initial-estimation-the-unconditional-mean"><span class="header-section-number">15.6.4.1</span> Initial Estimation: The Unconditional Mean</h4>
+<p>The analytical process begins with the simplest possible predictor: the mean of all observed values (<span class="math inline">\bar{y}</span>). This represents our initial estimation in the absence of any predictor variables. When we employ this method, we assign the same value—the overall mean—to each observation, resulting in what we term <strong>baseline deviations</strong>.</p>
 </section>
-<section id="step-2-using-extra-information" class="level4" data-number="15.6.4.2">
-<h4 data-number="15.6.4.2" class="anchored" data-anchor-id="step-2-using-extra-information"><span class="header-section-number">15.6.4.2</span> Step 2: Using Extra Information</h4>
-<ul>
-<li>We now use additional information (like house size, <span class="math inline">X</span>) to refine our predictions.</li>
-<li>This allows us to make <strong>different predictions</strong> for each house.</li>
-<li>The errors we make after including this information are usually smaller.</li>
-</ul>
+<section id="enhanced-prediction-incorporating-predictor-variables" class="level4" data-number="15.6.4.2">
+<h4 data-number="15.6.4.2" class="anchored" data-anchor-id="enhanced-prediction-incorporating-predictor-variables"><span class="header-section-number">15.6.4.2</span> Enhanced Prediction: Incorporating Predictor Variables</h4>
+<p>By introducing predictor variables (denoted as <span class="math inline">X</span> in our figure), we refine our initial estimates. This enhancement enables us to generate distinct predictions for each observation, typically resulting in substantially reduced prediction errors, as illustrated in the figure below.</p>
 </section>
 </section>
-<section id="breaking-down-the-types-of-variation-see-the-figure-below" class="level3" data-number="15.6.5">
-<h3 data-number="15.6.5" class="anchored" data-anchor-id="breaking-down-the-types-of-variation-see-the-figure-below"><span class="header-section-number">15.6.5</span> Breaking Down the Types of Variation (see the figure below)</h3>
+<section id="components-of-statistical-variation" class="level3" data-number="15.6.5">
+<h3 data-number="15.6.5" class="anchored" data-anchor-id="components-of-statistical-variation"><span class="header-section-number">15.6.5</span> Components of Statistical Variation</h3>
+<p>Our figure illustrates three fundamental components of variation:</p>
 <ol type="1">
-<li><strong>Total Variation (SST)</strong>
+<li><p><strong>Total Sum of Squares (SST)</strong></p>
 <ul>
-<li><strong>Question:</strong> How much do the data points vary from the mean?</li>
-<li><strong>Formula:</strong> <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li><strong>Visual:</strong> Purple points in the plot</li>
-<li><strong>Intuition:</strong> This is the overall “spread” of the data around its average.</li>
+<li><strong>Statistical Inquiry:</strong> What is the aggregate deviation of observations from their mean?</li>
+<li><strong>Mathematical Expression:</strong> <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
+<li><strong>Graphical Representation:</strong> Depicted by the purple vertical lines in the figure</li>
+<li><strong>Statistical Interpretation:</strong> Represents the total variability present in the observed data prior to any modeling</li>
 </ul></li>
-<li><strong>Explained Variation (SSR)</strong>
+<li><p><strong>Regression Sum of Squares (SSR)</strong></p>
 <ul>
-<li><strong>Question:</strong> How much of the variation can our model explain?</li>
-<li><strong>Formula:</strong> <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
-<li><strong>Visual:</strong> Green dashed lines in the plot</li>
-<li><strong>Intuition:</strong> This is the improvement we get from including additional information (like house size).</li>
+<li><strong>Statistical Inquiry:</strong> What proportion of variation does our model successfully capture?</li>
+<li><strong>Mathematical Expression:</strong> <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
+<li><strong>Graphical Representation:</strong> Illustrated by the green dashed lines in the figure</li>
+<li><strong>Statistical Interpretation:</strong> Quantifies the reduction in uncertainty achieved through the incorporation of predictor variables</li>
 </ul></li>
-<li><strong>Unexplained Variation (SSE)</strong>
+<li><p><strong>Error Sum of Squares (SSE)</strong></p>
 <ul>
-<li><strong>Question:</strong> How much variation is left unexplained after using the model?</li>
-<li><strong>Formula:</strong> <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
-<li><strong>Visual:</strong> Orange dashed lines in the plot</li>
-<li><strong>Intuition:</strong> These are the errors remaining after our model has made predictions.</li>
+<li><strong>Statistical Inquiry:</strong> What residual variation persists after model implementation?</li>
+<li><strong>Mathematical Expression:</strong> <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
+<li><strong>Graphical Representation:</strong> Shown by the orange dashed lines in the figure</li>
+<li><strong>Statistical Interpretation:</strong> Represents the remaining unexplained variation after accounting for all predictor variables</li>
 </ul></li>
 </ol>
+<p>This decomposition provides a formal framework for assessing the effectiveness of our predictive model and the value of including additional variables.</p>
 <section id="visualizing-variance-decomposition" class="level4" data-number="15.6.5.1">
 <h4 data-number="15.6.5.1" class="anchored" data-anchor-id="visualizing-variance-decomposition"><span class="header-section-number">15.6.5.1</span> Visualizing Variance Decomposition</h4>
 <div class="cell">
@@ -3264,6 +3258,130 @@ Attaching package: 'kableExtra'</code></pre>
 <li>Angrist, J.D. and Pischke, J.S. “Mostly Harmless Econometrics”</li>
 <li>Stock &amp; Watson “Introduction to Econometrics”</li>
 </ul>
+<p>You’re right - I apologize for missing the SST formula. Let me provide a complete, carefully revised version that maintains educational clarity while ensuring mathematical precision.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="what-is-simple-linear-regression" class="level3" data-number="15.10.2">
+<h3 data-number="15.10.2" class="anchored" data-anchor-id="what-is-simple-linear-regression"><span class="header-section-number">15.10.2</span> 1. What is Simple Linear Regression?</h3>
+<p>Consider the relationship between study hours and exam scores. Simple linear regression creates an optimal straight line through data points to model this relationship. This line serves two purposes: making predictions and quantifying the relationship between variables.</p>
+<p>The mathematical relationship is expressed as:</p>
+<p><span class="math display"> Y_i = \beta_0 + \beta_1X_i + \epsilon_i </span></p>
+<p>Using our study hours example to illustrate each component:</p>
+<ul>
+<li><span class="math inline">Y_i</span> represents the dependent variable (exam scores)</li>
+<li><span class="math inline">X_i</span> represents the independent variable (study hours)</li>
+<li><span class="math inline">\beta_0</span> represents the intercept - the expected exam score at zero study hours</li>
+<li><span class="math inline">\beta_1</span> represents the slope - the change in exam score per additional study hour</li>
+<li><span class="math inline">\epsilon_i</span> represents the error term, accounting for unobserved factors</li>
+</ul>
+<p>Our goal is to find estimates <span class="math inline">\hat{\beta}_0</span> and <span class="math inline">\hat{\beta}_1</span> that best approximate the true parameters <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span>. The fitted regression line is then expressed as:</p>
+<p><span class="math display"> \hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1X_i </span></p>
+</section>
+<section id="the-ordinary-least-squares-method" class="level3" data-number="15.10.3">
+<h3 data-number="15.10.3" class="anchored" data-anchor-id="the-ordinary-least-squares-method"><span class="header-section-number">15.10.3</span> 2. The Ordinary Least Squares Method</h3>
+<p>The “Ordinary Least Squares” method determines optimal values for <span class="math inline">\hat{\beta}_0</span> and <span class="math inline">\hat{\beta}_1</span> through a methodical process. While modern statistical software performs these calculations automatically, understanding the underlying process is crucial:</p>
+<ol type="1">
+<li><p>Begin with an initial estimate for the regression line</p>
+<ul>
+<li>Typically, we start with the horizontal line at <span class="math inline">\bar{Y}</span> (mean of Y)</li>
+<li>This serves as our baseline, representing no relationship between X and Y</li>
+</ul></li>
+<li><p>Calculate the vertical distances (residuals) from each observed point to this line</p>
+<ul>
+<li>These residuals <span class="math inline">\hat{\epsilon}_i = Y_i - \hat{Y}_i</span> represent our prediction errors</li>
+<li>A positive residual means our line underestimates the true value</li>
+<li>A negative residual means our line overestimates the true value</li>
+</ul></li>
+<li><p>Square these distances to:</p>
+<ul>
+<li>Ensure positive and negative deviations don’t offset each other</li>
+<li>Assign greater weight to larger deviations</li>
+</ul></li>
+<li><p>Sum all squared distances to obtain the Sum of Squared Errors (SSE)</p>
+<ul>
+<li><span class="math inline">SSE = \sum(Y_i - \hat{Y}_i)^2</span></li>
+<li>This represents the total squared deviation of observed values from our predicted values</li>
+</ul></li>
+<li><p>Systematically adjust the slope and intercept of the line to minimize SSE:</p>
+<ul>
+<li>The process involves gradually modifying the slope and position of the line while observing how the sum of squared deviations (SSE) changes [formally, this requires concepts from differential calculus]</li>
+<li>When SSE stops decreasing with subsequent small changes in line parameters, this indicates the optimal fit has been found</li>
+<li>This point corresponds to the minimum possible value of SSE, meaning the best fit of the line to the data</li>
+</ul></li>
+</ol>
+<p>Let’s visualize this process:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_en_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="parameter-estimation" class="level3" data-number="15.10.4">
+<h3 data-number="15.10.4" class="anchored" data-anchor-id="parameter-estimation"><span class="header-section-number">15.10.4</span> 3. Parameter Estimation</h3>
+<p>The formulas for estimating the parameters employ fundamental statistical measures:</p>
+<p><span class="math display"> \hat{\beta}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2} </span></p>
+<p>This formula comprises two essential statistical concepts:</p>
+<ul>
+<li>Covariance (<span class="math inline">Cov</span>) quantifies the joint movement of X and Y</li>
+<li>Variance (<span class="math inline">Var</span>) measures the dispersion of X values around their mean</li>
+<li><span class="math inline">\bar{X}</span> and <span class="math inline">\bar{Y}</span> represent the means of X and Y respectively</li>
+</ul>
+<p>After calculating <span class="math inline">\hat{\beta}_1</span>, we determine <span class="math inline">\hat{\beta}_0</span>:</p>
+<p><span class="math display"> \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X} </span></p>
+<p>This ensures the regression line intersects the point of means (<span class="math inline">\bar{X}</span>, <span class="math inline">\bar{Y}</span>).</p>
+</section>
+<section id="variance-decomposition" class="level3" data-number="15.10.5">
+<h3 data-number="15.10.5" class="anchored" data-anchor-id="variance-decomposition"><span class="header-section-number">15.10.5</span> 4. Variance Decomposition</h3>
+<p>The total variance in our data has three important components:</p>
+<ol type="1">
+<li><p>Total Sum of Squares (SST): Total variation in Y <span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span> This represents the total variation we seek to explain</p></li>
+<li><p>Explained Variance (SSR): Variation captured by our model <span class="math display"> SSR = \sum(\hat{Y}_i - \bar{Y})^2 </span> This measures the deviation of predicted values from the mean</p></li>
+<li><p>Unexplained Variance (SSE): Residual variation <span class="math display"> SSE = \sum(Y_i - \hat{Y}_i)^2 </span> This quantifies the deviation of observed values from predicted values</p></li>
+</ol>
+<p>A fundamental relationship in regression analysis is that the total variation equals the sum of explained and unexplained variation:</p>
+<p><span class="math display"> SST = SSR + SSE </span></p>
+<p>Let’s visualize this decomposition:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_en_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-coefficient-of-determination-r2" class="level3" data-number="15.10.6">
+<h3 data-number="15.10.6" class="anchored" data-anchor-id="the-coefficient-of-determination-r2"><span class="header-section-number">15.10.6</span> 5. The Coefficient of Determination (<span class="math inline">R^2</span>)</h3>
+<p><span class="math inline">R^2</span> serves as a measure of model fit, representing the proportion of variance explained by our regression:</p>
+<p><span class="math display"> R^2 = \frac{SSR}{SST} = \frac{SSR}{SSR + SSE} = 1 - \frac{SSE}{SST} </span></p>
+<p>To interpret <span class="math inline">R^2</span>:</p>
+<ul>
+<li>An <span class="math inline">R^2</span> of 0.75 indicates the model explains 75% of variance in exam scores</li>
+<li>An <span class="math inline">R^2</span> of 0.20 suggests study hours account for 20% of score variation</li>
+<li>An <span class="math inline">R^2</span> of 1.00 represents perfect prediction (rarely observed in practice)</li>
+<li>An <span class="math inline">R^2</span> of 0.00 indicates no explanatory power</li>
+</ul>
+<p>Note: A lower <span class="math inline">R^2</span> value does not necessarily indicate an inferior model - it may simply reflect the complexity of the relationship being studied.</p>
+</section>
+<section id="key-takeaway" class="level3" data-number="15.10.7">
+<h3 data-number="15.10.7" class="anchored" data-anchor-id="key-takeaway"><span class="header-section-number">15.10.7</span> Key Takeaway</h3>
+<p>Linear regression establishes relationships between variables by identifying the optimal linear fit through data points. This optimization occurs through the minimization of squared residuals. The coefficient of determination (<span class="math inline">R^2</span>) then quantifies the model’s explanatory power by comparing explained variation to total variation in our data.</p>
+</section>
+</div>
+</div>
 </section>
 </section>
 <section id="appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" class="level2" data-number="15.11">
@@ -4022,7 +4140,7 @@ Attaching package: 'kableExtra'</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4252,7 +4370,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-46-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4277,7 +4395,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4454,7 +4572,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-49-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-51-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4470,7 +4588,7 @@ F-statistic:  23.3 on 1 and 8 DF,  p-value: 0.00131</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-50-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-52-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4523,7 +4641,7 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-52-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-54-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5005,7 +5123,7 @@ F-statistic: 736.3 on 1 and 8 DF,  p-value: 3.666e-09</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-57-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-59-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5231,7 +5349,7 @@ F-statistic: 258.2 on 1 and 3 DF,  p-value: 0.0005243</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-66-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-68-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5433,7 +5551,7 @@ F-statistic: 531.9 on 1 and 6 DF,  p-value: 4.355e-07</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-75-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-77-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -5696,7 +5814,7 @@ F-statistic: 26.11 on 1 and 4 DF,  p-value: 0.006934</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-84-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-86-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
