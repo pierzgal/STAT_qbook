@@ -365,11 +365,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#decomposition-of-variance" id="toc-decomposition-of-variance" class="nav-link" data-scroll-target="#decomposition-of-variance"><span class="header-section-number">15.6.1</span> Decomposition of Variance</a></li>
   <li><a href="#understanding-the-three-types-of-variation" id="toc-understanding-the-three-types-of-variation" class="nav-link" data-scroll-target="#understanding-the-three-types-of-variation"><span class="header-section-number">15.6.2</span> Understanding the Three Types of Variation</a></li>
-  <li><a href="#r²-demystified" id="toc-r²-demystified" class="nav-link" data-scroll-target="#r²-demystified"><span class="header-section-number">15.6.3</span> R² Demystified</a></li>
-  <li><a href="#when-to-be-cautious" id="toc-when-to-be-cautious" class="nav-link" data-scroll-target="#when-to-be-cautious"><span class="header-section-number">15.6.4</span> When to Be Cautious</a></li>
-  <li><a href="#practical-tips-for-analysis" id="toc-practical-tips-for-analysis" class="nav-link" data-scroll-target="#practical-tips-for-analysis"><span class="header-section-number">15.6.5</span> Practical Tips for Analysis</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">15.6.6</span> Key Takeaways</a></li>
-  <li><a href="#measures-of-fit" id="toc-measures-of-fit" class="nav-link" data-scroll-target="#measures-of-fit"><span class="header-section-number">15.6.7</span> Measures of Fit</a></li>
+  <li><a href="#r²-demystified" id="toc-r²-demystified" class="nav-link" data-scroll-target="#r²-demystified"><span class="header-section-number">15.6.10</span> R² Demystified</a></li>
+  <li><a href="#when-to-be-cautious" id="toc-when-to-be-cautious" class="nav-link" data-scroll-target="#when-to-be-cautious"><span class="header-section-number">15.6.11</span> When to Be Cautious</a></li>
+  <li><a href="#practical-tips-for-analysis" id="toc-practical-tips-for-analysis" class="nav-link" data-scroll-target="#practical-tips-for-analysis"><span class="header-section-number">15.6.12</span> Practical Tips for Analysis</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">15.6.13</span> Key Takeaways</a></li>
+  <li><a href="#measures-of-fit" id="toc-measures-of-fit" class="nav-link" data-scroll-target="#measures-of-fit"><span class="header-section-number">15.6.14</span> Measures of Fit</a></li>
   </ul></li>
   <li><a href="#multiple-regression" id="toc-multiple-regression" class="nav-link" data-scroll-target="#multiple-regression"><span class="header-section-number">15.7</span> Multiple Regression (*)</a>
   <ul class="collapse">
@@ -390,8 +390,8 @@ window.Quarto = {
   </ul></li>
   <li><a href="#conclusion-1" id="toc-conclusion-1" class="nav-link" data-scroll-target="#conclusion-1"><span class="header-section-number">15.10</span> Conclusion</a>
   <ul class="collapse">
-  <li><a href="#key-takeaways-2" id="toc-key-takeaways-2" class="nav-link" data-scroll-target="#key-takeaways-2"><span class="header-section-number">15.10.1</span> Key Takeaways</a></li>
-  <li><a href="#further-reading-1" id="toc-further-reading-1" class="nav-link" data-scroll-target="#further-reading-1">Further Reading</a></li>
+  <li><a href="#key-takeaways-1" id="toc-key-takeaways-1" class="nav-link" data-scroll-target="#key-takeaways-1"><span class="header-section-number">15.10.1</span> Key Takeaways</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
   </ul></li>
   <li><a href="#appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" id="toc-appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data" class="nav-link" data-scroll-target="#appendix-a.1-understanding-correlation-measures-a-self-study-tutorial-using-stress-level-and-cognitive-performance-data"><span class="header-section-number">15.11</span> Appendix A.1: Understanding Correlation Measures: A Self-Study Tutorial (Using Stress Level and Cognitive Performance Data)</a>
   <ul class="collapse">
@@ -1387,7 +1387,7 @@ Understanding Linear Regression (OLS): Quickstart guide
 <p>Looking at our visualization:</p>
 <ul>
 <li>The scattered points show our actual observations <span class="math inline">(x_i, y_i)</span></li>
-<li>The orange line represents our fitted values <span class="math inline">\hat{y_i}</span> that minimize <span class="math inline">\sum \epsilon_i^2</span></li>
+<li>The red line represents our fitted values <span class="math inline">\hat{y_i}</span> that minimize <span class="math inline">\sum \epsilon_i^2</span></li>
 <li>The blue and green lines represent alternative fits with larger total squared errors</li>
 <li>The vertical distances from each point to these lines represent the errors <span class="math inline">\epsilon_i</span></li>
 </ul>
@@ -1412,7 +1412,7 @@ Understanding Linear Regression (OLS): Quickstart guide
 </section>
 <section id="basic-concepts-and-terminology" class="level3" data-number="15.3.7">
 <h3 data-number="15.3.7" class="anchored" data-anchor-id="basic-concepts-and-terminology"><span class="header-section-number">15.3.7</span> Basic Concepts and Terminology</h3>
-<p>Before we dive into the mathematics, let’s establish our key terms:</p>
+<p>Let’s establish our key terms:</p>
 <ul>
 <li><strong>Dependent Variable (Y)</strong>:
 <ul>
@@ -1773,7 +1773,7 @@ Figure&nbsp;15.5: Effect of Variable Transformations
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Understanding Ordinary Least Squares (OLS) Regression Model Intuitively
+Understanding Ordinary Least Squares (OLS) Intuitively
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1781,8 +1781,7 @@ Understanding Ordinary Least Squares (OLS) Regression Model Intuitively
 <h3 data-number="15.5.4" class="anchored" data-anchor-id="the-basic-problem"><span class="header-section-number">15.5.4</span> The Basic Problem</h3>
 <p>Let’s start with a real-world scenario: understanding how study time affects exam performance. We collect data from your class where:</p>
 <ul>
-<li>Each student records their study hours (<span class="math inline">x</span>)</li>
-<li>And their final exam score (<span class="math inline">y</span>)</li>
+<li>Each student records their study hours (<span class="math inline">x</span>), and their final exam score (<span class="math inline">y</span>)</li>
 <li>So student 1 might have studied <span class="math inline">x_1 = 3</span> hours and scored <span class="math inline">y_1 = 75</span> points</li>
 <li>Student 2 might have studied <span class="math inline">x_2 = 5</span> hours and scored <span class="math inline">y_2 = 82</span> points</li>
 <li>And so on for all <span class="math inline">n</span> students in the class</li>
@@ -1904,17 +1903,34 @@ Understanding Ordinary Least Squares (OLS) Regression Model Intuitively
 </ul>
 <p>This gives us a much better measure of how wrong our predictions are!</p>
 </section>
-<section id="the-complete-picture-sum-of-squared-residuals-ssr" class="level3" data-number="15.5.8">
-<h3 data-number="15.5.8" class="anchored" data-anchor-id="the-complete-picture-sum-of-squared-residuals-ssr"><span class="header-section-number">15.5.8</span> The Complete Picture: Sum of Squared Residuals (SSR)</h3>
-<p>For all students combined, we calculate:</p>
-<p><span class="math inline">SSR = \sum_{i=1}^n (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p>
-<p>This formula might look scary, but it just means:</p>
+<section id="sum-of-squared-errors-sse" class="level3" data-number="15.5.8">
+<h3 data-number="15.5.8" class="anchored" data-anchor-id="sum-of-squared-errors-sse"><span class="header-section-number">15.5.8</span> Sum of Squared Errors (SSE)</h3>
+<p>The Sum of Squared Errors (SSE) represents a fundamental measure of fit in linear regression modeling. We can express it mathematically as:</p>
+<p><span class="math display">SSE = \sum_{i=1}^n (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">y_i</span> represents the actual value of the dependent variable for the i-th observation</li>
+<li><span class="math inline">\hat{\beta}_0</span> represents the estimated intercept (Y-axis intersection point)</li>
+<li><span class="math inline">\hat{\beta}_1</span> represents the estimated slope coefficient</li>
+<li><span class="math inline">x_i</span> represents the value of the independent variable for the i-th observation</li>
+</ul>
+<p>The process of calculating SSE follows these methodical steps:</p>
 <ol type="1">
-<li>Take each student’s residual</li>
-<li>Square it</li>
-<li>Add up all these squared residuals</li>
+<li><p>For each observation, we calculate the difference between the actual value (<span class="math inline">y_i</span>) and the value predicted by our model (<span class="math inline">\hat{\beta}_0 + \hat{\beta}_1x_i</span>). This difference is termed the residual.</p></li>
+<li><p>We square each residual, which produces several important effects:</p></li>
 </ol>
-<p>The smaller this sum, the better our line fits the data!</p>
+<ul>
+<li>All values become positive, eliminating the possibility of negative and positive errors canceling each other out</li>
+<li>Larger errors receive proportionally greater weight than smaller ones</li>
+<li>The units of measurement become squared</li>
+</ul>
+<ol start="3" type="1">
+<li>We sum all these squared residuals, producing a single number that represents the model’s total error.</li>
+</ol>
+<p><strong>The interpretation of SSE is straightforward: a smaller SSE indicates better model fit to the empirical data.</strong></p>
+<p>An SSE value of 0 would indicate perfect fit, where all points lie exactly on the regression line. However, in practice, such perfect fit rarely occurs and might actually indicate a problematic overfit of the model.</p>
+<p>SSE serves as the foundation for calculating other important measures of model fit quality, such as the coefficient of determination (R²) and the standard error of estimate. It provides a quantitative basis for comparing different models and assessing the accuracy of our predictions.</p>
+<p>Understanding SSE is crucial for model evaluation and refinement, as it helps identify how well our model captures the underlying patterns in our data while avoiding the pitfalls of both underfitting and overfitting.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare good vs bad fit</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>bad_predictions <span class="ot">&lt;-</span> <span class="dv">70</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> data<span class="sc">$</span>study_hours</span>
@@ -1963,7 +1979,7 @@ Understanding Ordinary Least Squares (OLS) Regression Model Intuitively
 <li>The mean of all residuals equals zero</li>
 <li>The line always passes through the point (<span class="math inline">\bar{x}</span>, <span class="math inline">\bar{y}</span>) - the average study hours and average score</li>
 <li>Small changes in the data lead to small changes in the line (it’s “stable”)</li>
-<li>Our estimates <span class="math inline">\hat{\beta}_0</span> and <span class="math inline">\hat{\beta}_1</span> are the best possible estimates of the true parameters <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span> under certain conditions</li>
+<li>Our estimates <span class="math inline">\hat{\beta}_0</span> and <span class="math inline">\hat{\beta}_1</span> are the best possible estimates of the true parameters <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span></li>
 </ol>
 </section>
 <section id="important-notes" class="level3" data-number="15.5.10">
@@ -1971,7 +1987,6 @@ Understanding Ordinary Least Squares (OLS) Regression Model Intuitively
 <ol type="1">
 <li><p>The hat notation (<span class="math inline">\hat{\beta}_0</span>, <span class="math inline">\hat{\beta}_1</span>) reminds us that we’re estimating the true relationship from our sample. We never know the true <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span> - we can only estimate them from our data.</p></li>
 <li><p>OLS gives us the best possible estimates when certain conditions are met (like having randomly sampled data and a truly linear relationship).</p></li>
-<li><p>The interactive tool above helps you understand what OLS does automatically: it finds the values of <span class="math inline">\hat{\beta}_0</span> and <span class="math inline">\hat{\beta}_1</span> that give us the smallest possible sum of squared residuals.</p></li>
 </ol>
 </section>
 </div>
@@ -2013,211 +2028,6 @@ Understanding Ordinary Least Squares (OLS) Regression Model Intuitively
 <li>Intuition: The errors that remain after using X</li>
 </ul></li>
 </ol>
-</section>
-<section id="r²-demystified" class="level3" data-number="15.6.3">
-<h3 data-number="15.6.3" class="anchored" data-anchor-id="r²-demystified"><span class="header-section-number">15.6.3</span> R² Demystified</h3>
-<p><span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p>
-<p>Think of R² as answering the question: “What percentage of the original variation in Y can we explain using X?”</p>
-<section id="intuitive-examples" class="level4" data-number="15.6.3.1">
-<h4 data-number="15.6.3.1" class="anchored" data-anchor-id="intuitive-examples"><span class="header-section-number">15.6.3.1</span> Intuitive Examples:</h4>
-<ul>
-<li>R² = 0.80: Using X eliminated 80% of our prediction errors</li>
-<li>R² = 0.25: Using X eliminated 25% of our prediction errors</li>
-<li>R² = 0.00: Using X didn’t help at all</li>
-</ul>
-</section>
-</section>
-<section id="when-to-be-cautious" class="level3" data-number="15.6.4">
-<h3 data-number="15.6.4" class="anchored" data-anchor-id="when-to-be-cautious"><span class="header-section-number">15.6.4</span> When to Be Cautious</h3>
-<ol type="1">
-<li><strong>High R² Isn’t Everything</strong>
-<ul>
-<li>A high R² might indicate overfitting</li>
-<li>Always check if your model makes practical sense</li>
-<li>Consider the context of your field</li>
-</ul></li>
-<li><strong>Low R² Isn’t Always Bad</strong>
-<ul>
-<li>In some fields, R² = 0.30 might be impressive</li>
-<li>Social sciences often have lower R² values</li>
-<li>Focus on practical significance</li>
-</ul></li>
-</ol>
-</section>
-<section id="practical-tips-for-analysis" class="level3" data-number="15.6.5">
-<h3 data-number="15.6.5" class="anchored" data-anchor-id="practical-tips-for-analysis"><span class="header-section-number">15.6.5</span> Practical Tips for Analysis</h3>
-<ol type="1">
-<li><strong>Visual Inspection</strong>
-<ul>
-<li>Always plot your data</li>
-<li>Look for patterns in residuals</li>
-<li>Check for influential points</li>
-</ul></li>
-<li><strong>Context Consideration</strong>
-<ul>
-<li>What’s a “good” R² in your field?</li>
-<li>What’s the practical impact of your errors?</li>
-<li>Are your predictors meaningful?</li>
-</ul></li>
-<li><strong>Model Diagnostics</strong>
-<ul>
-<li>Check residual normality</li>
-<li>Look for heteroscedasticity</li>
-<li>Examine influential points</li>
-</ul></li>
-</ol>
-</section>
-<section id="key-takeaways" class="level3" data-number="15.6.6">
-<h3 data-number="15.6.6" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">15.6.6</span> Key Takeaways</h3>
-<ol type="1">
-<li>Variance decomposition helps us understand prediction improvement</li>
-<li>R² quantifies the proportion of variance explained</li>
-<li>Visual understanding is crucial for interpretation</li>
-<li>Context matters more than absolute R² values</li>
-<li>Always combine R² with other diagnostic tools</li>
-</ol>
-</section>
-<section id="measures-of-fit" class="level3" data-number="15.6.7">
-<h3 data-number="15.6.7" class="anchored" data-anchor-id="measures-of-fit"><span class="header-section-number">15.6.7</span> Measures of Fit</h3>
-<ol type="1">
-<li><p><strong>R-squared (<span class="math inline">R^2</span>)</strong>: <span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p></li>
-<li><p><strong>Root Mean Square Error (RMSE)</strong>: <span class="math display">RMSE = \sqrt{\frac{SSE}{n}}</span></p></li>
-<li><p><strong>Mean Absolute Error (MAE)</strong>: <span class="math display">MAE = \frac{1}{n}\sum_{i=1}^n |Y_i - \hat{Y}_i|</span></p></li>
-</ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Formal Derivation of OLS Estimators: Step-by-Step Approach
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<section id="initial-setup" class="level3" data-number="15.6.8">
-<h3 data-number="15.6.8" class="anchored" data-anchor-id="initial-setup"><span class="header-section-number">15.6.8</span> Initial Setup</h3>
-<p>We seek to minimize the sum of squared residuals:</p>
-<p><span class="math inline">SSR = \sum_{i=1}^n (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p>
-<p>Let’s break this into manageable pieces:</p>
-<ol type="1">
-<li>Each residual is: <span class="math inline">e_i = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
-<li>We square each residual: <span class="math inline">e_i^2 = (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></li>
-<li>Sum them all: <span class="math inline">SSR = \sum_{i=1}^n e_i^2</span></li>
-</ol>
-</section>
-<section id="chain-rule-review" class="level3" data-number="15.6.9">
-<h3 data-number="15.6.9" class="anchored" data-anchor-id="chain-rule-review"><span class="header-section-number">15.6.9</span> Chain Rule Review</h3>
-<p>Before proceeding, let’s recall the chain rule. For a composite function <span class="math inline">f(g(x))</span>:</p>
-<p><span class="math inline">\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)</span></p>
-<p>In our case, we’re dealing with the square function <span class="math inline">f(u) = u^2</span>, where:</p>
-<ul>
-<li><span class="math inline">f'(u) = 2u</span></li>
-<li><span class="math inline">u = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
-</ul>
-</section>
-<section id="step-1-finding-hatbeta_0-using-first-derivative" class="level3" data-number="15.6.10">
-<h3 data-number="15.6.10" class="anchored" data-anchor-id="step-1-finding-hatbeta_0-using-first-derivative"><span class="header-section-number">15.6.10</span> Step 1: Finding <span class="math inline">\hat{\beta}_0</span> Using First Derivative</h3>
-<p>Let’s take the partial derivative with respect to <span class="math inline">\hat{\beta}_0</span> step by step:</p>
-<ol type="1">
-<li><p>Start with one term of the sum:</p>
-<p><span class="math inline">\frac{\partial}{\partial \hat{\beta}_0}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p></li>
-<li><p>Apply chain rule:</p>
-<ul>
-<li>Outer function: <span class="math inline">f(u) = u^2</span>, so <span class="math inline">f'(u) = 2u</span></li>
-<li>Inner function: <span class="math inline">g(\hat{\beta}_0) = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
-<li>Inner derivative: <span class="math inline">g'(\hat{\beta}_0) = -1</span></li>
-</ul></li>
-<li><p>Therefore, for each term: <span class="math inline">\frac{\partial}{\partial \hat{\beta}_0}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2 = 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-1)</span></p></li>
-<li><p>Now sum all terms and set to zero: <span class="math inline">\sum_{i=1}^n 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-1) = 0</span></p></li>
-<li><p>Simplify: <span class="math inline">-2\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i) = 0</span></p></li>
-<li><p>Remove the -2: <span class="math inline">\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i) = 0</span></p></li>
-<li><p>Expand the sum: <span class="math inline">\sum_{i=1}^n y_i - n\hat{\beta}_0 - \hat{\beta}_1\sum_{i=1}^n x_i = 0</span></p></li>
-<li><p>Solve for <span class="math inline">\hat{\beta}_0</span>: <span class="math inline">n\hat{\beta}_0 = \sum_{i=1}^n y_i - \hat{\beta}_1\sum_{i=1}^n x_i</span></p>
-<p><span class="math inline">\hat{\beta}_0 = \frac{\sum_{i=1}^n y_i}{n} - \hat{\beta}_1\frac{\sum_{i=1}^n x_i}{n}</span></p>
-<p><span class="math inline">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p></li>
-</ol>
-</section>
-<section id="step-2-finding-hatbeta_1-using-first-derivative" class="level3" data-number="15.6.11">
-<h3 data-number="15.6.11" class="anchored" data-anchor-id="step-2-finding-hatbeta_1-using-first-derivative"><span class="header-section-number">15.6.11</span> Step 2: Finding <span class="math inline">\hat{\beta}_1</span> Using First Derivative</h3>
-<p>Now let’s find <span class="math inline">\hat{\beta}_1</span> with the same careful approach:</p>
-<ol type="1">
-<li><p>For one term: <span class="math inline">\frac{\partial}{\partial \hat{\beta}_1}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p></li>
-<li><p>Apply chain rule:</p>
-<ul>
-<li>Outer function: <span class="math inline">f(u) = u^2</span>, so <span class="math inline">f'(u) = 2u</span></li>
-<li>Inner function: <span class="math inline">g(\hat{\beta}_1) = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
-<li>Inner derivative: <span class="math inline">g'(\hat{\beta}_1) = -x_i</span></li>
-</ul></li>
-<li><p>Therefore: <span class="math inline">\frac{\partial}{\partial \hat{\beta}_1}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2 = 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-x_i)</span></p></li>
-<li><p>Sum all terms and set to zero: <span class="math inline">\sum_{i=1}^n 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-x_i) = 0</span></p></li>
-<li><p>Simplify: <span class="math inline">-2\sum_{i=1}^n x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1x_i) = 0</span></p></li>
-<li><p>Substitute <span class="math inline">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span>: <span class="math inline">-2\sum_{i=1}^n x_i(y_i - (\bar{y} - \hat{\beta}_1\bar{x}) - \hat{\beta}_1x_i) = 0</span></p></li>
-<li><p>Expand: <span class="math inline">-2\sum_{i=1}^n x_i(y_i - \bar{y} + \hat{\beta}_1\bar{x} - \hat{\beta}_1x_i) = 0</span></p></li>
-<li><p>Distribute <span class="math inline">x_i</span>: <span class="math inline">-2\sum_{i=1}^n (x_iy_i - x_i\bar{y} + x_i\hat{\beta}_1\bar{x} - x_i^2\hat{\beta}_1) = 0</span></p></li>
-<li><p>Collect terms with <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\sum_{i=1}^n (x_i^2\hat{\beta}_1 - x_i\hat{\beta}_1\bar{x}) = \sum_{i=1}^n (x_iy_i - x_i\bar{y})</span></p></li>
-<li><p>Factor out <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\hat{\beta}_1\sum_{i=1}^n (x_i^2 - x_i\bar{x}) = \sum_{i=1}^n (x_iy_i - x_i\bar{y})</span></p></li>
-<li><p>Final form: <span class="math inline">\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}</span></p></li>
-</ol>
-</section>
-<section id="step-3-verifying-we-have-a-minimum" class="level3" data-number="15.6.12">
-<h3 data-number="15.6.12" class="anchored" data-anchor-id="step-3-verifying-we-have-a-minimum"><span class="header-section-number">15.6.12</span> Step 3: Verifying We Have a Minimum</h3>
-<p>To confirm these critical points are minima, we check the second derivatives:</p>
-<ol type="1">
-<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_0</span>: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_0^2} = \frac{\partial}{\partial \hat{\beta}_0}(-2\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2n &gt; 0</span></p></li>
-<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_1^2} = \frac{\partial}{\partial \hat{\beta}_1}(-2\sum_{i=1}^n x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2\sum_{i=1}^n x_i^2 &gt; 0</span></p></li>
-<li><p>Cross partial derivatives: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_0\partial \hat{\beta}_1} = \frac{\partial^2 SSR}{\partial \hat{\beta}_1\partial \hat{\beta}_0} = 2\sum_{i=1}^n x_i</span></p></li>
-<li><p>The Hessian matrix is positive definite: <span class="math inline">\mathbf{H} = \begin{bmatrix} 2n &amp; 2\sum x_i \\ 2\sum x_i &amp; 2\sum x_i^2 \end{bmatrix}</span></p></li>
-</ol>
-<p>This confirms we have found a minimum.</p>
-</section>
-<section id="visualizing-the-process" class="level3" data-number="15.6.13">
-<h3 data-number="15.6.13" class="anchored" data-anchor-id="visualizing-the-process"><span class="header-section-number">15.6.13</span> Visualizing the Process</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample data</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">1</span>, <span class="dv">8</span>)</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate means</span></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>x_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>y_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create visualization</span></span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> y_mean, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> x_mean, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
-<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> x, <span class="at">yend =</span> y_mean), <span class="at">color =</span> <span class="st">"green"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">yend =</span> y, <span class="at">xend =</span> x_mean), <span class="at">color =</span> <span class="st">"purple"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
-<span id="cb55-21"><a href="#cb55-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Understanding the OLS Derivation"</span>,</span>
-<span id="cb55-22"><a href="#cb55-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Green: y deviations, Purple: x deviations</span><span class="sc">\n</span><span class="st">Their product forms the numerator of β̂₁"</span>,</span>
-<span id="cb55-23"><a href="#cb55-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
-<span id="cb55-24"><a href="#cb55-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="key-insights" class="level3" data-number="15.6.14">
-<h3 data-number="15.6.14" class="anchored" data-anchor-id="key-insights"><span class="header-section-number">15.6.14</span> Key Insights</h3>
-<ol type="1">
-<li>The chain rule is crucial in deriving both estimators</li>
-<li><span class="math inline">\hat{\beta}_0</span> ensures the line goes through <span class="math inline">(\bar{x}, \bar{y})</span></li>
-<li><span class="math inline">\hat{\beta}_1</span> is a ratio of covariance to variance</li>
-<li>The second derivatives confirm we’ve found a minimum</li>
-<li>The entire process relies on calculus to find the optimal values that minimize the sum of squared residuals</li>
-</ol>
-</section>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2228,22 +2038,22 @@ Understanding Variance Decomposition in Linear Regression
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="why-it-matters-improving-predictions-with-extra-information" class="level3" data-number="15.6.15">
-<h3 data-number="15.6.15" class="anchored" data-anchor-id="why-it-matters-improving-predictions-with-extra-information"><span class="header-section-number">15.6.15</span> Why It Matters: Improving Predictions with Extra Information</h3>
+<section id="why-it-matters-improving-predictions-with-extra-information" class="level3" data-number="15.6.3">
+<h3 data-number="15.6.3" class="anchored" data-anchor-id="why-it-matters-improving-predictions-with-extra-information"><span class="header-section-number">15.6.3</span> Why It Matters: Improving Predictions with Extra Information</h3>
 <p>Imagine you’re trying to predict house prices. A simple way to make predictions is by using the average price of all houses. But what if you know additional details, like the size of the house? Would that help improve your predictions? <strong>Variance decomposition</strong> helps us measure exactly how much better our predictions are when we include more information, like house size.</p>
 </section>
-<section id="the-process-from-a-simple-guess-to-a-smarter-prediction" class="level3" data-number="15.6.16">
-<h3 data-number="15.6.16" class="anchored" data-anchor-id="the-process-from-a-simple-guess-to-a-smarter-prediction"><span class="header-section-number">15.6.16</span> The Process: From a Simple Guess to a Smarter Prediction</h3>
-<section id="step-1-starting-with-the-average" class="level4" data-number="15.6.16.1">
-<h4 data-number="15.6.16.1" class="anchored" data-anchor-id="step-1-starting-with-the-average"><span class="header-section-number">15.6.16.1</span> Step 1: Starting with the Average</h4>
+<section id="the-process-from-a-simple-guess-to-a-smarter-prediction" class="level3" data-number="15.6.4">
+<h3 data-number="15.6.4" class="anchored" data-anchor-id="the-process-from-a-simple-guess-to-a-smarter-prediction"><span class="header-section-number">15.6.4</span> The Process: From a Simple Guess to a Smarter Prediction</h3>
+<section id="step-1-starting-with-the-average" class="level4" data-number="15.6.4.1">
+<h4 data-number="15.6.4.1" class="anchored" data-anchor-id="step-1-starting-with-the-average"><span class="header-section-number">15.6.4.1</span> Step 1: Starting with the Average</h4>
 <ul>
 <li><strong>What’s our first guess?</strong> The mean of all house prices (<span class="math inline">\bar{y}</span>).</li>
 <li>Think of this as your “uninformed guess.”</li>
 <li>For every house, we predict the same price (the average), which leads to our <strong>baseline errors</strong>.</li>
 </ul>
 </section>
-<section id="step-2-using-extra-information" class="level4" data-number="15.6.16.2">
-<h4 data-number="15.6.16.2" class="anchored" data-anchor-id="step-2-using-extra-information"><span class="header-section-number">15.6.16.2</span> Step 2: Using Extra Information</h4>
+<section id="step-2-using-extra-information" class="level4" data-number="15.6.4.2">
+<h4 data-number="15.6.4.2" class="anchored" data-anchor-id="step-2-using-extra-information"><span class="header-section-number">15.6.4.2</span> Step 2: Using Extra Information</h4>
 <ul>
 <li>We now use additional information (like house size, <span class="math inline">X</span>) to refine our predictions.</li>
 <li>This allows us to make <strong>different predictions</strong> for each house.</li>
@@ -2251,12 +2061,12 @@ Understanding Variance Decomposition in Linear Regression
 </ul>
 </section>
 </section>
-<section id="visualizing-variance-decomposition" class="level3" data-number="15.6.17">
-<h3 data-number="15.6.17" class="anchored" data-anchor-id="visualizing-variance-decomposition"><span class="header-section-number">15.6.17</span> Visualizing Variance Decomposition</h3>
+<section id="visualizing-variance-decomposition" class="level3" data-number="15.6.5">
+<h3 data-number="15.6.5" class="anchored" data-anchor-id="visualizing-variance-decomposition"><span class="header-section-number">15.6.5</span> Visualizing Variance Decomposition</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'patchwork'</code></pre>
@@ -2266,126 +2076,126 @@ Attaching package: 'patchwork'</code></pre>
 
     area</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data with clearer pattern</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">sd =</span> <span class="fl">0.8</span>)</span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Model and calculations</span></span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, data)</span>
-<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>mean_y <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
-<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>predicted <span class="ot">&lt;-</span> <span class="fu">predict</span>(model)</span>
-<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Select specific points for demonstration that are well-spaced</span></span>
-<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>demonstration_points <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">25</span>, <span class="dv">42</span>)  <span class="co"># Changed points for better spacing</span></span>
-<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create main plot with improved aesthetics</span></span>
-<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add background grid for better readability</span></span>
-<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">by =</span> <span class="fl">0.5</span>), <span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb59-19"><a href="#cb59-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.5</span>), <span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb59-20"><a href="#cb59-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb59-21"><a href="#cb59-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add regression line and mean line</span></span>
-<span id="cb59-22"><a href="#cb59-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"#E41A1C"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb59-23"><a href="#cb59-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> mean_y, <span class="at">linetype =</span> <span class="st">"longdash"</span>, <span class="at">color =</span> <span class="st">"#377EB8"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb59-24"><a href="#cb59-24" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb59-25"><a href="#cb59-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add data points</span></span>
-<span id="cb59-26"><a href="#cb59-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"#4A4A4A"</span>) <span class="sc">+</span></span>
-<span id="cb59-27"><a href="#cb59-27" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb59-28"><a href="#cb59-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add decomposition segments with improved colors and positioning</span></span>
-<span id="cb59-29"><a href="#cb59-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Total deviation (purple)</span></span>
-<span id="cb59-30"><a href="#cb59-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
-<span id="cb59-31"><a href="#cb59-31" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> y, <span class="at">yend =</span> mean_y),</span>
-<span id="cb59-32"><a href="#cb59-32" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#984EA3"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">1.8</span>) <span class="sc">+</span></span>
-<span id="cb59-33"><a href="#cb59-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Explained component (green)</span></span>
-<span id="cb59-34"><a href="#cb59-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
-<span id="cb59-35"><a href="#cb59-35" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> mean_y, <span class="at">yend =</span> predicted),</span>
-<span id="cb59-36"><a href="#cb59-36" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#4DAF4A"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb59-37"><a href="#cb59-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Unexplained component (orange)</span></span>
-<span id="cb59-38"><a href="#cb59-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
-<span id="cb59-39"><a href="#cb59-39" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> predicted, <span class="at">yend =</span> y),</span>
-<span id="cb59-40"><a href="#cb59-40" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#FF7F00"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb59-41"><a href="#cb59-41" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb59-42"><a href="#cb59-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add annotations for better understanding</span></span>
-<span id="cb59-43"><a href="#cb59-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> data<span class="sc">$</span>x[demonstration_points[<span class="dv">2</span>]], <span class="at">y =</span> mean_y <span class="sc">-</span> <span class="fl">0.2</span>,</span>
-<span id="cb59-44"><a href="#cb59-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Mean"</span>, <span class="at">color =</span> <span class="st">"#377EB8"</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb59-45"><a href="#cb59-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> data<span class="sc">$</span>x[demonstration_points[<span class="dv">2</span>]], </span>
-<span id="cb59-46"><a href="#cb59-46" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> data<span class="sc">$</span>predicted[demonstration_points[<span class="dv">2</span>]] <span class="sc">+</span> <span class="fl">0.2</span>,</span>
-<span id="cb59-47"><a href="#cb59-47" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Regression Line"</span>, <span class="at">color =</span> <span class="st">"#E41A1C"</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb59-48"><a href="#cb59-48" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb59-49"><a href="#cb59-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Improve theme and labels</span></span>
-<span id="cb59-50"><a href="#cb59-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
-<span id="cb59-51"><a href="#cb59-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb59-52"><a href="#cb59-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb59-53"><a href="#cb59-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb59-54"><a href="#cb59-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb59-55"><a href="#cb59-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb59-56"><a href="#cb59-56" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb59-57"><a href="#cb59-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb59-58"><a href="#cb59-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Variance Decomposition in Linear Regression"</span>,</span>
-<span id="cb59-59"><a href="#cb59-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Decomposing total variance into explained and unexplained components"</span>,</span>
-<span id="cb59-60"><a href="#cb59-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Predictor (X)"</span>,</span>
-<span id="cb59-61"><a href="#cb59-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Response (Y)"</span></span>
-<span id="cb59-62"><a href="#cb59-62" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb59-63"><a href="#cb59-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-64"><a href="#cb59-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Create error distribution plot with improved aesthetics</span></span>
-<span id="cb59-65"><a href="#cb59-65" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>mean_error <span class="ot">&lt;-</span> y <span class="sc">-</span> mean_y</span>
-<span id="cb59-66"><a href="#cb59-66" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>regression_error <span class="ot">&lt;-</span> y <span class="sc">-</span> data<span class="sc">$</span>predicted</span>
-<span id="cb59-67"><a href="#cb59-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-68"><a href="#cb59-68" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data) <span class="sc">+</span></span>
-<span id="cb59-69"><a href="#cb59-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean_error, <span class="at">fill =</span> <span class="st">"Deviation from Mean"</span>), </span>
-<span id="cb59-70"><a href="#cb59-70" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb59-71"><a href="#cb59-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> regression_error, <span class="at">fill =</span> <span class="st">"Regression Residuals"</span>), </span>
-<span id="cb59-72"><a href="#cb59-72" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb59-73"><a href="#cb59-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
-<span id="cb59-74"><a href="#cb59-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb59-75"><a href="#cb59-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb59-76"><a href="#cb59-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb59-77"><a href="#cb59-77" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb59-78"><a href="#cb59-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb59-79"><a href="#cb59-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Error Distribution Comparison"</span>,</span>
-<span id="cb59-80"><a href="#cb59-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Error Magnitude"</span>,</span>
-<span id="cb59-81"><a href="#cb59-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
-<span id="cb59-82"><a href="#cb59-82" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb59-83"><a href="#cb59-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb59-84"><a href="#cb59-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#377EB8"</span>, <span class="st">"#E41A1C"</span>)</span>
-<span id="cb59-85"><a href="#cb59-85" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb59-86"><a href="#cb59-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-87"><a href="#cb59-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Add legend explaining the decomposition components</span></span>
-<span id="cb59-88"><a href="#cb59-88" aria-hidden="true" tabindex="-1"></a>legend_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb59-89"><a href="#cb59-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb59-90"><a href="#cb59-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb59-91"><a href="#cb59-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb59-92"><a href="#cb59-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.box =</span> <span class="st">"horizontal"</span></span>
-<span id="cb59-93"><a href="#cb59-93" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb59-94"><a href="#cb59-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb59-95"><a href="#cb59-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb59-96"><a href="#cb59-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Variance Components"</span>,</span>
-<span id="cb59-97"><a href="#cb59-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#984EA3"</span>, <span class="st">"#4DAF4A"</span>, <span class="st">"#FF7F00"</span>),</span>
-<span id="cb59-98"><a href="#cb59-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Total Deviation"</span>, <span class="st">"Explained Variance"</span>, <span class="st">"Unexplained Variance"</span>)</span>
-<span id="cb59-99"><a href="#cb59-99" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb59-100"><a href="#cb59-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-101"><a href="#cb59-101" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine plots with adjusted heights</span></span>
-<span id="cb59-102"><a href="#cb59-102" aria-hidden="true" tabindex="-1"></a>combined_plot <span class="ot">&lt;-</span> (p1 <span class="sc">/</span> p2) <span class="sc">+</span></span>
-<span id="cb59-103"><a href="#cb59-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span>
-<span id="cb59-104"><a href="#cb59-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-105"><a href="#cb59-105" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined plot</span></span>
-<span id="cb59-106"><a href="#cb59-106" aria-hidden="true" tabindex="-1"></a>combined_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data with clearer pattern</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">50</span>)</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">sd =</span> <span class="fl">0.8</span>)</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Model and calculations</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, data)</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>mean_y <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>predicted <span class="ot">&lt;-</span> <span class="fu">predict</span>(model)</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Select specific points for demonstration that are well-spaced</span></span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>demonstration_points <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">25</span>, <span class="dv">42</span>)  <span class="co"># Changed points for better spacing</span></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create main plot with improved aesthetics</span></span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add background grid for better readability</span></span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">8</span>, <span class="at">by =</span> <span class="fl">0.5</span>), <span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.5</span>), <span class="at">color =</span> <span class="st">"gray90"</span>, <span class="at">linewidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add regression line and mean line</span></span>
+<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"#E41A1C"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> mean_y, <span class="at">linetype =</span> <span class="st">"longdash"</span>, <span class="at">color =</span> <span class="st">"#377EB8"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add data points</span></span>
+<span id="cb58-26"><a href="#cb58-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"#4A4A4A"</span>) <span class="sc">+</span></span>
+<span id="cb58-27"><a href="#cb58-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb58-28"><a href="#cb58-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add decomposition segments with improved colors and positioning</span></span>
+<span id="cb58-29"><a href="#cb58-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Total deviation (purple)</span></span>
+<span id="cb58-30"><a href="#cb58-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
+<span id="cb58-31"><a href="#cb58-31" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> y, <span class="at">yend =</span> mean_y),</span>
+<span id="cb58-32"><a href="#cb58-32" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#984EA3"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">1.8</span>) <span class="sc">+</span></span>
+<span id="cb58-33"><a href="#cb58-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Explained component (green)</span></span>
+<span id="cb58-34"><a href="#cb58-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
+<span id="cb58-35"><a href="#cb58-35" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> mean_y, <span class="at">yend =</span> predicted),</span>
+<span id="cb58-36"><a href="#cb58-36" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#4DAF4A"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb58-37"><a href="#cb58-37" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Unexplained component (orange)</span></span>
+<span id="cb58-38"><a href="#cb58-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">data =</span> data[demonstration_points,],</span>
+<span id="cb58-39"><a href="#cb58-39" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">xend =</span> x, <span class="at">y =</span> predicted, <span class="at">yend =</span> y),</span>
+<span id="cb58-40"><a href="#cb58-40" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#FF7F00"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb58-41"><a href="#cb58-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb58-42"><a href="#cb58-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add annotations for better understanding</span></span>
+<span id="cb58-43"><a href="#cb58-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> data<span class="sc">$</span>x[demonstration_points[<span class="dv">2</span>]], <span class="at">y =</span> mean_y <span class="sc">-</span> <span class="fl">0.2</span>,</span>
+<span id="cb58-44"><a href="#cb58-44" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Mean"</span>, <span class="at">color =</span> <span class="st">"#377EB8"</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb58-45"><a href="#cb58-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> data<span class="sc">$</span>x[demonstration_points[<span class="dv">2</span>]], </span>
+<span id="cb58-46"><a href="#cb58-46" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> data<span class="sc">$</span>predicted[demonstration_points[<span class="dv">2</span>]] <span class="sc">+</span> <span class="fl">0.2</span>,</span>
+<span id="cb58-47"><a href="#cb58-47" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Regression Line"</span>, <span class="at">color =</span> <span class="st">"#E41A1C"</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb58-48"><a href="#cb58-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb58-49"><a href="#cb58-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Improve theme and labels</span></span>
+<span id="cb58-50"><a href="#cb58-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb58-51"><a href="#cb58-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb58-52"><a href="#cb58-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb58-53"><a href="#cb58-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb58-54"><a href="#cb58-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb58-55"><a href="#cb58-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb58-56"><a href="#cb58-56" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-57"><a href="#cb58-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb58-58"><a href="#cb58-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Variance Decomposition in Linear Regression"</span>,</span>
+<span id="cb58-59"><a href="#cb58-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Decomposing total variance into explained and unexplained components"</span>,</span>
+<span id="cb58-60"><a href="#cb58-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Predictor (X)"</span>,</span>
+<span id="cb58-61"><a href="#cb58-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Response (Y)"</span></span>
+<span id="cb58-62"><a href="#cb58-62" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb58-63"><a href="#cb58-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-64"><a href="#cb58-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Create error distribution plot with improved aesthetics</span></span>
+<span id="cb58-65"><a href="#cb58-65" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>mean_error <span class="ot">&lt;-</span> y <span class="sc">-</span> mean_y</span>
+<span id="cb58-66"><a href="#cb58-66" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>regression_error <span class="ot">&lt;-</span> y <span class="sc">-</span> data<span class="sc">$</span>predicted</span>
+<span id="cb58-67"><a href="#cb58-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-68"><a href="#cb58-68" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data) <span class="sc">+</span></span>
+<span id="cb58-69"><a href="#cb58-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean_error, <span class="at">fill =</span> <span class="st">"Deviation from Mean"</span>), </span>
+<span id="cb58-70"><a href="#cb58-70" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb58-71"><a href="#cb58-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> regression_error, <span class="at">fill =</span> <span class="st">"Regression Residuals"</span>), </span>
+<span id="cb58-72"><a href="#cb58-72" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb58-73"><a href="#cb58-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb58-74"><a href="#cb58-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb58-75"><a href="#cb58-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb58-76"><a href="#cb58-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb58-77"><a href="#cb58-77" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-78"><a href="#cb58-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb58-79"><a href="#cb58-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Error Distribution Comparison"</span>,</span>
+<span id="cb58-80"><a href="#cb58-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Error Magnitude"</span>,</span>
+<span id="cb58-81"><a href="#cb58-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Density"</span></span>
+<span id="cb58-82"><a href="#cb58-82" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-83"><a href="#cb58-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb58-84"><a href="#cb58-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#377EB8"</span>, <span class="st">"#E41A1C"</span>)</span>
+<span id="cb58-85"><a href="#cb58-85" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb58-86"><a href="#cb58-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-87"><a href="#cb58-87" aria-hidden="true" tabindex="-1"></a><span class="co"># Add legend explaining the decomposition components</span></span>
+<span id="cb58-88"><a href="#cb58-88" aria-hidden="true" tabindex="-1"></a>legend_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb58-89"><a href="#cb58-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb58-90"><a href="#cb58-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb58-91"><a href="#cb58-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb58-92"><a href="#cb58-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.box =</span> <span class="st">"horizontal"</span></span>
+<span id="cb58-93"><a href="#cb58-93" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-94"><a href="#cb58-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">0</span>, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">label =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb58-95"><a href="#cb58-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb58-96"><a href="#cb58-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Variance Components"</span>,</span>
+<span id="cb58-97"><a href="#cb58-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#984EA3"</span>, <span class="st">"#4DAF4A"</span>, <span class="st">"#FF7F00"</span>),</span>
+<span id="cb58-98"><a href="#cb58-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Total Deviation"</span>, <span class="st">"Explained Variance"</span>, <span class="st">"Unexplained Variance"</span>)</span>
+<span id="cb58-99"><a href="#cb58-99" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb58-100"><a href="#cb58-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-101"><a href="#cb58-101" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine plots with adjusted heights</span></span>
+<span id="cb58-102"><a href="#cb58-102" aria-hidden="true" tabindex="-1"></a>combined_plot <span class="ot">&lt;-</span> (p1 <span class="sc">/</span> p2) <span class="sc">+</span></span>
+<span id="cb58-103"><a href="#cb58-103" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span>
+<span id="cb58-104"><a href="#cb58-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-105"><a href="#cb58-105" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined plot</span></span>
+<span id="cb58-106"><a href="#cb58-106" aria-hidden="true" tabindex="-1"></a>combined_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="correg_en_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="1152"></p>
+<p><img src="correg_en_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="1152"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="breaking-down-the-types-of-variation" class="level3" data-number="15.6.18">
-<h3 data-number="15.6.18" class="anchored" data-anchor-id="breaking-down-the-types-of-variation"><span class="header-section-number">15.6.18</span> Breaking Down the Types of Variation</h3>
+<section id="breaking-down-the-types-of-variation" class="level3" data-number="15.6.6">
+<h3 data-number="15.6.6" class="anchored" data-anchor-id="breaking-down-the-types-of-variation"><span class="header-section-number">15.6.6</span> Breaking Down the Types of Variation</h3>
 <ol type="1">
 <li><strong>Total Variation (SST)</strong>
 <ul>
@@ -2410,12 +2220,12 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="what-is-r²" class="level3" data-number="15.6.19">
-<h3 data-number="15.6.19" class="anchored" data-anchor-id="what-is-r²"><span class="header-section-number">15.6.19</span> What is R²?</h3>
+<section id="what-is-r²" class="level3" data-number="15.6.7">
+<h3 data-number="15.6.7" class="anchored" data-anchor-id="what-is-r²"><span class="header-section-number">15.6.7</span> What is R²?</h3>
 <p><span class="math inline">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p>
 <p>Think of <span class="math inline">R^2</span> as answering: “What percentage of the original variation in the data can we explain using our model?”</p>
-<section id="examples-of-r2-values" class="level4" data-number="15.6.19.1">
-<h4 data-number="15.6.19.1" class="anchored" data-anchor-id="examples-of-r2-values"><span class="header-section-number">15.6.19.1</span> Examples of <span class="math inline">R^2</span> Values:</h4>
+<section id="examples-of-r2-values" class="level4" data-number="15.6.7.1">
+<h4 data-number="15.6.7.1" class="anchored" data-anchor-id="examples-of-r2-values"><span class="header-section-number">15.6.7.1</span> Examples of <span class="math inline">R^2</span> Values:</h4>
 <ul>
 <li><strong><span class="math inline">R^2 = 0.80</span></strong>: Our model explains 80% of the variation in house prices.</li>
 <li><strong><span class="math inline">R^2 = 0.25</span></strong>: Our model explains 25% of the variation (a weaker model).</li>
@@ -2423,8 +2233,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul>
 </section>
 </section>
-<section id="important-things-to-remember-about-r²" class="level3" data-number="15.6.20">
-<h3 data-number="15.6.20" class="anchored" data-anchor-id="important-things-to-remember-about-r²"><span class="header-section-number">15.6.20</span> Important Things to Remember About R²</h3>
+<section id="important-things-to-remember-about-r²" class="level3" data-number="15.6.8">
+<h3 data-number="15.6.8" class="anchored" data-anchor-id="important-things-to-remember-about-r²"><span class="header-section-number">15.6.8</span> Important Things to Remember About R²</h3>
 <ol type="1">
 <li><strong>High <span class="math inline">R^2</span> Isn’t Always Good</strong>
 <ul>
@@ -2443,8 +2253,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="tips-for-effective-analysis" class="level3" data-number="15.6.21">
-<h3 data-number="15.6.21" class="anchored" data-anchor-id="tips-for-effective-analysis"><span class="header-section-number">15.6.21</span> Tips for Effective Analysis</h3>
+<section id="tips-for-effective-analysis" class="level3" data-number="15.6.9">
+<h3 data-number="15.6.9" class="anchored" data-anchor-id="tips-for-effective-analysis"><span class="header-section-number">15.6.9</span> Tips for Effective Analysis</h3>
 <ol type="1">
 <li><strong>Visualize the Data</strong>
 <ul>
@@ -2464,23 +2274,210 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="key-takeaways-1" class="level3" data-number="15.6.22">
-<h3 data-number="15.6.22" class="anchored" data-anchor-id="key-takeaways-1"><span class="header-section-number">15.6.22</span> Key Takeaways</h3>
+</div>
+</div>
+</section>
+<section id="r²-demystified" class="level3" data-number="15.6.10">
+<h3 data-number="15.6.10" class="anchored" data-anchor-id="r²-demystified"><span class="header-section-number">15.6.10</span> R² Demystified</h3>
+<p><span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p>
+<p>Think of R² as answering the question: “What percentage of the original variation in Y can we explain using X?”</p>
+<section id="intuitive-examples" class="level4" data-number="15.6.10.1">
+<h4 data-number="15.6.10.1" class="anchored" data-anchor-id="intuitive-examples"><span class="header-section-number">15.6.10.1</span> Intuitive Examples:</h4>
+<ul>
+<li>R² = 0.80: Using X eliminated 80% of our prediction errors</li>
+<li>R² = 0.25: Using X eliminated 25% of our prediction errors</li>
+<li>R² = 0.00: Using X didn’t help at all</li>
+</ul>
+</section>
+</section>
+<section id="when-to-be-cautious" class="level3" data-number="15.6.11">
+<h3 data-number="15.6.11" class="anchored" data-anchor-id="when-to-be-cautious"><span class="header-section-number">15.6.11</span> When to Be Cautious</h3>
 <ol type="1">
-<li>Variance decomposition explains how prediction improves with more information.</li>
-<li><span class="math inline">R^2</span> shows how much of the total variation is explained by the model.</li>
-<li><strong>Visualizing data</strong> is key to understanding regression performance.</li>
-<li>Context is more important than just looking at <span class="math inline">R^2</span> values.</li>
-<li>Always use <strong>diagnostic tools</strong> along with <span class="math inline">R^2</span> to evaluate your model’s quality.</li>
+<li><strong>High R² Isn’t Everything</strong>
+<ul>
+<li>A high R² might indicate overfitting</li>
+<li>Always check if your model makes practical sense</li>
+<li>Consider the context of your field</li>
+</ul></li>
+<li><strong>Low R² Isn’t Always Bad</strong>
+<ul>
+<li>In some fields, R² = 0.30 might be impressive</li>
+<li>Social sciences often have lower R² values</li>
+<li>Focus on practical significance</li>
+</ul></li>
 </ol>
 </section>
-<section id="further-reading" class="level3" data-number="15.6.23">
-<h3 data-number="15.6.23" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">15.6.23</span> Further Reading</h3>
+<section id="practical-tips-for-analysis" class="level3" data-number="15.6.12">
+<h3 data-number="15.6.12" class="anchored" data-anchor-id="practical-tips-for-analysis"><span class="header-section-number">15.6.12</span> Practical Tips for Analysis</h3>
+<ol type="1">
+<li><strong>Visual Inspection</strong>
 <ul>
-<li>Explore advanced topics like <strong>vector spaces</strong> and <strong>projections</strong>.</li>
-<li>Learn about <strong>multiple regression</strong> techniques and <strong>robust methods</strong>.</li>
-<li>Understand <strong>non-linear relationships</strong> in regression models.</li>
+<li>Always plot your data</li>
+<li>Look for patterns in residuals</li>
+<li>Check for influential points</li>
+</ul></li>
+<li><strong>Context Consideration</strong>
+<ul>
+<li>What’s a “good” R² in your field?</li>
+<li>What’s the practical impact of your errors?</li>
+<li>Are your predictors meaningful?</li>
+</ul></li>
+<li><strong>Model Diagnostics</strong>
+<ul>
+<li>Check residual normality</li>
+<li>Look for heteroscedasticity</li>
+<li>Examine influential points</li>
+</ul></li>
+</ol>
+</section>
+<section id="key-takeaways" class="level3" data-number="15.6.13">
+<h3 data-number="15.6.13" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">15.6.13</span> Key Takeaways</h3>
+<ol type="1">
+<li>Variance decomposition helps us understand prediction improvement</li>
+<li>R² quantifies the proportion of variance explained</li>
+<li>Visual understanding is crucial for interpretation</li>
+<li>Context matters more than absolute R² values</li>
+<li>Always combine R² with other diagnostic tools</li>
+</ol>
+</section>
+<section id="measures-of-fit" class="level3" data-number="15.6.14">
+<h3 data-number="15.6.14" class="anchored" data-anchor-id="measures-of-fit"><span class="header-section-number">15.6.14</span> Measures of Fit</h3>
+<ol type="1">
+<li><p><strong>R-squared (<span class="math inline">R^2</span>)</strong>: <span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p></li>
+<li><p><strong>Root Mean Square Error (RMSE)</strong>: <span class="math display">RMSE = \sqrt{\frac{SSE}{n}}</span></p></li>
+<li><p><strong>Mean Absolute Error (MAE)</strong>: <span class="math display">MAE = \frac{1}{n}\sum_{i=1}^n |Y_i - \hat{Y}_i|</span></p></li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Formal Derivation of OLS Estimators: Step-by-Step Approach
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="initial-setup" class="level3" data-number="15.6.15">
+<h3 data-number="15.6.15" class="anchored" data-anchor-id="initial-setup"><span class="header-section-number">15.6.15</span> Initial Setup</h3>
+<p>We seek to minimize the sum of squared residuals:</p>
+<p><span class="math inline">SSR = \sum_{i=1}^n (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p>
+<p>Let’s break this into manageable pieces:</p>
+<ol type="1">
+<li>Each residual is: <span class="math inline">e_i = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
+<li>We square each residual: <span class="math inline">e_i^2 = (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></li>
+<li>Sum them all: <span class="math inline">SSR = \sum_{i=1}^n e_i^2</span></li>
+</ol>
+</section>
+<section id="chain-rule-review" class="level3" data-number="15.6.16">
+<h3 data-number="15.6.16" class="anchored" data-anchor-id="chain-rule-review"><span class="header-section-number">15.6.16</span> Chain Rule Review</h3>
+<p>Before proceeding, let’s recall the chain rule. For a composite function <span class="math inline">f(g(x))</span>:</p>
+<p><span class="math inline">\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)</span></p>
+<p>In our case, we’re dealing with the square function <span class="math inline">f(u) = u^2</span>, where:</p>
+<ul>
+<li><span class="math inline">f'(u) = 2u</span></li>
+<li><span class="math inline">u = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
 </ul>
+</section>
+<section id="step-1-finding-hatbeta_0-using-first-derivative" class="level3" data-number="15.6.17">
+<h3 data-number="15.6.17" class="anchored" data-anchor-id="step-1-finding-hatbeta_0-using-first-derivative"><span class="header-section-number">15.6.17</span> Step 1: Finding <span class="math inline">\hat{\beta}_0</span> Using First Derivative</h3>
+<p>Let’s take the partial derivative with respect to <span class="math inline">\hat{\beta}_0</span> step by step:</p>
+<ol type="1">
+<li><p>Start with one term of the sum:</p>
+<p><span class="math inline">\frac{\partial}{\partial \hat{\beta}_0}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p></li>
+<li><p>Apply chain rule:</p>
+<ul>
+<li>Outer function: <span class="math inline">f(u) = u^2</span>, so <span class="math inline">f'(u) = 2u</span></li>
+<li>Inner function: <span class="math inline">g(\hat{\beta}_0) = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
+<li>Inner derivative: <span class="math inline">g'(\hat{\beta}_0) = -1</span></li>
+</ul></li>
+<li><p>Therefore, for each term: <span class="math inline">\frac{\partial}{\partial \hat{\beta}_0}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2 = 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-1)</span></p></li>
+<li><p>Now sum all terms and set to zero: <span class="math inline">\sum_{i=1}^n 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-1) = 0</span></p></li>
+<li><p>Simplify: <span class="math inline">-2\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i) = 0</span></p></li>
+<li><p>Remove the -2: <span class="math inline">\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i) = 0</span></p></li>
+<li><p>Expand the sum: <span class="math inline">\sum_{i=1}^n y_i - n\hat{\beta}_0 - \hat{\beta}_1\sum_{i=1}^n x_i = 0</span></p></li>
+<li><p>Solve for <span class="math inline">\hat{\beta}_0</span>: <span class="math inline">n\hat{\beta}_0 = \sum_{i=1}^n y_i - \hat{\beta}_1\sum_{i=1}^n x_i</span></p>
+<p><span class="math inline">\hat{\beta}_0 = \frac{\sum_{i=1}^n y_i}{n} - \hat{\beta}_1\frac{\sum_{i=1}^n x_i}{n}</span></p>
+<p><span class="math inline">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p></li>
+</ol>
+</section>
+<section id="step-2-finding-hatbeta_1-using-first-derivative" class="level3" data-number="15.6.18">
+<h3 data-number="15.6.18" class="anchored" data-anchor-id="step-2-finding-hatbeta_1-using-first-derivative"><span class="header-section-number">15.6.18</span> Step 2: Finding <span class="math inline">\hat{\beta}_1</span> Using First Derivative</h3>
+<p>Now let’s find <span class="math inline">\hat{\beta}_1</span> with the same careful approach:</p>
+<ol type="1">
+<li><p>For one term: <span class="math inline">\frac{\partial}{\partial \hat{\beta}_1}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p></li>
+<li><p>Apply chain rule:</p>
+<ul>
+<li>Outer function: <span class="math inline">f(u) = u^2</span>, so <span class="math inline">f'(u) = 2u</span></li>
+<li>Inner function: <span class="math inline">g(\hat{\beta}_1) = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
+<li>Inner derivative: <span class="math inline">g'(\hat{\beta}_1) = -x_i</span></li>
+</ul></li>
+<li><p>Therefore: <span class="math inline">\frac{\partial}{\partial \hat{\beta}_1}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2 = 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-x_i)</span></p></li>
+<li><p>Sum all terms and set to zero: <span class="math inline">\sum_{i=1}^n 2(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))(-x_i) = 0</span></p></li>
+<li><p>Simplify: <span class="math inline">-2\sum_{i=1}^n x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1x_i) = 0</span></p></li>
+<li><p>Substitute <span class="math inline">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span>: <span class="math inline">-2\sum_{i=1}^n x_i(y_i - (\bar{y} - \hat{\beta}_1\bar{x}) - \hat{\beta}_1x_i) = 0</span></p></li>
+<li><p>Expand: <span class="math inline">-2\sum_{i=1}^n x_i(y_i - \bar{y} + \hat{\beta}_1\bar{x} - \hat{\beta}_1x_i) = 0</span></p></li>
+<li><p>Distribute <span class="math inline">x_i</span>: <span class="math inline">-2\sum_{i=1}^n (x_iy_i - x_i\bar{y} + x_i\hat{\beta}_1\bar{x} - x_i^2\hat{\beta}_1) = 0</span></p></li>
+<li><p>Collect terms with <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\sum_{i=1}^n (x_i^2\hat{\beta}_1 - x_i\hat{\beta}_1\bar{x}) = \sum_{i=1}^n (x_iy_i - x_i\bar{y})</span></p></li>
+<li><p>Factor out <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\hat{\beta}_1\sum_{i=1}^n (x_i^2 - x_i\bar{x}) = \sum_{i=1}^n (x_iy_i - x_i\bar{y})</span></p></li>
+<li><p>Final form: <span class="math inline">\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}</span></p></li>
+</ol>
+</section>
+<section id="step-3-verifying-we-have-a-minimum" class="level3" data-number="15.6.19">
+<h3 data-number="15.6.19" class="anchored" data-anchor-id="step-3-verifying-we-have-a-minimum"><span class="header-section-number">15.6.19</span> Step 3: Verifying We Have a Minimum</h3>
+<p>To confirm these critical points are minima, we check the second derivatives:</p>
+<ol type="1">
+<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_0</span>: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_0^2} = \frac{\partial}{\partial \hat{\beta}_0}(-2\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2n &gt; 0</span></p></li>
+<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_1^2} = \frac{\partial}{\partial \hat{\beta}_1}(-2\sum_{i=1}^n x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2\sum_{i=1}^n x_i^2 &gt; 0</span></p></li>
+<li><p>Cross partial derivatives: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_0\partial \hat{\beta}_1} = \frac{\partial^2 SSR}{\partial \hat{\beta}_1\partial \hat{\beta}_0} = 2\sum_{i=1}^n x_i</span></p></li>
+<li><p>The Hessian matrix is positive definite: <span class="math inline">\mathbf{H} = \begin{bmatrix} 2n &amp; 2\sum x_i \\ 2\sum x_i &amp; 2\sum x_i^2 \end{bmatrix}</span></p></li>
+</ol>
+<p>This confirms we have found a minimum.</p>
+</section>
+<section id="visualizing-the-process" class="level3" data-number="15.6.20">
+<h3 data-number="15.6.20" class="anchored" data-anchor-id="visualizing-the-process"><span class="header-section-number">15.6.20</span> Visualizing the Process</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample data</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">20</span>, <span class="dv">1</span>, <span class="dv">8</span>)</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate means</span></span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>x_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>y_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(y)</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create visualization</span></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> y_mean, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> x_mean, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">xend =</span> x, <span class="at">yend =</span> y_mean), <span class="at">color =</span> <span class="st">"green"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">yend =</span> y, <span class="at">xend =</span> x_mean), <span class="at">color =</span> <span class="st">"purple"</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Understanding the OLS Derivation"</span>,</span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Green: y deviations, Purple: x deviations</span><span class="sc">\n</span><span class="st">Their product forms the numerator of β̂₁"</span>,</span>
+<span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb60-24"><a href="#cb60-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="correg_en_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="key-insights" class="level3" data-number="15.6.21">
+<h3 data-number="15.6.21" class="anchored" data-anchor-id="key-insights"><span class="header-section-number">15.6.21</span> Key Insights</h3>
+<ol type="1">
+<li>The chain rule is crucial in deriving both estimators</li>
+<li><span class="math inline">\hat{\beta}_0</span> ensures the line goes through <span class="math inline">(\bar{x}, \bar{y})</span></li>
+<li><span class="math inline">\hat{\beta}_1</span> is a ratio of covariance to variance</li>
+<li>The second derivatives confirm we’ve found a minimum</li>
+<li>The entire process relies on calculus to find the optimal values that minimize the sum of squared residuals</li>
+</ol>
 </section>
 </div>
 </div>
@@ -2557,8 +2554,8 @@ Understanding Endogeneity
 <li>Affects analysis of exercise impact</li>
 </ul></li>
 </ul>
-<section id="how-to-spot-these-problems-in-your-own-research" class="level4" data-number="15.6.23.1">
-<h4 data-number="15.6.23.1" class="anchored" data-anchor-id="how-to-spot-these-problems-in-your-own-research"><span class="header-section-number">15.6.23.1</span> How to Spot These Problems in Your Own Research?</h4>
+<section id="how-to-spot-these-problems-in-your-own-research" class="level4" data-number="15.6.21.1">
+<h4 data-number="15.6.21.1" class="anchored" data-anchor-id="how-to-spot-these-problems-in-your-own-research"><span class="header-section-number">15.6.21.1</span> How to Spot These Problems in Your Own Research?</h4>
 <p><strong>1. For Omitted Variables, Ask:</strong></p>
 <ul>
 <li>What else could affect both variables?</li>
@@ -2599,8 +2596,8 @@ Understanding Endogeneity
 <li>Acknowledge uncertainty in your conclusions</li>
 </ul>
 </section>
-<section id="key-takeaways-for-students" class="level4" data-number="15.6.23.2">
-<h4 data-number="15.6.23.2" class="anchored" data-anchor-id="key-takeaways-for-students"><span class="header-section-number">15.6.23.2</span> Key Takeaways for Students</h4>
+<section id="key-takeaways-for-students" class="level4" data-number="15.6.21.2">
+<h4 data-number="15.6.21.2" class="anchored" data-anchor-id="key-takeaways-for-students"><span class="header-section-number">15.6.21.2</span> Key Takeaways for Students</h4>
 <ol type="1">
 <li><p><strong>Reality is Complex</strong></p>
 <ul>
@@ -2622,8 +2619,8 @@ Understanding Endogeneity
 </ul></li>
 </ol>
 </section>
-<section id="recommended-reading" class="level3" data-number="15.6.24">
-<h3 data-number="15.6.24" class="anchored" data-anchor-id="recommended-reading"><span class="header-section-number">15.6.24</span> Recommended Reading</h3>
+<section id="recommended-reading" class="level3" data-number="15.6.22">
+<h3 data-number="15.6.22" class="anchored" data-anchor-id="recommended-reading"><span class="header-section-number">15.6.22</span> Recommended Reading</h3>
 <ol type="1">
 <li>“Mastering Metrics” by Angrist &amp; Pischke</li>
 <li>“Naked Statistics” by Charles Wheelan</li>
@@ -3237,8 +3234,8 @@ Attaching package: 'kableExtra'</code></pre>
 </section>
 <section id="conclusion-1" class="level2" data-number="15.10">
 <h2 data-number="15.10" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">15.10</span> Conclusion</h2>
-<section id="key-takeaways-2" class="level3" data-number="15.10.1">
-<h3 data-number="15.10.1" class="anchored" data-anchor-id="key-takeaways-2"><span class="header-section-number">15.10.1</span> Key Takeaways</h3>
+<section id="key-takeaways-1" class="level3" data-number="15.10.1">
+<h3 data-number="15.10.1" class="anchored" data-anchor-id="key-takeaways-1"><span class="header-section-number">15.10.1</span> Key Takeaways</h3>
 <ol type="1">
 <li>Always start with exploratory data analysis</li>
 <li>Check assumptions before interpreting results</li>
@@ -3258,8 +3255,8 @@ Attaching package: 'kableExtra'</code></pre>
 <li>Report results clearly and completely</li>
 </ol>
 </section>
-<section id="further-reading-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="further-reading-1">Further Reading</h3>
+<section id="further-reading" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="further-reading">Further Reading</h3>
 <p>For deeper understanding:</p>
 <ul>
 <li>Wooldridge, J.M. “Introductory Econometrics: A Modern Approach”</li>
