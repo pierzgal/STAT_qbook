@@ -2109,8 +2109,33 @@ Dekompozycja Wariancji w Regresji Liniowej: Intuicyjny Przewodnik
 </ul>
 </section>
 </section>
-<section id="wizualizacja-dekompozycji-wariancji" class="level3" data-number="16.6.10">
-<h3 data-number="16.6.10" class="anchored" data-anchor-id="wizualizacja-dekompozycji-wariancji"><span class="header-section-number">16.6.10</span> Wizualizacja Dekompozycji Wariancji</h3>
+<section id="zrozumienie-trzech-rodzajów-wariancji" class="level3" data-number="16.6.10">
+<h3 data-number="16.6.10" class="anchored" data-anchor-id="zrozumienie-trzech-rodzajów-wariancji"><span class="header-section-number">16.6.10</span> Zrozumienie Trzech Rodzajów Wariancji</h3>
+<ol type="1">
+<li><strong>Wariancja Całkowita (SST)</strong>
+<ul>
+<li>Pytanie: “Jak bardzo obserwacje różnią się od średniej?”</li>
+<li>Wzór: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
+<li>Wizualizacja: Fioletowe punkty na wykresie</li>
+<li>Intuicja: “Rozrzut” naszych danych wokół średniej</li>
+</ul></li>
+<li><strong>Wariancja Wyjaśniona (SSR)</strong>
+<ul>
+<li>Pytanie: “Ile wariancji wyjaśnił nasz model?”</li>
+<li>Wzór: <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
+<li>Wizualizacja: Zielone przerywane linie na wykresie</li>
+<li>Intuicja: Poprawa, którą uzyskaliśmy dzięki użyciu X</li>
+</ul></li>
+<li><strong>Wariancja Niewyjaśniona (SSE)</strong>
+<ul>
+<li>Pytanie: “Jaka wariancja pozostaje niewyjaśniona?”</li>
+<li>Wzór: <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
+<li>Wizualizacja: Pomarańczowe przerywane linie na wykresie</li>
+<li>Intuicja: Błędy pozostające po użyciu X</li>
+</ul></li>
+</ol>
+<section id="wizualizacja-dekompozycji-wariancji" class="level4" data-number="16.6.10.1">
+<h4 data-number="16.6.10.1" class="anchored" data-anchor-id="wizualizacja-dekompozycji-wariancji"><span class="header-section-number">16.6.10.1</span> Wizualizacja Dekompozycji Wariancji</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -2242,38 +2267,13 @@ Attaching package: 'patchwork'</code></pre>
 </div>
 </div>
 </section>
-<section id="zrozumienie-trzech-rodzajów-wariancji" class="level3" data-number="16.6.11">
-<h3 data-number="16.6.11" class="anchored" data-anchor-id="zrozumienie-trzech-rodzajów-wariancji"><span class="header-section-number">16.6.11</span> Zrozumienie Trzech Rodzajów Wariancji</h3>
-<ol type="1">
-<li><strong>Wariancja Całkowita (SST)</strong>
-<ul>
-<li>Pytanie: “Jak bardzo obserwacje różnią się od średniej?”</li>
-<li>Wzór: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li>Wizualizacja: Fioletowe punkty na wykresie</li>
-<li>Intuicja: “Rozrzut” naszych danych wokół średniej</li>
-</ul></li>
-<li><strong>Wariancja Wyjaśniona (SSR)</strong>
-<ul>
-<li>Pytanie: “Ile wariancji wyjaśnił nasz model?”</li>
-<li>Wzór: <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
-<li>Wizualizacja: Zielone przerywane linie na wykresie</li>
-<li>Intuicja: Poprawa, którą uzyskaliśmy dzięki użyciu X</li>
-</ul></li>
-<li><strong>Wariancja Niewyjaśniona (SSE)</strong>
-<ul>
-<li>Pytanie: “Jaka wariancja pozostaje niewyjaśniona?”</li>
-<li>Wzór: <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
-<li>Wizualizacja: Pomarańczowe przerywane linie na wykresie</li>
-<li>Intuicja: Błędy pozostające po użyciu X</li>
-</ul></li>
-</ol>
 </section>
-<section id="r²-wyjaśnione" class="level3" data-number="16.6.12">
-<h3 data-number="16.6.12" class="anchored" data-anchor-id="r²-wyjaśnione"><span class="header-section-number">16.6.12</span> R² Wyjaśnione</h3>
+<section id="r²-wyjaśnione" class="level3" data-number="16.6.11">
+<h3 data-number="16.6.11" class="anchored" data-anchor-id="r²-wyjaśnione"><span class="header-section-number">16.6.11</span> R² Wyjaśnione</h3>
 <p><span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p>
 <p>Myśl o R² jako o odpowiedzi na pytanie: “Jaki procent pierwotnej wariancji Y możemy wyjaśnić używając X?”</p>
-<section id="intuicyjne-przykłady-1" class="level4" data-number="16.6.12.1">
-<h4 data-number="16.6.12.1" class="anchored" data-anchor-id="intuicyjne-przykłady-1"><span class="header-section-number">16.6.12.1</span> Intuicyjne Przykłady:</h4>
+<section id="intuicyjne-przykłady-1" class="level4" data-number="16.6.11.1">
+<h4 data-number="16.6.11.1" class="anchored" data-anchor-id="intuicyjne-przykłady-1"><span class="header-section-number">16.6.11.1</span> Intuicyjne Przykłady:</h4>
 <ul>
 <li>R² = 0,80: Użycie X wyeliminowało 80% naszych błędów predykcji</li>
 <li>R² = 0,25: Użycie X wyeliminowało 25% naszych błędów predykcji</li>
@@ -2281,8 +2281,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul>
 </section>
 </section>
-<section id="kiedy-zachować-ostrożność-1" class="level3" data-number="16.6.13">
-<h3 data-number="16.6.13" class="anchored" data-anchor-id="kiedy-zachować-ostrożność-1"><span class="header-section-number">16.6.13</span> Kiedy Zachować Ostrożność</h3>
+<section id="kiedy-zachować-ostrożność-1" class="level3" data-number="16.6.12">
+<h3 data-number="16.6.12" class="anchored" data-anchor-id="kiedy-zachować-ostrożność-1"><span class="header-section-number">16.6.12</span> Kiedy Zachować Ostrożność</h3>
 <ol type="1">
 <li><strong>Wysoki R² To Nie Wszystko</strong>
 <ul>
@@ -2303,8 +2303,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="praktyczne-wskazówki-do-analizy-1" class="level3" data-number="16.6.14">
-<h3 data-number="16.6.14" class="anchored" data-anchor-id="praktyczne-wskazówki-do-analizy-1"><span class="header-section-number">16.6.14</span> Praktyczne Wskazówki do Analizy</h3>
+<section id="praktyczne-wskazówki-do-analizy-1" class="level3" data-number="16.6.13">
+<h3 data-number="16.6.13" class="anchored" data-anchor-id="praktyczne-wskazówki-do-analizy-1"><span class="header-section-number">16.6.13</span> Praktyczne Wskazówki do Analizy</h3>
 <ol type="1">
 <li><strong>Inspekcja Wizualna</strong>
 <ul>
@@ -2326,8 +2326,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="kluczowe-wnioski-2" class="level3" data-number="16.6.15">
-<h3 data-number="16.6.15" class="anchored" data-anchor-id="kluczowe-wnioski-2"><span class="header-section-number">16.6.15</span> Kluczowe Wnioski</h3>
+<section id="kluczowe-wnioski-2" class="level3" data-number="16.6.14">
+<h3 data-number="16.6.14" class="anchored" data-anchor-id="kluczowe-wnioski-2"><span class="header-section-number">16.6.14</span> Kluczowe Wnioski</h3>
 <ol type="1">
 <li>Dekompozycja wariancji pomaga zrozumieć poprawę predykcji</li>
 <li>R² określa ilościowo proporcję wyjaśnionej wariancji</li>
@@ -2348,8 +2348,8 @@ Formalne wyprowadzenie estymatorów MNK
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="założenia-wstępne" class="level3" data-number="16.6.16">
-<h3 data-number="16.6.16" class="anchored" data-anchor-id="założenia-wstępne"><span class="header-section-number">16.6.16</span> Założenia wstępne</h3>
+<section id="założenia-wstępne" class="level3" data-number="16.6.15">
+<h3 data-number="16.6.15" class="anchored" data-anchor-id="założenia-wstępne"><span class="header-section-number">16.6.15</span> Założenia wstępne</h3>
 <p>Chcemy znaleźć prostą <span class="math inline">y = \hat{\beta}_0 + \hat{\beta}_1x</span>, która minimalizuje sumę kwadratów reszt. Wyprowadźmy to krok po kroku:</p>
 <ol type="1">
 <li><p>Najpierw zapisujemy funkcję, którą chcemy zminimalizować:</p>
@@ -2358,8 +2358,8 @@ Formalne wyprowadzenie estymatorów MNK
 <p><span class="math inline">\frac{\partial SSE}{\partial \hat{\beta}_0} = 0</span> oraz <span class="math inline">\frac{\partial SSE}{\partial \hat{\beta}_1} = 0</span></p></li>
 </ol>
 </section>
-<section id="krok-1-znalezienie-hatbeta_0" class="level3" data-number="16.6.17">
-<h3 data-number="16.6.17" class="anchored" data-anchor-id="krok-1-znalezienie-hatbeta_0"><span class="header-section-number">16.6.17</span> Krok 1: Znalezienie <span class="math inline">\hat{\beta}_0</span></h3>
+<section id="krok-1-znalezienie-hatbeta_0" class="level3" data-number="16.6.16">
+<h3 data-number="16.6.16" class="anchored" data-anchor-id="krok-1-znalezienie-hatbeta_0"><span class="header-section-number">16.6.16</span> Krok 1: Znalezienie <span class="math inline">\hat{\beta}_0</span></h3>
 <p>Obliczmy pochodną cząstkową względem <span class="math inline">\hat{\beta}_0</span>:</p>
 <p><span class="math inline">\frac{\partial SSE}{\partial \hat{\beta}_0} = \frac{\partial}{\partial \hat{\beta}_0} \sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)^2</span></p>
 <p>Korzystając z reguły łańcuchowej:</p>
@@ -2371,8 +2371,8 @@ Formalne wyprowadzenie estymatorów MNK
 <p><span class="math inline">\hat{\beta}_0 = \frac{\sum_{i=1}^n y_i}{n} - \hat{\beta}_1\frac{\sum_{i=1}^n x_i}{n} = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
 <p>Gdzie <span class="math inline">\bar{y}</span> i <span class="math inline">\bar{x}</span> to średnie z próby.</p>
 </section>
-<section id="krok-2-znalezienie-hatbeta_1" class="level3" data-number="16.6.18">
-<h3 data-number="16.6.18" class="anchored" data-anchor-id="krok-2-znalezienie-hatbeta_1"><span class="header-section-number">16.6.18</span> Krok 2: Znalezienie <span class="math inline">\hat{\beta}_1</span></h3>
+<section id="krok-2-znalezienie-hatbeta_1" class="level3" data-number="16.6.17">
+<h3 data-number="16.6.17" class="anchored" data-anchor-id="krok-2-znalezienie-hatbeta_1"><span class="header-section-number">16.6.17</span> Krok 2: Znalezienie <span class="math inline">\hat{\beta}_1</span></h3>
 <p>Teraz obliczamy pochodną cząstkową względem <span class="math inline">\hat{\beta}_1</span>:</p>
 <p><span class="math inline">\frac{\partial SSE}{\partial \hat{\beta}_1} = \frac{\partial}{\partial \hat{\beta}_1} \sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)^2</span></p>
 <p>Korzystając z reguły łańcuchowej:</p>
@@ -2385,8 +2385,8 @@ Formalne wyprowadzenie estymatorów MNK
 <p>Po przekształceniach algebraicznych (rozwinięciu i zgrupowaniu wyrazów):</p>
 <p><span class="math inline">\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}</span></p>
 </section>
-<section id="wyniki-końcowe" class="level3" data-number="16.6.19">
-<h3 data-number="16.6.19" class="anchored" data-anchor-id="wyniki-końcowe"><span class="header-section-number">16.6.19</span> Wyniki końcowe</h3>
+<section id="wyniki-końcowe" class="level3" data-number="16.6.18">
+<h3 data-number="16.6.18" class="anchored" data-anchor-id="wyniki-końcowe"><span class="header-section-number">16.6.18</span> Wyniki końcowe</h3>
 <p>Wyprowadziliśmy estymatory MNK:</p>
 <p><span class="math inline">\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}</span></p>
 <p><span class="math inline">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
@@ -2405,15 +2405,15 @@ Formalne wyprowadzenie estymatorów MNK
 </ul></li>
 </ol>
 </section>
-<section id="weryfikacja-drugie-pochodne" class="level3" data-number="16.6.20">
-<h3 data-number="16.6.20" class="anchored" data-anchor-id="weryfikacja-drugie-pochodne"><span class="header-section-number">16.6.20</span> Weryfikacja: Drugie pochodne</h3>
+<section id="weryfikacja-drugie-pochodne" class="level3" data-number="16.6.19">
+<h3 data-number="16.6.19" class="anchored" data-anchor-id="weryfikacja-drugie-pochodne"><span class="header-section-number">16.6.19</span> Weryfikacja: Drugie pochodne</h3>
 <p>Aby potwierdzić, że znaleźliśmy minimum (a nie maksimum), sprawdzamy drugie pochodne:</p>
 <p><span class="math inline">\frac{\partial^2 SSE}{\partial \hat{\beta}_0^2} = 2n &gt; 0</span></p>
 <p><span class="math inline">\frac{\partial^2 SSE}{\partial \hat{\beta}_1^2} = 2\sum_{i=1}^n x_i^2 &gt; 0</span></p>
 <p>Ponieważ obie drugie pochodne są dodatnie, rzeczywiście znaleźliśmy minimum.</p>
 </section>
-<section id="postać-macierzowa-temat-zaawansowany-opcjonalny" class="level3" data-number="16.6.21">
-<h3 data-number="16.6.21" class="anchored" data-anchor-id="postać-macierzowa-temat-zaawansowany-opcjonalny"><span class="header-section-number">16.6.21</span> Postać macierzowa (Temat zaawansowany, opcjonalny)</h3>
+<section id="postać-macierzowa-temat-zaawansowany-opcjonalny" class="level3" data-number="16.6.20">
+<h3 data-number="16.6.20" class="anchored" data-anchor-id="postać-macierzowa-temat-zaawansowany-opcjonalny"><span class="header-section-number">16.6.20</span> Postać macierzowa (Temat zaawansowany, opcjonalny)</h3>
 <p>Dla osób znających algebrę liniową, możemy zapisać to zwięźlej:</p>
 <p><span class="math inline">\mathbf{X} = \begin{bmatrix} 1 &amp; x_1 \\ 1 &amp; x_2 \\ \vdots &amp; \vdots \\ 1 &amp; x_n \end{bmatrix}</span></p>
 <p><span class="math inline">\mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}</span></p>
@@ -2421,8 +2421,8 @@ Formalne wyprowadzenie estymatorów MNK
 <p><span class="math inline">\hat{\boldsymbol{\beta}} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}</span></p>
 <p>To daje nam zarówno <span class="math inline">\hat{\beta}_0</span> jak i <span class="math inline">\hat{\beta}_1</span> w jednym eleganckim wyrażeniu.</p>
 </section>
-<section id="wizualizacja-wyprowadzenia" class="level3" data-number="16.6.22">
-<h3 data-number="16.6.22" class="anchored" data-anchor-id="wizualizacja-wyprowadzenia"><span class="header-section-number">16.6.22</span> Wizualizacja wyprowadzenia</h3>
+<section id="wizualizacja-wyprowadzenia" class="level3" data-number="16.6.21">
+<h3 data-number="16.6.21" class="anchored" data-anchor-id="wizualizacja-wyprowadzenia"><span class="header-section-number">16.6.21</span> Wizualizacja wyprowadzenia</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -2458,8 +2458,8 @@ Formalne wyprowadzenie estymatorów MNK
 </div>
 <p>Powyższy wykres pokazuje, jak działają estymatory MNK z odchyleniami od średnich. Iloczyn tych odchyleń (zielone × fioletowe) dla każdego punktu, zsumowany i znormalizowany, daje nam nasz estymator nachylenia <span class="math inline">\hat{\beta}_1</span>.</p>
 </section>
-<section id="ważne-uwagi-1" class="level3" data-number="16.6.23">
-<h3 data-number="16.6.23" class="anchored" data-anchor-id="ważne-uwagi-1"><span class="header-section-number">16.6.23</span> Ważne uwagi</h3>
+<section id="ważne-uwagi-1" class="level3" data-number="16.6.22">
+<h3 data-number="16.6.22" class="anchored" data-anchor-id="ważne-uwagi-1"><span class="header-section-number">16.6.22</span> Ważne uwagi</h3>
 <ol type="1">
 <li><p>Wyprowadzone estymatory są BLUE (Best Linear Unbiased Estimators - Najlepsze Liniowe Nieobciążone Estymatory) przy spełnieniu założeń Gaussa-Markowa.</p></li>
 <li><p>Założenia te obejmują:</p>
@@ -2546,8 +2546,8 @@ Endogeniczność
 <li>Wpływa na analizę wpływu ćwiczeń</li>
 </ul></li>
 </ul>
-<section id="jak-wykryć-te-problemy-we-własnych-badaniach" class="level4" data-number="16.6.23.1">
-<h4 data-number="16.6.23.1" class="anchored" data-anchor-id="jak-wykryć-te-problemy-we-własnych-badaniach"><span class="header-section-number">16.6.23.1</span> Jak Wykryć Te Problemy we Własnych Badaniach?</h4>
+<section id="jak-wykryć-te-problemy-we-własnych-badaniach" class="level4" data-number="16.6.22.1">
+<h4 data-number="16.6.22.1" class="anchored" data-anchor-id="jak-wykryć-te-problemy-we-własnych-badaniach"><span class="header-section-number">16.6.22.1</span> Jak Wykryć Te Problemy we Własnych Badaniach?</h4>
 <p><strong>1. W przypadku Pominiętych Zmiennych, Zapytaj:</strong></p>
 <ul>
 <li>Co jeszcze mogłoby wpływać na obie zmienne?</li>
@@ -2588,8 +2588,8 @@ Endogeniczność
 <li>Uznaj niepewność w swoich wnioskach</li>
 </ul>
 </section>
-<section id="kluczowe-wnioski-3" class="level4" data-number="16.6.23.2">
-<h4 data-number="16.6.23.2" class="anchored" data-anchor-id="kluczowe-wnioski-3"><span class="header-section-number">16.6.23.2</span> Kluczowe Wnioski</h4>
+<section id="kluczowe-wnioski-3" class="level4" data-number="16.6.22.2">
+<h4 data-number="16.6.22.2" class="anchored" data-anchor-id="kluczowe-wnioski-3"><span class="header-section-number">16.6.22.2</span> Kluczowe Wnioski</h4>
 <ol type="1">
 <li><p><strong>Rzeczywistość Jest Złożona</strong></p>
 <ul>

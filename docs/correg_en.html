@@ -365,11 +365,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#decomposition-of-variance" id="toc-decomposition-of-variance" class="nav-link" data-scroll-target="#decomposition-of-variance"><span class="header-section-number">15.6.1</span> Decomposition of Variance</a></li>
   <li><a href="#understanding-the-three-types-of-variation" id="toc-understanding-the-three-types-of-variation" class="nav-link" data-scroll-target="#understanding-the-three-types-of-variation"><span class="header-section-number">15.6.2</span> Understanding the Three Types of Variation</a></li>
-  <li><a href="#r²-demystified" id="toc-r²-demystified" class="nav-link" data-scroll-target="#r²-demystified"><span class="header-section-number">15.6.10</span> R² Demystified</a></li>
-  <li><a href="#when-to-be-cautious" id="toc-when-to-be-cautious" class="nav-link" data-scroll-target="#when-to-be-cautious"><span class="header-section-number">15.6.11</span> When to Be Cautious</a></li>
-  <li><a href="#practical-tips-for-analysis" id="toc-practical-tips-for-analysis" class="nav-link" data-scroll-target="#practical-tips-for-analysis"><span class="header-section-number">15.6.12</span> Practical Tips for Analysis</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">15.6.13</span> Key Takeaways</a></li>
-  <li><a href="#measures-of-fit" id="toc-measures-of-fit" class="nav-link" data-scroll-target="#measures-of-fit"><span class="header-section-number">15.6.14</span> Measures of Fit</a></li>
+  <li><a href="#r²-demystified" id="toc-r²-demystified" class="nav-link" data-scroll-target="#r²-demystified"><span class="header-section-number">15.6.9</span> R² Demystified</a></li>
+  <li><a href="#when-to-be-cautious" id="toc-when-to-be-cautious" class="nav-link" data-scroll-target="#when-to-be-cautious"><span class="header-section-number">15.6.10</span> When to Be Cautious</a></li>
+  <li><a href="#practical-tips-for-analysis" id="toc-practical-tips-for-analysis" class="nav-link" data-scroll-target="#practical-tips-for-analysis"><span class="header-section-number">15.6.11</span> Practical Tips for Analysis</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">15.6.12</span> Key Takeaways</a></li>
+  <li><a href="#measures-of-fit" id="toc-measures-of-fit" class="nav-link" data-scroll-target="#measures-of-fit"><span class="header-section-number">15.6.13</span> Measures of Fit</a></li>
   </ul></li>
   <li><a href="#multiple-regression" id="toc-multiple-regression" class="nav-link" data-scroll-target="#multiple-regression"><span class="header-section-number">15.7</span> Multiple Regression (*)</a>
   <ul class="collapse">
@@ -2061,8 +2061,33 @@ Understanding Variance Decomposition in Linear Regression
 </ul>
 </section>
 </section>
-<section id="visualizing-variance-decomposition" class="level3" data-number="15.6.5">
-<h3 data-number="15.6.5" class="anchored" data-anchor-id="visualizing-variance-decomposition"><span class="header-section-number">15.6.5</span> Visualizing Variance Decomposition</h3>
+<section id="breaking-down-the-types-of-variation" class="level3" data-number="15.6.5">
+<h3 data-number="15.6.5" class="anchored" data-anchor-id="breaking-down-the-types-of-variation"><span class="header-section-number">15.6.5</span> Breaking Down the Types of Variation</h3>
+<ol type="1">
+<li><strong>Total Variation (SST)</strong>
+<ul>
+<li><strong>Question:</strong> How much do the data points vary from the mean?</li>
+<li><strong>Formula:</strong> <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
+<li><strong>Visual:</strong> Purple points in the plot</li>
+<li><strong>Intuition:</strong> This is the overall “spread” of the data around its average.</li>
+</ul></li>
+<li><strong>Explained Variation (SSR)</strong>
+<ul>
+<li><strong>Question:</strong> How much of the variation can our model explain?</li>
+<li><strong>Formula:</strong> <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
+<li><strong>Visual:</strong> Green dashed lines in the plot</li>
+<li><strong>Intuition:</strong> This is the improvement we get from including additional information (like house size).</li>
+</ul></li>
+<li><strong>Unexplained Variation (SSE)</strong>
+<ul>
+<li><strong>Question:</strong> How much variation is left unexplained after using the model?</li>
+<li><strong>Formula:</strong> <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
+<li><strong>Visual:</strong> Orange dashed lines in the plot</li>
+<li><strong>Intuition:</strong> These are the errors remaining after our model has made predictions.</li>
+</ul></li>
+</ol>
+<section id="visualizing-variance-decomposition" class="level4" data-number="15.6.5.1">
+<h4 data-number="15.6.5.1" class="anchored" data-anchor-id="visualizing-variance-decomposition"><span class="header-section-number">15.6.5.1</span> Visualizing Variance Decomposition</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -2194,38 +2219,13 @@ Attaching package: 'patchwork'</code></pre>
 </div>
 </div>
 </section>
-<section id="breaking-down-the-types-of-variation" class="level3" data-number="15.6.6">
-<h3 data-number="15.6.6" class="anchored" data-anchor-id="breaking-down-the-types-of-variation"><span class="header-section-number">15.6.6</span> Breaking Down the Types of Variation</h3>
-<ol type="1">
-<li><strong>Total Variation (SST)</strong>
-<ul>
-<li><strong>Question:</strong> How much do the data points vary from the mean?</li>
-<li><strong>Formula:</strong> <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li><strong>Visual:</strong> Purple points in the plot</li>
-<li><strong>Intuition:</strong> This is the overall “spread” of the data around its average.</li>
-</ul></li>
-<li><strong>Explained Variation (SSR)</strong>
-<ul>
-<li><strong>Question:</strong> How much of the variation can our model explain?</li>
-<li><strong>Formula:</strong> <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
-<li><strong>Visual:</strong> Green dashed lines in the plot</li>
-<li><strong>Intuition:</strong> This is the improvement we get from including additional information (like house size).</li>
-</ul></li>
-<li><strong>Unexplained Variation (SSE)</strong>
-<ul>
-<li><strong>Question:</strong> How much variation is left unexplained after using the model?</li>
-<li><strong>Formula:</strong> <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
-<li><strong>Visual:</strong> Orange dashed lines in the plot</li>
-<li><strong>Intuition:</strong> These are the errors remaining after our model has made predictions.</li>
-</ul></li>
-</ol>
 </section>
-<section id="what-is-r²" class="level3" data-number="15.6.7">
-<h3 data-number="15.6.7" class="anchored" data-anchor-id="what-is-r²"><span class="header-section-number">15.6.7</span> What is R²?</h3>
+<section id="what-is-r²" class="level3" data-number="15.6.6">
+<h3 data-number="15.6.6" class="anchored" data-anchor-id="what-is-r²"><span class="header-section-number">15.6.6</span> What is R²?</h3>
 <p><span class="math inline">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p>
 <p>Think of <span class="math inline">R^2</span> as answering: “What percentage of the original variation in the data can we explain using our model?”</p>
-<section id="examples-of-r2-values" class="level4" data-number="15.6.7.1">
-<h4 data-number="15.6.7.1" class="anchored" data-anchor-id="examples-of-r2-values"><span class="header-section-number">15.6.7.1</span> Examples of <span class="math inline">R^2</span> Values:</h4>
+<section id="examples-of-r2-values" class="level4" data-number="15.6.6.1">
+<h4 data-number="15.6.6.1" class="anchored" data-anchor-id="examples-of-r2-values"><span class="header-section-number">15.6.6.1</span> Examples of <span class="math inline">R^2</span> Values:</h4>
 <ul>
 <li><strong><span class="math inline">R^2 = 0.80</span></strong>: Our model explains 80% of the variation in house prices.</li>
 <li><strong><span class="math inline">R^2 = 0.25</span></strong>: Our model explains 25% of the variation (a weaker model).</li>
@@ -2233,8 +2233,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul>
 </section>
 </section>
-<section id="important-things-to-remember-about-r²" class="level3" data-number="15.6.8">
-<h3 data-number="15.6.8" class="anchored" data-anchor-id="important-things-to-remember-about-r²"><span class="header-section-number">15.6.8</span> Important Things to Remember About R²</h3>
+<section id="important-things-to-remember-about-r²" class="level3" data-number="15.6.7">
+<h3 data-number="15.6.7" class="anchored" data-anchor-id="important-things-to-remember-about-r²"><span class="header-section-number">15.6.7</span> Important Things to Remember About R²</h3>
 <ol type="1">
 <li><strong>High <span class="math inline">R^2</span> Isn’t Always Good</strong>
 <ul>
@@ -2253,8 +2253,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="tips-for-effective-analysis" class="level3" data-number="15.6.9">
-<h3 data-number="15.6.9" class="anchored" data-anchor-id="tips-for-effective-analysis"><span class="header-section-number">15.6.9</span> Tips for Effective Analysis</h3>
+<section id="tips-for-effective-analysis" class="level3" data-number="15.6.8">
+<h3 data-number="15.6.8" class="anchored" data-anchor-id="tips-for-effective-analysis"><span class="header-section-number">15.6.8</span> Tips for Effective Analysis</h3>
 <ol type="1">
 <li><strong>Visualize the Data</strong>
 <ul>
@@ -2277,12 +2277,12 @@ Attaching package: 'patchwork'</code></pre>
 </div>
 </div>
 </section>
-<section id="r²-demystified" class="level3" data-number="15.6.10">
-<h3 data-number="15.6.10" class="anchored" data-anchor-id="r²-demystified"><span class="header-section-number">15.6.10</span> R² Demystified</h3>
+<section id="r²-demystified" class="level3" data-number="15.6.9">
+<h3 data-number="15.6.9" class="anchored" data-anchor-id="r²-demystified"><span class="header-section-number">15.6.9</span> R² Demystified</h3>
 <p><span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p>
 <p>Think of R² as answering the question: “What percentage of the original variation in Y can we explain using X?”</p>
-<section id="intuitive-examples" class="level4" data-number="15.6.10.1">
-<h4 data-number="15.6.10.1" class="anchored" data-anchor-id="intuitive-examples"><span class="header-section-number">15.6.10.1</span> Intuitive Examples:</h4>
+<section id="intuitive-examples" class="level4" data-number="15.6.9.1">
+<h4 data-number="15.6.9.1" class="anchored" data-anchor-id="intuitive-examples"><span class="header-section-number">15.6.9.1</span> Intuitive Examples:</h4>
 <ul>
 <li>R² = 0.80: Using X eliminated 80% of our prediction errors</li>
 <li>R² = 0.25: Using X eliminated 25% of our prediction errors</li>
@@ -2290,8 +2290,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul>
 </section>
 </section>
-<section id="when-to-be-cautious" class="level3" data-number="15.6.11">
-<h3 data-number="15.6.11" class="anchored" data-anchor-id="when-to-be-cautious"><span class="header-section-number">15.6.11</span> When to Be Cautious</h3>
+<section id="when-to-be-cautious" class="level3" data-number="15.6.10">
+<h3 data-number="15.6.10" class="anchored" data-anchor-id="when-to-be-cautious"><span class="header-section-number">15.6.10</span> When to Be Cautious</h3>
 <ol type="1">
 <li><strong>High R² Isn’t Everything</strong>
 <ul>
@@ -2307,8 +2307,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="practical-tips-for-analysis" class="level3" data-number="15.6.12">
-<h3 data-number="15.6.12" class="anchored" data-anchor-id="practical-tips-for-analysis"><span class="header-section-number">15.6.12</span> Practical Tips for Analysis</h3>
+<section id="practical-tips-for-analysis" class="level3" data-number="15.6.11">
+<h3 data-number="15.6.11" class="anchored" data-anchor-id="practical-tips-for-analysis"><span class="header-section-number">15.6.11</span> Practical Tips for Analysis</h3>
 <ol type="1">
 <li><strong>Visual Inspection</strong>
 <ul>
@@ -2330,8 +2330,8 @@ Attaching package: 'patchwork'</code></pre>
 </ul></li>
 </ol>
 </section>
-<section id="key-takeaways" class="level3" data-number="15.6.13">
-<h3 data-number="15.6.13" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">15.6.13</span> Key Takeaways</h3>
+<section id="key-takeaways" class="level3" data-number="15.6.12">
+<h3 data-number="15.6.12" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">15.6.12</span> Key Takeaways</h3>
 <ol type="1">
 <li>Variance decomposition helps us understand prediction improvement</li>
 <li>R² quantifies the proportion of variance explained</li>
@@ -2340,8 +2340,8 @@ Attaching package: 'patchwork'</code></pre>
 <li>Always combine R² with other diagnostic tools</li>
 </ol>
 </section>
-<section id="measures-of-fit" class="level3" data-number="15.6.14">
-<h3 data-number="15.6.14" class="anchored" data-anchor-id="measures-of-fit"><span class="header-section-number">15.6.14</span> Measures of Fit</h3>
+<section id="measures-of-fit" class="level3" data-number="15.6.13">
+<h3 data-number="15.6.13" class="anchored" data-anchor-id="measures-of-fit"><span class="header-section-number">15.6.13</span> Measures of Fit</h3>
 <ol type="1">
 <li><p><strong>R-squared (<span class="math inline">R^2</span>)</strong>: <span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p></li>
 <li><p><strong>Root Mean Square Error (RMSE)</strong>: <span class="math display">RMSE = \sqrt{\frac{SSE}{n}}</span></p></li>
@@ -2357,8 +2357,8 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="initial-setup" class="level3" data-number="15.6.15">
-<h3 data-number="15.6.15" class="anchored" data-anchor-id="initial-setup"><span class="header-section-number">15.6.15</span> Initial Setup</h3>
+<section id="initial-setup" class="level3" data-number="15.6.14">
+<h3 data-number="15.6.14" class="anchored" data-anchor-id="initial-setup"><span class="header-section-number">15.6.14</span> Initial Setup</h3>
 <p>We seek to minimize the sum of squared residuals:</p>
 <p><span class="math inline">SSR = \sum_{i=1}^n (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p>
 <p>Let’s break this into manageable pieces:</p>
@@ -2368,8 +2368,8 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 <li>Sum them all: <span class="math inline">SSR = \sum_{i=1}^n e_i^2</span></li>
 </ol>
 </section>
-<section id="chain-rule-review" class="level3" data-number="15.6.16">
-<h3 data-number="15.6.16" class="anchored" data-anchor-id="chain-rule-review"><span class="header-section-number">15.6.16</span> Chain Rule Review</h3>
+<section id="chain-rule-review" class="level3" data-number="15.6.15">
+<h3 data-number="15.6.15" class="anchored" data-anchor-id="chain-rule-review"><span class="header-section-number">15.6.15</span> Chain Rule Review</h3>
 <p>Before proceeding, let’s recall the chain rule. For a composite function <span class="math inline">f(g(x))</span>:</p>
 <p><span class="math inline">\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)</span></p>
 <p>In our case, we’re dealing with the square function <span class="math inline">f(u) = u^2</span>, where:</p>
@@ -2378,8 +2378,8 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 <li><span class="math inline">u = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
 </ul>
 </section>
-<section id="step-1-finding-hatbeta_0-using-first-derivative" class="level3" data-number="15.6.17">
-<h3 data-number="15.6.17" class="anchored" data-anchor-id="step-1-finding-hatbeta_0-using-first-derivative"><span class="header-section-number">15.6.17</span> Step 1: Finding <span class="math inline">\hat{\beta}_0</span> Using First Derivative</h3>
+<section id="step-1-finding-hatbeta_0-using-first-derivative" class="level3" data-number="15.6.16">
+<h3 data-number="15.6.16" class="anchored" data-anchor-id="step-1-finding-hatbeta_0-using-first-derivative"><span class="header-section-number">15.6.16</span> Step 1: Finding <span class="math inline">\hat{\beta}_0</span> Using First Derivative</h3>
 <p>Let’s take the partial derivative with respect to <span class="math inline">\hat{\beta}_0</span> step by step:</p>
 <ol type="1">
 <li><p>Start with one term of the sum:</p>
@@ -2400,8 +2400,8 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 <p><span class="math inline">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p></li>
 </ol>
 </section>
-<section id="step-2-finding-hatbeta_1-using-first-derivative" class="level3" data-number="15.6.18">
-<h3 data-number="15.6.18" class="anchored" data-anchor-id="step-2-finding-hatbeta_1-using-first-derivative"><span class="header-section-number">15.6.18</span> Step 2: Finding <span class="math inline">\hat{\beta}_1</span> Using First Derivative</h3>
+<section id="step-2-finding-hatbeta_1-using-first-derivative" class="level3" data-number="15.6.17">
+<h3 data-number="15.6.17" class="anchored" data-anchor-id="step-2-finding-hatbeta_1-using-first-derivative"><span class="header-section-number">15.6.17</span> Step 2: Finding <span class="math inline">\hat{\beta}_1</span> Using First Derivative</h3>
 <p>Now let’s find <span class="math inline">\hat{\beta}_1</span> with the same careful approach:</p>
 <ol type="1">
 <li><p>For one term: <span class="math inline">\frac{\partial}{\partial \hat{\beta}_1}(y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p></li>
@@ -2422,8 +2422,8 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 <li><p>Final form: <span class="math inline">\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}</span></p></li>
 </ol>
 </section>
-<section id="step-3-verifying-we-have-a-minimum" class="level3" data-number="15.6.19">
-<h3 data-number="15.6.19" class="anchored" data-anchor-id="step-3-verifying-we-have-a-minimum"><span class="header-section-number">15.6.19</span> Step 3: Verifying We Have a Minimum</h3>
+<section id="step-3-verifying-we-have-a-minimum" class="level3" data-number="15.6.18">
+<h3 data-number="15.6.18" class="anchored" data-anchor-id="step-3-verifying-we-have-a-minimum"><span class="header-section-number">15.6.18</span> Step 3: Verifying We Have a Minimum</h3>
 <p>To confirm these critical points are minima, we check the second derivatives:</p>
 <ol type="1">
 <li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_0</span>: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_0^2} = \frac{\partial}{\partial \hat{\beta}_0}(-2\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2n &gt; 0</span></p></li>
@@ -2433,8 +2433,8 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 </ol>
 <p>This confirms we have found a minimum.</p>
 </section>
-<section id="visualizing-the-process" class="level3" data-number="15.6.20">
-<h3 data-number="15.6.20" class="anchored" data-anchor-id="visualizing-the-process"><span class="header-section-number">15.6.20</span> Visualizing the Process</h3>
+<section id="visualizing-the-process" class="level3" data-number="15.6.19">
+<h3 data-number="15.6.19" class="anchored" data-anchor-id="visualizing-the-process"><span class="header-section-number">15.6.19</span> Visualizing the Process</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -2469,8 +2469,8 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 </div>
 </div>
 </section>
-<section id="key-insights" class="level3" data-number="15.6.21">
-<h3 data-number="15.6.21" class="anchored" data-anchor-id="key-insights"><span class="header-section-number">15.6.21</span> Key Insights</h3>
+<section id="key-insights" class="level3" data-number="15.6.20">
+<h3 data-number="15.6.20" class="anchored" data-anchor-id="key-insights"><span class="header-section-number">15.6.20</span> Key Insights</h3>
 <ol type="1">
 <li>The chain rule is crucial in deriving both estimators</li>
 <li><span class="math inline">\hat{\beta}_0</span> ensures the line goes through <span class="math inline">(\bar{x}, \bar{y})</span></li>
@@ -2554,8 +2554,8 @@ Understanding Endogeneity
 <li>Affects analysis of exercise impact</li>
 </ul></li>
 </ul>
-<section id="how-to-spot-these-problems-in-your-own-research" class="level4" data-number="15.6.21.1">
-<h4 data-number="15.6.21.1" class="anchored" data-anchor-id="how-to-spot-these-problems-in-your-own-research"><span class="header-section-number">15.6.21.1</span> How to Spot These Problems in Your Own Research?</h4>
+<section id="how-to-spot-these-problems-in-your-own-research" class="level4" data-number="15.6.20.1">
+<h4 data-number="15.6.20.1" class="anchored" data-anchor-id="how-to-spot-these-problems-in-your-own-research"><span class="header-section-number">15.6.20.1</span> How to Spot These Problems in Your Own Research?</h4>
 <p><strong>1. For Omitted Variables, Ask:</strong></p>
 <ul>
 <li>What else could affect both variables?</li>
@@ -2596,8 +2596,8 @@ Understanding Endogeneity
 <li>Acknowledge uncertainty in your conclusions</li>
 </ul>
 </section>
-<section id="key-takeaways-for-students" class="level4" data-number="15.6.21.2">
-<h4 data-number="15.6.21.2" class="anchored" data-anchor-id="key-takeaways-for-students"><span class="header-section-number">15.6.21.2</span> Key Takeaways for Students</h4>
+<section id="key-takeaways-for-students" class="level4" data-number="15.6.20.2">
+<h4 data-number="15.6.20.2" class="anchored" data-anchor-id="key-takeaways-for-students"><span class="header-section-number">15.6.20.2</span> Key Takeaways for Students</h4>
 <ol type="1">
 <li><p><strong>Reality is Complex</strong></p>
 <ul>
@@ -2619,8 +2619,8 @@ Understanding Endogeneity
 </ul></li>
 </ol>
 </section>
-<section id="recommended-reading" class="level3" data-number="15.6.22">
-<h3 data-number="15.6.22" class="anchored" data-anchor-id="recommended-reading"><span class="header-section-number">15.6.22</span> Recommended Reading</h3>
+<section id="recommended-reading" class="level3" data-number="15.6.21">
+<h3 data-number="15.6.21" class="anchored" data-anchor-id="recommended-reading"><span class="header-section-number">15.6.21</span> Recommended Reading</h3>
 <ol type="1">
 <li>“Mastering Metrics” by Angrist &amp; Pischke</li>
 <li>“Naked Statistics” by Charles Wheelan</li>
