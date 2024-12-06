@@ -814,9 +814,9 @@ Ranks:      1,  2.5, 2.5,  4,   5</code></pre>
 </ul>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 38%">
-<col style="width: 38%">
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -897,9 +897,9 @@ Ranks:      1,  2.5, 2.5,  4,   5</code></pre>
 <p>Using the same data as above:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 38%">
-<col style="width: 38%">
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1426,13 +1426,13 @@ Understanding Linear Regression (OLS): Quickstart guide
 <li>Also called: predictor, explanatory variable, regressor</li>
 <li>Examples: years of education, advertising budget, study hours</li>
 </ul></li>
-<li><strong>Population Parameters (<span class="math inline">\beta</span>)</strong>:
+<li><strong>Population Parameters (</strong><span class="math inline">\beta</span>):
 <ul>
 <li>The true underlying relationships we want to understand</li>
 <li>Usually unknown in practice</li>
 <li>Examples: <span class="math inline">\beta_0</span> (true intercept), <span class="math inline">\beta_1</span> (true slope)</li>
 </ul></li>
-<li><strong>Parameter Estimates (<span class="math inline">\hat{\beta}</span>)</strong>:
+<li><strong>Parameter Estimates (</strong><span class="math inline">\hat{\beta}</span>):
 <ul>
 <li>Our best guesses of the true parameters based on data</li>
 <li>Calculated from sample data</li>
@@ -2221,28 +2221,28 @@ Attaching package: 'patchwork'</code></pre>
 <section id="examples-of-r2-values" class="level4" data-number="15.6.6.1">
 <h4 data-number="15.6.6.1" class="anchored" data-anchor-id="examples-of-r2-values"><span class="header-section-number">15.6.6.1</span> Examples of <span class="math inline">R^2</span> Values:</h4>
 <ul>
-<li><strong><span class="math inline">R^2 = 0.80</span></strong>: Our model explains 80% of the variation in house prices.</li>
-<li><strong><span class="math inline">R^2 = 0.25</span></strong>: Our model explains 25% of the variation (a weaker model).</li>
-<li><strong><span class="math inline">R^2 = 0.00</span></strong>: Our model explains none of the variation (not helpful).</li>
+<li><span class="math inline">R^2 = 0.80</span>: Our model explains 80% of the variation in house prices.</li>
+<li><span class="math inline">R^2 = 0.25</span>: Our model explains 25% of the variation (a weaker model).</li>
+<li><span class="math inline">R^2 = 0.00</span>: Our model explains none of the variation (not helpful).</li>
 </ul>
 </section>
 </section>
 <section id="important-things-to-remember-about-r²" class="level3" data-number="15.6.7">
 <h3 data-number="15.6.7" class="anchored" data-anchor-id="important-things-to-remember-about-r²"><span class="header-section-number">15.6.7</span> Important Things to Remember About R²</h3>
 <ol type="1">
-<li><strong>High <span class="math inline">R^2</span> Isn’t Always Good</strong>
+<li><strong>High</strong> <span class="math inline">R^2</span> Isn’t Always Good
 <ul>
 <li>A very high <span class="math inline">R^2</span> could suggest <strong>overfitting</strong>. Your model might be too complex, capturing noise rather than real patterns.</li>
-<li>Always <strong>interpret <span class="math inline">R^2</span> in the context</strong> of your data.</li>
+<li>Always <strong>interpret</strong> <span class="math inline">R^2</span> in the context of your data.</li>
 </ul></li>
-<li><strong>Low <span class="math inline">R^2</span> Isn’t Always Bad</strong>
+<li><strong>Low</strong> <span class="math inline">R^2</span> Isn’t Always Bad
 <ul>
 <li>In some fields (like social sciences), a low <span class="math inline">R^2</span> can still be useful.</li>
 <li>Focus on <strong>practical significance</strong>, not just the <span class="math inline">R^2</span> value.</li>
 </ul></li>
 <li><strong>Consider Sample Size</strong>
 <ul>
-<li>For multiple regression models, use <strong>adjusted <span class="math inline">R^2</span></strong> to account for the number of predictors.</li>
+<li>For multiple regression models, use <strong>adjusted</strong> <span class="math inline">R^2</span> to account for the number of predictors.</li>
 <li>Formula: <span class="math inline">R^2_{adj} = 1 - \frac{SSE/(n-p)}{SST/(n-1)}</span></li>
 </ul></li>
 </ol>
@@ -2337,7 +2337,7 @@ Attaching package: 'patchwork'</code></pre>
 <section id="measures-of-fit" class="level3" data-number="15.6.13">
 <h3 data-number="15.6.13" class="anchored" data-anchor-id="measures-of-fit"><span class="header-section-number">15.6.13</span> Measures of Fit</h3>
 <ol type="1">
-<li><p><strong>R-squared (<span class="math inline">R^2</span>)</strong>: <span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p></li>
+<li><p><strong>R-squared (</strong><span class="math inline">R^2</span>): <span class="math display">R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST}</span></p></li>
 <li><p><strong>Root Mean Square Error (RMSE)</strong>: <span class="math display">RMSE = \sqrt{\frac{SSE}{n}}</span></p></li>
 <li><p><strong>Mean Absolute Error (MAE)</strong>: <span class="math display">MAE = \frac{1}{n}\sum_{i=1}^n |Y_i - \hat{Y}_i|</span></p></li>
 </ol>
@@ -3514,12 +3514,12 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <h4 data-number="15.11.2.2" class="anchored" data-anchor-id="step-2-calculate-deviations-and-products"><span class="header-section-number">15.11.2.2</span> Step 2: Calculate Deviations and Products</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 26%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 17%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3676,7 +3676,7 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <colgroup>
 <col style="width: 23%">
 <col style="width: 23%">
-<col style="width: 30%">
+<col style="width: 29%">
 <col style="width: 23%">
 </colgroup>
 <thead>
@@ -3842,7 +3842,8 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </section>
 <section id="appendix-a.2-calculating-covariance-pearson-spearman-correlation-and-ols---worked-example" class="level2" data-number="15.12">
 <h2 data-number="15.12" class="anchored" data-anchor-id="appendix-a.2-calculating-covariance-pearson-spearman-correlation-and-ols---worked-example"><span class="header-section-number">15.12</span> Appendix A.2: Calculating Covariance, Pearson, Spearman Correlation, and OLS - worked example</h2>
-<p>Given data on Electoral District Magnitude (<span class="math inline">\text{DM}</span>) and Gallagher index:</p>
+<p>A political science student is investigating the relationship between district magnitude (DM) and Gallagher’s disproportionality index (GH) in parliamentary elections across 10 randomly selected democracies.</p>
+<p>Data on electoral district magnitudes (<span class="math inline">\text{DM}</span>) and Gallagher index:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -3908,14 +3909,14 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <p>Complete working table showing all calculations:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 3%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 26%">
-<col style="width: 15%">
-<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4235,7 +4236,13 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </section>
 <section id="step-1-calculate-ols-estimates" class="level3" data-number="15.12.9">
 <h3 data-number="15.12.9" class="anchored" data-anchor-id="step-1-calculate-ols-estimates"><span class="header-section-number">15.12.9</span> Step 1: Calculate OLS Estimates</h3>
-<p>Using previously calculated values: - <span class="math inline">\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28.085</span> - <span class="math inline">\sum(X_i - \bar{X})^2 = 82.5</span> - <span class="math inline">\bar{X} = 6.5</span> - <span class="math inline">\bar{Y} = 15.417</span></p>
+<p>Using previously calculated values:</p>
+<ul>
+<li><span class="math inline">\sum(X_i - \bar{X})(Y_i - \bar{Y}) = -28.085</span></li>
+<li><span class="math inline">\sum(X_i - \bar{X})^2 = 82.5</span></li>
+<li><span class="math inline">\bar{X} = 6.5</span></li>
+<li><span class="math inline">\bar{Y} = 15.417</span></li>
+</ul>
 <p>Calculate slope (<span class="math inline">\hat{\beta_1}</span>): <span class="math inline">\hat{\beta_1} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2}</span></p>
 <p><span class="math display">\hat{\beta_1} = -28,085 ÷ 82,5 = -0,3404</span></p>
 <p>Calculate intercept (<span class="math inline">\hat{\beta_0}</span>): <span class="math inline">\hat{\beta_0} = \bar{Y} - \hat{\beta_1}\bar{X}</span></p>
@@ -4772,7 +4779,7 @@ F-statistic: 85.19 on 1 and 8 DF,  p-value: 1.539e-05</code></pre>
 <col style="width: 12%">
 <col style="width: 12%">
 <col style="width: 12%">
-<col style="width: 13%">
+<col style="width: 12%">
 <col style="width: 12%">
 <col style="width: 12%">
 </colgroup>
