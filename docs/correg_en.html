@@ -3331,50 +3331,51 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <div class="cell">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
-<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> n)</span>
-<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
-<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate OLS parameters</span></span>
-<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> <span class="fu">cov</span>(x, y) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
-<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a>beta0 <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="sc">-</span> beta1 <span class="sc">*</span> <span class="fu">mean</span>(x)</span>
-<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create alternative lines</span></span>
-<span id="cb90-16"><a href="#cb90-16" aria-hidden="true" tabindex="-1"></a>lines_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb90-17"><a href="#cb90-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">intercept =</span> <span class="fu">c</span>(beta0, beta0 <span class="sc">+</span> <span class="dv">1</span>, beta0 <span class="sc">-</span> <span class="dv">1</span>),</span>
-<span id="cb90-18"><a href="#cb90-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">slope =</span> <span class="fu">c</span>(beta1, beta1 <span class="sc">+</span> <span class="fl">0.3</span>, beta1 <span class="sc">-</span> <span class="fl">0.3</span>),</span>
-<span id="cb90-19"><a href="#cb90-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">line_type =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span>, <span class="st">"Suboptimal 1"</span>, <span class="st">"Suboptimal 2"</span>)</span>
-<span id="cb90-20"><a href="#cb90-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb90-21"><a href="#cb90-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-22"><a href="#cb90-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb90-23"><a href="#cb90-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb90-24"><a href="#cb90-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb90-25"><a href="#cb90-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> lines_data,</span>
-<span id="cb90-26"><a href="#cb90-26" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">intercept =</span> intercept, </span>
-<span id="cb90-27"><a href="#cb90-27" aria-hidden="true" tabindex="-1"></a>                  <span class="at">slope =</span> slope,</span>
-<span id="cb90-28"><a href="#cb90-28" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> line_type,</span>
-<span id="cb90-29"><a href="#cb90-29" aria-hidden="true" tabindex="-1"></a>                  <span class="at">linetype =</span> line_type),</span>
-<span id="cb90-30"><a href="#cb90-30" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb90-31"><a href="#cb90-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span> <span class="ot">=</span> <span class="st">"#FF4500"</span>,</span>
-<span id="cb90-32"><a href="#cb90-32" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 1"</span> <span class="ot">=</span> <span class="st">"#4169E1"</span>,</span>
-<span id="cb90-33"><a href="#cb90-33" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 2"</span> <span class="ot">=</span> <span class="st">"#228B22"</span>)) <span class="sc">+</span></span>
-<span id="cb90-34"><a href="#cb90-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Finding the Best-Fitting Line"</span>,</span>
-<span id="cb90-35"><a href="#cb90-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Orange line minimizes the sum of squared errors"</span>,</span>
-<span id="cb90-36"><a href="#cb90-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X Variable"</span>,</span>
-<span id="cb90-37"><a href="#cb90-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y Variable"</span>,</span>
-<span id="cb90-38"><a href="#cb90-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Line Type"</span>,</span>
-<span id="cb90-39"><a href="#cb90-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Line Type"</span>) <span class="sc">+</span></span>
-<span id="cb90-40"><a href="#cb90-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb90-41"><a href="#cb90-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb90-42"><a href="#cb90-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb90-43"><a href="#cb90-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb90-44"><a href="#cb90-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb90-45"><a href="#cb90-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb90-46"><a href="#cb90-46" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="at">length.out =</span> n)</span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)</span>
+<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate OLS parameters</span></span>
+<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> <span class="fu">cov</span>(x, y) <span class="sc">/</span> <span class="fu">var</span>(x)</span>
+<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a>beta0 <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="sc">-</span> beta1 <span class="sc">*</span> <span class="fu">mean</span>(x)</span>
+<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-16"><a href="#cb90-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Create alternative lines</span></span>
+<span id="cb90-17"><a href="#cb90-17" aria-hidden="true" tabindex="-1"></a>lines_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb90-18"><a href="#cb90-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">intercept =</span> <span class="fu">c</span>(beta0, beta0 <span class="sc">+</span> <span class="dv">1</span>, beta0 <span class="sc">-</span> <span class="dv">1</span>),</span>
+<span id="cb90-19"><a href="#cb90-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">slope =</span> <span class="fu">c</span>(beta1, beta1 <span class="sc">+</span> <span class="fl">0.3</span>, beta1 <span class="sc">-</span> <span class="fl">0.3</span>),</span>
+<span id="cb90-20"><a href="#cb90-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">line_type =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span>, <span class="st">"Suboptimal 1"</span>, <span class="st">"Suboptimal 2"</span>)</span>
+<span id="cb90-21"><a href="#cb90-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb90-22"><a href="#cb90-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-23"><a href="#cb90-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb90-24"><a href="#cb90-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb90-25"><a href="#cb90-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb90-26"><a href="#cb90-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">data =</span> lines_data,</span>
+<span id="cb90-27"><a href="#cb90-27" aria-hidden="true" tabindex="-1"></a>              <span class="fu">aes</span>(<span class="at">intercept =</span> intercept, </span>
+<span id="cb90-28"><a href="#cb90-28" aria-hidden="true" tabindex="-1"></a>                  <span class="at">slope =</span> slope,</span>
+<span id="cb90-29"><a href="#cb90-29" aria-hidden="true" tabindex="-1"></a>                  <span class="at">color =</span> line_type,</span>
+<span id="cb90-30"><a href="#cb90-30" aria-hidden="true" tabindex="-1"></a>                  <span class="at">linetype =</span> line_type),</span>
+<span id="cb90-31"><a href="#cb90-31" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb90-32"><a href="#cb90-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Best fit (OLS)"</span> <span class="ot">=</span> <span class="st">"#FF4500"</span>,</span>
+<span id="cb90-33"><a href="#cb90-33" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 1"</span> <span class="ot">=</span> <span class="st">"#4169E1"</span>,</span>
+<span id="cb90-34"><a href="#cb90-34" aria-hidden="true" tabindex="-1"></a>                               <span class="st">"Suboptimal 2"</span> <span class="ot">=</span> <span class="st">"#228B22"</span>)) <span class="sc">+</span></span>
+<span id="cb90-35"><a href="#cb90-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Finding the Best-Fitting Line"</span>,</span>
+<span id="cb90-36"><a href="#cb90-36" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Orange line minimizes the sum of squared errors"</span>,</span>
+<span id="cb90-37"><a href="#cb90-37" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"X Variable"</span>,</span>
+<span id="cb90-38"><a href="#cb90-38" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Y Variable"</span>,</span>
+<span id="cb90-39"><a href="#cb90-39" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Line Type"</span>,</span>
+<span id="cb90-40"><a href="#cb90-40" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Line Type"</span>) <span class="sc">+</span></span>
+<span id="cb90-41"><a href="#cb90-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb90-42"><a href="#cb90-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb90-43"><a href="#cb90-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb90-44"><a href="#cb90-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb90-45"><a href="#cb90-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb90-46"><a href="#cb90-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb90-47"><a href="#cb90-47" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3398,43 +3399,46 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <p><span class="math display"> \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X} </span></p>
 <p>This ensures the regression line intersects the point of means (<span class="math inline">\bar{X}</span>, <span class="math inline">\bar{Y}</span>).</p>
 </section>
-<section id="variance-decomposition-in-regression" class="level3" data-number="15.10.5">
-<h3 data-number="15.10.5" class="anchored" data-anchor-id="variance-decomposition-in-regression"><span class="header-section-number">15.10.5</span> Variance Decomposition in Regression</h3>
-<p><strong>The total variance in our data has three important components.</strong></p>
-<p><strong>The goal here is to identify how much variability in the outcome variable is explained by the all of the explanatory variables!</strong></p>
-<p><strong>Understanding the Three Types of Variation:</strong></p>
-<ol type="1">
-<li><strong>Total Variation (SST)</strong>
-<ul>
-<li>Question: “How much do observations vary from the mean?”</li>
-<li>Formula: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li>Intuition: The “spread” of our data around its average</li>
-</ul></li>
-<li><strong>Explained Variation (SSR)</strong>
-<ul>
-<li>Question: “How much of the variation did our model explain?”</li>
-<li>Formula: <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
-<li>Intuition: The improvement we gained by using X</li>
-</ul></li>
-<li><strong>Unexplained Variation (SSE)</strong>
-<ul>
-<li>Question: “What variation remains unexplained?”</li>
-<li>Formula: <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
-<li>Intuition: The errors that remain after using X</li>
-</ul></li>
-</ol>
-<p>Consider trying to understand what drives voter turnout in different congressional districts. Some districts consistently see 70% turnout, while others struggle to reach 35%. What explains these differences?</p>
-<p><strong>The Total Variance (SST)</strong> represents all the variation we observe in voter turnout across districts, measuring how much turnout rates differ from the national average:</p>
-<p><span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span></p>
-<p>For example, if the national average turnout is 50%, SST captures how much each district deviates from this baseline, whether it’s a high-turnout suburban district at 65% or a low-turnout urban district at 35%.</p>
-<p>Now, political scientists develop models to explain these differences using factors like education levels, median income, and age distribution. <strong>The Explained Variance (SSR)</strong> tells us how much of the turnout variation these demographic and socioeconomic factors successfully explain:</p>
-<p><span class="math display"> SSR = \sum(\hat{Y}_i - \bar{Y})^2 </span></p>
-<p><strong>The Unexplained Variance (SSE)</strong> represents the turnout variations our model couldn’t capture – perhaps due to local political dynamics, candidate quality, or campaign effectiveness that weren’t included in our model:</p>
-<p><span class="math display"> SSE = \sum(Y_i - \hat{Y}_i)^2 </span></p>
-<p>This decomposition becomes the foundation for assessing model fit because it directly answers the question: “How much of the real-world variation in voting behavior can our model explain?”</p>
-<p>If our model explains 80% of the variance (R² = SSR/SST = 0.8), we can be confident it captures most major factors driving turnout differences. Conversely, if it only explains 30%, we might need to consider additional variables or alternative modeling approaches.</p>
-<p>A fundamental relationship in regression analysis is that the total variation equals the sum of explained and unexplained variation:</p>
+<section id="understanding-variation-in-regression-analysis" class="level3" data-number="15.10.5">
+<h3 data-number="15.10.5" class="anchored" data-anchor-id="understanding-variation-in-regression-analysis"><span class="header-section-number">15.10.5</span> Understanding Variation in Regression Analysis</h3>
+<p>In regression analysis, we decompose the variation in our data into distinct components to understand how well our model explains the outcome variable. Let’s examine each component of variation in detail.</p>
+<section id="overview-of-variation-components" class="level4" data-number="15.10.5.1">
+<h4 data-number="15.10.5.1" class="anchored" data-anchor-id="overview-of-variation-components"><span class="header-section-number">15.10.5.1</span> Overview of Variation Components</h4>
+<p>The total Sum of Squares (SST) represents all variation present in our outcome variable. The Regression Sum of Squares (SSR) captures the variation explained by our model. The Error Sum of Squares (SSE) represents the remaining unexplained variation. Let’s examine each in detail.</p>
+</section>
+<section id="total-sum-of-squares-sst" class="level4" data-number="15.10.5.2">
+<h4 data-number="15.10.5.2" class="anchored" data-anchor-id="total-sum-of-squares-sst"><span class="header-section-number">15.10.5.2</span> Total Sum of Squares (SST)</h4>
+<p>SST measures the total variation in our outcome variable by calculating how much each observation deviates from the overall mean:</p>
+<p><span class="math display"> SST = \sum(y_i - \bar{y})^2 </span></p>
+<p>In this formula, <span class="math inline">y_i</span> represents each individual observation, and <span class="math inline">\bar{y}</span> represents the mean of all observations. The squared differences capture the total spread of our data around its average value.</p>
+</section>
+<section id="regression-sum-of-squares-ssr" class="level4" data-number="15.10.5.3">
+<h4 data-number="15.10.5.3" class="anchored" data-anchor-id="regression-sum-of-squares-ssr"><span class="header-section-number">15.10.5.3</span> Regression Sum of Squares (SSR)</h4>
+<p>SSR quantifies how much variation our model explains through its predictor variables:</p>
+<p><span class="math display"> SSR = \sum(\hat{y}_i - \bar{y})^2 </span></p>
+<p>Here, <span class="math inline">\hat{y}_i</span> represents our model’s predicted values. This formula measures how far our predictions deviate from the mean, representing the variation captured by our model.</p>
+</section>
+<section id="error-sum-of-squares-sse" class="level4" data-number="15.10.5.4">
+<h4 data-number="15.10.5.4" class="anchored" data-anchor-id="error-sum-of-squares-sse"><span class="header-section-number">15.10.5.4</span> Error Sum of Squares (SSE)</h4>
+<p>SSE measures the variation that remains unexplained by our model:</p>
+<p><span class="math display"> SSE = \sum(y_i - \hat{y}_i)^2 </span></p>
+<p>This formula calculates the differences between actual values (<span class="math inline">y_i</span>) and predicted values (<span class="math inline">\hat{y}_i</span>), showing us how much variation our model failed to explain.</p>
+</section>
+<section id="the-fundamental-relationship" class="level4" data-number="15.10.5.5">
+<h4 data-number="15.10.5.5" class="anchored" data-anchor-id="the-fundamental-relationship"><span class="header-section-number">15.10.5.5</span> The Fundamental Relationship</h4>
+<p>These three components are related through a key equation:</p>
 <p><span class="math display"> SST = SSR + SSE </span></p>
+<p>This equation shows that the total variation (SST) equals the sum of explained variation (SSR) and unexplained variation (SSE). This relationship forms the basis for measuring model performance.</p>
+</section>
+<section id="coefficient-of-determination-r²" class="level4" data-number="15.10.5.6">
+<h4 data-number="15.10.5.6" class="anchored" data-anchor-id="coefficient-of-determination-r²"><span class="header-section-number">15.10.5.6</span> Coefficient of Determination (R²)</h4>
+<p>The R² statistic, derived from these components, tells us the proportion of variation our model explains:</p>
+<p><span class="math display"> R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST} </span></p>
+<p>When R² equals 0.75, it indicates our model explains 75% of the variation in the outcome variable. The remaining 25% represents unexplained variation.</p>
+</section>
+<section id="important-considerations" class="level4" data-number="15.10.5.7">
+<h4 data-number="15.10.5.7" class="anchored" data-anchor-id="important-considerations"><span class="header-section-number">15.10.5.7</span> Important Considerations</h4>
+<p>Understanding these components helps us: 1. Evaluate model performance through the proportion of explained variation 2. Identify how much variation remains unexplained 3. Make informed decisions about model improvement 4. Compare different models’ explanatory power</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -3444,6 +3448,7 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="the-coefficient-of-determination-r2" class="level3" data-number="15.10.6">
 <h3 data-number="15.10.6" class="anchored" data-anchor-id="the-coefficient-of-determination-r2"><span class="header-section-number">15.10.6</span> The Coefficient of Determination (<span class="math inline">R^2</span>)</h3>

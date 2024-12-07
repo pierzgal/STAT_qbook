@@ -3318,18 +3318,22 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> godziny_nauki, <span class="at">y =</span> wyniki_egzaminu)) <span class="sc">+</span></span>
-<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">50</span>, <span class="at">slope =</span> <span class="dv">8</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">70</span>, <span class="at">slope =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"green"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Godziny nauki"</span>, <span class="at">y =</span> <span class="st">"Wyniki egzaminu"</span>,</span>
-<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Trzy różne proste: Która jest najlepsza?"</span>) <span class="sc">+</span></span>
-<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">7.5</span>, <span class="at">y =</span> <span class="dv">120</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">label =</span> <span class="st">"Prosta A: Za stroma"</span>) <span class="sc">+</span></span>
-<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">7.5</span>, <span class="at">y =</span> <span class="dv">85</span>, <span class="at">color =</span> <span class="st">"green"</span>, <span class="at">label =</span> <span class="st">"Prosta B: Za płaska"</span>) <span class="sc">+</span></span>
-<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">7.5</span>, <span class="at">y =</span> <span class="dv">100</span>, <span class="at">color =</span> <span class="st">"purple"</span>, <span class="at">label =</span> <span class="st">"Prosta C: W sam raz"</span>) <span class="sc">+</span></span>
-<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dane, <span class="fu">aes</span>(<span class="at">x =</span> godziny_nauki, <span class="at">y =</span> wyniki_egzaminu)) <span class="sc">+</span></span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">50</span>, <span class="at">slope =</span> <span class="dv">8</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="dv">70</span>, <span class="at">slope =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"green"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Godziny nauki"</span>, <span class="at">y =</span> <span class="st">"Wyniki egzaminu"</span>,</span>
+<span id="cb90-11"><a href="#cb90-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Trzy różne proste: Która jest najlepsza?"</span>) <span class="sc">+</span></span>
+<span id="cb90-12"><a href="#cb90-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">7.5</span>, <span class="at">y =</span> <span class="dv">120</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">label =</span> <span class="st">"Prosta A: Za stroma"</span>) <span class="sc">+</span></span>
+<span id="cb90-13"><a href="#cb90-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">7.5</span>, <span class="at">y =</span> <span class="dv">85</span>, <span class="at">color =</span> <span class="st">"green"</span>, <span class="at">label =</span> <span class="st">"Prosta B: Za płaska"</span>) <span class="sc">+</span></span>
+<span id="cb90-14"><a href="#cb90-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">7.5</span>, <span class="at">y =</span> <span class="dv">100</span>, <span class="at">color =</span> <span class="st">"purple"</span>, <span class="at">label =</span> <span class="st">"Prosta C: W sam raz"</span>) <span class="sc">+</span></span>
+<span id="cb90-15"><a href="#cb90-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb90-16"><a href="#cb90-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -3358,42 +3362,44 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </section>
 <section id="dekompozycja-wariancji-w-regresji" class="level3" data-number="16.11.5">
 <h3 data-number="16.11.5" class="anchored" data-anchor-id="dekompozycja-wariancji-w-regresji"><span class="header-section-number">16.11.5</span> Dekompozycja Wariancji w Regresji</h3>
-<p><strong>Całkowita wariancja w naszych danych składa się z trzech istotnych komponentów.</strong></p>
-<p><strong>Celem jest tutaj określenie, jaką część zmienności zmiennej wynikowej jesteśmy w stanie wyjaśnić za pomocą wszystkich zmiennych objaśniających!</strong></p>
-<p><strong>Trzy Komponenty Wariancji:</strong></p>
-<ol type="1">
-<li><strong>Wariancja Całkowita (SST - Suma Kwadratów Całkowita)</strong>
-<ul>
-<li>Pytanie: “Jak bardzo obserwacje różnią się od średniej?”</li>
-<li>Wzór: <span class="math inline">SST = \sum(y_i - \bar{y})^2</span></li>
-<li>Intuicja: “Rozrzut” naszych danych wokół ich średniej</li>
-</ul></li>
-<li><strong>Wariancja Wyjaśniona (SSR - Suma Kwadratów Regresji)</strong>
-<ul>
-<li>Pytanie: “Ile wariancji wyjaśnił nasz model?”</li>
-<li>Wzór: <span class="math inline">SSR = \sum(\hat{y}_i - \bar{y})^2</span></li>
-<li>Intuicja: Poprawa, którą uzyskaliśmy dzięki użyciu X</li>
-</ul></li>
-<li><strong>Wariancja Niewyjaśniona (SSE - Suma Kwadratów Błędów)</strong>
-<ul>
-<li>Pytanie: “Jaka wariancja pozostaje niewyjaśniona?”</li>
-<li>Wzór: <span class="math inline">SSE = \sum(y_i - \hat{y}_i)^2</span></li>
-<li>Intuicja: Błędy, które pozostają po użyciu X</li>
-</ul></li>
-</ol>
-<p>Rozważmy próbę zrozumienia czynników wpływających na frekwencję wyborczą w różnych okręgach wyborczych. W niektórych okręgach frekwencja stabilnie utrzymuje się na poziomie 70%, podczas gdy w innych ledwo osiąga 35%. Co wyjaśnia te różnice?</p>
-<p><strong>Całkowita Wariancja (SST)</strong> reprezentuje wszystkie obserwowane różnice w frekwencji wyborczej między okręgami, mierząc jak bardzo wskaźniki frekwencji (<span class="math inline">Y_i</span>) odbiegają od średniej krajowej:</p>
-<p><span class="math display"> SST = \sum(Y_i - \bar{Y})^2 </span></p>
-<p>Przykładowo, jeśli średnia krajowa frekwencja wynosi 50%, SST ujmuje wielkość odchyleń każdego okręgu od tej wartości bazowej - czy to okręgu podmiejskiego o wysokiej frekwencji 65%, czy miejskiego o niskiej frekwencji 35%.</p>
-<p>Politolodzy opracowują modele wyjaśniające te różnice, uwzględniając czynniki takie jak poziom wykształcenia, mediana dochodów czy struktura wiekowa.</p>
-<p><strong>Wyjaśniona Wariancja (SSR)</strong> wskazuje, jak dużą część zmienności frekwencji udaje się wyjaśnić tym czynnikom demograficznym i społeczno-ekonomicznym:</p>
-<p><span class="math display"> SSR = \sum(\hat{Y}_i - \bar{Y})^2 </span></p>
-<p><strong>Niewyjaśniona Wariancja (SSE)</strong> reprezentuje te różnice w frekwencji, których nasz model nie potrafił uchwycić - być może ze względu na lokalną dynamikę polityczną, jakość kandydatów czy skuteczność kampanii wyborczej, które nie zostały uwzględnione w modelu:</p>
-<p><span class="math display"> SSE = \sum(Y_i - \hat{Y}_i)^2 </span></p>
-<p>Ta dekompozycja stanowi fundament oceny dopasowania modelu, ponieważ bezpośrednio odpowiada na pytanie: “Jaką część rzeczywistej zmienności w zachowaniach wyborczych potrafi wyjaśnić nasz model?”</p>
-<p>Jeśli nasz model wyjaśnia 80% wariancji (R² = SSR/SST = 0,8), możemy być pewni, że uchwycił większość głównych czynników wpływających na różnice w frekwencji. Natomiast jeśli wyjaśnia jedynie 30%, powinniśmy rozważyć uwzględnienie dodatkowych zmiennych lub alternatywne podejścia modelowania.</p>
-<p>Fundamentalna relacja w analizie regresji mówi, że całkowita zmienność równa się sumie zmienności wyjaśnionej i niewyjaśnionej:</p>
+<p>W analizie regresji rozkładamy wariancję w naszych danych na odrębne składniki, aby zrozumieć, jak dobrze nasz model wyjaśnia zmienną zależną. Przyjrzyjmy się każdemu składnikowi wariancji szczegółowo.</p>
+<section id="przegląd-składników-wariancji" class="level4" data-number="16.11.5.1">
+<h4 data-number="16.11.5.1" class="anchored" data-anchor-id="przegląd-składników-wariancji"><span class="header-section-number">16.11.5.1</span> Przegląd Składników Wariancji</h4>
+<p>Całkowita Suma Kwadratów (SST, z ang. Total Sum of Squares) reprezentuje całkowitą zmienność obecną w naszej zmiennej zależnej. Regresyjna Suma Kwadratów (SSR, z ang. Regression Sum of Squares) obejmuje zmienność wyjaśnioną przez nasz model. Resztowa Suma Kwadratów (SSE, z ang. Error Sum of Squares) przedstawia pozostałą, niewyjaśnioną zmienność. Przeanalizujmy każdy z tych elementów.</p>
+</section>
+<section id="całkowita-suma-kwadratów-sst" class="level4" data-number="16.11.5.2">
+<h4 data-number="16.11.5.2" class="anchored" data-anchor-id="całkowita-suma-kwadratów-sst"><span class="header-section-number">16.11.5.2</span> Całkowita Suma Kwadratów (SST)</h4>
+<p>SST mierzy całkowitą zmienność w zmiennej zależnej, obliczając, jak bardzo każda obserwacja odbiega od średniej ogólnej:</p>
+<p><span class="math display"> SST = \sum(y_i - \bar{y})^2 </span></p>
+<p>W tym wzorze <span class="math inline">y_i</span> reprezentuje każdą pojedynczą obserwację, a <span class="math inline">\bar{y}</span> reprezentuje średnią wszystkich obserwacji. Kwadraty różnic ujmują całkowitą rozpiętość naszych danych wokół ich wartości średniej.</p>
+</section>
+<section id="regresyjna-suma-kwadratów-ssr" class="level4" data-number="16.11.5.3">
+<h4 data-number="16.11.5.3" class="anchored" data-anchor-id="regresyjna-suma-kwadratów-ssr"><span class="header-section-number">16.11.5.3</span> Regresyjna Suma Kwadratów (SSR)</h4>
+<p>SSR określa ilościowo zmienność, którą nasz model wyjaśnia poprzez zmienne objaśniające:</p>
+<p><span class="math display"> SSR = \sum(\hat{y}_i - \bar{y})^2 </span></p>
+<p>Tutaj <span class="math inline">\hat{y}_i</span> reprezentuje wartości przewidywane przez nasz model. Ten wzór mierzy, jak daleko nasze przewidywania odbiegają od średniej, reprezentując zmienność uchwyconą przez nasz model.</p>
+</section>
+<section id="resztowa-suma-kwadratów-sse" class="level4" data-number="16.11.5.4">
+<h4 data-number="16.11.5.4" class="anchored" data-anchor-id="resztowa-suma-kwadratów-sse"><span class="header-section-number">16.11.5.4</span> Resztowa Suma Kwadratów (SSE)</h4>
+<p>SSE mierzy zmienność, która pozostaje niewyjaśniona przez nasz model:</p>
+<p><span class="math display"> SSE = \sum(y_i - \hat{y}_i)^2 </span></p>
+<p>Ten wzór oblicza różnice między wartościami rzeczywistymi (<span class="math inline">y_i</span>) a wartościami przewidywanymi (<span class="math inline">\hat{y}_i</span>), pokazując nam, ile zmienności nasz model nie zdołał wyjaśnić.</p>
+</section>
+<section id="podstawowa-zależność" class="level4" data-number="16.11.5.5">
+<h4 data-number="16.11.5.5" class="anchored" data-anchor-id="podstawowa-zależność"><span class="header-section-number">16.11.5.5</span> Podstawowa Zależność</h4>
+<p>Te trzy składniki są powiązane poprzez kluczowe równanie:</p>
 <p><span class="math display"> SST = SSR + SSE </span></p>
+<p>To równanie pokazuje, że całkowita zmienność (SST) równa się sumie zmienności wyjaśnionej (SSR) i niewyjaśnionej (SSE). Ta zależność stanowi podstawę do pomiaru wydajności modelu.</p>
+</section>
+<section id="współczynnik-determinacji-r²" class="level4" data-number="16.11.5.6">
+<h4 data-number="16.11.5.6" class="anchored" data-anchor-id="współczynnik-determinacji-r²"><span class="header-section-number">16.11.5.6</span> Współczynnik Determinacji (R²)</h4>
+<p>Statystyka R², wyprowadzona z tych składników, mówi nam, jaką proporcję zmienności wyjaśnia nasz model:</p>
+<p><span class="math display"> R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST} </span></p>
+<p>Gdy R² równa się 0,75, oznacza to, że nasz model wyjaśnia 75% zmienności w zmiennej zależnej. Pozostałe 25% reprezentuje zmienność niewyjaśnioną.</p>
+</section>
+<section id="istotne-aspekty" class="level4" data-number="16.11.5.7">
+<h4 data-number="16.11.5.7" class="anchored" data-anchor-id="istotne-aspekty"><span class="header-section-number">16.11.5.7</span> Istotne Aspekty</h4>
+<p>Zrozumienie tych składników pomaga nam: 1. Ocenić wydajność modelu poprzez proporcję wyjaśnionej zmienności 2. Zidentyfikować, ile zmienności pozostaje niewyjaśnione 3. Podejmować decyzje dotyczące ulepszania modelu 4. Porównywać moc wyjaśniającą różnych modeli</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -3403,6 +3409,7 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="współczynnik-determinacji-r2" class="level3" data-number="16.11.6">
 <h3 data-number="16.11.6" class="anchored" data-anchor-id="współczynnik-determinacji-r2"><span class="header-section-number">16.11.6</span> Współczynnik Determinacji (<span class="math inline">R^2</span>)</h3>
