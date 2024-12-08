@@ -2480,145 +2480,67 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Understanding Endogeneity
+Understanding Endogeneity in Regression
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Think of endogeneity as a “hidden relationship problem” in your analysis. It’s like trying to solve a puzzle while some pieces are affecting each other in ways you can’t see directly. In technical terms, endogeneity occurs when an explanatory variable in a regression model is correlated with the error term, but let’s understand this intuitively!</p>
-<ol type="1">
-<li>Omitted Variable Bias (OVB)</li>
-</ol>
-<p>Think of it like trying to understand why some plants grow taller than others, and you only measure the amount of water they receive. But you forgot about sunlight, which affects both how much water the plant needs AND how tall it grows!</p>
-<p><strong>Real-Life Example: Education and Income</strong></p>
-<ul>
-<li>What we see: More education → Higher income</li>
-<li>What we might miss: Natural talent/ability
-<ul>
-<li>Affects how long people stay in school</li>
-<li>Affects how much they can earn</li>
-</ul></li>
-<li>Result: We might overestimate how much education helps</li>
-</ul>
-<p><strong>The Math Behind It</strong>:</p>
-<ul>
-<li>True picture: <span class="math inline">y_i = \beta_0 + \beta_1x_i + \beta_2z_i + \epsilon_i</span><br>
-</li>
-<li>What we actually estimate: <span class="math inline">y_i = \beta_0 + \beta_1x_i + u_i</span><br>
-</li>
-<li>Think of it like a recipe: If you forget an important ingredient (z), your final dish (y) won’t turn out as expected!</li>
-</ul>
-<ol start="2" type="1">
-<li>Simultaneity (Reverse Causation)</li>
-</ol>
-<p>Remember the chicken and egg problem? Sometimes two things affect each other at the same time. Here are some examples you might encounter:</p>
-<p><strong>a) The Study Hours Puzzle</strong></p>
-<ul>
-<li>Do better grades lead to studying more?</li>
-<li>Or does studying more lead to better grades?</li>
-<li>Actually… both! They affect each other</li>
-</ul>
-<p><strong>b) The Social Media Effect</strong></p>
-<ul>
-<li>More followers → More posts</li>
-<li>More posts → More followers</li>
-<li>It’s a continuous cycle!</li>
-</ul>
-<p><strong>c) The Exercise-Energy Cycle</strong></p>
-<ul>
-<li>More exercise → More energy</li>
-<li>More energy → More likely to exercise</li>
-<li>Think of it like two friends pushing each other on swings!</li>
-</ul>
-<ol start="3" type="1">
-<li>Measurement Error</li>
-</ol>
-<p>Imagine trying to measure your height while standing on an uneven floor - your measurements won’t be quite right! Here’s how this shows up in real life:</p>
-<p><strong>Examples You’ll Recognize:</strong></p>
-<ul>
-<li>Self-Reported Study Time
-<ul>
-<li>“I study 5 hours a day” might really mean 3-4 hours</li>
-<li>Makes it hard to know true impact on grades</li>
-</ul></li>
-<li>Fitness App Tracking
-<ul>
-<li>App says you burned 500 calories</li>
-<li>Actually might be 400 or 600</li>
-<li>Affects analysis of exercise impact</li>
-</ul></li>
-</ul>
-<section id="how-to-spot-these-problems-in-your-own-research" class="level4" data-number="15.6.20.1">
-<h4 data-number="15.6.20.1" class="anchored" data-anchor-id="how-to-spot-these-problems-in-your-own-research"><span class="header-section-number">15.6.20.1</span> How to Spot These Problems in Your Own Research?</h4>
-<p><strong>1. For Omitted Variables, Ask:</strong></p>
-<ul>
-<li>What else could affect both variables?</li>
-<li>Am I missing any obvious factors?</li>
-<li>What would my parents/friends say influences this?</li>
-</ul>
-<p><strong>2. For Simultaneity, Consider:</strong></p>
-<ul>
-<li>Could A cause B, or could B cause A?</li>
-<li>Might they affect each other?</li>
-<li>What happened first? (if you can tell)</li>
-</ul>
-<p><strong>3. For Measurement Error, Think:</strong></p>
-<ul>
-<li>How accurate are my measurements?</li>
-<li>Are people likely to report truthfully?</li>
-<li>What might cause measurement problems?</li>
-</ul>
-<p><strong>Simple Solutions</strong></p>
-<p><strong>1. For Omitted Variables:</strong></p>
+<p>Endogeneity is a critical concept in statistical analysis that occurs when an explanatory variable in a regression model is correlated with the error term. This creates challenges for accurately understanding cause-and-effect relationships in research. Let’s examine the three main types of endogeneity and how they affect research outcomes.</p>
+<section id="omitted-variable-bias-ovb" class="level3" data-number="15.6.21">
+<h3 data-number="15.6.21" class="anchored" data-anchor-id="omitted-variable-bias-ovb"><span class="header-section-number">15.6.21</span> 1. Omitted Variable Bias (OVB)</h3>
+<p>Omitted Variable Bias occurs when an important variable that affects both the dependent and independent variables is left out of the analysis. This omission leads to incorrect conclusions about the relationship between the variables we’re studying.</p>
+<p>Consider a study examining the relationship between education and income:</p>
+<p><strong>Example: Education and Income</strong> The observed relationship shows that more education correlates with higher income. However, an individual’s inherent abilities affect both their educational attainment and their earning potential. Without accounting for ability, we may overestimate education’s direct effect on income.</p>
+<p>The statistical representation shows why this matters:</p>
+<p><span class="math inline">y_i = \beta_0 + \beta_1x_i + \beta_2z_i + \epsilon_i</span> (Complete model)</p>
+<p><span class="math inline">y_i = \beta_0 + \beta_1x_i + u_i</span> (Incomplete model)</p>
+<p>When we omit an important variable, our estimates of the remaining relationships become biased and unreliable.</p>
+</section>
+<section id="simultaneity" class="level3" data-number="15.6.22">
+<h3 data-number="15.6.22" class="anchored" data-anchor-id="simultaneity"><span class="header-section-number">15.6.22</span> 2. Simultaneity</h3>
+<p>Simultaneity occurs when two variables simultaneously influence each other, making it difficult to determine the direction of causation. This creates a feedback loop that complicates statistical analysis.</p>
+<p><strong>Common Examples of Simultaneity:</strong></p>
+<p>Academic Performance and Study Habits represent a clear case of simultaneity. Academic performance influences how much time students dedicate to studying, while study time affects academic performance. This two-way relationship makes it challenging to measure the isolated effect of either variable.</p>
+<p>Market Dynamics provide another example. Prices influence demand, while demand influences prices. This concurrent relationship requires special analytical approaches to understand the true relationships.</p>
+</section>
+<section id="measurement-error" class="level3" data-number="15.6.23">
+<h3 data-number="15.6.23" class="anchored" data-anchor-id="measurement-error"><span class="header-section-number">15.6.23</span> 3. Measurement Error</h3>
+<p>Measurement error occurs when we cannot accurately measure our variables of interest. This imprecision can significantly impact our analysis and conclusions.</p>
+<p><strong>Common Sources of Measurement Error:</strong></p>
+<p>Self-Reported Data presents a significant challenge. When participants report their own behaviors or characteristics, such as study time, the reported values often differ from actual values. This discrepancy affects our ability to measure true relationships.</p>
+<p>Technical Limitations also contribute to measurement error through imprecise measuring tools, inconsistent measurement conditions, and recording or data entry errors.</p>
+</section>
+<section id="addressing-endogeneity-in-research" class="level3" data-number="15.6.24">
+<h3 data-number="15.6.24" class="anchored" data-anchor-id="addressing-endogeneity-in-research"><span class="header-section-number">15.6.24</span> Addressing Endogeneity in Research</h3>
+<section id="identification-strategies" class="level4" data-number="15.6.24.1">
+<h4 data-number="15.6.24.1" class="anchored" data-anchor-id="identification-strategies"><span class="header-section-number">15.6.24.1</span> Identification Strategies</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instead of:</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co"># simple_model &lt;- lm(grades ~ study_hours)</span></span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Try:</span></span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="co"># better_model &lt;- lm(grades ~ study_hours + sleep_hours + stress_level + prior_knowledge)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of controlling for omitted variables</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>model_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> education, <span class="at">data =</span> df)</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>model_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(income <span class="sc">~</span> education <span class="sc">+</span> ability <span class="sc">+</span> experience <span class="sc">+</span> region, <span class="at">data =</span> df)</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare coefficients</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_simple)</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_full)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>2. For Simultaneity:</strong></p>
-<ul>
-<li>Look for “external” factors that affect only one variable</li>
-<li>Consider time lags</li>
-<li>Use natural experiments when possible</li>
-</ul>
-<p><strong>3. For Measurement Error:</strong></p>
-<ul>
-<li>Use multiple measurements</li>
-<li>Find more reliable data sources</li>
-<li>Acknowledge uncertainty in your conclusions</li>
-</ul>
-</section>
-<section id="key-takeaways-for-students" class="level4" data-number="15.6.20.2">
-<h4 data-number="15.6.20.2" class="anchored" data-anchor-id="key-takeaways-for-students"><span class="header-section-number">15.6.20.2</span> Key Takeaways for Students</h4>
 <ol type="1">
-<li><p><strong>Reality is Complex</strong></p>
-<ul>
-<li>Most relationships aren’t simple A → B</li>
-<li>Look for hidden factors</li>
-<li>Consider two-way relationships</li>
-</ul></li>
-<li><p><strong>Always Ask</strong></p>
-<ul>
-<li>“What am I missing?”</li>
-<li>“Could these affect each other?”</li>
-<li>“How well am I measuring things?”</li>
-</ul></li>
-<li><p><strong>When Writing Papers</strong></p>
-<ul>
-<li>Discuss potential endogeneity</li>
-<li>Explain how you addressed it</li>
-<li>Be honest about limitations</li>
-</ul></li>
+<li><p>Include Additional Variables: Collect data on potentially important omitted variables and include relevant control variables in your analysis. For example, including measures of ability when studying education’s effect on income.</p></li>
+<li><p>Use Panel Data: Collect data across multiple time periods to control for unobserved fixed characteristics and analyze changes over time.</p></li>
+<li><p>Instrumental Variables: Find variables that affect your independent variable but not your dependent variable to isolate the relationship of interest.</p></li>
 </ol>
 </section>
-<section id="recommended-reading" class="level3" data-number="15.6.21">
-<h3 data-number="15.6.21" class="anchored" data-anchor-id="recommended-reading"><span class="header-section-number">15.6.21</span> Recommended Reading</h3>
+<section id="improving-measurement" class="level4" data-number="15.6.24.2">
+<h4 data-number="15.6.24.2" class="anchored" data-anchor-id="improving-measurement"><span class="header-section-number">15.6.24.2</span> Improving Measurement</h4>
 <ol type="1">
-<li>“Mastering Metrics” by Angrist &amp; Pischke</li>
-<li>“Naked Statistics” by Charles Wheelan</li>
+<li><p>Multiple Measurements: Take several measurements of key variables, use averaging to reduce random error, and compare different measurement methods.</p></li>
+<li><p>Better Data Collection: Use validated measurement instruments, implement quality control procedures, and document potential sources of error.</p></li>
 </ol>
-<p>Remember: In the real world, relationships are usually more complex than they first appear. When you find a connection between A and B, always ask what else might be going on behind the scenes!</p>
+</section>
+</section>
+<section id="best-practices-for-researchers" class="level3" data-number="15.6.25">
+<h3 data-number="15.6.25" class="anchored" data-anchor-id="best-practices-for-researchers"><span class="header-section-number">15.6.25</span> Best Practices for Researchers</h3>
+<p>Research Design fundamentally shapes your ability to address endogeneity. Plan for potential endogeneity issues before collecting data, include measures for potentially important control variables, and consider using multiple measurement approaches.</p>
+<p>Analysis should include testing for endogeneity when possible, using appropriate statistical methods for your specific situation, and documenting assumptions and limitations.</p>
+<p>Reporting must clearly describe potential endogeneity concerns, explain how you addressed these issues, and discuss implications for your conclusions.</p>
 </section>
 </div>
 </div>
@@ -3293,7 +3215,7 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </ul></li>
 <li><p>Calculate the vertical distances (residuals) from each observed point to this line</p>
 <ul>
-<li>These residuals <span class="math inline">\hat{\epsilon}_i = Y_i - \hat{Y}_i</span> represent our prediction errors</li>
+<li>These residuals <span class="math inline">\hat{\epsilon}_i = e_i = Y_i - \hat{Y}_i</span> represent our prediction errors</li>
 <li>A positive residual means our line underestimates the true value</li>
 <li>A negative residual means our line overestimates the true value</li>
 </ul></li>
@@ -3418,8 +3340,8 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <p><span class="math display"> R^2 = \frac{SSR}{SST} = \frac{SSR}{SSR + SSE} = 1 - \frac{SSE}{SST} </span></p>
 <p>To interpret <span class="math inline">R^2</span>:</p>
 <ul>
-<li>An <span class="math inline">R^2</span> of 0.75 indicates the model explains 75% of variance in exam scores</li>
-<li>An <span class="math inline">R^2</span> of 0.20 suggests study hours account for 20% of score variation</li>
+<li>An <span class="math inline">R^2</span> of 0.75 indicates the model explains 75% of variance (e.g.&nbsp;in exam scores)</li>
+<li>An <span class="math inline">R^2</span> of 0.20 suggests predictors (e.g.&nbsp;study hours) account for 20% of score variation</li>
 <li>An <span class="math inline">R^2</span> of 1.00 represents perfect prediction (rarely observed in practice)</li>
 <li>An <span class="math inline">R^2</span> of 0.00 indicates no explanatory power</li>
 </ul>

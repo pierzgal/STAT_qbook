@@ -393,7 +393,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#podsumowanie-1" id="toc-podsumowanie-1" class="nav-link" data-scroll-target="#podsumowanie-1"><span class="header-section-number">16.11</span> Podsumowanie</a>
   <ul class="collapse">
-  <li><a href="#kluczowe-wnioski-4" id="toc-kluczowe-wnioski-4" class="nav-link" data-scroll-target="#kluczowe-wnioski-4"><span class="header-section-number">16.11.1</span> Kluczowe Wnioski</a></li>
+  <li><a href="#kluczowe-wnioski-3" id="toc-kluczowe-wnioski-3" class="nav-link" data-scroll-target="#kluczowe-wnioski-3"><span class="header-section-number">16.11.1</span> Kluczowe Wnioski</a></li>
   <li><a href="#literatura-uzupełniająca" id="toc-literatura-uzupełniająca" class="nav-link" data-scroll-target="#literatura-uzupełniająca">Literatura Uzupełniająca</a></li>
   </ul></li>
   <li><a href="#dodatek-a.1-obliczanie-kowariancji-korelacji-pearsona-i-spearmana-oraz-modelowanie-ols---przykład-z-obliczeniami" id="toc-dodatek-a.1-obliczanie-kowariancji-korelacji-pearsona-i-spearmana-oraz-modelowanie-ols---przykład-z-obliczeniami" class="nav-link" data-scroll-target="#dodatek-a.1-obliczanie-kowariancji-korelacji-pearsona-i-spearmana-oraz-modelowanie-ols---przykład-z-obliczeniami"><span class="header-section-number">16.12</span> Dodatek A.1: Obliczanie Kowariancji, Korelacji Pearsona i Spearmana, oraz modelowanie OLS - przykład z obliczeniami</a>
@@ -2472,141 +2472,67 @@ Formalne wyprowadzenie estymatorów MNK
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Endogeniczność
+Endogeniczność w Regresji
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Pomyśl o endogeniczności jako o “problemie ukrytych zależności” w twojej analizie. To jak próba rozwiązania układanki, gdzie niektóre elementy wpływają na siebie nawzajem w sposób, którego nie możesz bezpośrednio zobaczyć. W języku technicznym endogeniczność występuje, gdy zmienna objaśniająca w modelu regresji jest skorelowana ze składnikiem losowym.</p>
-<ol type="1">
-<li>Błąd Pominiętej Zmiennej (OVB)</li>
-</ol>
-<p>Wyobraź sobie, że próbujesz zrozumieć, dlaczego niektóre rośliny rosną wyżej niż inne, i mierzysz tylko ilość wody, którą otrzymują. Ale zapomniałeś o świetle słonecznym, które wpływa zarówno na to, ile wody roślina potrzebuje, JAK I na to, jak wysoko urośnie!</p>
-<p><strong>Przykład z Życia: Edukacja i Dochód</strong></p>
-<ul>
-<li>Co widzimy: Więcej edukacji → Wyższy dochód</li>
-<li>Co możemy przeoczyć: Naturalny talent/zdolności
-<ul>
-<li>Wpływa na to, jak długo ludzie się uczą</li>
-<li>Wpływa na to, ile mogą zarabiać</li>
-</ul></li>
-<li>Rezultat: Możemy przeszacować wpływ edukacji</li>
-</ul>
-<p><strong>Matematyka za tym stojąca</strong>:</p>
-<ul>
-<li>Prawdziwy obraz: <span class="math inline">y_i = \beta_0 + \beta_1x_i + \beta_2z_i + \epsilon_i</span></li>
-<li>Co faktycznie szacujemy: <span class="math inline">y_i = \beta_0 + \beta_1x_i + u_i</span></li>
-<li>Pomyśl o tym jak o przepisie: Jeśli zapomnisz ważnego składnika (z), twoje końcowe danie (y) nie wyjdzie zgodnie z oczekiwaniami!</li>
-</ul>
-<ol start="2" type="1">
-<li>Symultaniczność (Odwrotna Przyczynowość)</li>
-</ol>
-<p>Pamiętasz problem jajka i kury? Czasami dwie rzeczy wpływają na siebie jednocześnie. Oto kilka przykładów, które możesz napotkać:</p>
-<p><strong>a) Zagadka Godzin Nauki</strong></p>
-<ul>
-<li>Czy lepsze oceny prowadzą do dłuższej nauki?</li>
-<li>Czy dłuższa nauka prowadzi do lepszych ocen?</li>
-<li>W rzeczywistości… obie odpowiedzi! Wzajemnie na siebie wpływają</li>
-</ul>
-<p><strong>b) Efekt Mediów Społecznościowych</strong></p>
-<ul>
-<li>Więcej obserwujących → Więcej postów</li>
-<li>Więcej postów → Więcej obserwujących</li>
-<li>To ciągły cykl!</li>
-</ul>
-<p><strong>c) Cykl Ćwiczenia-Energia</strong></p>
-<ul>
-<li>Więcej ćwiczeń → Więcej energii</li>
-<li>Więcej energii → Większa chęć do ćwiczeń</li>
-<li>Pomyśl o tym jak o dwóch przyjaciołach pchających się nawzajem na huśtawkach!</li>
-</ul>
-<ol start="3" type="1">
-<li>Błąd Pomiaru</li>
-</ol>
-<p>Wyobraź sobie próbę zmierzenia swojego wzrostu stojąc na nierównej podłodze - twoje pomiary nie będą całkiem dokładne! Oto jak to się przejawia w rzeczywistości:</p>
-<p><strong>Przykłady, Które Rozpoznasz:</strong></p>
-<ul>
-<li>Samodzielnie Raportowany Czas Nauki
-<ul>
-<li>“Uczę się 5 godzin dziennie” może w rzeczywistości oznaczać 3-4 godziny</li>
-<li>Utrudnia poznanie prawdziwego wpływu na oceny</li>
-</ul></li>
-<li>Śledzenie w Aplikacji Fitness
-<ul>
-<li>Aplikacja pokazuje, że spaliłeś 500 kalorii</li>
-<li>W rzeczywistości może to być 400 lub 600</li>
-<li>Wpływa na analizę wpływu ćwiczeń</li>
-</ul></li>
-</ul>
-<section id="jak-wykryć-te-problemy-we-własnych-badaniach" class="level4" data-number="16.6.22.1">
-<h4 data-number="16.6.22.1" class="anchored" data-anchor-id="jak-wykryć-te-problemy-we-własnych-badaniach"><span class="header-section-number">16.6.22.1</span> Jak Wykryć Te Problemy we Własnych Badaniach?</h4>
-<p><strong>1. W przypadku Pominiętych Zmiennych, Zapytaj:</strong></p>
-<ul>
-<li>Co jeszcze mogłoby wpływać na obie zmienne?</li>
-<li>Czy nie pomijam oczywistych czynników?</li>
-<li>Co powiedzieliby rodzice/przyjaciele, że ma na to wpływ?</li>
-</ul>
-<p><strong>2. W przypadku Symultaniczności, Rozważ:</strong></p>
-<ul>
-<li>Czy A może powodować B, czy B może powodować A?</li>
-<li>Czy mogą na siebie wpływać?</li>
-<li>Co wydarzyło się najpierw? (jeśli można to określić)</li>
-</ul>
-<p><strong>3. W przypadku Błędu Pomiaru, Pomyśl:</strong></p>
-<ul>
-<li>Jak dokładne są moje pomiary?</li>
-<li>Czy ludzie prawdopodobnie podają prawdziwe informacje?</li>
-<li>Co może powodować problemy z pomiarem?</li>
-</ul>
-<p><strong>Proste Rozwiązania</strong></p>
-<p><strong>1. Dla Pominiętych Zmiennych:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zamiast:</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co"># simple_model &lt;- lm(grades ~ study_hours)</span></span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Spróbuj:</span></span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="co"># better_model &lt;- lm(grades ~ study_hours + sleep_hours + stress_level + prior_knowledge)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>2. Dla Symultaniczności:</strong></p>
-<ul>
-<li>Szukaj “zewnętrznych” czynników, które wpływają tylko na jedną zmienną</li>
-<li>Rozważ opóźnienia czasowe</li>
-<li>Wykorzystuj eksperymenty naturalne, gdy to możliwe</li>
-</ul>
-<p><strong>3. Dla Błędu Pomiaru:</strong></p>
-<ul>
-<li>Wykorzystuj wielokrotne pomiary</li>
-<li>Znajdź bardziej wiarygodne źródła danych</li>
-<li>Uznaj niepewność w swoich wnioskach</li>
-</ul>
+<p>Endogeniczność to kluczowe pojęcie w analizie statystycznej, występujące gdy zmienna objaśniająca w modelu regresji jest skorelowana ze składnikiem resztowym. Stwarza to wyzwania w dokładnym zrozumieniu związków przyczynowo-skutkowych w badaniach. Przyjrzyjmy się trzem głównym typom endogeniczności i ich wpływowi na wyniki badań.</p>
+<section id="obciążenie-zmiennej-pominiętej-ovb" class="level3" data-number="16.6.23">
+<h3 data-number="16.6.23" class="anchored" data-anchor-id="obciążenie-zmiennej-pominiętej-ovb"><span class="header-section-number">16.6.23</span> 1. Obciążenie Zmiennej Pominiętej (OVB)</h3>
+<p>Obciążenie zmiennej pominiętej występuje, gdy ważna zmienna wpływająca zarówno na zmienną zależną, jak i niezależną, zostaje pominięta w analizie. To pominięcie prowadzi do błędnych wniosków o relacji między badanymi zmiennymi.</p>
+<p>Rozważmy badanie związku między wykształceniem a dochodami:</p>
+<p><strong>Przykład: Wykształcenie i Dochody</strong> Obserwowana relacja pokazuje, że wyższe wykształcenie koreluje z wyższymi dochodami. Jednak naturalne zdolności jednostki wpływają zarówno na poziom wykształcenia, jak i na potencjał zarobkowy. Bez uwzględnienia zdolności możemy przeszacować bezpośredni wpływ edukacji na dochody.</p>
+<p>Reprezentacja statystyczna pokazuje, dlaczego to jest istotne:</p>
+<p><span class="math inline">y_i = \beta_0 + \beta_1x_i + \beta_2z_i + \epsilon_i</span> (Model pełny)</p>
+<p><span class="math inline">y_i = \beta_0 + \beta_1x_i + u_i</span> (Model niepełny)</p>
+<p>Gdy pomijamy istotną zmienną, nasze oszacowania pozostałych relacji stają się obciążone i niewiarygodne.</p>
 </section>
-<section id="kluczowe-wnioski-3" class="level4" data-number="16.6.22.2">
-<h4 data-number="16.6.22.2" class="anchored" data-anchor-id="kluczowe-wnioski-3"><span class="header-section-number">16.6.22.2</span> Kluczowe Wnioski</h4>
+<section id="jednoczesność" class="level3" data-number="16.6.24">
+<h3 data-number="16.6.24" class="anchored" data-anchor-id="jednoczesność"><span class="header-section-number">16.6.24</span> 2. Jednoczesność</h3>
+<p>Jednoczesność występuje, gdy dwie zmienne wzajemnie na siebie wpływają, co utrudnia określenie kierunku przyczynowości. Tworzy to pętlę sprzężenia zwrotnego komplikującą analizę statystyczną.</p>
+<p><strong>Typowe Przykłady Jednoczesności:</strong></p>
+<p>Wyniki w nauce i nawyki uczenia się stanowią wyraźny przypadek jednoczesności. Wyniki akademickie wpływają na ilość czasu, który studenci poświęcają na naukę, podczas gdy czas nauki wpływa na wyniki akademickie. Ta dwukierunkowa relacja utrudnia pomiar izolowanego wpływu każdej zmiennej.</p>
+<p>Dynamika rynkowa dostarcza kolejnego przykładu. Ceny wpływają na popyt, podczas gdy popyt wpływa na ceny. Ta równoczesna relacja wymaga specjalnych podejść analitycznych.</p>
+</section>
+<section id="błąd-pomiaru" class="level3" data-number="16.6.25">
+<h3 data-number="16.6.25" class="anchored" data-anchor-id="błąd-pomiaru"><span class="header-section-number">16.6.25</span> 3. Błąd Pomiaru</h3>
+<p>Błąd pomiaru występuje, gdy nie możemy dokładnie zmierzyć naszych zmiennych. Ta niedokładność może znacząco wpłynąć na naszą analizę i wnioski.</p>
+<p><strong>Typowe Źródła Błędu Pomiaru:</strong></p>
+<p>Dane samodzielnie raportowane stanowią znaczące wyzwanie. Gdy uczestnicy raportują własne zachowania lub cechy, na przykład czas nauki, zgłaszane wartości często różnią się od rzeczywistych. Ta rozbieżność wpływa na naszą zdolność do pomiaru prawdziwych relacji.</p>
+<p>Ograniczenia techniczne również przyczyniają się do błędu pomiaru poprzez niedokładne narzędzia pomiarowe, niespójne warunki pomiaru oraz błędy zapisu lub wprowadzania danych.</p>
+</section>
+<section id="rozwiązywanie-problemu-endogeniczności-w-badaniach" class="level3" data-number="16.6.26">
+<h3 data-number="16.6.26" class="anchored" data-anchor-id="rozwiązywanie-problemu-endogeniczności-w-badaniach"><span class="header-section-number">16.6.26</span> Rozwiązywanie Problemu Endogeniczności w Badaniach</h3>
+<section id="strategie-identyfikacji" class="level4" data-number="16.6.26.1">
+<h4 data-number="16.6.26.1" class="anchored" data-anchor-id="strategie-identyfikacji"><span class="header-section-number">16.6.26.1</span> Strategie Identyfikacji</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Przykład kontrolowania zmiennych pominiętych</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>model_prosty <span class="ot">&lt;-</span> <span class="fu">lm</span>(dochod <span class="sc">~</span> wyksztalcenie, <span class="at">data =</span> df)</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>model_pelny <span class="ot">&lt;-</span> <span class="fu">lm</span>(dochod <span class="sc">~</span> wyksztalcenie <span class="sc">+</span> zdolnosci <span class="sc">+</span> doswiadczenie <span class="sc">+</span> region, <span class="at">data =</span> df)</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Porównanie współczynników</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_prosty)</span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_pelny)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ol type="1">
-<li><p><strong>Rzeczywistość Jest Złożona</strong></p>
-<ul>
-<li>Większość relacji nie jest prostym A → B</li>
-<li>Szukaj ukrytych czynników</li>
-<li>Rozważ dwukierunkowe zależności</li>
-</ul></li>
-<li><p><strong>Zawsze Pytaj</strong></p>
-<ul>
-<li>“Co pomijam?”</li>
-<li>“Czy te pominięte zmienne mogą na siebie wpływać?”</li>
-<li>“Jak dobrze mierzę te zmienne?”</li>
-</ul></li>
-<li><p><strong>Podczas Pisania Prac</strong></p>
-<ul>
-<li>Omów potencjalną endogeniczność</li>
-<li>Wyjaśnij, jak się do niej odniosłeś</li>
-<li>Bądź szczery odnośnie ograniczeń</li>
-</ul></li>
+<li><p>Włączenie Dodatkowych Zmiennych: Zbieranie danych o potencjalnie ważnych pominiętych zmiennych i uwzględnianie odpowiednich zmiennych kontrolnych w analizie. Na przykład, uwzględnienie miar zdolności przy badaniu wpływu edukacji na dochody.</p></li>
+<li><p>Wykorzystanie Danych Panelowych: Zbieranie danych w wielu okresach czasu w celu kontrolowania nieobserwowanych stałych charakterystyk i analizy zmian w czasie.</p></li>
+<li><p>Zmienne Instrumentalne: Znalezienie zmiennych, które wpływają na zmienną niezależną, ale nie na zależną, aby wyizolować badaną relację.</p></li>
 </ol>
-<p><strong>Zalecana Literatura</strong></p>
+</section>
+<section id="poprawa-pomiaru" class="level4" data-number="16.6.26.2">
+<h4 data-number="16.6.26.2" class="anchored" data-anchor-id="poprawa-pomiaru"><span class="header-section-number">16.6.26.2</span> Poprawa Pomiaru</h4>
 <ol type="1">
-<li>“Mastering Metrics” autorstwa Angrist &amp; Pischke</li>
-<li>“Naked Statistics” autorstwa Charles Wheelan</li>
+<li><p>Wielokrotne Pomiary: Wykonywanie kilku pomiarów kluczowych zmiennych, używanie uśredniania do redukcji błędu losowego i porównywanie różnych metod pomiaru.</p></li>
+<li><p>Lepsza Metoda Zbierania Danych: Używanie zwalidowanych instrumentów pomiarowych, wdrażanie procedur kontroli jakości i dokumentowanie potencjalnych źródeł błędu.</p></li>
 </ol>
-<p>Pamiętaj: W rzeczywistym świecie relacje są zwykle bardziej złożone, niż się początkowo wydaje. Gdy znajdziesz połączenie między A i B, zawsze zadaj sobie pytanie, co jeszcze może może wpływać na zmienne A i B!</p>
+</section>
+</section>
+<section id="najlepsze-praktyki-dla-badaczy" class="level3" data-number="16.6.27">
+<h3 data-number="16.6.27" class="anchored" data-anchor-id="najlepsze-praktyki-dla-badaczy"><span class="header-section-number">16.6.27</span> Najlepsze Praktyki dla Badaczy</h3>
+<p>Projekt badania fundamentalnie kształtuje możliwość rozwiązania problemu endogeniczności. Należy planować potencjalne problemy endogeniczności przed zbieraniem danych, uwzględniać miary potencjalnie ważnych zmiennych kontrolnych i rozważać wykorzystanie wielu podejść pomiarowych.</p>
+<p>Analiza powinna obejmować testowanie endogeniczności gdy to możliwe, stosowanie odpowiednich metod statystycznych dla konkretnej sytuacji i dokumentowanie założeń oraz ograniczeń.</p>
+<p>Raportowanie musi jasno opisywać potencjalne problemy endogeniczności, wyjaśniać jak zostały one rozwiązane i omawiać implikacje dla wniosków.</p>
 </section>
 </div>
 </div>
@@ -3215,8 +3141,8 @@ Attaching package: 'kableExtra'</code></pre>
 </section>
 <section id="podsumowanie-1" class="level2" data-number="16.11">
 <h2 data-number="16.11" class="anchored" data-anchor-id="podsumowanie-1"><span class="header-section-number">16.11</span> Podsumowanie</h2>
-<section id="kluczowe-wnioski-4" class="level3" data-number="16.11.1">
-<h3 data-number="16.11.1" class="anchored" data-anchor-id="kluczowe-wnioski-4"><span class="header-section-number">16.11.1</span> Kluczowe Wnioski</h3>
+<section id="kluczowe-wnioski-3" class="level3" data-number="16.11.1">
+<h3 data-number="16.11.1" class="anchored" data-anchor-id="kluczowe-wnioski-3"><span class="header-section-number">16.11.1</span> Kluczowe Wnioski</h3>
 <ol type="1">
 <li>Zawsze zaczynaj od eksploracyjnej analizy danych</li>
 <li>Sprawdzaj założenia przed interpretacją wyników</li>
@@ -3282,7 +3208,7 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </ul></li>
 <li>Oblicz odległości pionowe (reszty) od każdego obserwowanego punktu do tej linii
 <ul>
-<li>Te reszty <span class="math inline">\hat{\epsilon}_i = Y_i - \hat{Y}_i</span> reprezentują nasze błędy predykcji</li>
+<li>Te reszty <span class="math inline">\hat{\epsilon}_i = e_i = Y_i - \hat{Y}_i</span> reprezentują nasze błędy predykcji</li>
 <li>Dodatnia reszta oznacza, że nasza linia niedoszacowuje prawdziwej wartości</li>
 <li>Ujemna reszta oznacza, że nasza linia przeszacowuje prawdziwą wartość</li>
 </ul></li>
@@ -3404,8 +3330,8 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <p><span class="math display"> R^2 = \frac{SSR}{SST} = \frac{SSR}{SSR + SSE} = 1 - \frac{SSE}{SST} </span></p>
 <p>Aby zinterpretować <span class="math inline">R^2</span>:</p>
 <ul>
-<li><span class="math inline">R^2</span> równe 0,75 wskazuje, że model wyjaśnia 75% wariancji wyników egzaminów</li>
-<li><span class="math inline">R^2</span> równe 0,20 sugeruje, że godziny nauki odpowiadają za 20% zmienności wyników</li>
+<li><span class="math inline">R^2</span> równe 0,75 wskazuje, że model wyjaśnia 75% wariancji (np. wyników egzaminów)</li>
+<li><span class="math inline">R^2</span> równe 0,20 sugeruje, że predyktory (np. godziny nauki) odpowiadają za 20% zmienności wyników</li>
 <li><span class="math inline">R^2</span> równe 1,00 reprezentuje doskonałą predykcję (rzadko obserwowane w praktyce)</li>
 <li><span class="math inline">R^2</span> równe 0,00 wskazuje na brak mocy wyjaśniającej</li>
 </ul>
