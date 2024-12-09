@@ -1292,7 +1292,8 @@ Cumulative Var 0.336 0.671</code></pre>
 <h3 data-number="15.3.1" class="anchored" data-anchor-id="regression-as-a-stochastic-model"><span class="header-section-number">15.3.1</span> Regression as a Stochastic Model</h3>
 <p>In mathematical modeling, we encounter two fundamental approaches to describing relationships between variables:</p>
 <ul>
-<li>deterministic models and stochastic models.</li>
+<li>deterministic models,</li>
+<li>stochastic models.</li>
 </ul>
 <section id="deterministic-vs.-stochastic-models" class="level4" data-number="15.3.1.1">
 <h4 data-number="15.3.1.1" class="anchored" data-anchor-id="deterministic-vs.-stochastic-models"><span class="header-section-number">15.3.1.1</span> Deterministic vs.&nbsp;Stochastic Models</h4>
@@ -3270,8 +3271,30 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <div class="callout-body-container callout-body">
 <p>Regression analysis is a fundamental statistical method that examines and models the relationship between variables to understand how changes in one or more independent variables influence a dependent variable.</p>
 <p>At its heart, regression analysis helps us answer questions about cause and effect, prediction, and forecasting. For example, a business might use regression analysis to understand how advertising spending affects sales, or how employee training hours impact productivity.</p>
-<section id="what-is-simple-linear-regression" class="level3" data-number="15.10.2">
-<h3 data-number="15.10.2" class="anchored" data-anchor-id="what-is-simple-linear-regression"><span class="header-section-number">15.10.2</span> What is Simple Linear Regression?</h3>
+<section id="regression-as-a-stochastic-model-1" class="level3" data-number="15.10.2">
+<h3 data-number="15.10.2" class="anchored" data-anchor-id="regression-as-a-stochastic-model-1"><span class="header-section-number">15.10.2</span> Regression as a Stochastic Model</h3>
+<p>In mathematical modelling, we encounter two fundamental approaches to describing relationships between variables:</p>
+<ul>
+<li>deterministic models,</li>
+<li>stochastic models.</li>
+</ul>
+<section id="deterministic-vs.-stochastic-models-1" class="level4" data-number="15.10.2.1">
+<h4 data-number="15.10.2.1" class="anchored" data-anchor-id="deterministic-vs.-stochastic-models-1"><span class="header-section-number">15.10.2.1</span> Deterministic vs.&nbsp;Stochastic Models</h4>
+<p>A deterministic model assumes a precise, fixed relationship between inputs and outputs. In such models, if we know the inputs, we can calculate the exact output with certainty. Consider the classic physics equation for distance:</p>
+<p><span class="math display">\text{Distance} = \text{Speed} × \text{Time}</span></p>
+<p>Given specific values for speed and time, this equation will always yield the same distance. There is no room for variation in the outcome.</p>
+<p>In contrast, regression analysis embraces the presence of natural variation in data. The fundamental structure of a regression model is:</p>
+<p><span class="math display">Y = f(X) + \epsilon</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">Y</span> represents the outcome we wish to predict</li>
+<li><span class="math inline">f(X)</span> represents the systematic relationship between our predictors (X) and the outcome</li>
+<li><span class="math inline">\epsilon</span> represents the random variation that naturally occurs in real-world data</li>
+</ul>
+</section>
+</section>
+<section id="what-is-simple-linear-regression" class="level3" data-number="15.10.3">
+<h3 data-number="15.10.3" class="anchored" data-anchor-id="what-is-simple-linear-regression"><span class="header-section-number">15.10.3</span> What is Simple Linear Regression?</h3>
 <p>Consider the relationship between <strong>study hours</strong> (predictor) and <strong>exam scores</strong> (outcome/response variable). Simple linear regression creates an optimal straight line through data points to model this relationship. This line serves two purposes: making predictions and quantifying the relationship between variables.</p>
 <p>The mathematical relationship is expressed as:</p>
 <p><span class="math display"> Y_i = \beta_0 + \beta_1X_i + \epsilon_i </span></p>
@@ -3286,8 +3309,8 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <p>Our goal is to find estimates <span class="math inline">\hat{\beta}_0</span> and <span class="math inline">\hat{\beta}_1</span> that best approximate the true parameters <span class="math inline">\beta_0</span> and <span class="math inline">\beta_1</span>. The fitted regression line is then expressed as:</p>
 <p><span class="math display"> \hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1X_i </span></p>
 </section>
-<section id="the-ordinary-least-squares-ols-method" class="level3" data-number="15.10.3">
-<h3 data-number="15.10.3" class="anchored" data-anchor-id="the-ordinary-least-squares-ols-method"><span class="header-section-number">15.10.3</span> The Ordinary Least Squares (OLS) Method</h3>
+<section id="the-ordinary-least-squares-ols-method" class="level3" data-number="15.10.4">
+<h3 data-number="15.10.4" class="anchored" data-anchor-id="the-ordinary-least-squares-ols-method"><span class="header-section-number">15.10.4</span> The Ordinary Least Squares (OLS) Method</h3>
 <p>The “Ordinary Least Squares” method determines optimal values for <span class="math inline">\hat{\beta}_0</span> and <span class="math inline">\hat{\beta}_1</span> through a methodical process. While modern statistical software performs these calculations automatically, understanding the underlying process is crucial:</p>
 <ol type="1">
 <li><p>Begin with an initial estimate for the regression line</p>
@@ -3341,8 +3364,8 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </div>
 </div>
 </section>
-<section id="parameter-estimation" class="level3" data-number="15.10.4">
-<h3 data-number="15.10.4" class="anchored" data-anchor-id="parameter-estimation"><span class="header-section-number">15.10.4</span> Parameter Estimation</h3>
+<section id="parameter-estimation" class="level3" data-number="15.10.5">
+<h3 data-number="15.10.5" class="anchored" data-anchor-id="parameter-estimation"><span class="header-section-number">15.10.5</span> Parameter Estimation</h3>
 <p>The formulas for estimating the parameters employ fundamental statistical measures:</p>
 <p><span class="math display"> \hat{\beta}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2} </span></p>
 <p>This formula comprises two essential statistical concepts:</p>
@@ -3355,49 +3378,49 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 <p><span class="math display"> \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X} </span></p>
 <p>This ensures the regression line intersects the point of means (<span class="math inline">\bar{X}</span>, <span class="math inline">\bar{Y}</span>).</p>
 </section>
-<section id="understanding-variation-in-regression-analysis" class="level3" data-number="15.10.5">
-<h3 data-number="15.10.5" class="anchored" data-anchor-id="understanding-variation-in-regression-analysis"><span class="header-section-number">15.10.5</span> Understanding Variation in Regression Analysis</h3>
+<section id="understanding-variation-in-regression-analysis" class="level3" data-number="15.10.6">
+<h3 data-number="15.10.6" class="anchored" data-anchor-id="understanding-variation-in-regression-analysis"><span class="header-section-number">15.10.6</span> Understanding Variation in Regression Analysis</h3>
 <p>In regression analysis, we decompose the variation in our data into distinct components to understand how well our model explains the outcome variable. Let’s examine each component of variation in detail.</p>
-<section id="overview-of-variation-components" class="level4" data-number="15.10.5.1">
-<h4 data-number="15.10.5.1" class="anchored" data-anchor-id="overview-of-variation-components"><span class="header-section-number">15.10.5.1</span> Overview of Variation Components</h4>
+<section id="overview-of-variation-components" class="level4" data-number="15.10.6.1">
+<h4 data-number="15.10.6.1" class="anchored" data-anchor-id="overview-of-variation-components"><span class="header-section-number">15.10.6.1</span> Overview of Variation Components</h4>
 <p>The total Sum of Squares (SST) represents all variation present in our outcome variable. The Regression Sum of Squares (SSR) captures the variation explained by our model. The Error Sum of Squares (SSE) represents the remaining unexplained variation. Let’s examine each in detail.</p>
 </section>
-<section id="total-sum-of-squares-sst" class="level4" data-number="15.10.5.2">
-<h4 data-number="15.10.5.2" class="anchored" data-anchor-id="total-sum-of-squares-sst"><span class="header-section-number">15.10.5.2</span> Total Sum of Squares (SST)</h4>
+<section id="total-sum-of-squares-sst" class="level4" data-number="15.10.6.2">
+<h4 data-number="15.10.6.2" class="anchored" data-anchor-id="total-sum-of-squares-sst"><span class="header-section-number">15.10.6.2</span> Total Sum of Squares (SST)</h4>
 <p>Think of total variation (SST) as capturing the full range of differences in our data before we try to explain anything. It measures how much each observation differs from the overall average, giving us a baseline for how much variation exists to be explained.</p>
 <p>SST measures the total variation in our outcome variable by calculating how much each observation deviates from the overall mean:</p>
 <p><span class="math display"> SST = \sum(y_i - \bar{y})^2 </span></p>
 <p>In this formula, <span class="math inline">y_i</span> represents each individual observation, and <span class="math inline">\bar{y}</span> represents the mean of all observations. The squared differences capture the total spread of our data around its average value.</p>
 <p>To make this concrete, imagine measuring the heights of everyone in a city. Some people are much taller than average, others shorter, and SST captures these differences. Each squared term <span class="math inline">(y_i - \bar{y})^2</span> represents how much one person’s height differs from the city’s average, and we sum up all these differences.</p>
 </section>
-<section id="regression-sum-of-squares-ssr" class="level4" data-number="15.10.5.3">
-<h4 data-number="15.10.5.3" class="anchored" data-anchor-id="regression-sum-of-squares-ssr"><span class="header-section-number">15.10.5.3</span> Regression Sum of Squares (SSR)</h4>
+<section id="regression-sum-of-squares-ssr" class="level4" data-number="15.10.6.3">
+<h4 data-number="15.10.6.3" class="anchored" data-anchor-id="regression-sum-of-squares-ssr"><span class="header-section-number">15.10.6.3</span> Regression Sum of Squares (SSR)</h4>
 <p>Once we introduce explanatory variables (like genetics, nutrition, or age), we can predict heights more accurately. The explained variation (SSR) measures how much better our predictions become using these variables.</p>
 <p>SSR quantifies how much variation our model explains through its predictor variables:</p>
 <p><span class="math display"> SSR = \sum(\hat{y}_i - \bar{y})^2 </span></p>
 <p>Here, <span class="math inline">\hat{y}_i</span> represents our model’s predicted values. This formula measures how far our predictions deviate from the mean, representing the variation captured by our model.</p>
 </section>
-<section id="error-sum-of-squares-sse" class="level4" data-number="15.10.5.4">
-<h4 data-number="15.10.5.4" class="anchored" data-anchor-id="error-sum-of-squares-sse"><span class="header-section-number">15.10.5.4</span> Error Sum of Squares (SSE)</h4>
+<section id="error-sum-of-squares-sse" class="level4" data-number="15.10.6.4">
+<h4 data-number="15.10.6.4" class="anchored" data-anchor-id="error-sum-of-squares-sse"><span class="header-section-number">15.10.6.4</span> Error Sum of Squares (SSE)</h4>
 <p>SSE measures the variation that remains unexplained by our model:</p>
 <p><span class="math display"> SSE = \sum(y_i - \hat{y}_i)^2 </span></p>
 <p>This formula calculates the differences between actual values (<span class="math inline">y_i</span>) and predicted values (<span class="math inline">\hat{y}_i</span>), showing us how much variation our model failed to explain.</p>
 <p>In our height example, these might be variations due to factors we didn’t or couldn’t measure, like specific environmental conditions or measurement errors.</p>
 </section>
-<section id="the-fundamental-relationship" class="level4" data-number="15.10.5.5">
-<h4 data-number="15.10.5.5" class="anchored" data-anchor-id="the-fundamental-relationship"><span class="header-section-number">15.10.5.5</span> The Fundamental Relationship</h4>
+<section id="the-fundamental-relationship" class="level4" data-number="15.10.6.5">
+<h4 data-number="15.10.6.5" class="anchored" data-anchor-id="the-fundamental-relationship"><span class="header-section-number">15.10.6.5</span> The Fundamental Relationship</h4>
 <p>These three components are related through a key equation:</p>
 <p><span class="math display"> SST = SSR + SSE </span></p>
 <p>This equation shows that the total variation (SST) equals the sum of explained variation (SSR) and unexplained variation (SSE). This relationship forms the basis for measuring model performance.</p>
 </section>
-<section id="coefficient-of-determination-r²" class="level4" data-number="15.10.5.6">
-<h4 data-number="15.10.5.6" class="anchored" data-anchor-id="coefficient-of-determination-r²"><span class="header-section-number">15.10.5.6</span> Coefficient of Determination (R²)</h4>
+<section id="coefficient-of-determination-r²" class="level4" data-number="15.10.6.6">
+<h4 data-number="15.10.6.6" class="anchored" data-anchor-id="coefficient-of-determination-r²"><span class="header-section-number">15.10.6.6</span> Coefficient of Determination (R²)</h4>
 <p>The R² statistic, derived from these components, tells us the proportion of variation our model explains:</p>
 <p><span class="math display"> R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST} </span></p>
 <p>When R² equals 0.75, it indicates our model explains 75% of the variation in the outcome variable. The remaining 25% represents unexplained variation.</p>
 </section>
-<section id="important-considerations" class="level4" data-number="15.10.5.7">
-<h4 data-number="15.10.5.7" class="anchored" data-anchor-id="important-considerations"><span class="header-section-number">15.10.5.7</span> Important Considerations</h4>
+<section id="important-considerations" class="level4" data-number="15.10.6.7">
+<h4 data-number="15.10.6.7" class="anchored" data-anchor-id="important-considerations"><span class="header-section-number">15.10.6.7</span> Important Considerations</h4>
 <p>Understanding these components helps us:</p>
 <ol type="1">
 <li>Evaluate model performance through the proportion of explained variation</li>
@@ -3416,8 +3439,8 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </div>
 </section>
 </section>
-<section id="the-coefficient-of-determination-r2" class="level3" data-number="15.10.6">
-<h3 data-number="15.10.6" class="anchored" data-anchor-id="the-coefficient-of-determination-r2"><span class="header-section-number">15.10.6</span> The Coefficient of Determination (<span class="math inline">R^2</span>)</h3>
+<section id="the-coefficient-of-determination-r2" class="level3" data-number="15.10.7">
+<h3 data-number="15.10.7" class="anchored" data-anchor-id="the-coefficient-of-determination-r2"><span class="header-section-number">15.10.7</span> The Coefficient of Determination (<span class="math inline">R^2</span>)</h3>
 <p><span class="math inline">R^2</span> serves as a measure of model fit, representing the proportion of variance explained by our regression:</p>
 <p><span class="math display"> R^2 = \frac{SSR}{SST} = \frac{SSR}{SSR + SSE} = 1 - \frac{SSE}{SST} </span></p>
 <p>To interpret <span class="math inline">R^2</span>:</p>
@@ -3429,8 +3452,8 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </ul>
 <p>Note: A lower <span class="math inline">R^2</span> value does not necessarily indicate an inferior model - it may simply reflect the complexity of the relationship being studied.</p>
 </section>
-<section id="key-takeaway" class="level3" data-number="15.10.7">
-<h3 data-number="15.10.7" class="anchored" data-anchor-id="key-takeaway"><span class="header-section-number">15.10.7</span> Key Takeaway</h3>
+<section id="key-takeaway" class="level3" data-number="15.10.8">
+<h3 data-number="15.10.8" class="anchored" data-anchor-id="key-takeaway"><span class="header-section-number">15.10.8</span> Key Takeaway</h3>
 <p>Linear regression establishes relationships between variables by identifying the optimal linear fit through data points. This optimization occurs through the minimization of squared residuals. The coefficient of determination (<span class="math inline">R^2</span>) then quantifies the model’s explanatory power by comparing explained variation to total variation in our data.</p>
 </section>
 </div>
