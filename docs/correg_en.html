@@ -347,9 +347,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#introduction-to-regression-analysis" id="toc-introduction-to-regression-analysis" class="nav-link" data-scroll-target="#introduction-to-regression-analysis"><span class="header-section-number">15.3</span> Introduction to Regression Analysis</a>
   <ul class="collapse">
-  <li><a href="#why-study-regression" id="toc-why-study-regression" class="nav-link" data-scroll-target="#why-study-regression"><span class="header-section-number">15.3.1</span> Why Study Regression?</a></li>
-  <li><a href="#basic-concepts-and-terminology" id="toc-basic-concepts-and-terminology" class="nav-link" data-scroll-target="#basic-concepts-and-terminology"><span class="header-section-number">15.3.7</span> Basic Concepts and Terminology</a></li>
-  <li><a href="#the-core-idea" id="toc-the-core-idea" class="nav-link" data-scroll-target="#the-core-idea"><span class="header-section-number">15.3.8</span> The Core Idea</a></li>
+  <li><a href="#regression-as-a-stochastic-model" id="toc-regression-as-a-stochastic-model" class="nav-link" data-scroll-target="#regression-as-a-stochastic-model"><span class="header-section-number">15.3.1</span> Regression as a Stochastic Model</a></li>
+  <li><a href="#why-study-regression" id="toc-why-study-regression" class="nav-link" data-scroll-target="#why-study-regression"><span class="header-section-number">15.3.2</span> Why Study Regression?</a></li>
+  <li><a href="#basic-concepts-and-terminology" id="toc-basic-concepts-and-terminology" class="nav-link" data-scroll-target="#basic-concepts-and-terminology"><span class="header-section-number">15.3.8</span> Basic Concepts and Terminology</a></li>
+  <li><a href="#the-core-idea" id="toc-the-core-idea" class="nav-link" data-scroll-target="#the-core-idea"><span class="header-section-number">15.3.9</span> The Core Idea</a></li>
   </ul></li>
   <li><a href="#the-linear-regression-model" id="toc-the-linear-regression-model" class="nav-link" data-scroll-target="#the-linear-regression-model"><span class="header-section-number">15.4</span> The Linear Regression Model</a>
   <ul class="collapse">
@@ -1277,8 +1278,87 @@ Cumulative Var 0.336 0.671</code></pre>
 </section>
 <section id="introduction-to-regression-analysis" class="level2" data-number="15.3">
 <h2 data-number="15.3" class="anchored" data-anchor-id="introduction-to-regression-analysis"><span class="header-section-number">15.3</span> Introduction to Regression Analysis</h2>
-<section id="why-study-regression" class="level3" data-number="15.3.1">
-<h3 data-number="15.3.1" class="anchored" data-anchor-id="why-study-regression"><span class="header-section-number">15.3.1</span> Why Study Regression?</h3>
+<p>Regression analysis is a fundamental statistical method that examines and models the relationship between variables to understand how changes in one or more independent variables influence a dependent variable.</p>
+<p><strong>The Core Concept</strong></p>
+<p>At its heart, regression analysis helps us answer questions about cause and effect, prediction, and forecasting. For example, a business might use regression analysis to understand how advertising spending affects sales, or how employee training hours impact productivity.</p>
+<p><strong>How Regression Analysis Works</strong></p>
+<p>The process begins by collecting data about the variables of interest. The analysis then fits a mathematical model—typically a line or curve—that best represents the relationship between these variables. This model allows us to:</p>
+<ul>
+<li>Identify the strength and direction of relationships between variables</li>
+<li>Make predictions about future outcomes</li>
+<li>Understand which factors have the most significant impact on our results</li>
+</ul>
+<section id="regression-as-a-stochastic-model" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="regression-as-a-stochastic-model"><span class="header-section-number">15.3.1</span> Regression as a Stochastic Model</h3>
+<p>In mathematical modeling, we encounter two fundamental approaches to describing relationships between variables:</p>
+<ul>
+<li>deterministic models and stochastic models.</li>
+</ul>
+<section id="deterministic-vs.-stochastic-models" class="level4" data-number="15.3.1.1">
+<h4 data-number="15.3.1.1" class="anchored" data-anchor-id="deterministic-vs.-stochastic-models"><span class="header-section-number">15.3.1.1</span> Deterministic vs.&nbsp;Stochastic Models</h4>
+<p>A deterministic model assumes a precise, fixed relationship between inputs and outputs. In such models, if we know the inputs, we can calculate the exact output with certainty. Consider the classic physics equation for distance:</p>
+<p><span class="math display">\text{Distance} = \text{Speed} × \text{Time}</span></p>
+<p>Given specific values for speed and time, this equation will always yield the same distance. There is no room for variation in the outcome.</p>
+<p>In contrast, regression analysis embraces the presence of natural variation in data. The fundamental structure of a regression model is:</p>
+<p><span class="math display">Y = f(X) + \epsilon</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">Y</span> represents the outcome we wish to predict</li>
+<li><span class="math inline">f(X)</span> represents the systematic relationship between our predictors (X) and the outcome</li>
+<li><span class="math inline">\epsilon</span> represents the random variation that naturally occurs in real-world data</li>
+</ul>
+</section>
+<section id="the-nature-of-stochastic-models-in-regression" class="level4" data-number="15.3.1.2">
+<h4 data-number="15.3.1.2" class="anchored" data-anchor-id="the-nature-of-stochastic-models-in-regression"><span class="header-section-number">15.3.1.2</span> The Nature of Stochastic Models in Regression</h4>
+<p>The inclusion of the error term <span class="math inline">\epsilon</span> acknowledges that real relationships between variables are rarely perfect. For example, when studying how study time affects test scores, many factors contribute to the final outcome:</p>
+<p>The systematic part <span class="math inline">f(X)</span> captures the general trend: more study time tends to lead to higher scores.</p>
+<p>The error term <span class="math inline">\epsilon</span> accounts for all other influences:</p>
+<ul>
+<li>Different learning styles</li>
+<li>Study environment</li>
+<li>Physical and mental state during the test</li>
+<li>Quality of study materials</li>
+</ul>
+</section>
+<section id="mathematical-framework" class="level4" data-number="15.3.1.3">
+<h4 data-number="15.3.1.3" class="anchored" data-anchor-id="mathematical-framework"><span class="header-section-number">15.3.1.3</span> Mathematical Framework</h4>
+<p>In its simplest form, linear regression can be expressed as:</p>
+<p><span class="math display">Y = \beta_0 + \beta_1X + \epsilon</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\beta_0</span> represents the baseline value (when X = 0)</li>
+<li><span class="math inline">\beta_1</span> represents the change in Y for each unit increase in X</li>
+<li><span class="math inline">\epsilon</span> represents the natural variation around this relationship</li>
+</ul>
+</section>
+<section id="practical-implications" class="level4" data-number="15.3.1.4">
+<h4 data-number="15.3.1.4" class="anchored" data-anchor-id="practical-implications"><span class="header-section-number">15.3.1.4</span> Practical Implications</h4>
+<p>Understanding regression as a stochastic model has important practical implications:</p>
+<ol type="1">
+<li><p>Predictions: We recognize that our predictions will have some natural variation around them. Rather than claiming an exact outcome, we acknowledge a range of plausible values.</p></li>
+<li><p>Model Evaluation: We assess models by how well they capture both the general trend and the typical amount of variation in the data.</p></li>
+<li><p>Decision Making: Understanding the natural variation in our predictions helps us make more realistic plans and decisions.</p></li>
+</ol>
+<p><strong>Real-World Applications</strong></p>
+<p>Consider predicting house prices based on square footage. A deterministic model might say: “A 2000 sq ft house will sell for exactly $300,000”</p>
+<p>A regression model instead recognizes that:</p>
+<ul>
+<li>There’s a general relationship between size and price</li>
+<li>But many other factors affect the final price</li>
+<li>Similar houses might sell for somewhat different prices</li>
+<li>Our predictions should reflect this natural variation</li>
+</ul>
+<p><strong>Conclusion</strong></p>
+<p>The stochastic nature of regression analysis provides a more realistic framework for understanding real-world relationships between variables. By explicitly accounting for natural variation, regression analysis helps us:</p>
+<ul>
+<li>Make more realistic predictions</li>
+<li>Better understand the limitations of our models</li>
+<li>Make more informed decisions</li>
+</ul>
+</section>
+</section>
+<section id="why-study-regression" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="why-study-regression"><span class="header-section-number">15.3.2</span> Why Study Regression?</h3>
 <p>Regression analysis is a fundamental statistical tool that helps us understand relationships between variables. Before diving into formulas and technical details, let’s understand what questions regression can help us answer:</p>
 <ul>
 <li>How much does each additional year of education affect someone’s salary?</li>
@@ -1297,16 +1377,16 @@ Understanding Linear Regression (OLS): Quickstart guide
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="the-model-concept" class="level3" data-number="15.3.2">
-<h3 data-number="15.3.2" class="anchored" data-anchor-id="the-model-concept"><span class="header-section-number">15.3.2</span> The Model Concept</h3>
+<section id="the-model-concept" class="level3" data-number="15.3.3">
+<h3 data-number="15.3.3" class="anchored" data-anchor-id="the-model-concept"><span class="header-section-number">15.3.3</span> The Model Concept</h3>
 <p>OLS regression is a statistical model that describes the relationship between variables. Two key assumptions define this model:</p>
 <ol type="1">
 <li>The relationship can be described by a straight line (linearity)</li>
 <li>The errors in our predictions are not systematically related to our x-variable (strict exogeneity)</li>
 </ol>
 </section>
-<section id="example-education-and-wages" class="level3" data-number="15.3.3">
-<h3 data-number="15.3.3" class="anchored" data-anchor-id="example-education-and-wages"><span class="header-section-number">15.3.3</span> Example: Education and Wages</h3>
+<section id="example-education-and-wages" class="level3" data-number="15.3.4">
+<h3 data-number="15.3.4" class="anchored" data-anchor-id="example-education-and-wages"><span class="header-section-number">15.3.4</span> Example: Education and Wages</h3>
 <p>Consider studying the effect of education (x) on wages (y). Let’s say we estimate:</p>
 <p><span class="math display">wages = \beta_0 + \beta_1 \cdot education + \epsilon</span></p>
 <p>The error term <span class="math inline">\epsilon</span> contains all other factors affecting wages. Strict exogeneity is violated if we omit an important variable like “ability” that affects both education and wages. Why? Because more able people tend to get more education AND higher wages, making our estimate of education’s effect biased upward.</p>
@@ -1370,8 +1450,8 @@ Understanding Linear Regression (OLS): Quickstart guide
 </div>
 </div>
 </section>
-<section id="the-optimization-problem-understanding-ols" class="level3" data-number="15.3.4">
-<h3 data-number="15.3.4" class="anchored" data-anchor-id="the-optimization-problem-understanding-ols"><span class="header-section-number">15.3.4</span> The Optimization Problem: Understanding OLS</h3>
+<section id="the-optimization-problem-understanding-ols" class="level3" data-number="15.3.5">
+<h3 data-number="15.3.5" class="anchored" data-anchor-id="the-optimization-problem-understanding-ols"><span class="header-section-number">15.3.5</span> The Optimization Problem: Understanding OLS</h3>
 <p>When we analyze relationships between variables like education and wages, we need a systematic method to find the line that best represents this relationship in our data. Ordinary Least Squares (OLS) provides this method through a clear mathematical approach.</p>
 <p>Consider our plot of education levels and wages. Each point represents actual data - one person’s years of education and their corresponding wage. Our goal is to find a single line that most accurately captures the underlying relationship between these variables.</p>
 <p>For any given observation <span class="math inline">i</span>, we can express this relationship as: <span class="math display">y_i = \beta_0 + \beta_1x_i + \epsilon_i</span></p>
@@ -1392,14 +1472,14 @@ Understanding Linear Regression (OLS): Quickstart guide
 </ul>
 <p>The OLS solution provides us with parameter estimates <span class="math inline">\hat{\beta_0}</span> and <span class="math inline">\hat{\beta_1}</span> that minimize the total squared error, giving us the most accurate linear representation of the relationship between education and wages based on our available data.</p>
 </section>
-<section id="finding-the-best-line" class="level3" data-number="15.3.5">
-<h3 data-number="15.3.5" class="anchored" data-anchor-id="finding-the-best-line"><span class="header-section-number">15.3.5</span> Finding the Best Line</h3>
+<section id="finding-the-best-line" class="level3" data-number="15.3.6">
+<h3 data-number="15.3.6" class="anchored" data-anchor-id="finding-the-best-line"><span class="header-section-number">15.3.6</span> Finding the Best Line</h3>
 <p>The solution to this minimization gives us:</p>
 <p><span class="math display">\hat{\beta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{cov(X, Y)}{var(X)}</span></p>
 <p><span class="math display">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
 </section>
-<section id="key-points-1" class="level3" data-number="15.3.6">
-<h3 data-number="15.3.6" class="anchored" data-anchor-id="key-points-1"><span class="header-section-number">15.3.6</span> Key Points</h3>
+<section id="key-points-1" class="level3" data-number="15.3.7">
+<h3 data-number="15.3.7" class="anchored" data-anchor-id="key-points-1"><span class="header-section-number">15.3.7</span> Key Points</h3>
 <ol type="1">
 <li>OLS finds the line that minimizes squared prediction errors</li>
 <li>This line is “best” in terms of fit, but might not capture true relationships if important variables are omitted</li>
@@ -1409,8 +1489,8 @@ Understanding Linear Regression (OLS): Quickstart guide
 </div>
 </div>
 </section>
-<section id="basic-concepts-and-terminology" class="level3" data-number="15.3.7">
-<h3 data-number="15.3.7" class="anchored" data-anchor-id="basic-concepts-and-terminology"><span class="header-section-number">15.3.7</span> Basic Concepts and Terminology</h3>
+<section id="basic-concepts-and-terminology" class="level3" data-number="15.3.8">
+<h3 data-number="15.3.8" class="anchored" data-anchor-id="basic-concepts-and-terminology"><span class="header-section-number">15.3.8</span> Basic Concepts and Terminology</h3>
 <p>Let’s establish our key terms:</p>
 <ul>
 <li><strong>Dependent Variable (Y)</strong>:
@@ -1439,8 +1519,8 @@ Understanding Linear Regression (OLS): Quickstart guide
 </ul></li>
 </ul>
 </section>
-<section id="the-core-idea" class="level3" data-number="15.3.8">
-<h3 data-number="15.3.8" class="anchored" data-anchor-id="the-core-idea"><span class="header-section-number">15.3.8</span> The Core Idea</h3>
+<section id="the-core-idea" class="level3" data-number="15.3.9">
+<h3 data-number="15.3.9" class="anchored" data-anchor-id="the-core-idea"><span class="header-section-number">15.3.9</span> The Core Idea</h3>
 <p>Let’s visualize what regression does with a simple example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some example data</span></span>
@@ -3188,6 +3268,8 @@ Understanding Ordinary Least Squares (OLS) Regression: A Student’s Guide
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Regression analysis is a fundamental statistical method that examines and models the relationship between variables to understand how changes in one or more independent variables influence a dependent variable.</p>
+<p>At its heart, regression analysis helps us answer questions about cause and effect, prediction, and forecasting. For example, a business might use regression analysis to understand how advertising spending affects sales, or how employee training hours impact productivity.</p>
 <section id="what-is-simple-linear-regression" class="level3" data-number="15.10.2">
 <h3 data-number="15.10.2" class="anchored" data-anchor-id="what-is-simple-linear-regression"><span class="header-section-number">15.10.2</span> What is Simple Linear Regression?</h3>
 <p>Consider the relationship between <strong>study hours</strong> (predictor) and <strong>exam scores</strong> (outcome/response variable). Simple linear regression creates an optimal straight line through data points to model this relationship. This line serves two purposes: making predictions and quantifying the relationship between variables.</p>

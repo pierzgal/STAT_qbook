@@ -347,8 +347,9 @@ window.Quarto = {
   </ul></li>
   <li><a href="#wprowadzenie-do-analizy-regresji" id="toc-wprowadzenie-do-analizy-regresji" class="nav-link" data-scroll-target="#wprowadzenie-do-analizy-regresji"><span class="header-section-number">16.3</span> Wprowadzenie do Analizy Regresji</a>
   <ul class="collapse">
-  <li><a href="#podstawowe-pojęcia-i-terminologia" id="toc-podstawowe-pojęcia-i-terminologia" class="nav-link" data-scroll-target="#podstawowe-pojęcia-i-terminologia"><span class="header-section-number">16.3.6</span> Podstawowe Pojęcia i Terminologia</a></li>
-  <li><a href="#główna-idea" id="toc-główna-idea" class="nav-link" data-scroll-target="#główna-idea"><span class="header-section-number">16.3.7</span> Główna Idea</a></li>
+  <li><a href="#regresja-jako-model-stochastyczny" id="toc-regresja-jako-model-stochastyczny" class="nav-link" data-scroll-target="#regresja-jako-model-stochastyczny"><span class="header-section-number">16.3.1</span> Regresja jako Model Stochastyczny</a></li>
+  <li><a href="#podstawowe-pojęcia-i-terminologia" id="toc-podstawowe-pojęcia-i-terminologia" class="nav-link" data-scroll-target="#podstawowe-pojęcia-i-terminologia"><span class="header-section-number">16.3.7</span> Podstawowe Pojęcia i Terminologia</a></li>
+  <li><a href="#główna-idea" id="toc-główna-idea" class="nav-link" data-scroll-target="#główna-idea"><span class="header-section-number">16.3.8</span> Główna Idea</a></li>
   </ul></li>
   <li><a href="#model-regresji-liniowej" id="toc-model-regresji-liniowej" class="nav-link" data-scroll-target="#model-regresji-liniowej"><span class="header-section-number">16.4</span> Model Regresji Liniowej</a>
   <ul class="collapse">
@@ -1259,14 +1260,76 @@ Cumulative Var 0.336 0.671</code></pre>
 </section>
 <section id="wprowadzenie-do-analizy-regresji" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="wprowadzenie-do-analizy-regresji"><span class="header-section-number">16.3</span> Wprowadzenie do Analizy Regresji</h2>
-<p>Analiza regresji jest fundamentalnym narzędziem statystycznym, które pomaga nam zrozumieć relacje między zmiennymi. Zanim zagłębimy się w formuły i szczegóły techniczne, zrozummy, na jakie pytania może odpowiedzieć regresja:</p>
+<p>Analiza regresji to metoda statystyczna, która bada i modeluje zależności między zmiennymi w celu zrozumienia, jak zmiany w jednej lub kilku zmiennych niezależnych wpływają na zmienną zależną.</p>
+<p>W swojej istocie analiza regresji pomaga odpowiedzieć na pytania dotyczące przyczyny i skutku, przewidywania oraz prognozowania. Na przykład, przedsiębiorstwo może wykorzystać analizę regresji do zrozumienia, jak wydatki na reklamę wpływają na sprzedaż lub jak liczba godzin szkoleń pracowników przekłada się na produktywność.</p>
+<p>Proces rozpoczyna się od zbierania danych o interesujących nas zmiennych. Następnie analiza dopasowuje model matematyczny - zazwyczaj linię lub krzywą - który najlepiej reprezentuje zależność między tymi zmiennymi. Model ten pozwala:</p>
 <ul>
-<li>Jak każdy dodatkowy rok edukacji wpływa na czyjeś wynagrodzenie?</li>
-<li>Jaka jest zależność między wydatkami na reklamę a sprzedażą?</li>
-<li>Jak temperatura wpływa na zużycie energii?</li>
-<li>Czy liczba godzin nauki przewiduje wyniki egzaminów?</li>
+<li>Określić siłę i kierunek zależności między zmiennymi</li>
+<li>Dokonywać przewidywań dotyczących przyszłych wyników</li>
+<li>Zrozumieć, które czynniki mają największy wpływ na nasze rezultaty</li>
 </ul>
-<p>Te pytania mają wspólną strukturę: wszystkie badają, jak zmiany jednej zmiennej wiążą się ze zmianami innej.</p>
+<section id="regresja-jako-model-stochastyczny" class="level3" data-number="16.3.1">
+<h3 data-number="16.3.1" class="anchored" data-anchor-id="regresja-jako-model-stochastyczny"><span class="header-section-number">16.3.1</span> Regresja jako Model Stochastyczny</h3>
+<p>W modelowaniu statystycznym spotykamy dwa podstawowe podejścia do opisywania relacji między zmiennymi:</p>
+<ul>
+<li>modele deterministyczne i modele stochastyczne.</li>
+</ul>
+<section id="modele-deterministyczne-a-stochastyczne" class="level4" data-number="16.3.1.1">
+<h4 data-number="16.3.1.1" class="anchored" data-anchor-id="modele-deterministyczne-a-stochastyczne"><span class="header-section-number">16.3.1.1</span> Modele Deterministyczne a Stochastyczne</h4>
+<p>Model deterministyczny zakłada precyzyjną, ustaloną relację między danymi wejściowymi a wyjściowymi. W takich modelach, znając dane wejściowe, możemy z całkowitą pewnością obliczyć dokładny wynik. Weźmy pod uwagę klasyczne równanie fizyczne dotyczące drogi:</p>
+<p><span class="math display">\text{Droga} = \text{Prędkość} × \text{Czas}</span></p>
+<p>Przy określonych wartościach prędkości i czasu, równanie to zawsze da tę samą drogę. Nie ma tu miejsca na jakąkolwiek zmienność wyniku.</p>
+<p>W przeciwieństwie do tego, analiza regresji uwzględnia naturalną zmienność danych. Podstawowa struktura modelu regresji to:</p>
+<p><span class="math display">Y = f(X) + \epsilon</span></p>
+<p>Gdzie:</p>
+<ul>
+<li><span class="math inline">Y</span> reprezentuje wynik, który chcemy przewidzieć</li>
+<li><span class="math inline">f(X)</span> reprezentuje systematyczną relację między naszymi predyktorami (X) a wynikiem</li>
+<li><span class="math inline">\epsilon</span> reprezentuje losową zmienność naturalnie występującą w rzeczywistych danych</li>
+</ul>
+</section>
+<section id="natura-modeli-stochastycznych-w-regresji" class="level4" data-number="16.3.1.2">
+<h4 data-number="16.3.1.2" class="anchored" data-anchor-id="natura-modeli-stochastycznych-w-regresji"><span class="header-section-number">16.3.1.2</span> Natura Modeli Stochastycznych w Regresji</h4>
+<p>Włączenie składnika błędu <span class="math inline">\epsilon</span> uznaje, że rzeczywiste relacje między zmiennymi rzadko są idealne. Na przykład, badając wpływ czasu nauki na wyniki testów, wiele czynników przyczynia się do końcowego rezultatu:</p>
+<p>Część systematyczna <span class="math inline">f(X)</span> wychwytuje ogólną tendencję: więcej czasu nauki zazwyczaj prowadzi do wyższych wyników.</p>
+<p>Składnik błędu <span class="math inline">\epsilon</span> uwzględnia wszystkie inne czynniki:</p>
+<ul>
+<li>Różne style uczenia się</li>
+<li>Środowisko nauki</li>
+<li>Stan fizyczny i psychiczny podczas testu</li>
+<li>Jakość materiałów dydaktycznych</li>
+</ul>
+</section>
+<section id="struktura-matematyczna" class="level4" data-number="16.3.1.3">
+<h4 data-number="16.3.1.3" class="anchored" data-anchor-id="struktura-matematyczna"><span class="header-section-number">16.3.1.3</span> Struktura Matematyczna</h4>
+<p>W swojej najprostszej formie regresja liniowa może być wyrażona jako:</p>
+<p><span class="math display">Y = \beta_0 + \beta_1X + \epsilon</span></p>
+<p>Gdzie:</p>
+<ul>
+<li><span class="math inline">\beta_0</span> reprezentuje wartość bazową (gdy X = 0)</li>
+<li><span class="math inline">\beta_1</span> reprezentuje zmianę Y dla każdej jednostkowej zmiany X</li>
+<li><span class="math inline">\epsilon</span> reprezentuje naturalną zmienność wokół tej relacji</li>
+</ul>
+</section>
+<section id="implikacje-praktyczne" class="level4" data-number="16.3.1.4">
+<h4 data-number="16.3.1.4" class="anchored"><span class="header-section-number">16.3.1.4</span> Implikacje Praktyczne</h4>
+<p>Zrozumienie regresji jako modelu stochastycznego ma istotne implikacje praktyczne:</p>
+<ol type="1">
+<li><p>Przewidywania: Uznajemy, że nasze przewidywania będą charakteryzować się pewną naturalną zmiennością. Zamiast twierdzić, że wynik będzie dokładny, uznajemy zakres prawdopodobnych wartości.</p></li>
+<li><p>Ocena Modelu: Oceniamy modele na podstawie tego, jak dobrze ujmują zarówno ogólną tendencję, jak i typową wielkość zmienności w danych.</p></li>
+<li><p>Podejmowanie Decyzji: Zrozumienie naturalnej zmienności w naszych przewidywaniach pomaga nam podejmować bardziej realistyczne plany i decyzje.</p></li>
+</ol>
+<p><strong>Zastosowania w Rzeczywistości</strong></p>
+<p>Rozważmy przewidywanie cen domów na podstawie metrażu. Model deterministyczny mógłby stwierdzić: “Dom o powierzchni 186 metrów kwadratowych będzie kosztować dokładnie 1 200 000 złotych”</p>
+<p>Model regresji natomiast uznaje, że:</p>
+<ul>
+<li>Istnieje ogólna relacja między wielkością a ceną</li>
+<li>Ale wiele innych czynników wpływa na końcową cenę</li>
+<li>Podobne domy mogą być sprzedawane po nieco różnych cenach</li>
+<li>Nasze przewidywania powinny odzwierciedlać tę naturalną zmienność</li>
+</ul>
+<p><strong>Podsumowanie</strong></p>
+<p>Stochastyczna natura analizy regresji zapewnia bardziej realistyczne ramy do zrozumienia rzeczywistych relacji między zmiennymi.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1277,16 +1340,16 @@ Model Regresji Liniowej (MNK): Szybki Start
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="koncepcja-modelu" class="level3" data-number="16.3.1">
-<h3 data-number="16.3.1" class="anchored" data-anchor-id="koncepcja-modelu"><span class="header-section-number">16.3.1</span> Koncepcja Modelu</h3>
+<section id="koncepcja-modelu" class="level3" data-number="16.3.2">
+<h3 data-number="16.3.2" class="anchored" data-anchor-id="koncepcja-modelu"><span class="header-section-number">16.3.2</span> Koncepcja Modelu</h3>
 <p>Regresja MNK (Metoda Najmniejszych Kwadratów) to model statystyczny opisujący związek między zmiennymi. Dwa kluczowe założenia definiują ten model:</p>
 <ol type="1">
 <li>Związek można opisać linią prostą (liniowość)</li>
 <li>Błędy w naszych przewidywaniach nie są systematycznie powiązane ze zmienną x (ścisła egzogeniczność)</li>
 </ol>
 </section>
-<section id="przykład-edukacja-i-wynagrodzenia" class="level3" data-number="16.3.2">
-<h3 data-number="16.3.2" class="anchored" data-anchor-id="przykład-edukacja-i-wynagrodzenia"><span class="header-section-number">16.3.2</span> Przykład: Edukacja i Wynagrodzenia</h3>
+<section id="przykład-edukacja-i-wynagrodzenia" class="level3" data-number="16.3.3">
+<h3 data-number="16.3.3" class="anchored" data-anchor-id="przykład-edukacja-i-wynagrodzenia"><span class="header-section-number">16.3.3</span> Przykład: Edukacja i Wynagrodzenia</h3>
 <p>Rozważmy badanie wpływu edukacji (x) na wynagrodzenia (y). Powiedzmy, że szacujemy:</p>
 <p><span class="math display">wynagrodzenia = \beta_0 + \beta_1 \cdot edukacja + \epsilon</span></p>
 <p>Składnik błędu <span class="math inline">\epsilon</span> zawiera wszystkie inne czynniki wpływające na wynagrodzenia. Ścisła egzogeniczność jest naruszona, jeśli pominiemy ważną zmienną, jak “zdolności”, która wpływa zarówno na edukację, jak i wynagrodzenia. Dlaczego? Ponieważ bardziej zdolni ludzie mają tendencję do zdobywania lepszego wykształcenia I wyższych wynagrodzeń, co powoduje zawyżenie szacowanego efektu edukacji.</p>
@@ -1350,8 +1413,8 @@ Model Regresji Liniowej (MNK): Szybki Start
 </div>
 </div>
 </section>
-<section id="problem-optymalizacji-metoda-najmniejszych-kwadratów-ols" class="level3" data-number="16.3.3">
-<h3 data-number="16.3.3" class="anchored" data-anchor-id="problem-optymalizacji-metoda-najmniejszych-kwadratów-ols"><span class="header-section-number">16.3.3</span> Problem Optymalizacji: Metoda Najmniejszych Kwadratów (OLS)</h3>
+<section id="problem-optymalizacji-metoda-najmniejszych-kwadratów-ols" class="level3" data-number="16.3.4">
+<h3 data-number="16.3.4" class="anchored" data-anchor-id="problem-optymalizacji-metoda-najmniejszych-kwadratów-ols"><span class="header-section-number">16.3.4</span> Problem Optymalizacji: Metoda Najmniejszych Kwadratów (OLS)</h3>
 <p>Kiedy analizujemy zależności między zmiennymi, takimi jak poziom wykształcenia a wynagrodzenie, potrzebujemy systematycznej metody znalezienia linii, która najlepiej odzwierciedla tę relację w naszych danych. Metoda Najmniejszych Kwadratów (OLS - Ordinary Least Squares) dostarcza nam takiego rozwiązania poprzez precyzyjne podejście matematyczne.</p>
 <p>Spójrzmy na nasz wykres poziomów wykształcenia i wynagrodzeń. Każdy punkt reprezentuje rzeczywiste dane - poziom wykształcenia danej osoby i odpowiadające mu wynagrodzenie. Naszym celem jest znalezienie pojedynczej linii, która najdokładniej uchwyci podstawową zależność między tymi zmiennymi.</p>
 <p>Dla każdej obserwacji <span class="math inline">i</span> możemy wyrazić tę relację jako:</p>
@@ -1373,14 +1436,14 @@ Model Regresji Liniowej (MNK): Szybki Start
 </ul>
 <p>Rozwiązanie OLS dostarcza nam estymatorów <span class="math inline">\hat{\beta_0}</span> i <span class="math inline">\hat{\beta_1}</span> nieznanych parametrów <span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span>, które minimalizują całkowity błąd kwadratowy, dając nam najdokładniejszą liniową reprezentację zależności między poziomem wykształcenia a wynagrodzeniem na podstawie dostępnych danych.</p>
 </section>
-<section id="znalezienie-najlepszej-linii" class="level3" data-number="16.3.4">
-<h3 data-number="16.3.4" class="anchored" data-anchor-id="znalezienie-najlepszej-linii"><span class="header-section-number">16.3.4</span> Znalezienie Najlepszej Linii</h3>
+<section id="znalezienie-najlepszej-linii" class="level3" data-number="16.3.5">
+<h3 data-number="16.3.5" class="anchored" data-anchor-id="znalezienie-najlepszej-linii"><span class="header-section-number">16.3.5</span> Znalezienie Najlepszej Linii</h3>
 <p>Rozwiązanie tego problemu minimalizacji daje nam:</p>
 <p><span class="math display">\hat{\beta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2} = \frac{cov(X, Y)}{var(X)}</span></p>
 <p><span class="math display">\hat{\beta}_0 = \bar{y} - \hat{\beta}_1\bar{x}</span></p>
 </section>
-<section id="kluczowe-punkty" class="level3" data-number="16.3.5">
-<h3 data-number="16.3.5" class="anchored" data-anchor-id="kluczowe-punkty"><span class="header-section-number">16.3.5</span> Kluczowe Punkty</h3>
+<section id="kluczowe-punkty" class="level3" data-number="16.3.6">
+<h3 data-number="16.3.6" class="anchored" data-anchor-id="kluczowe-punkty"><span class="header-section-number">16.3.6</span> Kluczowe Punkty</h3>
 <ol type="1">
 <li>MNK znajduje linię, która minimalizuje kwadraty błędów predykcji</li>
 <li>Ta linia jest “najlepsza” pod względem dopasowania, ale może nie ujmować prawdziwych relacji, jeśli pominięto ważne zmienne</li>
@@ -1389,8 +1452,10 @@ Model Regresji Liniowej (MNK): Szybki Start
 </section>
 </div>
 </div>
-<section id="podstawowe-pojęcia-i-terminologia" class="level3" data-number="16.3.6">
-<h3 data-number="16.3.6" class="anchored" data-anchor-id="podstawowe-pojęcia-i-terminologia"><span class="header-section-number">16.3.6</span> Podstawowe Pojęcia i Terminologia</h3>
+</section>
+</section>
+<section id="podstawowe-pojęcia-i-terminologia" class="level3" data-number="16.3.7">
+<h3 data-number="16.3.7" class="anchored" data-anchor-id="podstawowe-pojęcia-i-terminologia"><span class="header-section-number">16.3.7</span> Podstawowe Pojęcia i Terminologia</h3>
 <p>Ustalmy kluczowe terminy:</p>
 <ul>
 <li><strong>Zmienna Zależna (Y)</strong>:
@@ -1419,8 +1484,8 @@ Model Regresji Liniowej (MNK): Szybki Start
 </ul></li>
 </ul>
 </section>
-<section id="główna-idea" class="level3" data-number="16.3.7">
-<h3 data-number="16.3.7" class="anchored" data-anchor-id="główna-idea"><span class="header-section-number">16.3.7</span> Główna Idea</h3>
+<section id="główna-idea" class="level3" data-number="16.3.8">
+<h3 data-number="16.3.8" class="anchored" data-anchor-id="główna-idea"><span class="header-section-number">16.3.8</span> Główna Idea</h3>
 <p>Zobaczmy na przykładzie, co robi regresja:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate some example data</span></span>
@@ -3181,8 +3246,31 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="czym-jest-prosta-regresja-liniowa" class="level3" data-number="16.11.2">
-<h3 data-number="16.11.2" class="anchored" data-anchor-id="czym-jest-prosta-regresja-liniowa"><span class="header-section-number">16.11.2</span> Czym jest Prosta Regresja Liniowa?</h3>
+<p>Analiza regresji to podstawowa metoda statystyczna, która bada i modeluje zależności między zmiennymi w celu zrozumienia, jak zmiany w jednej lub kilku zmiennych niezależnych wpływają na zmienną zależną.</p>
+<p>W swojej istocie analiza regresji pomaga odpowiedzieć na pytania dotyczące przyczyny i skutku, przewidywania oraz prognozowania. Na przykład, przedsiębiorstwo może wykorzystać analizę regresji do zrozumienia, jak wydatki na reklamę wpływają na sprzedaż lub jak liczba godzin szkoleń pracowników przekłada się na produktywność.</p>
+<section id="regresja-jako-model-stochastyczny-1" class="level3" data-number="16.11.2">
+<h3 data-number="16.11.2" class="anchored" data-anchor-id="regresja-jako-model-stochastyczny-1"><span class="header-section-number">16.11.2</span> Regresja jako Model Stochastyczny</h3>
+<p>W modelowaniu statystycznym spotykamy dwa podstawowe podejścia do opisywania relacji między zmiennymi:</p>
+<ul>
+<li>modele deterministyczne i modele stochastyczne.</li>
+</ul>
+<section id="modele-deterministyczne-a-stochastyczne-1" class="level4" data-number="16.11.2.1">
+<h4 data-number="16.11.2.1" class="anchored" data-anchor-id="modele-deterministyczne-a-stochastyczne-1"><span class="header-section-number">16.11.2.1</span> Modele Deterministyczne a Stochastyczne</h4>
+<p>Model deterministyczny zakłada precyzyjną, ustaloną relację między danymi wejściowymi a wyjściowymi. W takich modelach, znając dane wejściowe, możemy z całkowitą pewnością obliczyć dokładny wynik. Weźmy pod uwagę klasyczne równanie fizyczne dotyczące drogi:</p>
+<p><span class="math display">\text{Droga} = \text{Prędkość} × \text{Czas}</span></p>
+<p>Przy określonych wartościach prędkości i czasu, równanie to zawsze da tę samą drogę. Nie ma tu miejsca na jakąkolwiek zmienność wyniku.</p>
+<p>W przeciwieństwie do tego, analiza regresji uwzględnia naturalną zmienność danych. Podstawowa struktura modelu regresji to:</p>
+<p><span class="math display">Y = f(X) + \epsilon</span></p>
+<p>Gdzie:</p>
+<ul>
+<li><span class="math inline">Y</span> reprezentuje wynik, który chcemy przewidzieć</li>
+<li><span class="math inline">f(X)</span> reprezentuje systematyczną relację między naszymi predyktorami (X) a wynikiem</li>
+<li><span class="math inline">\epsilon</span> reprezentuje losową zmienność naturalnie występującą w rzeczywistych danych</li>
+</ul>
+</section>
+</section>
+<section id="czym-jest-prosta-regresja-liniowa" class="level3" data-number="16.11.3">
+<h3 data-number="16.11.3" class="anchored" data-anchor-id="czym-jest-prosta-regresja-liniowa"><span class="header-section-number">16.11.3</span> Czym jest Prosta Regresja Liniowa?</h3>
 <p>Rozważmy związek między <strong>czasem poświęconym na naukę</strong> (predyktor, zmienna niezależna) a <strong>wynikami egzaminów</strong> (zmienna objaśniana, outcome/response variable). Prosta regresja liniowa tworzy optymalną linię prostą przechodzącą przez punkty danych, modelującą tę relację. Linia ta służy dwóm celom: prognozowaniu oraz kwantyfikacji związku między zmiennymi.</p>
 <p>Zależność matematyczna jest wyrażona jako:</p>
 <p><span class="math display"> Y_i = \beta_0 + \beta_1X_i + \epsilon_i </span></p>
@@ -3197,8 +3285,8 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <p>Naszym celem jest znalezienie oszacowań <span class="math inline">\hat{\beta}_0</span> i <span class="math inline">\hat{\beta}_1</span>, które najlepiej przybliżają prawdziwe parametry <span class="math inline">\beta_0</span> i <span class="math inline">\beta_1</span>. Dopasowana linia regresji jest wtedy wyrażona jako:</p>
 <p><span class="math display"> \hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1X_i </span></p>
 </section>
-<section id="metoda-najmniejszych-kwadratów-mnkols" class="level3" data-number="16.11.3">
-<h3 data-number="16.11.3" class="anchored" data-anchor-id="metoda-najmniejszych-kwadratów-mnkols"><span class="header-section-number">16.11.3</span> Metoda Najmniejszych Kwadratów (MNK/OLS)</h3>
+<section id="metoda-najmniejszych-kwadratów-mnkols" class="level3" data-number="16.11.4">
+<h3 data-number="16.11.4" class="anchored" data-anchor-id="metoda-najmniejszych-kwadratów-mnkols"><span class="header-section-number">16.11.4</span> Metoda Najmniejszych Kwadratów (MNK/OLS)</h3>
 <p>Metoda “Najmniejszych Kwadratów” określa optymalne wartości dla <span class="math inline">\hat{\beta}_0</span> i <span class="math inline">\hat{\beta}_1</span> poprzez metodyczny proces. Choć współczesne oprogramowanie statystyczne wykonuje te obliczenia automatycznie, zrozumienie podstawowego procesu jest kluczowe:</p>
 <ol type="1">
 <li>Rozpocznij od wstępnego oszacowania linii regresji
@@ -3253,8 +3341,8 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </div>
 </div>
 </section>
-<section id="estymacja-parametrów" class="level3" data-number="16.11.4">
-<h3 data-number="16.11.4" class="anchored" data-anchor-id="estymacja-parametrów"><span class="header-section-number">16.11.4</span> Estymacja Parametrów</h3>
+<section id="estymacja-parametrów" class="level3" data-number="16.11.5">
+<h3 data-number="16.11.5" class="anchored" data-anchor-id="estymacja-parametrów"><span class="header-section-number">16.11.5</span> Estymacja Parametrów</h3>
 <p>Formuły do oszacowania parametrów wykorzystują podstawowe miary statystyczne:</p>
 <p><span class="math display"> \hat{\beta}_1 = \frac{Cov(X,Y)}{Var(X)} = \frac{\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sum(X_i - \bar{X})^2} </span></p>
 <p>Ta formuła zawiera dwa istotne pojęcia statystyczne:</p>
@@ -3267,45 +3355,45 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 <p><span class="math display"> \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X} </span></p>
 <p>Zapewnia to, że linia regresji przechodzi przez punkt średnich (<span class="math inline">\bar{X}</span>, <span class="math inline">\bar{Y}</span>).</p>
 </section>
-<section id="dekompozycja-wariancji-w-regresji" class="level3" data-number="16.11.5">
-<h3 data-number="16.11.5" class="anchored" data-anchor-id="dekompozycja-wariancji-w-regresji"><span class="header-section-number">16.11.5</span> Dekompozycja Wariancji w Regresji</h3>
+<section id="dekompozycja-wariancji-w-regresji" class="level3" data-number="16.11.6">
+<h3 data-number="16.11.6" class="anchored" data-anchor-id="dekompozycja-wariancji-w-regresji"><span class="header-section-number">16.11.6</span> Dekompozycja Wariancji w Regresji</h3>
 <p>W analizie regresji rozkładamy wariancję w naszych danych na odrębne składniki, aby zrozumieć, jak dobrze nasz model wyjaśnia zmienną zależną. Przyjrzyjmy się każdemu składnikowi wariancji szczegółowo.</p>
-<section id="przegląd-składników-wariancji" class="level4" data-number="16.11.5.1">
-<h4 data-number="16.11.5.1" class="anchored" data-anchor-id="przegląd-składników-wariancji"><span class="header-section-number">16.11.5.1</span> Przegląd Składników Wariancji</h4>
+<section id="przegląd-składników-wariancji" class="level4" data-number="16.11.6.1">
+<h4 data-number="16.11.6.1" class="anchored" data-anchor-id="przegląd-składników-wariancji"><span class="header-section-number">16.11.6.1</span> Przegląd Składników Wariancji</h4>
 <p>Całkowita Suma Kwadratów (SST, z ang. Total Sum of Squares) reprezentuje całkowitą zmienność obecną w naszej zmiennej zależnej. Regresyjna Suma Kwadratów (SSR, z ang. Regression Sum of Squares) obejmuje zmienność wyjaśnioną przez nasz model. Resztowa Suma Kwadratów (SSE, z ang. Error Sum of Squares) przedstawia pozostałą, niewyjaśnioną zmienność. Przeanalizujmy każdy z tych elementów.</p>
 </section>
-<section id="całkowita-suma-kwadratów-sst" class="level4" data-number="16.11.5.2">
-<h4 data-number="16.11.5.2" class="anchored" data-anchor-id="całkowita-suma-kwadratów-sst"><span class="header-section-number">16.11.5.2</span> Całkowita Suma Kwadratów (SST)</h4>
+<section id="całkowita-suma-kwadratów-sst" class="level4" data-number="16.11.6.2">
+<h4 data-number="16.11.6.2" class="anchored" data-anchor-id="całkowita-suma-kwadratów-sst"><span class="header-section-number">16.11.6.2</span> Całkowita Suma Kwadratów (SST)</h4>
 <p>SST mierzy całkowitą zmienność w zmiennej zależnej, obliczając, jak bardzo każda obserwacja odbiega od średniej ogólnej:</p>
 <p><span class="math display"> SST = \sum(y_i - \bar{y})^2 </span></p>
 <p>W tym wzorze <span class="math inline">y_i</span> reprezentuje każdą pojedynczą obserwację, a <span class="math inline">\bar{y}</span> reprezentuje średnią wszystkich obserwacji. Kwadraty różnic ujmują całkowitą rozpiętość naszych danych wokół ich wartości średniej.</p>
 </section>
-<section id="regresyjna-suma-kwadratów-ssr" class="level4" data-number="16.11.5.3">
-<h4 data-number="16.11.5.3" class="anchored" data-anchor-id="regresyjna-suma-kwadratów-ssr"><span class="header-section-number">16.11.5.3</span> Regresyjna Suma Kwadratów (SSR)</h4>
+<section id="regresyjna-suma-kwadratów-ssr" class="level4" data-number="16.11.6.3">
+<h4 data-number="16.11.6.3" class="anchored" data-anchor-id="regresyjna-suma-kwadratów-ssr"><span class="header-section-number">16.11.6.3</span> Regresyjna Suma Kwadratów (SSR)</h4>
 <p>SSR określa ilościowo zmienność, którą nasz model wyjaśnia poprzez zmienne objaśniające:</p>
 <p><span class="math display"> SSR = \sum(\hat{y}_i - \bar{y})^2 </span></p>
 <p>Tutaj <span class="math inline">\hat{y}_i</span> reprezentuje wartości przewidywane przez nasz model. Ten wzór mierzy, jak daleko nasze przewidywania odbiegają od średniej, reprezentując zmienność uchwyconą przez nasz model.</p>
 </section>
-<section id="resztowa-suma-kwadratów-sse" class="level4" data-number="16.11.5.4">
-<h4 data-number="16.11.5.4" class="anchored" data-anchor-id="resztowa-suma-kwadratów-sse"><span class="header-section-number">16.11.5.4</span> Resztowa Suma Kwadratów (SSE)</h4>
+<section id="resztowa-suma-kwadratów-sse" class="level4" data-number="16.11.6.4">
+<h4 data-number="16.11.6.4" class="anchored" data-anchor-id="resztowa-suma-kwadratów-sse"><span class="header-section-number">16.11.6.4</span> Resztowa Suma Kwadratów (SSE)</h4>
 <p>SSE mierzy zmienność, która pozostaje niewyjaśniona przez nasz model:</p>
 <p><span class="math display"> SSE = \sum(y_i - \hat{y}_i)^2 </span></p>
 <p>Ten wzór oblicza różnice między wartościami rzeczywistymi (<span class="math inline">y_i</span>) a wartościami przewidywanymi (<span class="math inline">\hat{y}_i</span>), pokazując nam, ile zmienności nasz model nie zdołał wyjaśnić.</p>
 </section>
-<section id="podstawowa-zależność" class="level4" data-number="16.11.5.5">
-<h4 data-number="16.11.5.5" class="anchored" data-anchor-id="podstawowa-zależność"><span class="header-section-number">16.11.5.5</span> Podstawowa Zależność</h4>
+<section id="podstawowa-zależność" class="level4" data-number="16.11.6.5">
+<h4 data-number="16.11.6.5" class="anchored" data-anchor-id="podstawowa-zależność"><span class="header-section-number">16.11.6.5</span> Podstawowa Zależność</h4>
 <p>Te trzy składniki są powiązane poprzez kluczowe równanie:</p>
 <p><span class="math display"> SST = SSR + SSE </span></p>
 <p>To równanie pokazuje, że całkowita zmienność (SST) równa się sumie zmienności wyjaśnionej (SSR) i niewyjaśnionej (SSE). Ta zależność stanowi podstawę do pomiaru wydajności modelu.</p>
 </section>
-<section id="współczynnik-determinacji-r²" class="level4" data-number="16.11.5.6">
-<h4 data-number="16.11.5.6" class="anchored" data-anchor-id="współczynnik-determinacji-r²"><span class="header-section-number">16.11.5.6</span> Współczynnik Determinacji (R²)</h4>
+<section id="współczynnik-determinacji-r²" class="level4" data-number="16.11.6.6">
+<h4 data-number="16.11.6.6" class="anchored" data-anchor-id="współczynnik-determinacji-r²"><span class="header-section-number">16.11.6.6</span> Współczynnik Determinacji (R²)</h4>
 <p>Statystyka R², wyprowadzona z tych składników, mówi nam, jaką proporcję zmienności wyjaśnia nasz model:</p>
 <p><span class="math display"> R^2 = \frac{SSR}{SST} = 1 - \frac{SSE}{SST} </span></p>
 <p>Gdy R² równa się 0,75, oznacza to, że nasz model wyjaśnia 75% zmienności w zmiennej zależnej. Pozostałe 25% reprezentuje zmienność niewyjaśnioną.</p>
 </section>
-<section id="istotne-aspekty" class="level4" data-number="16.11.5.7">
-<h4 data-number="16.11.5.7" class="anchored" data-anchor-id="istotne-aspekty"><span class="header-section-number">16.11.5.7</span> Istotne Aspekty</h4>
+<section id="istotne-aspekty" class="level4" data-number="16.11.6.7">
+<h4 data-number="16.11.6.7" class="anchored" data-anchor-id="istotne-aspekty"><span class="header-section-number">16.11.6.7</span> Istotne Aspekty</h4>
 <p>Zrozumienie tych składników pomaga nam:</p>
 <ol type="1">
 <li>Ocenić wydajność modelu poprzez proporcję wyjaśnionej zmienności</li>
@@ -3324,8 +3412,8 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </div>
 </section>
 </section>
-<section id="współczynnik-determinacji-r2" class="level3" data-number="16.11.6">
-<h3 data-number="16.11.6" class="anchored" data-anchor-id="współczynnik-determinacji-r2"><span class="header-section-number">16.11.6</span> Współczynnik Determinacji (<span class="math inline">R^2</span>)</h3>
+<section id="współczynnik-determinacji-r2" class="level3" data-number="16.11.7">
+<h3 data-number="16.11.7" class="anchored" data-anchor-id="współczynnik-determinacji-r2"><span class="header-section-number">16.11.7</span> Współczynnik Determinacji (<span class="math inline">R^2</span>)</h3>
 <p><span class="math inline">R^2</span> służy jako miara dopasowania modelu, reprezentująca proporcję wariancji wyjaśnionej przez naszą regresję:</p>
 <p><span class="math display"> R^2 = \frac{SSR}{SST} = \frac{SSR}{SSR + SSE} = 1 - \frac{SSE}{SST} </span></p>
 <p>Aby zinterpretować <span class="math inline">R^2</span>:</p>
@@ -3337,8 +3425,8 @@ Zrozumienie Regresji Metodą Najmniejszych Kwadratów (OLS): Podsumowanie dla St
 </ul>
 <p>Uwaga: Niższa wartość <span class="math inline">R^2</span> niekoniecznie oznacza gorszy model - może po prostu odzwierciedlać złożoność badanej relacji.</p>
 </section>
-<section id="kluczowy-wniosek" class="level3" data-number="16.11.7">
-<h3 data-number="16.11.7" class="anchored" data-anchor-id="kluczowy-wniosek"><span class="header-section-number">16.11.7</span> Kluczowy Wniosek</h3>
+<section id="kluczowy-wniosek" class="level3" data-number="16.11.8">
+<h3 data-number="16.11.8" class="anchored" data-anchor-id="kluczowy-wniosek"><span class="header-section-number">16.11.8</span> Kluczowy Wniosek</h3>
 <p>Regresja liniowa ustala relacje między zmiennymi poprzez identyfikację optymalnego dopasowania liniowego przez punkty danych. Ta optymalizacja zachodzi poprzez minimalizację kwadratów reszt. Współczynnik determinacji (<span class="math inline">R^2</span>) kwantyfikuje następnie moc wyjaśniającą modelu poprzez porównanie wyjaśnionej zmienności z całkowitą zmiennością w naszych danych.</p>
 </section>
 </div>
