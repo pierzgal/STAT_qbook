@@ -2433,13 +2433,13 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 <div class="callout-body-container callout-body">
 <section id="initial-setup" class="level3" data-number="15.6.14">
 <h3 data-number="15.6.14" class="anchored" data-anchor-id="initial-setup"><span class="header-section-number">15.6.14</span> Initial Setup</h3>
-<p>We seek to minimize the sum of squared residuals:</p>
-<p><span class="math inline">SSR = \sum_{i=1}^n (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p>
+<p>We seek to minimize the sum of squared residuals (errors):</p>
+<p><span class="math inline">SSE = \sum_{i=1}^n (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></p>
 <p>Let’s break this into manageable pieces:</p>
 <ol type="1">
 <li>Each residual is: <span class="math inline">e_i = y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i)</span></li>
 <li>We square each residual: <span class="math inline">e_i^2 = (y_i - (\hat{\beta}_0 + \hat{\beta}_1x_i))^2</span></li>
-<li>Sum them all: <span class="math inline">SSR = \sum_{i=1}^n e_i^2</span></li>
+<li>Sum them all: <span class="math inline">SSE = \sum_{i=1}^n e_i^2</span></li>
 </ol>
 </section>
 <section id="chain-rule-review" class="level3" data-number="15.6.15">
@@ -2500,9 +2500,9 @@ Formal Derivation of OLS Estimators: Step-by-Step Approach
 <h3 data-number="15.6.18" class="anchored" data-anchor-id="step-3-verifying-we-have-a-minimum"><span class="header-section-number">15.6.18</span> Step 3: Verifying We Have a Minimum</h3>
 <p>To confirm these critical points are minima, we check the second derivatives:</p>
 <ol type="1">
-<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_0</span>: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_0^2} = \frac{\partial}{\partial \hat{\beta}_0}(-2\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2n &gt; 0</span></p></li>
-<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_1^2} = \frac{\partial}{\partial \hat{\beta}_1}(-2\sum_{i=1}^n x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2\sum_{i=1}^n x_i^2 &gt; 0</span></p></li>
-<li><p>Cross partial derivatives: <span class="math inline">\frac{\partial^2 SSR}{\partial \hat{\beta}_0\partial \hat{\beta}_1} = \frac{\partial^2 SSR}{\partial \hat{\beta}_1\partial \hat{\beta}_0} = 2\sum_{i=1}^n x_i</span></p></li>
+<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_0</span>: <span class="math inline">\frac{\partial^2 SSE}{\partial \hat{\beta}_0^2} = \frac{\partial}{\partial \hat{\beta}_0}(-2\sum_{i=1}^n (y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2n &gt; 0</span></p></li>
+<li><p>Second derivative with respect to <span class="math inline">\hat{\beta}_1</span>: <span class="math inline">\frac{\partial^2 SSE}{\partial \hat{\beta}_1^2} = \frac{\partial}{\partial \hat{\beta}_1}(-2\sum_{i=1}^n x_i(y_i - \hat{\beta}_0 - \hat{\beta}_1x_i)) = 2\sum_{i=1}^n x_i^2 &gt; 0</span></p></li>
+<li><p>Cross partial derivatives: <span class="math inline">\frac{\partial^2 SSE}{\partial \hat{\beta}_0\partial \hat{\beta}_1} = \frac{\partial^2 SSE}{\partial \hat{\beta}_1\partial \hat{\beta}_0} = 2\sum_{i=1}^n x_i</span></p></li>
 <li><p>The Hessian matrix is positive definite: <span class="math inline">\mathbf{H} = \begin{bmatrix} 2n &amp; 2\sum x_i \\ 2\sum x_i &amp; 2\sum x_i^2 \end{bmatrix}</span></p></li>
 </ol>
 <p>This confirms we have found a minimum.</p>
