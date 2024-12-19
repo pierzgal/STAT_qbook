@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+    <!-- Title for With Replacement -->
+    <text x="175" y="40" font-size="18" font-weight="bold">With Replacement</text>
+    
+    <!-- Title for Without Replacement -->
+    <text x="625" y="40" font-size="18" font-weight="bold">Without Replacement</text>
+    
+    <!-- Grid for With Replacement -->
+    <g transform="translate(100,80)">
+        <!-- Grid lines -->
+        <g stroke="#ccc" stroke-width="1">
+            <!-- Vertical lines -->
+            <line x1="0" y1="0" x2="0" y2="250"/>
+            <line x1="50" y1="0" x2="50" y2="250"/>
+            <line x1="100" y1="0" x2="100" y2="250"/>
+            <line x1="150" y1="0" x2="150" y2="250"/>
+            <line x1="200" y1="0" x2="200" y2="250"/>
+            <line x1="250" y1="0" x2="250" y2="250"/>
+            
+            <!-- Horizontal lines -->
+            <line x1="0" y1="0" x2="250" y2="0"/>
+            <line x1="0" y1="50" x2="250" y2="50"/>
+            <line x1="0" y1="100" x2="250" y2="100"/>
+            <line x1="0" y1="150" x2="250" y2="150"/>
+            <line x1="0" y1="200" x2="250" y2="200"/>
+            <line x1="0" y1="250" x2="250" y2="250"/>
+        </g>
+        
+        <!-- Cell contents -->
+        <g font-size="14">
+            <!-- Row headers (First Draw) -->
+            <text x="-35" y="30" text-anchor="end">R1</text>
+            <text x="-35" y="80" text-anchor="end">R2</text>
+            <text x="-35" y="130" text-anchor="end">G1</text>
+            <text x="-35" y="180" text-anchor="end">G2</text>
+            <text x="-35" y="230" text-anchor="end">G3</text>
+            
+            <!-- Column headers (Second Draw) -->
+            <text x="25" y="-15" text-anchor="middle">R1</text>
+            <text x="75" y="-15" text-anchor="middle">R2</text>
+            <text x="125" y="-15" text-anchor="middle">G1</text>
+            <text x="175" y="-15" text-anchor="middle">G2</text>
+            <text x="225" y="-15" text-anchor="middle">G3</text>
+        </g>
+        
+        <!-- Cell colors -->
+        <g fill-opacity="0.3">
+            <!-- Red-Red outcomes -->
+            <rect x="0" y="0" width="100" height="100" fill="red"/>
+            <!-- Red-Green outcomes -->
+            <rect x="100" y="0" width="150" height="100" fill="orange"/>
+            <!-- Green-Red outcomes -->
+            <rect x="0" y="100" width="100" height="150" fill="orange"/>
+            <!-- Green-Green outcomes -->
+            <rect x="100" y="100" width="150" height="150" fill="green"/>
+        </g>
+    </g>
+    
+    <!-- Grid for Without Replacement -->
+    <g transform="translate(550,80)">
+        <!-- Grid lines -->
+        <g stroke="#ccc" stroke-width="1">
+            <!-- Vertical lines -->
+            <line x1="0" y1="0" x2="0" y2="250"/>
+            <line x1="50" y1="0" x2="50" y2="250"/>
+            <line x1="100" y1="0" x2="100" y2="250"/>
+            <line x1="150" y1="0" x2="150" y2="250"/>
+            <line x1="200" y1="0" x2="200" y2="250"/>
+            <line x1="250" y1="0" x2="250" y2="250"/>
+            
+            <!-- Horizontal lines -->
+            <line x1="0" y1="0" x2="250" y2="0"/>
+            <line x1="0" y1="50" x2="250" y2="50"/>
+            <line x1="0" y1="100" x2="250" y2="100"/>
+            <line x1="0" y1="150" x2="250" y2="150"/>
+            <line x1="0" y1="200" x2="250" y2="200"/>
+            <line x1="0" y1="250" x2="250" y2="250"/>
+        </g>
+        
+        <!-- Cell contents -->
+        <g font-size="14">
+            <!-- Row headers (First Draw) -->
+            <text x="-35" y="30" text-anchor="end">R1</text>
+            <text x="-35" y="80" text-anchor="end">R2</text>
+            <text x="-35" y="130" text-anchor="end">G1</text>
+            <text x="-35" y="180" text-anchor="end">G2</text>
+            <text x="-35" y="230" text-anchor="end">G3</text>
+        </g>
+        
+        <!-- Column headers (Second Draw) -->
+        <g font-size="14">
+            <text x="25" y="-15" text-anchor="middle">R1</text>
+            <text x="75" y="-15" text-anchor="middle">R2</text>
+            <text x="125" y="-15" text-anchor="middle">G1</text>
+            <text x="175" y="-15" text-anchor="middle">G2</text>
+            <text x="225" y="-15" text-anchor="middle">G3</text>
+        </g>
+        
+        <!-- Cell colors with diagonal blocked -->
+        <g fill-opacity="0.3">
+            <!-- Red-Red outcomes (excluding diagonal) -->
+            <rect x="50" y="0" width="50" height="50" fill="red"/>
+            <rect x="0" y="50" width="50" height="50" fill="red"/>
+            
+            <!-- Red-Green outcomes -->
+            <rect x="100" y="0" width="150" height="100" fill="orange"/>
+            
+            <!-- Green-Red outcomes -->
+            <rect x="0" y="100" width="100" height="150" fill="orange"/>
+            
+            <!-- Green-Green outcomes (excluding diagonal) -->
+            <rect x="150" y="100" width="50" height="50" fill="green"/>
+            <rect x="200" y="100" width="50" height="50" fill="green"/>
+            <rect x="100" y="150" width="50" height="50" fill="green"/>
+            <rect x="200" y="150" width="50" height="50" fill="green"/>
+            <rect x="100" y="200" width="50" height="50" fill="green"/>
+            <rect x="150" y="200" width="50" height="50" fill="green"/>
+        </g>
+        
+        <!-- Diagonal blocked cells -->
+        <g fill="#f0f0f0" stroke="#999" stroke-width="1">
+            <rect x="0" y="0" width="50" height="50"/>
+            <rect x="50" y="50" width="50" height="50"/>
+            <rect x="100" y="100" width="50" height="50"/>
+            <rect x="150" y="150" width="50" height="50"/>
+            <rect x="200" y="200" width="50" height="50"/>
+            
+            <!-- Cross out pattern -->
+            <line x1="0" y1="0" x2="50" y2="50" stroke="#999"/>
+            <line x1="50" y1="0" x2="0" y2="50" stroke="#999"/>
+            <line x1="50" y1="50" x2="100" y2="100" stroke="#999"/>
+            <line x1="100" y1="50" x2="50" y2="100" stroke="#999"/>
+            <line x1="100" y1="100" x2="150" y2="150" stroke="#999"/>
+            <line x1="150" y1="100" x2="100" y2="150" stroke="#999"/>
+            <line x1="150" y1="150" x2="200" y2="200" stroke="#999"/>
+            <line x1="200" y1="150" x2="150" y2="200" stroke="#999"/>
+            <line x1="200" y1="200" x2="250" y2="250" stroke="#999"/>
+            <line x1="250" y1="200" x2="200" y2="250" stroke="#999"/>
+        </g>
+    </g>
+    
+    <!-- Legend with simplified layout -->
+    <g transform="translate(100,400)">
+        <rect x="0" y="0" width="20" height="20" fill="green" fill-opacity="0.3"/>
+        <text x="30" y="15" font-size="14">Green-Green</text>
+        
+        <rect x="150" y="0" width="20" height="20" fill="orange" fill-opacity="0.3"/>
+        <text x="180" y="15" font-size="14">Mixed</text>
+        
+        <rect x="300" y="0" width="20" height="20" fill="red" fill-opacity="0.3"/>
+        <text x="330" y="15" font-size="14">Red-Red</text>
+        
+        <rect x="450" y="0" width="20" height="20" fill="#f0f0f0" stroke="#999"/>
+        <line x1="450" y1="0" x2="470" y2="20" stroke="#999"/>
+        <line x1="470" y1="0" x2="450" y2="20" stroke="#999"/>
+        <text x="480" y="15" font-size="14">Impossible</text>
+    </g>
+</svg>
