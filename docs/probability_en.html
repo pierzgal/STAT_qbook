@@ -373,6 +373,7 @@ window.Quarto = {
   <li><a href="#problem-4-conditional-probability-marble-drawing-with-coin-flip" id="toc-problem-4-conditional-probability-marble-drawing-with-coin-flip" class="nav-link" data-scroll-target="#problem-4-conditional-probability-marble-drawing-with-coin-flip"><span class="header-section-number">17.17.5</span> Problem 4: Conditional Probability: Marble Drawing with Coin Flip</a></li>
   <li><a href="#problem-5-probability-of-intersecting-events-and-independence-analysis" id="toc-problem-5-probability-of-intersecting-events-and-independence-analysis" class="nav-link" data-scroll-target="#problem-5-probability-of-intersecting-events-and-independence-analysis"><span class="header-section-number">17.17.6</span> Problem 5: Probability of Intersecting Events and Independence Analysis</a></li>
   <li><a href="#problem-6-the-monty-hall-problem---two-solution-approaches" id="toc-problem-6-the-monty-hall-problem---two-solution-approaches" class="nav-link" data-scroll-target="#problem-6-the-monty-hall-problem---two-solution-approaches"><span class="header-section-number">17.17.7</span> Problem 6: The Monty Hall Problem - Two Solution Approaches</a></li>
+  <li><a href="#problem-7-the-bertrand-box-paradox---a-teaching-analysis" id="toc-problem-7-the-bertrand-box-paradox---a-teaching-analysis" class="nav-link" data-scroll-target="#problem-7-the-bertrand-box-paradox---a-teaching-analysis"><span class="header-section-number">17.17.8</span> Problem 7: The Bertrand Box Paradox - A Teaching Analysis</a></li>
   </ul></li>
   <li><a href="#study-tips" id="toc-study-tips" class="nav-link" data-scroll-target="#study-tips"><span class="header-section-number">17.18</span> Study Tips</a></li>
   <li><a href="#appendix-1.-advanced-counting-in-probability-a-student-guide" id="toc-appendix-1.-advanced-counting-in-probability-a-student-guide" class="nav-link" data-scroll-target="#appendix-1.-advanced-counting-in-probability-a-student-guide"><span class="header-section-number">17.19</span> Appendix 1. Advanced Counting in Probability: A Student Guide (*)</a>
@@ -2812,22 +2813,31 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">graph TD
-    subgraph A[Event A: Even Numbers]
-        A2[2]
-        A4[4]
-        A6[6]
-    end
-    subgraph B[Event B: Numbers ≥ 4]
-        B4[4]
-        B5[5]
-        B6[6]
-    end
-    style A2 fill:#f9f,stroke:#333,stroke-width:2px
-    style A4 fill:#ff9,stroke:#333,stroke-width:2px
-    style A6 fill:#ff9,stroke:#333,stroke-width:2px
-    style B4 fill:#ff9,stroke:#333,stroke-width:2px
-    style B5 fill:#f9f,stroke:#333,stroke-width:2px
-    style B6 fill:#ff9,stroke:#333,stroke-width:2px
+    A[Start] --&gt; B["R (3/6)"]
+    A --&gt; C["B (2/6)"]
+    A --&gt; D["Y (1/6)"]
+    
+    B --&gt; E["B (2/5)"]
+    B --&gt; F["Y (1/5)"]
+    B --&gt; G["R (2/5)"]
+    
+    C --&gt; H["R (3/5)"]
+    C --&gt; I["Y (1/5)"]
+    C --&gt; J["B (1/5)"]
+    
+    D --&gt; K["R (3/5)"]
+    D --&gt; L["B (2/5)"]
+    D --&gt; M["Y (0/5)"]
+    
+    E --&gt; N["RB (Success)"]
+    F --&gt; O["RY (Success)"]
+    G --&gt; P["RR (Fail)"]
+    H --&gt; Q["BR (Success)"]
+    I --&gt; R["BY (Success)"]
+    J --&gt; S["BB (Fail)"]
+    K --&gt; T["YR (Success)"]
+    L --&gt; U["YB (Success)"]
+    M --&gt; V["YY (Fail)"]
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -2981,7 +2991,111 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ul></li>
 <li><strong>Simulation Verification</strong>: We could write a simple program to simulate this game thousands of times, and it would confirm these probabilities. The most convincing evidence is often seeing the results empirically.</li>
 </ol>
-<p>Would you like to explore how this problem would change if Monty’s behavior was different (e.g., if he randomly opened a door without knowing what’s behind it), or shall we examine another probability puzzle?</p>
+</section>
+</section>
+<section id="problem-7-the-bertrand-box-paradox---a-teaching-analysis" class="level3" data-number="17.17.8">
+<h3 data-number="17.17.8" class="anchored" data-anchor-id="problem-7-the-bertrand-box-paradox---a-teaching-analysis"><span class="header-section-number">17.17.8</span> Problem 7: The Bertrand Box Paradox - A Teaching Analysis</h3>
+<section id="understanding-the-problem-setup" class="level4" data-number="17.17.8.1">
+<h4 data-number="17.17.8.1" class="anchored" data-anchor-id="understanding-the-problem-setup"><span class="header-section-number">17.17.8.1</span> Understanding the Problem Setup</h4>
+<p>First, let’s clearly state what we’re dealing with:</p>
+<ol type="1">
+<li><p>We have three boxes:</p>
+<ul>
+<li>Box 1: Contains two gold coins (GG)</li>
+<li>Box 2: Contains two silver coins (SS)</li>
+<li>Box 3: Contains one gold and one silver coin (GS)</li>
+</ul></li>
+<li><p>The process:</p>
+<ul>
+<li>We randomly select a box</li>
+<li>We randomly draw one coin from the chosen box</li>
+<li>If we see a gold coin, what’s the probability it came from the gold-only box?</li>
+</ul></li>
+</ol>
+<p>Most people intuitively answer <span class="math inline">\frac{1}{2}</span>, but let’s discover why this isn’t correct.</p>
+</section>
+<section id="approach-1-tree-diagram-analysis" class="level4" data-number="17.17.8.2">
+<h4 data-number="17.17.8.2" class="anchored" data-anchor-id="approach-1-tree-diagram-analysis"><span class="header-section-number">17.17.8.2</span> Approach 1: Tree Diagram Analysis</h4>
+<p>Let’s visualize all possible paths and outcomes:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Start] --&gt; B[Box GG 1/3]
+    A --&gt; C[Box SS 1/3]
+    A --&gt; D[Box GS 1/3]
+    
+    B --&gt; E[Draw G 1]
+    C --&gt; F[Draw S 1]
+    D --&gt; G[Draw G 1/2]
+    D --&gt; H[Draw S 1/2]
+    
+    E --&gt; I[Saw Gold]
+    G --&gt; I[Saw Gold]
+    F --&gt; J[Saw Silver]
+    H --&gt; J[Saw Silver]
+    
+    style I fill:#FFD700
+    style J fill:#C0C0C0
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Following the paths where we see gold:</p>
+<ol type="1">
+<li>From Box GG (probability = <span class="math inline">\frac{1}{3} \times 1 = \frac{1}{3}</span>)</li>
+<li>From Box GS (probability = <span class="math inline">\frac{1}{3} \times \frac{1}{2} = \frac{1}{6}</span>)</li>
+</ol>
+<p>Therefore:</p>
+<ul>
+<li>Total probability of seeing gold = <span class="math inline">\frac{1}{3} + \frac{1}{6} = \frac{1}{2}</span></li>
+<li>Given we saw gold, probability it came from Box GG = <span class="math inline">\frac{\frac{1}{3}}{\frac{1}{2}} = \frac{2}{3}</span></li>
+</ul>
+</section>
+<section id="approach-2-bayes-theorem-solution" class="level4" data-number="17.17.8.3">
+<h4 data-number="17.17.8.3" class="anchored" data-anchor-id="approach-2-bayes-theorem-solution"><span class="header-section-number">17.17.8.3</span> Approach 2: Bayes’ Theorem Solution</h4>
+<p>Let’s solve this formally using Bayes’ Theorem:</p>
+<p>P(Box GG | Gold) = <span class="math inline">\frac{P(Gold|Box GG) \times P(Box GG)}{P(Gold)}</span></p>
+<p>Let’s calculate each component:</p>
+<ol type="1">
+<li>P(Gold|Box GG) = 1 (certainty of drawing gold)</li>
+<li>P(Box GG) = <span class="math inline">\frac{1}{3}</span> (equal box probabilities)</li>
+<li>P(Gold) = <span class="math inline">\frac{1}{3} \times 1 + \frac{1}{3} \times 0 + \frac{1}{3} \times \frac{1}{2} = \frac{1}{2}</span></li>
+</ol>
+<p>Putting it together:</p>
+<p>P(Box GG | Gold) = <span class="math inline">\frac{1 \times \frac{1}{3}}{\frac{1}{2}} = \frac{2}{3}</span></p>
+</section>
+<section id="why-this-is-counterintuitive" class="level4" data-number="17.17.8.4">
+<h4 data-number="17.17.8.4" class="anchored" data-anchor-id="why-this-is-counterintuitive"><span class="header-section-number">17.17.8.4</span> Why This Is Counterintuitive</h4>
+<p>The reason many people get this wrong reveals interesting aspects of how we think about probability:</p>
+<ol type="1">
+<li><p><strong>The Setup Trick</strong>: People often think, “If I see gold, it must be from either Box GG or Box GS, so it’s 50-50.” This ignores the fact that Box GG has twice the opportunity to show gold.</p></li>
+<li><p><strong>Prior vs Posterior</strong>: The problem shows how observing evidence (seeing gold) updates our prior probability (<span class="math inline">\frac{1}{3}</span>) to a posterior probability (<span class="math inline">\frac{2}{3}</span>).</p></li>
+<li><p><strong>Sample Space Structure</strong>: Box GG contributes more gold coins to the total sample space of possible draws than Box GS does.</p></li>
+</ol>
+</section>
+<section id="a-teaching-analogy" class="level4" data-number="17.17.8.5">
+<h4 data-number="17.17.8.5" class="anchored" data-anchor-id="a-teaching-analogy"><span class="header-section-number">17.17.8.5</span> A Teaching Analogy</h4>
+<p>Think of it this way: Imagine three people named GG, SS, and GS.</p>
+<ul>
+<li>GG always raises both hands when asked</li>
+<li>SS never raises hands</li>
+<li>GS raises one hand</li>
+</ul>
+<p>If you see a raised hand randomly, it’s more likely to belong to GG (who contributes two hands) than GS (who contributes only one).</p>
+</section>
+<section id="extension-for-deeper-understanding" class="level4" data-number="17.17.8.6">
+<h4 data-number="17.17.8.6" class="anchored" data-anchor-id="extension-for-deeper-understanding"><span class="header-section-number">17.17.8.6</span> Extension for Deeper Understanding</h4>
+<p>To reinforce this concept, consider: How would the probabilities change if we had:</p>
+<ol type="1">
+<li>Three coins in each box?</li>
+<li>Different prior probabilities for selecting each box?</li>
+<li>The ability to see both coins but only after selecting a box?</li>
+</ol>
 </section>
 </section>
 </section>
