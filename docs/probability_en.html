@@ -298,7 +298,6 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#basic-set-concepts" id="toc-basic-set-concepts" class="nav-link" data-scroll-target="#basic-set-concepts"><span class="header-section-number">17.1.1</span> Basic Set Concepts</a></li>
   <li><a href="#set-operations" id="toc-set-operations" class="nav-link" data-scroll-target="#set-operations"><span class="header-section-number">17.1.2</span> Set Operations</a></li>
-  <li><a href="#set-theory-as-a-language-for-probability" id="toc-set-theory-as-a-language-for-probability" class="nav-link" data-scroll-target="#set-theory-as-a-language-for-probability"><span class="header-section-number">17.1.3</span> Set Theory as a Language for Probability</a></li>
   </ul></li>
   <li><a href="#counting-rules-in-probability-multiplication-and-addition-rules" id="toc-counting-rules-in-probability-multiplication-and-addition-rules" class="nav-link" data-scroll-target="#counting-rules-in-probability-multiplication-and-addition-rules"><span class="header-section-number">17.2</span> Counting Rules in Probability: Multiplication and Addition Rules</a>
   <ul class="collapse">
@@ -318,89 +317,77 @@ window.Quarto = {
   <li><a href="#understanding-outcomes-vs-events" id="toc-understanding-outcomes-vs-events" class="nav-link" data-scroll-target="#understanding-outcomes-vs-events"><span class="header-section-number">17.3.1</span> Understanding Outcomes vs Events</a></li>
   <li><a href="#understanding-set-relations-elements-vs-subsets" id="toc-understanding-set-relations-elements-vs-subsets" class="nav-link" data-scroll-target="#understanding-set-relations-elements-vs-subsets"><span class="header-section-number">17.3.2</span> Understanding Set Relations: Elements vs Subsets (*)</a></li>
   </ul></li>
-  <li><a href="#what-is-probability-a-mathematical-framework-for-uncertainty" id="toc-what-is-probability-a-mathematical-framework-for-uncertainty" class="nav-link" data-scroll-target="#what-is-probability-a-mathematical-framework-for-uncertainty"><span class="header-section-number">17.4</span> What is Probability: A Mathematical Framework for Uncertainty</a>
+  <li><a href="#probability-a-mathematical-framework-for-uncertainty" id="toc-probability-a-mathematical-framework-for-uncertainty" class="nav-link" data-scroll-target="#probability-a-mathematical-framework-for-uncertainty"><span class="header-section-number">17.4</span> Probability: A Mathematical Framework for Uncertainty</a>
   <ul class="collapse">
-  <li><a href="#the-probability-scale" id="toc-the-probability-scale" class="nav-link" data-scroll-target="#the-probability-scale"><span class="header-section-number">17.4.1</span> The Probability Scale</a></li>
+  <li><a href="#the-need-for-measuring-uncertainty" id="toc-the-need-for-measuring-uncertainty" class="nav-link" data-scroll-target="#the-need-for-measuring-uncertainty"><span class="header-section-number">17.4.1</span> The Need for Measuring Uncertainty</a></li>
+  <li><a href="#the-probability-scale-and-its-properties" id="toc-the-probability-scale-and-its-properties" class="nav-link" data-scroll-target="#the-probability-scale-and-its-properties"><span class="header-section-number">17.4.2</span> The Probability Scale and Its Properties</a></li>
+  <li><a href="#fundamental-axioms-of-probability" id="toc-fundamental-axioms-of-probability" class="nav-link" data-scroll-target="#fundamental-axioms-of-probability"><span class="header-section-number">17.4.3</span> Fundamental Axioms of Probability</a></li>
+  <li><a href="#the-discrete-probability-framework" id="toc-the-discrete-probability-framework" class="nav-link" data-scroll-target="#the-discrete-probability-framework"><span class="header-section-number">17.4.4</span> The Discrete Probability Framework</a></li>
   </ul></li>
-  <li><a href="#discrete-probability-counting-uncertainty" id="toc-discrete-probability-counting-uncertainty" class="nav-link" data-scroll-target="#discrete-probability-counting-uncertainty"><span class="header-section-number">17.5</span> Discrete Probability: Counting Uncertainty</a>
+  <li><a href="#classical-or-naive-probability-the-equal-likelihood-case" id="toc-classical-or-naive-probability-the-equal-likelihood-case" class="nav-link" data-scroll-target="#classical-or-naive-probability-the-equal-likelihood-case"><span class="header-section-number">17.5</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Case</a>
   <ul class="collapse">
-  <li><a href="#what-makes-a-problem-discrete" id="toc-what-makes-a-problem-discrete" class="nav-link" data-scroll-target="#what-makes-a-problem-discrete"><span class="header-section-number">17.5.1</span> What Makes a Problem “Discrete”?</a></li>
-  <li><a href="#common-examples" id="toc-common-examples" class="nav-link" data-scroll-target="#common-examples"><span class="header-section-number">17.5.2</span> Common Examples</a></li>
-  <li><a href="#why-discrete-probability-matters" id="toc-why-discrete-probability-matters" class="nav-link" data-scroll-target="#why-discrete-probability-matters"><span class="header-section-number">17.5.3</span> Why Discrete Probability Matters</a></li>
+  <li><a href="#starting-assumptions" id="toc-starting-assumptions" class="nav-link" data-scroll-target="#starting-assumptions"><span class="header-section-number">17.5.1</span> Starting Assumptions</a></li>
+  <li><a href="#core-axioms-of-probability" id="toc-core-axioms-of-probability" class="nav-link" data-scroll-target="#core-axioms-of-probability"><span class="header-section-number">17.5.2</span> Core Axioms of Probability</a></li>
+  <li><a href="#the-equal-likelihood-assumption" id="toc-the-equal-likelihood-assumption" class="nav-link" data-scroll-target="#the-equal-likelihood-assumption"><span class="header-section-number">17.5.3</span> The Equal-Likelihood Assumption</a></li>
+  <li><a href="#deriving-the-classical-formula" id="toc-deriving-the-classical-formula" class="nav-link" data-scroll-target="#deriving-the-classical-formula"><span class="header-section-number">17.5.4</span> Deriving the Classical Formula</a></li>
+  <li><a href="#important-considerations" id="toc-important-considerations" class="nav-link" data-scroll-target="#important-considerations"><span class="header-section-number">17.5.5</span> Important Considerations</a></li>
+  <li><a href="#understanding-the-result" id="toc-understanding-the-result" class="nav-link" data-scroll-target="#understanding-the-result"><span class="header-section-number">17.5.6</span> Understanding the Result</a></li>
+  <li><a href="#example-application" id="toc-example-application" class="nav-link" data-scroll-target="#example-application"><span class="header-section-number">17.5.7</span> Example Application</a></li>
+  <li><a href="#limitations-and-extensions" id="toc-limitations-and-extensions" class="nav-link" data-scroll-target="#limitations-and-extensions"><span class="header-section-number">17.5.8</span> Limitations and Extensions</a></li>
+  <li><a href="#understanding-classical-probability-through-the-urn-example" id="toc-understanding-classical-probability-through-the-urn-example" class="nav-link" data-scroll-target="#understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.5.14</span> Understanding Classical Probability Through the Urn Example</a></li>
   </ul></li>
-  <li><a href="#understanding-probability-measures" id="toc-understanding-probability-measures" class="nav-link" data-scroll-target="#understanding-probability-measures"><span class="header-section-number">17.6</span> Understanding Probability Measures</a>
+  <li><a href="#how-to-calculate-basic-probabilities" id="toc-how-to-calculate-basic-probabilities" class="nav-link" data-scroll-target="#how-to-calculate-basic-probabilities"><span class="header-section-number">17.6</span> How to Calculate Basic Probabilities</a>
   <ul class="collapse">
-  <li><a href="#probability-measure-the-formal-framework" id="toc-probability-measure-the-formal-framework" class="nav-link" data-scroll-target="#probability-measure-the-formal-framework"><span class="header-section-number">17.6.1</span> Probability Measure: The Formal Framework</a></li>
-  <li><a href="#probability-distributions-vs.-probability-laws" id="toc-probability-distributions-vs.-probability-laws" class="nav-link" data-scroll-target="#probability-distributions-vs.-probability-laws"><span class="header-section-number">17.6.2</span> Probability Distributions vs.&nbsp;Probability Laws</a></li>
+  <li><a href="#example-1a-drawing-two-balls-from-an-urn-or-a-bag" id="toc-example-1a-drawing-two-balls-from-an-urn-or-a-bag" class="nav-link" data-scroll-target="#example-1a-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.6.1</span> Example 1A: Drawing Two Balls from an Urn or a Bag</a></li>
+  <li><a href="#example-1b-drawing-two-balls-from-an-urn-or-a-bag" id="toc-example-1b-drawing-two-balls-from-an-urn-or-a-bag" class="nav-link" data-scroll-target="#example-1b-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.6.2</span> Example 1B: Drawing Two Balls from an Urn or a Bag (*)</a></li>
   </ul></li>
-  <li><a href="#classical-discrete-probability-the-equal-chances-approach" id="toc-classical-discrete-probability-the-equal-chances-approach" class="nav-link" data-scroll-target="#classical-discrete-probability-the-equal-chances-approach"><span class="header-section-number">17.7</span> Classical (Discrete) Probability: The “Equal Chances” Approach</a></li>
-  <li><a href="#the-path-to-classical-probability" id="toc-the-path-to-classical-probability" class="nav-link" data-scroll-target="#the-path-to-classical-probability"><span class="header-section-number">17.8</span> The Path to Classical Probability</a>
+  <li><a href="#example-the-4-red-and-3-black-balls-problem" id="toc-example-the-4-red-and-3-black-balls-problem" class="nav-link" data-scroll-target="#example-the-4-red-and-3-black-balls-problem"><span class="header-section-number">17.7</span> Example: The 4 Red and 3 Black Balls Problem</a>
   <ul class="collapse">
-  <li><a href="#starting-with-the-foundations" id="toc-starting-with-the-foundations" class="nav-link" data-scroll-target="#starting-with-the-foundations"><span class="header-section-number">17.8.1</span> Starting with the Foundations</a></li>
-  <li><a href="#applying-the-probability-axioms" id="toc-applying-the-probability-axioms" class="nav-link" data-scroll-target="#applying-the-probability-axioms"><span class="header-section-number">17.8.2</span> Applying the Probability Axioms</a></li>
-  <li><a href="#deriving-the-classical-formula" id="toc-deriving-the-classical-formula" class="nav-link" data-scroll-target="#deriving-the-classical-formula"><span class="header-section-number">17.8.3</span> Deriving the Classical Formula</a></li>
-  <li><a href="#understanding-the-requirements" id="toc-understanding-the-requirements" class="nav-link" data-scroll-target="#understanding-the-requirements"><span class="header-section-number">17.8.4</span> Understanding the Requirements</a></li>
-  <li><a href="#practical-application-example" id="toc-practical-application-example" class="nav-link" data-scroll-target="#practical-application-example"><span class="header-section-number">17.8.5</span> Practical Application Example</a></li>
-  <li><a href="#looking-beyond-classical-probability" id="toc-looking-beyond-classical-probability" class="nav-link" data-scroll-target="#looking-beyond-classical-probability"><span class="header-section-number">17.8.6</span> Looking Beyond Classical Probability</a></li>
+  <li><a href="#method-1-using-counting-rules" id="toc-method-1-using-counting-rules" class="nav-link" data-scroll-target="#method-1-using-counting-rules"><span class="header-section-number">17.7.1</span> Method 1: Using Counting Rules</a></li>
+  <li><a href="#method-2-tree-diagram-approach" id="toc-method-2-tree-diagram-approach" class="nav-link" data-scroll-target="#method-2-tree-diagram-approach"><span class="header-section-number">17.7.2</span> Method 2: Tree Diagram Approach</a></li>
+  <li><a href="#method-3-grid-diagram-and-sample-space" id="toc-method-3-grid-diagram-and-sample-space" class="nav-link" data-scroll-target="#method-3-grid-diagram-and-sample-space"><span class="header-section-number">17.7.3</span> Method 3: Grid Diagram and Sample Space</a></li>
+  <li><a href="#comparing-the-methods" id="toc-comparing-the-methods" class="nav-link" data-scroll-target="#comparing-the-methods"><span class="header-section-number">17.7.4</span> Comparing the Methods</a></li>
   </ul></li>
-  <li><a href="#example-rolling-a-fair-die" id="toc-example-rolling-a-fair-die" class="nav-link" data-scroll-target="#example-rolling-a-fair-die"><span class="header-section-number">17.9</span> Example: Rolling a Fair Die</a></li>
-  <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes"><span class="header-section-number">17.10</span> Important Notes</a>
+  <li><a href="#problem-solutions-1" id="toc-problem-solutions-1" class="nav-link" data-scroll-target="#problem-solutions-1"><span class="header-section-number">17.8</span> Problem Solutions (1)</a>
   <ul class="collapse">
-  <li><a href="#understanding-classical-probability-through-the-urn-example" id="toc-understanding-classical-probability-through-the-urn-example" class="nav-link" data-scroll-target="#understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.10.6</span> Understanding Classical Probability Through the Urn Example</a></li>
+  <li><a href="#problem-1-two-ball-drawing-from-an-urn" id="toc-problem-1-two-ball-drawing-from-an-urn" class="nav-link" data-scroll-target="#problem-1-two-ball-drawing-from-an-urn"><span class="header-section-number">17.8.1</span> Problem 1: Two-Ball Drawing from an Urn</a></li>
+  <li><a href="#initial-conditions" id="toc-initial-conditions" class="nav-link" data-scroll-target="#initial-conditions"><span class="header-section-number">17.8.2</span> Initial Conditions</a></li>
+  <li><a href="#visual-representation" id="toc-visual-representation" class="nav-link" data-scroll-target="#visual-representation"><span class="header-section-number">17.8.3</span> Visual Representation</a></li>
+  <li><a href="#probability-calculation" id="toc-probability-calculation" class="nav-link" data-scroll-target="#probability-calculation"><span class="header-section-number">17.8.4</span> Probability Calculation</a></li>
+  <li><a href="#final-solution" id="toc-final-solution" class="nav-link" data-scroll-target="#final-solution"><span class="header-section-number">17.8.5</span> Final Solution</a></li>
+  <li><a href="#verification" id="toc-verification" class="nav-link" data-scroll-target="#verification"><span class="header-section-number">17.8.6</span> Verification</a></li>
+  <li><a href="#problem-2-die-and-coin-probability-exercise" id="toc-problem-2-die-and-coin-probability-exercise" class="nav-link" data-scroll-target="#problem-2-die-and-coin-probability-exercise"><span class="header-section-number">17.8.7</span> Problem 2: Die and Coin Probability Exercise</a></li>
+  <li><a href="#problem-3-laplaces-two-draw-probability-problem" id="toc-problem-3-laplaces-two-draw-probability-problem" class="nav-link" data-scroll-target="#problem-3-laplaces-two-draw-probability-problem"><span class="header-section-number">17.8.8</span> Problem 3: Laplace’s Two-Draw Probability Problem</a></li>
   </ul></li>
-  <li><a href="#key-questions-before-calculating-probabilities" id="toc-key-questions-before-calculating-probabilities" class="nav-link" data-scroll-target="#key-questions-before-calculating-probabilities"><span class="header-section-number">17.11</span> Key Questions Before Calculating Probabilities</a></li>
-  <li><a href="#how-to-calculate-basic-probabilities" id="toc-how-to-calculate-basic-probabilities" class="nav-link" data-scroll-target="#how-to-calculate-basic-probabilities"><span class="header-section-number">17.12</span> How to Calculate Basic Probabilities</a>
+  <li><a href="#core-probability-rules" id="toc-core-probability-rules" class="nav-link" data-scroll-target="#core-probability-rules"><span class="header-section-number">17.9</span> Core Probability Rules</a>
   <ul class="collapse">
-  <li><a href="#example-1a-drawing-two-balls-from-an-urn-or-a-bag" id="toc-example-1a-drawing-two-balls-from-an-urn-or-a-bag" class="nav-link" data-scroll-target="#example-1a-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.12.1</span> Example 1A: Drawing Two Balls from an Urn or a Bag</a></li>
-  <li><a href="#example-1b-drawing-two-balls-from-an-urn-or-a-bag" id="toc-example-1b-drawing-two-balls-from-an-urn-or-a-bag" class="nav-link" data-scroll-target="#example-1b-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.12.2</span> Example 1B: Drawing Two Balls from an Urn or a Bag (*)</a></li>
+  <li><a href="#the-complement-rule" id="toc-the-complement-rule" class="nav-link" data-scroll-target="#the-complement-rule"><span class="header-section-number">17.9.1</span> The Complement Rule</a></li>
+  <li><a href="#the-additionsum-rule" id="toc-the-additionsum-rule" class="nav-link" data-scroll-target="#the-additionsum-rule"><span class="header-section-number">17.9.2</span> The Addition/Sum Rule</a></li>
+  <li><a href="#conditional-probability-the-multiplication-rule-and-bayes-theorem" id="toc-conditional-probability-the-multiplication-rule-and-bayes-theorem" class="nav-link" data-scroll-target="#conditional-probability-the-multiplication-rule-and-bayes-theorem"><span class="header-section-number">17.9.3</span> Conditional Probability, the Multiplication Rule, and Bayes’ Theorem</a></li>
+  <li><a href="#independent-and-disjoint-events" id="toc-independent-and-disjoint-events" class="nav-link" data-scroll-target="#independent-and-disjoint-events"><span class="header-section-number">17.9.4</span> Independent and Disjoint Events</a></li>
   </ul></li>
-  <li><a href="#example-the-4-red-and-3-black-balls-problem" id="toc-example-the-4-red-and-3-black-balls-problem" class="nav-link" data-scroll-target="#example-the-4-red-and-3-black-balls-problem"><span class="header-section-number">17.13</span> Example: The 4 Red and 3 Black Balls Problem</a>
+  <li><a href="#problem-solutions-2" id="toc-problem-solutions-2" class="nav-link" data-scroll-target="#problem-solutions-2"><span class="header-section-number">17.10</span> Problem Solutions (2)</a>
   <ul class="collapse">
-  <li><a href="#method-1-using-counting-rules" id="toc-method-1-using-counting-rules" class="nav-link" data-scroll-target="#method-1-using-counting-rules"><span class="header-section-number">17.13.1</span> Method 1: Using Counting Rules</a></li>
-  <li><a href="#method-2-tree-diagram-approach" id="toc-method-2-tree-diagram-approach" class="nav-link" data-scroll-target="#method-2-tree-diagram-approach"><span class="header-section-number">17.13.2</span> Method 2: Tree Diagram Approach</a></li>
-  <li><a href="#method-3-grid-diagram-and-sample-space" id="toc-method-3-grid-diagram-and-sample-space" class="nav-link" data-scroll-target="#method-3-grid-diagram-and-sample-space"><span class="header-section-number">17.13.3</span> Method 3: Grid Diagram and Sample Space</a></li>
-  <li><a href="#comparing-the-methods" id="toc-comparing-the-methods" class="nav-link" data-scroll-target="#comparing-the-methods"><span class="header-section-number">17.13.4</span> Comparing the Methods</a></li>
+  <li><a href="#problem-1-cards---diamonds-or-tens" id="toc-problem-1-cards---diamonds-or-tens" class="nav-link" data-scroll-target="#problem-1-cards---diamonds-or-tens"><span class="header-section-number">17.10.1</span> Problem 1: Cards - Diamonds or Tens</a></li>
+  <li><a href="#problem-2-colored-balls---at-least-one-red" id="toc-problem-2-colored-balls---at-least-one-red" class="nav-link" data-scroll-target="#problem-2-colored-balls---at-least-one-red"><span class="header-section-number">17.10.2</span> Problem 2: Colored Balls - At Least One Red</a></li>
+  <li><a href="#problem-3-colored-balls-with-replacement-and-addition" id="toc-problem-3-colored-balls-with-replacement-and-addition" class="nav-link" data-scroll-target="#problem-3-colored-balls-with-replacement-and-addition"><span class="header-section-number">17.10.3</span> Problem 3: Colored Balls with Replacement and Addition</a></li>
+  <li><a href="#problem-3-covid-19-test-analysis" id="toc-problem-3-covid-19-test-analysis" class="nav-link" data-scroll-target="#problem-3-covid-19-test-analysis"><span class="header-section-number">17.10.4</span> Problem 3: COVID-19 Test Analysis</a></li>
+  <li><a href="#problem-4-conditional-probability-marble-drawing-with-coin-flip" id="toc-problem-4-conditional-probability-marble-drawing-with-coin-flip" class="nav-link" data-scroll-target="#problem-4-conditional-probability-marble-drawing-with-coin-flip"><span class="header-section-number">17.10.5</span> Problem 4: Conditional Probability: Marble Drawing with Coin Flip</a></li>
+  <li><a href="#problem-5-probability-of-intersecting-events-and-independence-analysis" id="toc-problem-5-probability-of-intersecting-events-and-independence-analysis" class="nav-link" data-scroll-target="#problem-5-probability-of-intersecting-events-and-independence-analysis"><span class="header-section-number">17.10.6</span> Problem 5: Probability of Intersecting Events and Independence Analysis</a></li>
+  <li><a href="#problem-6-the-monty-hall-problem---two-solution-approaches" id="toc-problem-6-the-monty-hall-problem---two-solution-approaches" class="nav-link" data-scroll-target="#problem-6-the-monty-hall-problem---two-solution-approaches"><span class="header-section-number">17.10.7</span> Problem 6: The Monty Hall Problem - Two Solution Approaches</a></li>
+  <li><a href="#problem-7-the-bertrand-box-paradox---a-teaching-analysis" id="toc-problem-7-the-bertrand-box-paradox---a-teaching-analysis" class="nav-link" data-scroll-target="#problem-7-the-bertrand-box-paradox---a-teaching-analysis"><span class="header-section-number">17.10.8</span> Problem 7: The Bertrand Box Paradox - A Teaching Analysis</a></li>
   </ul></li>
-  <li><a href="#problem-solutions-1" id="toc-problem-solutions-1" class="nav-link" data-scroll-target="#problem-solutions-1"><span class="header-section-number">17.14</span> Problem Solutions (1)</a>
+  <li><a href="#study-tips" id="toc-study-tips" class="nav-link" data-scroll-target="#study-tips"><span class="header-section-number">17.11</span> Study Tips</a></li>
+  <li><a href="#appendix-1.-advanced-counting-in-probability-a-student-guide" id="toc-appendix-1.-advanced-counting-in-probability-a-student-guide" class="nav-link" data-scroll-target="#appendix-1.-advanced-counting-in-probability-a-student-guide"><span class="header-section-number">17.12</span> Appendix 1. Advanced Counting in Probability: A Student Guide (*)</a>
   <ul class="collapse">
-  <li><a href="#problem-1-two-ball-drawing-from-an-urn" id="toc-problem-1-two-ball-drawing-from-an-urn" class="nav-link" data-scroll-target="#problem-1-two-ball-drawing-from-an-urn"><span class="header-section-number">17.14.1</span> Problem 1: Two-Ball Drawing from an Urn</a></li>
-  <li><a href="#initial-conditions" id="toc-initial-conditions" class="nav-link" data-scroll-target="#initial-conditions"><span class="header-section-number">17.14.2</span> Initial Conditions</a></li>
-  <li><a href="#visual-representation" id="toc-visual-representation" class="nav-link" data-scroll-target="#visual-representation"><span class="header-section-number">17.14.3</span> Visual Representation</a></li>
-  <li><a href="#probability-calculation" id="toc-probability-calculation" class="nav-link" data-scroll-target="#probability-calculation"><span class="header-section-number">17.14.4</span> Probability Calculation</a></li>
-  <li><a href="#final-solution" id="toc-final-solution" class="nav-link" data-scroll-target="#final-solution"><span class="header-section-number">17.14.5</span> Final Solution</a></li>
-  <li><a href="#verification" id="toc-verification" class="nav-link" data-scroll-target="#verification"><span class="header-section-number">17.14.6</span> Verification</a></li>
-  <li><a href="#problem-2-die-and-coin-probability-exercise" id="toc-problem-2-die-and-coin-probability-exercise" class="nav-link" data-scroll-target="#problem-2-die-and-coin-probability-exercise"><span class="header-section-number">17.14.7</span> Problem 2: Die and Coin Probability Exercise</a></li>
-  <li><a href="#problem-3-laplaces-two-draw-probability-problem" id="toc-problem-3-laplaces-two-draw-probability-problem" class="nav-link" data-scroll-target="#problem-3-laplaces-two-draw-probability-problem"><span class="header-section-number">17.14.8</span> Problem 3: Laplace’s Two-Draw Probability Problem</a></li>
-  </ul></li>
-  <li><a href="#core-probability-rules" id="toc-core-probability-rules" class="nav-link" data-scroll-target="#core-probability-rules"><span class="header-section-number">17.15</span> Core Probability Rules</a>
-  <ul class="collapse">
-  <li><a href="#the-complement-rule" id="toc-the-complement-rule" class="nav-link" data-scroll-target="#the-complement-rule"><span class="header-section-number">17.15.1</span> The Complement Rule</a></li>
-  <li><a href="#the-additionsum-rule" id="toc-the-additionsum-rule" class="nav-link" data-scroll-target="#the-additionsum-rule"><span class="header-section-number">17.15.2</span> The Addition/Sum Rule</a></li>
-  <li><a href="#conditional-probability-the-multiplication-rule-and-bayes-theorem" id="toc-conditional-probability-the-multiplication-rule-and-bayes-theorem" class="nav-link" data-scroll-target="#conditional-probability-the-multiplication-rule-and-bayes-theorem"><span class="header-section-number">17.15.3</span> Conditional Probability, the Multiplication Rule, and Bayes’ Theorem</a></li>
-  <li><a href="#independent-and-disjoint-events" id="toc-independent-and-disjoint-events" class="nav-link" data-scroll-target="#independent-and-disjoint-events"><span class="header-section-number">17.15.4</span> Independent and Disjoint Events</a></li>
-  </ul></li>
-  <li><a href="#problem-solutions-2" id="toc-problem-solutions-2" class="nav-link" data-scroll-target="#problem-solutions-2"><span class="header-section-number">17.16</span> Problem Solutions (2)</a>
-  <ul class="collapse">
-  <li><a href="#problem-1-cards---diamonds-or-tens" id="toc-problem-1-cards---diamonds-or-tens" class="nav-link" data-scroll-target="#problem-1-cards---diamonds-or-tens"><span class="header-section-number">17.16.1</span> Problem 1: Cards - Diamonds or Tens</a></li>
-  <li><a href="#problem-2-colored-balls---at-least-one-red" id="toc-problem-2-colored-balls---at-least-one-red" class="nav-link" data-scroll-target="#problem-2-colored-balls---at-least-one-red"><span class="header-section-number">17.16.2</span> Problem 2: Colored Balls - At Least One Red</a></li>
-  <li><a href="#problem-3-colored-balls-with-replacement-and-addition" id="toc-problem-3-colored-balls-with-replacement-and-addition" class="nav-link" data-scroll-target="#problem-3-colored-balls-with-replacement-and-addition"><span class="header-section-number">17.16.3</span> Problem 3: Colored Balls with Replacement and Addition</a></li>
-  <li><a href="#problem-3-covid-19-test-analysis" id="toc-problem-3-covid-19-test-analysis" class="nav-link" data-scroll-target="#problem-3-covid-19-test-analysis"><span class="header-section-number">17.16.4</span> Problem 3: COVID-19 Test Analysis</a></li>
-  <li><a href="#problem-4-conditional-probability-marble-drawing-with-coin-flip" id="toc-problem-4-conditional-probability-marble-drawing-with-coin-flip" class="nav-link" data-scroll-target="#problem-4-conditional-probability-marble-drawing-with-coin-flip"><span class="header-section-number">17.16.5</span> Problem 4: Conditional Probability: Marble Drawing with Coin Flip</a></li>
-  <li><a href="#problem-5-probability-of-intersecting-events-and-independence-analysis" id="toc-problem-5-probability-of-intersecting-events-and-independence-analysis" class="nav-link" data-scroll-target="#problem-5-probability-of-intersecting-events-and-independence-analysis"><span class="header-section-number">17.16.6</span> Problem 5: Probability of Intersecting Events and Independence Analysis</a></li>
-  <li><a href="#problem-6-the-monty-hall-problem---two-solution-approaches" id="toc-problem-6-the-monty-hall-problem---two-solution-approaches" class="nav-link" data-scroll-target="#problem-6-the-monty-hall-problem---two-solution-approaches"><span class="header-section-number">17.16.7</span> Problem 6: The Monty Hall Problem - Two Solution Approaches</a></li>
-  <li><a href="#problem-7-the-bertrand-box-paradox---a-teaching-analysis" id="toc-problem-7-the-bertrand-box-paradox---a-teaching-analysis" class="nav-link" data-scroll-target="#problem-7-the-bertrand-box-paradox---a-teaching-analysis"><span class="header-section-number">17.16.8</span> Problem 7: The Bertrand Box Paradox - A Teaching Analysis</a></li>
-  </ul></li>
-  <li><a href="#study-tips" id="toc-study-tips" class="nav-link" data-scroll-target="#study-tips"><span class="header-section-number">17.17</span> Study Tips</a></li>
-  <li><a href="#appendix-1.-advanced-counting-in-probability-a-student-guide" id="toc-appendix-1.-advanced-counting-in-probability-a-student-guide" class="nav-link" data-scroll-target="#appendix-1.-advanced-counting-in-probability-a-student-guide"><span class="header-section-number">17.18</span> Appendix 1. Advanced Counting in Probability: A Student Guide (*)</a>
-  <ul class="collapse">
-  <li><a href="#poker-hands-a-window-into-complex-counting" id="toc-poker-hands-a-window-into-complex-counting" class="nav-link" data-scroll-target="#poker-hands-a-window-into-complex-counting"><span class="header-section-number">17.18.1</span> Poker Hands: A Window into Complex Counting</a></li>
-  <li><a href="#understanding-our-sample-space" id="toc-understanding-our-sample-space" class="nav-link" data-scroll-target="#understanding-our-sample-space"><span class="header-section-number">17.18.2</span> Understanding Our Sample Space</a></li>
-  <li><a href="#understanding-two-pairs-a-careful-counting-approach" id="toc-understanding-two-pairs-a-careful-counting-approach" class="nav-link" data-scroll-target="#understanding-two-pairs-a-careful-counting-approach"><span class="header-section-number">17.18.3</span> Understanding Two Pairs: A Careful Counting Approach</a></li>
-  <li><a href="#understanding-full-house-a-different-counting-challenge" id="toc-understanding-full-house-a-different-counting-challenge" class="nav-link" data-scroll-target="#understanding-full-house-a-different-counting-challenge"><span class="header-section-number">17.18.4</span> Understanding Full House: A Different Counting Challenge</a></li>
-  <li><a href="#the-birthday-problem-a-beautiful-probability-surprise" id="toc-the-birthday-problem-a-beautiful-probability-surprise" class="nav-link" data-scroll-target="#the-birthday-problem-a-beautiful-probability-surprise"><span class="header-section-number">17.18.5</span> The Birthday Problem: A Beautiful Probability Surprise</a></li>
-  <li><a href="#lottery-mathematics-putting-it-all-together" id="toc-lottery-mathematics-putting-it-all-together" class="nav-link" data-scroll-target="#lottery-mathematics-putting-it-all-together"><span class="header-section-number">17.18.6</span> Lottery Mathematics: Putting It All Together</a></li>
-  <li><a href="#appendix-2.-alternative-approaches-to-poker-hand-probabilities" id="toc-appendix-2.-alternative-approaches-to-poker-hand-probabilities" class="nav-link" data-scroll-target="#appendix-2.-alternative-approaches-to-poker-hand-probabilities"><span class="header-section-number">17.18.7</span> Appendix 2. Alternative Approaches to Poker Hand Probabilities (*)</a></li>
-  <li><a href="#appendix-3-occupancy-problems-and-statistical-physics" id="toc-appendix-3-occupancy-problems-and-statistical-physics" class="nav-link" data-scroll-target="#appendix-3-occupancy-problems-and-statistical-physics"><span class="header-section-number">17.18.8</span> Appendix 3: Occupancy Problems and Statistical Physics (*)</a></li>
+  <li><a href="#poker-hands-a-window-into-complex-counting" id="toc-poker-hands-a-window-into-complex-counting" class="nav-link" data-scroll-target="#poker-hands-a-window-into-complex-counting"><span class="header-section-number">17.12.1</span> Poker Hands: A Window into Complex Counting</a></li>
+  <li><a href="#understanding-our-sample-space" id="toc-understanding-our-sample-space" class="nav-link" data-scroll-target="#understanding-our-sample-space"><span class="header-section-number">17.12.2</span> Understanding Our Sample Space</a></li>
+  <li><a href="#understanding-two-pairs-a-careful-counting-approach" id="toc-understanding-two-pairs-a-careful-counting-approach" class="nav-link" data-scroll-target="#understanding-two-pairs-a-careful-counting-approach"><span class="header-section-number">17.12.3</span> Understanding Two Pairs: A Careful Counting Approach</a></li>
+  <li><a href="#understanding-full-house-a-different-counting-challenge" id="toc-understanding-full-house-a-different-counting-challenge" class="nav-link" data-scroll-target="#understanding-full-house-a-different-counting-challenge"><span class="header-section-number">17.12.4</span> Understanding Full House: A Different Counting Challenge</a></li>
+  <li><a href="#the-birthday-problem-a-beautiful-probability-surprise" id="toc-the-birthday-problem-a-beautiful-probability-surprise" class="nav-link" data-scroll-target="#the-birthday-problem-a-beautiful-probability-surprise"><span class="header-section-number">17.12.5</span> The Birthday Problem: A Beautiful Probability Surprise</a></li>
+  <li><a href="#lottery-mathematics-putting-it-all-together" id="toc-lottery-mathematics-putting-it-all-together" class="nav-link" data-scroll-target="#lottery-mathematics-putting-it-all-together"><span class="header-section-number">17.12.6</span> Lottery Mathematics: Putting It All Together</a></li>
+  <li><a href="#appendix-2.-alternative-approaches-to-poker-hand-probabilities" id="toc-appendix-2.-alternative-approaches-to-poker-hand-probabilities" class="nav-link" data-scroll-target="#appendix-2.-alternative-approaches-to-poker-hand-probabilities"><span class="header-section-number">17.12.7</span> Appendix 2. Alternative Approaches to Poker Hand Probabilities (*)</a></li>
+  <li><a href="#appendix-3-occupancy-problems-and-statistical-physics" id="toc-appendix-3-occupancy-problems-and-statistical-physics" class="nav-link" data-scroll-target="#appendix-3-occupancy-problems-and-statistical-physics"><span class="header-section-number">17.12.8</span> Appendix 3: Occupancy Problems and Statistical Physics (*)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -453,9 +440,16 @@ window.Quarto = {
 <p>These operations follow important laws like:</p>
 <p><span class="math display">(A \cup B)^c = A^c \cap B^c</span> (DeMorgan’s Law)</p>
 <p><span class="math display">(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</span> (Distributive Law)</p>
-</section>
-<section id="set-theory-as-a-language-for-probability" class="level3" data-number="17.1.3">
-<h3 data-number="17.1.3" class="anchored" data-anchor-id="set-theory-as-a-language-for-probability"><span class="header-section-number">17.1.3</span> Set Theory as a Language for Probability</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Set Theory as a Language for Probability
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Set theory provides the fundamental mathematical framework for understanding and working with probability theory.</p>
 <p>The following table illustrates the key parallels between set theory concepts and their probability theory counterparts.</p>
 <table class="caption-top table">
@@ -534,7 +528,9 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -544,26 +540,21 @@ Cardinality of Sets
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In probability theory, we denote cardinality (the number of elements in a set) using vertical bars: |A|</p>
+<p>In probability theory, we denote cardinality (the number of elements in a set) using vertical bars: <span class="math inline">|A|</span></p>
 <p>Key points:</p>
 <ul>
-<li><p>|A| means “number of elements in set A”</p></li>
-<li><p>For a finite set like A = {1, 2, 3}, we have |A| = 3</p></li>
-<li><p>Empty set has cardinality zero: |∅| = 0</p></li>
-<li><p>For two sets A and B:</p>
+<li><span class="math inline">|A|</span> means “number of elements in set A”</li>
+<li>For a finite set like <span class="math inline">A = \{1, 2, 3\}</span>, we have <span class="math inline">|A| = 3</span></li>
+<li>Empty set has cardinality zero: <span class="math inline">|\emptyset| = 0</span></li>
+<li>For two sets <span class="math inline">A</span> and <span class="math inline">B</span>:
 <ul>
-<li>Union (no overlap): |A ∪ B| = |A| + |B|</li>
-<li>Union (with overlap): |A ∪ B| = |A| + |B| - |A ∩ B|</li>
-<li>Cartesian product: |A × B| = |A| × |B|</li>
+<li>Union (no overlap): <span class="math inline">|A \cup B| = |A| + |B|</span></li>
+<li>Union (with overlap): <span class="math inline">|A \cup B| = |A| + |B| - |A \cap B|</span></li>
+<li>Cartesian product: <span class="math inline">|A \times B| = |A| \times |B|</span></li>
 </ul></li>
 </ul>
 <p><strong>Example</strong>:</p>
-<p>If A = {♠, ♣, ♥, ♦} and B = {K, Q, J}, then:</p>
-<ul>
-<li>|A| = 4</li>
-<li>|B| = 3</li>
-<li>|A × B| = 12 (all possible combinations)</li>
-</ul>
+<p>If <span class="math inline">A = \{\spadesuit, \clubsuit, \heartsuit, \diamondsuit\}</span> and <span class="math inline">B = \{K, Q, J\}</span>, then: - <span class="math inline">|A| = 4</span> - <span class="math inline">|B| = 3</span> - <span class="math inline">|A \times B| = 12</span> (all possible combinations)</p>
 </div>
 </div>
 </section>
@@ -619,22 +610,26 @@ Cardinality of Sets
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-    Start[Problem: Count possible outcomes] --&gt; Q1{"Are events independent\nand sequential?"}
+    Start[Problem: Count possible outcomes] --&gt; Q1{"Can the counting be broken\ninto sequential stages?"}
     
     Q1 --&gt;|Yes| M1[Use Multiplication Rule]
     Q1 --&gt;|No| Q2{"Are events mutually\nexclusive?"}
     
-    M1 --&gt; ME1["Example:\nRolling two dice"]
-    ME1 --&gt; MC1["6 outcomes for first die\n× 6 outcomes for second die\n= 36 total outcomes"]
+    M1 --&gt; ME1["Examples:"]
+    ME1 --&gt; MC1["1. Rolling two dice:\n6 × 6 = 36 outcomes"]
+    MC1 --&gt; MC2["2. Password with 2 digits, 3 letters:\n10 × 10 × 26 × 26 × 26 = 1,757,600"]
+    MC2 --&gt; MC3["3. Outfit choices:\n4 shirts × 3 pants = 12 combinations"]
     
     Q2 --&gt;|Yes| A1[Use Addition Rule]
-    Q2 --&gt;|No| A2["Use Addition Rule\nsubtract overlap"]
+    Q2 --&gt;|No| A2["Use Addition Rule\nwith Intersection"]
     
-    A1 --&gt; AE1["Example:\nDrawing red or black card"]
-    AE1 --&gt; AC1["26 red cards\n+ 26 black cards\n= 52 total cards"]
+    A1 --&gt; AE1["Examples:"]
+    AE1 --&gt; AC1["1. Drawing red or black card:\n26 + 26 = 52 cards"]
+    AC1 --&gt; AC2["2. Coin toss outcomes:\nHeads + Tails = 1 + 1 = 2"]
     
-    A2 --&gt; AE2["Example:\nStudents taking\nMath OR Physics"]
-    AE2 --&gt; AC2["30 Math students\n+ 25 Physics students\n- 8 taking both\n= 47 total students"]
+    A2 --&gt; AE2["Examples:"]
+    AE2 --&gt; AC3["1. Students in Math OR Physics:\n30 + 25 - 8 = 47 students"]
+    AC3 --&gt; AC4["2. Book readers in Fiction OR Non-Fiction:\n120 + 85 - 35 = 170 readers"]
     
     classDef start fill:#d4426e,stroke:#333,color:#fff
     classDef question fill:#2d5a8c,stroke:#333,color:#fff
@@ -646,7 +641,7 @@ Cardinality of Sets
     class Q1,Q2 question
     class M1,A1,A2 rule
     class ME1,AE1,AE2 example
-    class MC1,AC1,AC2 calculation
+    class MC1,MC2,MC3,AC1,AC2,AC3,AC4 calculation
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -659,45 +654,64 @@ Cardinality of Sets
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-    subgraph Multiplication_Rule[Multiplication Rule]
-        M1["First Choice: 3 Options"] --&gt; M2["Each leads to 2 Options"]
-        M2 --&gt; M3["Total: 3 × 2 = 6 Possibilities"]
+    subgraph Multiplication_Rule[Multiplication Rule Examples]
+        direction TB
+        M1["Choose Breakfast"] --&gt; MA["Drink\n(3 options)"] &amp; MB["Food\n(2 options)"]
+        MA --&gt; MA1((Coffee)) &amp; MA2((Tea)) &amp; MA3((Juice))
+        MB --&gt; MB1((Toast)) &amp; MB2((Cereal))
         
-        MA((A)) --&gt; MA1((1))
-        MA --&gt; MA2((2))
-        MB((B)) --&gt; MB1((1))
-        MB --&gt; MB2((2))
-        MC((C)) --&gt; MC1((1))
-        MC --&gt; MC2((2))
+        MR["Total Combinations:\n3 drinks × 2 foods\n= 6 possible breakfasts"]
+        
+        subgraph Tree_Example[Tree Diagram]
+            direction LR
+            T1["PIN First Digit\n(0-9)"] --&gt; T2["Second Digit\n(0-9)"]
+            T2 --&gt; T3["10 × 10 = 100\ntotal combinations"]
+        end
     end
     
-    subgraph Addition_Rules[Addition Rules]
-        A1[Set A] --&gt; AE["Simple Addition:\nNo Overlap"]
-        A2[Set B] --&gt; AE
-        AE --&gt; AE1["Total = A + B"]
+    subgraph Addition_Rules[Addition Rule Examples]
+        direction TB
+        subgraph Exclusive[Mutually Exclusive Example]
+            direction LR
+            A1["Coin Flip"] --&gt; AH((Heads))
+            A1 --&gt; AT((Tails))
+            AR["Total = 1 + 1 = 2\nNo overlap possible"]
+        end
         
-        O1[Set X] --&gt; OE["Addition with Overlap"]
-        O2[Set Y] --&gt; OE
-        OE --&gt; OE1["Total = X + Y - Overlap"]
+        subgraph Overlapping[Overlapping Sets Example]
+            direction TB
+            O1["Students in\nClubs"] --&gt; OS["Science Club\n25 students"] &amp; OA["Art Club\n20 students"]
+            OI["Both Clubs\n8 students"]
+            OT["Total = 25 + 20 - 8\n= 37 students"]
+        end
     end
     
     classDef default fill:#f9f9f9,stroke:#333,color:#000
     classDef set fill:#2d5a8c,stroke:#333,color:#fff
     classDef result fill:#156b45,stroke:#333,color:#fff
     classDef option fill:#f5f5f5,stroke:#333,color:#333
+    classDef example fill:#4a4a4a,stroke:#333,color:#fff
     
-    class A1,A2,O1,O2 set
-    class AE1,OE1,M3 result
-    class MA,MB,MC,MA1,MA2,MB1,MB2,MC1,MC2 option
+    class MA,MB,A1,O1 set
+    class MR,AR,OT result
+    class MA1,MA2,MA3,MB1,MB2,AH,AT option
+    class Tree_Example,Exclusive,Overlapping example
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
-</section>
-<section id="the-inclusion-exclusion-principle" class="level4" data-number="17.2.4.2">
-<h4 data-number="17.2.4.2" class="anchored" data-anchor-id="the-inclusion-exclusion-principle"><span class="header-section-number">17.2.4.2</span> The Inclusion-Exclusion Principle (*)</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Inclusion-Exclusion Principle (*)
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>Venn diagrams are useful to visualize the inclusion-exclusion principle</strong>, which states that for two sets A and B, the number of elements in their union equals the sum of elements in each set, minus the elements they share in common (to avoid double counting).</p>
 <p>For general sets, this can be written as:</p>
 <p><span class="math display">
@@ -728,6 +742,8 @@ Cardinality of Sets
 <p><span class="math display">
 P(A \cup B) = P(A) + P(B) - P(A \cap B)
 </span></p>
+</div>
+</div>
 </section>
 </section>
 <section id="combining-both-rules-a-complex-example" class="level3" data-number="17.2.5">
@@ -1182,117 +1198,101 @@ P(A \cup B) = P(A) + P(B) - P(A \cap B)
 </section>
 </section>
 </section>
-<section id="what-is-probability-a-mathematical-framework-for-uncertainty" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="what-is-probability-a-mathematical-framework-for-uncertainty"><span class="header-section-number">17.4</span> What is Probability: A Mathematical Framework for Uncertainty</h2>
-<p>Probability serves as our mathematical framework for quantifying uncertainty, similar to how we use various units to measure physical quantities:</p>
+<section id="probability-a-mathematical-framework-for-uncertainty" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="probability-a-mathematical-framework-for-uncertainty"><span class="header-section-number">17.4</span> Probability: A Mathematical Framework for Uncertainty</h2>
+<section id="the-need-for-measuring-uncertainty" class="level3" data-number="17.4.1">
+<h3 data-number="17.4.1" class="anchored" data-anchor-id="the-need-for-measuring-uncertainty"><span class="header-section-number">17.4.1</span> The Need for Measuring Uncertainty</h3>
+<p>Just as we need precise ways to measure physical quantities (meters for distance, kilograms for mass, degrees for temperature), we need a mathematical framework to quantify uncertainty. Probability serves as this framework, providing a systematic way to measure the likelihood of events.</p>
+</section>
+<section id="the-probability-scale-and-its-properties" class="level3" data-number="17.4.2">
+<h3 data-number="17.4.2" class="anchored" data-anchor-id="the-probability-scale-and-its-properties"><span class="header-section-number">17.4.2</span> The Probability Scale and Its Properties</h3>
+<p>A probability measure maps events to real numbers between 0 and 1, where:</p>
 <ul>
-<li>Distance → meters</li>
-<li>Mass → kilograms</li>
-<li>Temperature → degrees</li>
-<li>Uncertainty → probability</li>
+<li>A probability of 0 represents an impossible event</li>
+<li>A probability of 1 represents a certain event</li>
+<li>Values between 0 and 1 represent varying degrees of likelihood</li>
 </ul>
-<section id="the-probability-scale" class="level3" data-number="17.4.1">
-<h3 data-number="17.4.1" class="anchored" data-anchor-id="the-probability-scale"><span class="header-section-number">17.4.1</span> The Probability Scale</h3>
-<p>Every probability must fall between 0 and 1 (or 0% to 100%), where:</p>
+<p>For example, when rolling a six-sided die:</p>
 <ul>
-<li>0 (0%) → Impossible event</li>
-<li>1 (100%) → Certain event</li>
-<li>Values between → Varying degrees of likelihood</li>
-</ul>
-<p>For example:</p>
-<ul>
-<li>Rolling a 7 on a six-sided die: 0 (impossible)</li>
-<li>Rolling an even number on a six-sided die: 0.5 (50%)</li>
-<li>Rolling a number less than 7 on a six-sided die: 1 (certain)</li>
+<li>Rolling a 7 has probability 0 (impossible)</li>
+<li>Rolling an even number has probability 1/2 (moderately likely)</li>
+<li>Rolling a number between 1 and 6 has probability 1 (certain)</li>
 </ul>
 </section>
-</section>
-<section id="discrete-probability-counting-uncertainty" class="level2" data-number="17.5">
-<h2 data-number="17.5" class="anchored" data-anchor-id="discrete-probability-counting-uncertainty"><span class="header-section-number">17.5</span> Discrete Probability: Counting Uncertainty</h2>
-<section id="what-makes-a-problem-discrete" class="level3" data-number="17.5.1">
-<h3 data-number="17.5.1" class="anchored" data-anchor-id="what-makes-a-problem-discrete"><span class="header-section-number">17.5.1</span> What Makes a Problem “Discrete”?</h3>
-<p>A probability problem is discrete when three key conditions are met:</p>
+<section id="fundamental-axioms-of-probability" class="level3" data-number="17.4.3">
+<h3 data-number="17.4.3" class="anchored" data-anchor-id="fundamental-axioms-of-probability"><span class="header-section-number">17.4.3</span> Fundamental Axioms of Probability</h3>
+<p>To make our intuitive understanding precise, we formalize probability through three fundamental axioms. These axioms, developed by Kolmogorov in 1933, form the foundation of modern probability theory:</p>
 <ol type="1">
-<li><strong>Countable Outcomes</strong>: We can enumerate all possibilities</li>
-<li><strong>Distinct Outcomes</strong>: Each outcome is clearly separate from others</li>
-<li><strong>Finite or Countably Infinite</strong>: We can list or systematically count all outcomes</li>
-</ol>
-</section>
-<section id="common-examples" class="level3" data-number="17.5.2">
-<h3 data-number="17.5.2" class="anchored" data-anchor-id="common-examples"><span class="header-section-number">17.5.2</span> Common Examples</h3>
+<li><em>Non-negativity</em>: For any event <span class="math inline">A</span>, <span class="math inline">P(A) \geq 0</span>
 <ul>
-<li><strong>Games of Chance</strong>:
-<ul>
-<li>Rolling dice (6 distinct outcomes)</li>
-<li>Flipping coins (2 distinct outcomes)</li>
-<li>Drawing cards (52 distinct outcomes)</li>
+<li>This formalizes our intuition that likelihood cannot be negative</li>
+<li>Example: The probability of rain tomorrow cannot be -20%</li>
 </ul></li>
-<li><strong>Real-World Applications</strong>:
+<li><em>Normalization</em>: For the sample space <span class="math inline">S</span>, <span class="math inline">P(S) = 1</span>
 <ul>
-<li>Number of defective items in a batch</li>
-<li>Success/failure in repeated trials</li>
-<li>Number of customers arriving in a time period</li>
+<li>This establishes our probability scale’s upper bound</li>
+<li>Example: When rolling a die, some number between 1 and 6 must occur</li>
 </ul></li>
-</ul>
-</section>
-<section id="why-discrete-probability-matters" class="level3" data-number="17.5.3">
-<h3 data-number="17.5.3" class="anchored" data-anchor-id="why-discrete-probability-matters"><span class="header-section-number">17.5.3</span> Why Discrete Probability Matters</h3>
-<ol type="1">
-<li><strong>Foundational Understanding</strong>: Builds intuition without requiring calculus</li>
-<li><strong>Practical Applications</strong>: Directly applies to many real-world scenarios</li>
-<li><strong>Statistical Bridge</strong>: Forms the basis for important concepts like the binomial distribution</li>
-</ol>
-</section>
-</section>
-<section id="understanding-probability-measures" class="level2" data-number="17.6">
-<h2 data-number="17.6" class="anchored" data-anchor-id="understanding-probability-measures"><span class="header-section-number">17.6</span> Understanding Probability Measures</h2>
-<section id="probability-measure-the-formal-framework" class="level3" data-number="17.6.1">
-<h3 data-number="17.6.1" class="anchored" data-anchor-id="probability-measure-the-formal-framework"><span class="header-section-number">17.6.1</span> Probability Measure: The Formal Framework</h3>
-<p>A probability measure is a function that assigns numbers (probabilities) to events following specific mathematical rules (axioms).</p>
-<section id="the-three-fundamental-axioms" class="level4" data-number="17.6.1.1">
-<h4 data-number="17.6.1.1" class="anchored" data-anchor-id="the-three-fundamental-axioms"><span class="header-section-number">17.6.1.1</span> The Three Fundamental Axioms</h4>
-<ol type="1">
-<li><strong>Non-negativity Axiom</strong>:
+<li><em>Additivity</em>: For disjoint events <span class="math inline">A</span> and <span class="math inline">B</span>, <span class="math inline">P(A \cup B) = P(A) + P(B)</span>
 <ul>
-<li><span class="math inline">P(A) \geq 0</span></li>
-<li><em>Meaning</em>: No event can have negative probability</li>
-<li><em>Example</em>: You can’t have -20% chance of rain</li>
-</ul></li>
-<li><strong>Certainty Axiom</strong>:
-<ul>
-<li><span class="math inline">P(S) = 1</span></li>
-<li><em>Meaning</em>: The total probability of all possible outcomes equals 1</li>
-<li><em>Example</em>: When rolling a die, the sum of probabilities for all faces equals 1</li>
-</ul></li>
-<li><strong>Additivity Axiom</strong>:
-<ul>
-<li><span class="math inline">P(A \cup B) = P(A) + P(B)</span> for mutually exclusive events</li>
-<li><em>Meaning</em>: For non-overlapping events, add their individual probabilities</li>
-<li><em>Example</em>: P(rolling 1 or 2) = P(rolling 1) + P(rolling 2)</li>
+<li>This tells us how to combine probabilities of non-overlapping events</li>
+<li>Example: <span class="math inline">P(\text{rolling 1 or 2}) = P(\text{rolling 1}) + P(\text{rolling 2})</span></li>
 </ul></li>
 </ol>
 </section>
-</section>
-<section id="probability-distributions-vs.-probability-laws" class="level3" data-number="17.6.2">
-<h3 data-number="17.6.2" class="anchored" data-anchor-id="probability-distributions-vs.-probability-laws"><span class="header-section-number">17.6.2</span> Probability Distributions vs.&nbsp;Probability Laws</h3>
-<p>While these terms are often used interchangeably, there are subtle differences:</p>
-<p><strong>Probability Distribution</strong>:</p>
+<section id="the-discrete-probability-framework" class="level3" data-number="17.4.4">
+<h3 data-number="17.4.4" class="anchored" data-anchor-id="the-discrete-probability-framework"><span class="header-section-number">17.4.4</span> The Discrete Probability Framework</h3>
+<p>Within probability theory, we begin with discrete probability spaces, which provide an accessible entry point to understanding uncertainty. A probability space is discrete when:</p>
+<ol type="1">
+<li>The sample space is countable (finite or countably infinite)</li>
+<li>Each outcome is distinct and well-defined</li>
+<li>We can systematically enumerate all possible outcomes</li>
+</ol>
+<p>Common examples include:</p>
 <ul>
-<li>Describes the pattern of probabilities across all possible outcomes</li>
-<li>Provides specific probability values for each outcome</li>
-<li>Example: For a fair die, {1:1/6, 2:1/6, 3:1/6, 4:1/6, 5:1/6, 6:1/6}</li>
+<li>Flipping coins (sample space: {Heads, Tails})</li>
+<li>Rolling dice (sample space: {1, 2, 3, 4, 5, 6})</li>
+<li>Drawing cards (sample space: 52 distinct cards)</li>
 </ul>
-<p><strong>Probability Law</strong>:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important Terms in Probability Theory
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s clarify some closely related but distinct concepts:</p>
+<ol type="1">
+<li><p><strong>Probabilistic Model</strong> consists of two fundamental elements:</p>
 <ul>
-<li>The underlying rule or principle generating the probabilities</li>
-<li>The mathematical function or formula defining how probabilities are assigned</li>
-<li>Example: For a fair die, “each face has equal probability of 1/6”</li>
-</ul>
-<p>In practice, these terms are closely related:</p>
+<li>A sample space <span class="math inline">\Omega</span> (or <span class="math inline">S</span>): the set of all possible outcomes</li>
+<li>A probability law that assigns probabilities to events (subsets of <span class="math inline">\Omega</span>)</li>
+</ul></li>
+<li><p><strong>Probability Measure</strong> (<span class="math inline">P</span>):</p>
 <ul>
-<li>The probability law determines the probability distribution</li>
-<li>The probability distribution is the concrete realization of the probability law</li>
-</ul>
+<li>The formal mathematical function that maps events to numbers in [0,1]</li>
+<li>Must satisfy the three axioms (non-negativity, normalization, additivity)</li>
+<li>Example: <span class="math inline">P(A)</span> gives the probability of event <span class="math inline">A</span> occurring</li>
+</ul></li>
+<li><p><strong>Probability Distribution</strong>:</p>
+<ul>
+<li>The specific assignment of probabilities to all possible outcomes</li>
+<li>Describes how probability is distributed across the sample space</li>
+<li>Example: For a fair die, {1: 1/6, 2: 1/6, 3: 1/6, 4: 1/6, 5: 1/6, 6: 1/6}</li>
+</ul></li>
+<li><p><strong>Probability Law</strong>:</p>
+<ul>
+<li>Often used as a synonym for probability distribution</li>
+<li>Can also refer to the underlying rule generating the probabilities</li>
+<li>Example: “Each face of a fair die has equal probability”</li>
+</ul></li>
+</ol>
+<p>In practice, these terms are interrelated: The probability measure implements the probability law, which determines the probability distribution, all within the context of a probabilistic model.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1313,8 +1313,8 @@ Common Types of (Discrete) Distributions (*)
 <p>The geometric distribution describes the number of tries needed until the first success occurs. For example, the number of coin flips needed until we get our first heads. The probability of success on the <span class="math inline">k</span>th try is:</p>
 <p><span class="math display">P(X = k) = (1-p)^{k-1}p</span></p>
 <p>where <span class="math inline">p</span> is the probability of success on each try.</p>
-<section id="simple-example" class="level3" data-number="17.6.3">
-<h3 data-number="17.6.3" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">17.6.3</span> Simple Example</h3>
+<section id="simple-example" class="level3" data-number="17.4.5">
+<h3 data-number="17.4.5" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">17.4.5</span> Simple Example</h3>
 <p>Let’s consider flipping a fair coin:</p>
 <ul>
 <li><p>The sample space <span class="math inline">\Omega</span> contains all possible outcomes: {Heads, Tails}</p></li>
@@ -1332,114 +1332,94 @@ Common Types of (Discrete) Distributions (*)
 </div>
 </section>
 </section>
-<section id="classical-discrete-probability-the-equal-chances-approach" class="level2" data-number="17.7">
-<h2 data-number="17.7" class="anchored" data-anchor-id="classical-discrete-probability-the-equal-chances-approach"><span class="header-section-number">17.7</span> Classical (Discrete) Probability: The “Equal Chances” Approach</h2>
-<p>Classical probability applies when we have:</p>
+<section id="classical-or-naive-probability-the-equal-likelihood-case" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="classical-or-naive-probability-the-equal-likelihood-case"><span class="header-section-number">17.5</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Case</h2>
+<section id="starting-assumptions" class="level3" data-number="17.5.1">
+<h3 data-number="17.5.1" class="anchored" data-anchor-id="starting-assumptions"><span class="header-section-number">17.5.1</span> Starting Assumptions</h3>
+<p>When developing classical probability theory, we begin with a probability experiment that has two key properties:</p>
 <ol type="1">
-<li>A finite number of possible outcomes</li>
-<li>All outcomes are equally likely to occur</li>
+<li>The sample space <span class="math inline">S</span> is finite, with cardinality <span class="math inline">|S| = n</span></li>
+<li>All elementary outcomes are equally likely</li>
 </ol>
-<p>For example, when you roll a fair die, there are:</p>
-<ul>
-<li>6 possible outcomes (the numbers 1 through 6)</li>
-<li>Each number has an equal chance of coming up</li>
-</ul>
-<p>In classical probability, we can calculate the probability of an event using this simple formula:</p>
-<p><span class="math display">P(A) = \frac{\text{Number of favorable outcomes}}{\text{Number of possible outcomes}}</span></p>
-<p>Let’s break this down with our die example:</p>
-<p>What’s the probability of rolling an even number? - Favorable outcomes: {2, 4, 6} (3 outcomes) - Possible outcomes: {1, 2, 3, 4, 5, 6} (6 outcomes) - Therefore: <span class="math display">P(\text{even}) = \frac{3}{6} = \frac{1}{2} = 0.5 = 50\%</span></p>
+<p>We can write our sample space explicitly as: <span class="math inline">S = \{s_1, s_2, ..., s_n\}</span></p>
+<p>This leads us to classical (or Laplace) probability, which we’ll derive rigorously in the following section. This special case provides a foundation for understanding more complex probability scenarios and helps build crucial probabilistic intuition.</p>
 </section>
-<section id="the-path-to-classical-probability" class="level2" data-number="17.8">
-<h2 data-number="17.8" class="anchored" data-anchor-id="the-path-to-classical-probability"><span class="header-section-number">17.8</span> The Path to Classical Probability</h2>
-<p>Let’s explore how the fundamental axioms of probability lead us to the intuitive classical probability formula we use for scenarios like dice rolls and coin flips. I’ll guide you through this progression step by step.</p>
-<section id="starting-with-the-foundations" class="level3" data-number="17.8.1">
-<h3 data-number="17.8.1" class="anchored" data-anchor-id="starting-with-the-foundations"><span class="header-section-number">17.8.1</span> Starting with the Foundations</h3>
-<p>Consider a finite sample space <span class="math inline">S</span> containing <span class="math inline">n</span> outcomes that we assume are equally likely:</p>
-<p><span class="math display">S = \{s_1, s_2, ..., s_n\}</span></p>
-<p>To make this concrete, imagine rolling a fair six-sided die, where: <span class="math display">S = \{1, 2, 3, 4, 5, 6\}</span> and <span class="math inline">n = 6</span></p>
-</section>
-<section id="applying-the-probability-axioms" class="level3" data-number="17.8.2">
-<h3 data-number="17.8.2" class="anchored" data-anchor-id="applying-the-probability-axioms"><span class="header-section-number">17.8.2</span> Applying the Probability Axioms</h3>
-<p>The axioms of probability give us three crucial constraints:</p>
+<section id="core-axioms-of-probability" class="level3" data-number="17.5.2">
+<h3 data-number="17.5.2" class="anchored" data-anchor-id="core-axioms-of-probability"><span class="header-section-number">17.5.2</span> Core Axioms of Probability</h3>
+<p>To derive classical probability, we start with the fundamental axioms. These form the mathematical foundation for all probability theory:</p>
 <ol type="1">
-<li><p><strong>Non-negativity</strong> (Axiom 1): For each outcome <span class="math inline">s_i</span>, its probability must be non-negative: <span class="math display">P(s_i) \geq 0</span></p></li>
-<li><p><strong>Total Probability</strong> (Axiom 2): The probabilities of all outcomes must sum to 1: <span class="math display">P(S) = P(s_1) + P(s_2) + ... + P(s_n) = 1</span></p></li>
-<li><p><strong>Equal Likelihood</strong> (Our Additional Assumption): When outcomes are equally likely, each has the same probability: <span class="math display">P(s_1) = P(s_2) = ... = P(s_n) = p</span></p></li>
+<li>For any event <span class="math inline">A</span>, <span class="math inline">P(A) \geq 0</span> (Non-negativity)</li>
+<li><span class="math inline">P(S) = 1</span> (Total probability)</li>
+<li>For disjoint events <span class="math inline">A</span> and <span class="math inline">B</span>, <span class="math inline">P(A \cup B) = P(A) + P(B)</span> (Additivity)</li>
 </ol>
 </section>
-<section id="deriving-the-classical-formula" class="level3" data-number="17.8.3">
-<h3 data-number="17.8.3" class="anchored" data-anchor-id="deriving-the-classical-formula"><span class="header-section-number">17.8.3</span> Deriving the Classical Formula</h3>
-<p>Given these constraints, let’s derive the probability of each individual outcome:</p>
+<section id="the-equal-likelihood-assumption" class="level3" data-number="17.5.3">
+<h3 data-number="17.5.3" class="anchored" data-anchor-id="the-equal-likelihood-assumption"><span class="header-section-number">17.5.3</span> The Equal-Likelihood Assumption</h3>
+<p>The foundation of classical probability theory rests on the principle of equal likelihood or equiprobability. This assumption states that in a finite sample space <span class="math inline">S = \{s_1, s_2, ..., s_n\},</span> all elementary outcomes are equally probable.</p>
+<p>Mathematically, this means:</p>
+<p><span class="math display">P(\{s_i\}) = P(\{s_j\}) = p \text{ for all } i,j \in \{1,2,...,n\}</span></p>
+<p>where <span class="math inline">p</span> is a constant probability we’ll determine through axioms.</p>
+</section>
+<section id="deriving-the-classical-formula" class="level3" data-number="17.5.4">
+<h3 data-number="17.5.4" class="anchored" data-anchor-id="deriving-the-classical-formula"><span class="header-section-number">17.5.4</span> Deriving the Classical Formula</h3>
+<p>Let’s derive the classical probability formula using the Kolmogorov axioms:</p>
 <ol type="1">
-<li><p>If we call the common probability <span class="math inline">p</span>, then: <span class="math display">\underbrace{p + p + ... + p}_{n \text{ times}} = 1</span></p></li>
-<li><p>This simplifies to: <span class="math display">np = 1</span></p></li>
-<li><p>Therefore: <span class="math display">p = \frac{1}{n}</span></p></li>
+<li><p>First, recall the axiom of total probability. Since <span class="math inline">S</span> is a finite set: <span class="math display">P(S) = \sum_{i=1}^n P(\{s_i\}) = 1</span></p></li>
+<li><p>Applying our equal-likelihood assumption: <span class="math display">\underbrace{p + p + ... + p}_{n \text{ terms}} = 1</span> <span class="math display">np = 1</span> <span class="math display">p = \frac{1}{n} = \frac{1}{|S|}</span></p></li>
+<li><p>For any event <span class="math inline">A \subseteq S</span> with <span class="math inline">|A| = k</span> elements: <span class="math display">P(A) = P(\bigcup_{s_i \in A} \{s_i\}) = \sum_{s_i \in A} P(\{s_i\})</span> <span class="math display">= \sum_{s_i \in A} \frac{1}{|S|} = k \cdot \frac{1}{|S|} = \frac{|A|}{|S|}</span></p></li>
 </ol>
-<p>This means each individual outcome has probability <span class="math inline">\frac{1}{n}</span>. For any event <span class="math inline">A</span> containing <span class="math inline">k</span> favorable outcomes:</p>
-<p><span class="math display">P(A) = \frac{k}{n} = \frac{\text{number of favorable outcomes}}{\text{total number of outcomes}} = \frac{|A|}{|S|}</span></p>
+<p>This gives us the classical probability formula:</p>
+<p><span class="math display">P(A) = \frac{|A|}{|S|} = \frac{\text{number of favorable outcomes}}{\text{total number of possible outcomes}}</span></p>
 </section>
-<section id="understanding-the-requirements" class="level3" data-number="17.8.4">
-<h3 data-number="17.8.4" class="anchored" data-anchor-id="understanding-the-requirements"><span class="header-section-number">17.8.4</span> Understanding the Requirements</h3>
-<p>The classical probability formula works when two key conditions are met:</p>
+<section id="important-considerations" class="level3" data-number="17.5.5">
+<h3 data-number="17.5.5" class="anchored" data-anchor-id="important-considerations"><span class="header-section-number">17.5.5</span> Important Considerations</h3>
 <ol type="1">
-<li><strong>Finite Sample Space</strong>: We must be able to count all possible outcomes</li>
-<li><strong>Equally Likely Outcomes</strong>: Each outcome must have the same probability of occurring</li>
-</ol>
-<p>This explains why we often introduce probability using:</p>
+<li><strong>Applicability</strong>: This formula only applies when:
 <ul>
-<li>Fair coins (two equally likely outcomes)</li>
-<li>Fair dice (six equally likely outcomes)</li>
-<li>Well-shuffled cards (52 equally likely outcomes)</li>
-</ul>
-</section>
-<section id="practical-application-example" class="level3" data-number="17.8.5">
-<h3 data-number="17.8.5" class="anchored" data-anchor-id="practical-application-example"><span class="header-section-number">17.8.5</span> Practical Application Example</h3>
-<p>Let’s analyze flipping two fair coins:</p>
-<ul>
-<li>Sample space: <span class="math inline">S = \{HH, HT, TH, TT\}</span></li>
-<li>For “exactly one head”:
-<ul>
-<li>Favorable outcomes: <span class="math inline">\{HT, TH\}</span></li>
-<li><span class="math inline">P(\text{exactly one head}) = \frac{|\{HT,TH\}|}{|\{HH,HT,TH,TT\}|} = \frac{2}{4} = 0.5</span></li>
-</ul></li>
-<li>For “at least one head”:
-<ul>
-<li>Favorable outcomes: <span class="math inline">\{HH, HT, TH\}</span></li>
-<li><span class="math inline">P(\text{at least one head}) = \frac{|\{HH,HT,TH\}|}{|\{HH,HT,TH,TT\}|} = \frac{3}{4} = 0.75</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="looking-beyond-classical-probability" class="level3" data-number="17.8.6">
-<h3 data-number="17.8.6" class="anchored" data-anchor-id="looking-beyond-classical-probability"><span class="header-section-number">17.8.6</span> Looking Beyond Classical Probability</h3>
-<p>While this classical approach is intuitive and useful for many situations, it has limitations. Real-world probabilities often involve:</p>
-<ul>
-<li>Infinite sample spaces</li>
-<li>Unequally likely outcomes</li>
-<li>Continuous variables</li>
-</ul>
-<p>These scenarios require more advanced probability concepts, but understanding classical probability provides the foundation for exploring these more complex situations.</p>
-</section>
-</section>
-<section id="example-rolling-a-fair-die" class="level2" data-number="17.9">
-<h2 data-number="17.9" class="anchored" data-anchor-id="example-rolling-a-fair-die"><span class="header-section-number">17.9</span> Example: Rolling a Fair Die</h2>
-<p>Let’s find the probability of rolling an even number:</p>
-<ul>
-<li>Favorable outcomes: {2, 4, 6}, so <span class="math inline">k = 3</span></li>
-<li>Total outcomes: {1, 2, 3, 4, 5, 6}, so <span class="math inline">n = 6</span></li>
-<li>Therefore: <span class="math display">P(\text{even}) = \frac{3}{6} = \frac{1}{2}</span></li>
-</ul>
-</section>
-<section id="important-notes" class="level2" data-number="17.10">
-<h2 data-number="17.10" class="anchored" data-anchor-id="important-notes"><span class="header-section-number">17.10</span> Important Notes</h2>
-<ol type="1">
-<li>This classical definition only works when:
-<ul>
-<li>The sample space is finite</li>
+<li>The sample space <span class="math inline">S</span> is finite</li>
 <li>All outcomes are equally likely</li>
+<li>Each outcome is mutually exclusive</li>
 </ul></li>
-<li>For non-uniform probability spaces or infinite sample spaces, we need different approaches.</li>
+<li><strong>Verification</strong>: The equal-likelihood assumption must be justified through:
+<ul>
+<li>Physical symmetry (e.g., fair dice)</li>
+<li>Empirical evidence</li>
+<li>Theoretical arguments</li>
+</ul></li>
+<li><strong>Limitations</strong>: When outcomes aren’t equally likely, we must use:
+<ul>
+<li>Empirical probabilities based on frequency</li>
+<li>More advanced probability theories</li>
+<li>Alternative mathematical models</li>
+</ul></li>
 </ol>
-<p>We started with three basic rules (axioms) and showed how they naturally lead to the familiar “favorable outcomes over total outcomes” formula when all outcomes are equally likely.</p>
+</section>
+<section id="understanding-the-result" class="level3" data-number="17.5.6">
+<h3 data-number="17.5.6" class="anchored" data-anchor-id="understanding-the-result"><span class="header-section-number">17.5.6</span> Understanding the Result</h3>
+<p>This derivation reveals several profound insights about classical probability:</p>
+<p>The familiar “counting formula” isn’t just an intuitive rule - it follows necessarily from our axioms combined with the equal-likelihood assumption. When we say outcomes are equally likely, we’re forced mathematically to assign each elementary outcome a probability of <span class="math inline">\frac{1}{|S|}</span>. This isn’t a choice but a requirement of the axioms.</p>
+<p>For any event <span class="math inline">A</span>, its probability is determined entirely by comparing two cardinalities: the size of the event (<span class="math inline">|A|</span>) relative to the size of the sample space (<span class="math inline">|S|</span>).</p>
+</section>
+<section id="example-application" class="level3" data-number="17.5.7">
+<h3 data-number="17.5.7" class="anchored" data-anchor-id="example-application"><span class="header-section-number">17.5.7</span> Example Application</h3>
+<p>Let’s solidify this understanding by working through a concrete example. Consider rolling a fair six-sided die and finding <span class="math inline">P(\text{even number})</span>:</p>
+<ol type="1">
+<li>First, identify the sample space: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span>, giving us <span class="math inline">|S| = 6</span></li>
+<li>Then, identify the event: <span class="math inline">A = \{2, 4, 6\}</span>, giving us <span class="math inline">|A| = 3</span></li>
+<li>Apply the formula: <span class="math inline">P(\text{even number}) = \frac{|A|}{|S|} = \frac{3}{6} = \frac{1}{2}</span></li>
+</ol>
+</section>
+<section id="limitations-and-extensions" class="level3" data-number="17.5.8">
+<h3 data-number="17.5.8" class="anchored" data-anchor-id="limitations-and-extensions"><span class="header-section-number">17.5.8</span> Limitations and Extensions</h3>
+<p>Classical probability is powerful but has specific requirements:</p>
+<p>The sample space must be finite: <span class="math inline">|S| &lt; \infty</span> All outcomes must be equally likely: <span class="math inline">P(\{s_i\}) = P(\{s_j\})</span> for all <span class="math inline">i,j</span></p>
+<p>When either condition fails, we need more general probability theories. This occurs when dealing with:</p>
+<ul>
+<li>Infinite sample spaces (like counting trials until success)</li>
+<li>Non-uniform probability distributions (like loaded dice)</li>
+<li>Continuous random variables (like measuring heights or weights)</li>
+</ul>
+<p>These situations require more advanced probability concepts, but they all build upon the foundational understanding we’ve developed here with classical probability.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1451,8 +1431,8 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 </div>
 <div class="callout-body-container callout-body">
 <p>Imagine you’re measuring different things in everyday life. Sometimes you’re <strong>counting</strong> (like the number of books on a shelf), and sometimes you’re <strong>measuring</strong> (like your height or the temperature outside). This same distinction appears in probability!</p>
-<section id="discrete-probability" class="level3" data-number="17.10.1">
-<h3 data-number="17.10.1" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.10.1</span> Discrete Probability</h3>
+<section id="discrete-probability" class="level3" data-number="17.5.9">
+<h3 data-number="17.5.9" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.5.9</span> Discrete Probability</h3>
 <ul>
 <li><strong>What it is</strong>: Probability of exact, countable outcomes</li>
 <li><strong>Key feature</strong>: Outcomes have “gaps” between them</li>
@@ -1469,8 +1449,8 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 </ul></li>
 </ul>
 </section>
-<section id="continuous-probability" class="level3" data-number="17.10.2">
-<h3 data-number="17.10.2" class="anchored" data-anchor-id="continuous-probability"><span class="header-section-number">17.10.2</span> Continuous Probability</h3>
+<section id="continuous-probability" class="level3" data-number="17.5.10">
+<h3 data-number="17.5.10" class="anchored" data-anchor-id="continuous-probability"><span class="header-section-number">17.5.10</span> Continuous Probability</h3>
 <ul>
 <li><strong>What it is</strong>: Probability of outcomes in a continuous range</li>
 <li><strong>Key feature</strong>: Outcomes flow smoothly with no gaps</li>
@@ -1487,8 +1467,8 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 </ul></li>
 </ul>
 </section>
-<section id="key-difference-in-probability-values" class="level3" data-number="17.10.3">
-<h3 data-number="17.10.3" class="anchored" data-anchor-id="key-difference-in-probability-values"><span class="header-section-number">17.10.3</span> Key Difference in Probability Values</h3>
+<section id="key-difference-in-probability-values" class="level3" data-number="17.5.11">
+<h3 data-number="17.5.11" class="anchored" data-anchor-id="key-difference-in-probability-values"><span class="header-section-number">17.5.11</span> Key Difference in Probability Values</h3>
 <p>For discrete:</p>
 <ul>
 <li>We can find probability of exact values</li>
@@ -1501,8 +1481,8 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 <li>We must use ranges: <span class="math inline">P(a \leq X \leq b)</span></li>
 </ul>
 </section>
-<section id="real-world-application" class="level3" data-number="17.10.4">
-<h3 data-number="17.10.4" class="anchored" data-anchor-id="real-world-application"><span class="header-section-number">17.10.4</span> Real-World Application</h3>
+<section id="real-world-application" class="level3" data-number="17.5.12">
+<h3 data-number="17.5.12" class="anchored" data-anchor-id="real-world-application"><span class="header-section-number">17.5.12</span> Real-World Application</h3>
 <p>Think about your Spotify playlist:</p>
 <ul>
 <li><strong>Discrete</strong>: Number of songs (10, 11, 12…)</li>
@@ -1510,8 +1490,8 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 </ul>
 <p>Remember: If you can count it, it’s discrete. If you can measure it with increasing precision, it’s continuous!</p>
 </section>
-<section id="why-we-focus-on-discrete-probability" class="level3" data-number="17.10.5">
-<h3 data-number="17.10.5" class="anchored" data-anchor-id="why-we-focus-on-discrete-probability"><span class="header-section-number">17.10.5</span> Why We Focus on Discrete Probability</h3>
+<section id="why-we-focus-on-discrete-probability" class="level3" data-number="17.5.13">
+<h3 data-number="17.5.13" class="anchored" data-anchor-id="why-we-focus-on-discrete-probability"><span class="header-section-number">17.5.13</span> Why We Focus on Discrete Probability</h3>
 <p>In this course, we’ll focus primarily on discrete probability because:</p>
 <ul>
 <li>It’s easier to understand with basic math skills</li>
@@ -1523,12 +1503,16 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 </section>
 </div>
 </div>
-<section id="understanding-classical-probability-through-the-urn-example" class="level3" data-number="17.10.6">
-<h3 data-number="17.10.6" class="anchored" data-anchor-id="understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.10.6</span> Understanding Classical Probability Through the Urn Example</h3>
-</section>
-</section>
-<section id="key-questions-before-calculating-probabilities" class="level2 {callout-warning}" data-number="17.11">
-<h2 data-number="17.11" class="anchored" data-anchor-id="key-questions-before-calculating-probabilities"><span class="header-section-number">17.11</span> Key Questions Before Calculating Probabilities</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Questions Before Calculating Probabilities
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Before we can correctly calculate probabilities in any discrete scenario, we must answer two fundamental questions:</p>
 <ol type="1">
 <li><strong>Does Order Matter?</strong></li>
@@ -1552,7 +1536,11 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 <li>With replacement leads to independent events and often simpler calculations</li>
 <li>Without replacement leads to dependent events and requires conditional probability</li>
 </ul>
+</div>
+</div>
 </section>
+<section id="understanding-classical-probability-through-the-urn-example" class="level3" data-number="17.5.14">
+<h3 data-number="17.5.14" class="anchored" data-anchor-id="understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.5.14</span> Understanding Classical Probability Through the Urn Example</h3>
 <p>In our urn with 3 green and 2 red balls:</p>
 <ul>
 <li><span class="math inline">P(\text{green}) = \frac{3}{5}</span></li>
@@ -1579,8 +1567,10 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 <p><strong>REMARK</strong>: Many probabilistic situations have the property that they involve a number of different possible outcomes, all of which are equally likely. For example, Heads and Tails on a coin are equally likely to be tossed, the numbers 1 through 6 on a die are equally likely to be rolled, and the ten balls in the above box are all equally likely to be picked.</p>
 <p><strong>‘Naive’ (classical) probability definition assumes uniform probability measure (all outcomes equally likely), and finite uniform sample space.</strong></p>
 <p>When considering shapes or elements of the same color in an urn or box, treating them as distinguishable allows you to assume a uniform sample space — equally likely outcomes.</p>
-<section id="how-to-calculate-basic-probabilities" class="level2" data-number="17.12">
-<h2 data-number="17.12" class="anchored" data-anchor-id="how-to-calculate-basic-probabilities"><span class="header-section-number">17.12</span> How to Calculate Basic Probabilities</h2>
+</section>
+</section>
+<section id="how-to-calculate-basic-probabilities" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="how-to-calculate-basic-probabilities"><span class="header-section-number">17.6</span> How to Calculate Basic Probabilities</h2>
 <p>Let’s explore some fundamental probability concepts using a simple example with colored balls in an urn/bag. This example will help us understand:</p>
 <ul>
 <li>How to calculate basic probabilities using the tree diagrams</li>
@@ -1627,8 +1617,8 @@ Sampling Methods Overview
 </table>
 </div>
 </div>
-<section id="example-1a-drawing-two-balls-from-an-urn-or-a-bag" class="level3" data-number="17.12.1">
-<h3 data-number="17.12.1" class="anchored" data-anchor-id="example-1a-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.12.1</span> Example 1A: Drawing Two Balls from an Urn or a Bag</h3>
+<section id="example-1a-drawing-two-balls-from-an-urn-or-a-bag" class="level3" data-number="17.6.1">
+<h3 data-number="17.6.1" class="anchored" data-anchor-id="example-1a-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.6.1</span> Example 1A: Drawing Two Balls from an Urn or a Bag</h3>
 <p>Consider drawing two balls from an urn containing 3 green and 2 red balls.</p>
 <p>Find the probabilities of the following random events:</p>
 <ul>
@@ -1744,8 +1734,8 @@ Sampling Methods Overview
 <p><span class="math inline">P(\text{different colors}) = \frac{2}{5} \cdot \frac{3}{5} + \frac{3}{5} \cdot \frac{2}{5} = \frac{12}{25} = 0.48</span></p></li>
 </ol>
 </section>
-<section id="example-1b-drawing-two-balls-from-an-urn-or-a-bag" class="level3" data-number="17.12.2">
-<h3 data-number="17.12.2" class="anchored" data-anchor-id="example-1b-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.12.2</span> Example 1B: Drawing Two Balls from an Urn or a Bag (*)</h3>
+<section id="example-1b-drawing-two-balls-from-an-urn-or-a-bag" class="level3" data-number="17.6.2">
+<h3 data-number="17.6.2" class="anchored" data-anchor-id="example-1b-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.6.2</span> Example 1B: Drawing Two Balls from an Urn or a Bag (*)</h3>
 <p>Consider drawing two balls from an urn containing 3 green and 2 red balls.</p>
 <p>Find the probabilities of the following random events:</p>
 <ul>
@@ -1985,8 +1975,8 @@ The Four Types of Counting Problems (*)
 </div>
 </section>
 </section>
-<section id="example-the-4-red-and-3-black-balls-problem" class="level2" data-number="17.13">
-<h2 data-number="17.13" class="anchored" data-anchor-id="example-the-4-red-and-3-black-balls-problem"><span class="header-section-number">17.13</span> Example: The 4 Red and 3 Black Balls Problem</h2>
+<section id="example-the-4-red-and-3-black-balls-problem" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="example-the-4-red-and-3-black-balls-problem"><span class="header-section-number">17.7</span> Example: The 4 Red and 3 Black Balls Problem</h2>
 <p>Let’s solve a real problem using what we learned. We have:</p>
 <ul>
 <li>4 red balls (let’s call them R₁, R₂, R₃, R₄)</li>
@@ -2000,8 +1990,8 @@ The Four Types of Counting Problems (*)
 <li>Getting two black balls</li>
 <li>Getting one of each color</li>
 </ol>
-<section id="method-1-using-counting-rules" class="level3" data-number="17.13.1">
-<h3 data-number="17.13.1" class="anchored" data-anchor-id="method-1-using-counting-rules"><span class="header-section-number">17.13.1</span> Method 1: Using Counting Rules</h3>
+<section id="method-1-using-counting-rules" class="level3" data-number="17.7.1">
+<h3 data-number="17.7.1" class="anchored" data-anchor-id="method-1-using-counting-rules"><span class="header-section-number">17.7.1</span> Method 1: Using Counting Rules</h3>
 <p>First, let’s count the total possible outcomes:</p>
 <ul>
 <li>We’re picking 2 balls from 7 total balls, order doesn’t matter</li>
@@ -2050,8 +2040,8 @@ The Four Types of Counting Problems (*)
 </ul>
 <p>Understanding how to count correctly helps us solve these probability problems systematically and avoid common mistakes like counting the same outcome multiple times.</p>
 </section>
-<section id="method-2-tree-diagram-approach" class="level3" data-number="17.13.2">
-<h3 data-number="17.13.2" class="anchored" data-anchor-id="method-2-tree-diagram-approach"><span class="header-section-number">17.13.2</span> Method 2: Tree Diagram Approach</h3>
+<section id="method-2-tree-diagram-approach" class="level3" data-number="17.7.2">
+<h3 data-number="17.7.2" class="anchored" data-anchor-id="method-2-tree-diagram-approach"><span class="header-section-number">17.7.2</span> Method 2: Tree Diagram Approach</h3>
 <p>The tree diagram helps us visualize the sequential nature of the draws:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -2079,8 +2069,8 @@ The Four Types of Counting Problems (*)
 <p>= <span class="math inline">\frac{4}{7} \cdot \frac{3}{6} + \frac{3}{7} \cdot \frac{4}{6} = \frac{24}{42}</span></p></li>
 </ol>
 </section>
-<section id="method-3-grid-diagram-and-sample-space" class="level3" data-number="17.13.3">
-<h3 data-number="17.13.3" class="anchored" data-anchor-id="method-3-grid-diagram-and-sample-space"><span class="header-section-number">17.13.3</span> Method 3: Grid Diagram and Sample Space</h3>
+<section id="method-3-grid-diagram-and-sample-space" class="level3" data-number="17.7.3">
+<h3 data-number="17.7.3" class="anchored" data-anchor-id="method-3-grid-diagram-and-sample-space"><span class="header-section-number">17.7.3</span> Method 3: Grid Diagram and Sample Space</h3>
 <p>Let’s visualize the entire sample space using a grid where each cell represents selecting two balls in order:</p>
 <table class="caption-top table">
 <thead>
@@ -2197,8 +2187,8 @@ The Four Types of Counting Problems (*)
 <li>P(multi-colored) = <span class="math inline">\frac{24}{42} = \frac{4}{7}</span></li>
 </ul>
 </section>
-<section id="comparing-the-methods" class="level3" data-number="17.13.4">
-<h3 data-number="17.13.4" class="anchored" data-anchor-id="comparing-the-methods"><span class="header-section-number">17.13.4</span> Comparing the Methods</h3>
+<section id="comparing-the-methods" class="level3" data-number="17.7.4">
+<h3 data-number="17.7.4" class="anchored" data-anchor-id="comparing-the-methods"><span class="header-section-number">17.7.4</span> Comparing the Methods</h3>
 <p>Each method highlights different aspects of the problem:</p>
 <ol type="1">
 <li><p>Counting Rules:</p>
@@ -2225,14 +2215,14 @@ The Four Types of Counting Problems (*)
 </ol>
 </section>
 </section>
-<section id="problem-solutions-1" class="level2" data-number="17.14">
-<h2 data-number="17.14" class="anchored" data-anchor-id="problem-solutions-1"><span class="header-section-number">17.14</span> Problem Solutions (1)</h2>
-<section id="problem-1-two-ball-drawing-from-an-urn" class="level3" data-number="17.14.1">
-<h3 data-number="17.14.1" class="anchored" data-anchor-id="problem-1-two-ball-drawing-from-an-urn"><span class="header-section-number">17.14.1</span> Problem 1: Two-Ball Drawing from an Urn</h3>
+<section id="problem-solutions-1" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="problem-solutions-1"><span class="header-section-number">17.8</span> Problem Solutions (1)</h2>
+<section id="problem-1-two-ball-drawing-from-an-urn" class="level3" data-number="17.8.1">
+<h3 data-number="17.8.1" class="anchored" data-anchor-id="problem-1-two-ball-drawing-from-an-urn"><span class="header-section-number">17.8.1</span> Problem 1: Two-Ball Drawing from an Urn</h3>
 <p>An urn contains 3 red, 2 blue, and 1 yellow balls. Two balls are drawn sequentially without replacement. We need to find the probability that the balls drawn are different colors.</p>
 </section>
-<section id="initial-conditions" class="level3" data-number="17.14.2">
-<h3 data-number="17.14.2" class="anchored" data-anchor-id="initial-conditions"><span class="header-section-number">17.14.2</span> Initial Conditions</h3>
+<section id="initial-conditions" class="level3" data-number="17.8.2">
+<h3 data-number="17.8.2" class="anchored" data-anchor-id="initial-conditions"><span class="header-section-number">17.8.2</span> Initial Conditions</h3>
 <p>Let’s first state our starting conditions:</p>
 <ul>
 <li>Total number of balls: <span class="math inline">n = 3 + 2 + 1 = 6</span></li>
@@ -2244,8 +2234,8 @@ The Four Types of Counting Problems (*)
 </ul></li>
 </ul>
 </section>
-<section id="visual-representation" class="level3" data-number="17.14.3">
-<h3 data-number="17.14.3" class="anchored" data-anchor-id="visual-representation"><span class="header-section-number">17.14.3</span> Visual Representation</h3>
+<section id="visual-representation" class="level3" data-number="17.8.3">
+<h3 data-number="17.8.3" class="anchored" data-anchor-id="visual-representation"><span class="header-section-number">17.8.3</span> Visual Representation</h3>
 <p>Let’s visualize all possible outcomes using a tree diagram:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -2285,8 +2275,8 @@ The Four Types of Counting Problems (*)
 </div>
 </div>
 </section>
-<section id="probability-calculation" class="level3" data-number="17.14.4">
-<h3 data-number="17.14.4" class="anchored" data-anchor-id="probability-calculation"><span class="header-section-number">17.14.4</span> Probability Calculation</h3>
+<section id="probability-calculation" class="level3" data-number="17.8.4">
+<h3 data-number="17.8.4" class="anchored" data-anchor-id="probability-calculation"><span class="header-section-number">17.8.4</span> Probability Calculation</h3>
 <p>Let’s calculate the probability of drawing different colors systematically:</p>
 <ol type="1">
 <li>Starting with Red (probability <span class="math inline">\frac{3}{6}</span>):
@@ -2306,8 +2296,8 @@ The Four Types of Counting Problems (*)
 </ul></li>
 </ol>
 </section>
-<section id="final-solution" class="level3" data-number="17.14.5">
-<h3 data-number="17.14.5" class="anchored" data-anchor-id="final-solution"><span class="header-section-number">17.14.5</span> Final Solution</h3>
+<section id="final-solution" class="level3" data-number="17.8.5">
+<h3 data-number="17.8.5" class="anchored" data-anchor-id="final-solution"><span class="header-section-number">17.8.5</span> Final Solution</h3>
 <p>The total probability of drawing two different colored balls is the sum of all favorable outcomes:</p>
 <p><span class="math display">
 \begin{align*}
@@ -2319,8 +2309,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 \end{align*}
 </span></p>
 </section>
-<section id="verification" class="level3" data-number="17.14.6">
-<h3 data-number="17.14.6" class="anchored" data-anchor-id="verification"><span class="header-section-number">17.14.6</span> Verification</h3>
+<section id="verification" class="level3" data-number="17.8.6">
+<h3 data-number="17.8.6" class="anchored" data-anchor-id="verification"><span class="header-section-number">17.8.6</span> Verification</h3>
 <p>This result aligns with our intuition because:</p>
 <ol type="1">
 <li>The sample space contains more ways to draw different colors than same colors</li>
@@ -2328,11 +2318,11 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>Since same-color draws are limited to RR, BB, and YY combinations, it makes sense that different-color draws are more likely</li>
 </ol>
 </section>
-<section id="problem-2-die-and-coin-probability-exercise" class="level3" data-number="17.14.7">
-<h3 data-number="17.14.7" class="anchored" data-anchor-id="problem-2-die-and-coin-probability-exercise"><span class="header-section-number">17.14.7</span> Problem 2: Die and Coin Probability Exercise</h3>
+<section id="problem-2-die-and-coin-probability-exercise" class="level3" data-number="17.8.7">
+<h3 data-number="17.8.7" class="anchored" data-anchor-id="problem-2-die-and-coin-probability-exercise"><span class="header-section-number">17.8.7</span> Problem 2: Die and Coin Probability Exercise</h3>
 <p>Let’s analyze the probability of getting heads OR tails OR three dots when flipping both a coin and a die. This problem offers an excellent opportunity to explore probability unions and the importance of careful counting.</p>
-<section id="understanding-the-problem-space" class="level4" data-number="17.14.7.1">
-<h4 data-number="17.14.7.1" class="anchored" data-anchor-id="understanding-the-problem-space"><span class="header-section-number">17.14.7.1</span> Understanding the Problem Space</h4>
+<section id="understanding-the-problem-space" class="level4" data-number="17.8.7.1">
+<h4 data-number="17.8.7.1" class="anchored" data-anchor-id="understanding-the-problem-space"><span class="header-section-number">17.8.7.1</span> Understanding the Problem Space</h4>
 <p>In our experiment:</p>
 <ol type="1">
 <li>We flip a coin (possible outcomes: heads, tails)</li>
@@ -2363,8 +2353,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </div>
 </div>
 </section>
-<section id="common-mistakes-and-overcounting-analysis" class="level4" data-number="17.14.7.2">
-<h4 data-number="17.14.7.2" class="anchored" data-anchor-id="common-mistakes-and-overcounting-analysis"><span class="header-section-number">17.14.7.2</span> Common Mistakes and Overcounting Analysis</h4>
+<section id="common-mistakes-and-overcounting-analysis" class="level4" data-number="17.8.7.2">
+<h4 data-number="17.8.7.2" class="anchored" data-anchor-id="common-mistakes-and-overcounting-analysis"><span class="header-section-number">17.8.7.2</span> Common Mistakes and Overcounting Analysis</h4>
 <p>A common first instinct might be to simply add the individual probabilities:</p>
 <p>P(heads) + P(tails) + P(three dots) = <span class="math inline">\frac{1}{2} + \frac{1}{2} + \frac{1}{6}</span> = <span class="math inline">\frac{7}{6}</span></p>
 <p>This incorrect approach reveals several important issues:</p>
@@ -2394,8 +2384,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </div>
 </div>
 </section>
-<section id="correct-solution-using-set-theory" class="level4" data-number="17.14.7.3">
-<h4 data-number="17.14.7.3" class="anchored" data-anchor-id="correct-solution-using-set-theory"><span class="header-section-number">17.14.7.3</span> Correct Solution Using Set Theory</h4>
+<section id="correct-solution-using-set-theory" class="level4" data-number="17.8.7.3">
+<h4 data-number="17.8.7.3" class="anchored" data-anchor-id="correct-solution-using-set-theory"><span class="header-section-number">17.8.7.3</span> Correct Solution Using Set Theory</h4>
 <p>Let’s solve this properly using set theory:</p>
 <ul>
 <li>Set H: All outcomes with heads</li>
@@ -2411,8 +2401,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>We can write this formally:</p>
 <p>P(H ∪ T ∪ 3) = P(H) + P(T) - P(H ∩ T) + P(3) - P(3 ∩ (H ∪ T)) = <span class="math inline">\frac{1}{2} + \frac{1}{2} - 0 + \frac{1}{6} - \frac{1}{6}</span> = 1</p>
 </section>
-<section id="sample-space-analysis" class="level4" data-number="17.14.7.4">
-<h4 data-number="17.14.7.4" class="anchored" data-anchor-id="sample-space-analysis"><span class="header-section-number">17.14.7.4</span> Sample Space Analysis</h4>
+<section id="sample-space-analysis" class="level4" data-number="17.8.7.4">
+<h4 data-number="17.8.7.4" class="anchored" data-anchor-id="sample-space-analysis"><span class="header-section-number">17.8.7.4</span> Sample Space Analysis</h4>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -2438,8 +2428,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>Adding P(three dots) would lead to double counting</li>
 </ol>
 </section>
-<section id="key-learning-points" class="level4" data-number="17.14.7.5">
-<h4 data-number="17.14.7.5" class="anchored" data-anchor-id="key-learning-points"><span class="header-section-number">17.14.7.5</span> Key Learning Points</h4>
+<section id="key-learning-points" class="level4" data-number="17.8.7.5">
+<h4 data-number="17.8.7.5" class="anchored" data-anchor-id="key-learning-points"><span class="header-section-number">17.8.7.5</span> Key Learning Points</h4>
 <p>This problem illustrates several fundamental probability concepts:</p>
 <ol type="1">
 <li><p><strong>Exhaustive Events</strong>: Heads and tails together cover all possible coin outcomes, making additional events redundant unless they introduce new dimensions.</p></li>
@@ -2447,14 +2437,14 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li><p><strong>Sample Space Structure</strong>: Understanding your sample space structure (12 total outcomes) helps verify solution logic.</p></li>
 </ol>
 </section>
-<section id="extension-question" class="level4" data-number="17.14.7.6">
-<h4 data-number="17.14.7.6" class="anchored" data-anchor-id="extension-question"><span class="header-section-number">17.14.7.6</span> Extension Question</h4>
+<section id="extension-question" class="level4" data-number="17.8.7.6">
+<h4 data-number="17.8.7.6" class="anchored" data-anchor-id="extension-question"><span class="header-section-number">17.8.7.6</span> Extension Question</h4>
 <p>To deepen understanding, consider: How would the solution change if instead of “three dots” we included “even numbers” on the die? This variation helps illustrate how overlapping events affect probability calculations.</p>
 <p>The answer would be different because even numbers (2,4,6) would create a different overlap pattern with heads and tails, demonstrating how the nature of overlapping events can significantly impact our probability calculations.</p>
 </section>
 </section>
-<section id="problem-3-laplaces-two-draw-probability-problem" class="level3" data-number="17.14.8">
-<h3 data-number="17.14.8" class="anchored" data-anchor-id="problem-3-laplaces-two-draw-probability-problem"><span class="header-section-number">17.14.8</span> Problem 3: Laplace’s Two-Draw Probability Problem</h3>
+<section id="problem-3-laplaces-two-draw-probability-problem" class="level3" data-number="17.8.8">
+<h3 data-number="17.8.8" class="anchored" data-anchor-id="problem-3-laplaces-two-draw-probability-problem"><span class="header-section-number">17.8.8</span> Problem 3: Laplace’s Two-Draw Probability Problem</h3>
 <p>Suppose there are two urns of coloured marbles:</p>
 <ol type="1">
 <li>Urn X contains 3 black marbles, 1 white.</li>
@@ -2463,8 +2453,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>I flip a fair coin to decide which urn to draw from, heads for Urn X and tails for Urn Y. Then I draw marbles at random.</p>
 <p>Laplace asked what happens if we do two draws, with replacement. What’s the probability both draws will come up black?</p>
 <p>Let’s solve this fascinating probability problem involving two draws with replacement. This is a particularly interesting case because the replacement aspect affects how we think about sequential probabilities.</p>
-<section id="understanding-the-initial-setup" class="level4" data-number="17.14.8.1">
-<h4 data-number="17.14.8.1" class="anchored" data-anchor-id="understanding-the-initial-setup"><span class="header-section-number">17.14.8.1</span> Understanding the Initial Setup</h4>
+<section id="understanding-the-initial-setup" class="level4" data-number="17.8.8.1">
+<h4 data-number="17.8.8.1" class="anchored" data-anchor-id="understanding-the-initial-setup"><span class="header-section-number">17.8.8.1</span> Understanding the Initial Setup</h4>
 <p>First, let’s clarify our starting conditions:</p>
 <p>Urn X (selected with heads):</p>
 <ul>
@@ -2512,8 +2502,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </div>
 </div>
 </section>
-<section id="step-by-step-solution" class="level4" data-number="17.14.8.2">
-<h4 data-number="17.14.8.2" class="anchored" data-anchor-id="step-by-step-solution"><span class="header-section-number">17.14.8.2</span> Step-by-Step Solution</h4>
+<section id="step-by-step-solution" class="level4" data-number="17.8.8.2">
+<h4 data-number="17.8.8.2" class="anchored" data-anchor-id="step-by-step-solution"><span class="header-section-number">17.8.8.2</span> Step-by-Step Solution</h4>
 <p>Let’s break this down into manageable steps:</p>
 <ol type="1">
 <li><strong>First, consider the urn selection</strong>:
@@ -2534,8 +2524,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li><strong>Total probability</strong> (using the law of total probability): P(both black) = P(X and both black) + P(Y and both black) = <span class="math inline">\frac{9}{32} + \frac{1}{32}</span> = <span class="math inline">\frac{10}{32}</span> = <span class="math inline">\frac{5}{16}</span> ≈ 0.3125 or about 31.25%</li>
 </ol>
 </section>
-<section id="key-insights-from-this-problem" class="level4" data-number="17.14.8.3">
-<h4 data-number="17.14.8.3" class="anchored" data-anchor-id="key-insights-from-this-problem"><span class="header-section-number">17.14.8.3</span> Key Insights from This Problem</h4>
+<section id="key-insights-from-this-problem" class="level4" data-number="17.8.8.3">
+<h4 data-number="17.8.8.3" class="anchored" data-anchor-id="key-insights-from-this-problem"><span class="header-section-number">17.8.8.3</span> Key Insights from This Problem</h4>
 <ol type="1">
 <li><strong>Replacement Matters</strong>:
 <ul>
@@ -2556,10 +2546,10 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </section>
 </section>
 </section>
-<section id="core-probability-rules" class="level2" data-number="17.15">
-<h2 data-number="17.15" class="anchored" data-anchor-id="core-probability-rules"><span class="header-section-number">17.15</span> Core Probability Rules</h2>
-<section id="the-complement-rule" class="level3" data-number="17.15.1">
-<h3 data-number="17.15.1" class="anchored" data-anchor-id="the-complement-rule"><span class="header-section-number">17.15.1</span> The Complement Rule</h3>
+<section id="core-probability-rules" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="core-probability-rules"><span class="header-section-number">17.9</span> Core Probability Rules</h2>
+<section id="the-complement-rule" class="level3" data-number="17.9.1">
+<h3 data-number="17.9.1" class="anchored" data-anchor-id="the-complement-rule"><span class="header-section-number">17.9.1</span> The Complement Rule</h3>
 <p>The complement rule is one of the most fundamental concepts in probability theory. For any event <span class="math inline">A</span>, there’s always the possibility that A doesn’t occur. We call this the complement of <span class="math inline">A</span>, written as <span class="math inline">A'</span> or <span class="math inline">A^c</span>.</p>
 <p>The complement rule states:</p>
 <p><span class="math display">P(A') = 1 - P(A)</span></p>
@@ -2569,8 +2559,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><strong>Another Example</strong>: In a game of roulette, what’s the probability of not landing on red? There are 18 red numbers, 18 black numbers, and 2 green numbers (0 and 00) on a roulette wheel. Therefore:</p>
 <p><span class="math display">P(\text{red}) = \frac{18}{38}</span> <span class="math display">P(\text{not red}) = 1 - \frac{18}{38} = \frac{20}{38}</span></p>
 </section>
-<section id="the-additionsum-rule" class="level3" data-number="17.15.2">
-<h3 data-number="17.15.2" class="anchored" data-anchor-id="the-additionsum-rule"><span class="header-section-number">17.15.2</span> The Addition/Sum Rule</h3>
+<section id="the-additionsum-rule" class="level3" data-number="17.9.2">
+<h3 data-number="17.9.2" class="anchored" data-anchor-id="the-additionsum-rule"><span class="header-section-number">17.9.2</span> The Addition/Sum Rule</h3>
 <p>When we want to find the probability of either one event OR another occurring, we use the addition rule. However, we need to be careful about double-counting outcomes that are in both events.</p>
 <p>For any two events A and B:</p>
 <p><span class="math display">P(A \cup B) = P(A) + P(B) - P(A \cap B)</span></p>
@@ -2582,11 +2572,11 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><strong>Example</strong>: When rolling a die, what’s the probability of rolling either a 1 or a 6? Since these outcomes can’t happen simultaneously:</p>
 <p><span class="math display">P(1 \text{ or } 6) = P(1) + P(6) = \frac{1}{6} + \frac{1}{6} = \frac{1}{3}</span></p>
 </section>
-<section id="conditional-probability-the-multiplication-rule-and-bayes-theorem" class="level3" data-number="17.15.3">
-<h3 data-number="17.15.3" class="anchored" data-anchor-id="conditional-probability-the-multiplication-rule-and-bayes-theorem"><span class="header-section-number">17.15.3</span> Conditional Probability, the Multiplication Rule, and Bayes’ Theorem</h3>
+<section id="conditional-probability-the-multiplication-rule-and-bayes-theorem" class="level3" data-number="17.9.3">
+<h3 data-number="17.9.3" class="anchored" data-anchor-id="conditional-probability-the-multiplication-rule-and-bayes-theorem"><span class="header-section-number">17.9.3</span> Conditional Probability, the Multiplication Rule, and Bayes’ Theorem</h3>
 <p>Let’s explore how these three concepts are deeply interconnected and build upon each other to help us solve complex probability problems.</p>
-<section id="starting-with-conditional-probability" class="level4" data-number="17.15.3.1">
-<h4 data-number="17.15.3.1" class="anchored" data-anchor-id="starting-with-conditional-probability"><span class="header-section-number">17.15.3.1</span> Starting with Conditional Probability</h4>
+<section id="starting-with-conditional-probability" class="level4" data-number="17.9.3.1">
+<h4 data-number="17.9.3.1" class="anchored" data-anchor-id="starting-with-conditional-probability"><span class="header-section-number">17.9.3.1</span> Starting with Conditional Probability</h4>
 <p>Conditional probability answers the question: “Given that we know event B has occurred, what is the probability that event A will occur?” We write this as P(A|B), read as “the probability of A given B.”</p>
 <p>The formal definition of conditional probability is:</p>
 <p><span class="math inline">P(A|B) = \frac{P(A \cap B)}{P(B)}</span></p>
@@ -2594,8 +2584,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><strong>Example</strong>: In a company, 60% of employees are women, and 25% of all employees are in management. If we want to know the probability that a randomly selected woman is in management, we’re asking for a conditional probability:</p>
 <p><span class="math inline">P(\text{management}|\text{woman}) = \frac{P(\text{management} \cap \text{woman})}{P(\text{woman})}</span></p>
 </section>
-<section id="the-bridge-to-the-multiplication-rule" class="level4" data-number="17.15.3.2">
-<h4 data-number="17.15.3.2" class="anchored" data-anchor-id="the-bridge-to-the-multiplication-rule"><span class="header-section-number">17.15.3.2</span> The Bridge to the Multiplication Rule</h4>
+<section id="the-bridge-to-the-multiplication-rule" class="level4" data-number="17.9.3.2">
+<h4 data-number="17.9.3.2" class="anchored" data-anchor-id="the-bridge-to-the-multiplication-rule"><span class="header-section-number">17.9.3.2</span> The Bridge to the Multiplication Rule</h4>
 <p>The conditional probability formula can be rearranged to give us the multiplication rule:</p>
 <p><span class="math inline">P(A|B) = \frac{P(A \cap B)}{P(B)}</span> <span class="math inline">P(A \cap B) = P(A|B) \cdot P(B)</span></p>
 <p>This same relationship must also hold if we condition on A instead of B:</p>
@@ -2603,8 +2593,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>This symmetry is crucial because it tells us:</p>
 <p><span class="math inline">P(A|B) \cdot P(B) = P(B|A) \cdot P(A)</span></p>
 </section>
-<section id="the-natural-evolution-to-bayes-theorem" class="level4" data-number="17.15.3.3">
-<h4 data-number="17.15.3.3" class="anchored" data-anchor-id="the-natural-evolution-to-bayes-theorem"><span class="header-section-number">17.15.3.3</span> The Natural Evolution to Bayes’ Theorem</h4>
+<section id="the-natural-evolution-to-bayes-theorem" class="level4" data-number="17.9.3.3">
+<h4 data-number="17.9.3.3" class="anchored" data-anchor-id="the-natural-evolution-to-bayes-theorem"><span class="header-section-number">17.9.3.3</span> The Natural Evolution to Bayes’ Theorem</h4>
 <p>Bayes’ theorem emerges naturally when we want to “reverse” a conditional probability. Suppose we know P(B|A), but we want to find P(A|B). Using the multiplication rule symmetry:</p>
 <p><span class="math inline">P(A|B) \cdot P(B) = P(B|A) \cdot P(A)</span></p>
 <p>We can solve for P(A|B):</p>
@@ -2622,8 +2612,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>All these concepts stem from the basic idea of conditional probability. The multiplication rule is a rearrangement of the conditional probability formula, and Bayes’ theorem naturally emerges when we want to reverse the conditioning. Together, they form a powerful toolkit for solving complex probability problems.</p>
 </section>
 </section>
-<section id="independent-and-disjoint-events" class="level3" data-number="17.15.4">
-<h3 data-number="17.15.4" class="anchored" data-anchor-id="independent-and-disjoint-events"><span class="header-section-number">17.15.4</span> Independent and Disjoint Events</h3>
+<section id="independent-and-disjoint-events" class="level3" data-number="17.9.4">
+<h3 data-number="17.9.4" class="anchored" data-anchor-id="independent-and-disjoint-events"><span class="header-section-number">17.9.4</span> Independent and Disjoint Events</h3>
 <p>Understanding the difference between independent and disjoint events is crucial for correctly applying probability rules.</p>
 <p><strong>Independent Events</strong>: Events A and B are independent if knowing that one occurred doesn’t affect the probability of the other occurring. Mathematically:</p>
 <p><span class="math display">P(A|B) = P(A)</span> or equivalently: <span class="math display">P(A \cap B) = P(A) \cdot P(B)</span></p>
@@ -2634,10 +2624,10 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><strong>Example</strong>: When rolling a die, the events “rolling an even number” and “rolling a 3” are disjoint because a number cannot be both even and equal to 3.</p>
 </section>
 </section>
-<section id="problem-solutions-2" class="level2" data-number="17.16">
-<h2 data-number="17.16" class="anchored" data-anchor-id="problem-solutions-2"><span class="header-section-number">17.16</span> Problem Solutions (2)</h2>
-<section id="problem-1-cards---diamonds-or-tens" class="level3" data-number="17.16.1">
-<h3 data-number="17.16.1" class="anchored" data-anchor-id="problem-1-cards---diamonds-or-tens"><span class="header-section-number">17.16.1</span> Problem 1: Cards - Diamonds or Tens</h3>
+<section id="problem-solutions-2" class="level2" data-number="17.10">
+<h2 data-number="17.10" class="anchored" data-anchor-id="problem-solutions-2"><span class="header-section-number">17.10</span> Problem Solutions (2)</h2>
+<section id="problem-1-cards---diamonds-or-tens" class="level3" data-number="17.10.1">
+<h3 data-number="17.10.1" class="anchored" data-anchor-id="problem-1-cards---diamonds-or-tens"><span class="header-section-number">17.10.1</span> Problem 1: Cards - Diamonds or Tens</h3>
 <p><strong>Question</strong>: From a standard deck of 52 cards, what is the probability of drawing either a diamond or a ten?</p>
 <p><strong>Detailed Solution</strong>:</p>
 <p>Let’s approach this methodically:</p>
@@ -2676,8 +2666,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>The probability should be greater than the larger individual probability (<span class="math inline">\frac{13}{52}</span>)</li>
 </ul>
 </section>
-<section id="problem-2-colored-balls---at-least-one-red" class="level3" data-number="17.16.2">
-<h3 data-number="17.16.2" class="anchored" data-anchor-id="problem-2-colored-balls---at-least-one-red"><span class="header-section-number">17.16.2</span> Problem 2: Colored Balls - At Least One Red</h3>
+<section id="problem-2-colored-balls---at-least-one-red" class="level3" data-number="17.10.2">
+<h3 data-number="17.10.2" class="anchored" data-anchor-id="problem-2-colored-balls---at-least-one-red"><span class="header-section-number">17.10.2</span> Problem 2: Colored Balls - At Least One Red</h3>
 <p><strong>Question</strong>: A bag contains 5 red and 3 blue marbles. Two marbles are drawn simultaneously from the bag. What is the probability that at least one marble is red?</p>
 <p><strong>Detailed Solution</strong>:</p>
 <p>Let’s solve this problem using two different approaches to deepen our understanding.</p>
@@ -2717,8 +2707,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ul>
 <p>This problem demonstrates how choosing the right approach can make solving probability problems easier. The complement rule is particularly useful when calculating “at least one” probabilities.</p>
 </section>
-<section id="problem-3-colored-balls-with-replacement-and-addition" class="level3" data-number="17.16.3">
-<h3 data-number="17.16.3" class="anchored" data-anchor-id="problem-3-colored-balls-with-replacement-and-addition"><span class="header-section-number">17.16.3</span> Problem 3: Colored Balls with Replacement and Addition</h3>
+<section id="problem-3-colored-balls-with-replacement-and-addition" class="level3" data-number="17.10.3">
+<h3 data-number="17.10.3" class="anchored" data-anchor-id="problem-3-colored-balls-with-replacement-and-addition"><span class="header-section-number">17.10.3</span> Problem 3: Colored Balls with Replacement and Addition</h3>
 <p><strong>Question</strong>: A box contains 5 red and 3 green balls. One ball is drawn at random, its color is noted, and it is replaced back. Then one more ball of the same color is added. Then a second ball is drawn. What is the probability that both balls drawn are green?</p>
 <p><strong>Detailed Solution</strong>:</p>
 <p>This is a sequential probability problem where the probability of the second event depends on the outcome of the first. Let’s solve it step by step:</p>
@@ -2752,8 +2742,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>If we had simply replaced the first ball without adding another, the draws would have been independent</li>
 </ul>
 </section>
-<section id="problem-3-covid-19-test-analysis" class="level3" data-number="17.16.4">
-<h3 data-number="17.16.4" class="anchored" data-anchor-id="problem-3-covid-19-test-analysis"><span class="header-section-number">17.16.4</span> Problem 3: COVID-19 Test Analysis</h3>
+<section id="problem-3-covid-19-test-analysis" class="level3" data-number="17.10.4">
+<h3 data-number="17.10.4" class="anchored" data-anchor-id="problem-3-covid-19-test-analysis"><span class="header-section-number">17.10.4</span> Problem 3: COVID-19 Test Analysis</h3>
 <p><strong>Question</strong>: Given a COVID-19 test with:</p>
 <ul>
 <li>Sensitivity (P(T=1|D=1)) = 87.5%</li>
@@ -2788,8 +2778,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><strong>Understanding the Result</strong>:</p>
 <p>This result tells us that even with a positive test, there’s still about a 20.5% chance that the person doesn’t have COVID-19. This might seem surprising, but it’s due to the relatively low prevalence of the disease (10%) in the population. This is known as the base rate fallacy - even a test with good sensitivity and specificity can have a significant false positive rate when the condition being tested for is rare.</p>
 </section>
-<section id="problem-4-conditional-probability-marble-drawing-with-coin-flip" class="level3" data-number="17.16.5">
-<h3 data-number="17.16.5" class="anchored" data-anchor-id="problem-4-conditional-probability-marble-drawing-with-coin-flip"><span class="header-section-number">17.16.5</span> Problem 4: Conditional Probability: Marble Drawing with Coin Flip</h3>
+<section id="problem-4-conditional-probability-marble-drawing-with-coin-flip" class="level3" data-number="17.10.5">
+<h3 data-number="17.10.5" class="anchored" data-anchor-id="problem-4-conditional-probability-marble-drawing-with-coin-flip"><span class="header-section-number">17.10.5</span> Problem 4: Conditional Probability: Marble Drawing with Coin Flip</h3>
 <p>We have a probability experiment involving two boxes of marbles and a fair coin:</p>
 <p><strong>Box X1:</strong></p>
 <ul>
@@ -2831,34 +2821,34 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </div>
 </div>
 </div>
-<section id="solution" class="level4" data-number="17.16.5.1">
-<h4 data-number="17.16.5.1" class="anchored" data-anchor-id="solution"><span class="header-section-number">17.16.5.1</span> Solution</h4>
+<section id="solution" class="level4" data-number="17.10.5.1">
+<h4 data-number="17.10.5.1" class="anchored" data-anchor-id="solution"><span class="header-section-number">17.10.5.1</span> Solution</h4>
 <p>Let’s solve each part step by step:</p>
 </section>
-<section id="pblack-x1" class="level4" data-number="17.16.5.2">
-<h4 data-number="17.16.5.2" class="anchored" data-anchor-id="pblack-x1"><span class="header-section-number">17.16.5.2</span> P(Black | X1)</h4>
+<section id="pblack-x1" class="level4" data-number="17.10.5.2">
+<h4 data-number="17.10.5.2" class="anchored" data-anchor-id="pblack-x1"><span class="header-section-number">17.10.5.2</span> P(Black | X1)</h4>
 <p>This is the probability of drawing a black marble <em>given that</em> we selected Box X1.</p>
 <p>P(Black | X1) = <span class="math inline">\frac{\text{Number of black marbles in X1}}{\text{Total marbles in X1}} = \frac{2}{5}</span></p>
 <p>This is a direct probability from the contents of Box X1. We only consider Box X1’s marbles since we’re given that Box X1 was selected.</p>
 </section>
-<section id="pblack-and-x1" class="level4" data-number="17.16.5.3">
-<h4 data-number="17.16.5.3" class="anchored" data-anchor-id="pblack-and-x1"><span class="header-section-number">17.16.5.3</span> P(Black and X1)</h4>
+<section id="pblack-and-x1" class="level4" data-number="17.10.5.3">
+<h4 data-number="17.10.5.3" class="anchored" data-anchor-id="pblack-and-x1"><span class="header-section-number">17.10.5.3</span> P(Black and X1)</h4>
 <p>This is the probability of both selecting Box X1 <em>and</em> drawing a black marble.</p>
 <p>P(Black and X1) = P(X1) × P(Black | X1) = <span class="math inline">\frac{1}{2} \times \frac{2}{5} = \frac{1}{5}</span></p>
 <p>We multiply these probabilities because both events must occur (intersection).</p>
 </section>
-<section id="pblack" class="level4" data-number="17.16.5.4">
-<h4 data-number="17.16.5.4" class="anchored" data-anchor-id="pblack"><span class="header-section-number">17.16.5.4</span> P(Black)</h4>
+<section id="pblack" class="level4" data-number="17.10.5.4">
+<h4 data-number="17.10.5.4" class="anchored" data-anchor-id="pblack"><span class="header-section-number">17.10.5.4</span> P(Black)</h4>
 <p>This is the total probability of drawing a black marble from either box. We use the law of total probability:</p>
 <p>P(Black) = P(X1) × P(Black | X1) + P(X2) × P(Black | X2) = <span class="math inline">\frac{1}{2} \times \frac{2}{5} + \frac{1}{2} \times \frac{1}{2}</span> = <span class="math inline">\frac{1}{5} + \frac{1}{4}</span> = <span class="math inline">\frac{4}{20} + \frac{5}{20}</span> = <span class="math inline">\frac{9}{20}</span></p>
 </section>
-<section id="px1-black" class="level4" data-number="17.16.5.5">
-<h4 data-number="17.16.5.5" class="anchored" data-anchor-id="px1-black"><span class="header-section-number">17.16.5.5</span> P(X1 | Black)</h4>
+<section id="px1-black" class="level4" data-number="17.10.5.5">
+<h4 data-number="17.10.5.5" class="anchored" data-anchor-id="px1-black"><span class="header-section-number">17.10.5.5</span> P(X1 | Black)</h4>
 <p>This is the probability that we selected Box X1 given that we drew a black marble. We use Bayes’ Theorem:</p>
 <p>P(X1 | Black) = <span class="math inline">\frac{P(Black | X1) \times P(X1)}{P(Black)}</span> = <span class="math inline">\frac{\frac{2}{5} \times \frac{1}{2}}{\frac{9}{20}}</span> = <span class="math inline">\frac{\frac{1}{5}}{\frac{9}{20}}</span> = <span class="math inline">\frac{4}{9}</span></p>
 </section>
-<section id="key-concepts-demonstrated" class="level4" data-number="17.16.5.6">
-<h4 data-number="17.16.5.6" class="anchored" data-anchor-id="key-concepts-demonstrated"><span class="header-section-number">17.16.5.6</span> Key Concepts Demonstrated</h4>
+<section id="key-concepts-demonstrated" class="level4" data-number="17.10.5.6">
+<h4 data-number="17.10.5.6" class="anchored" data-anchor-id="key-concepts-demonstrated"><span class="header-section-number">17.10.5.6</span> Key Concepts Demonstrated</h4>
 <ol type="1">
 <li><p><strong>Conditional Probability</strong>: Shown in P(Black | X1), where we consider probability within a subset of outcomes</p></li>
 <li><p><strong>Multiplication Rule</strong>: Used in finding P(Black and X1), where we multiply probabilities of sequential events</p></li>
@@ -2867,12 +2857,12 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ol>
 </section>
 </section>
-<section id="problem-5-probability-of-intersecting-events-and-independence-analysis" class="level3" data-number="17.16.6">
-<h3 data-number="17.16.6" class="anchored" data-anchor-id="problem-5-probability-of-intersecting-events-and-independence-analysis"><span class="header-section-number">17.16.6</span> Problem 5: Probability of Intersecting Events and Independence Analysis</h3>
+<section id="problem-5-probability-of-intersecting-events-and-independence-analysis" class="level3" data-number="17.10.6">
+<h3 data-number="17.10.6" class="anchored" data-anchor-id="problem-5-probability-of-intersecting-events-and-independence-analysis"><span class="header-section-number">17.10.6</span> Problem 5: Probability of Intersecting Events and Independence Analysis</h3>
 <p>You roll a fair die. What is the probability of getting an even number (A) and the number greater or equal to 4 (B)? Are events A and B independent?</p>
 <p>Let’s explore this problem by first understanding what each event means, then calculating their probabilities both separately and together, and finally examining their independence.</p>
-<section id="understanding-the-events" class="level4" data-number="17.16.6.1">
-<h4 data-number="17.16.6.1" class="anchored" data-anchor-id="understanding-the-events"><span class="header-section-number">17.16.6.1</span> Understanding the Events</h4>
+<section id="understanding-the-events" class="level4" data-number="17.10.6.1">
+<h4 data-number="17.10.6.1" class="anchored" data-anchor-id="understanding-the-events"><span class="header-section-number">17.10.6.1</span> Understanding the Events</h4>
 <p>Let’s first identify what numbers satisfy each condition on a standard six-sided die:</p>
 <p>Event A (Even numbers): {2, 4, 6} Event B (Numbers ≥ 4): {4, 5, 6}</p>
 <p>We can visualize this using a Venn diagram:</p>
@@ -2914,8 +2904,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </div>
 </div>
 </section>
-<section id="calculating-pa-b" class="level4" data-number="17.16.6.2">
-<h4 data-number="17.16.6.2" class="anchored" data-anchor-id="calculating-pa-b"><span class="header-section-number">17.16.6.2</span> Calculating P(A ∩ B)</h4>
+<section id="calculating-pa-b" class="level4" data-number="17.10.6.2">
+<h4 data-number="17.10.6.2" class="anchored" data-anchor-id="calculating-pa-b"><span class="header-section-number">17.10.6.2</span> Calculating P(A ∩ B)</h4>
 <p>To find the probability of getting both an even number AND a number greater than or equal to 4:</p>
 <ol type="1">
 <li>First, let’s identify the numbers that satisfy both conditions:
@@ -2926,8 +2916,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>Therefore: P(A ∩ B) = <span class="math inline">\frac{\text{number of favorable outcomes}}{\text{total number of possible outcomes}}</span> = <span class="math inline">\frac{2}{6}</span> = <span class="math inline">\frac{1}{3}</span></li>
 </ol>
 </section>
-<section id="testing-for-independence" class="level4" data-number="17.16.6.3">
-<h4 data-number="17.16.6.3" class="anchored" data-anchor-id="testing-for-independence"><span class="header-section-number">17.16.6.3</span> Testing for Independence</h4>
+<section id="testing-for-independence" class="level4" data-number="17.10.6.3">
+<h4 data-number="17.10.6.3" class="anchored" data-anchor-id="testing-for-independence"><span class="header-section-number">17.10.6.3</span> Testing for Independence</h4>
 <p>To determine if events A and B are independent, we need to check if: P(A ∩ B) = P(A) × P(B)</p>
 <p>Let’s calculate each probability:</p>
 <ol type="1">
@@ -2948,8 +2938,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ol>
 <p>Since <span class="math inline">\frac{1}{3} \neq \frac{1}{4}</span>, events A and B are NOT independent.</p>
 </section>
-<section id="understanding-the-meaning-of-dependence" class="level4" data-number="17.16.6.4">
-<h4 data-number="17.16.6.4" class="anchored" data-anchor-id="understanding-the-meaning-of-dependence"><span class="header-section-number">17.16.6.4</span> Understanding the Meaning of Dependence</h4>
+<section id="understanding-the-meaning-of-dependence" class="level4" data-number="17.10.6.4">
+<h4 data-number="17.10.6.4" class="anchored" data-anchor-id="understanding-the-meaning-of-dependence"><span class="header-section-number">17.10.6.4</span> Understanding the Meaning of Dependence</h4>
 <p>This dependence makes intuitive sense because:</p>
 <ul>
 <li>Knowing a number is even affects the probability it’s ≥ 4</li>
@@ -2958,16 +2948,16 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ul>
 <p>This illustrates an important principle: events can be dependent even when they don’t seem directly related. The overlap in their outcome spaces creates a subtle but measurable dependence.</p>
 </section>
-<section id="teaching-extension" class="level4" data-number="17.16.6.5">
-<h4 data-number="17.16.6.5" class="anchored" data-anchor-id="teaching-extension"><span class="header-section-number">17.16.6.5</span> Teaching Extension</h4>
+<section id="teaching-extension" class="level4" data-number="17.10.6.5">
+<h4 data-number="17.10.6.5" class="anchored" data-anchor-id="teaching-extension"><span class="header-section-number">17.10.6.5</span> Teaching Extension</h4>
 <p>To deepen understanding, consider this question: How would the independence calculation change if we used “numbers less than 4” instead of “numbers greater than or equal to 4”? This variation helps illustrate how the structure of event spaces influences their independence.</p>
 </section>
 </section>
-<section id="problem-6-the-monty-hall-problem---two-solution-approaches" class="level3" data-number="17.16.7">
-<h3 data-number="17.16.7" class="anchored" data-anchor-id="problem-6-the-monty-hall-problem---two-solution-approaches"><span class="header-section-number">17.16.7</span> Problem 6: The Monty Hall Problem - Two Solution Approaches</h3>
+<section id="problem-6-the-monty-hall-problem---two-solution-approaches" class="level3" data-number="17.10.7">
+<h3 data-number="17.10.7" class="anchored" data-anchor-id="problem-6-the-monty-hall-problem---two-solution-approaches"><span class="header-section-number">17.10.7</span> Problem 6: The Monty Hall Problem - Two Solution Approaches</h3>
 <p>Let’s analyze this fascinating probability problem that has puzzled many people, including mathematicians. We’ll solve it using both a tree diagram and conditional probability to build a complete understanding.</p>
-<section id="problem-statement" class="level4" data-number="17.16.7.1">
-<h4 data-number="17.16.7.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">17.16.7.1</span> Problem Statement</h4>
+<section id="problem-statement" class="level4" data-number="17.10.7.1">
+<h4 data-number="17.10.7.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">17.10.7.1</span> Problem Statement</h4>
 <p>The Monty Hall problem:</p>
 <ol type="1">
 <li>There are three doors: behind one is a car, behind the others are goats</li>
@@ -2977,8 +2967,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>Question: Should you switch? What’s the probability of winning if you switch vs.&nbsp;if you stay?</li>
 </ol>
 </section>
-<section id="approach-1-tree-diagram-solution" class="level4" data-number="17.16.7.2">
-<h4 data-number="17.16.7.2" class="anchored" data-anchor-id="approach-1-tree-diagram-solution"><span class="header-section-number">17.16.7.2</span> Approach 1: Tree Diagram Solution</h4>
+<section id="approach-1-tree-diagram-solution" class="level4" data-number="17.10.7.2">
+<h4 data-number="17.10.7.2" class="anchored" data-anchor-id="approach-1-tree-diagram-solution"><span class="header-section-number">17.10.7.2</span> Approach 1: Tree Diagram Solution</h4>
 <p>Let’s visualize all possible scenarios:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -3025,8 +3015,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>P(win if switch) = <span class="math inline">\frac{2}{3}</span></li>
 </ul>
 </section>
-<section id="approach-2-conditional-probability-solution" class="level4" data-number="17.16.7.3">
-<h4 data-number="17.16.7.3" class="anchored" data-anchor-id="approach-2-conditional-probability-solution"><span class="header-section-number">17.16.7.3</span> Approach 2: Conditional Probability Solution</h4>
+<section id="approach-2-conditional-probability-solution" class="level4" data-number="17.10.7.3">
+<h4 data-number="17.10.7.3" class="anchored" data-anchor-id="approach-2-conditional-probability-solution"><span class="header-section-number">17.10.7.3</span> Approach 2: Conditional Probability Solution</h4>
 <p>Let’s use Bayes’ Theorem to solve this. Define events:</p>
 <ul>
 <li>C₁: Car is behind Door 1 (your initial choice)</li>
@@ -3043,8 +3033,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>Therefore:</p>
 <p>P(Car in 3 | M₂) = <span class="math inline">\frac{1 \times \frac{1}{3}}{\frac{1}{2}}</span> = <span class="math inline">\frac{2}{3}</span></p>
 </section>
-<section id="key-insights" class="level4" data-number="17.16.7.4">
-<h4 data-number="17.16.7.4" class="anchored" data-anchor-id="key-insights"><span class="header-section-number">17.16.7.4</span> Key Insights</h4>
+<section id="key-insights" class="level4" data-number="17.10.7.4">
+<h4 data-number="17.10.7.4" class="anchored" data-anchor-id="key-insights"><span class="header-section-number">17.10.7.4</span> Key Insights</h4>
 <ol type="1">
 <li><strong>Why Intuition Fails</strong>:
 <ul>
@@ -3062,10 +3052,10 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ol>
 </section>
 </section>
-<section id="problem-7-the-bertrand-box-paradox---a-teaching-analysis" class="level3" data-number="17.16.8">
-<h3 data-number="17.16.8" class="anchored" data-anchor-id="problem-7-the-bertrand-box-paradox---a-teaching-analysis"><span class="header-section-number">17.16.8</span> Problem 7: The Bertrand Box Paradox - A Teaching Analysis</h3>
-<section id="understanding-the-problem-setup" class="level4" data-number="17.16.8.1">
-<h4 data-number="17.16.8.1" class="anchored" data-anchor-id="understanding-the-problem-setup"><span class="header-section-number">17.16.8.1</span> Understanding the Problem Setup</h4>
+<section id="problem-7-the-bertrand-box-paradox---a-teaching-analysis" class="level3" data-number="17.10.8">
+<h3 data-number="17.10.8" class="anchored" data-anchor-id="problem-7-the-bertrand-box-paradox---a-teaching-analysis"><span class="header-section-number">17.10.8</span> Problem 7: The Bertrand Box Paradox - A Teaching Analysis</h3>
+<section id="understanding-the-problem-setup" class="level4" data-number="17.10.8.1">
+<h4 data-number="17.10.8.1" class="anchored" data-anchor-id="understanding-the-problem-setup"><span class="header-section-number">17.10.8.1</span> Understanding the Problem Setup</h4>
 <p>First, let’s clearly state what we’re dealing with:</p>
 <ol type="1">
 <li><p>We have three boxes:</p>
@@ -3083,8 +3073,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ol>
 <p>Most people intuitively answer <span class="math inline">\frac{1}{2}</span>, but let’s discover why this isn’t correct.</p>
 </section>
-<section id="approach-1-tree-diagram-analysis" class="level4" data-number="17.16.8.2">
-<h4 data-number="17.16.8.2" class="anchored" data-anchor-id="approach-1-tree-diagram-analysis"><span class="header-section-number">17.16.8.2</span> Approach 1: Tree Diagram Analysis</h4>
+<section id="approach-1-tree-diagram-analysis" class="level4" data-number="17.10.8.2">
+<h4 data-number="17.10.8.2" class="anchored" data-anchor-id="approach-1-tree-diagram-analysis"><span class="header-section-number">17.10.8.2</span> Approach 1: Tree Diagram Analysis</h4>
 <p>Let’s visualize all possible paths and outcomes:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -3125,8 +3115,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li>Given we saw gold, probability it came from Box GG = <span class="math inline">\frac{\frac{1}{3}}{\frac{1}{2}} = \frac{2}{3}</span></li>
 </ul>
 </section>
-<section id="approach-2-bayes-theorem-solution" class="level4" data-number="17.16.8.3">
-<h4 data-number="17.16.8.3" class="anchored" data-anchor-id="approach-2-bayes-theorem-solution"><span class="header-section-number">17.16.8.3</span> Approach 2: Bayes’ Theorem Solution</h4>
+<section id="approach-2-bayes-theorem-solution" class="level4" data-number="17.10.8.3">
+<h4 data-number="17.10.8.3" class="anchored" data-anchor-id="approach-2-bayes-theorem-solution"><span class="header-section-number">17.10.8.3</span> Approach 2: Bayes’ Theorem Solution</h4>
 <p>Let’s solve this formally using Bayes’ Theorem:</p>
 <p>P(Box GG | Gold) = <span class="math inline">\frac{P(Gold|Box GG) \times P(Box GG)}{P(Gold)}</span></p>
 <p>Let’s calculate each component:</p>
@@ -3138,8 +3128,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>Putting it together:</p>
 <p>P(Box GG | Gold) = <span class="math inline">\frac{1 \times \frac{1}{3}}{\frac{1}{2}} = \frac{2}{3}</span></p>
 </section>
-<section id="why-this-is-counterintuitive" class="level4" data-number="17.16.8.4">
-<h4 data-number="17.16.8.4" class="anchored" data-anchor-id="why-this-is-counterintuitive"><span class="header-section-number">17.16.8.4</span> Why This Is Counterintuitive</h4>
+<section id="why-this-is-counterintuitive" class="level4" data-number="17.10.8.4">
+<h4 data-number="17.10.8.4" class="anchored" data-anchor-id="why-this-is-counterintuitive"><span class="header-section-number">17.10.8.4</span> Why This Is Counterintuitive</h4>
 <p>The reason many people get this wrong reveals interesting aspects of how we think about probability:</p>
 <ol type="1">
 <li><p><strong>The Setup Trick</strong>: People often think, “If I see gold, it must be from either Box GG or Box GS, so it’s 50-50.” This ignores the fact that Box GG has twice the opportunity to show gold.</p></li>
@@ -3147,8 +3137,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li><p><strong>Sample Space Structure</strong>: Box GG contributes more gold coins to the total sample space of possible draws than Box GS does.</p></li>
 </ol>
 </section>
-<section id="a-teaching-analogy" class="level4" data-number="17.16.8.5">
-<h4 data-number="17.16.8.5" class="anchored" data-anchor-id="a-teaching-analogy"><span class="header-section-number">17.16.8.5</span> A Teaching Analogy</h4>
+<section id="a-teaching-analogy" class="level4" data-number="17.10.8.5">
+<h4 data-number="17.10.8.5" class="anchored" data-anchor-id="a-teaching-analogy"><span class="header-section-number">17.10.8.5</span> A Teaching Analogy</h4>
 <p>Think of it this way: Imagine three people named GG, SS, and GS.</p>
 <ul>
 <li>GG always raises both hands when asked</li>
@@ -3157,8 +3147,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ul>
 <p>If you see a raised hand randomly, it’s more likely to belong to GG (who contributes two hands) than GS (who contributes only one).</p>
 </section>
-<section id="extension-for-deeper-understanding" class="level4" data-number="17.16.8.6">
-<h4 data-number="17.16.8.6" class="anchored" data-anchor-id="extension-for-deeper-understanding"><span class="header-section-number">17.16.8.6</span> Extension for Deeper Understanding</h4>
+<section id="extension-for-deeper-understanding" class="level4" data-number="17.10.8.6">
+<h4 data-number="17.10.8.6" class="anchored" data-anchor-id="extension-for-deeper-understanding"><span class="header-section-number">17.10.8.6</span> Extension for Deeper Understanding</h4>
 <p>To reinforce this concept, consider: How would the probabilities change if we had:</p>
 <ol type="1">
 <li>Three coins in each box?</li>
@@ -3168,8 +3158,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </section>
 </section>
 </section>
-<section id="study-tips" class="level2" data-number="17.17">
-<h2 data-number="17.17" class="anchored" data-anchor-id="study-tips"><span class="header-section-number">17.17</span> Study Tips</h2>
+<section id="study-tips" class="level2" data-number="17.11">
+<h2 data-number="17.11" class="anchored" data-anchor-id="study-tips"><span class="header-section-number">17.11</span> Study Tips</h2>
 <ol type="1">
 <li><p>Always draw a probability tree or Venn diagram when possible - visual representations help clarify the problem structure.</p></li>
 <li><p>When solving probability problems:</p>
@@ -3188,22 +3178,22 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li><p>Practice calculating probabilities both as fractions and decimals - being comfortable with both formats is important.</p></li>
 </ol>
 </section>
-<section id="appendix-1.-advanced-counting-in-probability-a-student-guide" class="level2" data-number="17.18">
-<h2 data-number="17.18" class="anchored" data-anchor-id="appendix-1.-advanced-counting-in-probability-a-student-guide"><span class="header-section-number">17.18</span> Appendix 1. Advanced Counting in Probability: A Student Guide (*)</h2>
-<section id="poker-hands-a-window-into-complex-counting" class="level3" data-number="17.18.1">
-<h3 data-number="17.18.1" class="anchored" data-anchor-id="poker-hands-a-window-into-complex-counting"><span class="header-section-number">17.18.1</span> Poker Hands: A Window into Complex Counting</h3>
+<section id="appendix-1.-advanced-counting-in-probability-a-student-guide" class="level2" data-number="17.12">
+<h2 data-number="17.12" class="anchored" data-anchor-id="appendix-1.-advanced-counting-in-probability-a-student-guide"><span class="header-section-number">17.12</span> Appendix 1. Advanced Counting in Probability: A Student Guide (*)</h2>
+<section id="poker-hands-a-window-into-complex-counting" class="level3" data-number="17.12.1">
+<h3 data-number="17.12.1" class="anchored" data-anchor-id="poker-hands-a-window-into-complex-counting"><span class="header-section-number">17.12.1</span> Poker Hands: A Window into Complex Counting</h3>
 <p>Poker hands provide some of the most interesting examples for understanding counting in probability. They’re perfect for learning because they combine multiple counting principles and help us understand common pitfalls. Let’s explore these concepts step by step.</p>
 </section>
-<section id="understanding-our-sample-space" class="level3" data-number="17.18.2">
-<h3 data-number="17.18.2" class="anchored" data-anchor-id="understanding-our-sample-space"><span class="header-section-number">17.18.2</span> Understanding Our Sample Space</h3>
+<section id="understanding-our-sample-space" class="level3" data-number="17.12.2">
+<h3 data-number="17.12.2" class="anchored" data-anchor-id="understanding-our-sample-space"><span class="header-section-number">17.12.2</span> Understanding Our Sample Space</h3>
 <p>Before we dive into specific hands, let’s understand what we’re working with. A poker hand consists of 5 cards drawn from a standard 52-card deck. Understanding the sample space is crucial because it forms the foundation of all our probability calculations.</p>
 <p>The total number of possible poker hands represents how many different ways we can select 5 cards from 52 cards, where the order doesn’t matter (getting ace-king-queen is the same hand as getting king-queen-ace), we can’t reuse cards (we can’t have the ace of spades twice in our hand), and we must take exactly 5 cards (not more, not less).</p>
 <p>This means we’re dealing with combinations. Let’s calculate this step by step:</p>
 <p><span class="math inline">\binom{52}{5} = \frac{52!}{5!(52-5)!} = \frac{52!}{5!(47)!} = \frac{52 \cdot 51 \cdot 50 \cdot 49 \cdot 48}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = 2,598,960</span></p>
 <p>This number, 2,598,960, will be our denominator for calculating the probability of any specific poker hand.</p>
 </section>
-<section id="understanding-two-pairs-a-careful-counting-approach" class="level3" data-number="17.18.3">
-<h3 data-number="17.18.3" class="anchored" data-anchor-id="understanding-two-pairs-a-careful-counting-approach"><span class="header-section-number">17.18.3</span> Understanding Two Pairs: A Careful Counting Approach</h3>
+<section id="understanding-two-pairs-a-careful-counting-approach" class="level3" data-number="17.12.3">
+<h3 data-number="17.12.3" class="anchored" data-anchor-id="understanding-two-pairs-a-careful-counting-approach"><span class="header-section-number">17.12.3</span> Understanding Two Pairs: A Careful Counting Approach</h3>
 <p>Two pairs is one of the most interesting hands for understanding counting principles. To get two pairs, we need:</p>
 <ul>
 <li>Two cards of one rank</li>
@@ -3237,8 +3227,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><span class="math inline">P(\text{two pairs}) = \frac{13 \cdot 12 \cdot 11 \cdot \binom{4}{2} \cdot \binom{4}{2} \cdot \binom{4}{1}}{2,598,960} = \frac{123,552}{2,598,960} \approx 0.0475</span></p>
 <p>This means about 4.75% of all possible poker hands are two pairs.</p>
 </section>
-<section id="understanding-full-house-a-different-counting-challenge" class="level3" data-number="17.18.4">
-<h3 data-number="17.18.4" class="anchored" data-anchor-id="understanding-full-house-a-different-counting-challenge"><span class="header-section-number">17.18.4</span> Understanding Full House: A Different Counting Challenge</h3>
+<section id="understanding-full-house-a-different-counting-challenge" class="level3" data-number="17.12.4">
+<h3 data-number="17.12.4" class="anchored" data-anchor-id="understanding-full-house-a-different-counting-challenge"><span class="header-section-number">17.12.4</span> Understanding Full House: A Different Counting Challenge</h3>
 <p>A full house gives us a perfect contrast to two pairs. While both hands involve multiple cards of the same rank, the counting process reveals important differences in how we approach probability problems.</p>
 <p>In a full house, we need: - Three cards of one rank (called “three of a kind”) - Two cards of another rank (a pair)</p>
 <p>Let’s think about why counting a full house is different from counting two pairs. With two pairs, we had to be careful about the order of selecting our pairs. With a full house, we have a natural order: we must choose our three of a kind first (because it’s distinct from the pair), then choose our pair.</p>
@@ -3262,8 +3252,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><span class="math inline">P(\text{full house}) = \frac{3,744}{2,598,960} \approx 0.0014</span></p>
 <p>About 0.14% of all poker hands are full houses, making them significantly rarer than two pairs (4.75%). This makes intuitive sense - it’s harder to get three of the same rank plus a pair than to get two pairs plus a kicker.</p>
 </section>
-<section id="the-birthday-problem-a-beautiful-probability-surprise" class="level3" data-number="17.18.5">
-<h3 data-number="17.18.5" class="anchored" data-anchor-id="the-birthday-problem-a-beautiful-probability-surprise"><span class="header-section-number">17.18.5</span> The Birthday Problem: A Beautiful Probability Surprise</h3>
+<section id="the-birthday-problem-a-beautiful-probability-surprise" class="level3" data-number="17.12.5">
+<h3 data-number="17.12.5" class="anchored" data-anchor-id="the-birthday-problem-a-beautiful-probability-surprise"><span class="header-section-number">17.12.5</span> The Birthday Problem: A Beautiful Probability Surprise</h3>
 <p>The birthday problem provides a fascinating connection to our poker probability work, while teaching us something profound about the nature of counting. The classic question is: “How many people need to be in a room for there to be a 50% chance that at least two share a birthday?”</p>
 <p>Most people guess around 183 (half of 365), but the actual answer is just 23 people! Let’s understand why this connects to our previous counting work and why the answer is so surprising.</p>
 <p>First, let’s think about what makes this problem different from our poker calculations:</p>
@@ -3286,8 +3276,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><span class="math inline">P(\text{at least one match}) = 1 - 0.492 \approx 0.508</span></p>
 <p>This teaches us something profound about probability: when we’re looking for any match among many possibilities (like in the birthday problem), we often get much higher probabilities than when we’re looking for specific matches (like in poker hands).</p>
 </section>
-<section id="lottery-mathematics-putting-it-all-together" class="level3" data-number="17.18.6">
-<h3 data-number="17.18.6" class="anchored" data-anchor-id="lottery-mathematics-putting-it-all-together"><span class="header-section-number">17.18.6</span> Lottery Mathematics: Putting It All Together</h3>
+<section id="lottery-mathematics-putting-it-all-together" class="level3" data-number="17.12.6">
+<h3 data-number="17.12.6" class="anchored" data-anchor-id="lottery-mathematics-putting-it-all-together"><span class="header-section-number">17.12.6</span> Lottery Mathematics: Putting It All Together</h3>
 <p>Let’s apply everything we’ve learned to understand lottery probabilities. Consider a typical “6/49” lottery where players choose 6 numbers from 1-49. This gives us a perfect opportunity to apply our counting principles in a real-world context.</p>
 <p>The fundamental question is: What’s the probability of winning the jackpot (matching all 6 numbers)?</p>
 <p>This is a combination problem because: - Order doesn’t matter (matching 1-2-3-4-5-6 is the same as matching 6-5-4-3-2-1) - We can’t use the same number twice - We need exactly 6 numbers</p>
@@ -3299,11 +3289,11 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p><span class="math inline">P(\text{5 + bonus}) = \frac{\binom{6}{5} \cdot \binom{43}{1}}{\binom{49}{6}} = \frac{6 \cdot 43}{13,983,816} \approx 0.0000184</span></p>
 <p>This shows us how breaking down complex probability problems into simpler parts helps us solve them systematically.</p>
 </section>
-<section id="appendix-2.-alternative-approaches-to-poker-hand-probabilities" class="level3" data-number="17.18.7">
-<h3 data-number="17.18.7" class="anchored" data-anchor-id="appendix-2.-alternative-approaches-to-poker-hand-probabilities"><span class="header-section-number">17.18.7</span> Appendix 2. Alternative Approaches to Poker Hand Probabilities (*)</h3>
+<section id="appendix-2.-alternative-approaches-to-poker-hand-probabilities" class="level3" data-number="17.12.7">
+<h3 data-number="17.12.7" class="anchored" data-anchor-id="appendix-2.-alternative-approaches-to-poker-hand-probabilities"><span class="header-section-number">17.12.7</span> Appendix 2. Alternative Approaches to Poker Hand Probabilities (*)</h3>
 <p>Understanding different ways to calculate the same probability deepens our insight into counting principles. Let’s explore several methods for finding the probabilities of two pairs and full house, seeing how each approach highlights different aspects of the problem.</p>
-<section id="multiple-paths-to-two-pairs-probability" class="level4" data-number="17.18.7.1">
-<h4 data-number="17.18.7.1" class="anchored" data-anchor-id="multiple-paths-to-two-pairs-probability"><span class="header-section-number">17.18.7.1</span> Multiple Paths to Two Pairs Probability</h4>
+<section id="multiple-paths-to-two-pairs-probability" class="level4" data-number="17.12.7.1">
+<h4 data-number="17.12.7.1" class="anchored" data-anchor-id="multiple-paths-to-two-pairs-probability"><span class="header-section-number">17.12.7.1</span> Multiple Paths to Two Pairs Probability</h4>
 <p>Let’s start with two pairs. We’ve seen one method, but there are several valid approaches:</p>
 <p>Method 1: Sequential Selection (Our Original Approach) We build the hand step by step: 1. Choose first pair’s rank: 13 ways 2. Choose second pair’s rank: 12 ways 3. Choose kicker’s rank: 11 ways 4. Choose specific cards for first pair: <span class="math inline">\binom{4}{2}</span> ways 5. Choose specific cards for second pair: <span class="math inline">\binom{4}{2}</span> ways 6. Choose specific card for kicker: <span class="math inline">\binom{4}{1}</span> ways</p>
 <p>This gives us: <span class="math inline">P(\text{two pairs}) = \frac{13 \cdot 12 \cdot 11 \cdot \binom{4}{2} \cdot \binom{4}{2} \cdot \binom{4}{1}}{2,598,960}</span></p>
@@ -3326,8 +3316,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ol>
 <p>This gives us: <span class="math inline">P(\text{two pairs}) = \frac{\binom{13}{3} \cdot \binom{3}{2} \cdot \binom{4}{2} \cdot \binom{4}{2} \cdot \binom{4}{1}}{2,598,960}</span></p>
 </section>
-<section id="alternative-approaches-to-full-house-probability" class="level4" data-number="17.18.7.2">
-<h4 data-number="17.18.7.2" class="anchored" data-anchor-id="alternative-approaches-to-full-house-probability"><span class="header-section-number">17.18.7.2</span> Alternative Approaches to Full House Probability</h4>
+<section id="alternative-approaches-to-full-house-probability" class="level4" data-number="17.12.7.2">
+<h4 data-number="17.12.7.2" class="anchored" data-anchor-id="alternative-approaches-to-full-house-probability"><span class="header-section-number">17.12.7.2</span> Alternative Approaches to Full House Probability</h4>
 <p>The full house probability can also be calculated in several ways:</p>
 <p>Method 1: Direct Sequential Selection (Our Original Approach) 1. Choose rank for three of a kind: 13 ways 2. Choose specific three cards: <span class="math inline">\binom{4}{3}</span> ways 3. Choose rank for pair: 12 ways 4. Choose specific two cards: <span class="math inline">\binom{4}{2}</span> ways</p>
 <p>Leading to: <span class="math inline">P(\text{full house}) = \frac{13 \cdot \binom{4}{3} \cdot 12 \cdot \binom{4}{2}}{2,598,960}</span></p>
@@ -3339,11 +3329,11 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>The fact that all these methods yield the same result serves as a powerful verification tool. When solving complex probability problems, being able to approach the solution in multiple ways not only confirms our answer but also deepens our understanding of the underlying counting principles.</p>
 </section>
 </section>
-<section id="appendix-3-occupancy-problems-and-statistical-physics" class="level3" data-number="17.18.8">
-<h3 data-number="17.18.8" class="anchored" data-anchor-id="appendix-3-occupancy-problems-and-statistical-physics"><span class="header-section-number">17.18.8</span> Appendix 3: Occupancy Problems and Statistical Physics (*)</h3>
+<section id="appendix-3-occupancy-problems-and-statistical-physics" class="level3" data-number="17.12.8">
+<h3 data-number="17.12.8" class="anchored" data-anchor-id="appendix-3-occupancy-problems-and-statistical-physics"><span class="header-section-number">17.12.8</span> Appendix 3: Occupancy Problems and Statistical Physics (*)</h3>
 <p>Understanding how objects can be distributed into containers forms the foundation for both probability theory and statistical mechanics. Let’s explore this connection, starting with basic counting principles and building up to physical applications.</p>
-<section id="the-basic-occupancy-problem" class="level4" data-number="17.18.8.1">
-<h4 data-number="17.18.8.1" class="anchored" data-anchor-id="the-basic-occupancy-problem"><span class="header-section-number">17.18.8.1</span> The Basic Occupancy Problem</h4>
+<section id="the-basic-occupancy-problem" class="level4" data-number="17.12.8.1">
+<h4 data-number="17.12.8.1" class="anchored" data-anchor-id="the-basic-occupancy-problem"><span class="header-section-number">17.12.8.1</span> The Basic Occupancy Problem</h4>
 <p>Imagine we have <span class="math inline">n</span> identical balls and <span class="math inline">k</span> distinct boxes. How many ways can we distribute the balls? This simple question leads us to three fundamentally different scenarios that mirror important physical systems:</p>
 <ol type="1">
 <li>Unrestricted occupancy (Bose-Einstein statistics)
@@ -3366,8 +3356,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ul></li>
 </ol>
 </section>
-<section id="stars-and-bars-understanding-unrestricted-occupancy" class="level4" data-number="17.18.8.2">
-<h4 data-number="17.18.8.2" class="anchored" data-anchor-id="stars-and-bars-understanding-unrestricted-occupancy"><span class="header-section-number">17.18.8.2</span> Stars and Bars: Understanding Unrestricted Occupancy</h4>
+<section id="stars-and-bars-understanding-unrestricted-occupancy" class="level4" data-number="17.12.8.2">
+<h4 data-number="17.12.8.2" class="anchored" data-anchor-id="stars-and-bars-understanding-unrestricted-occupancy"><span class="header-section-number">17.12.8.2</span> Stars and Bars: Understanding Unrestricted Occupancy</h4>
 <p>Let’s start with the Bose-Einstein case. The “stars and bars” method provides a beautiful way to visualize and count these arrangements.</p>
 <p>Imagine <span class="math inline">n=5</span> balls and <span class="math inline">k=3</span> boxes. We can represent any arrangement as a sequence of stars and bars: - Stars (*) represent balls - Bars (|) separate different boxes</p>
 <p>For example: - ** | ** | * represents 2 balls in first box, 2 in second, 1 in third - ***** | | represents all 5 balls in first box, none in others - | ***** | represents all 5 balls in middle box</p>
@@ -3375,8 +3365,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <p>Therefore, we’re really just choosing positions for the <span class="math inline">k-1</span> bars among <span class="math inline">n+(k-1)</span> total positions. This gives us:</p>
 <p><span class="math inline">\text{Number of arrangements} = \binom{n+k-1}{k-1} = \binom{n+k-1}{n}</span></p>
 </section>
-<section id="from-counting-to-physics" class="level4" data-number="17.18.8.3">
-<h4 data-number="17.18.8.3" class="anchored" data-anchor-id="from-counting-to-physics"><span class="header-section-number">17.18.8.3</span> From Counting to Physics</h4>
+<section id="from-counting-to-physics" class="level4" data-number="17.12.8.3">
+<h4 data-number="17.12.8.3" class="anchored" data-anchor-id="from-counting-to-physics"><span class="header-section-number">17.12.8.3</span> From Counting to Physics</h4>
 <p>Now let’s see how these counting principles reveal deep physical truths:</p>
 <ol type="1">
 <li><p>Bose-Einstein Statistics (Unrestricted, Indistinguishable)</p>
@@ -3402,8 +3392,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ul></li>
 </ol>
 </section>
-<section id="an-intuitive-bridge-to-physics" class="level4" data-number="17.18.8.4">
-<h4 data-number="17.18.8.4" class="anchored" data-anchor-id="an-intuitive-bridge-to-physics"><span class="header-section-number">17.18.8.4</span> An Intuitive Bridge to Physics</h4>
+<section id="an-intuitive-bridge-to-physics" class="level4" data-number="17.12.8.4">
+<h4 data-number="17.12.8.4" class="anchored" data-anchor-id="an-intuitive-bridge-to-physics"><span class="header-section-number">17.12.8.4</span> An Intuitive Bridge to Physics</h4>
 <p>To understand why these statistics matter, consider three real scenarios:</p>
 <ol type="1">
 <li><p>Photons in a Laser (Bose-Einstein) Imagine shining a laser into a mirror cavity. Photons are happy to bunch together in the same quantum state - they’re “social particles.” This is why lasers can produce intense, coherent light.</p></li>
@@ -3411,8 +3401,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 <li><p>Gas Molecules in a Room (Maxwell-Boltzmann) Air molecules bounce around randomly, and we can tell them apart (in principle). This gives us the familiar gas laws and diffusion.</p></li>
 </ol>
 </section>
-<section id="the-power-of-the-star-and-bars-method" class="level4" data-number="17.18.8.5">
-<h4 data-number="17.18.8.5" class="anchored" data-anchor-id="the-power-of-the-star-and-bars-method"><span class="header-section-number">17.18.8.5</span> The Power of the Star and Bars Method</h4>
+<section id="the-power-of-the-star-and-bars-method" class="level4" data-number="17.12.8.5">
+<h4 data-number="17.12.8.5" class="anchored" data-anchor-id="the-power-of-the-star-and-bars-method"><span class="header-section-number">17.12.8.5</span> The Power of the Star and Bars Method</h4>
 <p>The stars and bars visualization helps us understand more complex problems. For instance, if we have restrictions on box occupancy:</p>
 <ol type="1">
 <li>At least one ball per box:
@@ -3429,8 +3419,8 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </ul></li>
 </ol>
 </section>
-<section id="connection-to-partition-problems" class="level4" data-number="17.18.8.6">
-<h4 data-number="17.18.8.6" class="anchored" data-anchor-id="connection-to-partition-problems"><span class="header-section-number">17.18.8.6</span> Connection to Partition Problems</h4>
+<section id="connection-to-partition-problems" class="level4" data-number="17.12.8.6">
+<h4 data-number="17.12.8.6" class="anchored" data-anchor-id="connection-to-partition-problems"><span class="header-section-number">17.12.8.6</span> Connection to Partition Problems</h4>
 <p>This same framework helps us solve other important problems:</p>
 <ol type="1">
 <li>Integer Partitions How many ways can we write <span class="math inline">n</span> as a sum of positive integers?
