@@ -294,7 +294,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-probability" id="toc-what-is-probability" class="nav-link active" data-scroll-target="#what-is-probability"><span class="header-section-number">17.1</span> What is Probability?</a>
+  <li><a href="#probability-preliminary-concepts" id="toc-probability-preliminary-concepts" class="nav-link active" data-scroll-target="#probability-preliminary-concepts"><span class="header-section-number">17.1</span> Probability: Preliminary Concepts</a>
   <ul class="collapse">
   <li><a href="#basic-set-concepts" id="toc-basic-set-concepts" class="nav-link" data-scroll-target="#basic-set-concepts"><span class="header-section-number">17.1.1</span> Basic Set Concepts</a></li>
   <li><a href="#set-operations" id="toc-set-operations" class="nav-link" data-scroll-target="#set-operations"><span class="header-section-number">17.1.2</span> Set Operations</a></li>
@@ -318,14 +318,31 @@ window.Quarto = {
   <li><a href="#understanding-outcomes-vs-events" id="toc-understanding-outcomes-vs-events" class="nav-link" data-scroll-target="#understanding-outcomes-vs-events"><span class="header-section-number">17.3.1</span> Understanding Outcomes vs Events</a></li>
   <li><a href="#understanding-set-relations-elements-vs-subsets" id="toc-understanding-set-relations-elements-vs-subsets" class="nav-link" data-scroll-target="#understanding-set-relations-elements-vs-subsets"><span class="header-section-number">17.3.2</span> Understanding Set Relations: Elements vs Subsets (*)</a></li>
   </ul></li>
-  <li><a href="#what-is-probability-1" id="toc-what-is-probability-1" class="nav-link" data-scroll-target="#what-is-probability-1"><span class="header-section-number">17.4</span> What is Probability?</a></li>
-  <li><a href="#discrete-probability" id="toc-discrete-probability" class="nav-link" data-scroll-target="#discrete-probability"><span class="header-section-number">17.5</span> Discrete Probability</a></li>
-  <li><a href="#understanding-probability-measures-and-related-concepts" id="toc-understanding-probability-measures-and-related-concepts" class="nav-link" data-scroll-target="#understanding-probability-measures-and-related-concepts"><span class="header-section-number">17.6</span> Understanding Probability Measures and Related Concepts</a>
+  <li><a href="#what-is-probability-a-mathematical-framework-for-uncertainty" id="toc-what-is-probability-a-mathematical-framework-for-uncertainty" class="nav-link" data-scroll-target="#what-is-probability-a-mathematical-framework-for-uncertainty"><span class="header-section-number">17.4</span> What is Probability: A Mathematical Framework for Uncertainty</a>
   <ul class="collapse">
-  <li><a href="#probability-measure-function" id="toc-probability-measure-function" class="nav-link" data-scroll-target="#probability-measure-function"><span class="header-section-number">17.6.1</span> Probability Measure Function</a></li>
+  <li><a href="#the-probability-scale" id="toc-the-probability-scale" class="nav-link" data-scroll-target="#the-probability-scale"><span class="header-section-number">17.4.1</span> The Probability Scale</a></li>
+  </ul></li>
+  <li><a href="#discrete-probability-counting-uncertainty" id="toc-discrete-probability-counting-uncertainty" class="nav-link" data-scroll-target="#discrete-probability-counting-uncertainty"><span class="header-section-number">17.5</span> Discrete Probability: Counting Uncertainty</a>
+  <ul class="collapse">
+  <li><a href="#what-makes-a-problem-discrete" id="toc-what-makes-a-problem-discrete" class="nav-link" data-scroll-target="#what-makes-a-problem-discrete"><span class="header-section-number">17.5.1</span> What Makes a Problem “Discrete”?</a></li>
+  <li><a href="#common-examples" id="toc-common-examples" class="nav-link" data-scroll-target="#common-examples"><span class="header-section-number">17.5.2</span> Common Examples</a></li>
+  <li><a href="#why-discrete-probability-matters" id="toc-why-discrete-probability-matters" class="nav-link" data-scroll-target="#why-discrete-probability-matters"><span class="header-section-number">17.5.3</span> Why Discrete Probability Matters</a></li>
+  </ul></li>
+  <li><a href="#understanding-probability-measures" id="toc-understanding-probability-measures" class="nav-link" data-scroll-target="#understanding-probability-measures"><span class="header-section-number">17.6</span> Understanding Probability Measures</a>
+  <ul class="collapse">
+  <li><a href="#probability-measure-the-formal-framework" id="toc-probability-measure-the-formal-framework" class="nav-link" data-scroll-target="#probability-measure-the-formal-framework"><span class="header-section-number">17.6.1</span> Probability Measure: The Formal Framework</a></li>
+  <li><a href="#probability-distributions-vs.-probability-laws" id="toc-probability-distributions-vs.-probability-laws" class="nav-link" data-scroll-target="#probability-distributions-vs.-probability-laws"><span class="header-section-number">17.6.2</span> Probability Distributions vs.&nbsp;Probability Laws</a></li>
   </ul></li>
   <li><a href="#classical-discrete-probability-the-equal-chances-approach" id="toc-classical-discrete-probability-the-equal-chances-approach" class="nav-link" data-scroll-target="#classical-discrete-probability-the-equal-chances-approach"><span class="header-section-number">17.7</span> Classical (Discrete) Probability: The “Equal Chances” Approach</a></li>
-  <li><a href="#the-path-to-classical-probability" id="toc-the-path-to-classical-probability" class="nav-link" data-scroll-target="#the-path-to-classical-probability"><span class="header-section-number">17.8</span> The Path to Classical Probability</a></li>
+  <li><a href="#the-path-to-classical-probability" id="toc-the-path-to-classical-probability" class="nav-link" data-scroll-target="#the-path-to-classical-probability"><span class="header-section-number">17.8</span> The Path to Classical Probability</a>
+  <ul class="collapse">
+  <li><a href="#starting-with-the-foundations" id="toc-starting-with-the-foundations" class="nav-link" data-scroll-target="#starting-with-the-foundations"><span class="header-section-number">17.8.1</span> Starting with the Foundations</a></li>
+  <li><a href="#applying-the-probability-axioms" id="toc-applying-the-probability-axioms" class="nav-link" data-scroll-target="#applying-the-probability-axioms"><span class="header-section-number">17.8.2</span> Applying the Probability Axioms</a></li>
+  <li><a href="#deriving-the-classical-formula" id="toc-deriving-the-classical-formula" class="nav-link" data-scroll-target="#deriving-the-classical-formula"><span class="header-section-number">17.8.3</span> Deriving the Classical Formula</a></li>
+  <li><a href="#understanding-the-requirements" id="toc-understanding-the-requirements" class="nav-link" data-scroll-target="#understanding-the-requirements"><span class="header-section-number">17.8.4</span> Understanding the Requirements</a></li>
+  <li><a href="#practical-application-example" id="toc-practical-application-example" class="nav-link" data-scroll-target="#practical-application-example"><span class="header-section-number">17.8.5</span> Practical Application Example</a></li>
+  <li><a href="#looking-beyond-classical-probability" id="toc-looking-beyond-classical-probability" class="nav-link" data-scroll-target="#looking-beyond-classical-probability"><span class="header-section-number">17.8.6</span> Looking Beyond Classical Probability</a></li>
+  </ul></li>
   <li><a href="#example-rolling-a-fair-die" id="toc-example-rolling-a-fair-die" class="nav-link" data-scroll-target="#example-rolling-a-fair-die"><span class="header-section-number">17.9</span> Example: Rolling a Fair Die</a></li>
   <li><a href="#important-notes" id="toc-important-notes" class="nav-link" data-scroll-target="#important-notes"><span class="header-section-number">17.10</span> Important Notes</a>
   <ul class="collapse">
@@ -410,8 +427,8 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-probability" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="what-is-probability"><span class="header-section-number">17.1</span> What is Probability?</h2>
+<section id="probability-preliminary-concepts" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="probability-preliminary-concepts"><span class="header-section-number">17.1</span> Probability: Preliminary Concepts</h2>
 <p>Imagine you’re trying to decide whether to bring an umbrella to class tomorrow. You check the weather forecast, which says there’s a 30% chance of rain. But what does this number really mean? This is where probability comes in - it’s a mathematical way to measure how likely something is to happen.</p>
 <p>Before we dive into probability theory, let’s establish some foundational concepts that we’ll use throughout this course.</p>
 <section id="basic-set-concepts" class="level3" data-number="17.1.1">
@@ -1165,76 +1182,117 @@ P(A \cup B) = P(A) + P(B) - P(A \cap B)
 </section>
 </section>
 </section>
-<section id="what-is-probability-1" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="what-is-probability-1"><span class="header-section-number">17.4</span> What is Probability?</h2>
-<p>Probability is a mathematical tool that helps us quantify uncertainty. Just like we use:</p>
+<section id="what-is-probability-a-mathematical-framework-for-uncertainty" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="what-is-probability-a-mathematical-framework-for-uncertainty"><span class="header-section-number">17.4</span> What is Probability: A Mathematical Framework for Uncertainty</h2>
+<p>Probability serves as our mathematical framework for quantifying uncertainty, similar to how we use various units to measure physical quantities:</p>
 <ul>
-<li>Meters to measure distance</li>
-<li>Kilograms to measure weight</li>
-<li>Degrees to measure temperature</li>
+<li>Distance → meters</li>
+<li>Mass → kilograms</li>
+<li>Temperature → degrees</li>
+<li>Uncertainty → probability</li>
 </ul>
-<p>We use probability to measure the likelihood of events occurring.</p>
-<p>The key thing to remember is that probability is always a number between 0 and 1 (or between 0% and 100% if we’re using percentages):</p>
+<section id="the-probability-scale" class="level3" data-number="17.4.1">
+<h3 data-number="17.4.1" class="anchored" data-anchor-id="the-probability-scale"><span class="header-section-number">17.4.1</span> The Probability Scale</h3>
+<p>Every probability must fall between 0 and 1 (or 0% to 100%), where:</p>
 <ul>
-<li>A probability of 0 means the event is impossible</li>
-<li>A probability of 1 means the event is certain</li>
-<li>Everything in between tells us how likely the event is to occur</li>
+<li>0 (0%) → Impossible event</li>
+<li>1 (100%) → Certain event</li>
+<li>Values between → Varying degrees of likelihood</li>
+</ul>
+<p>For example:</p>
+<ul>
+<li>Rolling a 7 on a six-sided die: 0 (impossible)</li>
+<li>Rolling an even number on a six-sided die: 0.5 (50%)</li>
+<li>Rolling a number less than 7 on a six-sided die: 1 (certain)</li>
 </ul>
 </section>
-<section id="discrete-probability" class="level2" data-number="17.5">
-<h2 data-number="17.5" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.5</span> Discrete Probability</h2>
-<p>When we say a probability problem is “discrete,” we mean we’re dealing with situations where:</p>
+</section>
+<section id="discrete-probability-counting-uncertainty" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="discrete-probability-counting-uncertainty"><span class="header-section-number">17.5</span> Discrete Probability: Counting Uncertainty</h2>
+<section id="what-makes-a-problem-discrete" class="level3" data-number="17.5.1">
+<h3 data-number="17.5.1" class="anchored" data-anchor-id="what-makes-a-problem-discrete"><span class="header-section-number">17.5.1</span> What Makes a Problem “Discrete”?</h3>
+<p>A probability problem is discrete when three key conditions are met:</p>
 <ol type="1">
-<li>We can count the number of possible outcomes</li>
-<li>Each outcome is separate and distinct from others</li>
-<li>We can list all possible outcomes in our sample space</li>
+<li><strong>Countable Outcomes</strong>: We can enumerate all possibilities</li>
+<li><strong>Distinct Outcomes</strong>: Each outcome is clearly separate from others</li>
+<li><strong>Finite or Countably Infinite</strong>: We can list or systematically count all outcomes</li>
 </ol>
-<p>For example, when we:</p>
+</section>
+<section id="common-examples" class="level3" data-number="17.5.2">
+<h3 data-number="17.5.2" class="anchored" data-anchor-id="common-examples"><span class="header-section-number">17.5.2</span> Common Examples</h3>
 <ul>
-<li>Draw balls from an urn</li>
-<li>Flip coins or roll dice</li>
-<li>Count successes in a sequence of trials</li>
-<li>Select items from a group</li>
+<li><strong>Games of Chance</strong>:
+<ul>
+<li>Rolling dice (6 distinct outcomes)</li>
+<li>Flipping coins (2 distinct outcomes)</li>
+<li>Drawing cards (52 distinct outcomes)</li>
+</ul></li>
+<li><strong>Real-World Applications</strong>:
+<ul>
+<li>Number of defective items in a batch</li>
+<li>Success/failure in repeated trials</li>
+<li>Number of customers arriving in a time period</li>
+</ul></li>
 </ul>
-<p>This approach is particularly valuable because:</p>
+</section>
+<section id="why-discrete-probability-matters" class="level3" data-number="17.5.3">
+<h3 data-number="17.5.3" class="anchored" data-anchor-id="why-discrete-probability-matters"><span class="header-section-number">17.5.3</span> Why Discrete Probability Matters</h3>
 <ol type="1">
-<li>It allows us to build strong intuition about probability without requiring calculus</li>
-<li>It directly connects to many real-world applications in statistics</li>
-<li>It provides the foundation for understanding the binomial distribution, which we’ll use later for hypothesis testing</li>
+<li><strong>Foundational Understanding</strong>: Builds intuition without requiring calculus</li>
+<li><strong>Practical Applications</strong>: Directly applies to many real-world scenarios</li>
+<li><strong>Statistical Bridge</strong>: Forms the basis for important concepts like the binomial distribution</li>
 </ol>
 </section>
-<section id="understanding-probability-measures-and-related-concepts" class="level2" data-number="17.6">
-<h2 data-number="17.6" class="anchored" data-anchor-id="understanding-probability-measures-and-related-concepts"><span class="header-section-number">17.6</span> Understanding Probability Measures and Related Concepts</h2>
-<p>A probability measure is a fundamental way to quantify the likelihood of events mathematically. Let’s explore this concept and related terms.</p>
-<section id="probability-measure-function" class="level3" data-number="17.6.1">
-<h3 data-number="17.6.1" class="anchored" data-anchor-id="probability-measure-function"><span class="header-section-number">17.6.1</span> Probability Measure Function</h3>
-<p>To understand probability properly, we start with three fundamental rules called axioms. Don’t worry if the word “axiom” sounds intimidating - these are just basic rules that everything else builds upon.</p>
-<p>A probability measure <span class="math inline">P</span> assigns numbers to events following a few axioms.</p>
-<section id="probability-axioms-the-foundation" class="level4" data-number="17.6.1.1">
-<h4 data-number="17.6.1.1" class="anchored" data-anchor-id="probability-axioms-the-foundation"><span class="header-section-number">17.6.1.1</span> Probability Axioms: The Foundation</h4>
-<p>Think of axioms as the basic rules that probability must follow. There are three main axioms:</p>
+</section>
+<section id="understanding-probability-measures" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="understanding-probability-measures"><span class="header-section-number">17.6</span> Understanding Probability Measures</h2>
+<section id="probability-measure-the-formal-framework" class="level3" data-number="17.6.1">
+<h3 data-number="17.6.1" class="anchored" data-anchor-id="probability-measure-the-formal-framework"><span class="header-section-number">17.6.1</span> Probability Measure: The Formal Framework</h3>
+<p>A probability measure is a function that assigns numbers (probabilities) to events following specific mathematical rules (axioms).</p>
+<section id="the-three-fundamental-axioms" class="level4" data-number="17.6.1.1">
+<h4 data-number="17.6.1.1" class="anchored" data-anchor-id="the-three-fundamental-axioms"><span class="header-section-number">17.6.1.1</span> The Three Fundamental Axioms</h4>
 <ol type="1">
-<li><p><strong>Non-negativity</strong>: The probability of any event must be greater than or equal to zero.</p>
-<p><span class="math display">P(A) \geq 0</span></p>
-<p><em>Real-world meaning</em>: You can’t have negative probabilities!</p></li>
-<li><p><strong>Certain Event</strong>: The probability of the entire sample space (all possible outcomes) equals 1.</p>
-<p><span class="math display">P(S) = 1</span></p>
-<p><em>Real-world meaning</em>: Something must happen - the probability of all possibilities together is 100% or 1.</p></li>
-<li><p><strong>Additivity</strong>: For mutually exclusive events (events that can’t happen at the same time), the probability of either event occurring is the sum of their individual probabilities.</p>
-<p><span class="math display">P(A \cup B) = P(A) + P(B)</span></p>
-<p><em>Real-world meaning</em>: If events can’t overlap, add their individual probabilities to find the probability of either happening.</p></li>
+<li><strong>Non-negativity Axiom</strong>:
+<ul>
+<li><span class="math inline">P(A) \geq 0</span></li>
+<li><em>Meaning</em>: No event can have negative probability</li>
+<li><em>Example</em>: You can’t have -20% chance of rain</li>
+</ul></li>
+<li><strong>Certainty Axiom</strong>:
+<ul>
+<li><span class="math inline">P(S) = 1</span></li>
+<li><em>Meaning</em>: The total probability of all possible outcomes equals 1</li>
+<li><em>Example</em>: When rolling a die, the sum of probabilities for all faces equals 1</li>
+</ul></li>
+<li><strong>Additivity Axiom</strong>:
+<ul>
+<li><span class="math inline">P(A \cup B) = P(A) + P(B)</span> for mutually exclusive events</li>
+<li><em>Meaning</em>: For non-overlapping events, add their individual probabilities</li>
+<li><em>Example</em>: P(rolling 1 or 2) = P(rolling 1) + P(rolling 2)</li>
+</ul></li>
 </ol>
 </section>
-<section id="probability-measure-function-and-related-terms" class="level4" data-number="17.6.1.2">
-<h4 data-number="17.6.1.2" class="anchored"><span class="header-section-number">17.6.1.2</span> Probability Measure Function and Related Terms</h4>
-<ol type="1">
-<li><strong>Probability Distribution</strong></li>
-</ol>
-<p>A probability distribution describes how likely different possible outcomes are. Think of it as a complete description of the probability for every possible event. For example, when rolling a fair six-sided die, each number has a probability of <span class="math inline">\frac{1}{6}</span>. This forms a probability distribution because it tells us the probability for every possible outcome.</p>
-<ol start="2" type="1">
-<li><strong>Probability Law</strong></li>
-</ol>
-<p>The probability law is another term for probability distribution. It refers to the rule or pattern that determines how probabilities are assigned to different outcomes. Using our die example, the probability law states that each face has an equal probability of <span class="math inline">\frac{1}{6}</span>.</p>
+</section>
+<section id="probability-distributions-vs.-probability-laws" class="level3" data-number="17.6.2">
+<h3 data-number="17.6.2" class="anchored" data-anchor-id="probability-distributions-vs.-probability-laws"><span class="header-section-number">17.6.2</span> Probability Distributions vs.&nbsp;Probability Laws</h3>
+<p>While these terms are often used interchangeably, there are subtle differences:</p>
+<p><strong>Probability Distribution</strong>:</p>
+<ul>
+<li>Describes the pattern of probabilities across all possible outcomes</li>
+<li>Provides specific probability values for each outcome</li>
+<li>Example: For a fair die, {1:1/6, 2:1/6, 3:1/6, 4:1/6, 5:1/6, 6:1/6}</li>
+</ul>
+<p><strong>Probability Law</strong>:</p>
+<ul>
+<li>The underlying rule or principle generating the probabilities</li>
+<li>The mathematical function or formula defining how probabilities are assigned</li>
+<li>Example: For a fair die, “each face has equal probability of 1/6”</li>
+</ul>
+<p>In practice, these terms are closely related:</p>
+<ul>
+<li>The probability law determines the probability distribution</li>
+<li>The probability distribution is the concrete realization of the probability law</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1255,8 +1313,8 @@ Common Types of (Discrete) Distributions (*)
 <p>The geometric distribution describes the number of tries needed until the first success occurs. For example, the number of coin flips needed until we get our first heads. The probability of success on the <span class="math inline">k</span>th try is:</p>
 <p><span class="math display">P(X = k) = (1-p)^{k-1}p</span></p>
 <p>where <span class="math inline">p</span> is the probability of success on each try.</p>
-<section id="simple-example" class="level3" data-number="17.6.2">
-<h3 data-number="17.6.2" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">17.6.2</span> Simple Example</h3>
+<section id="simple-example" class="level3" data-number="17.6.3">
+<h3 data-number="17.6.3" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">17.6.3</span> Simple Example</h3>
 <p>Let’s consider flipping a fair coin:</p>
 <ul>
 <li><p>The sample space <span class="math inline">\Omega</span> contains all possible outcomes: {Heads, Tails}</p></li>
@@ -1272,7 +1330,6 @@ Common Types of (Discrete) Distributions (*)
 </section>
 </div>
 </div>
-</section>
 </section>
 </section>
 <section id="classical-discrete-probability-the-equal-chances-approach" class="level2" data-number="17.7">
@@ -1294,37 +1351,74 @@ Common Types of (Discrete) Distributions (*)
 </section>
 <section id="the-path-to-classical-probability" class="level2" data-number="17.8">
 <h2 data-number="17.8" class="anchored" data-anchor-id="the-path-to-classical-probability"><span class="header-section-number">17.8</span> The Path to Classical Probability</h2>
-<p>Now, let’s see how the probability axioms lead to the familiar formula for classical (or ‘naive’) probability.</p>
-<p>We’ll use a simple example: rolling a fair die.</p>
-<p><strong>Step 1</strong>: Consider the Sample Space Let’s say we have a sample space <span class="math inline">S</span> with <span class="math inline">n</span> equally likely outcomes: <span class="math display">S = \{s_1, s_2, ..., s_n\}</span></p>
-<p>For a fair die: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span> so <span class="math inline">n = 6</span></p>
-<p><strong>Step 2</strong>: Apply the Axioms</p>
+<p>Let’s explore how the fundamental axioms of probability lead us to the intuitive classical probability formula we use for scenarios like dice rolls and coin flips. I’ll guide you through this progression step by step.</p>
+<section id="starting-with-the-foundations" class="level3" data-number="17.8.1">
+<h3 data-number="17.8.1" class="anchored" data-anchor-id="starting-with-the-foundations"><span class="header-section-number">17.8.1</span> Starting with the Foundations</h3>
+<p>Consider a finite sample space <span class="math inline">S</span> containing <span class="math inline">n</span> outcomes that we assume are equally likely:</p>
+<p><span class="math display">S = \{s_1, s_2, ..., s_n\}</span></p>
+<p>To make this concrete, imagine rolling a fair six-sided die, where: <span class="math display">S = \{1, 2, 3, 4, 5, 6\}</span> and <span class="math inline">n = 6</span></p>
+</section>
+<section id="applying-the-probability-axioms" class="level3" data-number="17.8.2">
+<h3 data-number="17.8.2" class="anchored" data-anchor-id="applying-the-probability-axioms"><span class="header-section-number">17.8.2</span> Applying the Probability Axioms</h3>
+<p>The axioms of probability give us three crucial constraints:</p>
 <ol type="1">
-<li><p>From Axiom 1 (Non-negativity): <span class="math display">P(s_i) \geq 0</span> for each outcome <span class="math inline">s_i</span></p></li>
-<li><p>From Axiom 2 (Certain Event): <span class="math display">P(S) = P(s_1) + P(s_2) + ... + P(s_n) = 1</span></p></li>
-<li><p>Since outcomes are equally likely: <span class="math display">P(s_1) = P(s_2) = ... = P(s_n) = p</span></p></li>
+<li><p><strong>Non-negativity</strong> (Axiom 1): For each outcome <span class="math inline">s_i</span>, its probability must be non-negative: <span class="math display">P(s_i) \geq 0</span></p></li>
+<li><p><strong>Total Probability</strong> (Axiom 2): The probabilities of all outcomes must sum to 1: <span class="math display">P(S) = P(s_1) + P(s_2) + ... + P(s_n) = 1</span></p></li>
+<li><p><strong>Equal Likelihood</strong> (Our Additional Assumption): When outcomes are equally likely, each has the same probability: <span class="math display">P(s_1) = P(s_2) = ... = P(s_n) = p</span></p></li>
 </ol>
-<p><strong>Step 3</strong>: Derive the Classical Formula</p>
-<p>Let’s call this common probability <span class="math inline">p</span>.</p>
-<p>Then:</p>
-<p><span class="math inline">p + p + ... + p = 1</span> (adding n times)</p>
-<p><span class="math inline">np = 1</span></p>
-<p>Therefore: <span class="math inline">p = \frac{1}{n}</span></p>
-<p>This means each individual outcome has probability <span class="math inline">\frac{1}{n}</span>.</p>
-<p>For any event <span class="math inline">A</span> containing <span class="math inline">k</span> favorable outcomes: <span class="math display">P(A) = \frac{k}{n} = \frac{\text{number of favorable outcomes}}{\text{total number of outcomes}}</span> The classical or naive definition (measure) of probability provides a simple way to calculate probabilities when:</p>
+</section>
+<section id="deriving-the-classical-formula" class="level3" data-number="17.8.3">
+<h3 data-number="17.8.3" class="anchored" data-anchor-id="deriving-the-classical-formula"><span class="header-section-number">17.8.3</span> Deriving the Classical Formula</h3>
+<p>Given these constraints, let’s derive the probability of each individual outcome:</p>
 <ol type="1">
-<li>The sample space is finite (we can count all possible outcomes)</li>
-<li>All outcomes are equally likely to occur (uniform probability measure)</li>
+<li><p>If we call the common probability <span class="math inline">p</span>, then: <span class="math display">\underbrace{p + p + ... + p}_{n \text{ times}} = 1</span></p></li>
+<li><p>This simplifies to: <span class="math display">np = 1</span></p></li>
+<li><p>Therefore: <span class="math display">p = \frac{1}{n}</span></p></li>
 </ol>
-<p>Under these conditions, the probability of an event E is:</p>
-<p><span class="math inline">P(E) = \frac{\text{number of favorable outcomes}}{\text{total number of possible outcomes}} = \frac{|E|}{|S|}</span></p>
-<p>This is why we often start teaching probability with examples like fair coins, fair dice, and well-shuffled decks of cards - they satisfy both conditions.</p>
-<p>For example, when flipping two coins:</p>
+<p>This means each individual outcome has probability <span class="math inline">\frac{1}{n}</span>. For any event <span class="math inline">A</span> containing <span class="math inline">k</span> favorable outcomes:</p>
+<p><span class="math display">P(A) = \frac{k}{n} = \frac{\text{number of favorable outcomes}}{\text{total number of outcomes}} = \frac{|A|}{|S|}</span></p>
+</section>
+<section id="understanding-the-requirements" class="level3" data-number="17.8.4">
+<h3 data-number="17.8.4" class="anchored" data-anchor-id="understanding-the-requirements"><span class="header-section-number">17.8.4</span> Understanding the Requirements</h3>
+<p>The classical probability formula works when two key conditions are met:</p>
+<ol type="1">
+<li><strong>Finite Sample Space</strong>: We must be able to count all possible outcomes</li>
+<li><strong>Equally Likely Outcomes</strong>: Each outcome must have the same probability of occurring</li>
+</ol>
+<p>This explains why we often introduce probability using:</p>
 <ul>
-<li>P(getting exactly one head) = <span class="math inline">\frac{|\{HT,TH\}|}{|\{HH,HT,TH,TT\}|} = \frac{2}{4} = 0.5</span></li>
-<li>P(getting at least one head) = <span class="math inline">\frac{|\{HH,HT,TH\}|}{|\{HH,HT,TH,TT\}|} = \frac{3}{4} = 0.75</span></li>
+<li>Fair coins (two equally likely outcomes)</li>
+<li>Fair dice (six equally likely outcomes)</li>
+<li>Well-shuffled cards (52 equally likely outcomes)</li>
 </ul>
-<p>This classical definition, while simple, serves as a foundation for understanding more complex probability concepts.</p>
+</section>
+<section id="practical-application-example" class="level3" data-number="17.8.5">
+<h3 data-number="17.8.5" class="anchored" data-anchor-id="practical-application-example"><span class="header-section-number">17.8.5</span> Practical Application Example</h3>
+<p>Let’s analyze flipping two fair coins:</p>
+<ul>
+<li>Sample space: <span class="math inline">S = \{HH, HT, TH, TT\}</span></li>
+<li>For “exactly one head”:
+<ul>
+<li>Favorable outcomes: <span class="math inline">\{HT, TH\}</span></li>
+<li><span class="math inline">P(\text{exactly one head}) = \frac{|\{HT,TH\}|}{|\{HH,HT,TH,TT\}|} = \frac{2}{4} = 0.5</span></li>
+</ul></li>
+<li>For “at least one head”:
+<ul>
+<li>Favorable outcomes: <span class="math inline">\{HH, HT, TH\}</span></li>
+<li><span class="math inline">P(\text{at least one head}) = \frac{|\{HH,HT,TH\}|}{|\{HH,HT,TH,TT\}|} = \frac{3}{4} = 0.75</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="looking-beyond-classical-probability" class="level3" data-number="17.8.6">
+<h3 data-number="17.8.6" class="anchored" data-anchor-id="looking-beyond-classical-probability"><span class="header-section-number">17.8.6</span> Looking Beyond Classical Probability</h3>
+<p>While this classical approach is intuitive and useful for many situations, it has limitations. Real-world probabilities often involve:</p>
+<ul>
+<li>Infinite sample spaces</li>
+<li>Unequally likely outcomes</li>
+<li>Continuous variables</li>
+</ul>
+<p>These scenarios require more advanced probability concepts, but understanding classical probability provides the foundation for exploring these more complex situations.</p>
+</section>
 </section>
 <section id="example-rolling-a-fair-die" class="level2" data-number="17.9">
 <h2 data-number="17.9" class="anchored" data-anchor-id="example-rolling-a-fair-die"><span class="header-section-number">17.9</span> Example: Rolling a Fair Die</h2>
@@ -1357,8 +1451,8 @@ Discrete vs.&nbsp;Continuous Probability: A Simple Guide
 </div>
 <div class="callout-body-container callout-body">
 <p>Imagine you’re measuring different things in everyday life. Sometimes you’re <strong>counting</strong> (like the number of books on a shelf), and sometimes you’re <strong>measuring</strong> (like your height or the temperature outside). This same distinction appears in probability!</p>
-<section id="discrete-probability-1" class="level3" data-number="17.10.1">
-<h3 data-number="17.10.1" class="anchored" data-anchor-id="discrete-probability-1"><span class="header-section-number">17.10.1</span> Discrete Probability</h3>
+<section id="discrete-probability" class="level3" data-number="17.10.1">
+<h3 data-number="17.10.1" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.10.1</span> Discrete Probability</h3>
 <ul>
 <li><strong>What it is</strong>: Probability of exact, countable outcomes</li>
 <li><strong>Key feature</strong>: Outcomes have “gaps” between them</li>
@@ -2464,69 +2558,6 @@ P(\text{different colors}) &amp;= P(R,B) + P(R,Y) + P(B,R) + P(B,Y) + P(Y,R) + P
 </section>
 <section id="core-probability-rules" class="level2" data-number="17.15">
 <h2 data-number="17.15" class="anchored" data-anchor-id="core-probability-rules"><span class="header-section-number">17.15</span> Core Probability Rules</h2>
-<p>Before calculating any probability, we must carefully analyze the experiment’s setup by answering four critical questions:</p>
-<p><strong>1. Is the Sample Space Finite or Infinite?</strong></p>
-<p>This distinction fundamentally affects our calculation approach:</p>
-<p><strong>Finite Sample Spaces:</strong></p>
-<ul>
-<li>Example: Rolling a die (S = {1,2,3,4,5,6})</li>
-<li>Probability calculation: Count favorable outcomes and divide by total outcomes (when equally likely)</li>
-<li>Common in discrete probability problems</li>
-</ul>
-<p><strong>Infinite Sample Spaces:</strong></p>
-<ul>
-<li>Example: Selecting a random real number between 0 and 1</li>
-<li>Requires calculus-based methods (integration) or geometric approaches</li>
-<li>Often involves continuous probability distributions</li>
-</ul>
-<p><strong>2. Are All Outcomes Equally Likely?</strong></p>
-<p>This determines our calculation method:</p>
-<p><strong>Equally Likely Outcomes:</strong></p>
-<ul>
-<li>Use the classical probability formula: <span class="math inline">P(A) = \frac{\text{favorable outcomes}}{\text{total outcomes}}</span></li>
-<li>Example: Fair die roll - each face has probability <span class="math inline">\frac{1}{6}</span></li>
-</ul>
-<p><strong>Unequally Likely Outcomes:</strong></p>
-<ul>
-<li>Must know or estimate individual outcome probabilities</li>
-<li>Example: Loaded die where P(6) = 0.3, other faces = 0.14</li>
-<li>Sum of probabilities must still equal 1</li>
-</ul>
-<p><strong>3. Does Order Matter in Multi-Stage Experiments?</strong></p>
-<p>This affects how we count outcomes:</p>
-<p><strong>Order Matters (Permutations):</strong></p>
-<ul>
-<li>Example: Drawing cards and keeping them in drawn order</li>
-<li>Password entry where “123” ≠ “321”</li>
-<li>Use permutation formulas: <span class="math inline">P(n,r) = \frac{n!}{(n-r)!}</span></li>
-</ul>
-<p><strong>Order Doesn’t Matter (Combinations):</strong></p>
-<ul>
-<li>Example: Drawing poker hand where order is irrelevant</li>
-<li>Use combination formulas: <span class="math inline">C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}</span></li>
-</ul>
-<p><strong>4. Is Selection With or Without Replacement?</strong></p>
-<p>This affects outcome independence:</p>
-<p><strong>With Replacement:</strong></p>
-<ul>
-<li>Return item before next selection</li>
-<li>Probabilities remain constant across trials</li>
-<li>Events are independent</li>
-<li>Example: Rolling a die multiple times</li>
-</ul>
-<p><strong>Without Replacement:</strong></p>
-<ul>
-<li>Don’t return item before next selection</li>
-<li>Probabilities change after each selection</li>
-<li>Events are dependent</li>
-<li>Example: Drawing cards without returning them</li>
-</ul>
-<p><strong>Example Application: Drawing two cards from a deck</strong></p>
-<ul>
-<li>Without replacement: P(second ace | first ace) = 3/51</li>
-<li>With replacement: P(second ace | first ace) = 4/52</li>
-</ul>
-<p>These questions form the foundation for choosing the correct probability calculation method. Answering them first helps avoid common calculation errors and guides our solution strategy.</p>
 <section id="the-complement-rule" class="level3" data-number="17.15.1">
 <h3 data-number="17.15.1" class="anchored" data-anchor-id="the-complement-rule"><span class="header-section-number">17.15.1</span> The Complement Rule</h3>
 <p>The complement rule is one of the most fundamental concepts in probability theory. For any event <span class="math inline">A</span>, there’s always the possibility that A doesn’t occur. We call this the complement of <span class="math inline">A</span>, written as <span class="math inline">A'</span> or <span class="math inline">A^c</span>.</p>
