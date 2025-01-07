@@ -307,7 +307,7 @@ window.Quarto = {
   <li><a href="#the-addition-rule-for-mutually-exclusive-events-or-situations" id="toc-the-addition-rule-for-mutually-exclusive-events-or-situations" class="nav-link" data-scroll-target="#the-addition-rule-for-mutually-exclusive-events-or-situations"><span class="header-section-number">17.3.2</span> The Addition Rule for Mutually Exclusive Events (“OR” Situations)</a></li>
   <li><a href="#combining-the-rules" id="toc-combining-the-rules" class="nav-link" data-scroll-target="#combining-the-rules"><span class="header-section-number">17.3.3</span> Combining the Rules</a></li>
   </ul></li>
-  <li><a href="#mathematical-framework-for-probability-theory" id="toc-mathematical-framework-for-probability-theory" class="nav-link" data-scroll-target="#mathematical-framework-for-probability-theory"><span class="header-section-number">17.4</span> Mathematical Framework for Probability Theory</a>
+  <li><a href="#discrete-probability-theory-basic-concepts-and-rules" id="toc-discrete-probability-theory-basic-concepts-and-rules" class="nav-link" data-scroll-target="#discrete-probability-theory-basic-concepts-and-rules"><span class="header-section-number">17.4</span> (Discrete) Probability Theory: Basic Concepts and Rules</a>
   <ul class="collapse">
   <li><a href="#sample-space-s" id="toc-sample-space-s" class="nav-link" data-scroll-target="#sample-space-s"><span class="header-section-number">17.4.1</span> Sample Space (<span class="math inline">S</span>)</a></li>
   <li><a href="#the-event-space-what-can-happen-in-an-experiment" id="toc-the-event-space-what-can-happen-in-an-experiment" class="nav-link" data-scroll-target="#the-event-space-what-can-happen-in-an-experiment"><span class="header-section-number">17.4.2</span> The Event Space: What Can Happen in an Experiment</a></li>
@@ -684,17 +684,17 @@ Cardinality of Sets
 <ol type="1">
 <li><span class="math inline">1 \in A</span> : TRUE (1 is an element of A)</li>
 <li><span class="math inline">1 \subseteq A</span> : FALSE (1 is not a set, so subset relation doesn’t apply)</li>
-<li><span class="math inline">\{1\} \subseteq A</span> : FALSE (the set {1} is not a subset of A)</li>
+<li><span class="math inline">\{1\} \subseteq A</span> : TRUE (every element of the set {1} is an element of A)</li>
 <li><span class="math inline">\{1\} \in A</span> : FALSE (A doesn’t contain any sets as elements)</li>
 <li><span class="math inline">3 \notin C</span> : TRUE (3 is not an element of C)</li>
 <li><span class="math inline">A \in B</span> : FALSE (B doesn’t contain any sets as elements)</li>
 <li><span class="math inline">A \subseteq B</span> : TRUE (A and B contain the same elements)</li>
-<li><span class="math inline">C \in D</span> : FALSE (the set {1,2} appears in D, but not the set C itself)</li>
-<li><span class="math inline">C \subseteq D</span> : FALSE (elements of C are 1 and 2, but not all are in D)</li>
+<li><span class="math inline">C \in D</span> : TRUE (the set {1,2} appears in D, but not the set C itself)</li>
+<li><span class="math inline">C \subseteq D</span> : TRUE (all elements of C (1 and 2) are also elements of D)</li>
 <li><span class="math inline">\emptyset \in D</span> : TRUE (empty set is listed as an element of D)</li>
-<li><span class="math inline">\emptyset \subseteq D</span> : TRUE (empty set is a subset of every set)</li>
+<li><span class="math inline">\emptyset \subseteq D</span> : TRUE (True, by definition, the empty set is a subset of any set. This is because if this were not the case, there would have to be an element of <span class="math inline">\emptyset</span> which was not in D. But there are no elements in <span class="math inline">\emptyset</span>, so the statement is true (vacuously).)</li>
 <li><span class="math inline">A = B</span> : TRUE (they contain the same elements)</li>
-<li><span class="math inline">\emptyset \subseteq \emptyset</span> : TRUE (empty set is a subset of itself)</li>
+<li><span class="math inline">\emptyset \subseteq \emptyset</span> : TRUE (empty set is a subset of itself; the empty set is a subset of any set)</li>
 <li><span class="math inline">\emptyset \in \emptyset</span> : FALSE (empty set contains no elements)</li>
 </ol>
 </section>
@@ -900,8 +900,8 @@ The Inclusion-Exclusion Principle (*)
 </div>
 </section>
 </section>
-<section id="mathematical-framework-for-probability-theory" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="mathematical-framework-for-probability-theory"><span class="header-section-number">17.4</span> Mathematical Framework for Probability Theory</h2>
+<section id="discrete-probability-theory-basic-concepts-and-rules" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="discrete-probability-theory-basic-concepts-and-rules"><span class="header-section-number">17.4</span> (Discrete) Probability Theory: Basic Concepts and Rules</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
