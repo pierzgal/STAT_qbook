@@ -298,7 +298,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#basic-set-concepts" id="toc-basic-set-concepts" class="nav-link" data-scroll-target="#basic-set-concepts"><span class="header-section-number">17.1.1</span> Basic Set Concepts</a></li>
   <li><a href="#set-operations" id="toc-set-operations" class="nav-link" data-scroll-target="#set-operations"><span class="header-section-number">17.1.2</span> Set Operations</a></li>
-  <li><a href="#understanding-set-relations-elements-vs-subsets" id="toc-understanding-set-relations-elements-vs-subsets" class="nav-link" data-scroll-target="#understanding-set-relations-elements-vs-subsets"><span class="header-section-number">17.1.3</span> Understanding Set Relations: Elements vs Subsets</a></li>
+  <li><a href="#understanding-set-relations-elements-vs-subsets" id="toc-understanding-set-relations-elements-vs-subsets" class="nav-link" data-scroll-target="#understanding-set-relations-elements-vs-subsets"><span class="header-section-number">17.1.3</span> Understanding Set Relations: Elements vs Subsets (*)</a></li>
   </ul></li>
   <li><a href="#set-theory-and-power-sets-event-space" id="toc-set-theory-and-power-sets-event-space" class="nav-link" data-scroll-target="#set-theory-and-power-sets-event-space"><span class="header-section-number">17.2</span> Set Theory and Power Sets (Event Space)</a></li>
   <li><a href="#counting-rules-in-probability-the-power-of-and-or" id="toc-counting-rules-in-probability-the-power-of-and-or" class="nav-link" data-scroll-target="#counting-rules-in-probability-the-power-of-and-or"><span class="header-section-number">17.3</span> Counting Rules in Probability: The Power of AND &amp; OR</a>
@@ -420,6 +420,12 @@ window.Quarto = {
 <li>Describing a property: <span class="math inline">B = \{\text{x | x is a positive integer less than 4}\}</span></li>
 </ul>
 <p>The empty set <span class="math inline">\emptyset</span> contains no elements.</p>
+<p>If <span class="math inline">A</span> and <span class="math inline">B</span> are sets: - If <span class="math inline">A</span> is a subset of <span class="math inline">B</span>, we write <span class="math inline">A \subseteq B</span> - If <span class="math inline">x</span> is an element of <span class="math inline">A</span>, we write <span class="math inline">x \in A</span></p>
+<p>For example, if <span class="math inline">B = \{1, 2, 3\}</span>: - <span class="math inline">\{1, 2\}</span> is a subset of <span class="math inline">B</span> (written <span class="math inline">\{1, 2\} \subseteq B</span>) - <span class="math inline">1</span> is an element of <span class="math inline">B</span> (written <span class="math inline">1 \in B</span>)</p>
+<p>Note: The proper subset notation uses a strict subset symbol. If <span class="math inline">A</span> is a proper subset of <span class="math inline">B</span>, we write:</p>
+<p><span class="math display">A \subset B</span></p>
+<p>This means that <span class="math inline">A</span> is a subset of <span class="math inline">B</span> AND <span class="math inline">A \neq B</span> (A is not equal to B).</p>
+<p>In contrast, <span class="math inline">A \subseteq B</span> allows for the possibility that <span class="math inline">A = B</span>.</p>
 </section>
 <section id="set-operations" class="level3" data-number="17.1.2">
 <h3 data-number="17.1.2" class="anchored" data-anchor-id="set-operations"><span class="header-section-number">17.1.2</span> Set Operations</h3>
@@ -427,7 +433,7 @@ window.Quarto = {
 <ol type="1">
 <li>Union (<span class="math inline">A \cup B</span>): Elements in either A OR B (or both)</li>
 <li>Intersection (<span class="math inline">A \cap B</span>): Elements in BOTH A AND B</li>
-<li>Complement (<span class="math inline">A^c</span>): Elements NOT in A</li>
+<li>Complement (<span class="math inline">A^c</span> or <span class="math inline">A^{'}</span>): Elements NOT in A</li>
 <li>Difference (<span class="math inline">A \setminus B</span>): Elements in A but NOT in B</li>
 </ol>
 <p>These operations follow important laws like:</p>
@@ -440,7 +446,15 @@ window.Quarto = {
 <figcaption>http://athenasc.com/probbook.html</figcaption>
 </figure>
 </div>
-<p>Examples of Venn diagrams. (a) The shaded region is <span class="math inline">S \cap T</span>. (b) The shaded region is <span class="math inline">S \cup T</span>. (c) The shaded region is <span class="math inline">S \cap T^c</span>. (d) Here, <span class="math inline">T \subset S</span>. The shaded region is the complement of <span class="math inline">S</span>. (e) The sets <span class="math inline">S</span>, <span class="math inline">T</span>, and <span class="math inline">U</span> are disjoint. (f) The sets <span class="math inline">S</span>, <span class="math inline">T</span>, and <span class="math inline">U</span> form a partition of the <strong>universal set</strong> <span class="math inline">\Omega</span>.</p>
+<p>Examples of Venn diagrams:</p>
+<ol type="a">
+<li><p>The shaded region is <span class="math inline">S \cap T</span>.</p></li>
+<li><p>The shaded region is <span class="math inline">S \cup T</span>.</p></li>
+<li><p>The shaded region is <span class="math inline">S \cap T^c</span>.</p></li>
+<li><p>Here, <span class="math inline">T \subset S</span>. The shaded region is the complement of <span class="math inline">S</span>.</p></li>
+<li><p>The sets <span class="math inline">S</span>, <span class="math inline">T</span>, and <span class="math inline">U</span> are disjoint.</p></li>
+<li><p>The sets <span class="math inline">S</span>, <span class="math inline">T</span>, and <span class="math inline">U</span> form a partition of the <strong>universal set</strong> <span class="math inline">\Omega</span>.</p></li>
+</ol>
 <p>The <strong>Universal Set</strong> (often denoted as <span class="math inline">\Omega</span>, <span class="math inline">U</span>, or <span class="math inline">S</span>):</p>
 <p>In Set Theory:</p>
 <ul>
@@ -503,7 +517,7 @@ Set Theory as a Language for Probability
 <td>Single result</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">A \subset \Omega</span> (Subset)</td>
+<td><span class="math inline">A \subseteq \Omega</span> (Subset)</td>
 <td>Event</td>
 <td>Collection of outcomes</td>
 </tr>
@@ -584,7 +598,7 @@ Cardinality of Sets
 </div>
 </section>
 <section id="understanding-set-relations-elements-vs-subsets" class="level3" data-number="17.1.3">
-<h3 data-number="17.1.3" class="anchored" data-anchor-id="understanding-set-relations-elements-vs-subsets"><span class="header-section-number">17.1.3</span> Understanding Set Relations: Elements vs Subsets</h3>
+<h3 data-number="17.1.3" class="anchored" data-anchor-id="understanding-set-relations-elements-vs-subsets"><span class="header-section-number">17.1.3</span> Understanding Set Relations: Elements vs Subsets (*)</h3>
 <p><strong>The difference between an element belonging to a set and one set being a subset of another</strong>.</p>
 <section id="the-belongs-to-relationship-in" class="level4" data-number="17.1.3.1">
 <h4 data-number="17.1.3.1" class="anchored" data-anchor-id="the-belongs-to-relationship-in"><span class="header-section-number">17.1.3.1</span> The “Belongs To” Relationship (<span class="math inline">\in</span>)</h4>
