@@ -320,8 +320,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#how-to-calculate-basic-probabilities" id="toc-how-to-calculate-basic-probabilities" class="nav-link" data-scroll-target="#how-to-calculate-basic-probabilities"><span class="header-section-number">17.5</span> How to Calculate Basic Probabilities</a>
   <ul class="collapse">
-  <li><a href="#example-1a-drawing-two-balls-from-an-urn-or-a-bag" id="toc-example-1a-drawing-two-balls-from-an-urn-or-a-bag" class="nav-link" data-scroll-target="#example-1a-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.5.1</span> Example 1A: Drawing Two Balls from an Urn or a Bag</a></li>
-  <li><a href="#example-1b-drawing-two-balls-from-an-urn-or-a-bag" id="toc-example-1b-drawing-two-balls-from-an-urn-or-a-bag" class="nav-link" data-scroll-target="#example-1b-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.5.2</span> Example 1B: Drawing Two Balls from an Urn or a Bag (*)</a></li>
+  <li><a href="#example-1-drawing-two-balls-from-an-urn-or-a-bag" id="toc-example-1-drawing-two-balls-from-an-urn-or-a-bag" class="nav-link" data-scroll-target="#example-1-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.5.1</span> Example 1: Drawing Two Balls from an Urn or a Bag</a></li>
   </ul></li>
   <li><a href="#example-the-4-red-and-3-black-balls-problem" id="toc-example-the-4-red-and-3-black-balls-problem" class="nav-link" data-scroll-target="#example-the-4-red-and-3-black-balls-problem"><span class="header-section-number">17.6</span> Example: The 4 Red and 3 Black Balls Problem</a>
   <ul class="collapse">
@@ -1952,16 +1951,16 @@ Sampling Methods Overview
 </table>
 </div>
 </div>
-<section id="example-1a-drawing-two-balls-from-an-urn-or-a-bag" class="level3" data-number="17.5.1">
-<h3 data-number="17.5.1" class="anchored" data-anchor-id="example-1a-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.5.1</span> Example 1A: Drawing Two Balls from an Urn or a Bag</h3>
+<section id="example-1-drawing-two-balls-from-an-urn-or-a-bag" class="level3" data-number="17.5.1">
+<h3 data-number="17.5.1" class="anchored" data-anchor-id="example-1-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.5.1</span> Example 1: Drawing Two Balls from an Urn or a Bag</h3>
 <p>Consider drawing two balls from an urn containing 3 green and 2 red balls.</p>
 <p>Find the probabilities of the following random events:</p>
-<ul>
-<li>The first ball is red and the second one is green (<strong>order matters, drawing without replacement</strong>)</li>
-<li>The first ball is red and the second one is green (<strong>order matters, drawing with replacement</strong>)</li>
-<li>The balls are of different colors (<strong>order doesn’t matter, drawing without replacement</strong>)</li>
-<li>The balls are of different colors (<strong>order doesn’t matter, drawing with replacement)</strong></li>
-</ul>
+<ol type="1">
+<li><p>The first ball is red and the second one is green (<strong>order matters, drawing without replacement</strong>)</p></li>
+<li><p>The first ball is red and the second one is green (<strong>order matters, drawing with replacement</strong>)</p></li>
+<li><p>The balls are of different colors (<strong>order doesn’t matter, drawing without replacement</strong>)</p></li>
+<li><p>The balls are of different colors (<strong>order doesn’t matter, drawing with replacement)</strong></p></li>
+</ol>
 <p><strong>Understanding Event Types in Probability:</strong></p>
 <ol type="1">
 <li><strong>Simple events represent a single outcome from a single random action</strong>, such as drawing one ball from an urn. The probability of a simple event is calculated directly from the number of favorable outcomes divided by the total possible outcomes.</li>
@@ -2017,13 +2016,18 @@ Sampling Methods Overview
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">graph TD
-    A[Start] --&gt; B[First: Green 3/5]
-    A --&gt; C[First: Red 2/5]
-    B --&gt; D[Second: Green 2/4]
-    B --&gt; E[Second: Red 2/4]
-    C --&gt; F[Second: Green 3/4]
-    C --&gt; G[Second: Red 1/4]
+<pre class="mermaid mermaid-js">flowchart TD
+    A(["Initial State\n3G, 2R"]) --&gt; B["First: Green\n3/5"]
+    A --&gt; C["First: Red\n2/5"]
+    B --&gt; D["Second: Green\n2/4"]
+    B --&gt; E["Second: Red\n2/4"]
+    C --&gt; F["Second: Green\n3/4"]
+    C --&gt; G["Second: Red\n1/4"]
+    
+    D --&gt; H["GG: 3/5 × 2/4 = 6/20"]
+    E --&gt; I["GR: 3/5 × 2/4 = 6/20"]
+    F --&gt; J["RG: 2/5 × 3/4 = 6/20"]
+    G --&gt; K["RR: 2/5 × 1/4 = 2/20"]
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -2048,137 +2052,6 @@ Sampling Methods Overview
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">graph TD
-    A[Start] --&gt; B[First: Green 3/5]
-    A --&gt; C[First: Red 2/5]
-    B --&gt; D[Second: Green 3/5]
-    B --&gt; E[Second: Red 2/5]
-    C --&gt; F[Second: Green 3/5]
-    C --&gt; G[Second: Red 2/5]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Now:</p>
-<ol type="1">
-<li><p>First red, then green:</p>
-<p><span class="math inline">P(R \text{ then } G) = \frac{2}{5} \cdot \frac{3}{5} = \frac{6}{25} = 0.24</span></p></li>
-<li><p>Different colors:</p>
-<p><span class="math inline">P(\text{different colors}) = \frac{2}{5} \cdot \frac{3}{5} + \frac{3}{5} \cdot \frac{2}{5} = \frac{12}{25} = 0.48</span></p></li>
-</ol>
-</section>
-<section id="example-1b-drawing-two-balls-from-an-urn-or-a-bag" class="level3" data-number="17.5.2">
-<h3 data-number="17.5.2" class="anchored" data-anchor-id="example-1b-drawing-two-balls-from-an-urn-or-a-bag"><span class="header-section-number">17.5.2</span> Example 1B: Drawing Two Balls from an Urn or a Bag (*)</h3>
-<p>Consider drawing two balls from an urn containing 3 green and 2 red balls.</p>
-<p>Find the probabilities of the following random events:</p>
-<ul>
-<li>The first ball is red and the second one is green (order matters, drawing without replacement)</li>
-<li>The first ball is red and the second one is green (order matters, drawing with replacement)</li>
-<li>The balls are of different colors (order doesn’t matter, drawing without replacement)</li>
-<li>The balls are of different colors (order doesn’t matter, drawing with replacement)</li>
-</ul>
-<p><strong>Understanding Event Types in Probability:</strong></p>
-<ul>
-<li><strong>Simple events represent a single outcome from a single random action</strong>, such as drawing one ball from an urn. The probability of a simple event is calculated directly from the number of favorable outcomes divided by the total possible outcomes.</li>
-<li><strong>Compound events involve multiple outcomes or conditions that must occur together</strong>. These can occur simultaneously (like rolling two dice at once) or sequentially (like drawing two balls one after another). The key difference lies in whether the events happen at the same time or in sequence.</li>
-<li><strong>Sequential events are a specific type of compound events where outcomes occur in a particular order over time</strong>. Our urn example is particularly instructive here because it demonstrates sequential events through the process of drawing balls one after another. This allows us to explore how the probability of the second draw depends on what happened in the first draw (when sampling without replacement).</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="stat_imgs/probability-grid.svg" class="img-fluid figure-img"></p>
-<figcaption>Sample spaces (S) visualized using the grid diagrams</figcaption>
-</figure>
-</div>
-<p>To better understand how the sample space changes based on our sampling method, let’s examine two scenarios:</p>
-<ol type="1">
-<li><strong>With Replacement</strong></li>
-</ol>
-<p>When we sample with replacement, we return the ball to the urn after the first draw. This means:</p>
-<ul>
-<li>The probability remains constant for each draw</li>
-<li>Total possible outcomes: 25 (5×5 grid)</li>
-<li>Each outcome has equal probability</li>
-<li><span class="math inline">P(\text{both green}) = \frac{3}{5} \times \frac{3}{5} = \frac{9}{25}</span></li>
-<li><span class="math inline">P(\text{both red}) = \frac{2}{5} \times \frac{2}{5} = \frac{4}{25}</span></li>
-<li><span class="math inline">P(\text{mixed}) = \frac{12}{25}</span></li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Without Replacement</strong></li>
-</ol>
-<p>When we sample without replacement, the first draw affects the probability of the second draw:</p>
-<ul>
-<li>Total possible outcomes: 20 (removing diagonal cells where same ball is drawn twice)</li>
-<li>Second draw probabilities change based on first draw</li>
-<li><span class="math inline">P(\text{both green}) = \frac{3}{5} \times \frac{2}{4} = \frac{6}{20}</span></li>
-<li><span class="math inline">P(\text{both red}) = \frac{2}{5} \times \frac{1}{4} = \frac{2}{20}</span></li>
-<li><span class="math inline">P(\text{mixed}) = \frac{12}{20}</span></li>
-</ul>
-<p>The grid diagram above visualizes both scenarios, where:</p>
-<ul>
-<li>Green cells represent both balls drawn being green</li>
-<li>Red cells represent both balls drawn being red</li>
-<li>Orange cells represent mixed outcomes (one green, one red)</li>
-<li>Crossed-out cells in the “Without Replacement” grid show impossible outcomes</li>
-</ul>
-<p>This visualization helps demonstrate how the sample space and probabilities change between the two sampling methods, while maintaining the fundamental principle that probabilities must sum to 1 in both cases.</p>
-<ol type="I">
-<li><strong>Drawing Two Balls Without Replacement</strong></li>
-</ol>
-<p>When drawing without replacement, we’ll examine both order-sensitive and order-insensitive probabilities.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-    A(["Initial State\n3G, 2R"]) --&gt; B["First: Green\n3/5"]
-    A --&gt; C["First: Red\n2/5"]
-    B --&gt; D["Second: Green\n2/4"]
-    B --&gt; E["Second: Red\n2/4"]
-    C --&gt; F["Second: Green\n3/4"]
-    C --&gt; G["Second: Red\n1/4"]
-    
-    D --&gt; H["GG: 3/5 × 2/4 = 6/20"]
-    E --&gt; I["GR: 3/5 × 2/4 = 6/20"]
-    F --&gt; J["RG: 2/5 × 3/4 = 6/20"]
-    G --&gt; K["RR: 2/5 × 1/4 = 2/20"]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ol type="A">
-<li>When order matters (ordered pairs):</li>
-</ol>
-<!-- -->
-<ol type="1">
-<li>P(G then G) = 6/20</li>
-<li>P(G then R) = 6/20</li>
-<li>P(R then G) = 6/20</li>
-<li>P(R then R) = 2/20</li>
-</ol>
-<!-- -->
-<ol start="2" type="A">
-<li>When order doesn’t matter (combinations):</li>
-</ol>
-<!-- -->
-<ol type="1">
-<li><p>P(two greens) = 6/20</p></li>
-<li><p>P(different colors) = P(G,R) or P(R,G) = 12/20</p></li>
-<li><p>P(two reds) = 2/20</p></li>
-</ol>
-<!-- -->
-<ol start="2" type="I">
-<li><strong>Drawing With Replacement</strong></li>
-</ol>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
 <pre class="mermaid mermaid-js">flowchart TD
     A(["Initial State\n3G, 2R"]) --&gt; B["First: Green\n3/5"]
     A --&gt; C["First: Red\n2/5"]
@@ -2197,27 +2070,14 @@ Sampling Methods Overview
 </div>
 </div>
 </div>
-<ol type="A">
-<li>When order matters (ordered pairs):</li>
-</ol>
-<!-- -->
+<p>Now:</p>
 <ol type="1">
-<li>P(G then G) = 9/25</li>
-<li>P(G then R) = 6/25</li>
-<li>P(R then G) = 6/25</li>
-<li>P(R then R) = 4/25</li>
+<li><p>First red, then green (order matters):</p>
+<p><span class="math inline">P(R \text{ then } G) = \frac{2}{5} \cdot \frac{3}{5} = \frac{6}{25} = 0.24</span></p></li>
+<li><p>Different colors (order doesn’t matter):</p>
+<p><span class="math inline">P(\text{different colors}) = \frac{2}{5} \cdot \frac{3}{5} + \frac{3}{5} \cdot \frac{2}{5} = \frac{12}{25} = 0.48</span></p></li>
 </ol>
-<!-- -->
-<ol start="2" type="A">
-<li>When order doesn’t matter (combinations):</li>
-</ol>
-<!-- -->
-<ol type="1">
-<li>P(two greens) = 9/25</li>
-<li>P(different colors) = P(G,R) or P(R,G) = 12/25</li>
-<li>P(two reds) = 4/25</li>
-</ol>
-<p>Key observations:</p>
+<p><strong>Key observations:</strong></p>
 <ol type="1">
 <li>Without replacement:
 <ul>
