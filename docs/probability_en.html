@@ -309,14 +309,13 @@ window.Quarto = {
   </ul></li>
   <li><a href="#discrete-probability-theory-basic-concepts-and-rules" id="toc-discrete-probability-theory-basic-concepts-and-rules" class="nav-link" data-scroll-target="#discrete-probability-theory-basic-concepts-and-rules"><span class="header-section-number">17.4</span> (Discrete) Probability Theory: Basic Concepts and Rules</a>
   <ul class="collapse">
-  <li><a href="#sample-space-s" id="toc-sample-space-s" class="nav-link" data-scroll-target="#sample-space-s"><span class="header-section-number">17.4.1</span> Sample Space (<span class="math inline">S</span>)</a></li>
-  <li><a href="#the-event-space-what-can-happen-in-an-experiment" id="toc-the-event-space-what-can-happen-in-an-experiment" class="nav-link" data-scroll-target="#the-event-space-what-can-happen-in-an-experiment"><span class="header-section-number">17.4.2</span> The Event Space: What Can Happen in an Experiment</a></li>
-  <li><a href="#probability-measure-assigning-numbers-to-events" id="toc-probability-measure-assigning-numbers-to-events" class="nav-link" data-scroll-target="#probability-measure-assigning-numbers-to-events"><span class="header-section-number">17.4.3</span> Probability Measure: Assigning Numbers to Events</a></li>
-  <li><a href="#random-experiments" id="toc-random-experiments" class="nav-link" data-scroll-target="#random-experiments"><span class="header-section-number">17.4.4</span> Random Experiments</a></li>
-  <li><a href="#fundamental-axioms-of-probability" id="toc-fundamental-axioms-of-probability" class="nav-link" data-scroll-target="#fundamental-axioms-of-probability"><span class="header-section-number">17.4.5</span> Fundamental Axioms of Probability</a></li>
-  <li><a href="#discrete-probability-spaces" id="toc-discrete-probability-spaces" class="nav-link" data-scroll-target="#discrete-probability-spaces"><span class="header-section-number">17.4.6</span> Discrete Probability Spaces</a></li>
-  <li><a href="#classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces" id="toc-classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces" class="nav-link" data-scroll-target="#classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces"><span class="header-section-number">17.4.7</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Case in Discrete Sample Spaces</a></li>
-  <li><a href="#understanding-classical-probability-through-the-urn-example" id="toc-understanding-classical-probability-through-the-urn-example" class="nav-link" data-scroll-target="#understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.4.12</span> Understanding Classical Probability Through the Urn Example</a></li>
+  <li><a href="#random-experiments" id="toc-random-experiments" class="nav-link" data-scroll-target="#random-experiments"><span class="header-section-number">17.4.1</span> Random Experiments</a></li>
+  <li><a href="#sample-space-s" id="toc-sample-space-s" class="nav-link" data-scroll-target="#sample-space-s"><span class="header-section-number">17.4.2</span> Sample Space (<span class="math inline">S</span>)</a></li>
+  <li><a href="#the-event-space-what-can-happen-in-an-experiment" id="toc-the-event-space-what-can-happen-in-an-experiment" class="nav-link" data-scroll-target="#the-event-space-what-can-happen-in-an-experiment"><span class="header-section-number">17.4.3</span> The Event Space: What Can Happen in an Experiment</a></li>
+  <li><a href="#probability-measure-assigning-numbers-to-events" id="toc-probability-measure-assigning-numbers-to-events" class="nav-link" data-scroll-target="#probability-measure-assigning-numbers-to-events"><span class="header-section-number">17.4.4</span> Probability Measure: Assigning Numbers to Events</a></li>
+  <li><a href="#discrete-probability-spaces" id="toc-discrete-probability-spaces" class="nav-link" data-scroll-target="#discrete-probability-spaces"><span class="header-section-number">17.4.5</span> Discrete Probability Spaces</a></li>
+  <li><a href="#classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces" id="toc-classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces" class="nav-link" data-scroll-target="#classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces"><span class="header-section-number">17.4.6</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Case in Discrete Sample Spaces</a></li>
+  <li><a href="#understanding-classical-probability-through-the-urn-example" id="toc-understanding-classical-probability-through-the-urn-example" class="nav-link" data-scroll-target="#understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.4.11</span> Understanding Classical Probability Through the Urn Example</a></li>
   </ul></li>
   <li><a href="#how-to-calculate-basic-probabilities" id="toc-how-to-calculate-basic-probabilities" class="nav-link" data-scroll-target="#how-to-calculate-basic-probabilities"><span class="header-section-number">17.5</span> How to Calculate Basic Probabilities</a>
   <ul class="collapse">
@@ -673,7 +672,7 @@ Cardinality of Sets
 <li><span class="math inline">\emptyset \subseteq A</span> for any set A (the empty set is a subset of every set)</li>
 <li>But <span class="math inline">\emptyset \notin A</span> unless A specifically contains the empty set as an element</li>
 </ul>
-<p>Exercise. Using the given sets:</p>
+<p><strong>Exercise</strong> (https://www.alextsun.com/files/Prob_Stat_for_CS_Book.pdf). Using the given sets:</p>
 <ul>
 <li><span class="math inline">A = \{1, 3\}</span></li>
 <li><span class="math inline">B = \{3, 1\}</span></li>
@@ -692,7 +691,7 @@ Cardinality of Sets
 <li><span class="math inline">C \in D</span> : TRUE (the set {1,2} appears in D, but not the set C itself)</li>
 <li><span class="math inline">C \subseteq D</span> : TRUE (all elements of C (1 and 2) are also elements of D)</li>
 <li><span class="math inline">\emptyset \in D</span> : TRUE (empty set is listed as an element of D)</li>
-<li><span class="math inline">\emptyset \subseteq D</span> : TRUE (True, by definition, the empty set is a subset of any set. This is because if this were not the case, there would have to be an element of <span class="math inline">\emptyset</span> which was not in D. But there are no elements in <span class="math inline">\emptyset</span>, so the statement is true (vacuously).)</li>
+<li><span class="math inline">\emptyset \subseteq D</span> : TRUE (True, by definition, the empty set is a subset of any set. This is because if this were not the case, there would have to be an element of <span class="math inline">\emptyset</span> which was not in D. But there are no elements in <span class="math inline">\emptyset</span>, so the statement is true.)</li>
 <li><span class="math inline">A = B</span> : TRUE (they contain the same elements)</li>
 <li><span class="math inline">\emptyset \subseteq \emptyset</span> : TRUE (empty set is a subset of itself; the empty set is a subset of any set)</li>
 <li><span class="math inline">\emptyset \in \emptyset</span> : FALSE (empty set contains no elements)</li>
@@ -915,11 +914,21 @@ Core Concepts
 <p>Probability theory provides a rigorous foundation for quantifying uncertainty and analyzing random phenomena.</p>
 </div>
 </div>
-<section id="sample-space-s" class="level3" data-number="17.4.1">
-<h3 data-number="17.4.1" class="anchored" data-anchor-id="sample-space-s"><span class="header-section-number">17.4.1</span> Sample Space (<span class="math inline">S</span>)</h3>
+<section id="random-experiments" class="level3" data-number="17.4.1">
+<h3 data-number="17.4.1" class="anchored" data-anchor-id="random-experiments"><span class="header-section-number">17.4.1</span> Random Experiments</h3>
+<p>A random experiment is any procedure that has a well-defined set of possible outcomes but whose specific result cannot be predicted with certainty.</p>
+<p>Properties:</p>
+<ol type="1">
+<li>Repeatable under identical conditions</li>
+<li>Known possible outcomes</li>
+<li>Unpredictable specific results</li>
+</ol>
+</section>
+<section id="sample-space-s" class="level3" data-number="17.4.2">
+<h3 data-number="17.4.2" class="anchored" data-anchor-id="sample-space-s"><span class="header-section-number">17.4.2</span> Sample Space (<span class="math inline">S</span>)</h3>
 <ul>
-<li>Complete set of all possible outcomes</li>
-<li>Denoted by <span class="math inline">S</span> or universal set</li>
+<li>Complete set of all possible outcomes of a random experiment</li>
+<li>Denoted by <span class="math inline">S</span> (or <span class="math inline">\Omega</span>)</li>
 <li>Properties:
 <ol type="1">
 <li>Mutually exclusive outcomes</li>
@@ -932,8 +941,8 @@ Core Concepts
 <li>Die roll: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span></li>
 </ul>
 </section>
-<section id="the-event-space-what-can-happen-in-an-experiment" class="level3" data-number="17.4.2">
-<h3 data-number="17.4.2" class="anchored" data-anchor-id="the-event-space-what-can-happen-in-an-experiment"><span class="header-section-number">17.4.2</span> The Event Space: What Can Happen in an Experiment</h3>
+<section id="the-event-space-what-can-happen-in-an-experiment" class="level3" data-number="17.4.3">
+<h3 data-number="17.4.3" class="anchored" data-anchor-id="the-event-space-what-can-happen-in-an-experiment"><span class="header-section-number">17.4.3</span> The Event Space: What Can Happen in an Experiment</h3>
 <p><strong>Events</strong> are subsets of the sample space <span class="math inline">S</span>. This means we can use standard set operations to work with them in a precise, mathematical way.</p>
 <p>The <strong>event space</strong> <span class="math inline">\mathcal{F}</span> is a collection of all events (outcomes or sets of outcomes) that we can assign probabilities to in an experiment. It must follow three fundamental rules:</p>
 <ol type="1">
@@ -990,15 +999,16 @@ Event Types
 </div>
 </div>
 </section>
-<section id="probability-measure-assigning-numbers-to-events" class="level3" data-number="17.4.3">
-<h3 data-number="17.4.3" class="anchored" data-anchor-id="probability-measure-assigning-numbers-to-events"><span class="header-section-number">17.4.3</span> Probability Measure: Assigning Numbers to Events</h3>
-<p>A probability measure <span class="math inline">P</span> is a way to quantify how likely events are to occur. It takes any event from our event space <span class="math inline">\mathcal{F}</span> and assigns it a number between 0 and 1. This assignment follows three essential rules:</p>
+<section id="probability-measure-assigning-numbers-to-events" class="level3" data-number="17.4.4">
+<h3 data-number="17.4.4" class="anchored" data-anchor-id="probability-measure-assigning-numbers-to-events"><span class="header-section-number">17.4.4</span> Probability Measure: Assigning Numbers to Events</h3>
+<p>A probability measure <span class="math inline">P</span> is a way to quantify how likely events are to occur. It takes any event from our event space <span class="math inline">\mathcal{F}</span> and assigns it a number between 0 and 1. This assignment follows three essential rules/axioms.</p>
+<p>These axioms, introduced by Kolmogorov in 1933, serve as the foundation for all probability calculations:</p>
 <ol type="1">
 <li><strong>Non-Negativity Rule</strong>
 <ul>
 <li>For any event <span class="math inline">A</span>, its probability must be at least 0: <span class="math inline">P(A) \geq 0</span></li>
-<li>We can’t have negative probabilities - an event can’t happen “less than never”</li>
-<li>Example: <span class="math inline">P(\text{getting heads}) = 0.5</span> ✓, but <span class="math inline">P(\text{getting heads}) = -0.2</span> ✗</li>
+<li>We can never have a negative probability</li>
+<li>Example: If we roll a die, the probability of getting a 6 is <span class="math inline">\frac{1}{6}</span> (it cannot be negative)</li>
 </ul></li>
 <li><strong>Total Probability Rule</strong>
 <ul>
@@ -1013,17 +1023,7 @@ Event Types
 <li>Example: In drawing a card, <span class="math inline">P(\text{getting ace}) = P(\text{ace of hearts}) + P(\text{ace of diamonds}) + P(\text{ace of clubs}) + P(\text{ace of spades})</span></li>
 </ul></li>
 </ol>
-<p>These rules ensure that our probability assignments make logical sense and match our intuitive understanding of chance and likelihood.</p>
-</section>
-<section id="random-experiments" class="level3" data-number="17.4.4">
-<h3 data-number="17.4.4" class="anchored" data-anchor-id="random-experiments"><span class="header-section-number">17.4.4</span> Random Experiments</h3>
-<p>A random experiment is any procedure that has a well-defined set of possible outcomes but whose specific result cannot be predicted with certainty.</p>
-<p>Properties:</p>
-<ol type="1">
-<li>Repeatable under identical conditions</li>
-<li>Known possible outcomes</li>
-<li>Unpredictable specific results</li>
-</ol>
+<p>These rules/axioms ensure that our probability assignments make logical sense and match our intuitive understanding of chance and likelihood.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1041,12 +1041,6 @@ Example: Die Roll
 </ul>
 </div>
 </div>
-<p>This framework allows us to:</p>
-<ul>
-<li>Model uncertainty systematically</li>
-<li>Calculate probabilities of complex events</li>
-<li>Make predictions about random phenomena</li>
-</ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1395,31 +1389,8 @@ Visualizing Sample Spaces
 </div>
 </div>
 </section>
-<section id="fundamental-axioms-of-probability" class="level3" data-number="17.4.5">
-<h3 data-number="17.4.5" class="anchored" data-anchor-id="fundamental-axioms-of-probability"><span class="header-section-number">17.4.5</span> Fundamental Axioms of Probability</h3>
-<p>Probability theory is built on three basic rules (axioms) that formalize our understanding of chance. These axioms, introduced by Kolmogorov in 1933, serve as the foundation for all probability calculations:</p>
-<ol type="1">
-<li><strong>Non-Negativity: <span class="math inline">P(A) \geq 0</span></strong>
-<ul>
-<li>The probability of any event must be zero or positive</li>
-<li>We can never have a negative probability</li>
-<li>Example: If we roll a die, the probability of getting a 6 is <span class="math inline">\frac{1}{6}</span>, not -0.2</li>
-</ul></li>
-<li><strong>Total Probability: <span class="math inline">P(S) = 1</span></strong>
-<ul>
-<li>The probability of all possible outcomes together equals 1 (or 100%)</li>
-<li>Something must happen when we run an experiment</li>
-<li>Example: When flipping a coin, <span class="math inline">P(\text{heads}) + P(\text{tails}) = 1</span></li>
-</ul></li>
-<li><strong>Addition Rule: If <span class="math inline">A</span> and <span class="math inline">B</span> cannot occur together, then <span class="math inline">P(A \cup B) = P(A) + P(B)</span></strong>
-<ul>
-<li>For events that can’t happen simultaneously, add their individual probabilities</li>
-<li>Example: In a deck of cards, <span class="math inline">P(\text{drawing ace or king}) = P(\text{ace}) + P(\text{king}) = \frac{4}{52} + \frac{4}{52} = \frac{8}{52}</span></li>
-</ul></li>
-</ol>
-</section>
-<section id="discrete-probability-spaces" class="level3" data-number="17.4.6">
-<h3 data-number="17.4.6" class="anchored" data-anchor-id="discrete-probability-spaces"><span class="header-section-number">17.4.6</span> Discrete Probability Spaces</h3>
+<section id="discrete-probability-spaces" class="level3" data-number="17.4.5">
+<h3 data-number="17.4.5" class="anchored" data-anchor-id="discrete-probability-spaces"><span class="header-section-number">17.4.5</span> Discrete Probability Spaces</h3>
 <p>A discrete probability space is the simplest framework for working with probability. It has these key features:</p>
 <ol type="1">
 <li><strong>Countable Outcomes</strong>
@@ -1504,8 +1475,8 @@ Common Types of (Discrete) Distributions (*)
 <p>The geometric distribution describes the number of tries needed until the first success occurs. For example, the number of coin flips needed until we get our first heads. The probability of success on the <span class="math inline">k</span>th try is:</p>
 <p><span class="math display">P(X = k) = (1-p)^{k-1}p</span></p>
 <p>where <span class="math inline">p</span> is the probability of success on each try.</p>
-<section id="simple-example" class="level4" data-number="17.4.6.1">
-<h4 data-number="17.4.6.1" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">17.4.6.1</span> Simple Example</h4>
+<section id="simple-example" class="level4" data-number="17.4.5.1">
+<h4 data-number="17.4.5.1" class="anchored" data-anchor-id="simple-example"><span class="header-section-number">17.4.5.1</span> Simple Example</h4>
 <p>Let’s consider flipping a fair coin:</p>
 <ul>
 <li><p>The sample space <span class="math inline">\Omega</span> contains all possible outcomes: {Heads, Tails}</p></li>
@@ -1532,8 +1503,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </div>
 <div class="callout-body-container callout-body">
 <p>In probability, we encounter two fundamentally different types of random events: those we can count (discrete) and those we can measure (continuous). This distinction shapes how we calculate and interpret probabilities.</p>
-<section id="discrete-probability" class="level4" data-number="17.4.6.2">
-<h4 data-number="17.4.6.2" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.4.6.2</span> Discrete Probability</h4>
+<section id="discrete-probability" class="level4" data-number="17.4.5.2">
+<h4 data-number="17.4.5.2" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.4.5.2</span> Discrete Probability</h4>
 <p><strong>What</strong>: Events that can be counted with whole numbers - Like counting marbles, rolling dice, or flipping coins - Has “gaps” between possible values</p>
 <p><strong>Key Examples</strong>: 1. Rolling a die - Possible outcomes: 1, 2, 3, 4, 5, or 6 - Nothing in between (can’t roll a 2.5) - Can say: <span class="math inline">P(\text{rolling a 6}) = \frac{1}{6}</span></p>
 <ol start="2" type="1">
@@ -1545,8 +1516,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </ul></li>
 </ol>
 </section>
-<section id="continuous-probability" class="level4" data-number="17.4.6.3">
-<h4 data-number="17.4.6.3" class="anchored" data-anchor-id="continuous-probability"><span class="header-section-number">17.4.6.3</span> Continuous Probability</h4>
+<section id="continuous-probability" class="level4" data-number="17.4.5.3">
+<h4 data-number="17.4.5.3" class="anchored" data-anchor-id="continuous-probability"><span class="header-section-number">17.4.5.3</span> Continuous Probability</h4>
 <p><strong>What</strong>: Events measured on a continuous scale - Like measuring height, time, or temperature - Values flow smoothly with no gaps</p>
 <p><strong>Key Examples</strong>: 1. Person’s height - Could be 170cm, 170.1cm, 170.11cm, … - Can measure with increasing precision - Must use ranges: <span class="math inline">P(170 \leq \text{height} \leq 171)</span></p>
 <ol start="2" type="1">
@@ -1558,8 +1529,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </ul></li>
 </ol>
 </section>
-<section id="critical-differences" class="level4" data-number="17.4.6.4">
-<h4 data-number="17.4.6.4" class="anchored" data-anchor-id="critical-differences"><span class="header-section-number">17.4.6.4</span> Critical Differences</h4>
+<section id="critical-differences" class="level4" data-number="17.4.5.4">
+<h4 data-number="17.4.5.4" class="anchored" data-anchor-id="critical-differences"><span class="header-section-number">17.4.5.4</span> Critical Differences</h4>
 <ol type="1">
 <li><strong>Individual Values</strong>
 <ul>
@@ -1579,12 +1550,12 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </ul></li>
 </ol>
 </section>
-<section id="real-world-application" class="level4" data-number="17.4.6.5">
-<h4 data-number="17.4.6.5" class="anchored" data-anchor-id="real-world-application"><span class="header-section-number">17.4.6.5</span> Real-World Application</h4>
+<section id="real-world-application" class="level4" data-number="17.4.5.5">
+<h4 data-number="17.4.5.5" class="anchored" data-anchor-id="real-world-application"><span class="header-section-number">17.4.5.5</span> Real-World Application</h4>
 <p>Think about a pizza delivery: - <strong>Discrete</strong>: Number of toppings (1, 2, 3, …) - <strong>Continuous</strong>: Delivery time (15.7 minutes, 15.73 minutes, …)</p>
 </section>
-<section id="why-understanding-this-matters" class="level4" data-number="17.4.6.6">
-<h4 data-number="17.4.6.6" class="anchored" data-anchor-id="why-understanding-this-matters"><span class="header-section-number">17.4.6.6</span> Why Understanding This Matters</h4>
+<section id="why-understanding-this-matters" class="level4" data-number="17.4.5.6">
+<h4 data-number="17.4.5.6" class="anchored" data-anchor-id="why-understanding-this-matters"><span class="header-section-number">17.4.5.6</span> Why Understanding This Matters</h4>
 <ul>
 <li>Helps choose appropriate probability tools</li>
 <li>Guides how we collect and analyze data</li>
@@ -1596,8 +1567,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </div>
 </div>
 </section>
-<section id="classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces" class="level3" data-number="17.4.7">
-<h3 data-number="17.4.7" class="anchored" data-anchor-id="classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces"><span class="header-section-number">17.4.7</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Case in Discrete Sample Spaces</h3>
+<section id="classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces" class="level3" data-number="17.4.6">
+<h3 data-number="17.4.6" class="anchored" data-anchor-id="classical-or-naive-probability-the-equal-likelihood-case-in-discrete-sample-spaces"><span class="header-section-number">17.4.6</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Case in Discrete Sample Spaces</h3>
 <p>Classical probability applies to discrete probability spaces where we can count individual outcomes and all outcomes are equally likely to occur. This gives us a simple formula:</p>
 <p><span class="math inline">P(\text{event}) = \frac{\text{number of favorable outcomes}}{\text{text{total number of possible outcomes}}}</span></p>
 <p>This works because:</p>
@@ -1633,8 +1604,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </ul></li>
 </ul>
 <p>This is why it’s called “naive” probability - it assumes a simple, idealized situation where counting is sufficient.</p>
-<section id="starting-assumptions" class="level4" data-number="17.4.7.1">
-<h4 data-number="17.4.7.1" class="anchored" data-anchor-id="starting-assumptions"><span class="header-section-number">17.4.7.1</span> Starting Assumptions</h4>
+<section id="starting-assumptions" class="level4" data-number="17.4.6.1">
+<h4 data-number="17.4.6.1" class="anchored" data-anchor-id="starting-assumptions"><span class="header-section-number">17.4.6.1</span> Starting Assumptions</h4>
 <p>When developing classical probability theory, we begin with a probability experiment that has two key properties:</p>
 <ol type="1">
 <li>The sample space <span class="math inline">S</span> is finite, with cardinality <span class="math inline">|S| = n</span></li>
@@ -1643,8 +1614,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 <p>We can write our sample space explicitly as: <span class="math inline">S = \{s_1, s_2, ..., s_n\}</span></p>
 <p>This leads us to classical (or Laplace) probability, which we’ll derive rigorously in the following section. This special case provides a foundation for understanding more complex probability scenarios and helps build crucial probabilistic intuition.</p>
 </section>
-<section id="core-axioms-of-probability" class="level4" data-number="17.4.7.2">
-<h4 data-number="17.4.7.2" class="anchored" data-anchor-id="core-axioms-of-probability"><span class="header-section-number">17.4.7.2</span> Core Axioms of Probability</h4>
+<section id="core-axioms-of-probability" class="level4" data-number="17.4.6.2">
+<h4 data-number="17.4.6.2" class="anchored" data-anchor-id="core-axioms-of-probability"><span class="header-section-number">17.4.6.2</span> Core Axioms of Probability</h4>
 <p>To derive classical probability, we start with the aforementioned three axioms. These form the mathematical foundation for all probability theory:</p>
 <ol type="1">
 <li>For any event <span class="math inline">A</span>, <span class="math inline">P(A) \geq 0</span> (Non-negativity)</li>
@@ -1652,14 +1623,14 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 <li>For disjoint events <span class="math inline">A</span> and <span class="math inline">B</span>, <span class="math inline">P(A \cup B) = P(A) + P(B)</span> (Additivity)</li>
 </ol>
 </section>
-<section id="deriving-the-classical-naive-probability-formula-equal-likelihood-case" class="level4" data-number="17.4.7.3">
-<h4 data-number="17.4.7.3" class="anchored" data-anchor-id="deriving-the-classical-naive-probability-formula-equal-likelihood-case"><span class="header-section-number">17.4.7.3</span> Deriving the Classical (‘Naive’) Probability Formula (Equal-Likelihood Case)</h4>
-<section id="starting-point" class="level5" data-number="17.4.7.3.1">
-<h5 data-number="17.4.7.3.1" class="anchored" data-anchor-id="starting-point"><span class="header-section-number">17.4.7.3.1</span> Starting Point</h5>
+<section id="deriving-the-classical-naive-probability-formula-equal-likelihood-case" class="level4" data-number="17.4.6.3">
+<h4 data-number="17.4.6.3" class="anchored" data-anchor-id="deriving-the-classical-naive-probability-formula-equal-likelihood-case"><span class="header-section-number">17.4.6.3</span> Deriving the Classical (‘Naive’) Probability Formula (Equal-Likelihood Case)</h4>
+<section id="starting-point" class="level5" data-number="17.4.6.3.1">
+<h5 data-number="17.4.6.3.1" class="anchored" data-anchor-id="starting-point"><span class="header-section-number">17.4.6.3.1</span> Starting Point</h5>
 <p>In a fair game or unbiased experiment where all outcomes are equally likely, we can derive the famous “number of favorable outcomes divided by total outcomes” formula.</p>
 </section>
-<section id="the-setup" class="level5" data-number="17.4.7.3.2">
-<h5 data-number="17.4.7.3.2" class="anchored" data-anchor-id="the-setup"><span class="header-section-number">17.4.7.3.2</span> The Setup</h5>
+<section id="the-setup" class="level5" data-number="17.4.6.3.2">
+<h5 data-number="17.4.6.3.2" class="anchored" data-anchor-id="the-setup"><span class="header-section-number">17.4.6.3.2</span> The Setup</h5>
 <p>Consider a finite sample space <span class="math inline">S</span> with <span class="math inline">n</span> outcomes: <span class="math inline">\{s_1, s_2, ..., s_n\}</span></p>
 <p><strong>Equal-Likelihood Assumption:</strong></p>
 <ul>
@@ -1667,8 +1638,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 <li>Mathematically: <span class="math inline">P(\{s_1\}) = P(\{s_2\}) = ... = P(\{s_n\}) = p</span></li>
 </ul>
 </section>
-<section id="step-by-step-derivation" class="level5" data-number="17.4.7.3.3">
-<h5 data-number="17.4.7.3.3" class="anchored" data-anchor-id="step-by-step-derivation"><span class="header-section-number">17.4.7.3.3</span> Step-by-Step Derivation</h5>
+<section id="step-by-step-derivation" class="level5" data-number="17.4.6.3.3">
+<h5 data-number="17.4.6.3.3" class="anchored" data-anchor-id="step-by-step-derivation"><span class="header-section-number">17.4.6.3.3</span> Step-by-Step Derivation</h5>
 <ol type="1">
 <li><p><strong>Use Total Probability Axiom</strong></p>
 <ul>
@@ -1685,8 +1656,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </ol>
 </section>
 </section>
-<section id="examples-to-illustrate" class="level4" data-number="17.4.7.4">
-<h4 data-number="17.4.7.4" class="anchored" data-anchor-id="examples-to-illustrate"><span class="header-section-number">17.4.7.4</span> Examples to Illustrate</h4>
+<section id="examples-to-illustrate" class="level4" data-number="17.4.6.4">
+<h4 data-number="17.4.6.4" class="anchored" data-anchor-id="examples-to-illustrate"><span class="header-section-number">17.4.6.4</span> Examples to Illustrate</h4>
 <ol type="1">
 <li><strong>Fair Die Roll</strong>
 <ul>
@@ -1702,8 +1673,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </ul></li>
 </ol>
 </section>
-<section id="important-limitations" class="level4" data-number="17.4.7.5">
-<h4 data-number="17.4.7.5" class="anchored" data-anchor-id="important-limitations"><span class="header-section-number">17.4.7.5</span> Important Limitations</h4>
+<section id="important-limitations" class="level4" data-number="17.4.6.5">
+<h4 data-number="17.4.6.5" class="anchored" data-anchor-id="important-limitations"><span class="header-section-number">17.4.6.5</span> Important Limitations</h4>
 <p>This formula only works when:</p>
 <ol type="1">
 <li>Sample space is finite (we can count outcomes)</li>
@@ -1712,8 +1683,8 @@ Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random 
 </ol>
 <p>If any of these conditions fail (like with a loaded die), we need different methods to calculate probabilities.</p>
 </section>
-<section id="understanding-the-result" class="level4" data-number="17.4.7.6">
-<h4 data-number="17.4.7.6" class="anchored" data-anchor-id="understanding-the-result"><span class="header-section-number">17.4.7.6</span> Understanding the Result</h4>
+<section id="understanding-the-result" class="level4" data-number="17.4.6.6">
+<h4 data-number="17.4.6.6" class="anchored" data-anchor-id="understanding-the-result"><span class="header-section-number">17.4.6.6</span> Understanding the Result</h4>
 <p>This derivation reveals several profound insights about classical probability:</p>
 <p>The familiar “counting formula” (‘Naive’ probability) isn’t just an intuitive rule - it follows necessarily from our axioms combined with the equal-likelihood assumption. When we say outcomes are equally likely, we’re forced mathematically to assign each elementary outcome a probability of <span class="math inline">\frac{1}{|S|}</span>. This isn’t a choice but a requirement of the axioms.</p>
 <p>For any event <span class="math inline">A</span>, its probability is determined entirely by comparing two cardinalities: the size of the event (<span class="math inline">|A|</span>) relative to the size of the sample space (<span class="math inline">|S|</span>).</p>
@@ -1758,8 +1729,8 @@ Fair Coin Toss Probability Space
 </div>
 </div>
 </section>
-<section id="example-application" class="level4" data-number="17.4.7.7">
-<h4 data-number="17.4.7.7" class="anchored"><span class="header-section-number">17.4.7.7</span> Example Application</h4>
+<section id="example-application" class="level4" data-number="17.4.6.7">
+<h4 data-number="17.4.6.7" class="anchored"><span class="header-section-number">17.4.6.7</span> Example Application</h4>
 <p>Let’s solidify this understanding by working through a concrete example. Consider rolling a fair six-sided die and finding <span class="math inline">P(\text{even number})</span>:</p>
 <ol type="1">
 <li>First, identify the sample space: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span>, giving us <span class="math inline">|S| = 6</span></li>
@@ -1811,15 +1782,15 @@ Understanding When to Add vs Multiply Probabilities
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="the-key-principle" class="level3" data-number="17.4.8">
-<h3 data-number="17.4.8" class="anchored" data-anchor-id="the-key-principle"><span class="header-section-number">17.4.8</span> The Key Principle</h3>
+<section id="the-key-principle" class="level3" data-number="17.4.7">
+<h3 data-number="17.4.7" class="anchored" data-anchor-id="the-key-principle"><span class="header-section-number">17.4.7</span> The Key Principle</h3>
 <ul>
 <li><strong>ADD</strong> when events represent different ways (paths) to achieve the same outcome</li>
 <li><strong>MULTIPLY</strong> when events must occur in sequence (one after another)</li>
 </ul>
 </section>
-<section id="example-1-single-die-roll" class="level3" data-number="17.4.9">
-<h3 data-number="17.4.9" class="anchored" data-anchor-id="example-1-single-die-roll"><span class="header-section-number">17.4.9</span> Example 1: Single Die Roll</h3>
+<section id="example-1-single-die-roll" class="level3" data-number="17.4.8">
+<h3 data-number="17.4.8" class="anchored" data-anchor-id="example-1-single-die-roll"><span class="header-section-number">17.4.8</span> Example 1: Single Die Roll</h3>
 <p>Consider events:</p>
 <ul>
 <li>A: “rolling an even number” = {2, 4, 6}</li>
@@ -1831,8 +1802,8 @@ Understanding When to Add vs Multiply Probabilities
 <li>= 3/6 + 2/6 - 1/6 = 4/6</li>
 </ul>
 </section>
-<section id="example-2-two-coin-flips" class="level3" data-number="17.4.10">
-<h3 data-number="17.4.10" class="anchored" data-anchor-id="example-2-two-coin-flips"><span class="header-section-number">17.4.10</span> Example 2: Two Coin Flips</h3>
+<section id="example-2-two-coin-flips" class="level3" data-number="17.4.9">
+<h3 data-number="17.4.9" class="anchored" data-anchor-id="example-2-two-coin-flips"><span class="header-section-number">17.4.9</span> Example 2: Two Coin Flips</h3>
 <p>For P(at least one heads):</p>
 <ul>
 <li><strong>ADD</strong> different successful paths: P(HT or TH or HH)</li>
@@ -1844,8 +1815,8 @@ Understanding When to Add vs Multiply Probabilities
 <li>= 1/2 × 1/2 = 1/4</li>
 </ul>
 </section>
-<section id="why-this-works" class="level3" data-number="17.4.11">
-<h3 data-number="17.4.11" class="anchored" data-anchor-id="why-this-works"><span class="header-section-number">17.4.11</span> Why This Works</h3>
+<section id="why-this-works" class="level3" data-number="17.4.10">
+<h3 data-number="17.4.10" class="anchored" data-anchor-id="why-this-works"><span class="header-section-number">17.4.10</span> Why This Works</h3>
 <ul>
 <li>Addition combines different ways to succeed</li>
 <li>Multiplication reflects narrowing down possibilities with each sequential requirement</li>
@@ -1873,8 +1844,8 @@ Understanding When to Add vs Multiply Probabilities
 </div>
 </section>
 </section>
-<section id="understanding-classical-probability-through-the-urn-example" class="level3" data-number="17.4.12">
-<h3 data-number="17.4.12" class="anchored" data-anchor-id="understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.4.12</span> Understanding Classical Probability Through the Urn Example</h3>
+<section id="understanding-classical-probability-through-the-urn-example" class="level3" data-number="17.4.11">
+<h3 data-number="17.4.11" class="anchored" data-anchor-id="understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.4.11</span> Understanding Classical Probability Through the Urn Example</h3>
 <p>In our urn with 3 green and 2 red balls:</p>
 <ul>
 <li><span class="math inline">P(\text{green}) = \frac{3}{5}</span></li>
