@@ -420,12 +420,28 @@ window.Quarto = {
 <li>Describing a property: <span class="math inline">B = \{\text{x | x is a positive integer less than 4}\}</span></li>
 </ul>
 <p>The empty set <span class="math inline">\emptyset</span> contains no elements.</p>
-<p>If <span class="math inline">A</span> and <span class="math inline">B</span> are sets: - If <span class="math inline">A</span> is a subset of <span class="math inline">B</span>, we write <span class="math inline">A \subseteq B</span> - If <span class="math inline">x</span> is an element of <span class="math inline">A</span>, we write <span class="math inline">x \in A</span></p>
-<p>For example, if <span class="math inline">B = \{1, 2, 3\}</span>: - <span class="math inline">\{1, 2\}</span> is a subset of <span class="math inline">B</span> (written <span class="math inline">\{1, 2\} \subseteq B</span>) - <span class="math inline">1</span> is an element of <span class="math inline">B</span> (written <span class="math inline">1 \in B</span>)</p>
+<p>If <span class="math inline">A</span> and <span class="math inline">B</span> are sets:</p>
+<ul>
+<li>If <span class="math inline">A</span> is a subset of <span class="math inline">B</span>, we write <span class="math inline">A \subseteq B</span></li>
+<li>If <span class="math inline">x</span> is an element of <span class="math inline">A</span>, we write <span class="math inline">x \in A</span></li>
+</ul>
+<p>For example, if <span class="math inline">B = \{1, 2, 3\}</span>:</p>
+<ul>
+<li><span class="math inline">\{1, 2\}</span> is a subset of <span class="math inline">B</span> (written <span class="math inline">\{1, 2\} \subseteq B</span>)</li>
+<li><span class="math inline">1</span> is an element of <span class="math inline">B</span> (written <span class="math inline">1 \in B</span>)</li>
+</ul>
 <p>Note: The proper subset notation uses a strict subset symbol. If <span class="math inline">A</span> is a proper subset of <span class="math inline">B</span>, we write:</p>
 <p><span class="math display">A \subset B</span></p>
 <p>This means that <span class="math inline">A</span> is a subset of <span class="math inline">B</span> AND <span class="math inline">A \neq B</span> (A is not equal to B).</p>
 <p>In contrast, <span class="math inline">A \subseteq B</span> allows for the possibility that <span class="math inline">A = B</span>.</p>
+<p><strong>We say a set is a collection of objects without duplicates</strong>; it means that each element appears exactly once. For example:</p>
+<ul>
+<li>This is a valid set: <span class="math inline">\{1, 2, 3\}</span></li>
+<li>This is NOT a set: <span class="math inline">\{1, 2, 2, 3\}</span> because 2 appears twice</li>
+</ul>
+<p>In mathematical notation, if <span class="math inline">x</span> is an element of set <span class="math inline">A</span>, then additional copies of <span class="math inline">x</span> don’t change the set. So:</p>
+<p><span class="math inline">\{1, 2, 2, 3\} = \{1, 2, 3\}</span></p>
+<p>This is different from other collections like lists or multisets where duplicates are allowed and order matters. In a list or sequence, [1, 2, 2, 3] is different from [1, 2, 3].</p>
 </section>
 <section id="set-operations" class="level3" data-number="17.1.2">
 <h3 data-number="17.1.2" class="anchored" data-anchor-id="set-operations"><span class="header-section-number">17.1.2</span> Set Operations</h3>
