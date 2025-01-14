@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>19&nbsp; Random Variables and Probability Distributions – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./inference_en.html" rel="next">
+<link href="./probability_pl.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rv_pdf_en.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Random Variables and Probability Distributions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Data Science and Statistics for Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Wprowadzenie do Nauki o Danych i Statystyki dla Nauk Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Understanding Data Types in Social Sciences</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Zrozumienie Typów Danych w Naukach Społecznych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">From Sample to Population - Understanding Randomness, Sampling, and Inference</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Od Próby do Populacji - Zrozumienie Losowości, Próbkowania i Wnioskowania</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reliability and Validity in Data Science Research</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial3b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rzetelność i Trafność w Badaniach Nauk o Danych</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Research Designs: Experimental and Non-Experimental Approaches</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Projekty Badawcze: Podejścia Eksperymentalne i Nieeksperymentalne</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Fundamentals of Univariate Descriptive Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Podstawy Jednowymiarowej Statystyki Opisowej</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Visualization: with examples in R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rozdzial6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Wizualizacja Danych: z przykładami w R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correg_en.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to Correlation and Regression Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correg_pl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Wprowadzenie do Analizy Korelacji i Regresji</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./probability_en.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Introduction to (Discrete) Probability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./probability_pl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Wprowadzenie do Prawdopodobieństwa</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rv_pdf_en.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Random Variables and Probability Distributions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inference_en.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introduction to Statistical Inference</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./inference_pl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#random-variables-making-outcomes-measurable" id="toc-random-variables-making-outcomes-measurable" class="nav-link active" data-scroll-target="#random-variables-making-outcomes-measurable"><span class="header-section-number">19.4</span> Random Variables: Making Outcomes Measurable</a>
+  <ul class="collapse">
+  <li><a href="#example-rolling-a-die" id="toc-example-rolling-a-die" class="nav-link" data-scroll-target="#example-rolling-a-die"><span class="header-section-number">19.4.1</span> Example: Rolling a Die</a></li>
+  <li><a href="#example-flipping-a-coin" id="toc-example-flipping-a-coin" class="nav-link" data-scroll-target="#example-flipping-a-coin"><span class="header-section-number">19.4.2</span> Example: Flipping a Coin</a></li>
+  <li><a href="#properties-of-discrete-random-variables" id="toc-properties-of-discrete-random-variables" class="nav-link" data-scroll-target="#properties-of-discrete-random-variables"><span class="header-section-number">19.4.3</span> Properties of Discrete Random Variables</a></li>
+  </ul></li>
+  <li><a href="#understanding-probability-distributions" id="toc-understanding-probability-distributions" class="nav-link" data-scroll-target="#understanding-probability-distributions"><span class="header-section-number">19.5</span> Understanding Probability Distributions</a>
+  <ul class="collapse">
+  <li><a href="#uniform-distribution" id="toc-uniform-distribution" class="nav-link" data-scroll-target="#uniform-distribution"><span class="header-section-number">19.5.1</span> Uniform Distribution</a></li>
+  <li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution"><span class="header-section-number">19.5.2</span> Bernoulli Distribution</a></li>
+  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">19.5.3</span> Binomial Distribution</a></li>
+  <li><a href="#comparing-the-distributions" id="toc-comparing-the-distributions" class="nav-link" data-scroll-target="#comparing-the-distributions"><span class="header-section-number">19.5.4</span> Comparing the Distributions</a></li>
+  <li><a href="#interactive-r-code-for-exploration" id="toc-interactive-r-code-for-exploration" class="nav-link" data-scroll-target="#interactive-r-code-for-exploration"><span class="header-section-number">19.5.5</span> Interactive R Code for Exploration</a></li>
+  <li><a href="#building-the-binomial-distribution-pattern" id="toc-building-the-binomial-distribution-pattern" class="nav-link" data-scroll-target="#building-the-binomial-distribution-pattern"><span class="header-section-number">19.5.6</span> Building the Binomial Distribution Pattern</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Random Variables and Probability Distributions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding Random Variables and Probability Distributions: Mathematical Models for Randomness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When we calculate probabilities using the classical definition (favorable outcomes divided by total possible outcomes), we’re implicitly making an important assumption: we know exactly how our outcomes are generated.</p>
+<p>For instance, with a fair coin, we assume the mechanism produces heads and tails with equal probability. But how do we know this?</p>
+<p>In reality, we often observe outcomes first and then try to understand the underlying process that generated them.</p>
+<p>Think about flipping a coin 100 times and getting 47 heads. Is the coin fair? What’s the actual probability of heads?</p>
+<p>To answer these questions rigorously, we need to:</p>
+<ol type="1">
+<li>Model the underlying random process (data-generating mechanism)</li>
+<li>Connect our observations to this theoretical model</li>
+<li>Make precise statements about probabilities of different outcomes</li>
+</ol>
+<p>This leads us to <em>random variables</em> and <em>probability distributions</em>.</p>
+<p>A <strong>random variable</strong> <span class="math inline">X</span> is a function that assigns a numerical value to each outcome in a sample space <span class="math inline">S</span>. More formally, it’s a function <span class="math inline">X: S \rightarrow \mathbb{R}</span> that maps outcomes from our sample space to real numbers.</p>
+<p>For example, when flipping a coin, we might define <span class="math inline">X(H) = 1</span> for heads and <span class="math inline">X(T) = 0</span> for tails. This formalization helps us model the data-generating process.</p>
+<p>For discrete random variables, the <strong>probability distribution</strong> is described by its <em>Probability Mass Function</em> (PMF) <span class="math inline">p_X(x)</span> or <span class="math inline">P(X = x)</span>, which specifies our model’s assumptions about <strong>how likely each outcome is</strong>. A valid PMF must satisfy:</p>
+<ol type="1">
+<li>Non-negativity: <span class="math inline">p_X(x) \geq 0</span> for all <span class="math inline">x</span></li>
+<li>Total probability: <span class="math inline">\sum_{x} p_X(x) = 1</span></li>
+</ol>
+<p>For our possibly unfair coin: <span class="math display">
+p_X(x) = \begin{cases}
+p &amp; \text{if } x = 1 \text{ (heads)} \\
+1-p &amp; \text{if } x = 0 \text{ (tails)} \\
+0 &amp; \text{otherwise}
+\end{cases}
+</span></p>
+<p>where <span class="math inline">p</span> is the true probability of heads that we’re trying to understand.</p>
+<p>This framework lets us move beyond simply counting favorable outcomes to modeling and understanding the underlying random processes that generate our observations. It forms the foundation for working with more complex probability distributions and statistical inference.</p>
+<p><strong>Note</strong>: When dealing with continuous random variables (like height, weight, or time), we use <em>Probability Density Functions</em> (PDF) instead of PMFs. PDFs require calculus and integration to work with probabilities, which is beyond the scope of this course. We’ll focus exclusively on discrete random variables and their PMFs.</p>
+<p><strong>In summary, we need two key mathematical tools:</strong></p>
+<ol type="1">
+<li>A way to convert random outcomes into numbers (Random Variables)</li>
+<li>A way to describe how likely each number is (Probability Distributions)</li>
+</ol>
+<section id="random-variable-rv-making-randomness-measurable" class="level3" data-number="19.0.1">
+<h3 data-number="19.0.1" class="anchored" data-anchor-id="random-variable-rv-making-randomness-measurable"><span class="header-section-number">19.0.1</span> Random Variable (RV): Making Randomness Measurable</h3>
+<p>A random variable (RV) is our bridge between unpredictable outcomes and their probabilities. It works in two steps:</p>
+<ol type="1">
+<li>First, it maps outcomes to numbers</li>
+<li>Then, the probability distribution maps these numbers to their probabilities</li>
+</ol>
+<p>A Random Variable is a function that converts unpredictable outcomes into numbers we can work with:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TB
+    subgraph Space["Sample Space (Ω)"]
+        direction LR
+        O1["ω₁"]
+        O2["ω₂"]
+        O3["..."]
+        On["ωₙ"]
+        SpaceCaption["All possible outcomes&lt;br/&gt;from our random experiment"]
+        O1 &amp; O2 &amp; O3 &amp; On --- SpaceCaption
+    end
+
+    subgraph Range["Range of X"]
+        direction LR
+        X1["x₁"]
+        X2["x₂"]
+        X3["..."]
+        Xm["xₘ"]
+        RangeCaption["Numerical values&lt;br/&gt;X: Ω → ℝ"]
+        X1 &amp; X2 &amp; X3 &amp; Xm --- RangeCaption
+    end
+
+    %% Connections with labels
+    O1 --&gt;|"X"| X1
+    O2 --&gt;|"X"| X2
+    O3 --&gt;|"X"| X2
+    On --&gt;|"X"| Xm
+
+    %% Styling
+    classDef default fill:#f8f8f8,stroke:none,color:#000
+    classDef outcomes fill:#e1f5fe,stroke:#333,stroke-width:2px,color:#000
+    classDef values fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    classDef caption fill:none,stroke:none,color:#000
+    
+    class O1,O2,O3,On outcomes
+    class X1,X2,X3,Xm values
+    class SpaceCaption,RangeCaption caption
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><em>💡 Key Insight:</em> RVs turn abstract outcomes into concrete numbers. For example:</p>
+<ul>
+<li>Converting “Heads/Tails” to “1/0”</li>
+<li>Counting successes in multiple trials</li>
+<li>Measuring waiting times</li>
+</ul>
+</section>
+<section id="probability-distribution-function-pdf-describing-patterns-of-randomness" class="level3" data-number="19.0.2">
+<h3 data-number="19.0.2" class="anchored" data-anchor-id="probability-distribution-function-pdf-describing-patterns-of-randomness"><span class="header-section-number">19.0.2</span> Probability Distribution Function (PDF): Describing Patterns of Randomness</h3>
+<p>Once we have numbers, we need to describe how likely each value is:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TB
+    subgraph Values["Possible Values"]
+        direction LR
+        X1["x₁"]
+        X2["x₂"]
+        X3["..."]
+        Xm["xₘ"]
+        ValuesCaption["Numbers from our RV"]
+        X1 &amp; X2 &amp; X3 &amp; Xm --- ValuesCaption
+    end
+
+    subgraph Prob["Probabilities"]
+        direction LR
+        P1["f(x₁)"]
+        P2["f(x₂)"]
+        P3["..."]
+        Pm["f(xₘ)"]
+        ProbCaption["f: ℝ → [0,1]&lt;br/&gt;Must satisfy: Σf(xᵢ) = 1"]
+        P1 &amp; P2 &amp; P3 &amp; Pm --- ProbCaption
+    end
+
+    %% Connections
+    X1 --&gt;|"f"| P1
+    X2 --&gt;|"f"| P2
+    X3 --&gt;|"f"| P3
+    Xm --&gt;|"f"| Pm
+
+    %% Styling
+    classDef default fill:#f8f8f8,stroke:none,color:#000
+    classDef values fill:#e8f5e9,stroke:#333,stroke-width:2px,color:#000
+    classDef probs fill:#fff3e0,stroke:#333,stroke-width:2px,color:#000
+    classDef caption fill:none,stroke:none,color:#000
+    
+    class X1,X2,X3,Xm values
+    class P1,P2,P3,Pm probs
+    class ValuesCaption,ProbCaption caption
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><em>💡 Key Insights about PDFs:</em></p>
+<ul>
+<li>Maps each possible value to its probability</li>
+<li>Must be non-negative: f(x) ≥ 0</li>
+<li>Must sum to 1: Σf(x) = 1</li>
+<li>Shape depends on the Data Generating Process (DGP)</li>
+</ul>
+</section>
+<section id="models-for-different-data-generating-processes-dgps" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="models-for-different-data-generating-processes-dgps"><span class="header-section-number">19.1</span> Models for Different Data Generating Processes (DGPs)</h2>
+<p>Different random experiments follow different patterns. We model these using specific probability distributions:</p>
+<ol type="1">
+<li><strong>Bernoulli</strong>: For single yes/no experiments
+<ul>
+<li>Example: Single coin flip</li>
+<li>DGP Assumption: Two outcomes with fixed success probability</li>
+</ul></li>
+<li><strong>Binomial</strong>: For counting successes in fixed trials
+<ul>
+<li>Example: Number of heads in 10 coin flips</li>
+<li>DGP Assumption: Independent trials with same success probability</li>
+</ul></li>
+<li><strong>Poisson</strong>: For counting rare events in an interval
+<ul>
+<li>Example: Number of customer arrivals per hour</li>
+<li>DGP Assumption: Events occur independently at constant rate</li>
+</ul></li>
+</ol>
+<p><em>💡 Important Note:</em> These are mathematical models based on assumptions about how data is generated. Their usefulness depends on how well these assumptions match reality.</p>
+</section>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+From Bernoulli to Binomial Distribution: Building Complex Models from Simple Ones
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now that we understand random variables and their probability distributions, let’s explore two fundamental discrete distributions that model many real-world phenomena: the Bernoulli and binomial distributions.</p>
+<section id="the-bernoulli-distribution-modeling-single-yesno-experiments" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="the-bernoulli-distribution-modeling-single-yesno-experiments"><span class="header-section-number">19.2</span> The Bernoulli Distribution: Modeling Single Yes/No Experiments</h2>
+<p>The Bernoulli distribution is the simplest non-trivial probability distribution, modeling a single trial with two possible outcomes: success (1) or failure (0). Think of flipping a single coin, where:</p>
+<ul>
+<li>Success (heads, X = 1) occurs with probability p</li>
+<li>Failure (tails, X = 0) occurs with probability 1-p</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    subgraph Dist["Bernoulli Distribution"]
+        One["Success (k=1)"] --&gt; P1["P(X=1) = p"]
+        Zero["Failure (k=0)"] --&gt; P0["P(X=0) = 1-p"]
+    end
+    
+    style One fill:#FF9999,stroke:#000000,stroke-width:3px,color:#000000,font-weight:bold
+    style Zero fill:#FF9999,stroke:#000000,stroke-width:3px,color:#000000,font-weight:bold
+    style P1 fill:#9999FF,stroke:#000000,stroke-width:3px,color:#000000,font-weight:bold
+    style P0 fill:#9999FF,stroke:#000000,stroke-width:3px,color:#000000,font-weight:bold
+    style Dist fill:#FFFFFF,stroke:#000000,color:#000000,font-weight:bold
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The PMF of a Bernoulli random variable X with parameter p is:</p>
+<p><span class="math display">P(X = k) = \begin{cases}
+p &amp; \text{if } k = 1 \\
+1-p &amp; \text{if } k = 0
+\end{cases}</span></p>
+<p>Key Properties:</p>
+<ol type="1">
+<li>Expected Value: <span class="math inline">E(X) = p</span></li>
+<li>Variance: <span class="math inline">Var(X) = p(1-p)</span></li>
+</ol>
+</section>
+<section id="the-binomial-distribution-counting-successes-in-multiple-trials" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="the-binomial-distribution-counting-successes-in-multiple-trials"><span class="header-section-number">19.3</span> The Binomial Distribution: Counting Successes in Multiple Trials</h2>
+<p>The binomial distribution extends the Bernoulli model to n independent trials, counting the total number of successes.</p>
+<p><strong>Characteristics of the binomial random variable:</strong></p>
+<ul>
+<li>The binomial random experiment consists of n identical trials (sometimes called “replications”).</li>
+<li>Each trial has exactly two possible outcomes (binary outcome space). We denote one outcome as 1 (Success) and the other as 0 (Failure).</li>
+<li>The probability of “success” remains constant across all trials. We denote this probability by p, and consequently, the probability of “failure” is q = 1 - p.</li>
+<li>The trials are independent, meaning the outcome of any trial does not affect the probabilities of other trials [more formally: for any two trials, knowing the outcome of one trial does not change the probability distribution of the other trial].</li>
+<li>The binomial random variable X counts the total number of “successes” in the n trials.</li>
+</ul>
+<p><strong>The binomial distribution has two parameters:</strong></p>
+<ul>
+<li>n: number of trials</li>
+<li>p: probability of success on each trial</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph Independent_Bernoulli_Trials
+        direction TB
+        X1["Trial 1: X₁ ∼ Bernoulli(p)"]
+        X2["Trial 2: X₂ ∼ Bernoulli(p)"]
+        X3["Trial 3: X₃ ∼ Bernoulli(p)"]
+        dots["..."]
+        Xn["Trial n: Xₙ ∼ Bernoulli(p)"]
+    end
+    
+    subgraph Sum_Binomial
+        S["X = X₁ + X₂ + ... + Xₙ&lt;br/&gt;X ∼ Binomial(n,p)"]
+    end
+    
+    X1 --&gt; S
+    X2 --&gt; S
+    X3 --&gt; S
+    dots --&gt; S
+    Xn --&gt; S
+    
+    style X1 fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style X2 fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style X3 fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style Xn fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style S fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style dots fill:none,stroke:none,color:#000000
+    style Independent_Bernoulli_Trials fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+    style Sum_Binomial fill:#ffffff,stroke:#000000,stroke-width:2px,color:#000000
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The PMF of a binomial random variable X with parameters n and p is:</p>
+<p><span class="math display">P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}, \quad k = 0,1,\ldots,n</span></p>
+<p>where <span class="math inline">\binom{n}{k}</span> represents the number of ways to choose k items from n items.</p>
+<p>The binomial coefficient <span class="math inline">\binom{n}{k}</span>, often called “n choose k,” represents all possible ways to select k items from a group of n items, where the order doesn’t matter. Let’s understand this through a concrete example:</p>
+<p>Imagine you have 5 different colored marbles (n = 5) and you want to pick 2 of them (k = 2). Then <span class="math inline">\binom{5}{2}</span> tells you how many different pairs of marbles you could possibly make.</p>
+<p><strong>Some key insights:</strong></p>
+<ul>
+<li>Order doesn’t matter: picking a red marble then a blue one is considered the same as picking a blue marble then a red one (it’s the same pair)</li>
+<li>You’re selecting or “choosing” items, not arranging them</li>
+<li>The formula is: <span class="math inline">\binom{n}{k} = \frac{n!}{k!(n-k)!}</span></li>
+</ul>
+<p>For the binomial distribution, <span class="math inline">\binom{n}{k}</span> represents all the different ways you could get exactly k successes in n trials. For example, when flipping a coin 3 times (n = 3), to get exactly 2 heads (k = 2), it could happen as:</p>
+<ul>
+<li>Heads, Heads, Tails</li>
+<li>Heads, Tails, Heads</li>
+<li>Tails, Heads, Heads</li>
+</ul>
+<p>So <span class="math inline">\binom{3}{2} = 3</span>, meaning there are 3 different ways to get 2 heads in 3 flips.</p>
+<p>Key Properties:</p>
+<ol type="1">
+<li>Expected Value: <span class="math inline">E(X) = np</span></li>
+<li>Variance: <span class="math inline">Var(X) = np(1-p)</span></li>
+<li>When n = 1, reduces to Bernoulli distribution</li>
+</ol>
+<p><strong>Example:</strong> Suppose we flip a fair coin (p = 1/2) three times (n = 3). The probability of getting exactly two heads is:</p>
+<p><span class="math display">P(X = 2) = \binom{3}{2}(\frac{1}{2})^2(1-\frac{1}{2})^{3-2} = 3 \cdot \frac{1}{4} \cdot \frac{1}{2} = \frac{3}{8}</span></p>
+<p><em>💡 Important Connection:</em> A binomial random variable X ~ Bin(n,p) is the sum of n independent Bernoulli(p) random variables. This connection helps us understand how complex probability distributions can be built from simpler ones.</p>
+</section>
+</div>
+</div>
+<section id="random-variables-making-outcomes-measurable" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="random-variables-making-outcomes-measurable"><span class="header-section-number">19.4</span> Random Variables: Making Outcomes Measurable</h2>
+<p>A random variable is a way to assign numbers to the outcomes of a random experiment. Think of it as a function that converts outcomes into numbers, making them measurable and easier to analyze.</p>
+<section id="example-rolling-a-die" class="level3" data-number="19.4.1">
+<h3 data-number="19.4.1" class="anchored" data-anchor-id="example-rolling-a-die"><span class="header-section-number">19.4.1</span> Example: Rolling a Die</h3>
+<ul>
+<li>Outcome space: {⚀, ⚁, ⚂, ⚃, ⚄, ⚅}</li>
+<li>Random variable X: “number of dots showing”</li>
+<li>X converts outcomes to numbers: X(⚀) = 1, X(⚁) = 2, …, X(⚅) = 6</li>
+</ul>
+</section>
+<section id="example-flipping-a-coin" class="level3" data-number="19.4.2">
+<h3 data-number="19.4.2" class="anchored" data-anchor-id="example-flipping-a-coin"><span class="header-section-number">19.4.2</span> Example: Flipping a Coin</h3>
+<ul>
+<li>Outcome space: {Heads, Tails}</li>
+<li>Random variable Y: “1 if heads, 0 if tails”</li>
+<li>Y converts outcomes to numbers: Y(Heads) = 1, Y(Tails) = 0</li>
+</ul>
+</section>
+<section id="properties-of-discrete-random-variables" class="level3" data-number="19.4.3">
+<h3 data-number="19.4.3" class="anchored" data-anchor-id="properties-of-discrete-random-variables"><span class="header-section-number">19.4.3</span> Properties of Discrete Random Variables</h3>
+<ol type="1">
+<li>Each possible value has a probability</li>
+<li>All probabilities must be ≥ 0</li>
+<li>Sum of all probabilities must equal 1</li>
+</ol>
+</section>
+</section>
+<section id="understanding-probability-distributions" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="understanding-probability-distributions"><span class="header-section-number">19.5</span> Understanding Probability Distributions</h2>
+<p>A probability distribution is a mathematical description of the probabilities of different possible outcomes in a random experiment. It tells us:</p>
+<ol type="1">
+<li>What values can occur (the support of the distribution)</li>
+<li>How likely each value is to occur (the probability of each outcome)</li>
+<li>How the probabilities are spread across the possible values</li>
+</ol>
+<p>For discrete random variables, we can represent the distribution as:</p>
+<ul>
+<li>A probability mass function (PMF) that gives P(X = x) for each possible value x</li>
+<li>A cumulative distribution function (CDF) that gives P(X ≤ x) for each possible value x</li>
+</ul>
+<p>Key Properties of Any Probability Distribution:</p>
+<ol type="1">
+<li><p>All probabilities must be between 0 and 1: <span class="math inline">0 \leq P(X = x) \leq 1</span> for all x</p></li>
+<li><p>The sum of all probabilities must equal 1: <span class="math inline">\sum P(X = x) = 1</span></p></li>
+</ol>
+<p>Let’s explore three fundamental discrete distributions:</p>
+<section id="uniform-distribution" class="level3" data-number="19.5.1">
+<h3 data-number="19.5.1" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">19.5.1</span> Uniform Distribution</h3>
+<p>The uniform distribution represents complete randomness - all outcomes are equally likely.</p>
+<section id="properties" class="level4" data-number="19.5.1.1">
+<h4 data-number="19.5.1.1" class="anchored" data-anchor-id="properties"><span class="header-section-number">19.5.1.1</span> Properties</h4>
+<ul>
+<li>Each outcome has equal probability</li>
+<li>For n possible outcomes, P(X = x) = 1/n for each x</li>
+<li>Mean: <span class="math inline">E(X) = \frac{a + b}{2}</span> where a is minimum and b is maximum</li>
+<li>Variance: <span class="math inline">Var(X) = \frac{(b-a+1)^2 - 1}{12}</span> for discrete uniform</li>
+</ul>
+</section>
+<section id="example-fair-die" class="level4" data-number="19.5.1.2">
+<h4 data-number="19.5.1.2" class="anchored" data-anchor-id="example-fair-die"><span class="header-section-number">19.5.1.2</span> Example: Fair Die</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization of uniform distribution (die roll)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>die_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">probability =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="dv">6</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(die_data, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(outcome), <span class="at">y =</span> probability)) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">"1/6"</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Probability Distribution of a Fair Die Roll"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Outcome"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probability"</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rv_pdf_en_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bernoulli-distribution" class="level3" data-number="19.5.2">
+<h3 data-number="19.5.2" class="anchored" data-anchor-id="bernoulli-distribution"><span class="header-section-number">19.5.2</span> Bernoulli Distribution</h3>
+<p>The Bernoulli distribution is the simplest probability distribution, modeling a single “yes/no” trial.</p>
+<section id="properties-1" class="level4" data-number="19.5.2.1">
+<h4 data-number="19.5.2.1" class="anchored" data-anchor-id="properties-1"><span class="header-section-number">19.5.2.1</span> Properties</h4>
+<ul>
+<li>Only two possible outcomes: 0 (failure) or 1 (success)</li>
+<li>Controlled by single parameter p (probability of success)</li>
+<li>Mean: <span class="math inline">E(X) = p</span></li>
+<li>Variance: <span class="math inline">Var(X) = p(1-p)</span></li>
+</ul>
+</section>
+<section id="example-biased-coin" class="level4" data-number="19.5.2.2">
+<h4 data-number="19.5.2.2" class="anchored" data-anchor-id="example-biased-coin"><span class="header-section-number">19.5.2.2</span> Example: Biased Coin</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization of Bernoulli distribution (p = 0.7)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>bernoulli_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="fu">c</span>(<span class="st">"Failure (0)"</span>, <span class="st">"Success (1)"</span>),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">probability =</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.7</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bernoulli_data, <span class="fu">aes</span>(<span class="at">x =</span> outcome, <span class="at">y =</span> probability)) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"lightgreen"</span>) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(probability)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Bernoulli Distribution (p = 0.7)"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Outcome"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probability"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rv_pdf_en_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="binomial-distribution" class="level3" data-number="19.5.3">
+<h3 data-number="19.5.3" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">19.5.3</span> Binomial Distribution</h3>
+<p>The binomial distribution models the number of successes in n independent Bernoulli trials.</p>
+<section id="properties-2" class="level4" data-number="19.5.3.1">
+<h4 data-number="19.5.3.1" class="anchored" data-anchor-id="properties-2"><span class="header-section-number">19.5.3.1</span> Properties</h4>
+<ul>
+<li>Parameters: n (number of trials) and p (probability of success)</li>
+<li>Possible values: 0 to n successes</li>
+<li>Mean: <span class="math inline">E(X) = np</span></li>
+<li>Variance: <span class="math inline">Var(X) = np(1-p)</span></li>
+<li>Probability mass function: <span class="math inline">P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}</span></li>
+</ul>
+</section>
+<section id="understanding-the-formula" class="level4" data-number="19.5.3.2">
+<h4 data-number="19.5.3.2" class="anchored" data-anchor-id="understanding-the-formula"><span class="header-section-number">19.5.3.2</span> Understanding the Formula</h4>
+<p>The binomial probability formula has three parts:</p>
+<ol type="1">
+<li><span class="math inline">\binom{n}{k}</span> - Number of ways to get k successes in n trials</li>
+<li><span class="math inline">p^k</span> - Probability of k successes</li>
+<li><span class="math inline">(1-p)^{n-k}</span> - Probability of (n-k) failures</li>
+</ol>
+</section>
+<section id="visualizing-binomial-distributions" class="level4" data-number="19.5.3.3">
+<h4 data-number="19.5.3.3" class="anchored" data-anchor-id="visualizing-binomial-distributions"><span class="header-section-number">19.5.3.3</span> Visualizing Binomial Distributions</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate binomial probabilities</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>binomial_probs <span class="ot">&lt;-</span> <span class="cf">function</span>(n, p) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>n</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  probs <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(k, n, p)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">k =</span> k, <span class="at">probability =</span> probs)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create plots for different parameters</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">binomial_probs</span>(<span class="dv">10</span>, <span class="fl">0.5</span>), <span class="fu">aes</span>(<span class="at">x =</span> k, <span class="at">y =</span> probability)) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"salmon"</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Binomial(n=10, p=0.5)"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Number of Successes"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probability"</span>) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rv_pdf_en_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">binomial_probs</span>(<span class="dv">10</span>, <span class="fl">0.2</span>), <span class="fu">aes</span>(<span class="at">x =</span> k, <span class="at">y =</span> probability)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Binomial(n=10, p=0.2)"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Number of Successes"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probability"</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rv_pdf_en_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="effect-of-parameters" class="level4" data-number="19.5.3.4">
+<h4 data-number="19.5.3.4" class="anchored" data-anchor-id="effect-of-parameters"><span class="header-section-number">19.5.3.4</span> Effect of Parameters</h4>
+<p>The shape of the binomial distribution changes with n and p:</p>
+<ol type="1">
+<li>Effect of n (number of trials):
+<ul>
+<li>Larger n → more possible outcomes</li>
+<li>Larger n → distribution becomes more “bell-shaped”</li>
+</ul></li>
+<li>Effect of p (probability of success):
+<ul>
+<li>p = 0.5 → symmetric distribution</li>
+<li>p &lt; 0.5 → right-skewed distribution</li>
+<li>p &gt; 0.5 → left-skewed distribution</li>
+</ul></li>
+</ol>
+</section>
+<section id="real-world-applications" class="level4" data-number="19.5.3.5">
+<h4 data-number="19.5.3.5" class="anchored" data-anchor-id="real-world-applications"><span class="header-section-number">19.5.3.5</span> Real-World Applications</h4>
+<ol type="1">
+<li>Quality Control
+<ul>
+<li>n = number of items inspected</li>
+<li>p = probability of defect</li>
+<li>X = number of defective items found</li>
+</ul></li>
+<li>Clinical Trials
+<ul>
+<li>n = number of patients</li>
+<li>p = probability of recovery</li>
+<li>X = number of patients who recover</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="comparing-the-distributions" class="level3" data-number="19.5.4">
+<h3 data-number="19.5.4" class="anchored" data-anchor-id="comparing-the-distributions"><span class="header-section-number">19.5.4</span> Comparing the Distributions</h3>
+<p>Key differences between our three distributions:</p>
+<ol type="1">
+<li>Uniform Distribution
+<ul>
+<li>Equal probability for all outcomes</li>
+<li>Used when all outcomes are equally likely</li>
+<li>Example: rolling a fair die</li>
+</ul></li>
+<li>Bernoulli Distribution
+<ul>
+<li>Special case of binomial with n = 1</li>
+<li>Only two possible outcomes</li>
+<li>Example: single coin flip</li>
+</ul></li>
+<li>Binomial Distribution
+<ul>
+<li>Counts successes in multiple trials</li>
+<li>Combines multiple Bernoulli trials</li>
+<li>Example: number of heads in 10 coin flips</li>
+</ul></li>
+</ol>
+</section>
+<section id="interactive-r-code-for-exploration" class="level3" data-number="19.5.5">
+<h3 data-number="19.5.5" class="anchored" data-anchor-id="interactive-r-code-for-exploration"><span class="header-section-number">19.5.5</span> Interactive R Code for Exploration</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to compare distributions</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>compare_distributions <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">p =</span> <span class="fl">0.5</span>) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Binomial probabilities</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>n</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  binom_probs <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(x, n, p)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create data frame</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> x,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">probability =</span> binom_probs</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Create plot</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> probability)) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(probability, <span class="dv">3</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">sprintf</span>(<span class="st">"Binomial Distribution (n=%d, p=%.2f)"</span>, n, p),</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">x =</span> <span class="st">"Number of Successes"</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"Probability"</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Try different parameters</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_distributions</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">p =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rv_pdf_en_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_distributions</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">p =</span> <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rv_pdf_en_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">compare_distributions</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">p =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="rv_pdf_en_files/figure-html/unnamed-chunk-8-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="building-the-binomial-distribution-pattern" class="level3" data-number="19.5.6">
+<h3 data-number="19.5.6" class="anchored" data-anchor-id="building-the-binomial-distribution-pattern"><span class="header-section-number">19.5.6</span> Building the Binomial Distribution Pattern</h3>
+<p>The binomial distribution emerges naturally when we consider repeated independent trials. Let’s build it step by step, using the multiplication rule and counting principles.</p>
+<section id="the-multiplication-rule" class="level4" data-number="19.5.6.1">
+<h4 data-number="19.5.6.1" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">19.5.6.1</span> The Multiplication Rule</h4>
+<p>The multiplication rule states that if we have:</p>
+<ul>
+<li>Event A that can happen in m ways</li>
+<li>Event B that can happen in n ways</li>
+</ul>
+<p>Then the sequence (A,B) can happen in m × n ways.</p>
+<p>For example, if we:</p>
+<ul>
+<li>Can choose between 2 shirts (black, white)</li>
+<li>Can choose between 3 pants (blue, gray, brown)</li>
+</ul>
+<p>Then we have 2 × 3 = 6 possible outfits.</p>
+</section>
+<section id="understanding-the-binomial-coefficient" class="level4" data-number="19.5.6.2">
+<h4 data-number="19.5.6.2" class="anchored"><span class="header-section-number">19.5.6.2</span> Understanding the Binomial Coefficient</h4>
+<p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> counts the number of ways to choose k items from n items, where order doesn’t matter. It relates to the multiplication rule through this key insight:</p>
+<ol type="1">
+<li>First, count all possible ordered sequences (using multiplication rule)</li>
+<li>Then, divide by number of ways to arrange the k items (to remove order)</li>
+</ol>
+<p>For example, to choose 2 items from 4:</p>
+<ol type="1">
+<li>First position can be filled in 4 ways</li>
+<li>Second position can be filled in 3 ways</li>
+<li>Total ordered sequences = 4 × 3 = 12</li>
+<li>Number of ways to arrange 2 items = 2 × 1 = 2</li>
+<li>Therefore <span class="math inline">\binom{4}{2} = \frac{4 × 3}{2 × 1} = 6</span></li>
+</ol>
+<p>Let me think about this step by step:</p>
+<ol type="1">
+<li>Looking at the mathematical components, we need:
+<ul>
+<li>Clear description of the experiment (✓ flipping a coin 10 times)</li>
+<li>Clear description of success (✓ predicting correctly)</li>
+<li>Clear null hypothesis (✓ no ESP, p = 1/2)</li>
+<li>Clear test statistic (✓ number of correct predictions)</li>
+<li>Clear observation (✓ 7 successes)</li>
+<li>Clear direction of the test (⚠️ needs clarification)</li>
+</ul></li>
+<li>The key issue is in the phrase “at least this well”:
+<ul>
+<li>Current wording: “probability that he would have done at least this well”</li>
+<li>Better formulation: “What is the probability of obtaining 7 or more correct predictions out of 10 trials by chance alone (assuming no ESP)?”</li>
+</ul></li>
+<li>The statistical perspective:
+<ul>
+<li>This is a one-tailed test (we’re only looking at values ≥ 7)</li>
+<li>The null hypothesis H₀: p = 1/2 (no ESP)</li>
+<li>The alternative hypothesis H₁: p &gt; 1/2 (ESP exists)</li>
+</ul></li>
+</ol>
+<p>Let me suggest a more precise formulation:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Applying Binomial Distribution: ESP Probability Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="problem-description" class="level3" data-number="19.5.7">
+<h3 data-number="19.5.7" class="anchored" data-anchor-id="problem-description"><span class="header-section-number">19.5.7</span> Problem Description</h3>
+<p>A man claims to have extrasensory perception (ESP). To test this claim, a fair coin is flipped 10 times and the man is asked to predict each outcome in advance. He gets 7 out of 10 predictions correct. Calculate the probability of obtaining 7 or more correct predictions out of 10 trials by chance alone (assuming no ESP).</p>
+<p><em>Remark:</em> Under the null hypothesis of no ESP, the probability of each correct prediction is <span class="math inline">\frac{1}{2}</span>.</p>
+</section>
+<section id="preliminary-concepts" class="level3" data-number="19.5.8">
+<h3 data-number="19.5.8" class="anchored" data-anchor-id="preliminary-concepts"><span class="header-section-number">19.5.8</span> Preliminary Concepts</h3>
+<section id="bernoulli-variable" class="level4" data-number="19.5.8.1">
+<h4 data-number="19.5.8.1" class="anchored" data-anchor-id="bernoulli-variable"><span class="header-section-number">19.5.8.1</span> Bernoulli Variable</h4>
+<p>A Bernoulli random variable represents a trial with exactly two possible outcomes: success (1) or failure (0). Each trial has probability <span class="math inline">p</span> of success and <span class="math inline">1-p</span> of failure. In our case, each coin flip prediction is a Bernoulli trial where success means a correct prediction.</p>
+</section>
+<section id="binomial-distribution-1" class="level4" data-number="19.5.8.2">
+<h4 data-number="19.5.8.2" class="anchored" data-anchor-id="binomial-distribution-1"><span class="header-section-number">19.5.8.2</span> Binomial Distribution</h4>
+<p>The binomial distribution extends the Bernoulli concept to model the sum of <span class="math inline">n</span> independent Bernoulli trials. It describes the probability of obtaining exactly <span class="math inline">k</span> successes in these <span class="math inline">n</span> trials. The probability mass function is:</p>
+<p><span class="math display">P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">n</span> is the number of trials</li>
+<li><span class="math inline">k</span> is the number of successes</li>
+<li><span class="math inline">p</span> is the probability of success on each trial</li>
+<li><span class="math inline">\binom{n}{k}</span> is the binomial coefficient</li>
+</ul>
+</section>
+<section id="binomial-coefficient" class="level4" data-number="19.5.8.3">
+<h4 data-number="19.5.8.3" class="anchored" data-anchor-id="binomial-coefficient"><span class="header-section-number">19.5.8.3</span> Binomial Coefficient</h4>
+<p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> represents the number of ways to choose <span class="math inline">k</span> items from <span class="math inline">n</span> items, regardless of order. It is calculated as:</p>
+<p><span class="math display">\binom{n}{k} = \frac{n!}{k!(n-k)!}</span></p>
+<p>For example, <span class="math inline">\binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{10!}{7!3!} = 120</span></p>
+</section>
+</section>
+<section id="problem-solution" class="level3" data-number="19.5.9">
+<h3 data-number="19.5.9" class="anchored" data-anchor-id="problem-solution"><span class="header-section-number">19.5.9</span> Problem Solution</h3>
+<p>Given: - <span class="math inline">n = 10</span> coin flips - <span class="math inline">p = \frac{1}{2}</span> (probability of correct guess without ESP) - Need <span class="math inline">P(X \geq 7)</span> = <span class="math inline">P(X = 7) + P(X = 8) + P(X = 9) + P(X = 10)</span></p>
+<p>Step 1: Calculate <span class="math inline">P(X = 7)</span> <span class="math display">P(X = 7) = \binom{10}{7}(\frac{1}{2})^7(\frac{1}{2})^3</span> <span class="math display">= 120 \cdot (\frac{1}{128}) \cdot (\frac{1}{8})</span> <span class="math display">= 120 \cdot \frac{1}{1024} = \frac{120}{1024} \approx 0.117</span></p>
+<p>Step 2: Calculate <span class="math inline">P(X = 8)</span> <span class="math display">P(X = 8) = \binom{10}{8}(\frac{1}{2})^8(\frac{1}{2})^2</span> <span class="math display">= 45 \cdot (\frac{1}{256}) \cdot (\frac{1}{4})</span> <span class="math display">= 45 \cdot \frac{1}{1024} = \frac{45}{1024} \approx 0.044</span></p>
+<p>Step 3: Calculate <span class="math inline">P(X = 9)</span> <span class="math display">P(X = 9) = \binom{10}{9}(\frac{1}{2})^9(\frac{1}{2})^1</span> <span class="math display">= 10 \cdot (\frac{1}{512}) \cdot (\frac{1}{2})</span> <span class="math display">= 10 \cdot \frac{1}{1024} = \frac{10}{1024} \approx 0.010</span></p>
+<p>Step 4: Calculate <span class="math inline">P(X = 10)</span> <span class="math display">P(X = 10) = \binom{10}{10}(\frac{1}{2})^{10}(\frac{1}{2})^0</span> <span class="math display">= 1 \cdot (\frac{1}{1024}) \cdot 1</span> <span class="math display">= \frac{1}{1024} \approx 0.001</span></p>
+<p>Step 5: Sum all probabilities <span class="math display">P(X \geq 7) = \frac{120 + 45 + 10 + 1}{1024} = \frac{176}{1024} \approx 0.172</span></p>
+</section>
+<section id="interpretation" class="level3" data-number="19.5.10">
+<h3 data-number="19.5.10" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">19.5.10</span> Interpretation</h3>
+<p>There is approximately a 17.2% chance that someone without ESP would correctly guess 7 or more coin flips out of 10 by pure chance. This is a relatively high probability, suggesting that getting 7 out of 10 correct predictions is not strong evidence for ESP. Generally, we would want a much smaller probability (e.g., &lt; 5% or &lt; 1%) before considering the results statistically significant evidence for ESP.</p>
+</section>
+</div>
+</div>
+</section>
+<section id="building-the-pattern-trial-by-trial" class="level4" data-number="19.5.10.1">
+<h4 data-number="19.5.10.1" class="anchored" data-anchor-id="building-the-pattern-trial-by-trial"><span class="header-section-number">19.5.10.1</span> Building the Pattern Trial by Trial</h4>
+<p>Let’s see how this applies to binomial probabilities:</p>
+<section id="one-trial-bernoulli" class="level5" data-number="19.5.10.1.1">
+<h5 data-number="19.5.10.1.1" class="anchored" data-anchor-id="one-trial-bernoulli"><span class="header-section-number">19.5.10.1.1</span> One Trial (Bernoulli)</h5>
+<p>Just two possibilities:</p>
+<ul>
+<li>Success (S): P(S) = p</li>
+<li>Failure (F): P(F) = 1-p</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Number of Successes (k)</th>
+<th>Ways to Get k</th>
+<th>Formula</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>(F)</td>
+<td><span class="math inline">\binom{1}{0}</span></td>
+<td>(1-p)</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>(S)</td>
+<td><span class="math inline">\binom{1}{1}</span></td>
+<td>p</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="two-trials-building-complexity" class="level5" data-number="19.5.10.1.2">
+<h5 data-number="19.5.10.1.2" class="anchored" data-anchor-id="two-trials-building-complexity"><span class="header-section-number">19.5.10.1.2</span> Two Trials (Building Complexity)</h5>
+<p>Using multiplication rule for each sequence:</p>
+<ul>
+<li>(S,S): p × p = p²</li>
+<li>(S,F): p × (1-p)</li>
+<li>(F,S): (1-p) × p</li>
+<li>(F,F): (1-p) × (1-p) = (1-p)²</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 12%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Number of Successes (k)</th>
+<th>Sequences</th>
+<th>Ways to Get k</th>
+<th>Formula</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>(F,F)</td>
+<td><span class="math inline">\binom{2}{0} = 1</span></td>
+<td>1</td>
+<td>(1-p)²</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>(S,F), (F,S)</td>
+<td><span class="math inline">\binom{2}{1} = 2</span></td>
+<td>2</td>
+<td>2p(1-p)</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>(S,S)</td>
+<td><span class="math inline">\binom{2}{2} = 1</span></td>
+<td>1</td>
+<td>p²</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="three-trials-pattern-emerging" class="level5" data-number="19.5.10.1.3">
+<h5 data-number="19.5.10.1.3" class="anchored" data-anchor-id="three-trials-pattern-emerging"><span class="header-section-number">19.5.10.1.3</span> Three Trials (Pattern Emerging)</h5>
+<p>Using multiplication rule for each sequence, e.g.:</p>
+<ul>
+<li>(S,S,F): p × p × (1-p) = p²(1-p)</li>
+<li>(S,F,S): p × (1-p) × p = p²(1-p)</li>
+<li>(F,S,S): (1-p) × p × p = p²(1-p)</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 12%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Number of Successes (k)</th>
+<th>Sequences</th>
+<th>Ways to Get k</th>
+<th>Formula</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>(F,F,F)</td>
+<td><span class="math inline">\binom{3}{0} = 1</span></td>
+<td>1</td>
+<td>(1-p)³</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>(S,F,F), (F,S,F), (F,F,S)</td>
+<td><span class="math inline">\binom{3}{1} = 3</span></td>
+<td>3</td>
+<td>3p(1-p)²</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>(S,S,F), (S,F,S), (F,S,S)</td>
+<td><span class="math inline">\binom{3}{2} = 3</span></td>
+<td>3</td>
+<td>3p²(1-p)</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>(S,S,S)</td>
+<td><span class="math inline">\binom{3}{3} = 1</span></td>
+<td>1</td>
+<td>p³</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="four-trials-complete-pattern" class="level5" data-number="19.5.10.1.4">
+<h5 data-number="19.5.10.1.4" class="anchored" data-anchor-id="four-trials-complete-pattern"><span class="header-section-number">19.5.10.1.4</span> Four Trials (Complete Pattern)</h5>
+<p>We can see all possible outcomes and how they contribute to each probability:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 24%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Number of Successes (k)</th>
+<th>Ways to Get k</th>
+<th>All Possible Sequences</th>
+<th>Multiplication Rule Pattern</th>
+<th>Combined Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td><span class="math inline">\binom{4}{0} = 1</span></td>
+<td>(F,F,F,F)</td>
+<td>(1-p)(1-p)(1-p)(1-p)</td>
+<td>(1-p)⁴</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><span class="math inline">\binom{4}{1} = 4</span></td>
+<td>(S,F,F,F)<br>(F,S,F,F)<br>(F,F,S,F)<br>(F,F,F,S)</td>
+<td>p(1-p)(1-p)(1-p)<br>(1-p)p(1-p)(1-p)<br>(1-p)(1-p)p(1-p)<br>(1-p)(1-p)(1-p)p</td>
+<td>4p(1-p)³</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td><span class="math inline">\binom{4}{2} = 6</span></td>
+<td>(S,S,F,F)<br>(S,F,S,F)<br>(S,F,F,S)<br>(F,S,S,F)<br>(F,S,F,S)<br>(F,F,S,S)</td>
+<td>p·p(1-p)(1-p)<br>p(1-p)p(1-p)<br>p(1-p)(1-p)p<br>(1-p)p·p(1-p)<br>(1-p)p(1-p)p<br>(1-p)(1-p)p·p</td>
+<td>6p²(1-p)²</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td><span class="math inline">\binom{4}{3} = 4</span></td>
+<td>(S,S,S,F)<br>(S,S,F,S)<br>(S,F,S,S)<br>(F,S,S,S)</td>
+<td>p·p·p(1-p)<br>p·p(1-p)p<br>p(1-p)p·p<br>(1-p)p·p·p</td>
+<td>4p³(1-p)</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td><span class="math inline">\binom{4}{4} = 1</span></td>
+<td>(S,S,S,S)</td>
+<td>p·p·p·p</td>
+<td>p⁴</td>
+</tr>
+</tbody>
+</table>
+<p>Key Patterns to Notice:</p>
+<ol type="1">
+<li><p>Number of Ways Pattern:</p>
+<ul>
+<li>Follows Pascal’s Triangle: 1, 4, 6, 4, 1</li>
+<li>Each number is <span class="math inline">\binom{4}{k}</span> where k is number of successes</li>
+</ul></li>
+<li><p>Sequence Pattern:</p>
+<ul>
+<li>Each sequence has exactly 4 positions</li>
+<li>For k successes, each sequence has exactly k S’s and (4-k) F’s</li>
+<li>All possible arrangements of k S’s in 4 positions are listed</li>
+</ul></li>
+<li><p>Probability Pattern:</p>
+<ul>
+<li>Each S contributes p</li>
+<li>Each F contributes (1-p)</li>
+<li>Final probability multiplies:
+<ul>
+<li>Number of ways (<span class="math inline">\binom{4}{k}</span>)</li>
+<li>k copies of p</li>
+<li>(4-k) copies of (1-p)</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>This leads to the general formula:</p>
+<p><span class="math inline">P(X = k) = \binom{4}{k} p^k (1-p)^{4-k}</span></p>
+<p>For a fair coin (p = 0.5):</p>
+<ul>
+<li>P(X = 0) = 1(0.5)⁰(0.5)⁴ = 0.0625</li>
+<li>P(X = 1) = 4(0.5)¹(0.5)³ = 0.2500</li>
+<li>P(X = 2) = 6(0.5)²(0.5)² = 0.3750</li>
+<li>P(X = 3) = 4(0.5)³(0.5)¹ = 0.2500</li>
+<li>P(X = 4) = 1(0.5)⁴(0.5)⁰ = 0.0625</li>
+</ul>
+<p>Sum of probabilities = 1.0000</p>
+</section>
+</section>
+<section id="understanding-the-final-formula" class="level4" data-number="19.5.10.2">
+<h4 data-number="19.5.10.2" class="anchored" data-anchor-id="understanding-the-final-formula"><span class="header-section-number">19.5.10.2</span> Understanding the Final Formula</h4>
+<p>The binomial probability formula combines:</p>
+<ol type="1">
+<li><p>Binomial coefficient (ways to arrange k successes in n trials): <span class="math inline">\binom{n}{k}</span></p></li>
+<li><p>Probability of k successes (multiplication rule): <span class="math inline">p^k</span></p></li>
+<li><p>Probability of (n-k) failures (multiplication rule): <span class="math inline">(1-p)^{n-k}</span></p></li>
+</ol>
+<p>Giving us: <span class="math inline">P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}</span></p>
+</section>
+<section id="pascals-triangle-and-binomial-coefficients" class="level4" data-number="19.5.10.3">
+<h4 data-number="19.5.10.3" class="anchored" data-anchor-id="pascals-triangle-and-binomial-coefficients"><span class="header-section-number">19.5.10.3</span> Pascal’s Triangle and Binomial Coefficients</h4>
+<p>The coefficients form Pascal’s triangle:</p>
+<pre><code>n=0:     1
+n=1:    1 1
+n=2:   1 2 1
+n=3:  1 3 3 1
+n=4: 1 4 6 4 1</code></pre>
+<p>Each number is <span class="math inline">\binom{n}{k}</span> where:</p>
+<ul>
+<li>n is the row number (starting at 0)</li>
+<li>k is the position in row (starting at 0)</li>
+</ul>
+<p>This gives us a quick way to find coefficients for small n.</p>
+</section>
+<section id="properties-of-the-binomial-distribution" class="level4" data-number="19.5.10.4">
+<h4 data-number="19.5.10.4" class="anchored" data-anchor-id="properties-of-the-binomial-distribution"><span class="header-section-number">19.5.10.4</span> Properties of the Binomial Distribution</h4>
+<p>The pattern leads to important properties:</p>
+<ol type="1">
+<li>Mean (Expected Value):
+<ul>
+<li>Each trial contributes p to the mean</li>
+<li>n trials give E(X) = np</li>
+</ul></li>
+<li>Variance:
+<ul>
+<li>Each trial contributes p(1-p) to variance</li>
+<li>n trials give Var(X) = np(1-p)</li>
+</ul></li>
+<li>Shape:
+<ul>
+<li>Symmetric when p = 0.5</li>
+<li>Right-skewed when p &lt; 0.5</li>
+<li>Left-skewed when p &gt; 0.5</li>
+</ul></li>
+</ol>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./probability_pl.html" class="pagination-link" aria-label="Wprowadzenie do Prawdopodobieństwa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Wprowadzenie do Prawdopodobieństwa</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./inference_en.html" class="pagination-link" aria-label="Introduction to Statistical Inference">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Introduction to Statistical Inference</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
