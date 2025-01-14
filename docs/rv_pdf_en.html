@@ -384,9 +384,34 @@ Understanding Random Variables and Probability Distributions: Mathematical Model
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When we calculate probabilities using the classical definition (favorable outcomes divided by total possible outcomes), we’re implicitly making an important assumption: we know exactly how our outcomes are generated.</p>
-<p>For instance, with a fair coin, we assume the mechanism produces heads and tails with equal probability. But how do we know this?</p>
-<p>In reality, we often observe outcomes first and then try to understand the underlying process that generated them.</p>
+<section id="beyond-classical-probability" class="level3" data-number="19.0.1">
+<h3 data-number="19.0.1" class="anchored" data-anchor-id="beyond-classical-probability"><span class="header-section-number">19.0.1</span> Beyond Classical Probability</h3>
+<p>The classical approach to probability (calculating favorable outcomes divided by total possible outcomes) rests on a crucial assumption: we have perfect knowledge of how our outcomes are generated. <strong>For instance, when we say a coin is fair, we assume its physical properties and flipping mechanism produce heads and tails with exactly equal probability</strong>.</p>
+<p>But how do we know this? In real-world scenarios:</p>
+<ul>
+<li>Physical coins may be slightly unbalanced</li>
+<li>Flipping mechanisms might favor certain outcomes</li>
+<li>Environmental factors could influence results</li>
+<li>Manufacturing processes could introduce bias</li>
+</ul>
+<p>This highlights a fundamental challenge: <strong>we often observe outcomes first and then must infer the underlying process that generated them</strong>. This is where random variables and probability distributions become essential tools:</p>
+<ol type="1">
+<li>A <strong>Random Variable</strong> (RV) is a function that assigns a numerical value to each outcome in a sample space <span class="math inline">S</span>:</li>
+</ol>
+<ul>
+<li>Allow us to model uncertain outcomes mathematically</li>
+<li>Bridge the gap between physical events and numerical analysis</li>
+<li>Enable quantitative description of patterns in observed data</li>
+</ul>
+<ol start="2" type="1">
+<li>A <strong>Probability Distribution</strong> is a list of all of the possible outcomes of a random variable with their corresponding probabilities:</li>
+</ol>
+<ul>
+<li>Describe how likely different outcomes are</li>
+<li>Can be adjusted based on observed data</li>
+<li>Include classical probability as a special case</li>
+<li>Allow for modeling of biased or uneven processes</li>
+</ul>
 <p>Think about flipping a coin 100 times and getting 47 heads. Is the coin fair? What’s the actual probability of heads?</p>
 <p>To answer these questions rigorously, we need to:</p>
 <ol type="1">
@@ -394,16 +419,18 @@ Understanding Random Variables and Probability Distributions: Mathematical Model
 <li>Connect our observations to this theoretical model</li>
 <li>Make precise statements about probabilities of different outcomes</li>
 </ol>
-<p>This leads us to <em>random variables</em> and <em>probability distributions</em>.</p>
+</section>
+<section id="random-variables-and-probability-distributions" class="level3" data-number="19.0.2">
+<h3 data-number="19.0.2" class="anchored" data-anchor-id="random-variables-and-probability-distributions"><span class="header-section-number">19.0.2</span> Random Variables and Probability Distributions</h3>
 <p>A <strong>random variable</strong> <span class="math inline">X</span> is a function that assigns a numerical value to each outcome in a sample space <span class="math inline">S</span>. More formally, it’s a function <span class="math inline">X: S \rightarrow \mathbb{R}</span> that maps outcomes from our sample space to real numbers.</p>
-<p>For example, when flipping a coin, we might define <span class="math inline">X(H) = 1</span> for heads and <span class="math inline">X(T) = 0</span> for tails. This formalization helps us model the data-generating process.</p>
+<p><strong>For example</strong>: when flipping a coin, we might define <span class="math inline">X(H) = 1</span> for heads and <span class="math inline">X(T) = 0</span> for tails. This formalization helps us model the data-generating process.</p>
 <p>For discrete random variables, the <strong>probability distribution</strong> is described by its <em>Probability Mass Function</em> (PMF) <span class="math inline">p_X(x)</span> or <span class="math inline">P(X = x)</span>, which specifies our model’s assumptions about <strong>how likely each outcome is</strong>. A valid PMF must satisfy:</p>
 <ol type="1">
 <li>Non-negativity: <span class="math inline">p_X(x) \geq 0</span> for all <span class="math inline">x</span></li>
 <li>Total probability: <span class="math inline">\sum_{x} p_X(x) = 1</span></li>
 </ol>
-<p>For our possibly unfair coin: <span class="math display">
-p_X(x) = \begin{cases}
+<p>For our (possibly unfair) coin: <span class="math display">
+P(X = x) = p_X(x) = \begin{cases}
 p &amp; \text{if } x = 1 \text{ (heads)} \\
 1-p &amp; \text{if } x = 0 \text{ (tails)} \\
 0 &amp; \text{otherwise}
@@ -417,8 +444,9 @@ p &amp; \text{if } x = 1 \text{ (heads)} \\
 <li>A way to convert random outcomes into numbers (Random Variables)</li>
 <li>A way to describe how likely each number is (Probability Distributions)</li>
 </ol>
-<section id="random-variable-rv-making-randomness-measurable" class="level3" data-number="19.0.1">
-<h3 data-number="19.0.1" class="anchored" data-anchor-id="random-variable-rv-making-randomness-measurable"><span class="header-section-number">19.0.1</span> Random Variable (RV): Making Randomness Measurable</h3>
+</section>
+<section id="random-variable-rv-making-randomness-measurable" class="level3" data-number="19.0.3">
+<h3 data-number="19.0.3" class="anchored" data-anchor-id="random-variable-rv-making-randomness-measurable"><span class="header-section-number">19.0.3</span> Random Variable (RV): Making Randomness Measurable</h3>
 <p>A random variable (RV) is our bridge between unpredictable outcomes and their probabilities. It works in two steps:</p>
 <ol type="1">
 <li>First, it maps outcomes to numbers</li>
@@ -479,8 +507,8 @@ p &amp; \text{if } x = 1 \text{ (heads)} \\
 <li>Measuring waiting times</li>
 </ul>
 </section>
-<section id="probability-distribution-function-pdf-describing-patterns-of-randomness" class="level3" data-number="19.0.2">
-<h3 data-number="19.0.2" class="anchored" data-anchor-id="probability-distribution-function-pdf-describing-patterns-of-randomness"><span class="header-section-number">19.0.2</span> Probability Distribution Function (PDF): Describing Patterns of Randomness</h3>
+<section id="probability-distribution-function-pdf-describing-patterns-of-randomness" class="level3" data-number="19.0.4">
+<h3 data-number="19.0.4" class="anchored" data-anchor-id="probability-distribution-function-pdf-describing-patterns-of-randomness"><span class="header-section-number">19.0.4</span> Probability Distribution Function (PDF): Describing Patterns of Randomness</h3>
 <p>Once we have numbers, we need to describe how likely each value is:</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -558,6 +586,148 @@ p &amp; \text{if } x = 1 \text{ (heads)} \\
 </ul></li>
 </ol>
 <p><em>💡 Important Note:</em> These are mathematical models based on assumptions about how data is generated. Their usefulness depends on how well these assumptions match reality.</p>
+</section>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two Coin Flips: From Fair to Biased Coins
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Problem</strong>: Consider the following random experiment:</p>
+<ol type="1">
+<li>A coin is flipped twice</li>
+<li>For each flip:
+<ul>
+<li>Record 1 if the result is heads (H)</li>
+<li>Record 0 if the result is tails (T)</li>
+</ul></li>
+<li>Define two random variables:
+<ul>
+<li>X: the outcome of a single flip (X ∈ {0, 1})</li>
+<li>Y: the total number of heads in two flips (Y = X₁ + X₂)</li>
+</ul></li>
+</ol>
+<p>Tasks: 1. Assuming a fair coin (p = 0.5), construct the probability distribution for Y 2. Extend the analysis to a biased coin (p ≠ 0.5)</p>
+<section id="solution" class="level3" data-number="19.1.1">
+<h3 data-number="19.1.1" class="anchored" data-anchor-id="solution"><span class="header-section-number">19.1.1</span> Solution</h3>
+<section id="fair-coin-analysis" class="level4" data-number="19.1.1.1">
+<h4 data-number="19.1.1.1" class="anchored" data-anchor-id="fair-coin-analysis"><span class="header-section-number">19.1.1.1</span> Fair Coin Analysis</h4>
+<p>Let’s solve this step by step:</p>
+<ol type="a">
+<li><p>Sample Space:</p>
+<ul>
+<li>S = {HH, HT, TH, TT}</li>
+<li>For a fair coin, each outcome has probability 1/4</li>
+<li>This follows from the multiplication rule: P(outcome) = 1/2 × 1/2 = 1/4</li>
+</ul></li>
+<li><p>Distribution of Y:</p>
+<ul>
+<li>Y = 0: Occurs only with TT
+<ul>
+<li>P(Y = 0) = P(TT) = 1/4</li>
+</ul></li>
+<li>Y = 1: Occurs with either HT or TH
+<ul>
+<li>P(Y = 1) = P(HT) + P(TH) = 1/4 + 1/4 = 1/2</li>
+</ul></li>
+<li>Y = 2: Occurs only with HH
+<ul>
+<li>P(Y = 2) = P(HH) = 1/4</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>The probability distribution for Y with a fair coin is:</p>
+<p><span class="math display">
+P(Y = k) = \begin{cases}
+1/4 &amp; \text{if } k = 0 \\
+1/2 &amp; \text{if } k = 1 \\
+1/4 &amp; \text{if } k = 2 \\
+0   &amp; \text{otherwise}
+\end{cases}
+</span></p>
+</section>
+<section id="biased-coin-analysis" class="level4" data-number="19.1.1.2">
+<h4 data-number="19.1.1.2" class="anchored" data-anchor-id="biased-coin-analysis"><span class="header-section-number">19.1.1.2</span> Biased Coin Analysis</h4>
+<p>For a biased coin with probability p of heads:</p>
+<ol type="a">
+<li>Individual Outcome Probabilities:
+<ul>
+<li>P(H) = p</li>
+<li>P(T) = 1 - p</li>
+</ul></li>
+<li>Sample Space Probabilities:
+<ul>
+<li>P(HH) = p × p = p²</li>
+<li>P(HT) = p × (1-p)</li>
+<li>P(TH) = (1-p) × p = p(1-p)</li>
+<li>P(TT) = (1-p) × (1-p) = (1-p)²</li>
+</ul></li>
+<li>Distribution of Y:
+<ul>
+<li>Y = 0: P(Y = 0) = P(TT) = (1-p)²</li>
+<li>Y = 1: P(Y = 1) = P(HT) + P(TH) = 2p(1-p)</li>
+<li>Y = 2: P(Y = 2) = P(HH) = p²</li>
+</ul></li>
+</ol>
+<p>The probability distribution for Y with a biased coin is:</p>
+<p><span class="math display">
+P(Y = k) = \begin{cases}
+(1-p)^2 &amp; \text{if } k = 0 \\
+2p(1-p) &amp; \text{if } k = 1 \\
+p^2     &amp; \text{if } k = 2 \\
+0       &amp; \text{otherwise}
+\end{cases}
+</span></p>
+</section>
+<section id="verification" class="level4" data-number="19.1.1.3">
+<h4 data-number="19.1.1.3" class="anchored" data-anchor-id="verification"><span class="header-section-number">19.1.1.3</span> Verification</h4>
+<p>To verify our solution:</p>
+<ol type="1">
+<li>All probabilities are non-negative</li>
+<li>The sum of probabilities equals 1:
+<ul>
+<li>For fair coin: 1/4 + 1/2 + 1/4 = 1</li>
+<li>For biased coin: (1-p)² + 2p(1-p) + p² = 1</li>
+</ul></li>
+</ol>
+<p>This demonstrates that both distributions are valid probability distributions.</p>
+</section>
+<section id="connection-to-binomial-distribution" class="level4" data-number="19.1.1.4">
+<h4 data-number="19.1.1.4" class="anchored" data-anchor-id="connection-to-binomial-distribution"><span class="header-section-number">19.1.1.4</span> Connection to Binomial Distribution</h4>
+<p>Both cases (fair and biased coin) are special cases of the <strong>binomial distribution</strong> with n = 2 trials and probability of success p.&nbsp;The binomial probability mass function is:</p>
+<p><span class="math display">P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}</span></p>
+<p>where:</p>
+<ul>
+<li>n = number of trials (2 in our case)</li>
+<li>k = number of successes (0, 1, or 2 heads)</li>
+<li>p = probability of success (heads) on each trial</li>
+</ul>
+<p>For our cases:</p>
+<ol type="1">
+<li>Fair coin: p = 0.5</li>
+<li>Biased coin: p ≠ 0.5</li>
+</ol>
+<p>This explains why:</p>
+<ul>
+<li>The coefficients (1, 2, 1) come from the combinations <span class="math inline">\binom{2}{k}</span> for k = 0, 1, 2</li>
+<li>The probabilities follow the pattern <span class="math inline">p^k(1-p)^{2-k}</span></li>
+</ul>
+</section>
+<section id="key-insights" class="level4" data-number="19.1.1.5">
+<h4 data-number="19.1.1.5" class="anchored" data-anchor-id="key-insights"><span class="header-section-number">19.1.1.5</span> Key Insights</h4>
+<ol type="1">
+<li>The fair coin case (p = 0.5) is a special case of the biased coin distribution</li>
+<li>The probability of exactly one head (Y = 1) is always 2p(1-p), which reaches its maximum of 1/2 when p = 0.5</li>
+<li>The distribution is symmetric for a fair coin but becomes skewed for a biased coin</li>
+<li>This example illustrates how the binomial distribution generalizes to n trials with probability p</li>
+</ol>
+</section>
 </section>
 </div>
 </div>
@@ -1064,19 +1234,18 @@ Applying Binomial Distribution: ESP Probability Analysis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="problem-description" class="level3" data-number="19.5.7">
-<h3 data-number="19.5.7" class="anchored" data-anchor-id="problem-description"><span class="header-section-number">19.5.7</span> Problem Description</h3>
-<p>A man claims to have extrasensory perception (ESP). To test this claim, a fair coin is flipped 10 times and the man is asked to predict each outcome in advance. He gets 7 out of 10 predictions correct. Calculate the probability of obtaining 7 or more correct predictions out of 10 trials by chance alone (assuming no ESP).</p>
+<p><em>Extrasensory perception (ESP), also known as a sixth sense, is a claimed ability to perceive information through mental means rather than the five physical senses.</em></p>
+<p><strong>Problem</strong>: A man claims to have extrasensory perception (ESP). To test this claim, a fair coin is flipped 10 times and the man is asked to predict each outcome in advance. He gets 7 out of 10 predictions correct. Calculate the probability of obtaining 7 or more correct predictions out of 10 trials by chance alone (assuming no ESP).</p>
 <p><em>Remark:</em> Under the null hypothesis of no ESP, the probability of each correct prediction is <span class="math inline">\frac{1}{2}</span>.</p>
+<section id="preliminary-concepts" class="level3" data-number="19.5.7">
+<h3 data-number="19.5.7" class="anchored" data-anchor-id="preliminary-concepts"><span class="header-section-number">19.5.7</span> Preliminary Concepts</h3>
+<section id="bernoulli-variable" class="level4" data-number="19.5.7.1">
+<h4 data-number="19.5.7.1" class="anchored" data-anchor-id="bernoulli-variable"><span class="header-section-number">19.5.7.1</span> Bernoulli Variable</h4>
+<p>A Bernoulli random variable represents a trial with exactly two possible outcomes: success (1) or failure (0). Each trial has probability <span class="math inline">p</span> of success and <span class="math inline">1-p</span> of failure.</p>
+<p>In our case, each coin flip prediction is a Bernoulli trial where success means a correct prediction.</p>
 </section>
-<section id="preliminary-concepts" class="level3" data-number="19.5.8">
-<h3 data-number="19.5.8" class="anchored" data-anchor-id="preliminary-concepts"><span class="header-section-number">19.5.8</span> Preliminary Concepts</h3>
-<section id="bernoulli-variable" class="level4" data-number="19.5.8.1">
-<h4 data-number="19.5.8.1" class="anchored" data-anchor-id="bernoulli-variable"><span class="header-section-number">19.5.8.1</span> Bernoulli Variable</h4>
-<p>A Bernoulli random variable represents a trial with exactly two possible outcomes: success (1) or failure (0). Each trial has probability <span class="math inline">p</span> of success and <span class="math inline">1-p</span> of failure. In our case, each coin flip prediction is a Bernoulli trial where success means a correct prediction.</p>
-</section>
-<section id="binomial-distribution-1" class="level4" data-number="19.5.8.2">
-<h4 data-number="19.5.8.2" class="anchored" data-anchor-id="binomial-distribution-1"><span class="header-section-number">19.5.8.2</span> Binomial Distribution</h4>
+<section id="binomial-distribution-1" class="level4" data-number="19.5.7.2">
+<h4 data-number="19.5.7.2" class="anchored" data-anchor-id="binomial-distribution-1"><span class="header-section-number">19.5.7.2</span> Binomial Distribution</h4>
 <p>The binomial distribution extends the Bernoulli concept to model the sum of <span class="math inline">n</span> independent Bernoulli trials. It describes the probability of obtaining exactly <span class="math inline">k</span> successes in these <span class="math inline">n</span> trials. The probability mass function is:</p>
 <p><span class="math display">P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}</span></p>
 <p>where:</p>
@@ -1087,15 +1256,15 @@ Applying Binomial Distribution: ESP Probability Analysis
 <li><span class="math inline">\binom{n}{k}</span> is the binomial coefficient</li>
 </ul>
 </section>
-<section id="binomial-coefficient" class="level4" data-number="19.5.8.3">
-<h4 data-number="19.5.8.3" class="anchored" data-anchor-id="binomial-coefficient"><span class="header-section-number">19.5.8.3</span> Binomial Coefficient</h4>
+<section id="binomial-coefficient" class="level4" data-number="19.5.7.3">
+<h4 data-number="19.5.7.3" class="anchored" data-anchor-id="binomial-coefficient"><span class="header-section-number">19.5.7.3</span> Binomial Coefficient</h4>
 <p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> represents the number of ways to choose <span class="math inline">k</span> items from <span class="math inline">n</span> items, regardless of order. It is calculated as:</p>
 <p><span class="math display">\binom{n}{k} = \frac{n!}{k!(n-k)!}</span></p>
 <p>For example, <span class="math inline">\binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{10!}{7!3!} = 120</span></p>
 </section>
 </section>
-<section id="problem-solution" class="level3" data-number="19.5.9">
-<h3 data-number="19.5.9" class="anchored" data-anchor-id="problem-solution"><span class="header-section-number">19.5.9</span> Problem Solution</h3>
+<section id="problem-solution" class="level3" data-number="19.5.8">
+<h3 data-number="19.5.8" class="anchored" data-anchor-id="problem-solution"><span class="header-section-number">19.5.8</span> Problem Solution</h3>
 <p>Given: - <span class="math inline">n = 10</span> coin flips - <span class="math inline">p = \frac{1}{2}</span> (probability of correct guess without ESP) - Need <span class="math inline">P(X \geq 7)</span> = <span class="math inline">P(X = 7) + P(X = 8) + P(X = 9) + P(X = 10)</span></p>
 <p>Step 1: Calculate <span class="math inline">P(X = 7)</span> <span class="math display">P(X = 7) = \binom{10}{7}(\frac{1}{2})^7(\frac{1}{2})^3</span> <span class="math display">= 120 \cdot (\frac{1}{128}) \cdot (\frac{1}{8})</span> <span class="math display">= 120 \cdot \frac{1}{1024} = \frac{120}{1024} \approx 0.117</span></p>
 <p>Step 2: Calculate <span class="math inline">P(X = 8)</span> <span class="math display">P(X = 8) = \binom{10}{8}(\frac{1}{2})^8(\frac{1}{2})^2</span> <span class="math display">= 45 \cdot (\frac{1}{256}) \cdot (\frac{1}{4})</span> <span class="math display">= 45 \cdot \frac{1}{1024} = \frac{45}{1024} \approx 0.044</span></p>
@@ -1103,18 +1272,18 @@ Applying Binomial Distribution: ESP Probability Analysis
 <p>Step 4: Calculate <span class="math inline">P(X = 10)</span> <span class="math display">P(X = 10) = \binom{10}{10}(\frac{1}{2})^{10}(\frac{1}{2})^0</span> <span class="math display">= 1 \cdot (\frac{1}{1024}) \cdot 1</span> <span class="math display">= \frac{1}{1024} \approx 0.001</span></p>
 <p>Step 5: Sum all probabilities <span class="math display">P(X \geq 7) = \frac{120 + 45 + 10 + 1}{1024} = \frac{176}{1024} \approx 0.172</span></p>
 </section>
-<section id="interpretation" class="level3" data-number="19.5.10">
-<h3 data-number="19.5.10" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">19.5.10</span> Interpretation</h3>
+<section id="interpretation" class="level3" data-number="19.5.9">
+<h3 data-number="19.5.9" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">19.5.9</span> Interpretation</h3>
 <p>There is approximately a 17.2% chance that someone without ESP would correctly guess 7 or more coin flips out of 10 by pure chance. This is a relatively high probability, suggesting that getting 7 out of 10 correct predictions is not strong evidence for ESP. Generally, we would want a much smaller probability (e.g., &lt; 5% or &lt; 1%) before considering the results statistically significant evidence for ESP.</p>
 </section>
 </div>
 </div>
 </section>
-<section id="building-the-pattern-trial-by-trial" class="level4" data-number="19.5.10.1">
-<h4 data-number="19.5.10.1" class="anchored" data-anchor-id="building-the-pattern-trial-by-trial"><span class="header-section-number">19.5.10.1</span> Building the Pattern Trial by Trial</h4>
+<section id="building-the-pattern-trial-by-trial" class="level4" data-number="19.5.9.1">
+<h4 data-number="19.5.9.1" class="anchored" data-anchor-id="building-the-pattern-trial-by-trial"><span class="header-section-number">19.5.9.1</span> Building the Pattern Trial by Trial</h4>
 <p>Let’s see how this applies to binomial probabilities:</p>
-<section id="one-trial-bernoulli" class="level5" data-number="19.5.10.1.1">
-<h5 data-number="19.5.10.1.1" class="anchored" data-anchor-id="one-trial-bernoulli"><span class="header-section-number">19.5.10.1.1</span> One Trial (Bernoulli)</h5>
+<section id="one-trial-bernoulli" class="level5" data-number="19.5.9.1.1">
+<h5 data-number="19.5.9.1.1" class="anchored" data-anchor-id="one-trial-bernoulli"><span class="header-section-number">19.5.9.1.1</span> One Trial (Bernoulli)</h5>
 <p>Just two possibilities:</p>
 <ul>
 <li>Success (S): P(S) = p</li>
@@ -1145,8 +1314,8 @@ Applying Binomial Distribution: ESP Probability Analysis
 </tbody>
 </table>
 </section>
-<section id="two-trials-building-complexity" class="level5" data-number="19.5.10.1.2">
-<h5 data-number="19.5.10.1.2" class="anchored" data-anchor-id="two-trials-building-complexity"><span class="header-section-number">19.5.10.1.2</span> Two Trials (Building Complexity)</h5>
+<section id="two-trials-building-complexity" class="level5" data-number="19.5.9.1.2">
+<h5 data-number="19.5.9.1.2" class="anchored" data-anchor-id="two-trials-building-complexity"><span class="header-section-number">19.5.9.1.2</span> Two Trials (Building Complexity)</h5>
 <p>Using multiplication rule for each sequence:</p>
 <ul>
 <li>(S,S): p × p = p²</li>
@@ -1196,8 +1365,8 @@ Applying Binomial Distribution: ESP Probability Analysis
 </tbody>
 </table>
 </section>
-<section id="three-trials-pattern-emerging" class="level5" data-number="19.5.10.1.3">
-<h5 data-number="19.5.10.1.3" class="anchored" data-anchor-id="three-trials-pattern-emerging"><span class="header-section-number">19.5.10.1.3</span> Three Trials (Pattern Emerging)</h5>
+<section id="three-trials-pattern-emerging" class="level5" data-number="19.5.9.1.3">
+<h5 data-number="19.5.9.1.3" class="anchored" data-anchor-id="three-trials-pattern-emerging"><span class="header-section-number">19.5.9.1.3</span> Three Trials (Pattern Emerging)</h5>
 <p>Using multiplication rule for each sequence, e.g.:</p>
 <ul>
 <li>(S,S,F): p × p × (1-p) = p²(1-p)</li>
@@ -1253,8 +1422,8 @@ Applying Binomial Distribution: ESP Probability Analysis
 </tbody>
 </table>
 </section>
-<section id="four-trials-complete-pattern" class="level5" data-number="19.5.10.1.4">
-<h5 data-number="19.5.10.1.4" class="anchored" data-anchor-id="four-trials-complete-pattern"><span class="header-section-number">19.5.10.1.4</span> Four Trials (Complete Pattern)</h5>
+<section id="four-trials-complete-pattern" class="level5" data-number="19.5.9.1.4">
+<h5 data-number="19.5.9.1.4" class="anchored" data-anchor-id="four-trials-complete-pattern"><span class="header-section-number">19.5.9.1.4</span> Four Trials (Complete Pattern)</h5>
 <p>We can see all possible outcomes and how they contribute to each probability:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1349,8 +1518,8 @@ Applying Binomial Distribution: ESP Probability Analysis
 <p>Sum of probabilities = 1.0000</p>
 </section>
 </section>
-<section id="understanding-the-final-formula" class="level4" data-number="19.5.10.2">
-<h4 data-number="19.5.10.2" class="anchored" data-anchor-id="understanding-the-final-formula"><span class="header-section-number">19.5.10.2</span> Understanding the Final Formula</h4>
+<section id="understanding-the-final-formula" class="level4" data-number="19.5.9.2">
+<h4 data-number="19.5.9.2" class="anchored" data-anchor-id="understanding-the-final-formula"><span class="header-section-number">19.5.9.2</span> Understanding the Final Formula</h4>
 <p>The binomial probability formula combines:</p>
 <ol type="1">
 <li><p>Binomial coefficient (ways to arrange k successes in n trials): <span class="math inline">\binom{n}{k}</span></p></li>
@@ -1359,8 +1528,8 @@ Applying Binomial Distribution: ESP Probability Analysis
 </ol>
 <p>Giving us: <span class="math inline">P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}</span></p>
 </section>
-<section id="pascals-triangle-and-binomial-coefficients" class="level4" data-number="19.5.10.3">
-<h4 data-number="19.5.10.3" class="anchored" data-anchor-id="pascals-triangle-and-binomial-coefficients"><span class="header-section-number">19.5.10.3</span> Pascal’s Triangle and Binomial Coefficients</h4>
+<section id="pascals-triangle-and-binomial-coefficients" class="level4" data-number="19.5.9.3">
+<h4 data-number="19.5.9.3" class="anchored" data-anchor-id="pascals-triangle-and-binomial-coefficients"><span class="header-section-number">19.5.9.3</span> Pascal’s Triangle and Binomial Coefficients</h4>
 <p>The coefficients form Pascal’s triangle:</p>
 <pre><code>n=0:     1
 n=1:    1 1
@@ -1374,8 +1543,8 @@ n=4: 1 4 6 4 1</code></pre>
 </ul>
 <p>This gives us a quick way to find coefficients for small n.</p>
 </section>
-<section id="properties-of-the-binomial-distribution" class="level4" data-number="19.5.10.4">
-<h4 data-number="19.5.10.4" class="anchored" data-anchor-id="properties-of-the-binomial-distribution"><span class="header-section-number">19.5.10.4</span> Properties of the Binomial Distribution</h4>
+<section id="properties-of-the-binomial-distribution" class="level4" data-number="19.5.9.4">
+<h4 data-number="19.5.9.4" class="anchored" data-anchor-id="properties-of-the-binomial-distribution"><span class="header-section-number">19.5.9.4</span> Properties of the Binomial Distribution</h4>
 <p>The pattern leads to important properties:</p>
 <ol type="1">
 <li>Mean (Expected Value):
