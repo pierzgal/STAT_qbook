@@ -1068,7 +1068,6 @@ Understanding Outcomes vs Events
 </ul>
 </div>
 </div>
-<p>In probability theory, a <strong>tree diagram</strong> may be used to represent a sample space and help calculate probabilities. A tree diagram may represent a series of independent events (such as a set of coin flips) or conditional probabilities (such as drawing cards from a deck, without replacing the cards).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1408,13 +1407,13 @@ Visualizing Sample Spaces
 </ol>
 <p><strong>Examples with Their Sample Spaces</strong></p>
 <ol type="1">
-<li>Classical Probability (Equally Likely Outcomes):
+<li><p><strong>Classical Probability</strong> (Equally Likely Outcomes):</p>
 <ul>
 <li>Single coin flip: <span class="math inline">S = \{\text{Heads}, \text{Tails}\}</span></li>
 <li>Die roll: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span></li>
 <li>Playing cards: <span class="math inline">S = \{\text{52 different cards}\}</span></li>
 </ul></li>
-<li>Probability Distributions (Possibly Unequal Probabilities):
+<li><p><strong>Probability Distributions</strong> (Possibly Unequal Probabilities):</p>
 <ul>
 <li>Binomial: Number of successes in <span class="math inline">n</span> trials
 <ul>
@@ -1435,7 +1434,7 @@ Visualizing Sample Spaces
 </ol>
 <p><strong>Probability Assignment Methods</strong></p>
 <ol type="1">
-<li>Classical Probability (Equal Likelihood):
+<li><p><strong>Classical Probability</strong> (Equal Likelihood):</p>
 <ul>
 <li>For equally likely outcomes: <span class="math inline">P(\text{single outcome}) = \frac{1}{\text{number of outcomes}}</span></li>
 <li>Why? Simple proof:
@@ -1445,33 +1444,18 @@ Visualizing Sample Spaces
 <li>Therefore: <span class="math inline">np = 1</span>, so <span class="math inline">p = \frac{1}{n}</span></li>
 </ul></li>
 </ul></li>
-<li>Probability Distributions (mathematical models):
+<li><p><strong>Probability Distributions</strong> (mathematical models):</p>
 <ul>
 <li>Binomial: <span class="math inline">P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}</span></li>
 <li>Geometric: <span class="math inline">P(X=k) = p(1-p)^{k-1}</span></li>
 <li>Poisson: <span class="math inline">P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}</span></li>
 </ul></li>
-<li>Empirical Probability:
+<li><p><strong>Empirical Probability</strong>:</p>
 <ul>
 <li>Based on observed frequencies in experiments</li>
 <li><span class="math inline">P(\text{outcome}) = \frac{\text{frequency of outcome}}{\text{total observations}}</span></li>
 </ul></li>
 </ol>
-<p><strong>Important Considerations</strong></p>
-<ul>
-<li>Classical probability (equal likelihood) is a special case</li>
-<li>Many real-world phenomena follow specific probability distributions</li>
-<li>The type of probability assignment depends on the context:
-<ul>
-<li>Physical symmetry → Classical probability</li>
-<li>Repeated independent trials → Binomial</li>
-<li>Rare events → Poisson</li>
-<li>Waiting times → Geometric</li>
-</ul></li>
-<li>All these cases work within discrete sample spaces</li>
-<li>The probabilities must always sum to 1 over the entire sample space</li>
-</ul>
-<p>This framework helps us systematically study discrete random variables and their probabilities, whether they follow uniform or non-uniform distributions.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1482,7 +1466,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Why Single Outcomes Have Equal Probabilities (When Equally Likely)</strong></p>
+<p><strong>Classical (“Naive”) Probability: Why Single Outcomes Have Equal Probabilities</strong></p>
 <p>Let’s prove this step by step:</p>
 <ol type="1">
 <li>Start with <span class="math inline">n</span> equally likely outcomes: <span class="math inline">s_1, s_2, ..., s_n</span></li>
@@ -1496,6 +1480,21 @@ Tip
 <p>This gives us our familiar rule: <span class="math inline">P(\text{single outcome}) = \frac{1}{\text{number of possible outcomes}}</span></p>
 </div>
 </div>
+<p><strong>Important Considerations</strong></p>
+<ul>
+<li><p>Classical probability (equal likelihood) is a special case</p></li>
+<li><p>Many real-world phenomena follow specific probability distributions</p></li>
+<li><p>The type of probability assignment depends on the context:</p>
+<ul>
+<li>Physical symmetry → Classical probability</li>
+<li>Repeated independent trials → Binomial</li>
+<li>Rare events → Poisson</li>
+<li>Waiting times → Geometric</li>
+</ul></li>
+<li><p>All these cases work within discrete sample spaces</p></li>
+<li><p>The probabilities must always sum to 1 over the entire sample space</p></li>
+</ul>
+<p>This framework helps us systematically study discrete random variables and their probabilities, whether they follow uniform or non-uniform distributions.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
