@@ -1535,30 +1535,35 @@ Visualizing Sample Spaces
 <li>Must be countable (you can list them out)</li>
 </ol>
 </section>
-<section id="real-world-examples" class="level4" data-number="17.4.5.3">
-<h4 data-number="17.4.5.3" class="anchored" data-anchor-id="real-world-examples"><span class="header-section-number">17.4.5.3</span> Real-World Examples</h4>
-<p><strong>Simple Events (Equal Chances)</strong></p>
+<section id="examples" class="level4" data-number="17.4.5.3">
+<h4 data-number="17.4.5.3" class="anchored" data-anchor-id="examples"><span class="header-section-number">17.4.5.3</span> Examples</h4>
+<p><strong>1. Equally Likely Outcomes (uniform probability distribution)</strong></p>
+<p>These are scenarios where each basic outcome has the same probability:</p>
 <ul>
-<li>Flipping a coin: <span class="math inline">S = \{\text{Heads}, \text{Tails}\}</span></li>
-<li>Rolling a die: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span></li>
-<li>Drawing a card: <span class="math inline">S = \{\text{all 52 cards}\}</span></li>
+<li>Fair die: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span>, each with probability <span class="math inline">\frac{1}{6}</span></li>
+<li>Fair deck: <span class="math inline">S = \{\text{52 cards}\}</span>, each with probability <span class="math inline">\frac{1}{52}</span></li>
+<li>Fair coin: <span class="math inline">S = \{\text{H}, \text{T}\}</span>, each with probability <span class="math inline">\frac{1}{2}</span></li>
 </ul>
-<p><strong>More Complex Events (Varying Chances)</strong></p>
-<ol type="1">
-<li>Counting “Successes” (Binomial)
+<p><strong>2. Events with Different Probabilities</strong></p>
+<p>Some (discrete) cases:</p>
+<p><strong>Binomial Scenarios (Counting Successes)</strong></p>
 <ul>
-<li>Example: Number of heads in 5 coin flips</li>
-<li>Sample Space: <span class="math inline">S = \{0, 1, 2, 3, 4, 5\}</span></li>
+<li>Example: Number of successes in n trials, each with probability p</li>
+<li>Sample Space: <span class="math inline">S = \{0, 1, 2, ..., n\}</span></li>
+<li>Outcomes have different probabilities based on:
+<ul>
+<li>Number of ways to get k successes (<span class="math inline">\binom{n}{k}</span>)</li>
+<li>Probability of each arrangement (<span class="math inline">p^k(1-p)^{n-k}</span>)</li>
 </ul></li>
-</ol>
-<p><strong>Note</strong>: A success in a <em>binomial experiment</em> is simply any outcome that we’re interested in tracking - it doesn’t have to be a positive or favorable outcome. The key is that for each trial, we’re classifying the outcome into one of two categories: either it’s a “success” or it’s not (a “failure”).</p>
-<ol start="2" type="1">
-<li>Waiting for “Success” (Geometric)
+</ul>
+<p><strong>Geometric Scenarios (Waiting for Success)</strong></p>
 <ul>
-<li>Example: Number of flips until you get heads</li>
+<li>Example: Number of trials until first success, probability p per trial</li>
 <li>Sample Space: <span class="math inline">S = \{1, 2, 3, ...\}</span></li>
-</ul></li>
-</ol>
+<li>Probability decreases with number of trials</li>
+<li><span class="math inline">P(\text{first success on trial }n) = (1-p)^{n-1}p</span></li>
+</ul>
+<p><strong>Note</strong>: The term “success” in probability simply means the outcome we’re tracking - it could be any event of interest. Each trial has two possible outcomes: success (probability p) or failure (probability 1-p).</p>
 </section>
 <section id="how-to-assign-probabilities" class="level4" data-number="17.4.5.4">
 <h4 data-number="17.4.5.4" class="anchored"><span class="header-section-number">17.4.5.4</span> How to Assign Probabilities</h4>
