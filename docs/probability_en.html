@@ -313,13 +313,13 @@ window.Quarto = {
   <li><a href="#the-addition-rule-for-mutually-exclusive-events-or-situations" id="toc-the-addition-rule-for-mutually-exclusive-events-or-situations" class="nav-link" data-scroll-target="#the-addition-rule-for-mutually-exclusive-events-or-situations"><span class="header-section-number">17.3.2</span> The Addition Rule for Mutually Exclusive Events (“OR” Situations)</a></li>
   <li><a href="#combining-the-rules" id="toc-combining-the-rules" class="nav-link" data-scroll-target="#combining-the-rules"><span class="header-section-number">17.3.3</span> Combining the Rules</a></li>
   </ul></li>
-  <li><a href="#discrete-probability-theory-basic-concepts-and-rules" id="toc-discrete-probability-theory-basic-concepts-and-rules" class="nav-link" data-scroll-target="#discrete-probability-theory-basic-concepts-and-rules"><span class="header-section-number">17.4</span> (Discrete) Probability Theory: Basic Concepts and Rules</a>
+  <li><a href="#probability-theory-basic-concepts-and-rules" id="toc-probability-theory-basic-concepts-and-rules" class="nav-link" data-scroll-target="#probability-theory-basic-concepts-and-rules"><span class="header-section-number">17.4</span> Probability Theory: Basic Concepts and Rules</a>
   <ul class="collapse">
   <li><a href="#random-experiments" id="toc-random-experiments" class="nav-link" data-scroll-target="#random-experiments"><span class="header-section-number">17.4.1</span> Random Experiments</a></li>
   <li><a href="#sample-space-s" id="toc-sample-space-s" class="nav-link" data-scroll-target="#sample-space-s"><span class="header-section-number">17.4.2</span> Sample Space (<span class="math inline">S</span>)</a></li>
   <li><a href="#the-event-space-what-can-happen-in-an-experiment" id="toc-the-event-space-what-can-happen-in-an-experiment" class="nav-link" data-scroll-target="#the-event-space-what-can-happen-in-an-experiment"><span class="header-section-number">17.4.3</span> The Event Space: What Can Happen in an Experiment</a></li>
   <li><a href="#probability-measure-and-probability-axioms-assigning-numbers-to-events" id="toc-probability-measure-and-probability-axioms-assigning-numbers-to-events" class="nav-link" data-scroll-target="#probability-measure-and-probability-axioms-assigning-numbers-to-events"><span class="header-section-number">17.4.4</span> Probability Measure and Probability Axioms: Assigning Numbers to Events</a></li>
-  <li><a href="#discrete-sample-spaces-their-probabilities" id="toc-discrete-sample-spaces-their-probabilities" class="nav-link" data-scroll-target="#discrete-sample-spaces-their-probabilities"><span class="header-section-number">17.4.5</span> Discrete Sample Spaces &amp; Their Probabilities</a></li>
+  <li><a href="#discrete-sample-spaces-probability" id="toc-discrete-sample-spaces-probability" class="nav-link" data-scroll-target="#discrete-sample-spaces-probability"><span class="header-section-number">17.4.5</span> Discrete Sample Spaces &amp; Probability</a></li>
   <li><a href="#classical-or-naive-probability-the-equal-likelihood-special-case-in-discrete-sample-spaces" id="toc-classical-or-naive-probability-the-equal-likelihood-special-case-in-discrete-sample-spaces" class="nav-link" data-scroll-target="#classical-or-naive-probability-the-equal-likelihood-special-case-in-discrete-sample-spaces"><span class="header-section-number">17.4.11</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Special Case in Discrete Sample Spaces</a></li>
   <li><a href="#understanding-classical-probability-through-the-urn-example" id="toc-understanding-classical-probability-through-the-urn-example" class="nav-link" data-scroll-target="#understanding-classical-probability-through-the-urn-example"><span class="header-section-number">17.4.14</span> Understanding Classical Probability Through the Urn Example</a></li>
   </ul></li>
@@ -916,8 +916,8 @@ The Inclusion-Exclusion Principle (*)
 </div>
 </section>
 </section>
-<section id="discrete-probability-theory-basic-concepts-and-rules" class="level2" data-number="17.4">
-<h2 data-number="17.4" class="anchored" data-anchor-id="discrete-probability-theory-basic-concepts-and-rules"><span class="header-section-number">17.4</span> (Discrete) Probability Theory: Basic Concepts and Rules</h2>
+<section id="probability-theory-basic-concepts-and-rules" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="probability-theory-basic-concepts-and-rules"><span class="header-section-number">17.4</span> Probability Theory: Basic Concepts and Rules</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -979,7 +979,97 @@ Core Concepts
 <li>This means we can combine valid events to form new valid events</li>
 </ul></li>
 </ol>
-<p>Let’s examine a simple coin flip:</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random Events
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In probability, we encounter two fundamentally different types of random events: those we can count (discrete) and those we can measure (continuous). This distinction shapes how we calculate and interpret probabilities.</p>
+<section id="discrete-probability" class="level4" data-number="17.4.3.1">
+<h4 data-number="17.4.3.1" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.4.3.1</span> Discrete Probability</h4>
+<p><strong>What</strong>: Events that can be counted with whole numbers - Like counting marbles, rolling dice, or flipping coins - Has “gaps” between possible values</p>
+<p><strong>Key Examples</strong>:</p>
+<ol type="1">
+<li>Rolling a die
+<ul>
+<li>Possible outcomes: 1, 2, 3, 4, 5, or 6</li>
+<li>Nothing in between (can’t roll a 2.5)</li>
+<li>Can say: <span class="math inline">P(\text{rolling a 6}) = \frac{1}{6}</span></li>
+</ul></li>
+<li>Number of customers per hour
+<ul>
+<li>Could be 0, 1, 2, 3, …</li>
+<li>Can’t have 2.7 customers</li>
+<li>Can say: <span class="math inline">P(\text{exactly 5 customers}) = 0.1</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="continuous-probability" class="level4" data-number="17.4.3.2">
+<h4 data-number="17.4.3.2" class="anchored" data-anchor-id="continuous-probability"><span class="header-section-number">17.4.3.2</span> Continuous Probability</h4>
+<p><strong>What</strong>: Events measured on a continuous scale - Like measuring height, time, or temperature - Values flow smoothly with no gaps</p>
+<p><strong>Key Examples</strong>:</p>
+<ol type="1">
+<li>Person’s height
+<ul>
+<li>Could be 170cm, 170.1cm, 170.11cm, …</li>
+<li>Can measure with increasing precision</li>
+<li>Must use ranges: <span class="math inline">P(170 \leq \text{height} \leq 171)</span></li>
+</ul></li>
+<li>Time until next bus arrives
+<ul>
+<li>Could be 5 mins, 5.1 mins, 5.01 mins, …</li>
+<li>Infinitely divisible</li>
+<li>Must use ranges: <span class="math inline">P(\text{waiting time} \leq 10 \text{ mins})</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="critical-differences" class="level4" data-number="17.4.3.3">
+<h4 data-number="17.4.3.3" class="anchored" data-anchor-id="critical-differences"><span class="header-section-number">17.4.3.3</span> Critical Differences</h4>
+<ol type="1">
+<li><strong>Individual Values</strong>
+<ul>
+<li>Discrete: Can have positive probability
+<ul>
+<li><span class="math inline">P(\text{rolling a 6}) = \frac{1}{6} &gt; 0</span></li>
+</ul></li>
+<li>Continuous: Always have zero probability
+<ul>
+<li><span class="math inline">P(\text{height} = 170.000...) = 0</span></li>
+</ul></li>
+</ul></li>
+<li><strong>How We Calculate</strong>
+<ul>
+<li>Discrete: Can sum individual probabilities</li>
+<li>Continuous: Must use ranges and integrals</li>
+</ul></li>
+</ol>
+</section>
+<section id="real-world-application" class="level4" data-number="17.4.3.4">
+<h4 data-number="17.4.3.4" class="anchored" data-anchor-id="real-world-application"><span class="header-section-number">17.4.3.4</span> Real-World Application</h4>
+<p>Think about a pizza delivery:</p>
+<ul>
+<li><strong>Discrete</strong>: Number of toppings (1, 2, 3, …)</li>
+<li><strong>Continuous</strong>: Delivery time (15.7 minutes, 15.73 minutes, …)</li>
+</ul>
+</section>
+<section id="why-understanding-this-matters" class="level4" data-number="17.4.3.5">
+<h4 data-number="17.4.3.5" class="anchored" data-anchor-id="why-understanding-this-matters"><span class="header-section-number">17.4.3.5</span> Why Understanding This Matters</h4>
+<ul>
+<li>Helps choose appropriate probability tools</li>
+<li>Guides how we collect and analyze data</li>
+<li>Determines how we express uncertainty</li>
+<li>Shapes how we make predictions</li>
+</ul>
+<p>This foundation helps us tackle real-world probability problems with the right approach!</p>
+</section>
+</div>
+</div>
+<p><strong>Let’s examine a simple coin flip:</strong></p>
 <ul>
 <li>Sample space: <span class="math inline">S = \{H, T\}</span> (Heads or Tails)</li>
 <li>The complete event space: <span class="math inline">\mathcal{F} = \{\emptyset, \{H\}, \{T\}, \{H,T\}\}</span>
@@ -996,51 +1086,6 @@ Core Concepts
 <li>Rule 2: For event <span class="math inline">\{H\}</span>, its complement <span class="math inline">\{T\}</span> is included</li>
 <li>Rule 3: The union of any events (like <span class="math inline">\{H\} \cup \{T\} = \{H,T\}</span>) is included</li>
 </ul>
-<p>This mathematical structure ensures we can properly define and work with probabilities for all meaningful events in our experiment.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Event Types
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><strong>Simple Events</strong>: Single outcomes</li>
-<li><strong>Compound Events</strong>: Multiple outcomes</li>
-<li><strong>Sure (or Certain) Event</strong>: Sample space <span class="math inline">S</span></li>
-<li><strong>Impossible Event</strong>: Empty set <span class="math inline">\emptyset</span></li>
-</ol>
-</div>
-</div>
-</section>
-<section id="probability-measure-and-probability-axioms-assigning-numbers-to-events" class="level3" data-number="17.4.4">
-<h3 data-number="17.4.4" class="anchored" data-anchor-id="probability-measure-and-probability-axioms-assigning-numbers-to-events"><span class="header-section-number">17.4.4</span> Probability Measure and Probability Axioms: Assigning Numbers to Events</h3>
-<p>A probability measure <span class="math inline">P</span> is a way to quantify how likely events are to occur. It takes any event from our event space <span class="math inline">\mathcal{F}</span> and assigns it a number between 0 and 1.</p>
-<p>This assignment follows three essential rules/axioms. These <strong>axioms</strong>, introduced by Kolmogorov in 1933, serve as the foundation for all probability calculations:</p>
-<ol type="1">
-<li><strong>Non-Negativity Rule</strong>
-<ul>
-<li>For any event <span class="math inline">A</span>, its probability must be at least 0: <span class="math inline">P(A) \geq 0</span></li>
-<li>We can never have a negative probability</li>
-<li>Example: If we roll a die, the probability of getting a 6 is <span class="math inline">\frac{1}{6}</span> (it cannot be negative)</li>
-</ul></li>
-<li><strong>Total Probability Rule</strong>
-<ul>
-<li>The probability of all possible outcomes must equal 1: <span class="math inline">P(S) = 1</span></li>
-<li>Something must happen - the probabilities of all possibilities add up to 100%</li>
-<li>Example: For a fair coin, <span class="math inline">P(\text{heads}) + P(\text{tails}) = 0.5 + 0.5 = 1</span></li>
-</ul></li>
-<li><strong>Addition Rule for Non-Overlapping Events</strong>
-<ul>
-<li>If events cannot happen together (they’re “disjoint”), the probability of their union equals the sum of their individual probabilities</li>
-<li>Written formally: <span class="math inline">P(A_1 \cup A_2 \cup ...) = P(A_1) + P(A_2) + ...</span></li>
-<li>Example: In drawing a card, <span class="math inline">P(\text{getting ace}) = P(\text{ace of hearts}) + P(\text{ace of diamonds}) + P(\text{ace of clubs}) + P(\text{ace of spades})</span></li>
-</ul></li>
-</ol>
-<p>These rules/axioms ensure that our probability assignments make logical sense and match our intuitive understanding of chance and likelihood.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1069,6 +1114,89 @@ Understanding Outcomes vs Events
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Event Types
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Simple Events</strong>: Single outcomes</li>
+<li><strong>Compound Events</strong>: Multiple outcomes</li>
+<li><strong>Sure (or Certain) Event</strong>: Sample space <span class="math inline">S</span></li>
+<li><strong>Impossible Event</strong>: Empty set <span class="math inline">\emptyset</span></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="probability-measure-and-probability-axioms-assigning-numbers-to-events" class="level3" data-number="17.4.4">
+<h3 data-number="17.4.4" class="anchored" data-anchor-id="probability-measure-and-probability-axioms-assigning-numbers-to-events"><span class="header-section-number">17.4.4</span> Probability Measure and Probability Axioms: Assigning Numbers to Events</h3>
+<p>A probability measure <span class="math inline">P</span> is a way to quantify how likely events are to occur. It takes any event from our event space <span class="math inline">\mathcal{F}</span> and assigns it a number between 0 and 1.</p>
+<p>This assignment follows three essential rules/axioms. These <strong>axioms</strong>, introduced by Andrey Kolmogorov in 1933, serve as the foundation for all probability calculations:</p>
+<ol type="1">
+<li><strong>Non-Negativity Rule</strong>
+<ul>
+<li>For any event <span class="math inline">A</span>, its probability must be at least 0: <span class="math inline">P(A) \geq 0</span></li>
+<li>We can never have a negative probability</li>
+<li>Example: If we roll a die, the probability of getting a 6 is <span class="math inline">\frac{1}{6}</span> (it cannot be negative)</li>
+</ul></li>
+<li><strong>Total Probability Rule</strong>
+<ul>
+<li>The probability of all possible outcomes must equal 1: <span class="math inline">P(S) = 1</span></li>
+<li>Something must happen - the probabilities of all possibilities add up to 100%</li>
+<li>Example: For a fair coin, <span class="math inline">P(\text{heads}) + P(\text{tails}) = 0.5 + 0.5 = 1</span></li>
+</ul></li>
+<li><strong>Addition Rule for Non-Overlapping Events</strong>
+<ul>
+<li>If events cannot happen together (they’re “disjoint”), the probability of their union equals the sum of their individual probabilities</li>
+<li>Written formally: <span class="math inline">P(A_1 \cup A_2 \cup ...) = P(A_1) + P(A_2) + ...</span></li>
+<li>Example: In drawing a card, <span class="math inline">P(\text{getting ace}) = P(\text{ace of hearts}) + P(\text{ace of diamonds}) + P(\text{ace of clubs}) + P(\text{ace of spades})</span></li>
+</ul></li>
+</ol>
+<p>These rules/axioms ensure that our probability assignments make logical sense and match our intuitive understanding of chance and likelihood.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important Terms in Probability Theory
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s clarify some closely related but distinct concepts:</p>
+<ol type="1">
+<li><p><strong>Probabilistic Model</strong> consists of two fundamental elements:</p>
+<ul>
+<li>A sample space <span class="math inline">\Omega</span> (or <span class="math inline">S</span>): the set of all possible outcomes</li>
+<li>A probability law that assigns probabilities to events (subsets of <span class="math inline">\Omega</span>)</li>
+</ul></li>
+<li><p><strong>Probability Measure</strong> (<span class="math inline">P</span>):</p>
+<ul>
+<li>The formal mathematical function that maps events to numbers in [0,1]</li>
+<li>Must satisfy the three axioms (non-negativity, normalization, additivity)</li>
+<li>Example: <span class="math inline">P(A)</span> gives the probability of event <span class="math inline">A</span> occurring</li>
+</ul></li>
+<li><p><strong>Probability Distribution</strong>:</p>
+<ul>
+<li>The specific assignment of probabilities to all possible outcomes</li>
+<li>Describes how probability is distributed across the sample space</li>
+<li>Example: For a fair die, {1: 1/6, 2: 1/6, 3: 1/6, 4: 1/6, 5: 1/6, 6: 1/6}</li>
+</ul></li>
+<li><p><strong>Probability Law</strong>:</p>
+<ul>
+<li>Often used as a synonym for probability distribution</li>
+<li>Can also refer to the underlying rule generating the probabilities</li>
+<li>Example: “Each face of a fair die has equal probability”</li>
+</ul></li>
+</ol>
+<p>In practice, these terms are interrelated: The probability measure implements the probability law, which determines the probability distribution, all within the context of a probabilistic model.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1388,77 +1516,66 @@ Visualizing Sample Spaces
 </div>
 </div>
 </section>
-<section id="discrete-sample-spaces-their-probabilities" class="level3" data-number="17.4.5">
-<h3 data-number="17.4.5" class="anchored" data-anchor-id="discrete-sample-spaces-their-probabilities"><span class="header-section-number">17.4.5</span> Discrete Sample Spaces &amp; Their Probabilities</h3>
-<p>A discrete sample space is the foundation for analyzing random experiments where we can count the individual outcomes one by one. Let’s understand what makes a sample space “discrete”:</p>
-<p><strong>Sample Space (<span class="math inline">S</span>)</strong></p>
+<section id="discrete-sample-spaces-probability" class="level3" data-number="17.4.5">
+<h3 data-number="17.4.5" class="anchored" data-anchor-id="discrete-sample-spaces-probability"><span class="header-section-number">17.4.5</span> Discrete Sample Spaces &amp; Probability</h3>
+<p>When we analyze random events like coin flips or dice rolls, we need a way to list all possible outcomes. This is where discrete sample spaces come in. Let’s break this down step by step:</p>
+<section id="discrete-sample-spaces-s-or-omega" class="level4" data-number="17.4.5.1">
+<h4 data-number="17.4.5.1" class="anchored" data-anchor-id="discrete-sample-spaces-s-or-omega"><span class="header-section-number">17.4.5.1</span> Discrete Sample Spaces (<span class="math inline">S</span> or <span class="math inline">\Omega</span>)</h4>
+<p>Think of a sample space as a container holding all possible outcomes of a random event/experiment. In discrete sample spaces, we can count these outcomes one by one, like counting marbles in a bag. We write it as:</p>
 <ul>
-<li>Contains all possible outcomes of a random experiment</li>
-<li>Must be countable - either finite or countably infinite</li>
-<li>Each outcome must be distinct and well-defined</li>
-<li>We list finite spaces as: <span class="math inline">S = \{s_1, s_2, ..., s_n\}</span></li>
-<li>For countably infinite spaces: <span class="math inline">S = \{s_1, s_2, ...\}</span> (can go on forever but in a listable way)</li>
+<li>For finite events: <span class="math inline">S = \{s_1, s_2, ..., s_n\}</span> [classical (‘naive’) probability]</li>
+<li>For infinite but countable events: <span class="math inline">S = \{s_1, s_2, ...\}</span></li>
 </ul>
-<p><strong>Key Properties</strong></p>
+</section>
+<section id="three-essential-rules" class="level4" data-number="17.4.5.2">
+<h4 data-number="17.4.5.2" class="anchored" data-anchor-id="three-essential-rules"><span class="header-section-number">17.4.5.2</span> Three Essential Rules</h4>
 <ol type="1">
-<li>Completeness: Must include all possible outcomes</li>
-<li>Mutual Exclusivity: Outcomes cannot overlap</li>
-<li>Countability: Can enumerate outcomes (unlike continuous spaces)</li>
+<li>Must include everything possible (no missing outcomes)</li>
+<li>No overlap between outcomes (each is unique)</li>
+<li>Must be countable (you can list them out)</li>
 </ol>
-<p><strong>Examples with Their Sample Spaces</strong></p>
+</section>
+<section id="real-world-examples" class="level4" data-number="17.4.5.3">
+<h4 data-number="17.4.5.3" class="anchored" data-anchor-id="real-world-examples"><span class="header-section-number">17.4.5.3</span> Real-World Examples</h4>
+<p><strong>Simple Events (Equal Chances)</strong></p>
+<ul>
+<li>Flipping a coin: <span class="math inline">S = \{\text{Heads}, \text{Tails}\}</span></li>
+<li>Rolling a die: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span></li>
+<li>Drawing a card: <span class="math inline">S = \{\text{all 52 cards}\}</span></li>
+</ul>
+<p><strong>More Complex Events (Varying Chances)</strong></p>
 <ol type="1">
-<li><p><strong>Classical Probability</strong> (Equally Likely Outcomes):</p>
+<li>Counting “Successes” (Binomial)
 <ul>
-<li>Single coin flip: <span class="math inline">S = \{\text{Heads}, \text{Tails}\}</span></li>
-<li>Die roll: <span class="math inline">S = \{1, 2, 3, 4, 5, 6\}</span></li>
-<li>Playing cards: <span class="math inline">S = \{\text{52 different cards}\}</span></li>
-</ul></li>
-<li><p><strong>Probability Distributions</strong> (Possibly Unequal Probabilities):</p>
-<ul>
-<li>Binomial: Number of successes in <span class="math inline">n</span> trials
-<ul>
-<li><span class="math inline">S = \{0, 1, 2, ..., n\}</span></li>
 <li>Example: Number of heads in 5 coin flips</li>
-</ul></li>
-<li>Geometric: Trials until first success
-<ul>
-<li><span class="math inline">S = \{1, 2, 3, ...\}</span></li>
-<li>Example: Flips until first head</li>
-</ul></li>
-<li>Poisson: Rare events in fixed interval
-<ul>
-<li><span class="math inline">S = \{0, 1, 2, ...\}</span></li>
-<li>Example: Customers arriving per hour</li>
-</ul></li>
+<li>Sample Space: <span class="math inline">S = \{0, 1, 2, 3, 4, 5\}</span></li>
 </ul></li>
 </ol>
-<p><strong>Probability Assignment Methods</strong></p>
-<ol type="1">
-<li><p><strong>Classical Probability</strong> (Equal Likelihood):</p>
+<p><strong>Note</strong>: A success in a <em>binomial experiment</em> is simply any outcome that we’re interested in tracking - it doesn’t have to be a positive or favorable outcome. The key is that for each trial, we’re classifying the outcome into one of two categories: either it’s a “success” or it’s not (a “failure”).</p>
+<ol start="2" type="1">
+<li>Waiting for “Success” (Geometric)
 <ul>
-<li>For equally likely outcomes:</li>
+<li>Example: Number of flips until you get heads</li>
+<li>Sample Space: <span class="math inline">S = \{1, 2, 3, ...\}</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="how-to-assign-probabilities" class="level4" data-number="17.4.5.4">
+<h4 data-number="17.4.5.4" class="anchored"><span class="header-section-number">17.4.5.4</span> How to Assign Probabilities</h4>
+<p><strong>1. Equal Chances (Classical Probability)</strong> When all outcomes are equally likely:</p>
+<p><span class="math display">P(\text{one outcome}) = \frac{1}{\text{total outcomes}}</span></p>
+<p>Example: Rolling a fair die</p>
+<ul>
+<li>Probability of rolling a 4 = <span class="math inline">\frac{1}{6}</span></li>
 </ul>
-<p><span class="math display">P(\text{single outcome}) = \frac{1}{\text{number of outcomes}}</span></p>
+<p><strong>2. Mathematical Models (Probability Distribution Functions)</strong> For more complex situations, we use specific formulas (functions):</p>
 <ul>
-<li><p>Why? Simple proof:</p>
-<ul>
-<li>With <span class="math inline">n</span> equally likely outcomes, each with probability <span class="math inline">p</span></li>
-<li>Total probability must be 1: <span class="math inline">p + p + ... + p</span> (<span class="math inline">n</span> times) <span class="math inline">= 1</span></li>
-<li>Therefore: <span class="math inline">np = 1</span>, so <span class="math inline">p = \frac{1}{n}</span></li>
-</ul></li>
-</ul></li>
-<li><p><strong>Probability Distributions</strong> (mathematical models):</p>
-<ul>
-<li>Binomial: <span class="math inline">P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}</span></li>
-<li>Geometric: <span class="math inline">P(X=k) = p(1-p)^{k-1}</span></li>
-<li>Poisson: <span class="math inline">P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}</span></li>
-</ul></li>
-<li><p><strong>Empirical Probability</strong>:</p>
-<ul>
-<li>Based on observed frequencies in experiments</li>
-<li><span class="math inline">P(\text{outcome}) = \frac{\text{frequency of outcome}}{\text{total observations}}</span></li>
-</ul></li>
-</ol>
+<li>Multiple trials (Binomial): <span class="math display">P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}</span></li>
+<li>First success (Geometric): <span class="math display">P(X=k) = p(1-p)^{k-1}</span></li>
+</ul>
+<p><strong>3. Using Data (Empirical/Experimental Probability)</strong> When we have actual observations:</p>
+<p><span class="math display">P(\text{outcome}) = \frac{\text{times outcome occurred}}{\text{total observations}}</span></p>
+<p>Example: If you flip a coin 100 times and get 53 heads: <span class="math display">P(\text{heads}) = \frac{53}{100} = 0.53</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1487,13 +1604,14 @@ Tip
 <p><strong>Important Considerations</strong></p>
 <ul>
 <li><p>Classical probability (equal likelihood) is a special case</p></li>
-<li><p>Many real-world phenomena follow specific probability distributions</p></li>
+<li><p>Many real-world phenomena follow specific probability distributions (a probability distribution is the mathematical function that gives the probabilities of occurrence of possible outcomes for an experiment.)</p></li>
 <li><p>The type of probability assignment depends on the context:</p>
 <ul>
 <li>Physical symmetry → Classical probability</li>
-<li>Repeated independent trials → Binomial</li>
-<li>Rare events → Poisson</li>
-<li>Waiting times → Geometric</li>
+<li>Repeated independent trials → Binomial distribution</li>
+<li>Rare events → Poisson distribution</li>
+<li>Waiting times → Geometric distribution</li>
+<li>(…)</li>
 </ul></li>
 <li><p>All these cases work within discrete sample spaces</p></li>
 <li><p>The probabilities must always sum to 1 over the entire sample space</p></li>
@@ -1572,135 +1690,6 @@ Frequentist/Statistical/Empirical Probability &amp; the Law of Large Numbers
 <li>Foundation for classical statistical inference</li>
 </ul>
 <p><strong>Limitation:</strong> We can never perform infinite trials, so we estimate probabilities from large but finite samples.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important Terms in Probability Theory
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let’s clarify some closely related but distinct concepts:</p>
-<ol type="1">
-<li><p><strong>Probabilistic Model</strong> consists of two fundamental elements:</p>
-<ul>
-<li>A sample space <span class="math inline">\Omega</span> (or <span class="math inline">S</span>): the set of all possible outcomes</li>
-<li>A probability law that assigns probabilities to events (subsets of <span class="math inline">\Omega</span>)</li>
-</ul></li>
-<li><p><strong>Probability Measure</strong> (<span class="math inline">P</span>):</p>
-<ul>
-<li>The formal mathematical function that maps events to numbers in [0,1]</li>
-<li>Must satisfy the three axioms (non-negativity, normalization, additivity)</li>
-<li>Example: <span class="math inline">P(A)</span> gives the probability of event <span class="math inline">A</span> occurring</li>
-</ul></li>
-<li><p><strong>Probability Distribution</strong>:</p>
-<ul>
-<li>The specific assignment of probabilities to all possible outcomes</li>
-<li>Describes how probability is distributed across the sample space</li>
-<li>Example: For a fair die, {1: 1/6, 2: 1/6, 3: 1/6, 4: 1/6, 5: 1/6, 6: 1/6}</li>
-</ul></li>
-<li><p><strong>Probability Law</strong>:</p>
-<ul>
-<li>Often used as a synonym for probability distribution</li>
-<li>Can also refer to the underlying rule generating the probabilities</li>
-<li>Example: “Each face of a fair die has equal probability”</li>
-</ul></li>
-</ol>
-<p>In practice, these terms are interrelated: The probability measure implements the probability law, which determines the probability distribution, all within the context of a probabilistic model.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Discrete vs.&nbsp;Continuous Probability: Understanding the Two Types of Random Events
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In probability, we encounter two fundamentally different types of random events: those we can count (discrete) and those we can measure (continuous). This distinction shapes how we calculate and interpret probabilities.</p>
-<section id="discrete-probability" class="level4" data-number="17.4.5.1">
-<h4 data-number="17.4.5.1" class="anchored" data-anchor-id="discrete-probability"><span class="header-section-number">17.4.5.1</span> Discrete Probability</h4>
-<p><strong>What</strong>: Events that can be counted with whole numbers - Like counting marbles, rolling dice, or flipping coins - Has “gaps” between possible values</p>
-<p><strong>Key Examples</strong>:</p>
-<ol type="1">
-<li>Rolling a die
-<ul>
-<li>Possible outcomes: 1, 2, 3, 4, 5, or 6</li>
-<li>Nothing in between (can’t roll a 2.5)</li>
-<li>Can say: <span class="math inline">P(\text{rolling a 6}) = \frac{1}{6}</span></li>
-</ul></li>
-<li>Number of customers per hour
-<ul>
-<li>Could be 0, 1, 2, 3, …</li>
-<li>Can’t have 2.7 customers</li>
-<li>Can say: <span class="math inline">P(\text{exactly 5 customers}) = 0.1</span></li>
-</ul></li>
-</ol>
-</section>
-<section id="continuous-probability" class="level4" data-number="17.4.5.2">
-<h4 data-number="17.4.5.2" class="anchored" data-anchor-id="continuous-probability"><span class="header-section-number">17.4.5.2</span> Continuous Probability</h4>
-<p><strong>What</strong>: Events measured on a continuous scale - Like measuring height, time, or temperature - Values flow smoothly with no gaps</p>
-<p><strong>Key Examples</strong>:</p>
-<ol type="1">
-<li>Person’s height
-<ul>
-<li>Could be 170cm, 170.1cm, 170.11cm, …</li>
-<li>Can measure with increasing precision</li>
-<li>Must use ranges: <span class="math inline">P(170 \leq \text{height} \leq 171)</span></li>
-</ul></li>
-<li>Time until next bus arrives
-<ul>
-<li>Could be 5 mins, 5.1 mins, 5.01 mins, …</li>
-<li>Infinitely divisible</li>
-<li>Must use ranges: <span class="math inline">P(\text{waiting time} \leq 10 \text{ mins})</span></li>
-</ul></li>
-</ol>
-</section>
-<section id="critical-differences" class="level4" data-number="17.4.5.3">
-<h4 data-number="17.4.5.3" class="anchored" data-anchor-id="critical-differences"><span class="header-section-number">17.4.5.3</span> Critical Differences</h4>
-<ol type="1">
-<li><strong>Individual Values</strong>
-<ul>
-<li>Discrete: Can have positive probability
-<ul>
-<li><span class="math inline">P(\text{rolling a 6}) = \frac{1}{6} &gt; 0</span></li>
-</ul></li>
-<li>Continuous: Always have zero probability
-<ul>
-<li><span class="math inline">P(\text{height} = 170.000...) = 0</span></li>
-</ul></li>
-</ul></li>
-<li><strong>How We Calculate</strong>
-<ul>
-<li>Discrete: Can sum individual probabilities</li>
-<li>Continuous: Must use ranges and integrals</li>
-</ul></li>
-</ol>
-</section>
-<section id="real-world-application" class="level4" data-number="17.4.5.4">
-<h4 data-number="17.4.5.4" class="anchored" data-anchor-id="real-world-application"><span class="header-section-number">17.4.5.4</span> Real-World Application</h4>
-<p>Think about a pizza delivery:</p>
-<ul>
-<li><strong>Discrete</strong>: Number of toppings (1, 2, 3, …)</li>
-<li><strong>Continuous</strong>: Delivery time (15.7 minutes, 15.73 minutes, …)</li>
-</ul>
-</section>
-<section id="why-understanding-this-matters" class="level4" data-number="17.4.5.5">
-<h4 data-number="17.4.5.5" class="anchored" data-anchor-id="why-understanding-this-matters"><span class="header-section-number">17.4.5.5</span> Why Understanding This Matters</h4>
-<ul>
-<li>Helps choose appropriate probability tools</li>
-<li>Guides how we collect and analyze data</li>
-<li>Determines how we express uncertainty</li>
-<li>Shapes how we make predictions</li>
-</ul>
-<p>This foundation helps us tackle real-world probability problems with the right approach!</p>
-</section>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -1788,6 +1777,7 @@ Classical Probability: Equal-Likelihood in Discrete Sample Spaces
 </section>
 </div>
 </div>
+</section>
 </section>
 <section id="classical-or-naive-probability-the-equal-likelihood-special-case-in-discrete-sample-spaces" class="level3" data-number="17.4.11">
 <h3 data-number="17.4.11" class="anchored" data-anchor-id="classical-or-naive-probability-the-equal-likelihood-special-case-in-discrete-sample-spaces"><span class="header-section-number">17.4.11</span> Classical (or ‘Naive’) Probability: The Equal-Likelihood Special Case in Discrete Sample Spaces</h3>
