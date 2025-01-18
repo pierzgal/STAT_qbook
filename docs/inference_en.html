@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>20&nbsp; The Logic of Statistical Hypothesis Testing – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
+<title>21&nbsp; The Logic of Statistical Hypothesis Testing – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./inference_pl.html" rel="next">
-<link href="./rv_pdf_en.html" rel="prev">
+<link href="./rv_pdf_pl.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -124,7 +124,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference_en.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Logic of Statistical Hypothesis Testing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference_en.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">The Logic of Statistical Hypothesis Testing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -271,14 +271,20 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./rv_pdf_pl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Zmienna Losowa i Rozkład Prawdopodobieństwa</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./inference_en.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Logic of Statistical Hypothesis Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">The Logic of Statistical Hypothesis Testing</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inference_pl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -297,39 +303,39 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#understanding-statistical-inference" id="toc-understanding-statistical-inference" class="nav-link active" data-scroll-target="#understanding-statistical-inference"><span class="header-section-number">20.1</span> Understanding Statistical Inference</a>
+  <li><a href="#understanding-statistical-inference" id="toc-understanding-statistical-inference" class="nav-link active" data-scroll-target="#understanding-statistical-inference"><span class="header-section-number">21.1</span> Understanding Statistical Inference</a>
   <ul class="collapse">
-  <li><a href="#the-basic-logic" id="toc-the-basic-logic" class="nav-link" data-scroll-target="#the-basic-logic"><span class="header-section-number">20.1.1</span> The Basic Logic</a></li>
+  <li><a href="#the-basic-logic" id="toc-the-basic-logic" class="nav-link" data-scroll-target="#the-basic-logic"><span class="header-section-number">21.1.1</span> The Basic Logic</a></li>
   </ul></li>
-  <li><a href="#the-method-of-proof-by-contradiction" id="toc-the-method-of-proof-by-contradiction" class="nav-link" data-scroll-target="#the-method-of-proof-by-contradiction"><span class="header-section-number">20.2</span> The Method of Proof by Contradiction</a>
+  <li><a href="#the-method-of-proof-by-contradiction" id="toc-the-method-of-proof-by-contradiction" class="nav-link" data-scroll-target="#the-method-of-proof-by-contradiction"><span class="header-section-number">21.2</span> The Method of Proof by Contradiction</a>
   <ul class="collapse">
-  <li><a href="#in-mathematics" id="toc-in-mathematics" class="nav-link" data-scroll-target="#in-mathematics"><span class="header-section-number">20.2.1</span> In Mathematics</a></li>
-  <li><a href="#in-statistics" id="toc-in-statistics" class="nav-link" data-scroll-target="#in-statistics"><span class="header-section-number">20.2.2</span> In Statistics</a></li>
+  <li><a href="#in-mathematics" id="toc-in-mathematics" class="nav-link" data-scroll-target="#in-mathematics"><span class="header-section-number">21.2.1</span> In Mathematics</a></li>
+  <li><a href="#in-statistics" id="toc-in-statistics" class="nav-link" data-scroll-target="#in-statistics"><span class="header-section-number">21.2.2</span> In Statistics</a></li>
   </ul></li>
-  <li><a href="#the-null-hypothesis-framework" id="toc-the-null-hypothesis-framework" class="nav-link" data-scroll-target="#the-null-hypothesis-framework"><span class="header-section-number">20.3</span> The Null Hypothesis Framework</a>
+  <li><a href="#the-null-hypothesis-framework" id="toc-the-null-hypothesis-framework" class="nav-link" data-scroll-target="#the-null-hypothesis-framework"><span class="header-section-number">21.3</span> The Null Hypothesis Framework</a>
   <ul class="collapse">
-  <li><a href="#step-1-state-the-hypotheses" id="toc-step-1-state-the-hypotheses" class="nav-link" data-scroll-target="#step-1-state-the-hypotheses"><span class="header-section-number">20.3.1</span> Step 1: State the Hypotheses</a></li>
-  <li><a href="#step-2-collect-evidence" id="toc-step-2-collect-evidence" class="nav-link" data-scroll-target="#step-2-collect-evidence"><span class="header-section-number">20.3.2</span> Step 2: Collect Evidence</a></li>
-  <li><a href="#step-3-assess-evidence" id="toc-step-3-assess-evidence" class="nav-link" data-scroll-target="#step-3-assess-evidence"><span class="header-section-number">20.3.3</span> Step 3: Assess Evidence</a></li>
+  <li><a href="#step-1-state-the-hypotheses" id="toc-step-1-state-the-hypotheses" class="nav-link" data-scroll-target="#step-1-state-the-hypotheses"><span class="header-section-number">21.3.1</span> Step 1: State the Hypotheses</a></li>
+  <li><a href="#step-2-collect-evidence" id="toc-step-2-collect-evidence" class="nav-link" data-scroll-target="#step-2-collect-evidence"><span class="header-section-number">21.3.2</span> Step 2: Collect Evidence</a></li>
+  <li><a href="#step-3-assess-evidence" id="toc-step-3-assess-evidence" class="nav-link" data-scroll-target="#step-3-assess-evidence"><span class="header-section-number">21.3.3</span> Step 3: Assess Evidence</a></li>
   </ul></li>
-  <li><a href="#the-role-of-probability" id="toc-the-role-of-probability" class="nav-link" data-scroll-target="#the-role-of-probability"><span class="header-section-number">20.4</span> The Role of Probability</a>
+  <li><a href="#the-role-of-probability" id="toc-the-role-of-probability" class="nav-link" data-scroll-target="#the-role-of-probability"><span class="header-section-number">21.4</span> The Role of Probability</a>
   <ul class="collapse">
-  <li><a href="#why-probability" id="toc-why-probability" class="nav-link" data-scroll-target="#why-probability"><span class="header-section-number">20.4.1</span> Why Probability?</a></li>
-  <li><a href="#example-building-intuition" id="toc-example-building-intuition" class="nav-link" data-scroll-target="#example-building-intuition"><span class="header-section-number">20.4.2</span> Example: Building Intuition</a></li>
+  <li><a href="#why-probability" id="toc-why-probability" class="nav-link" data-scroll-target="#why-probability"><span class="header-section-number">21.4.1</span> Why Probability?</a></li>
+  <li><a href="#example-building-intuition" id="toc-example-building-intuition" class="nav-link" data-scroll-target="#example-building-intuition"><span class="header-section-number">21.4.2</span> Example: Building Intuition</a></li>
   </ul></li>
-  <li><a href="#the-logic-of-p-values" id="toc-the-logic-of-p-values" class="nav-link" data-scroll-target="#the-logic-of-p-values"><span class="header-section-number">20.5</span> The Logic of p-values</a>
+  <li><a href="#the-logic-of-p-values" id="toc-the-logic-of-p-values" class="nav-link" data-scroll-target="#the-logic-of-p-values"><span class="header-section-number">21.5</span> The Logic of p-values</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-p-value" id="toc-what-is-a-p-value" class="nav-link" data-scroll-target="#what-is-a-p-value"><span class="header-section-number">20.5.1</span> What is a p-value?</a></li>
-  <li><a href="#example-step-by-step" id="toc-example-step-by-step" class="nav-link" data-scroll-target="#example-step-by-step"><span class="header-section-number">20.5.2</span> Example: Step by Step</a></li>
+  <li><a href="#what-is-a-p-value" id="toc-what-is-a-p-value" class="nav-link" data-scroll-target="#what-is-a-p-value"><span class="header-section-number">21.5.1</span> What is a p-value?</a></li>
+  <li><a href="#example-step-by-step" id="toc-example-step-by-step" class="nav-link" data-scroll-target="#example-step-by-step"><span class="header-section-number">21.5.2</span> Example: Step by Step</a></li>
   </ul></li>
-  <li><a href="#common-misunderstandings" id="toc-common-misunderstandings" class="nav-link" data-scroll-target="#common-misunderstandings"><span class="header-section-number">20.6</span> Common Misunderstandings</a></li>
-  <li><a href="#beyond-simple-significance-testing" id="toc-beyond-simple-significance-testing" class="nav-link" data-scroll-target="#beyond-simple-significance-testing"><span class="header-section-number">20.7</span> Beyond Simple Significance Testing</a>
+  <li><a href="#common-misunderstandings" id="toc-common-misunderstandings" class="nav-link" data-scroll-target="#common-misunderstandings"><span class="header-section-number">21.6</span> Common Misunderstandings</a></li>
+  <li><a href="#beyond-simple-significance-testing" id="toc-beyond-simple-significance-testing" class="nav-link" data-scroll-target="#beyond-simple-significance-testing"><span class="header-section-number">21.7</span> Beyond Simple Significance Testing</a>
   <ul class="collapse">
-  <li><a href="#why-not-just-use-5" id="toc-why-not-just-use-5" class="nav-link" data-scroll-target="#why-not-just-use-5"><span class="header-section-number">20.7.1</span> Why Not Just Use 5%?</a></li>
-  <li><a href="#better-approach" id="toc-better-approach" class="nav-link" data-scroll-target="#better-approach"><span class="header-section-number">20.7.2</span> Better Approach:</a></li>
-  <li><a href="#practical-significance" id="toc-practical-significance" class="nav-link" data-scroll-target="#practical-significance"><span class="header-section-number">20.7.3</span> Practical Significance</a></li>
+  <li><a href="#why-not-just-use-5" id="toc-why-not-just-use-5" class="nav-link" data-scroll-target="#why-not-just-use-5"><span class="header-section-number">21.7.1</span> Why Not Just Use 5%?</a></li>
+  <li><a href="#better-approach" id="toc-better-approach" class="nav-link" data-scroll-target="#better-approach"><span class="header-section-number">21.7.2</span> Better Approach:</a></li>
+  <li><a href="#practical-significance" id="toc-practical-significance" class="nav-link" data-scroll-target="#practical-significance"><span class="header-section-number">21.7.3</span> Practical Significance</a></li>
   </ul></li>
-  <li><a href="#problem-solutions-1" id="toc-problem-solutions-1" class="nav-link" data-scroll-target="#problem-solutions-1"><span class="header-section-number">20.8</span> Problem Solutions (1)</a>
+  <li><a href="#problem-solutions-1" id="toc-problem-solutions-1" class="nav-link" data-scroll-target="#problem-solutions-1"><span class="header-section-number">21.8</span> Problem Solutions (1)</a>
   <ul class="collapse">
   <li><a href="#problem-1-binomial-test-for-candidate-support" id="toc-problem-1-binomial-test-for-candidate-support" class="nav-link" data-scroll-target="#problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</a></li>
   <li><a href="#problem-2-binomial-test-for-candidate-support---case-2" id="toc-problem-2-binomial-test-for-candidate-support---case-2" class="nav-link" data-scroll-target="#problem-2-binomial-test-for-candidate-support---case-2">Problem 2: Binomial Test for Candidate Support - Case 2</a></li>
@@ -343,7 +349,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">The Logic of Statistical Hypothesis Testing</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">The Logic of Statistical Hypothesis Testing</span></h1>
 </div>
 
 
@@ -360,11 +366,11 @@ window.Quarto = {
 </header>
 
 
-<section id="understanding-statistical-inference" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="understanding-statistical-inference"><span class="header-section-number">20.1</span> Understanding Statistical Inference</h2>
+<section id="understanding-statistical-inference" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="understanding-statistical-inference"><span class="header-section-number">21.1</span> Understanding Statistical Inference</h2>
 <p>Statistical inference is how we draw conclusions about a population from a sample. It’s like being a detective: we never have all the information, but we can make educated guesses based on the evidence we have.</p>
-<section id="the-basic-logic" class="level3" data-number="20.1.1">
-<h3 data-number="20.1.1" class="anchored" data-anchor-id="the-basic-logic"><span class="header-section-number">20.1.1</span> The Basic Logic</h3>
+<section id="the-basic-logic" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="the-basic-logic"><span class="header-section-number">21.1.1</span> The Basic Logic</h3>
 <p>Imagine you suspect a coin might be unfair. How would you approach this scientifically?</p>
 <ol type="1">
 <li>Collect Evidence:
@@ -382,10 +388,10 @@ window.Quarto = {
 <p>This is the essence of statistical hypothesis testing.</p>
 </section>
 </section>
-<section id="the-method-of-proof-by-contradiction" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="the-method-of-proof-by-contradiction"><span class="header-section-number">20.2</span> The Method of Proof by Contradiction</h2>
-<section id="in-mathematics" class="level3" data-number="20.2.1">
-<h3 data-number="20.2.1" class="anchored" data-anchor-id="in-mathematics"><span class="header-section-number">20.2.1</span> In Mathematics</h3>
+<section id="the-method-of-proof-by-contradiction" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="the-method-of-proof-by-contradiction"><span class="header-section-number">21.2</span> The Method of Proof by Contradiction</h2>
+<section id="in-mathematics" class="level3" data-number="21.2.1">
+<h3 data-number="21.2.1" class="anchored" data-anchor-id="in-mathematics"><span class="header-section-number">21.2.1</span> In Mathematics</h3>
 <p>Consider proving that <span class="math inline">\sqrt{2}</span> is irrational. We:</p>
 <ol type="1">
 <li>Assume the opposite (suppose <span class="math inline">\sqrt{2}</span> is rational)</li>
@@ -400,8 +406,8 @@ window.Quarto = {
 <li>Therefore, <span class="math inline">\sqrt{2}</span> must be irrational</li>
 </ul>
 </section>
-<section id="in-statistics" class="level3" data-number="20.2.2">
-<h3 data-number="20.2.2" class="anchored" data-anchor-id="in-statistics"><span class="header-section-number">20.2.2</span> In Statistics</h3>
+<section id="in-statistics" class="level3" data-number="21.2.2">
+<h3 data-number="21.2.2" class="anchored" data-anchor-id="in-statistics"><span class="header-section-number">21.2.2</span> In Statistics</h3>
 <p>We use a similar but probabilistic approach:</p>
 <ol type="1">
 <li>Make assumption (null hypothesis)</li>
@@ -411,10 +417,10 @@ window.Quarto = {
 <p>Key Difference: We deal with probability, not certainty.</p>
 </section>
 </section>
-<section id="the-null-hypothesis-framework" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="the-null-hypothesis-framework"><span class="header-section-number">20.3</span> The Null Hypothesis Framework</h2>
-<section id="step-1-state-the-hypotheses" class="level3" data-number="20.3.1">
-<h3 data-number="20.3.1" class="anchored" data-anchor-id="step-1-state-the-hypotheses"><span class="header-section-number">20.3.1</span> Step 1: State the Hypotheses</h3>
+<section id="the-null-hypothesis-framework" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="the-null-hypothesis-framework"><span class="header-section-number">21.3</span> The Null Hypothesis Framework</h2>
+<section id="step-1-state-the-hypotheses" class="level3" data-number="21.3.1">
+<h3 data-number="21.3.1" class="anchored" data-anchor-id="step-1-state-the-hypotheses"><span class="header-section-number">21.3.1</span> Step 1: State the Hypotheses</h3>
 <p>For a coin example:</p>
 <ul>
 <li>H₀ (Null): Coin is fair (p = 0.5)</li>
@@ -422,16 +428,16 @@ window.Quarto = {
 </ul>
 <p>Think of H₀ as the “innocent until proven guilty” assumption.</p>
 </section>
-<section id="step-2-collect-evidence" class="level3" data-number="20.3.2">
-<h3 data-number="20.3.2" class="anchored" data-anchor-id="step-2-collect-evidence"><span class="header-section-number">20.3.2</span> Step 2: Collect Evidence</h3>
+<section id="step-2-collect-evidence" class="level3" data-number="21.3.2">
+<h3 data-number="21.3.2" class="anchored" data-anchor-id="step-2-collect-evidence"><span class="header-section-number">21.3.2</span> Step 2: Collect Evidence</h3>
 <p>Suppose we flip coin 100 times:</p>
 <ul>
 <li>Expected under H₀: About 50 heads</li>
 <li>Actually observe: 70 heads</li>
 </ul>
 </section>
-<section id="step-3-assess-evidence" class="level3" data-number="20.3.3">
-<h3 data-number="20.3.3" class="anchored" data-anchor-id="step-3-assess-evidence"><span class="header-section-number">20.3.3</span> Step 3: Assess Evidence</h3>
+<section id="step-3-assess-evidence" class="level3" data-number="21.3.3">
+<h3 data-number="21.3.3" class="anchored" data-anchor-id="step-3-assess-evidence"><span class="header-section-number">21.3.3</span> Step 3: Assess Evidence</h3>
 <p>Ask: “If coin were truly fair (H₀ true), how likely is this result?”</p>
 <p>This is like asking in a legal case:</p>
 <ul>
@@ -449,8 +455,8 @@ Understanding Error Types in Hypothesis Testing
 </div>
 <div class="callout-body-container callout-body">
 <p>In hypothesis testing, we can make two types of errors:</p>
-<section id="type-i-error-false-positive" class="level3" data-number="20.3.4">
-<h3 data-number="20.3.4" class="anchored" data-anchor-id="type-i-error-false-positive"><span class="header-section-number">20.3.4</span> Type I Error (False Positive)</h3>
+<section id="type-i-error-false-positive" class="level3" data-number="21.3.4">
+<h3 data-number="21.3.4" class="anchored" data-anchor-id="type-i-error-false-positive"><span class="header-section-number">21.3.4</span> Type I Error (False Positive)</h3>
 <ul>
 <li>Definition: Rejecting H₀ when it is actually true</li>
 <li>Probability: α (significance level)</li>
@@ -458,8 +464,8 @@ Understanding Error Types in Hypothesis Testing
 <li>Example in Medicine: Diagnosing healthy patient as sick</li>
 </ul>
 </section>
-<section id="type-ii-error-false-negative" class="level3" data-number="20.3.5">
-<h3 data-number="20.3.5" class="anchored" data-anchor-id="type-ii-error-false-negative"><span class="header-section-number">20.3.5</span> Type II Error (False Negative)</h3>
+<section id="type-ii-error-false-negative" class="level3" data-number="21.3.5">
+<h3 data-number="21.3.5" class="anchored" data-anchor-id="type-ii-error-false-negative"><span class="header-section-number">21.3.5</span> Type II Error (False Negative)</h3>
 <ul>
 <li>Definition: Failing to reject H₀ when it is actually false</li>
 <li>Probability: β</li>
@@ -468,8 +474,8 @@ Understanding Error Types in Hypothesis Testing
 <li>Example in Medicine: Missing an actual disease</li>
 </ul>
 </section>
-<section id="trade-off-between-errors" class="level3" data-number="20.3.6">
-<h3 data-number="20.3.6" class="anchored" data-anchor-id="trade-off-between-errors"><span class="header-section-number">20.3.6</span> Trade-off Between Errors</h3>
+<section id="trade-off-between-errors" class="level3" data-number="21.3.6">
+<h3 data-number="21.3.6" class="anchored" data-anchor-id="trade-off-between-errors"><span class="header-section-number">21.3.6</span> Trade-off Between Errors</h3>
 <ul>
 <li>Decreasing α (being more conservative) increases β</li>
 <li>Decreasing β (increasing power) requires either:
@@ -480,8 +486,8 @@ Understanding Error Types in Hypothesis Testing
 </ul></li>
 </ul>
 </section>
-<section id="practical-implications" class="level3" data-number="20.3.7">
-<h3 data-number="20.3.7" class="anchored" data-anchor-id="practical-implications"><span class="header-section-number">20.3.7</span> Practical Implications</h3>
+<section id="practical-implications" class="level3" data-number="21.3.7">
+<h3 data-number="21.3.7" class="anchored" data-anchor-id="practical-implications"><span class="header-section-number">21.3.7</span> Practical Implications</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -538,10 +544,10 @@ Historical Note: Jerzy Neyman (1894-1981)
 </div>
 </section>
 </section>
-<section id="the-role-of-probability" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="the-role-of-probability"><span class="header-section-number">20.4</span> The Role of Probability</h2>
-<section id="why-probability" class="level3" data-number="20.4.1">
-<h3 data-number="20.4.1" class="anchored" data-anchor-id="why-probability"><span class="header-section-number">20.4.1</span> Why Probability?</h3>
+<section id="the-role-of-probability" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="the-role-of-probability"><span class="header-section-number">21.4</span> The Role of Probability</h2>
+<section id="why-probability" class="level3" data-number="21.4.1">
+<h3 data-number="21.4.1" class="anchored" data-anchor-id="why-probability"><span class="header-section-number">21.4.1</span> Why Probability?</h3>
 <ol type="1">
 <li>Randomness is inherent:
 <ul>
@@ -560,8 +566,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 </ul></li>
 </ol>
 </section>
-<section id="example-building-intuition" class="level3" data-number="20.4.2">
-<h3 data-number="20.4.2" class="anchored" data-anchor-id="example-building-intuition"><span class="header-section-number">20.4.2</span> Example: Building Intuition</h3>
+<section id="example-building-intuition" class="level3" data-number="21.4.2">
+<h3 data-number="21.4.2" class="anchored" data-anchor-id="example-building-intuition"><span class="header-section-number">21.4.2</span> Example: Building Intuition</h3>
 <p>Flip coin 10 times:</p>
 <ul>
 <li>5 heads: Very consistent with fair coin</li>
@@ -576,10 +582,10 @@ Historical Note: Jerzy Neyman (1894-1981)
 </ul>
 </section>
 </section>
-<section id="the-logic-of-p-values" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="the-logic-of-p-values"><span class="header-section-number">20.5</span> The Logic of p-values</h2>
-<section id="what-is-a-p-value" class="level3" data-number="20.5.1">
-<h3 data-number="20.5.1" class="anchored" data-anchor-id="what-is-a-p-value"><span class="header-section-number">20.5.1</span> What is a p-value?</h3>
+<section id="the-logic-of-p-values" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="the-logic-of-p-values"><span class="header-section-number">21.5</span> The Logic of p-values</h2>
+<section id="what-is-a-p-value" class="level3" data-number="21.5.1">
+<h3 data-number="21.5.1" class="anchored" data-anchor-id="what-is-a-p-value"><span class="header-section-number">21.5.1</span> What is a p-value?</h3>
 <p>p-value = P(seeing this evidence or more extreme | H₀ is true)</p>
 <p>Like asking:</p>
 <ul>
@@ -587,8 +593,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 <li>“Could this easily happen by chance?”</li>
 </ul>
 </section>
-<section id="example-step-by-step" class="level3" data-number="20.5.2">
-<h3 data-number="20.5.2" class="anchored" data-anchor-id="example-step-by-step"><span class="header-section-number">20.5.2</span> Example: Step by Step</h3>
+<section id="example-step-by-step" class="level3" data-number="21.5.2">
+<h3 data-number="21.5.2" class="anchored" data-anchor-id="example-step-by-step"><span class="header-section-number">21.5.2</span> Example: Step by Step</h3>
 <p>Observe 8 heads in 10 flips:</p>
 <ol type="1">
 <li><p>Assume H₀: p = 0.5 (fair coin)</p></li>
@@ -601,8 +607,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 </ol>
 </section>
 </section>
-<section id="common-misunderstandings" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="common-misunderstandings"><span class="header-section-number">20.6</span> Common Misunderstandings</h2>
+<section id="common-misunderstandings" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="common-misunderstandings"><span class="header-section-number">21.6</span> Common Misunderstandings</h2>
 <ol type="1">
 <li>“p-value is probability H₀ is true”
 <ul>
@@ -621,10 +627,10 @@ Historical Note: Jerzy Neyman (1894-1981)
 </ul></li>
 </ol>
 </section>
-<section id="beyond-simple-significance-testing" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="beyond-simple-significance-testing"><span class="header-section-number">20.7</span> Beyond Simple Significance Testing</h2>
-<section id="why-not-just-use-5" class="level3" data-number="20.7.1">
-<h3 data-number="20.7.1" class="anchored" data-anchor-id="why-not-just-use-5"><span class="header-section-number">20.7.1</span> Why Not Just Use 5%?</h3>
+<section id="beyond-simple-significance-testing" class="level2" data-number="21.7">
+<h2 data-number="21.7" class="anchored" data-anchor-id="beyond-simple-significance-testing"><span class="header-section-number">21.7</span> Beyond Simple Significance Testing</h2>
+<section id="why-not-just-use-5" class="level3" data-number="21.7.1">
+<h3 data-number="21.7.1" class="anchored" data-anchor-id="why-not-just-use-5"><span class="header-section-number">21.7.1</span> Why Not Just Use 5%?</h3>
 <p>Historical reasons:</p>
 <ol type="1">
 <li>R.A. Fisher suggested as benchmark</li>
@@ -632,8 +638,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 <li>Became convention, not logical necessity</li>
 </ol>
 </section>
-<section id="better-approach" class="level3" data-number="20.7.2">
-<h3 data-number="20.7.2" class="anchored" data-anchor-id="better-approach"><span class="header-section-number">20.7.2</span> Better Approach:</h3>
+<section id="better-approach" class="level3" data-number="21.7.2">
+<h3 data-number="21.7.2" class="anchored" data-anchor-id="better-approach"><span class="header-section-number">21.7.2</span> Better Approach:</h3>
 <p>Consider p-value on continuous scale:</p>
 <ul>
 <li>p = 0.049 vs p = 0.051 are virtually same</li>
@@ -644,8 +650,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 </ul></li>
 </ul>
 </section>
-<section id="practical-significance" class="level3" data-number="20.7.3">
-<h3 data-number="20.7.3" class="anchored" data-anchor-id="practical-significance"><span class="header-section-number">20.7.3</span> Practical Significance</h3>
+<section id="practical-significance" class="level3" data-number="21.7.3">
+<h3 data-number="21.7.3" class="anchored" data-anchor-id="practical-significance"><span class="header-section-number">21.7.3</span> Practical Significance</h3>
 <p>Always consider:</p>
 <ol type="1">
 <li>Effect size (how big is the difference?)</li>
@@ -656,16 +662,16 @@ Historical Note: Jerzy Neyman (1894-1981)
 <p>This deeper understanding helps make better decisions using statistical evidence.</p>
 </section>
 </section>
-<section id="problem-solutions-1" class="level2" data-number="20.8">
-<h2 data-number="20.8" class="anchored" data-anchor-id="problem-solutions-1"><span class="header-section-number">20.8</span> Problem Solutions (1)</h2>
+<section id="problem-solutions-1" class="level2" data-number="21.8">
+<h2 data-number="21.8" class="anchored" data-anchor-id="problem-solutions-1"><span class="header-section-number">21.8</span> Problem Solutions (1)</h2>
 <section id="problem-1-binomial-test-for-candidate-support" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</h3>
-<section id="problem-statement" class="level4" data-number="20.8.0.1">
-<h4 data-number="20.8.0.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">20.8.0.1</span> Problem Statement</h4>
+<section id="problem-statement" class="level4" data-number="21.8.0.1">
+<h4 data-number="21.8.0.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">21.8.0.1</span> Problem Statement</h4>
 <p>An election candidate believes she has the support of 50% (<span class="math inline">p = 0.5</span>) of the residents in a particular town. A researcher wants to test whether the candidate is under-estimating her support. The researcher asks 10 people whether they support the candidate or not; 7 people say that they do (70% in a sample). Calculate the p-value and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
 </section>
-<section id="setup" class="level4" data-number="20.8.0.2">
-<h4 data-number="20.8.0.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">20.8.0.2</span> Setup</h4>
+<section id="setup" class="level4" data-number="21.8.0.2">
+<h4 data-number="21.8.0.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">21.8.0.2</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.5</span> (null hypothesis: true proportion is 50%)</li>
@@ -679,8 +685,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="finding-the-p-value" class="level4" data-number="20.8.0.3">
-<h4 data-number="20.8.0.3" class="anchored" data-anchor-id="finding-the-p-value"><span class="header-section-number">20.8.0.3</span> Finding the P-value</h4>
+<section id="finding-the-p-value" class="level4" data-number="21.8.0.3">
+<h4 data-number="21.8.0.3" class="anchored" data-anchor-id="finding-the-p-value"><span class="header-section-number">21.8.0.3</span> Finding the P-value</h4>
 <p>For a one-sided test, the p-value is the probability of observing 7 or more successes out of 10 trials, assuming <span class="math inline">H_0</span> is true. Using the binomial distribution:</p>
 <p><span class="math inline">P(X \geq 7) = P(X = 7) + P(X = 8) + P(X = 9) + P(X = 10)</span></p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -699,8 +705,8 @@ Why One-Tailed Test?
 <li>If she believes support is 50% but it’s actually 60%, she’s <em>under-estimating</em> her support</li>
 </ul>
 <p>Our research question only concerns under-estimation, so we only need to consider evidence in that direction (values greater than 50%). This is reflected in our alternative hypothesis <span class="math inline">H_1: p &gt; 0.5</span>.</p>
-<section id="why-not-just-px-7" class="level4" data-number="20.8.0.4">
-<h4 data-number="20.8.0.4" class="anchored" data-anchor-id="why-not-just-px-7"><span class="header-section-number">20.8.0.4</span> Why Not Just P(X = 7)?</h4>
+<section id="why-not-just-px-7" class="level4" data-number="21.8.0.4">
+<h4 data-number="21.8.0.4" class="anchored" data-anchor-id="why-not-just-px-7"><span class="header-section-number">21.8.0.4</span> Why Not Just P(X = 7)?</h4>
 <p>We can’t just calculate <span class="math inline">P(X = 7)</span> because:</p>
 <ol type="1">
 <li>The p-value represents the probability of observing results <em>as extreme or more extreme</em> than what we saw, assuming <span class="math inline">H_0</span> is true</li>
@@ -724,23 +730,23 @@ Why One-Tailed Test?
 </ul>
 <p>P-value = 0.1172 + 0.0439 + 0.0098 + 0.0010 = 0.1719 (17.19%)</p>
 </section>
-<section id="decision" class="level4" data-number="20.8.0.5">
-<h4 data-number="20.8.0.5" class="anchored" data-anchor-id="decision"><span class="header-section-number">20.8.0.5</span> Decision</h4>
+<section id="decision" class="level4" data-number="21.8.0.5">
+<h4 data-number="21.8.0.5" class="anchored" data-anchor-id="decision"><span class="header-section-number">21.8.0.5</span> Decision</h4>
 <p>Since the p-value (0.1719) is greater than the significance level (0.05), we fail to reject the null hypothesis.</p>
 </section>
-<section id="interpretation" class="level4" data-number="20.8.0.6">
-<h4 data-number="20.8.0.6" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">20.8.0.6</span> Interpretation</h4>
+<section id="interpretation" class="level4" data-number="21.8.0.6">
+<h4 data-number="21.8.0.6" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">21.8.0.6</span> Interpretation</h4>
 <p>There is not enough evidence to conclude that the candidate is under-estimating her support. While the sample shows 70% support (higher than 50%), this difference could reasonably occur by chance even if the true support was only 50%. The relatively small sample size (<span class="math inline">n = 10</span>) makes it harder to detect real differences.</p>
 </section>
 </section>
 <section id="problem-2-binomial-test-for-candidate-support---case-2" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-2-binomial-test-for-candidate-support---case-2">Problem 2: Binomial Test for Candidate Support - Case 2</h3>
-<section id="problem-statement-1" class="level4" data-number="20.8.0.7">
-<h4 data-number="20.8.0.7" class="anchored" data-anchor-id="problem-statement-1"><span class="header-section-number">20.8.0.7</span> Problem Statement</h4>
+<section id="problem-statement-1" class="level4" data-number="21.8.0.7">
+<h4 data-number="21.8.0.7" class="anchored" data-anchor-id="problem-statement-1"><span class="header-section-number">21.8.0.7</span> Problem Statement</h4>
 <p>An election candidate believes she has the support of 40% (<span class="math inline">p = 0.4</span>) of the residents in a particular town. A researcher wants to test whether the candidate is over-estimating her support. The researcher asks 20 people whether they support the candidate or not; 3 people say that they do (15% in a sample). Calculate the p-value and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
 </section>
-<section id="setup-1" class="level4" data-number="20.8.0.8">
-<h4 data-number="20.8.0.8" class="anchored" data-anchor-id="setup-1"><span class="header-section-number">20.8.0.8</span> Setup</h4>
+<section id="setup-1" class="level4" data-number="21.8.0.8">
+<h4 data-number="21.8.0.8" class="anchored" data-anchor-id="setup-1"><span class="header-section-number">21.8.0.8</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.4</span> (null hypothesis: true proportion is 40%)</li>
@@ -754,12 +760,12 @@ Why One-Tailed Test?
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="why-one-tailed-test-1" class="level4" data-number="20.8.0.9">
-<h4 data-number="20.8.0.9" class="anchored" data-anchor-id="why-one-tailed-test-1"><span class="header-section-number">20.8.0.9</span> Why One-Tailed Test?</h4>
+<section id="why-one-tailed-test-1" class="level4" data-number="21.8.0.9">
+<h4 data-number="21.8.0.9" class="anchored" data-anchor-id="why-one-tailed-test-1"><span class="header-section-number">21.8.0.9</span> Why One-Tailed Test?</h4>
 <p>This is a one-tailed test because we’re specifically interested in whether the candidate is <em>over-estimating</em> her support. We only care about evidence suggesting the true proportion is less than 40%, leading to a left-tailed test.</p>
 </section>
-<section id="finding-the-p-value-1" class="level4" data-number="20.8.0.10">
-<h4 data-number="20.8.0.10" class="anchored" data-anchor-id="finding-the-p-value-1"><span class="header-section-number">20.8.0.10</span> Finding the P-value</h4>
+<section id="finding-the-p-value-1" class="level4" data-number="21.8.0.10">
+<h4 data-number="21.8.0.10" class="anchored" data-anchor-id="finding-the-p-value-1"><span class="header-section-number">21.8.0.10</span> Finding the P-value</h4>
 <p>For this left-tailed test, the p-value is the probability of observing 3 or fewer successes out of 20 trials, assuming <span class="math inline">H_0</span> is true. Using the binomial distribution:</p>
 <p><span class="math inline">P(X \leq 3) = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)</span></p>
 <p>For each value k, we use the binomial probability formula: <span class="math inline">P(X = k) = \binom{n}{k} p_0^k (1-p_0)^{n-k}</span></p>
@@ -772,16 +778,16 @@ Why One-Tailed Test?
 </ul>
 <p>P-value = 0.0002 + 0.0018 + 0.0087 + 0.0276 = 0.0383 (3.83%)</p>
 </section>
-<section id="decision-1" class="level4" data-number="20.8.0.11">
-<h4 data-number="20.8.0.11" class="anchored" data-anchor-id="decision-1"><span class="header-section-number">20.8.0.11</span> Decision</h4>
+<section id="decision-1" class="level4" data-number="21.8.0.11">
+<h4 data-number="21.8.0.11" class="anchored" data-anchor-id="decision-1"><span class="header-section-number">21.8.0.11</span> Decision</h4>
 <p>Since the p-value (0.0383) is less than the significance level (0.05), we reject the null hypothesis.</p>
 </section>
-<section id="interpretation-1" class="level4" data-number="20.8.0.12">
-<h4 data-number="20.8.0.12" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">20.8.0.12</span> Interpretation</h4>
+<section id="interpretation-1" class="level4" data-number="21.8.0.12">
+<h4 data-number="21.8.0.12" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">21.8.0.12</span> Interpretation</h4>
 <p>There is sufficient evidence to conclude that the candidate is over-estimating her support. The sample shows only 15% support, which is significantly lower than the candidate’s belief of 40%. The probability of observing such low support (3 or fewer out of 20) would be only about 3.83% if the true support were actually 40%.</p>
 </section>
-<section id="note-on-sample-size" class="level4" data-number="20.8.0.13">
-<h4 data-number="20.8.0.13" class="anchored" data-anchor-id="note-on-sample-size"><span class="header-section-number">20.8.0.13</span> Note on Sample Size</h4>
+<section id="note-on-sample-size" class="level4" data-number="21.8.0.13">
+<h4 data-number="21.8.0.13" class="anchored" data-anchor-id="note-on-sample-size"><span class="header-section-number">21.8.0.13</span> Note on Sample Size</h4>
 <p>Compared to the previous problem, this example has:</p>
 <ol type="1">
 <li>A larger sample size (<span class="math inline">n = 20</span> vs <span class="math inline">n = 10</span>)</li>
@@ -792,12 +798,12 @@ Why One-Tailed Test?
 </section>
 <section id="problem-3-binomial-test-for-eu-support" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</h3>
-<section id="problem-statement-2" class="level4" data-number="20.8.0.14">
-<h4 data-number="20.8.0.14" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">20.8.0.14</span> Problem Statement</h4>
+<section id="problem-statement-2" class="level4" data-number="21.8.0.14">
+<h4 data-number="21.8.0.14" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.8.0.14</span> Problem Statement</h4>
 <p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is overestimating this level of support. In a sample of 15 people (<span class="math inline">n = 15</span>), the researcher observes that 13 people support membership. Let’s define random variable X as the number of people in the sample who support EU membership. We observed <span class="math inline">X = 13</span> “successes” in 15 Bernoulli trials.</p>
 </section>
-<section id="setup-2" class="level4" data-number="20.8.0.15">
-<h4 data-number="20.8.0.15" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">20.8.0.15</span> Setup</h4>
+<section id="setup-2" class="level4" data-number="21.8.0.15">
+<h4 data-number="21.8.0.15" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.8.0.15</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.98</span> (null hypothesis: true proportion is 98%)</li>
@@ -811,8 +817,8 @@ Why One-Tailed Test?
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="finding-the-p-value-2" class="level4" data-number="20.8.0.16">
-<h4 data-number="20.8.0.16" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">20.8.0.16</span> Finding the P-value</h4>
+<section id="finding-the-p-value-2" class="level4" data-number="21.8.0.16">
+<h4 data-number="21.8.0.16" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.8.0.16</span> Finding the P-value</h4>
 <p>For this left-tailed test, we need <span class="math inline">P(X \leq 13)</span>. Given the high value of <span class="math inline">p_0</span>, it’s more efficient to use the complement rule:</p>
 <p><span class="math inline">P(X \leq 13) = 1 - P(X \geq 14)</span></p>
 <p>So we only need to calculate: <span class="math inline">P(X = 14) + P(X = 15)</span></p>
@@ -824,16 +830,16 @@ Why One-Tailed Test?
 </ul>
 <p>Therefore: <span class="math inline">P(X \leq 13) = 1 - (0.3493 + 0.6322) = 1 - 0.9815 = 0.0185</span> (1.85%)</p>
 </section>
-<section id="decision-2" class="level4" data-number="20.8.0.17">
-<h4 data-number="20.8.0.17" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">20.8.0.17</span> Decision</h4>
+<section id="decision-2" class="level4" data-number="21.8.0.17">
+<h4 data-number="21.8.0.17" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">21.8.0.17</span> Decision</h4>
 <p>Since the p-value (0.0185) is less than the significance level (0.05), we reject the null hypothesis.</p>
 </section>
-<section id="interpretation-2" class="level4" data-number="20.8.0.18">
-<h4 data-number="20.8.0.18" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">20.8.0.18</span> Interpretation</h4>
+<section id="interpretation-2" class="level4" data-number="21.8.0.18">
+<h4 data-number="21.8.0.18" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">21.8.0.18</span> Interpretation</h4>
 <p>There is sufficient evidence to conclude that the politician is overestimating the support for EU membership. While 86.7% support in the sample is still very high, it’s significantly lower than the politician’s claim of 98%. Under the assumption that true support is 98%, the probability of observing 13 or fewer supporters in a sample of 15 people would be only about 1.85%.</p>
 </section>
-<section id="note-on-complement-rule" class="level4" data-number="20.8.0.19">
-<h4 data-number="20.8.0.19" class="anchored" data-anchor-id="note-on-complement-rule"><span class="header-section-number">20.8.0.19</span> Note on Complement Rule</h4>
+<section id="note-on-complement-rule" class="level4" data-number="21.8.0.19">
+<h4 data-number="21.8.0.19" class="anchored" data-anchor-id="note-on-complement-rule"><span class="header-section-number">21.8.0.19</span> Note on Complement Rule</h4>
 <p>This problem demonstrates the utility of the complement rule in probability calculations. Instead of calculating probabilities for outcomes 0 through 13 (14 calculations), we only needed to calculate probabilities for outcomes 14 and 15 (2 calculations). This is particularly efficient when: 1. We have a large number of outcomes in the “tail” we’re interested in 2. The probability is concentrated in the other tail (here, high values due to <span class="math inline">p_0 = 0.98</span>)</p>
 
 
@@ -1264,13 +1270,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./rv_pdf_en.html" class="pagination-link" aria-label="Random Variables and Probability Distributions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Random Variables and Probability Distributions</span></span>
+      <a href="./rv_pdf_pl.html" class="pagination-link" aria-label="Zmienna Losowa i Rozkład Prawdopodobieństwa">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Zmienna Losowa i Rozkład Prawdopodobieństwa</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./inference_pl.html" class="pagination-link" aria-label="Wprowadzenie do Wnioskowania Statystycznego">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
