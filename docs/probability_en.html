@@ -3612,42 +3612,72 @@ Sample Space Partitions
 <h3 data-number="17.13.1" class="anchored" data-anchor-id="problem-1-colored-balls---at-least-one-red"><span class="header-section-number">17.13.1</span> Problem 1: Colored Balls - At Least One Red</h3>
 <p><strong>Question</strong>: A bag contains 5 red and 3 blue marbles. Two marbles are drawn simultaneously from the bag. What is the probability that at least one marble is red?</p>
 <p><strong>Detailed Solution</strong>:</p>
-<p>Let’s solve this problem using two different approaches to deepen our understanding.</p>
-<p><strong>Approach 1: Using the Complement Rule</strong> Sometimes it’s easier to find the probability of “at least one” by instead calculating the probability of “none” and subtracting from 1.</p>
-<ol type="1">
-<li>P(at least one red) = 1 - P(no red marbles)</li>
-<li>P(no red marbles) = P(both marbles are blue)</li>
-<li>When drawing simultaneously: <span class="math inline">P(\text{both blue}) = \frac{\binom{3}{2}}{\binom{8}{2}}</span>
+<section id="approach-1-using-tree-diagram-and-complement-rule" class="level4" data-number="17.13.1.1">
+<h4 data-number="17.13.1.1" class="anchored" data-anchor-id="approach-1-using-tree-diagram-and-complement-rule"><span class="header-section-number">17.13.1.1</span> Approach 1: Using Tree Diagram and Complement Rule</h4>
+<p>The key idea here is that finding the probability of “at least one red” directly can be complex, but finding its complement - “no red balls” (all blue) - is simpler.</p>
+<p>Then we can use <span class="math inline">P(\text{at least one red}) = 1 - P(\text{no red})</span>.</p>
+<p>Let’s visualize this with a diagram:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Start] --&gt; B[First Draw]
+    B --&gt; C["Blue (3/8)"]
+    B --&gt; D["Red (5/8)"]
+    C --&gt; E["Blue (2/7)"]
+    C --&gt; F["Red (5/7)"]
+    D --&gt; G["Blue (3/7)"]
+    D --&gt; H["Red (4/7)"]
+    
+    E --&gt; I["P = 3/8 * 2/7&lt;br/&gt;All Blue"]
+    F --&gt; J["P = 3/8 * 5/7&lt;br/&gt;At least one Red"]
+    G --&gt; K["P = 5/8 * 3/7&lt;br/&gt;At least one Red"]
+    H --&gt; L["P = 5/8 * 4/7&lt;br/&gt;At least one Red"]
+
+    style I fill:#f9f9f9,stroke:#333
+    style J fill:#f9f9f9,stroke:#333
+    style K fill:#f9f9f9,stroke:#333
+    style L fill:#f9f9f9,stroke:#333
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Now let’s solve using the complement rule:</p>
+<p><span class="math inline">P(\text{at least one red}) = 1 - P(\text{no red})</span></p>
+<p>To get no red marbles, we need to draw both blue marbles:</p>
 <ul>
-<li><span class="math inline">\binom{3}{2}</span> represents ways to choose 2 blue marbles from 3 blue marbles</li>
-<li><span class="math inline">\binom{8}{2}</span> represents ways to choose 2 marbles from all 8 marbles</li>
-</ul></li>
-<li>Calculate: <span class="math inline">P(\text{both blue}) = \frac{3!/(2!(3-2)!)}{8!/(2!(8-2)!)} = \frac{3}{28}</span></li>
-<li>Therefore: <span class="math inline">P(\text{at least one red}) = 1 - \frac{3}{28} = \frac{25}{28}</span></li>
-</ol>
-<p><strong>Approach 2: Direct Calculation</strong> We can also solve this directly by adding the probability of getting one red and one blue or two red marbles:</p>
-<ol type="1">
-<li>P(at least one red) = P(one red and one blue) + P(both red)</li>
-<li>Calculate each part:
-<ul>
-<li>P(both red) = <span class="math inline">\frac{\binom{5}{2}}{\binom{8}{2}} = \frac{10}{28}</span></li>
-<li>P(one red and one blue) = <span class="math inline">\frac{\binom{5}{1}\binom{3}{1}}{\binom{8}{2}} = \frac{15}{28}</span></li>
-</ul></li>
-<li>Therefore: <span class="math inline">P(\text{at least one red}) = \frac{10}{28} + \frac{15}{28} = \frac{25}{28}</span></li>
-</ol>
-<p><strong>Understanding the Solution</strong>:</p>
-<ul>
-<li>Both approaches give the same answer: <span class="math inline">\frac{25}{28}</span> (approximately 89.3%)</li>
-<li>The complement approach was simpler computationally because we only needed to calculate one combination</li>
-<li>The direct approach helps us understand the different ways we can get at least one red marble</li>
-<li>The high probability makes sense because:
-<ul>
-<li>Most marbles are red (5 out of 8)</li>
-<li>We’re drawing two marbles</li>
-<li>We only need one of them to be red</li>
-</ul></li>
+<li>Total marbles: 8</li>
+<li>Blue marbles: 3</li>
+<li><span class="math inline">P(\text{first blue}) = \frac{3}{8}</span></li>
+<li><span class="math inline">P(\text{second blue}|\text{first blue}) = \frac{2}{7}</span></li>
 </ul>
-<p>This problem demonstrates how choosing the right approach can make solving probability problems easier. The complement rule is particularly useful when calculating “at least one” probabilities.</p>
+<p><span class="math inline">P(\text{no red}) = P(\text{both blue}) = \frac{3}{8} \times \frac{2}{7} = \frac{6}{56} = \frac{3}{28}</span></p>
+<p>Therefore:</p>
+<p><span class="math inline">P(\text{at least one red}) = 1 - \frac{3}{28} = \frac{25}{28} \approx 0.893</span> or about 89.3%</p>
+</section>
+<section id="approach-2-using-combinations" class="level4" data-number="17.13.1.2">
+<h4 data-number="17.13.1.2" class="anchored" data-anchor-id="approach-2-using-combinations"><span class="header-section-number">17.13.1.2</span> Approach 2: Using Combinations</h4>
+<p>The combinations approach involves finding all possible ways to select 2 marbles out of 8, then subtracting the unfavorable outcomes (selecting 2 blue marbles).</p>
+<p>Let’s understand combinations first:</p>
+<ul>
+<li>A combination represents the number of ways to select <span class="math inline">r</span> items from <span class="math inline">n</span> items where order doesn’t matter</li>
+<li>Notation: <span class="math inline">C(n,r)</span> or <span class="math inline">\binom{n}{r}</span></li>
+<li>Formula: <span class="math inline">C(n,r) = \frac{n!}{r!(n-r)!}</span></li>
+</ul>
+<p>For this problem:</p>
+<ol type="1">
+<li>Total possible outcomes = <span class="math inline">C(8,2) = 28</span> ways to select 2 marbles from 8</li>
+<li>Unfavorable outcomes = <span class="math inline">C(3,2) = 3</span> ways to select 2 blue marbles from 3 blue marbles</li>
+<li>Favorable outcomes = <span class="math inline">C(8,2) - C(3,2) = 28 - 3 = 25</span></li>
+</ol>
+<p>Therefore:</p>
+<p><span class="math inline">P(\text{at least one red}) = \frac{25}{28} \approx 0.893</span> or about 89.3%</p>
+<p>Both methods give us the same result! The combinations approach is often more elegant for problems involving simultaneous selection, while the tree diagram approach helps visualize the problem better and is particularly useful when events happen in sequence.</p>
+</section>
 </section>
 <section id="problem-2-probability-of-drawing-diamonds-or-tens" class="level3" data-number="17.13.2">
 <h3 data-number="17.13.2" class="anchored" data-anchor-id="problem-2-probability-of-drawing-diamonds-or-tens"><span class="header-section-number">17.13.2</span> Problem 2: Probability of Drawing Diamonds or Tens</h3>
