@@ -453,12 +453,6 @@ The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
 <li>**Null Hypothesis* (H₀): The predictions are based on random guessing with a fair coin (p = 0.5)</li>
 <li><strong>Alternative Hypothesis</strong> (H₁): Either the person has ESP abilities OR the coin is biased toward heads (p &gt; 0.5)</li>
 </ol>
-<p>This formulation highlights an important limitation of hypothesis testing:</p>
-<ul>
-<li>While we can detect deviation from random chance</li>
-<li>We cannot distinguish between different causes of this deviation</li>
-<li>Additional controlled experiments would be needed to separate ESP from coin bias</li>
-</ul>
 <p><strong>Choosing Between One-tailed and Two-tailed Tests</strong></p>
 <p>In hypothesis testing, we must decide whether to test for an effect in one or both directions:</p>
 <p>One-tailed Test (Our Current Case):</p>
@@ -603,7 +597,7 @@ P-value Calculation for the ESP Example
 <li>“If defendant were innocent, how do we explain the evidence?”</li>
 <li>Very improbable evidence suggests innocence might be false</li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -619,8 +613,8 @@ Understanding Error Types in Hypothesis Testing
 <ul>
 <li>Definition: Rejecting H₀ when it is actually true</li>
 <li>Probability: α (significance level)</li>
-<li>Example in Justice System: Convicting an innocent person</li>
-<li>Example in Medicine: Diagnosing healthy patient as sick</li>
+<li>Example in Justice System: <strong>Convicting an innocent person</strong></li>
+<li>Example in Medicine: <strong>Diagnosing healthy patient as sick</strong></li>
 </ul>
 </section>
 <section id="type-ii-error-false-negative" class="level3" data-number="21.2.5">
@@ -629,8 +623,8 @@ Understanding Error Types in Hypothesis Testing
 <li>Definition: Failing to reject H₀ when it is actually false</li>
 <li>Probability: β</li>
 <li>Power = 1 - β (probability of correctly rejecting false H₀)</li>
-<li>Example in Justice System: Letting guilty person go free</li>
-<li>Example in Medicine: Missing an actual disease</li>
+<li>Example in Justice System: <strong>Letting guilty person go free</strong></li>
+<li>Example in Medicine: <strong>Missing an actual disease</strong></li>
 </ul>
 </section>
 <section id="trade-off-between-errors" class="level3" data-number="21.2.6">
@@ -833,7 +827,9 @@ Historical Note: Jerzy Neyman (1894-1981)
 <h3 class="unnumbered anchored" data-anchor-id="problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</h3>
 <section id="problem-statement" class="level4" data-number="21.7.0.1">
 <h4 data-number="21.7.0.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">21.7.0.1</span> Problem Statement</h4>
-<p>An election candidate believes she has the support of 50% (<span class="math inline">p = 0.5</span>) of the residents in a particular town. A researcher wants to test whether the candidate is under-estimating her support. The researcher asks 10 people whether they support the candidate or not; 7 people say that they do (70% in a sample). Calculate the p-value and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
+<p>An election candidate believes she has the support of 50% (<span class="math inline">p = 0.5</span>) of the residents in a particular town. A researcher wants to test whether the candidate is under-estimating her support.</p>
+<p>The researcher asks 10 people whether they support the candidate or not; 7 people say that they do (70% in a sample).</p>
+<p>Calculate the <strong>p-value</strong> and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
 </section>
 <section id="setup" class="level4" data-number="21.7.0.2">
 <h4 data-number="21.7.0.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">21.7.0.2</span> Setup</h4>
@@ -864,7 +860,7 @@ Why One-Tailed Test?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is a one-tailed test because we’re specifically interested in whether the candidate is <em>under-estimating</em> her support. In statistical terms:</p>
+<p>This is a one-tailed/sided test because we’re specifically interested in whether the candidate is <em>under-estimating</em> her support. In statistical terms:</p>
 <ul>
 <li>If she believes support is 50% but it’s actually 40%, she’s <em>over-estimating</em> her support</li>
 <li>If she believes support is 50% but it’s actually 60%, she’s <em>under-estimating</em> her support</li>
@@ -974,7 +970,9 @@ Why One-Tailed Test?
 <h3 class="unnumbered anchored" data-anchor-id="problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</h3>
 <section id="problem-statement-2" class="level4" data-number="21.7.0.13">
 <h4 data-number="21.7.0.13" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.7.0.13</span> Problem Statement</h4>
-<p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is overestimating this level of support. In a sample of 15 people (<span class="math inline">n = 15</span>), the researcher observes that 13 people support membership. Let’s define random variable X as the number of people in the sample who support EU membership. We observed <span class="math inline">X = 13</span> “successes” in 15 Bernoulli trials.</p>
+<p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is overestimating this level of support.</p>
+<p>In a sample of 15 people (<span class="math inline">n = 15</span>), the researcher observes that 13 people support membership. Let’s define the random variable X as the number of people in the sample who support EU membership. We observed <span class="math inline">X = 13</span> “successes” in 15 Bernoulli trials.</p>
+<p>Is there enough evidence to reject the claim that the support is 98%?</p>
 </section>
 <section id="setup-2" class="level4" data-number="21.7.0.14">
 <h4 data-number="21.7.0.14" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.7.0.14</span> Setup</h4>

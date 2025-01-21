@@ -340,20 +340,20 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#random-variables-making-outcomes-measurable" id="toc-random-variables-making-outcomes-measurable" class="nav-link active" data-scroll-target="#random-variables-making-outcomes-measurable"><span class="header-section-number">19.4</span> Random Variables: Making Outcomes Measurable</a>
+  <li><a href="#random-variables-making-outcomes-measurable" id="toc-random-variables-making-outcomes-measurable" class="nav-link active" data-scroll-target="#random-variables-making-outcomes-measurable"><span class="header-section-number">19.2</span> Random Variables: Making Outcomes Measurable</a>
   <ul class="collapse">
-  <li><a href="#example-rolling-a-die" id="toc-example-rolling-a-die" class="nav-link" data-scroll-target="#example-rolling-a-die"><span class="header-section-number">19.4.1</span> Example: Rolling a Die</a></li>
-  <li><a href="#example-flipping-a-coin" id="toc-example-flipping-a-coin" class="nav-link" data-scroll-target="#example-flipping-a-coin"><span class="header-section-number">19.4.2</span> Example: Flipping a Coin</a></li>
-  <li><a href="#properties-of-discrete-random-variables" id="toc-properties-of-discrete-random-variables" class="nav-link" data-scroll-target="#properties-of-discrete-random-variables"><span class="header-section-number">19.4.3</span> Properties of Discrete Random Variables</a></li>
+  <li><a href="#example-rolling-a-die" id="toc-example-rolling-a-die" class="nav-link" data-scroll-target="#example-rolling-a-die"><span class="header-section-number">19.2.1</span> Example: Rolling a Die</a></li>
+  <li><a href="#example-flipping-a-coin" id="toc-example-flipping-a-coin" class="nav-link" data-scroll-target="#example-flipping-a-coin"><span class="header-section-number">19.2.2</span> Example: Flipping a Coin</a></li>
+  <li><a href="#properties-of-discrete-random-variables" id="toc-properties-of-discrete-random-variables" class="nav-link" data-scroll-target="#properties-of-discrete-random-variables"><span class="header-section-number">19.2.3</span> Properties of Discrete Random Variables</a></li>
   </ul></li>
-  <li><a href="#understanding-probability-distributions" id="toc-understanding-probability-distributions" class="nav-link" data-scroll-target="#understanding-probability-distributions"><span class="header-section-number">19.5</span> Understanding Probability Distributions</a>
+  <li><a href="#understanding-probability-distributions" id="toc-understanding-probability-distributions" class="nav-link" data-scroll-target="#understanding-probability-distributions"><span class="header-section-number">19.3</span> Understanding Probability Distributions</a>
   <ul class="collapse">
-  <li><a href="#uniform-distribution" id="toc-uniform-distribution" class="nav-link" data-scroll-target="#uniform-distribution"><span class="header-section-number">19.5.1</span> Uniform Distribution</a></li>
-  <li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution"><span class="header-section-number">19.5.2</span> Bernoulli Distribution</a></li>
-  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">19.5.3</span> Binomial Distribution</a></li>
-  <li><a href="#comparing-the-distributions" id="toc-comparing-the-distributions" class="nav-link" data-scroll-target="#comparing-the-distributions"><span class="header-section-number">19.5.4</span> Comparing the Distributions</a></li>
-  <li><a href="#interactive-r-code-for-exploration" id="toc-interactive-r-code-for-exploration" class="nav-link" data-scroll-target="#interactive-r-code-for-exploration"><span class="header-section-number">19.5.5</span> Interactive R Code for Exploration</a></li>
-  <li><a href="#building-the-binomial-distribution-pattern" id="toc-building-the-binomial-distribution-pattern" class="nav-link" data-scroll-target="#building-the-binomial-distribution-pattern"><span class="header-section-number">19.5.6</span> Building the Binomial Distribution Pattern</a></li>
+  <li><a href="#uniform-distribution" id="toc-uniform-distribution" class="nav-link" data-scroll-target="#uniform-distribution"><span class="header-section-number">19.3.1</span> Uniform Distribution</a></li>
+  <li><a href="#bernoulli-distribution" id="toc-bernoulli-distribution" class="nav-link" data-scroll-target="#bernoulli-distribution"><span class="header-section-number">19.3.2</span> Bernoulli Distribution</a></li>
+  <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">19.3.3</span> Binomial Distribution</a></li>
+  <li><a href="#comparing-the-distributions" id="toc-comparing-the-distributions" class="nav-link" data-scroll-target="#comparing-the-distributions"><span class="header-section-number">19.3.4</span> Comparing the Distributions</a></li>
+  <li><a href="#interactive-r-code-for-exploration" id="toc-interactive-r-code-for-exploration" class="nav-link" data-scroll-target="#interactive-r-code-for-exploration"><span class="header-section-number">19.3.5</span> Interactive R Code for Exploration</a></li>
+  <li><a href="#building-the-binomial-distribution-pattern" id="toc-building-the-binomial-distribution-pattern" class="nav-link" data-scroll-target="#building-the-binomial-distribution-pattern"><span class="header-section-number">19.3.6</span> Building the Binomial Distribution Pattern</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -380,7 +380,7 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -752,9 +752,13 @@ From Bernoulli to Binomial Distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Now that we understand random variables and their probability distributions, let’s explore two fundamental discrete distributions that model many real-world phenomena: the <strong>Bernoulli</strong> and <strong>binomial</strong> distributions.</p>
-<section id="the-bernoulli-distribution-modeling-single-yesno-experiments" class="level2" data-number="19.2">
-<h2 data-number="19.2" class="anchored" data-anchor-id="the-bernoulli-distribution-modeling-single-yesno-experiments"><span class="header-section-number">19.2</span> The Bernoulli Distribution: Modeling Single Yes/No Experiments</h2>
+<ol type="1">
+<li><p>A random variable is a function that maps random outcomes (from a sample space) to real numbers. Example: mapping Heads→1, Tails→0.</p></li>
+<li><p>A probability distribution assigns probabilities to the possible values of a random variable, such that: <span class="math inline">P(x) \geq 0</span> and sums/integrates to 1</p></li>
+</ol>
+<p>Let’s explore two fundamental discrete distributions that model many real-world phenomena: the <strong>Bernoulli</strong> and <strong>binomial</strong> distributions.</p>
+<section id="the-bernoulli-distribution-modeling-single-yesno-experiments" class="level3" data-number="19.1.2">
+<h3 data-number="19.1.2" class="anchored" data-anchor-id="the-bernoulli-distribution-modeling-single-yesno-experiments"><span class="header-section-number">19.1.2</span> The Bernoulli Distribution: Modeling Single Yes/No Experiments</h3>
 <p>The Bernoulli distribution is the simplest non-trivial probability distribution, modeling a single trial/experiment with two possible outcomes: “success” (1) or “failure” (0). Think of flipping a single coin, where:</p>
 <ul>
 <li>“Success” (heads, X = 1) occurs with probability p; it’s a conventional statistical term but doesn’t necessarily mean a positive or favorable outcome. It’s just the event we define as the one we want to track.</li>
@@ -793,8 +797,8 @@ p &amp; \text{if } k = 1 \\
 <li>Variance: <span class="math inline">Var(X) = p(1-p)</span></li>
 </ol>
 </section>
-<section id="the-binomial-distribution-counting-successes-in-multiple-trials" class="level2" data-number="19.3">
-<h2 data-number="19.3" class="anchored" data-anchor-id="the-binomial-distribution-counting-successes-in-multiple-trials"><span class="header-section-number">19.3</span> The Binomial Distribution: Counting Successes in Multiple Trials</h2>
+<section id="the-binomial-distribution-counting-successes-in-multiple-trials" class="level3" data-number="19.1.3">
+<h3 data-number="19.1.3" class="anchored" data-anchor-id="the-binomial-distribution-counting-successes-in-multiple-trials"><span class="header-section-number">19.1.3</span> The Binomial Distribution: Counting Successes in Multiple Trials</h3>
 <p>The binomial distribution extends the Bernoulli model to n independent trials, counting <strong>the total number of “successes” in n trials</strong> (binomial random variable X).</p>
 <p><strong>Essential Characteristics of Binomial Experiments and Binomial Random Variables</strong></p>
 <ol type="1">
@@ -916,27 +920,27 @@ p &amp; \text{if } k = 1 \\
 </section>
 </div>
 </div>
-<section id="random-variables-making-outcomes-measurable" class="level2" data-number="19.4">
-<h2 data-number="19.4" class="anchored" data-anchor-id="random-variables-making-outcomes-measurable"><span class="header-section-number">19.4</span> Random Variables: Making Outcomes Measurable</h2>
+<section id="random-variables-making-outcomes-measurable" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="random-variables-making-outcomes-measurable"><span class="header-section-number">19.2</span> Random Variables: Making Outcomes Measurable</h2>
 <p>A random variable is a way to assign numbers to the outcomes of a random experiment. Think of it as a function that converts outcomes into numbers, making them measurable and easier to analyze.</p>
-<section id="example-rolling-a-die" class="level3" data-number="19.4.1">
-<h3 data-number="19.4.1" class="anchored" data-anchor-id="example-rolling-a-die"><span class="header-section-number">19.4.1</span> Example: Rolling a Die</h3>
+<section id="example-rolling-a-die" class="level3" data-number="19.2.1">
+<h3 data-number="19.2.1" class="anchored" data-anchor-id="example-rolling-a-die"><span class="header-section-number">19.2.1</span> Example: Rolling a Die</h3>
 <ul>
 <li>Outcome space: {⚀, ⚁, ⚂, ⚃, ⚄, ⚅}</li>
 <li>Random variable X: “number of dots showing”</li>
 <li>X converts outcomes to numbers: X(⚀) = 1, X(⚁) = 2, …, X(⚅) = 6</li>
 </ul>
 </section>
-<section id="example-flipping-a-coin" class="level3" data-number="19.4.2">
-<h3 data-number="19.4.2" class="anchored" data-anchor-id="example-flipping-a-coin"><span class="header-section-number">19.4.2</span> Example: Flipping a Coin</h3>
+<section id="example-flipping-a-coin" class="level3" data-number="19.2.2">
+<h3 data-number="19.2.2" class="anchored" data-anchor-id="example-flipping-a-coin"><span class="header-section-number">19.2.2</span> Example: Flipping a Coin</h3>
 <ul>
 <li>Outcome space: {Heads, Tails}</li>
 <li>Random variable Y: “1 if heads, 0 if tails”</li>
 <li>Y converts outcomes to numbers: Y(Heads) = 1, Y(Tails) = 0</li>
 </ul>
 </section>
-<section id="properties-of-discrete-random-variables" class="level3" data-number="19.4.3">
-<h3 data-number="19.4.3" class="anchored" data-anchor-id="properties-of-discrete-random-variables"><span class="header-section-number">19.4.3</span> Properties of Discrete Random Variables</h3>
+<section id="properties-of-discrete-random-variables" class="level3" data-number="19.2.3">
+<h3 data-number="19.2.3" class="anchored" data-anchor-id="properties-of-discrete-random-variables"><span class="header-section-number">19.2.3</span> Properties of Discrete Random Variables</h3>
 <ol type="1">
 <li>Each possible value has a probability</li>
 <li>All probabilities must be ≥ 0</li>
@@ -944,8 +948,8 @@ p &amp; \text{if } k = 1 \\
 </ol>
 </section>
 </section>
-<section id="understanding-probability-distributions" class="level2" data-number="19.5">
-<h2 data-number="19.5" class="anchored" data-anchor-id="understanding-probability-distributions"><span class="header-section-number">19.5</span> Understanding Probability Distributions</h2>
+<section id="understanding-probability-distributions" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="understanding-probability-distributions"><span class="header-section-number">19.3</span> Understanding Probability Distributions</h2>
 <p>A probability distribution is a mathematical description of the probabilities of different possible outcomes in a random experiment. It tells us:</p>
 <ol type="1">
 <li>What values can occur (the support of the distribution)</li>
@@ -963,11 +967,11 @@ p &amp; \text{if } k = 1 \\
 <li><p>The sum of all probabilities must equal 1: <span class="math inline">\sum P(X = x) = 1</span></p></li>
 </ol>
 <p>Let’s explore three fundamental discrete distributions:</p>
-<section id="uniform-distribution" class="level3" data-number="19.5.1">
-<h3 data-number="19.5.1" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">19.5.1</span> Uniform Distribution</h3>
+<section id="uniform-distribution" class="level3" data-number="19.3.1">
+<h3 data-number="19.3.1" class="anchored" data-anchor-id="uniform-distribution"><span class="header-section-number">19.3.1</span> Uniform Distribution</h3>
 <p>The uniform distribution represents complete randomness - all outcomes are equally likely.</p>
-<section id="properties" class="level4" data-number="19.5.1.1">
-<h4 data-number="19.5.1.1" class="anchored" data-anchor-id="properties"><span class="header-section-number">19.5.1.1</span> Properties</h4>
+<section id="properties" class="level4" data-number="19.3.1.1">
+<h4 data-number="19.3.1.1" class="anchored" data-anchor-id="properties"><span class="header-section-number">19.3.1.1</span> Properties</h4>
 <ul>
 <li>Each outcome has equal probability</li>
 <li>For n possible outcomes, P(X = x) = 1/n for each x</li>
@@ -975,8 +979,8 @@ p &amp; \text{if } k = 1 \\
 <li>Variance: <span class="math inline">Var(X) = \frac{(b-a+1)^2 - 1}{12}</span> for discrete uniform</li>
 </ul>
 </section>
-<section id="example-fair-die" class="level4" data-number="19.5.1.2">
-<h4 data-number="19.5.1.2" class="anchored" data-anchor-id="example-fair-die"><span class="header-section-number">19.5.1.2</span> Example: Fair Die</h4>
+<section id="example-fair-die" class="level4" data-number="19.3.1.2">
+<h4 data-number="19.3.1.2" class="anchored" data-anchor-id="example-fair-die"><span class="header-section-number">19.3.1.2</span> Example: Fair Die</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization of uniform distribution (die roll)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -1004,11 +1008,11 @@ p &amp; \text{if } k = 1 \\
 </div>
 </section>
 </section>
-<section id="bernoulli-distribution" class="level3" data-number="19.5.2">
-<h3 data-number="19.5.2" class="anchored" data-anchor-id="bernoulli-distribution"><span class="header-section-number">19.5.2</span> Bernoulli Distribution</h3>
+<section id="bernoulli-distribution" class="level3" data-number="19.3.2">
+<h3 data-number="19.3.2" class="anchored" data-anchor-id="bernoulli-distribution"><span class="header-section-number">19.3.2</span> Bernoulli Distribution</h3>
 <p>The Bernoulli distribution is the simplest probability distribution, modeling a single “yes/no” trial.</p>
-<section id="properties-1" class="level4" data-number="19.5.2.1">
-<h4 data-number="19.5.2.1" class="anchored" data-anchor-id="properties-1"><span class="header-section-number">19.5.2.1</span> Properties</h4>
+<section id="properties-1" class="level4" data-number="19.3.2.1">
+<h4 data-number="19.3.2.1" class="anchored" data-anchor-id="properties-1"><span class="header-section-number">19.3.2.1</span> Properties</h4>
 <ul>
 <li>Only two possible outcomes: 0 (failure) or 1 (success)</li>
 <li>Controlled by single parameter p (probability of success)</li>
@@ -1016,8 +1020,8 @@ p &amp; \text{if } k = 1 \\
 <li>Variance: <span class="math inline">Var(X) = p(1-p)</span></li>
 </ul>
 </section>
-<section id="example-biased-coin" class="level4" data-number="19.5.2.2">
-<h4 data-number="19.5.2.2" class="anchored" data-anchor-id="example-biased-coin"><span class="header-section-number">19.5.2.2</span> Example: Biased Coin</h4>
+<section id="example-biased-coin" class="level4" data-number="19.3.2.2">
+<h4 data-number="19.3.2.2" class="anchored" data-anchor-id="example-biased-coin"><span class="header-section-number">19.3.2.2</span> Example: Biased Coin</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization of Bernoulli distribution (p = 0.7)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>bernoulli_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -1043,11 +1047,11 @@ p &amp; \text{if } k = 1 \\
 </div>
 </section>
 </section>
-<section id="binomial-distribution" class="level3" data-number="19.5.3">
-<h3 data-number="19.5.3" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">19.5.3</span> Binomial Distribution</h3>
+<section id="binomial-distribution" class="level3" data-number="19.3.3">
+<h3 data-number="19.3.3" class="anchored" data-anchor-id="binomial-distribution"><span class="header-section-number">19.3.3</span> Binomial Distribution</h3>
 <p>The binomial distribution models the number of successes in n independent Bernoulli trials.</p>
-<section id="properties-2" class="level4" data-number="19.5.3.1">
-<h4 data-number="19.5.3.1" class="anchored" data-anchor-id="properties-2"><span class="header-section-number">19.5.3.1</span> Properties</h4>
+<section id="properties-2" class="level4" data-number="19.3.3.1">
+<h4 data-number="19.3.3.1" class="anchored" data-anchor-id="properties-2"><span class="header-section-number">19.3.3.1</span> Properties</h4>
 <ul>
 <li>Parameters: n (number of trials) and p (probability of success)</li>
 <li>Possible values: 0 to n successes</li>
@@ -1056,8 +1060,8 @@ p &amp; \text{if } k = 1 \\
 <li>Probability mass function: <span class="math inline">P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}</span></li>
 </ul>
 </section>
-<section id="understanding-the-formula" class="level4" data-number="19.5.3.2">
-<h4 data-number="19.5.3.2" class="anchored" data-anchor-id="understanding-the-formula"><span class="header-section-number">19.5.3.2</span> Understanding the Formula</h4>
+<section id="understanding-the-formula" class="level4" data-number="19.3.3.2">
+<h4 data-number="19.3.3.2" class="anchored" data-anchor-id="understanding-the-formula"><span class="header-section-number">19.3.3.2</span> Understanding the Formula</h4>
 <p>The binomial probability formula has three parts:</p>
 <ol type="1">
 <li><span class="math inline">\binom{n}{k}</span> - Number of ways to get k successes in n trials</li>
@@ -1065,8 +1069,8 @@ p &amp; \text{if } k = 1 \\
 <li><span class="math inline">(1-p)^{n-k}</span> - Probability of (n-k) failures</li>
 </ol>
 </section>
-<section id="visualizing-binomial-distributions" class="level4" data-number="19.5.3.3">
-<h4 data-number="19.5.3.3" class="anchored" data-anchor-id="visualizing-binomial-distributions"><span class="header-section-number">19.5.3.3</span> Visualizing Binomial Distributions</h4>
+<section id="visualizing-binomial-distributions" class="level4" data-number="19.3.3.3">
+<h4 data-number="19.3.3.3" class="anchored" data-anchor-id="visualizing-binomial-distributions"><span class="header-section-number">19.3.3.3</span> Visualizing Binomial Distributions</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate binomial probabilities</span></span>
@@ -1105,8 +1109,8 @@ p &amp; \text{if } k = 1 \\
 </div>
 </div>
 </section>
-<section id="effect-of-parameters" class="level4" data-number="19.5.3.4">
-<h4 data-number="19.5.3.4" class="anchored" data-anchor-id="effect-of-parameters"><span class="header-section-number">19.5.3.4</span> Effect of Parameters</h4>
+<section id="effect-of-parameters" class="level4" data-number="19.3.3.4">
+<h4 data-number="19.3.3.4" class="anchored" data-anchor-id="effect-of-parameters"><span class="header-section-number">19.3.3.4</span> Effect of Parameters</h4>
 <p>The shape of the binomial distribution changes with n and p:</p>
 <ol type="1">
 <li>Effect of n (number of trials):
@@ -1122,8 +1126,8 @@ p &amp; \text{if } k = 1 \\
 </ul></li>
 </ol>
 </section>
-<section id="real-world-applications" class="level4" data-number="19.5.3.5">
-<h4 data-number="19.5.3.5" class="anchored" data-anchor-id="real-world-applications"><span class="header-section-number">19.5.3.5</span> Real-World Applications</h4>
+<section id="real-world-applications" class="level4" data-number="19.3.3.5">
+<h4 data-number="19.3.3.5" class="anchored" data-anchor-id="real-world-applications"><span class="header-section-number">19.3.3.5</span> Real-World Applications</h4>
 <ol type="1">
 <li>Quality Control
 <ul>
@@ -1140,8 +1144,8 @@ p &amp; \text{if } k = 1 \\
 </ol>
 </section>
 </section>
-<section id="comparing-the-distributions" class="level3" data-number="19.5.4">
-<h3 data-number="19.5.4" class="anchored" data-anchor-id="comparing-the-distributions"><span class="header-section-number">19.5.4</span> Comparing the Distributions</h3>
+<section id="comparing-the-distributions" class="level3" data-number="19.3.4">
+<h3 data-number="19.3.4" class="anchored" data-anchor-id="comparing-the-distributions"><span class="header-section-number">19.3.4</span> Comparing the Distributions</h3>
 <p>Key differences between our three distributions:</p>
 <ol type="1">
 <li>Uniform Distribution
@@ -1164,8 +1168,8 @@ p &amp; \text{if } k = 1 \\
 </ul></li>
 </ol>
 </section>
-<section id="interactive-r-code-for-exploration" class="level3" data-number="19.5.5">
-<h3 data-number="19.5.5" class="anchored" data-anchor-id="interactive-r-code-for-exploration"><span class="header-section-number">19.5.5</span> Interactive R Code for Exploration</h3>
+<section id="interactive-r-code-for-exploration" class="level3" data-number="19.3.5">
+<h3 data-number="19.3.5" class="anchored" data-anchor-id="interactive-r-code-for-exploration"><span class="header-section-number">19.3.5</span> Interactive R Code for Exploration</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to compare distributions</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>compare_distributions <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">p =</span> <span class="fl">0.5</span>) {</span>
@@ -1216,11 +1220,11 @@ p &amp; \text{if } k = 1 \\
 </div>
 </div>
 </section>
-<section id="building-the-binomial-distribution-pattern" class="level3" data-number="19.5.6">
-<h3 data-number="19.5.6" class="anchored" data-anchor-id="building-the-binomial-distribution-pattern"><span class="header-section-number">19.5.6</span> Building the Binomial Distribution Pattern</h3>
+<section id="building-the-binomial-distribution-pattern" class="level3" data-number="19.3.6">
+<h3 data-number="19.3.6" class="anchored" data-anchor-id="building-the-binomial-distribution-pattern"><span class="header-section-number">19.3.6</span> Building the Binomial Distribution Pattern</h3>
 <p>The binomial distribution emerges naturally when we consider repeated independent trials. Let’s build it step by step, using the multiplication rule and counting principles.</p>
-<section id="the-multiplication-rule" class="level4" data-number="19.5.6.1">
-<h4 data-number="19.5.6.1" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">19.5.6.1</span> The Multiplication Rule</h4>
+<section id="the-multiplication-rule" class="level4" data-number="19.3.6.1">
+<h4 data-number="19.3.6.1" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">19.3.6.1</span> The Multiplication Rule</h4>
 <p>The multiplication rule states that if we have:</p>
 <ul>
 <li>Event A that can happen in m ways</li>
@@ -1234,8 +1238,8 @@ p &amp; \text{if } k = 1 \\
 </ul>
 <p>Then we have 2 × 3 = 6 possible outfits.</p>
 </section>
-<section id="understanding-the-binomial-coefficient" class="level4" data-number="19.5.6.2">
-<h4 data-number="19.5.6.2" class="anchored"><span class="header-section-number">19.5.6.2</span> Understanding the Binomial Coefficient</h4>
+<section id="understanding-the-binomial-coefficient" class="level4" data-number="19.3.6.2">
+<h4 data-number="19.3.6.2" class="anchored"><span class="header-section-number">19.3.6.2</span> Understanding the Binomial Coefficient</h4>
 <p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> counts the number of ways to choose k items from n items, where order doesn’t matter. It relates to the multiplication rule through this key insight:</p>
 <ol type="1">
 <li>First, count all possible ordered sequences (using multiplication rule)</li>
@@ -1273,7 +1277,7 @@ p &amp; \text{if } k = 1 \\
 </ul></li>
 </ol>
 <p>Let me suggest a more precise formulation:</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1286,15 +1290,15 @@ Applying Binomial Distribution: ESP Probability Analysis
 <p><em>Extrasensory perception (ESP), also known as a sixth sense, is a claimed ability to perceive information through mental means rather than the five physical senses.</em></p>
 <p><strong>Problem</strong>: A man claims to have extrasensory perception (ESP). To test this claim, a fair coin is flipped 10 times and the man is asked to predict each outcome in advance. He gets 7 out of 10 predictions correct. Calculate the probability of obtaining 7 or more correct predictions out of 10 trials by chance alone (assuming no ESP).</p>
 <p><em>Remark:</em> Under the null hypothesis of no ESP, the probability of each correct prediction is <span class="math inline">\frac{1}{2}</span>.</p>
-<section id="preliminary-concepts" class="level3" data-number="19.5.7">
-<h3 data-number="19.5.7" class="anchored" data-anchor-id="preliminary-concepts"><span class="header-section-number">19.5.7</span> Preliminary Concepts</h3>
-<section id="bernoulli-variable" class="level4" data-number="19.5.7.1">
-<h4 data-number="19.5.7.1" class="anchored" data-anchor-id="bernoulli-variable"><span class="header-section-number">19.5.7.1</span> Bernoulli Variable</h4>
+<section id="preliminary-concepts" class="level3" data-number="19.3.7">
+<h3 data-number="19.3.7" class="anchored" data-anchor-id="preliminary-concepts"><span class="header-section-number">19.3.7</span> Preliminary Concepts</h3>
+<section id="bernoulli-variable" class="level4" data-number="19.3.7.1">
+<h4 data-number="19.3.7.1" class="anchored" data-anchor-id="bernoulli-variable"><span class="header-section-number">19.3.7.1</span> Bernoulli Variable</h4>
 <p>A Bernoulli random variable represents a trial with exactly two possible outcomes: success (1) or failure (0). Each trial has probability <span class="math inline">p</span> of success and <span class="math inline">1-p</span> of failure.</p>
 <p>In our case, each coin flip prediction is a Bernoulli trial where success means a correct prediction.</p>
 </section>
-<section id="binomial-distribution-1" class="level4" data-number="19.5.7.2">
-<h4 data-number="19.5.7.2" class="anchored" data-anchor-id="binomial-distribution-1"><span class="header-section-number">19.5.7.2</span> Binomial Distribution</h4>
+<section id="binomial-distribution-1" class="level4" data-number="19.3.7.2">
+<h4 data-number="19.3.7.2" class="anchored" data-anchor-id="binomial-distribution-1"><span class="header-section-number">19.3.7.2</span> Binomial Distribution</h4>
 <p>The binomial distribution extends the Bernoulli concept to model the sum of <span class="math inline">n</span> independent Bernoulli trials. It describes the probability of obtaining exactly <span class="math inline">k</span> successes in these <span class="math inline">n</span> trials. The probability mass function is:</p>
 <p><span class="math display">P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}</span></p>
 <p>where:</p>
@@ -1305,15 +1309,15 @@ Applying Binomial Distribution: ESP Probability Analysis
 <li><span class="math inline">\binom{n}{k}</span> is the binomial coefficient</li>
 </ul>
 </section>
-<section id="binomial-coefficient" class="level4" data-number="19.5.7.3">
-<h4 data-number="19.5.7.3" class="anchored" data-anchor-id="binomial-coefficient"><span class="header-section-number">19.5.7.3</span> Binomial Coefficient</h4>
+<section id="binomial-coefficient" class="level4" data-number="19.3.7.3">
+<h4 data-number="19.3.7.3" class="anchored" data-anchor-id="binomial-coefficient"><span class="header-section-number">19.3.7.3</span> Binomial Coefficient</h4>
 <p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> represents the number of ways to choose <span class="math inline">k</span> items from <span class="math inline">n</span> items, regardless of order. It is calculated as:</p>
 <p><span class="math display">\binom{n}{k} = \frac{n!}{k!(n-k)!}</span></p>
 <p>For example, <span class="math inline">\binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{10!}{7!3!} = 120</span></p>
 </section>
 </section>
-<section id="problem-solution" class="level3" data-number="19.5.8">
-<h3 data-number="19.5.8" class="anchored" data-anchor-id="problem-solution"><span class="header-section-number">19.5.8</span> Problem Solution</h3>
+<section id="problem-solution" class="level3" data-number="19.3.8">
+<h3 data-number="19.3.8" class="anchored" data-anchor-id="problem-solution"><span class="header-section-number">19.3.8</span> Problem Solution</h3>
 <p>Given: - <span class="math inline">n = 10</span> coin flips - <span class="math inline">p = \frac{1}{2}</span> (probability of correct guess without ESP) - Need <span class="math inline">P(X \geq 7)</span> = <span class="math inline">P(X = 7) + P(X = 8) + P(X = 9) + P(X = 10)</span></p>
 <p>Step 1: Calculate <span class="math inline">P(X = 7)</span> <span class="math display">P(X = 7) = \binom{10}{7}(\frac{1}{2})^7(\frac{1}{2})^3</span> <span class="math display">= 120 \cdot (\frac{1}{128}) \cdot (\frac{1}{8})</span> <span class="math display">= 120 \cdot \frac{1}{1024} = \frac{120}{1024} \approx 0.117</span></p>
 <p>Step 2: Calculate <span class="math inline">P(X = 8)</span> <span class="math display">P(X = 8) = \binom{10}{8}(\frac{1}{2})^8(\frac{1}{2})^2</span> <span class="math display">= 45 \cdot (\frac{1}{256}) \cdot (\frac{1}{4})</span> <span class="math display">= 45 \cdot \frac{1}{1024} = \frac{45}{1024} \approx 0.044</span></p>
@@ -1321,300 +1325,306 @@ Applying Binomial Distribution: ESP Probability Analysis
 <p>Step 4: Calculate <span class="math inline">P(X = 10)</span> <span class="math display">P(X = 10) = \binom{10}{10}(\frac{1}{2})^{10}(\frac{1}{2})^0</span> <span class="math display">= 1 \cdot (\frac{1}{1024}) \cdot 1</span> <span class="math display">= \frac{1}{1024} \approx 0.001</span></p>
 <p>Step 5: Sum all probabilities <span class="math display">P(X \geq 7) = \frac{120 + 45 + 10 + 1}{1024} = \frac{176}{1024} \approx 0.172</span></p>
 </section>
-<section id="interpretation" class="level3" data-number="19.5.9">
-<h3 data-number="19.5.9" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">19.5.9</span> Interpretation</h3>
+<section id="interpretation" class="level3" data-number="19.3.9">
+<h3 data-number="19.3.9" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">19.3.9</span> Interpretation</h3>
 <p>There is approximately a 17.2% chance that someone without ESP would correctly guess 7 or more coin flips out of 10 by pure chance. This is a relatively high probability, suggesting that getting 7 out of 10 correct predictions is not strong evidence for ESP. Generally, we would want a much smaller probability (e.g., &lt; 5% or &lt; 1%) before considering the results statistically significant evidence for ESP.</p>
 </section>
 </div>
 </div>
-</section>
-<section id="building-the-pattern-trial-by-trial" class="level4" data-number="19.5.9.1">
-<h4 data-number="19.5.9.1" class="anchored" data-anchor-id="building-the-pattern-trial-by-trial"><span class="header-section-number">19.5.9.1</span> Building the Pattern Trial by Trial</h4>
-<p>Let’s see how this applies to binomial probabilities:</p>
-<section id="one-trial-bernoulli" class="level5" data-number="19.5.9.1.1">
-<h5 data-number="19.5.9.1.1" class="anchored" data-anchor-id="one-trial-bernoulli"><span class="header-section-number">19.5.9.1.1</span> One Trial (Bernoulli)</h5>
-<p>Just two possibilities:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Inductive Derivation of the Binomial Distribution Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let me enhance the explanation by adding precise definitions at the beginning:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Inductive Derivation of the Binomial Distribution Formula
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p><strong>Random Variable (X)</strong>: A function that maps outcomes from a sample space to real numbers. In our case:</p>
 <ul>
-<li>Success (S): P(S) = p</li>
-<li>Failure (F): P(F) = 1-p</li>
+<li>X = number of successes in n trials</li>
+<li>X maps “Success” to 1 and “Failure” to 0 for each trial</li>
+<li>For n trials, X takes values in {0, 1, 2, …, n}</li>
+</ul></li>
+<li><p><strong>Probability Distribution</strong>: A function <span class="math inline">P(X = k)</span> that assigns probabilities to each possible value k of the random variable X, where:</p>
+<ul>
+<li><span class="math inline">P(X = k) ≥ 0</span> for all k</li>
+<li><span class="math inline">\sum_{k=0}^n P(X = k) = 1</span></li>
+</ul></li>
+</ol>
+<p>Let’s denote success as S and failure as F, with:</p>
+<ul>
+<li>Probability of success <span class="math inline">p = P(\text{Success}) = P(X = 1)</span> for a single trial</li>
+<li>Probability of failure <span class="math inline">q = 1-p = P(\text{Failure}) = P(X = 0)</span> for a single trial</li>
 </ul>
+<section id="one-trial" class="level3" data-number="19.3.10">
+<h3 data-number="19.3.10" class="anchored" data-anchor-id="one-trial"><span class="header-section-number">19.3.10</span> 1. One Trial</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Number of Successes (k)</th>
-<th>Ways to Get k</th>
-<th>Formula</th>
+<th>Outcome</th>
+<th>Ways</th>
 <th>Probability</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>(F)</td>
-<td><span class="math inline">\binom{1}{0}</span></td>
-<td>(1-p)</td>
+<td>S</td>
+<td>1</td>
+<td><span class="math inline">p</span></td>
 </tr>
 <tr class="even">
+<td>F</td>
 <td>1</td>
-<td>(S)</td>
-<td><span class="math inline">\binom{1}{1}</span></td>
-<td>p</td>
+<td><span class="math inline">q</span></td>
 </tr>
 </tbody>
 </table>
+<p>Total outcomes: <span class="math inline">p + q = 1</span></p>
 </section>
-<section id="two-trials-building-complexity" class="level5" data-number="19.5.9.1.2">
-<h5 data-number="19.5.9.1.2" class="anchored" data-anchor-id="two-trials-building-complexity"><span class="header-section-number">19.5.9.1.2</span> Two Trials (Building Complexity)</h5>
-<p>Using multiplication rule for each sequence:</p>
-<ul>
-<li>(S,S): p × p = p²</li>
-<li>(S,F): p × (1-p)</li>
-<li>(F,S): (1-p) × p</li>
-<li>(F,F): (1-p) × (1-p) = (1-p)²</li>
-</ul>
+<section id="two-trials" class="level3" data-number="19.3.11">
+<h3 data-number="19.3.11" class="anchored" data-anchor-id="two-trials"><span class="header-section-number">19.3.11</span> 2. Two Trials</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th># Successes</th>
+<th>Ways</th>
+<th>Combinations</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>SS</td>
+<td>1</td>
+<td><span class="math inline">p^2</span></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>SF, FS</td>
+<td>2</td>
+<td><span class="math inline">2pq</span></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>FF</td>
+<td>1</td>
+<td><span class="math inline">q^2</span></td>
+</tr>
+</tbody>
+</table>
+<p>Notice: <span class="math inline">\binom{2}{k}</span> gives us the number of ways (k = 0,1,2)</p>
+<p>Total probability: <span class="math inline">p^2 + 2pq + q^2 = 1</span></p>
+</section>
+<section id="three-trials" class="level3" data-number="19.3.12">
+<h3 data-number="19.3.12" class="anchored" data-anchor-id="three-trials"><span class="header-section-number">19.3.12</span> 3. Three Trials</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th># Successes</th>
+<th>Ways</th>
+<th>Combinations</th>
+<th>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>SSS</td>
+<td>1</td>
+<td><span class="math inline">p^3</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>SSF, SFS, FSS</td>
+<td>3</td>
+<td><span class="math inline">3p^2q</span></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>SFF, FSF, FFS</td>
+<td>3</td>
+<td><span class="math inline">3pq^2</span></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>FFF</td>
+<td>1</td>
+<td><span class="math inline">q^3</span></td>
+</tr>
+</tbody>
+</table>
+<p>Here, <span class="math inline">\binom{3}{k}</span> gives us the combinations (k = 0,1,2,3)</p>
+<p>Total probability: <span class="math inline">p^3 + 3p^2q + 3pq^2 + q^3 = 1</span></p>
+</section>
+<section id="illustrating-coordinates-for-3-choose-2" class="level3" data-number="19.3.13">
+<h3 data-number="19.3.13" class="anchored" data-anchor-id="illustrating-coordinates-for-3-choose-2"><span class="header-section-number">19.3.13</span> Illustrating Coordinates for 3 Choose 2</h3>
+<p>For n = 3 and k = 2 successes, <span class="math inline">\binom{3}{2} = 3</span> gives us these success position coordinates:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Success Positions</th>
+<th>Sequence</th>
+<th>Coordinate Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(1,2)</td>
+<td>SSF</td>
+<td>Successes in positions 1,2</td>
+</tr>
+<tr class="even">
+<td>(2,3)</td>
+<td>FSS</td>
+<td>Successes in positions 2,3</td>
+</tr>
+<tr class="odd">
+<td>(1,3)</td>
+<td>SFS</td>
+<td>Successes in positions 1,3</td>
+</tr>
+</tbody>
+</table>
+<p>This demonstrates why <span class="math inline">\binom{3}{2} = 3</span> - it counts all possible ways to choose 2 positions from 3 available positions.</p>
+</section>
+<section id="four-trials" class="level3" data-number="19.3.14">
+<h3 data-number="19.3.14" class="anchored" data-anchor-id="four-trials"><span class="header-section-number">19.3.14</span> 4. Four Trials</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 15%">
+<col style="width: 19%">
+<col style="width: 8%">
 <col style="width: 20%">
-<col style="width: 12%">
-<col style="width: 18%">
+<col style="width: 31%">
+<col style="width: 19%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Number of Successes (k)</th>
-<th>Sequences</th>
-<th>Ways to Get k</th>
-<th>Formula</th>
+<th># Successes</th>
+<th>Ways</th>
+<th>Combinations</th>
+<th>Coordinate Positions</th>
 <th>Probability</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>0</td>
-<td>(F,F)</td>
-<td><span class="math inline">\binom{2}{0} = 1</span></td>
-<td>1</td>
-<td>(1-p)²</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>(S,F), (F,S)</td>
-<td><span class="math inline">\binom{2}{1} = 2</span></td>
-<td>2</td>
-<td>2p(1-p)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>(S,S)</td>
-<td><span class="math inline">\binom{2}{2} = 1</span></td>
-<td>1</td>
-<td>p²</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="three-trials-pattern-emerging" class="level5" data-number="19.5.9.1.3">
-<h5 data-number="19.5.9.1.3" class="anchored" data-anchor-id="three-trials-pattern-emerging"><span class="header-section-number">19.5.9.1.3</span> Three Trials (Pattern Emerging)</h5>
-<p>Using multiplication rule for each sequence, e.g.:</p>
-<ul>
-<li>(S,S,F): p × p × (1-p) = p²(1-p)</li>
-<li>(S,F,S): p × (1-p) × p = p²(1-p)</li>
-<li>(F,S,S): (1-p) × p × p = p²(1-p)</li>
-</ul>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 15%">
-<col style="width: 20%">
-<col style="width: 12%">
-<col style="width: 18%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Number of Successes (k)</th>
-<th>Sequences</th>
-<th>Ways to Get k</th>
-<th>Formula</th>
-<th>Probability</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>(F,F,F)</td>
-<td><span class="math inline">\binom{3}{0} = 1</span></td>
-<td>1</td>
-<td>(1-p)³</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>(S,F,F), (F,S,F), (F,F,S)</td>
-<td><span class="math inline">\binom{3}{1} = 3</span></td>
-<td>3</td>
-<td>3p(1-p)²</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>(S,S,F), (S,F,S), (F,S,S)</td>
-<td><span class="math inline">\binom{3}{2} = 3</span></td>
-<td>3</td>
-<td>3p²(1-p)</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>(S,S,S)</td>
-<td><span class="math inline">\binom{3}{3} = 1</span></td>
-<td>1</td>
-<td>p³</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="four-trials-complete-pattern" class="level5" data-number="19.5.9.1.4">
-<h5 data-number="19.5.9.1.4" class="anchored" data-anchor-id="four-trials-complete-pattern"><span class="header-section-number">19.5.9.1.4</span> Four Trials (Complete Pattern)</h5>
-<p>We can see all possible outcomes and how they contribute to each probability:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 13%">
-<col style="width: 22%">
-<col style="width: 24%">
-<col style="width: 17%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Number of Successes (k)</th>
-<th>Ways to Get k</th>
-<th>All Possible Sequences</th>
-<th>Multiplication Rule Pattern</th>
-<th>Combined Probability</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td><span class="math inline">\binom{4}{0} = 1</span></td>
-<td>(F,F,F,F)</td>
-<td>(1-p)(1-p)(1-p)(1-p)</td>
-<td>(1-p)⁴</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td><span class="math inline">\binom{4}{1} = 4</span></td>
-<td>(S,F,F,F)<br>(F,S,F,F)<br>(F,F,S,F)<br>(F,F,F,S)</td>
-<td>p(1-p)(1-p)(1-p)<br>(1-p)p(1-p)(1-p)<br>(1-p)(1-p)p(1-p)<br>(1-p)(1-p)(1-p)p</td>
-<td>4p(1-p)³</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td><span class="math inline">\binom{4}{2} = 6</span></td>
-<td>(S,S,F,F)<br>(S,F,S,F)<br>(S,F,F,S)<br>(F,S,S,F)<br>(F,S,F,S)<br>(F,F,S,S)</td>
-<td>p·p(1-p)(1-p)<br>p(1-p)p(1-p)<br>p(1-p)(1-p)p<br>(1-p)p·p(1-p)<br>(1-p)p(1-p)p<br>(1-p)(1-p)p·p</td>
-<td>6p²(1-p)²</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td><span class="math inline">\binom{4}{3} = 4</span></td>
-<td>(S,S,S,F)<br>(S,S,F,S)<br>(S,F,S,S)<br>(F,S,S,S)</td>
-<td>p·p·p(1-p)<br>p·p(1-p)p<br>p(1-p)p·p<br>(1-p)p·p·p</td>
-<td>4p³(1-p)</td>
-</tr>
 <tr class="odd">
 <td>4</td>
-<td><span class="math inline">\binom{4}{4} = 1</span></td>
-<td>(S,S,S,S)</td>
-<td>p·p·p·p</td>
-<td>p⁴</td>
+<td>SSSS</td>
+<td>1</td>
+<td>(1,2,3,4)</td>
+<td><span class="math inline">p^4</span></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>SSSF, SSFS, SFSS, FSSS</td>
+<td>4</td>
+<td>(1,2,3), (1,2,4), (1,3,4), (2,3,4)</td>
+<td><span class="math inline">4p^3q</span></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>SSFF, SFSF, SFFS, FSSF, FSFS, FFSS</td>
+<td>6</td>
+<td>(1,2), (1,3), (1,4), (2,3), (2,4), (3,4)</td>
+<td><span class="math inline">6p^2q^2</span></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>SFFF, FSFF, FFSF, FFFS</td>
+<td>4</td>
+<td>(1), (2), (3), (4)</td>
+<td><span class="math inline">4pq^3</span></td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>FFFF</td>
+<td>1</td>
+<td>()</td>
+<td><span class="math inline">q^4</span></td>
 </tr>
 </tbody>
 </table>
-<p>Key Patterns to Notice:</p>
-<ol type="1">
-<li><p>Number of Ways Pattern:</p>
+<p>Note how <span class="math inline">\binom{4}{k}</span> gives us the combinations:</p>
 <ul>
-<li>Follows Pascal’s Triangle: 1, 4, 6, 4, 1</li>
-<li>Each number is <span class="math inline">\binom{4}{k}</span> where k is number of successes</li>
-</ul></li>
-<li><p>Sequence Pattern:</p>
-<ul>
-<li>Each sequence has exactly 4 positions</li>
-<li>For k successes, each sequence has exactly k S’s and (4-k) F’s</li>
-<li>All possible arrangements of k S’s in 4 positions are listed</li>
-</ul></li>
-<li><p>Probability Pattern:</p>
-<ul>
-<li>Each S contributes p</li>
-<li>Each F contributes (1-p)</li>
-<li>Final probability multiplies:
-<ul>
-<li>Number of ways (<span class="math inline">\binom{4}{k}</span>)</li>
-<li>k copies of p</li>
-<li>(4-k) copies of (1-p)</li>
-</ul></li>
-</ul></li>
-</ol>
-<p>This leads to the general formula:</p>
-<p><span class="math inline">P(X = k) = \binom{4}{k} p^k (1-p)^{4-k}</span></p>
-<p>For a fair coin (p = 0.5):</p>
-<ul>
-<li>P(X = 0) = 1(0.5)⁰(0.5)⁴ = 0.0625</li>
-<li>P(X = 1) = 4(0.5)¹(0.5)³ = 0.2500</li>
-<li>P(X = 2) = 6(0.5)²(0.5)² = 0.3750</li>
-<li>P(X = 3) = 4(0.5)³(0.5)¹ = 0.2500</li>
-<li>P(X = 4) = 1(0.5)⁴(0.5)⁰ = 0.0625</li>
+<li><span class="math inline">\binom{4}{4} = 1</span> (one way to choose all positions)</li>
+<li><span class="math inline">\binom{4}{3} = 4</span> (four ways to choose 3 positions)</li>
+<li><span class="math inline">\binom{4}{2} = 6</span> (six ways to choose 2 positions)</li>
+<li><span class="math inline">\binom{4}{1} = 4</span> (four ways to choose 1 position)</li>
+<li><span class="math inline">\binom{4}{0} = 1</span> (one way to choose no positions)</li>
 </ul>
-<p>Sum of probabilities = 1.0000</p>
+<p>Total probability: <span class="math inline">p^4 + 4p^3q + 6p^2q^2 + 4pq^3 + q^4 = 1</span></p>
 </section>
-</section>
-<section id="understanding-the-final-formula" class="level4" data-number="19.5.9.2">
-<h4 data-number="19.5.9.2" class="anchored" data-anchor-id="understanding-the-final-formula"><span class="header-section-number">19.5.9.2</span> Understanding the Final Formula</h4>
-<p>The binomial probability formula combines:</p>
+<section id="pattern-recognition-and-generalization" class="level3" data-number="19.3.15">
+<h3 data-number="19.3.15" class="anchored" data-anchor-id="pattern-recognition-and-generalization"><span class="header-section-number">19.3.15</span> Pattern Recognition and Generalization</h3>
 <ol type="1">
-<li><p>Binomial coefficient (ways to arrange k successes in n trials): <span class="math inline">\binom{n}{k}</span></p></li>
-<li><p>Probability of k successes (multiplication rule): <span class="math inline">p^k</span></p></li>
-<li><p>Probability of (n-k) failures (multiplication rule): <span class="math inline">(1-p)^{n-k}</span></p></li>
-</ol>
-<p>Giving us: <span class="math inline">P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}</span></p>
-</section>
-<section id="pascals-triangle-and-binomial-coefficients" class="level4" data-number="19.5.9.3">
-<h4 data-number="19.5.9.3" class="anchored" data-anchor-id="pascals-triangle-and-binomial-coefficients"><span class="header-section-number">19.5.9.3</span> Pascal’s Triangle and Binomial Coefficients</h4>
-<p>The coefficients form Pascal’s triangle:</p>
-<pre><code>n=0:     1
-n=1:    1 1
-n=2:   1 2 1
-n=3:  1 3 3 1
-n=4: 1 4 6 4 1</code></pre>
-<p>Each number is <span class="math inline">\binom{n}{k}</span> where:</p>
+<li><p>For n trials:</p>
 <ul>
-<li>n is the row number (starting at 0)</li>
-<li>k is the position in row (starting at 0)</li>
+<li>Each outcome has exactly n positions</li>
+<li>For k successes, we need k positions filled with S and (n-k) positions with F</li>
+<li><span class="math inline">\binom{n}{k}</span> gives us the number of ways to choose k positions for successes</li>
+<li>Each success contributes <span class="math inline">p</span>, each failure contributes <span class="math inline">q</span></li>
+</ul></li>
+<li><p>Therefore, for k successes in n trials:</p>
+<ul>
+<li>Ways = <span class="math inline">\binom{n}{k}</span> (binomial coefficient)</li>
+<li>Probability of each way = <span class="math inline">p^k q^{n-k}</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="binomial-distribution-formula" class="level3" data-number="19.3.16">
+<h3 data-number="19.3.16" class="anchored" data-anchor-id="binomial-distribution-formula"><span class="header-section-number">19.3.16</span> Binomial Distribution Formula</h3>
+<p>The probability of exactly k successes in n trials is:</p>
+<p><span class="math display">
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
+</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\binom{n}{k}</span> counts the ways to arrange k successes in n positions</li>
+<li><span class="math inline">p^k</span> accounts for k successes</li>
+<li><span class="math inline">(1-p)^{n-k}</span> accounts for (n-k) failures</li>
 </ul>
-<p>This gives us a quick way to find coefficients for small n.</p>
 </section>
-<section id="properties-of-the-binomial-distribution" class="level4" data-number="19.5.9.4">
-<h4 data-number="19.5.9.4" class="anchored" data-anchor-id="properties-of-the-binomial-distribution"><span class="header-section-number">19.5.9.4</span> Properties of the Binomial Distribution</h4>
-<p>The pattern leads to important properties:</p>
+<section id="coordinate-system-interpretation" class="level3" data-number="19.3.17">
+<h3 data-number="19.3.17" class="anchored" data-anchor-id="coordinate-system-interpretation"><span class="header-section-number">19.3.17</span> Coordinate System Interpretation</h3>
+<p>The binomial coefficient provides a systematic way to count all possible position combinations for successes. For example:</p>
 <ol type="1">
-<li>Mean (Expected Value):
+<li>In the 3-trial case with 2 successes (<span class="math inline">\binom{3}{2} = 3</span>):
 <ul>
-<li>Each trial contributes p to the mean</li>
-<li>n trials give E(X) = np</li>
+<li>Position 1 means success in first trial</li>
+<li>Position 2 means success in second trial</li>
+<li>Position 3 means success in third trial</li>
+<li>The coordinates (1,2), (2,3), (1,3) represent all possible ways to place 2 successes in 3 positions</li>
 </ul></li>
-<li>Variance:
+<li>In the 4-trial case with 2 successes (<span class="math inline">\binom{4}{2} = 6</span>):
 <ul>
-<li>Each trial contributes p(1-p) to variance</li>
-<li>n trials give Var(X) = np(1-p)</li>
-</ul></li>
-<li>Shape:
-<ul>
-<li>Symmetric when p = 0.5</li>
-<li>Right-skewed when p &lt; 0.5</li>
-<li>Left-skewed when p &gt; 0.5</li>
+<li>We get six distinct pairs of positions: (1,2), (1,3), (1,4), (2,3), (2,4), (3,4)</li>
+<li>Each pair represents a unique way to distribute 2 successes across 4 trials</li>
+<li>The remaining positions automatically become failures</li>
 </ul></li>
 </ol>
+<p>This coordinate system demonstrates why the binomial coefficient is the correct counting tool: it systematically accounts for all possible ways to distribute k successes across n positions, where each position must be either a success or failure.</p>
+</section>
+</div>
+</div>
 
 
+</div>
+</div>
 </section>
 </section>
 </section>
