@@ -334,7 +334,7 @@ window.Quarto = {
   <li><a href="#problem-solutions-1" id="toc-problem-solutions-1" class="nav-link" data-scroll-target="#problem-solutions-1"><span class="header-section-number">21.7</span> Problem Solutions (1)</a>
   <ul class="collapse">
   <li><a href="#problem-1-binomial-test-for-candidate-support" id="toc-problem-1-binomial-test-for-candidate-support" class="nav-link" data-scroll-target="#problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</a></li>
-  <li><a href="#problem-2-binomial-test-for-candidate-support---case-2" id="toc-problem-2-binomial-test-for-candidate-support---case-2" class="nav-link" data-scroll-target="#problem-2-binomial-test-for-candidate-support---case-2">Problem 2: Binomial Test for Candidate Support - Case 2</a></li>
+  <li><a href="#problem-2-binomial-test-for-candidate-support" id="toc-problem-2-binomial-test-for-candidate-support" class="nav-link" data-scroll-target="#problem-2-binomial-test-for-candidate-support">Problem 2: Binomial Test for Candidate Support</a></li>
   <li><a href="#problem-3-binomial-test-for-eu-support" id="toc-problem-3-binomial-test-for-eu-support" class="nav-link" data-scroll-target="#problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</a></li>
   </ul></li>
   </ul>
@@ -501,27 +501,15 @@ The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
 </ul></li>
 <li>Type II Error (False Negative):
 <ul>
-<li>Missing real ESP ability when it exists</li>
+<li>Failure to detect real ESP abilities, or the fact that the coin is biased</li>
 <li>More likely with:
 <ul>
-<li>Weak ESP ability (success rates just above 0.5)</li>
+<li>Success rates just above 0.5</li>
 <li>Small number of trials</li>
 <li>Strict significance levels</li>
 </ul></li>
 </ul></li>
 </ol>
-<p><strong>Role of Sample Size in Detecting ESP Ability</strong></p>
-<p>Our choice of 100 trials reflects several considerations:</p>
-<ul>
-<li>Large enough to detect moderate ESP ability</li>
-<li>Small enough to complete in reasonable time</li>
-<li>More trials would:
-<ul>
-<li>Better detect subtle ESP ability</li>
-<li>Reduce the impact of lucky guessing</li>
-<li>Provide more reliable conclusions</li>
-</ul></li>
-</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -916,8 +904,8 @@ Why One-Tailed Test?
 <p>There is not enough evidence to conclude that the candidate is under-estimating her support. While the sample shows 70% support (higher than 50%), this difference could reasonably occur by chance even if the true support was only 50%. The relatively small sample size (<span class="math inline">n = 10</span>) makes it harder to detect real differences.</p>
 </section>
 </section>
-<section id="problem-2-binomial-test-for-candidate-support---case-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="problem-2-binomial-test-for-candidate-support---case-2">Problem 2: Binomial Test for Candidate Support - Case 2</h3>
+<section id="problem-2-binomial-test-for-candidate-support" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="problem-2-binomial-test-for-candidate-support">Problem 2: Binomial Test for Candidate Support</h3>
 <section id="problem-statement-1" class="level4" data-number="21.7.0.7">
 <h4 data-number="21.7.0.7" class="anchored" data-anchor-id="problem-statement-1"><span class="header-section-number">21.7.0.7</span> Problem Statement</h4>
 <p>An election candidate believes she has the support of 40% (<span class="math inline">p = 0.4</span>) of the residents in a particular town. A researcher wants to test whether the candidate is over-estimating her support. The researcher asks 20 people whether they support the candidate or not; 3 people say that they do (15% in a sample). Calculate the p-value and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
