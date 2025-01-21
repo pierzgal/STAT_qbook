@@ -946,41 +946,50 @@ Why One-Tailed Test?
 <p>For this left-tailed test, the p-value is the probability of observing 3 or fewer successes out of 20 trials, assuming <span class="math inline">H_0</span> is true. Using the binomial distribution:</p>
 <p><span class="math inline">P(X \leq 3) = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)</span></p>
 <p>For each value k, we use the binomial probability formula: <span class="math inline">P(X = k) = \binom{n}{k} p_0^k (1-p_0)^{n-k}</span></p>
-<p>Let’s calculate each term:</p>
+<ol type="1">
+<li>We want to find P(X ≤ 3) when X follows B(20, 0.4) Using the binomial formula:</li>
+</ol>
+<p><span class="math display">P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}</span></p>
+<ol start="2" type="1">
+<li>Calculate the combinations <span class="math inline">\binom{20}{k}</span> for k = 0, 1, 2, 3:</li>
+</ol>
+<p><span class="math display">\binom{20}{0} = 1</span></p>
+<p><span class="math display">\binom{20}{1} = 20</span></p>
+<p><span class="math display">\binom{20}{2} = \frac{20 \times 19}{2 \times 1} = 190</span></p>
+<p><span class="math display">\binom{20}{3} = \frac{20 \times 19 \times 18}{3 \times 2 \times 1} = 1,140</span></p>
+<ol start="3" type="1">
+<li>Calculate each probability:</li>
+</ol>
+<p>For k = 0: <span class="math display">P(X = 0) = \binom{20}{0}(0.4)^0(0.6)^{20} = 1 \times 1 \times 0.6^{20} \approx 0.0000366</span></p>
+<p>For k = 1: <span class="math display">P(X = 1) = \binom{20}{1}(0.4)^1(0.6)^{19} = 20 \times 0.4 \times 0.6^{19} \approx 0.0004875</span></p>
+<p>For k = 2: <span class="math display">P(X = 2) = \binom{20}{2}(0.4)^2(0.6)^{18} = 190 \times 0.16 \times 0.6^{18} \approx 0.0030874</span></p>
+<p>For k = 3: <span class="math display">P(X = 3) = \binom{20}{3}(0.4)^3(0.6)^{17} = 1,140 \times 0.064 \times 0.6^{17} \approx 0.0123497</span></p>
+<ol start="4" type="1">
+<li><p>Sum all probabilities: <span class="math display">P(X \leq 3) = \sum_{k=0}^3 P(X = k) = 0.0000366 + 0.0004875 + 0.0030874 + 0.0123497 = 0.0159612</span></p></li>
+<li><p>Decision rule:</p></li>
+</ol>
 <ul>
-<li><span class="math inline">P(X = 0) = \binom{20}{0} (0.4)^0 (0.6)^{20} = 1 \cdot 1 \cdot 0.6^{20} = 0.0002</span></li>
-<li><span class="math inline">P(X = 1) = \binom{20}{1} (0.4)^1 (0.6)^{19} = 20 \cdot 0.4 \cdot 0.6^{19} = 0.0018</span></li>
-<li><span class="math inline">P(X = 2) = \binom{20}{2} (0.4)^2 (0.6)^{18} = 190 \cdot 0.16 \cdot 0.6^{18} = 0.0087</span></li>
-<li><span class="math inline">P(X = 3) = \binom{20}{3} (0.4)^3 (0.6)^{17} = 1140 \cdot 0.064 \cdot 0.6^{17} = 0.0276</span></li>
+<li>Reject H₀ if p-value &lt; α</li>
+<li>Since <span class="math inline">0.0159612 &lt; 0.05</span>, we reject H₀.</li>
 </ul>
-<p>P-value = 0.0002 + 0.0018 + 0.0087 + 0.0276 = 0.0383 (3.83%)</p>
 </section>
 <section id="decision-1" class="level4" data-number="21.7.0.11">
 <h4 data-number="21.7.0.11" class="anchored" data-anchor-id="decision-1"><span class="header-section-number">21.7.0.11</span> Decision</h4>
-<p>Since the p-value (0.0383) is less than the significance level (0.05), we reject the null hypothesis.</p>
+<p>Since the p-value is less than the significance level (0.05), we reject the null hypothesis.</p>
 </section>
 <section id="interpretation-1" class="level4" data-number="21.7.0.12">
 <h4 data-number="21.7.0.12" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">21.7.0.12</span> Interpretation</h4>
-<p>There is sufficient evidence to conclude that the candidate is over-estimating her support. The sample shows only 15% support, which is significantly lower than the candidate’s belief of 40%. The probability of observing such low support (3 or fewer out of 20) would be only about 3.83% if the true support were actually 40%.</p>
-</section>
-<section id="note-on-sample-size" class="level4" data-number="21.7.0.13">
-<h4 data-number="21.7.0.13" class="anchored" data-anchor-id="note-on-sample-size"><span class="header-section-number">21.7.0.13</span> Note on Sample Size</h4>
-<p>Compared to the previous problem, this example has:</p>
-<ol type="1">
-<li>A larger sample size (<span class="math inline">n = 20</span> vs <span class="math inline">n = 10</span>)</li>
-<li>A larger difference between hypothesized and observed proportions (40% vs 15%, a 25% difference)</li>
-</ol>
-<p>These factors contribute to our ability to detect a significant difference, unlike in the previous example where we had a smaller sample and a smaller difference (50% vs 70%, a 20% difference).</p>
+<p>There is sufficient evidence at the 5% significance level to conclude that the candidate is overestimating her support. The sample shows only 15% support, which is significantly lower than the candidate’s belief of 40%. The probability of observing such low support (3 or fewer out of 20) would be only about 1.6% if the true support were actually 40%.</p>
 </section>
 </section>
 <section id="problem-3-binomial-test-for-eu-support" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</h3>
-<section id="problem-statement-2" class="level4" data-number="21.7.0.14">
-<h4 data-number="21.7.0.14" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.7.0.14</span> Problem Statement</h4>
+<section id="problem-statement-2" class="level4" data-number="21.7.0.13">
+<h4 data-number="21.7.0.13" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.7.0.13</span> Problem Statement</h4>
 <p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is overestimating this level of support. In a sample of 15 people (<span class="math inline">n = 15</span>), the researcher observes that 13 people support membership. Let’s define random variable X as the number of people in the sample who support EU membership. We observed <span class="math inline">X = 13</span> “successes” in 15 Bernoulli trials.</p>
 </section>
-<section id="setup-2" class="level4" data-number="21.7.0.15">
-<h4 data-number="21.7.0.15" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.7.0.15</span> Setup</h4>
+<section id="setup-2" class="level4" data-number="21.7.0.14">
+<h4 data-number="21.7.0.14" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.7.0.14</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.98</span> (null hypothesis: true proportion is 98%)</li>
@@ -994,30 +1003,54 @@ Why One-Tailed Test?
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="finding-the-p-value-2" class="level4" data-number="21.7.0.16">
-<h4 data-number="21.7.0.16" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.7.0.16</span> Finding the P-value</h4>
+<section id="finding-the-p-value-2" class="level4" data-number="21.7.0.15">
+<h4 data-number="21.7.0.15" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.7.0.15</span> Finding the P-value</h4>
 <p>For this left-tailed test, we need <span class="math inline">P(X \leq 13)</span>. Given the high value of <span class="math inline">p_0</span>, it’s more efficient to use the complement rule:</p>
 <p><span class="math inline">P(X \leq 13) = 1 - P(X \geq 14)</span></p>
-<p>So we only need to calculate: <span class="math inline">P(X = 14) + P(X = 15)</span></p>
-<p>Using the binomial probability formula: <span class="math inline">P(X = k) = \binom{n}{k} p_0^k (1-p_0)^{n-k}</span></p>
-<p>Let’s calculate:</p>
+<p>For this left-tailed test: <span class="math display">P(X \leq 13) = 1 - P(X &gt; 13) = 1 - P(X = 14) - P(X = 15)</span></p>
+<p>Let’s calculate step by step:</p>
+<ol type="1">
+<li>For X = 14:</li>
+</ol>
 <ul>
-<li><span class="math inline">P(X = 14) = \binom{15}{14} (0.98)^{14} (0.02)^1 = 15 \cdot 0.98^{14} \cdot 0.02 = 0.3493</span></li>
-<li><span class="math inline">P(X = 15) = \binom{15}{15} (0.98)^{15} (0.02)^0 = 1 \cdot 0.98^{15} = 0.6322</span></li>
+<li>Calculate combination:</li>
 </ul>
-<p>Therefore: <span class="math inline">P(X \leq 13) = 1 - (0.3493 + 0.6322) = 1 - 0.9815 = 0.0185</span> (1.85%)</p>
+<p><span class="math display">\binom{15}{14} = \frac{15!}{14!(15-14)!} = \frac{15}{1} = 15</span></p>
+<ul>
+<li>Calculate probability:</li>
+</ul>
+<p><span class="math display">P(X = 14) = \binom{15}{14}(0.98)^{14}(0.02)^1</span> <span class="math display">= 15 \times (0.98)^{14} \times 0.02</span> <span class="math display">= 15 \times 0.75051... \times 0.02</span> <span class="math display">\approx 0.2252</span></p>
+<ol start="2" type="1">
+<li>For X = 15:</li>
+</ol>
+<ul>
+<li>Calculate combination:</li>
+</ul>
+<p><span class="math display">\binom{15}{15} = 1</span></p>
+<ul>
+<li>Calculate probability:</li>
+</ul>
+<p><span class="math display">P(X = 15) = \binom{15}{15}(0.98)^{15}(0.02)^0</span> <span class="math display">= 1 \times (0.98)^{15} \times 1</span> <span class="math display">= (0.98)^{15}</span> <span class="math display">\approx 0.7395</span></p>
+<ol start="3" type="1">
+<li>Therefore:</li>
+</ol>
+<p><span class="math display">P(X \leq 13) = 1 - P(X = 14) - P(X = 15)</span> <span class="math display">= 1 - 0.2252 - 0.7395</span> <span class="math display">\approx 0.0353</span></p>
 </section>
-<section id="decision-2" class="level4" data-number="21.7.0.17">
-<h4 data-number="21.7.0.17" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">21.7.0.17</span> Decision</h4>
-<p>Since the p-value (0.0185) is less than the significance level (0.05), we reject the null hypothesis.</p>
+<section id="decision-2" class="level4" data-number="21.7.0.16">
+<h4 data-number="21.7.0.16" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">21.7.0.16</span> Decision</h4>
+<p>Since the p-value (0.0353) is less than the significance level (0.05), we reject the null hypothesis.</p>
 </section>
-<section id="interpretation-2" class="level4" data-number="21.7.0.18">
-<h4 data-number="21.7.0.18" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">21.7.0.18</span> Interpretation</h4>
-<p>There is sufficient evidence to conclude that the politician is overestimating the support for EU membership. While 86.7% support in the sample is still very high, it’s significantly lower than the politician’s claim of 98%. Under the assumption that true support is 98%, the probability of observing 13 or fewer supporters in a sample of 15 people would be only about 1.85%.</p>
+<section id="interpretation-2" class="level4" data-number="21.7.0.17">
+<h4 data-number="21.7.0.17" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">21.7.0.17</span> Interpretation</h4>
+<p>There is sufficient evidence to conclude that the politician is overestimating the support for EU membership. While 86.7% support in the sample is still very high, it’s significantly lower than the politician’s claim of 98%. Under the assumption that true support is 98%, the probability of observing 13 or fewer supporters in a sample of 15 people would be only about 3.53%.</p>
 </section>
-<section id="note-on-complement-rule" class="level4" data-number="21.7.0.19">
-<h4 data-number="21.7.0.19" class="anchored" data-anchor-id="note-on-complement-rule"><span class="header-section-number">21.7.0.19</span> Note on Complement Rule</h4>
-<p>This problem demonstrates the utility of the complement rule in probability calculations. Instead of calculating probabilities for outcomes 0 through 13 (14 calculations), we only needed to calculate probabilities for outcomes 14 and 15 (2 calculations). This is particularly efficient when: 1. We have a large number of outcomes in the “tail” we’re interested in 2. The probability is concentrated in the other tail (here, high values due to <span class="math inline">p_0 = 0.98</span>)</p>
+<section id="note-on-complement-rule" class="level4" data-number="21.7.0.18">
+<h4 data-number="21.7.0.18" class="anchored" data-anchor-id="note-on-complement-rule"><span class="header-section-number">21.7.0.18</span> Note on Complement Rule</h4>
+<p>This problem demonstrates the utility of the complement rule in probability calculations. Instead of calculating probabilities for outcomes 0 through 13 (14 calculations), we only needed to calculate probabilities for outcomes 14 and 15 (2 calculations). This is particularly efficient when:</p>
+<ol type="1">
+<li>We have a large number of outcomes in the “tail” we’re interested in</li>
+<li>The probability is concentrated in the other tail (here, high values due to <span class="math inline">p_0 = 0.98</span>)</li>
+</ol>
 
 
 </section>
