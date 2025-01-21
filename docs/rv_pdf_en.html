@@ -353,7 +353,6 @@ window.Quarto = {
   <li><a href="#binomial-distribution" id="toc-binomial-distribution" class="nav-link" data-scroll-target="#binomial-distribution"><span class="header-section-number">19.3.3</span> Binomial Distribution</a></li>
   <li><a href="#comparing-the-distributions" id="toc-comparing-the-distributions" class="nav-link" data-scroll-target="#comparing-the-distributions"><span class="header-section-number">19.3.4</span> Comparing the Distributions</a></li>
   <li><a href="#interactive-r-code-for-exploration" id="toc-interactive-r-code-for-exploration" class="nav-link" data-scroll-target="#interactive-r-code-for-exploration"><span class="header-section-number">19.3.5</span> Interactive R Code for Exploration</a></li>
-  <li><a href="#building-the-binomial-distribution-pattern" id="toc-building-the-binomial-distribution-pattern" class="nav-link" data-scroll-target="#building-the-binomial-distribution-pattern"><span class="header-section-number">19.3.6</span> Building the Binomial Distribution Pattern</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1219,64 +1218,6 @@ p &amp; \text{if } k = 1 \\
 </div>
 </div>
 </div>
-</section>
-<section id="building-the-binomial-distribution-pattern" class="level3" data-number="19.3.6">
-<h3 data-number="19.3.6" class="anchored" data-anchor-id="building-the-binomial-distribution-pattern"><span class="header-section-number">19.3.6</span> Building the Binomial Distribution Pattern</h3>
-<p>The binomial distribution emerges naturally when we consider repeated independent trials. Let’s build it step by step, using the multiplication rule and counting principles.</p>
-<section id="the-multiplication-rule" class="level4" data-number="19.3.6.1">
-<h4 data-number="19.3.6.1" class="anchored" data-anchor-id="the-multiplication-rule"><span class="header-section-number">19.3.6.1</span> The Multiplication Rule</h4>
-<p>The multiplication rule states that if we have:</p>
-<ul>
-<li>Event A that can happen in m ways</li>
-<li>Event B that can happen in n ways</li>
-</ul>
-<p>Then the sequence (A,B) can happen in m × n ways.</p>
-<p>For example, if we:</p>
-<ul>
-<li>Can choose between 2 shirts (black, white)</li>
-<li>Can choose between 3 pants (blue, gray, brown)</li>
-</ul>
-<p>Then we have 2 × 3 = 6 possible outfits.</p>
-</section>
-<section id="understanding-the-binomial-coefficient" class="level4" data-number="19.3.6.2">
-<h4 data-number="19.3.6.2" class="anchored"><span class="header-section-number">19.3.6.2</span> Understanding the Binomial Coefficient</h4>
-<p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> counts the number of ways to choose k items from n items, where order doesn’t matter. It relates to the multiplication rule through this key insight:</p>
-<ol type="1">
-<li>First, count all possible ordered sequences (using multiplication rule)</li>
-<li>Then, divide by number of ways to arrange the k items (to remove order)</li>
-</ol>
-<p>For example, to choose 2 items from 4:</p>
-<ol type="1">
-<li>First position can be filled in 4 ways</li>
-<li>Second position can be filled in 3 ways</li>
-<li>Total ordered sequences = 4 × 3 = 12</li>
-<li>Number of ways to arrange 2 items = 2 × 1 = 2</li>
-<li>Therefore <span class="math inline">\binom{4}{2} = \frac{4 × 3}{2 × 1} = 6</span></li>
-</ol>
-<p>Let me think about this step by step:</p>
-<ol type="1">
-<li>Looking at the mathematical components, we need:
-<ul>
-<li>Clear description of the experiment (✓ flipping a coin 10 times)</li>
-<li>Clear description of success (✓ predicting correctly)</li>
-<li>Clear null hypothesis (✓ no ESP, p = 1/2)</li>
-<li>Clear test statistic (✓ number of correct predictions)</li>
-<li>Clear observation (✓ 7 successes)</li>
-<li>Clear direction of the test (⚠️ needs clarification)</li>
-</ul></li>
-<li>The key issue is in the phrase “at least this well”:
-<ul>
-<li>Current wording: “probability that he would have done at least this well”</li>
-<li>Better formulation: “What is the probability of obtaining 7 or more correct predictions out of 10 trials by chance alone (assuming no ESP)?”</li>
-</ul></li>
-<li>The statistical perspective:
-<ul>
-<li>This is a one-tailed test (we’re only looking at values ≥ 7)</li>
-<li>The null hypothesis H₀: p = 1/2 (no ESP)</li>
-<li>The alternative hypothesis H₁: p &gt; 1/2 (ESP exists)</li>
-</ul></li>
-</ol>
-<p>Let me suggest a more precise formulation:</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1290,15 +1231,15 @@ Applying Binomial Distribution: ESP Probability Analysis
 <p><em>Extrasensory perception (ESP), also known as a sixth sense, is a claimed ability to perceive information through mental means rather than the five physical senses.</em></p>
 <p><strong>Problem</strong>: A man claims to have extrasensory perception (ESP). To test this claim, a fair coin is flipped 10 times and the man is asked to predict each outcome in advance. He gets 7 out of 10 predictions correct. Calculate the probability of obtaining 7 or more correct predictions out of 10 trials by chance alone (assuming no ESP).</p>
 <p><em>Remark:</em> Under the null hypothesis of no ESP, the probability of each correct prediction is <span class="math inline">\frac{1}{2}</span>.</p>
-<section id="preliminary-concepts" class="level3" data-number="19.3.7">
-<h3 data-number="19.3.7" class="anchored" data-anchor-id="preliminary-concepts"><span class="header-section-number">19.3.7</span> Preliminary Concepts</h3>
-<section id="bernoulli-variable" class="level4" data-number="19.3.7.1">
-<h4 data-number="19.3.7.1" class="anchored" data-anchor-id="bernoulli-variable"><span class="header-section-number">19.3.7.1</span> Bernoulli Variable</h4>
+<section id="preliminary-concepts" class="level3" data-number="19.3.6">
+<h3 data-number="19.3.6" class="anchored" data-anchor-id="preliminary-concepts"><span class="header-section-number">19.3.6</span> Preliminary Concepts</h3>
+<section id="bernoulli-variable" class="level4" data-number="19.3.6.1">
+<h4 data-number="19.3.6.1" class="anchored" data-anchor-id="bernoulli-variable"><span class="header-section-number">19.3.6.1</span> Bernoulli Variable</h4>
 <p>A Bernoulli random variable represents a trial with exactly two possible outcomes: success (1) or failure (0). Each trial has probability <span class="math inline">p</span> of success and <span class="math inline">1-p</span> of failure.</p>
 <p>In our case, each coin flip prediction is a Bernoulli trial where success means a correct prediction.</p>
 </section>
-<section id="binomial-distribution-1" class="level4" data-number="19.3.7.2">
-<h4 data-number="19.3.7.2" class="anchored" data-anchor-id="binomial-distribution-1"><span class="header-section-number">19.3.7.2</span> Binomial Distribution</h4>
+<section id="binomial-distribution-1" class="level4" data-number="19.3.6.2">
+<h4 data-number="19.3.6.2" class="anchored" data-anchor-id="binomial-distribution-1"><span class="header-section-number">19.3.6.2</span> Binomial Distribution</h4>
 <p>The binomial distribution extends the Bernoulli concept to model the sum of <span class="math inline">n</span> independent Bernoulli trials. It describes the probability of obtaining exactly <span class="math inline">k</span> successes in these <span class="math inline">n</span> trials. The probability mass function is:</p>
 <p><span class="math display">P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}</span></p>
 <p>where:</p>
@@ -1309,15 +1250,15 @@ Applying Binomial Distribution: ESP Probability Analysis
 <li><span class="math inline">\binom{n}{k}</span> is the binomial coefficient</li>
 </ul>
 </section>
-<section id="binomial-coefficient" class="level4" data-number="19.3.7.3">
-<h4 data-number="19.3.7.3" class="anchored" data-anchor-id="binomial-coefficient"><span class="header-section-number">19.3.7.3</span> Binomial Coefficient</h4>
+<section id="binomial-coefficient" class="level4" data-number="19.3.6.3">
+<h4 data-number="19.3.6.3" class="anchored" data-anchor-id="binomial-coefficient"><span class="header-section-number">19.3.6.3</span> Binomial Coefficient</h4>
 <p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> represents the number of ways to choose <span class="math inline">k</span> items from <span class="math inline">n</span> items, regardless of order. It is calculated as:</p>
 <p><span class="math display">\binom{n}{k} = \frac{n!}{k!(n-k)!}</span></p>
 <p>For example, <span class="math inline">\binom{10}{7} = \frac{10!}{7!(10-7)!} = \frac{10!}{7!3!} = 120</span></p>
 </section>
 </section>
-<section id="problem-solution" class="level3" data-number="19.3.8">
-<h3 data-number="19.3.8" class="anchored" data-anchor-id="problem-solution"><span class="header-section-number">19.3.8</span> Problem Solution</h3>
+<section id="problem-solution" class="level3" data-number="19.3.7">
+<h3 data-number="19.3.7" class="anchored" data-anchor-id="problem-solution"><span class="header-section-number">19.3.7</span> Problem Solution</h3>
 <p>Given: - <span class="math inline">n = 10</span> coin flips - <span class="math inline">p = \frac{1}{2}</span> (probability of correct guess without ESP) - Need <span class="math inline">P(X \geq 7)</span> = <span class="math inline">P(X = 7) + P(X = 8) + P(X = 9) + P(X = 10)</span></p>
 <p>Step 1: Calculate <span class="math inline">P(X = 7)</span> <span class="math display">P(X = 7) = \binom{10}{7}(\frac{1}{2})^7(\frac{1}{2})^3</span> <span class="math display">= 120 \cdot (\frac{1}{128}) \cdot (\frac{1}{8})</span> <span class="math display">= 120 \cdot \frac{1}{1024} = \frac{120}{1024} \approx 0.117</span></p>
 <p>Step 2: Calculate <span class="math inline">P(X = 8)</span> <span class="math display">P(X = 8) = \binom{10}{8}(\frac{1}{2})^8(\frac{1}{2})^2</span> <span class="math display">= 45 \cdot (\frac{1}{256}) \cdot (\frac{1}{4})</span> <span class="math display">= 45 \cdot \frac{1}{1024} = \frac{45}{1024} \approx 0.044</span></p>
@@ -1325,24 +1266,13 @@ Applying Binomial Distribution: ESP Probability Analysis
 <p>Step 4: Calculate <span class="math inline">P(X = 10)</span> <span class="math display">P(X = 10) = \binom{10}{10}(\frac{1}{2})^{10}(\frac{1}{2})^0</span> <span class="math display">= 1 \cdot (\frac{1}{1024}) \cdot 1</span> <span class="math display">= \frac{1}{1024} \approx 0.001</span></p>
 <p>Step 5: Sum all probabilities <span class="math display">P(X \geq 7) = \frac{120 + 45 + 10 + 1}{1024} = \frac{176}{1024} \approx 0.172</span></p>
 </section>
-<section id="interpretation" class="level3" data-number="19.3.9">
-<h3 data-number="19.3.9" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">19.3.9</span> Interpretation</h3>
+<section id="interpretation" class="level3" data-number="19.3.8">
+<h3 data-number="19.3.8" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">19.3.8</span> Interpretation</h3>
 <p>There is approximately a 17.2% chance that someone without ESP would correctly guess 7 or more coin flips out of 10 by pure chance. This is a relatively high probability, suggesting that getting 7 out of 10 correct predictions is not strong evidence for ESP. Generally, we would want a much smaller probability (e.g., &lt; 5% or &lt; 1%) before considering the results statistically significant evidence for ESP.</p>
 </section>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Inductive Derivation of the Binomial Distribution Formula
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let me enhance the explanation by adding precise definitions at the beginning:</p>
-<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1370,8 +1300,8 @@ Inductive Derivation of the Binomial Distribution Formula
 <li>Probability of success <span class="math inline">p = P(\text{Success}) = P(X = 1)</span> for a single trial</li>
 <li>Probability of failure <span class="math inline">q = 1-p = P(\text{Failure}) = P(X = 0)</span> for a single trial</li>
 </ul>
-<section id="one-trial" class="level3" data-number="19.3.10">
-<h3 data-number="19.3.10" class="anchored" data-anchor-id="one-trial"><span class="header-section-number">19.3.10</span> 1. One Trial</h3>
+<section id="one-trial" class="level3" data-number="19.3.9">
+<h3 data-number="19.3.9" class="anchored" data-anchor-id="one-trial"><span class="header-section-number">19.3.9</span> 1. One Trial</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1395,8 +1325,8 @@ Inductive Derivation of the Binomial Distribution Formula
 </table>
 <p>Total outcomes: <span class="math inline">p + q = 1</span></p>
 </section>
-<section id="two-trials" class="level3" data-number="19.3.11">
-<h3 data-number="19.3.11" class="anchored" data-anchor-id="two-trials"><span class="header-section-number">19.3.11</span> 2. Two Trials</h3>
+<section id="two-trials" class="level3" data-number="19.3.10">
+<h3 data-number="19.3.10" class="anchored" data-anchor-id="two-trials"><span class="header-section-number">19.3.10</span> 2. Two Trials</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1430,8 +1360,8 @@ Inductive Derivation of the Binomial Distribution Formula
 <p>Notice: <span class="math inline">\binom{2}{k}</span> gives us the number of ways (k = 0,1,2)</p>
 <p>Total probability: <span class="math inline">p^2 + 2pq + q^2 = 1</span></p>
 </section>
-<section id="three-trials" class="level3" data-number="19.3.12">
-<h3 data-number="19.3.12" class="anchored" data-anchor-id="three-trials"><span class="header-section-number">19.3.12</span> 3. Three Trials</h3>
+<section id="three-trials" class="level3" data-number="19.3.11">
+<h3 data-number="19.3.11" class="anchored" data-anchor-id="three-trials"><span class="header-section-number">19.3.11</span> 3. Three Trials</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1471,8 +1401,8 @@ Inductive Derivation of the Binomial Distribution Formula
 <p>Here, <span class="math inline">\binom{3}{k}</span> gives us the combinations (k = 0,1,2,3)</p>
 <p>Total probability: <span class="math inline">p^3 + 3p^2q + 3pq^2 + q^3 = 1</span></p>
 </section>
-<section id="illustrating-coordinates-for-3-choose-2" class="level3" data-number="19.3.13">
-<h3 data-number="19.3.13" class="anchored" data-anchor-id="illustrating-coordinates-for-3-choose-2"><span class="header-section-number">19.3.13</span> Illustrating Coordinates for 3 Choose 2</h3>
+<section id="illustrating-coordinates-for-3-choose-2" class="level3" data-number="19.3.12">
+<h3 data-number="19.3.12" class="anchored" data-anchor-id="illustrating-coordinates-for-3-choose-2"><span class="header-section-number">19.3.12</span> Illustrating Coordinates for 3 Choose 2</h3>
 <p>For n = 3 and k = 2 successes, <span class="math inline">\binom{3}{2} = 3</span> gives us these success position coordinates:</p>
 <table class="caption-top table">
 <thead>
@@ -1502,8 +1432,8 @@ Inductive Derivation of the Binomial Distribution Formula
 </table>
 <p>This demonstrates why <span class="math inline">\binom{3}{2} = 3</span> - it counts all possible ways to choose 2 positions from 3 available positions.</p>
 </section>
-<section id="four-trials" class="level3" data-number="19.3.14">
-<h3 data-number="19.3.14" class="anchored" data-anchor-id="four-trials"><span class="header-section-number">19.3.14</span> 4. Four Trials</h3>
+<section id="four-trials" class="level3" data-number="19.3.13">
+<h3 data-number="19.3.13" class="anchored" data-anchor-id="four-trials"><span class="header-section-number">19.3.13</span> 4. Four Trials</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 19%">
@@ -1569,8 +1499,8 @@ Inductive Derivation of the Binomial Distribution Formula
 </ul>
 <p>Total probability: <span class="math inline">p^4 + 4p^3q + 6p^2q^2 + 4pq^3 + q^4 = 1</span></p>
 </section>
-<section id="pattern-recognition-and-generalization" class="level3" data-number="19.3.15">
-<h3 data-number="19.3.15" class="anchored" data-anchor-id="pattern-recognition-and-generalization"><span class="header-section-number">19.3.15</span> Pattern Recognition and Generalization</h3>
+<section id="pattern-recognition-and-generalization" class="level3" data-number="19.3.14">
+<h3 data-number="19.3.14" class="anchored" data-anchor-id="pattern-recognition-and-generalization"><span class="header-section-number">19.3.14</span> Pattern Recognition and Generalization</h3>
 <ol type="1">
 <li><p>For n trials:</p>
 <ul>
@@ -1586,8 +1516,8 @@ Inductive Derivation of the Binomial Distribution Formula
 </ul></li>
 </ol>
 </section>
-<section id="binomial-distribution-formula" class="level3" data-number="19.3.16">
-<h3 data-number="19.3.16" class="anchored" data-anchor-id="binomial-distribution-formula"><span class="header-section-number">19.3.16</span> Binomial Distribution Formula</h3>
+<section id="binomial-distribution-formula" class="level3" data-number="19.3.15">
+<h3 data-number="19.3.15" class="anchored" data-anchor-id="binomial-distribution-formula"><span class="header-section-number">19.3.15</span> Binomial Distribution Formula</h3>
 <p>The probability of exactly k successes in n trials is:</p>
 <p><span class="math display">
 P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
@@ -1599,8 +1529,8 @@ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
 <li><span class="math inline">(1-p)^{n-k}</span> accounts for (n-k) failures</li>
 </ul>
 </section>
-<section id="coordinate-system-interpretation" class="level3" data-number="19.3.17">
-<h3 data-number="19.3.17" class="anchored" data-anchor-id="coordinate-system-interpretation"><span class="header-section-number">19.3.17</span> Coordinate System Interpretation</h3>
+<section id="coordinate-system-interpretation" class="level3" data-number="19.3.16">
+<h3 data-number="19.3.16" class="anchored" data-anchor-id="coordinate-system-interpretation"><span class="header-section-number">19.3.16</span> Coordinate System Interpretation</h3>
 <p>The binomial coefficient provides a systematic way to count all possible position combinations for successes. For example:</p>
 <ol type="1">
 <li>In the 3-trial case with 2 successes (<span class="math inline">\binom{3}{2} = 3</span>):
@@ -1621,10 +1551,23 @@ P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}
 </section>
 </div>
 </div>
+<section id="understanding-the-binomial-coefficient" class="level4" data-number="19.3.16.1">
+<h4 data-number="19.3.16.1" class="anchored" data-anchor-id="understanding-the-binomial-coefficient"><span class="header-section-number">19.3.16.1</span> Understanding the Binomial Coefficient</h4>
+<p>The binomial coefficient <span class="math inline">\binom{n}{k}</span> counts the number of ways to choose k items from n items, where order doesn’t matter. It relates to the multiplication rule through this key insight:</p>
+<ol type="1">
+<li>First, count all possible ordered sequences (using multiplication rule)</li>
+<li>Then, divide by number of ways to arrange the k items (to remove order)</li>
+</ol>
+<p>For example, to choose 2 items from 4:</p>
+<ol type="1">
+<li>First position can be filled in 4 ways</li>
+<li>Second position can be filled in 3 ways</li>
+<li>Total ordered sequences = 4 × 3 = 12</li>
+<li>Number of ways to arrange 2 items = 2 × 1 = 2</li>
+<li>Therefore <span class="math inline">\binom{4}{2} = \frac{4 × 3}{2 × 1} = 6</span></li>
+</ol>
 
 
-</div>
-</div>
 </section>
 </section>
 </section>
