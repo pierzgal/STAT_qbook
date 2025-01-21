@@ -284,7 +284,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inference_pl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego: Logika Testowania Hipotez Statystycznych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -380,6 +380,184 @@ window.Quarto = {
 </ul></li>
 </ol>
 <p>This is the essence of statistical hypothesis testing.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key Steps in Statistical Hypothesis Testing (general framework)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Initial Suspicion/Research Question</strong>
+<ul>
+<li>We suspect some effect/relationship/difference</li>
+<li>This guides our research design and analysis</li>
+</ul></li>
+<li><strong>Data Collection</strong>
+<ul>
+<li>We collect appropriate amount of data</li>
+<li>Sample size depends on expected effect and required precision</li>
+</ul></li>
+<li><strong>Result Observation</strong>
+<ul>
+<li>We observe and summarize our data</li>
+<li>Look at relevant patterns in the data</li>
+</ul></li>
+<li><strong>Hypothesis System</strong>
+<ul>
+<li>H₀: no effect/no difference (“status quo”)</li>
+<li>H₁: effect exists (one or two-sided)</li>
+<li>Choice of direction based on research question</li>
+</ul></li>
+<li><strong>P-value Approach</strong>
+<ul>
+<li>Consider: how likely are our results (or more extreme) if H₀ is true?</li>
+<li>Choose appropriate probability model based on data type</li>
+<li>Calculate this probability (p-value)</li>
+</ul></li>
+<li><strong>Decision Making</strong>
+<ul>
+<li>Compare p-value to significance level (typically α = 0.05)</li>
+<li>Small p-value suggests results unlikely under H₀</li>
+</ul></li>
+<li><strong>Conclusion</strong>
+<ul>
+<li>If p ≤ α, reject H₀</li>
+<li>Conclude evidence against null hypothesis</li>
+<li>Consider practical significance</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Research Problem: Testing a Claim of Extrasensory Perception</strong></p>
+<p>A person claims to have ESP (extrasensory perception, also known as a sixth sense) abilities that allow them to predict coin flips. To test this claim scientifically, we design an experiment where a coin is flipped 100 times, and the person must predict each outcome before the flip.</p>
+<p>They succeed in 70 out of 100 predictions. However, there’s a subtle but crucial consideration: high success could indicate either ESP ability OR a biased coin.</p>
+<p><strong>Defining the Base Probability and Expected Performance</strong></p>
+<p>If the person is merely guessing (no ESP), each prediction is equivalent to a random guess with 0.5 probability of success. If they truly have ESP, we would expect their success rate to exceed 0.5. This sets up our statistical investigation.</p>
+<p><strong>Establishing the System of Statistical Hypotheses</strong></p>
+<p>We establish two competing hypotheses:</p>
+<ol type="1">
+<li>**Null Hypothesis* (H₀): The predictions are based on random guessing with a fair coin (p = 0.5)</li>
+<li><strong>Alternative Hypothesis</strong> (H₁): Either the person has ESP abilities OR the coin is biased toward heads (p &gt; 0.5)</li>
+</ol>
+<p>This formulation highlights an important limitation of hypothesis testing:</p>
+<ul>
+<li>While we can detect deviation from random chance</li>
+<li>We cannot distinguish between different causes of this deviation</li>
+<li>Additional controlled experiments would be needed to separate ESP from coin bias</li>
+</ul>
+<p><strong>Choosing Between One-tailed and Two-tailed Tests</strong></p>
+<p>In hypothesis testing, we must decide whether to test for an effect in one or both directions:</p>
+<p>One-tailed Test (Our Current Case):</p>
+<ul>
+<li>Tests for an effect in only one direction (here: better than chance)</li>
+<li>More powerful for detecting a specific directional effect</li>
+<li>Appropriate when we only care about one direction</li>
+<li>Example: We only care if ESP performance is better than chance, not worse</li>
+</ul>
+<p>Two-tailed Test (Alternative Approach):</p>
+<ul>
+<li>Tests for an effect in either direction (both better and worse than chance)</li>
+<li>Less powerful but more comprehensive</li>
+<li>Appropriate when any deviation from the null is interesting</li>
+<li>Example: Testing if a coin is biased toward either heads OR tails</li>
+</ul>
+<p><strong>Selecting the Probability Model: The Binomial Distribution</strong></p>
+<p>Our ESP test fits the binomial probability model because:</p>
+<ul>
+<li>Each prediction is independent</li>
+<li>Each prediction has exactly two possible outcomes (correct/incorrect)</li>
+<li>The probability of success remains constant (0.5 under H₀)</li>
+<li>We’re counting total successes in a fixed number of trials</li>
+</ul>
+<p>For our example, we calculate: <span class="math display">P(X \geq 70) = \sum_{k=70}^{100} \binom{100}{k}(0.5)^k(0.5)^{100-k}</span></p>
+<p><strong>Calculating and Interpreting the p-value</strong></p>
+<p>The p-value helps us assess how surprising our results would be if H₀ were true:</p>
+<ul>
+<li>It measures the probability of getting 70 or more correct predictions out of 100 by pure chance</li>
+<li>A very small p-value suggests that such success would be rare under random guessing</li>
+<li>The conventional 0.05 threshold means we require results that would occur by chance less than 5% of the time</li>
+</ul>
+<p><strong>Decision Rules and Potential Errors in ESP Testing</strong></p>
+<ol type="1">
+<li>Type I Error (False Positive):
+<ul>
+<li>Concluding someone has ESP when they’re actually lucky</li>
+<li>We limit this risk to 5% with our significance level</li>
+<li>This is like wrongly certifying someone as having ESP</li>
+</ul></li>
+<li>Type II Error (False Negative):
+<ul>
+<li>Missing real ESP ability when it exists</li>
+<li>More likely with:
+<ul>
+<li>Weak ESP ability (success rates just above 0.5)</li>
+<li>Small number of trials</li>
+<li>Strict significance levels</li>
+</ul></li>
+</ul></li>
+</ol>
+<p><strong>Role of Sample Size in Detecting ESP Ability</strong></p>
+<p>Our choice of 100 trials reflects several considerations:</p>
+<ul>
+<li>Large enough to detect moderate ESP ability</li>
+<li>Small enough to complete in reasonable time</li>
+<li>More trials would:
+<ul>
+<li>Better detect subtle ESP ability</li>
+<li>Reduce the impact of lucky guessing</li>
+<li>Provide more reliable conclusions</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+P-value Calculation for the ESP Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Computational Details</strong></p>
+<p>For our ESP test with 70 successes out of 100 trials, we calculate:</p>
+<p><span class="math display">P(X \geq 70) = \sum_{k=70}^{100} \binom{100}{k}(0.5)^k(0.5)^{100-k} \approx 0.0000393</span></p>
+<p>This means that under the null hypothesis (pure guessing):</p>
+<ul>
+<li>The probability of getting 70 or more correct predictions by chance is about 0.00393%</li>
+<li>Such extreme results would occur by chance only about 4 times in 100,000 trials</li>
+<li>This is far below our conventional significance level of 0.05 (5%)</li>
+</ul>
+<p><strong>Statistical Decision</strong></p>
+<p>Since our p-value (0.0000393) is much smaller than α = 0.05:</p>
+<ul>
+<li>We reject the null hypothesis</li>
+<li>We conclude there is strong statistical evidence against random guessing</li>
+<li>The result is considered “highly statistically significant”</li>
+</ul>
+<p><strong>Cautious Interpretation</strong></p>
+<p>While our result is statistically significant, we should consider:</p>
+<ul>
+<li>Statistical significance doesn’t prove ESP exists (the coin is biased?)</li>
+<li>The experiment should be replicable under controlled conditions</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="the-method-of-proof-by-contradiction" class="level2" data-number="21.1">
 <h2 data-number="21.1" class="anchored" data-anchor-id="the-method-of-proof-by-contradiction"><span class="header-section-number">21.1</span> The Method of Proof by Contradiction</h2>
@@ -1274,8 +1452,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./inference_pl.html" class="pagination-link" aria-label="Wprowadzenie do Wnioskowania Statystycznego">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./inference_pl.html" class="pagination-link" aria-label="Wprowadzenie do Wnioskowania Statystycznego: Logika Testowania Hipotez Statystycznych">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego: Logika Testowania Hipotez Statystycznych</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

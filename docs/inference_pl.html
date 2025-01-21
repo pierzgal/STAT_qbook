@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>22&nbsp; Wprowadzenie do Wnioskowania Statystycznego – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
+<title>22&nbsp; Wprowadzenie do Wnioskowania Statystycznego: Logika Testowania Hipotez Statystycznych – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,49 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference_pl.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference_pl.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego: Logika Testowania Hipotez Statystycznych</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -241,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inference_pl.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego: Logika Testowania Hipotez Statystycznych</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,15 +298,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#podstawowa-logika" id="toc-podstawowa-logika" class="nav-link active" data-scroll-target="#podstawowa-logika"><span class="header-section-number">22.0.1</span> Podstawowa Logika</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego</span></h1>
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Wprowadzenie do Wnioskowania Statystycznego: Logika Testowania Hipotez Statystycznych</span></h1>
 </div>
 
 
@@ -280,8 +329,204 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Wnioskowanie statystyczne to sposób, w jaki wyciągamy wnioski o populacji na podstawie próby. To jak bycie detektywem: nigdy nie mamy wszystkich informacji, ale możemy wyciągać uzasadnione wnioski na podstawie dostępnych dowodów.</p>
+<section id="podstawowa-logika" class="level3" data-number="22.0.1">
+<h3 data-number="22.0.1" class="anchored" data-anchor-id="podstawowa-logika"><span class="header-section-number">22.0.1</span> Podstawowa Logika</h3>
+<p>Wyobraź sobie, że podejrzewasz, iż moneta może być nieuczciwa. Jak sprawdzić takie przypuszczenie?</p>
+<ol type="1">
+<li>Zbierz Dowody:
+<ul>
+<li>Wykonaj wiele rzutów monetą</li>
+<li>Zapisz wyniki</li>
+<li>Sprawdź, czy są zgodne z tym, czego oczekiwałbyś od uczciwej monety</li>
+</ul></li>
+<li>Podejmij Decyzję:
+<ul>
+<li>Jeśli wyniki wyglądają normalnie → kontynuuj założenie, że moneta jest uczciwa</li>
+<li>Jeśli wyniki wyglądają bardzo nietypowo → podejrzewaj, że moneta jest nieuczciwa</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Kluczowe Kroki Testowania Hipotez Statystycznych (ogólny schemat)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Wstępne Podejrzenie/Pytanie Badawcze</strong>
+<ul>
+<li>Podejrzewamy istnienie pewnego efektu/związku/różnicy</li>
+<li>To ukierunkowuje nasze badanie i analizę</li>
+</ul></li>
+<li><strong>Zbieranie Danych</strong>
+<ul>
+<li>Gromadzimy odpowiednią ilość danych</li>
+<li>Wielkość próby zależy od oczekiwanego efektu i wymaganej precyzji</li>
+</ul></li>
+<li><strong>Obserwacja Wyników</strong>
+<ul>
+<li>Obserwujemy i podsumowujemy nasze dane</li>
+<li>Szukamy istotnych wzorców w danych</li>
+</ul></li>
+<li><strong>System Hipotez</strong>
+<ul>
+<li>H₀: brak efektu/brak różnicy (“status quo”)</li>
+<li>H₁: efekt istnieje (jedno- lub dwustronny)</li>
+<li>Wybór kierunku zależy od pytania badawczego</li>
+</ul></li>
+<li><strong>Podejście Wartości p</strong>
+<ul>
+<li>Rozważamy: jak prawdopodobne są nasze wyniki (lub bardziej skrajne) jeśli H₀ jest prawdziwa?</li>
+<li>Wybieramy odpowiedni model probabilistyczny w zależności od typu danych</li>
+<li>Obliczamy to prawdopodobieństwo (wartość p)</li>
+</ul></li>
+<li><strong>Podejmowanie Decyzji</strong>
+<ul>
+<li>Porównujemy wartość p z poziomem istotności (zazwyczaj α = 0.05)</li>
+<li>Mała wartość p sugeruje, że wyniki są mało prawdopodobne przy H₀</li>
+</ul></li>
+<li><strong>Wniosek</strong>
+<ul>
+<li>Jeśli p ≤ α, odrzucamy H₀</li>
+<li>Wnioskujemy o dowodach przeciwko hipotezie zerowej</li>
+<li>Rozważamy znaczenie praktyczne</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Podstawowa Logika Testowania Hipotez Statystycznych: Analiza Zdolności ESP
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Problem Badawczy: Testowanie Deklaracji o Posiadaniu Zdolności Pozazmysłowych</strong></p>
+<p>Osoba twierdzi, że posiada zdolności ESP (percepcję pozazmysłową, tzw. szósty zmysł), które pozwalają jej przewidywać wyniki rzutów monetą. Aby naukowo przetestować to twierdzenie, projektujemy eksperyment, w którym moneta jest rzucana 100 razy, a osoba musi przewidzieć każdy wynik przed rzutem.</p>
+<p>Osoba osiąga sukces w 70 na 100 przewidywań. Jednak istnieje subtelne, ale kluczowe zastrzeżenie: wysoki współczynnik sukcesu może wskazywać zarówno na zdolności ESP, JAK I na nieuczciwą monetę.</p>
+<p><strong>Definiowanie Prawdopodobieństwa Bazowego i Oczekiwanej Skuteczności</strong></p>
+<p>Jeśli osoba jedynie zgaduje (brak ESP), każde przewidywanie jest równoważne losowemu zgadywaniu z prawdopodobieństwem sukcesu 0.5. Jeśli rzeczywiście posiada zdolności ESP, spodziewalibyśmy się współczynnika sukcesu przekraczającego 0.5. To stanowi podstawę naszego badania statystycznego.</p>
+<p><strong>Ustanawianie Systemu Hipotez Statystycznych</strong></p>
+<p>Ustalamy dwie konkurencyjne hipotezy:</p>
+<ol type="1">
+<li><strong>Hipoteza Zerowa</strong> (H₀): Przewidywania opierają się na losowym zgadywaniu przy użyciu uczciwej monety (p = 0.5)</li>
+<li><strong>Hipoteza Alternatywna</strong> (H₁): Albo osoba posiada zdolności ESP, ALBO moneta jest nieuczciwa (p &gt; 0.5)</li>
+</ol>
+<p>Ta formulacja podkreśla istotne ograniczenie testowania hipotez:</p>
+<ul>
+<li>Możemy wykryć odchylenie od losowości</li>
+<li>Nie możemy rozróżnić między różnymi przyczynami tego odchylenia</li>
+<li>Potrzebne byłyby dodatkowe eksperymenty kontrolne, aby odróżnić ESP od nieuczciwej monety</li>
+</ul>
+<p><strong>Wybór Między Testami Jedno- i Dwustronnymi</strong></p>
+<p>W testowaniu hipotez musimy zdecydować, czy testujemy efekt w jednym czy obu kierunkach:</p>
+<p>Test Jednostronny (Nasz Obecny Przypadek):</p>
+<ul>
+<li>Testuje efekt tylko w jednym kierunku (tutaj: lepszy niż przypadek)</li>
+<li>Większa moc wykrywania określonego efektu kierunkowego</li>
+<li>Odpowiedni, gdy interesuje nas tylko jeden kierunek</li>
+<li>Przykład: Interesuje nas tylko wynik lepszy niż przypadkowy, nie gorszy</li>
+</ul>
+<p>Test Dwustronny (Alternatywne Podejście):</p>
+<ul>
+<li>Testuje efekt w obu kierunkach (zarówno lepszy jak i gorszy niż przypadek)</li>
+<li>Mniejsza moc, ale bardziej kompleksowy</li>
+<li>Odpowiedni, gdy każde odchylenie od hipotezy zerowej jest interesujące</li>
+<li>Przykład: Testowanie, czy moneta jest nieuczciwa w kierunku orła LUB reszki</li>
+</ul>
+<p><strong>Wybór Modelu Probabilistycznego: Rozkład Dwumianowy</strong></p>
+<p>Nasz test ESP pasuje do modelu prawdopodobieństwa dwumianowego, ponieważ:</p>
+<ul>
+<li>Każde przewidywanie jest niezależne</li>
+<li>Każde przewidywanie ma dokładnie dwa możliwe wyniki (poprawne/niepoprawne)</li>
+<li>Prawdopodobieństwo sukcesu pozostaje stałe (0.5 przy H₀)</li>
+<li>Zliczamy całkowitą liczbę sukcesów w ustalonej liczbie prób</li>
+</ul>
+<p>Dla naszego przykładu obliczamy: <span class="math display">P(X \geq 70) = \sum_{k=70}^{100} \binom{100}{k}(0.5)^k(0.5)^{100-k}</span></p>
+<p><strong>Obliczanie i Interpretacja Wartości p</strong></p>
+<p>Wartość p pomaga nam ocenić, jak zaskakujące byłyby nasze wyniki, gdyby H₀ była prawdziwa:</p>
+<ul>
+<li>Mierzy prawdopodobieństwo uzyskania 70 lub więcej poprawnych przewidywań na 100 prób przez czysty przypadek</li>
+<li>Bardzo mała wartość p sugeruje, że taki sukces byłby rzadki przy losowym zgadywaniu</li>
+<li>Konwencjonalny próg 0.05 oznacza, że wymagamy wyników, które wystąpiłyby przypadkowo rzadziej niż w 5% przypadków</li>
+</ul>
+<p><strong>Reguły Decyzyjne i Potencjalne Błędy w Testowaniu ESP</strong></p>
+<ol type="1">
+<li>Błąd Typu I (Fałszywie Pozytywny):
+<ul>
+<li>Stwierdzenie, że ktoś ma ESP, gdy miał po prostu szczęście</li>
+<li>Ograniczamy to ryzyko do 5% poprzez poziom istotności</li>
+<li>To jak błędne potwierdzenie zdolności ESP</li>
+</ul></li>
+<li>Błąd Typu II (Fałszywie Negatywny):
+<ul>
+<li>Niewychwycenie rzeczywistych zdolności ESP</li>
+<li>Bardziej prawdopodobny przy:
+<ul>
+<li>Słabych zdolnościach ESP (współczynnik sukcesu niewiele powyżej 0.5)</li>
+<li>Małej liczbie prób</li>
+<li>Rygorystycznych poziomach istotności</li>
+</ul></li>
+</ul></li>
+</ol>
+<p><strong>Rola Wielkości Próby w Wykrywaniu Zdolności ESP</strong></p>
+<p>Nasz wybór 100 prób odzwierciedla kilka względów:</p>
+<ul>
+<li>Wystarczająco duża, aby wykryć umiarkowane zdolności ESP</li>
+<li>Wystarczająco mała, aby zakończyć w rozsądnym czasie</li>
+<li>Więcej prób oznaczałoby:
+<ul>
+<li>Lepsze wykrywanie subtelnych zdolności ESP</li>
+<li>Zmniejszenie wpływu szczęśliwego zgadywania</li>
+<li>Bardziej wiarygodne wnioski</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Obliczenie Wartości p dla Przykładu ESP
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Szczegóły Obliczeniowe</strong></p>
+<p>Dla naszego testu ESP z 70 sukcesami na 100 prób, obliczamy:</p>
+<p><span class="math display">P(X \geq 70) = \sum_{k=70}^{100} \binom{100}{k}(0.5)^k(0.5)^{100-k} \approx 0.0000393</span></p>
+<p>Oznacza to, że przy hipotezie zerowej (czyste zgadywanie):</p>
+<ul>
+<li>Prawdopodobieństwo uzyskania 70 lub więcej poprawnych przewidywań przez przypadek wynosi około 0.00393%</li>
+<li>Tak skrajne wyniki wystąpiłyby przypadkowo tylko około 4 razy na 100,000 prób</li>
+<li>Jest to znacznie poniżej konwencjonalnego poziomu istotności 0.05 (5%)</li>
+</ul>
+<p><strong>Decyzja Statystyczna</strong></p>
+<p>Ponieważ nasza wartość p (0.0000393) jest znacznie mniejsza niż α = 0.05:</p>
+<ul>
+<li>Odrzucamy hipotezę zerową</li>
+<li>Wnioskujemy, że istnieją silne dowody statystyczne przeciwko losowemu zgadywaniu</li>
+<li>Wynik jest uznawany za “wysoce istotny statystycznie”</li>
+</ul>
+<p><strong>Ostrożna Interpretacja</strong></p>
+<p>Mimo że nasz wynik jest istotny statystycznie, powinniśmy rozważyć:</p>
+<ul>
+<li>Istotność statystyczna nie dowodzi istnienia ESP (może moneta jest nieuczciwa?)</li>
+<li>Eksperyment powinien być powtarzalny w kontrolowanych warunkach</li>
+</ul>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
