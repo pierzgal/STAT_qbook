@@ -331,6 +331,7 @@ window.Quarto = {
   <li><a href="#problem-1-binomial-test-for-candidate-support" id="toc-problem-1-binomial-test-for-candidate-support" class="nav-link" data-scroll-target="#problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</a></li>
   <li><a href="#problem-2-binomial-test-for-candidate-support-2" id="toc-problem-2-binomial-test-for-candidate-support-2" class="nav-link" data-scroll-target="#problem-2-binomial-test-for-candidate-support-2">Problem 2: Binomial Test for Candidate Support (2)</a></li>
   <li><a href="#problem-3-binomial-test-for-eu-support" id="toc-problem-3-binomial-test-for-eu-support" class="nav-link" data-scroll-target="#problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</a></li>
+  <li><a href="#problem-4-binomial-test-for-political-support" id="toc-problem-4-binomial-test-for-political-support" class="nav-link" data-scroll-target="#problem-4-binomial-test-for-political-support">Problem 4: Binomial Test for Political Support</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -758,15 +759,14 @@ Historical Note: Jerzy Neyman (1894-1981)
 <h3 class="unnumbered anchored" data-anchor-id="problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</h3>
 <section id="problem-statement" class="level4" data-number="21.6.0.1">
 <h4 data-number="21.6.0.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">21.6.0.1</span> Problem Statement</h4>
-<p>An election candidate believes she has the support of 50% (<span class="math inline">p = 0.5</span>) of the residents in a particular town. A researcher wants to test whether the candidate is under-estimating her support.</p>
-<p>The researcher asks 10 people whether they support the candidate or not; 7 people say that they do (70% in a sample).</p>
+<p>An election candidate believes she has the support of 50% (<span class="math inline">p = 0.5</span>) of the residents in a particular town. A researcher suspects this might be an <strong>underestimation</strong> and conducts a survey. The researcher asks 10 people whether they support the candidate or not; 7 people say that they do (70% in a sample).</p>
 <p>Calculate the <strong>p-value</strong> and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
 </section>
 <section id="setup" class="level4" data-number="21.6.0.2">
 <h4 data-number="21.6.0.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">21.6.0.2</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
-<li><span class="math inline">H_0: p = 0.5</span> (null hypothesis: true proportion is 50%)</li>
+<li><span class="math inline">H_0: p = 0.5</span> (null hypothesis: true proportion (support) is 50%)</li>
 <li><span class="math inline">H_1: p &gt; 0.5</span> (alternative hypothesis: true proportion is greater than 50%)</li>
 </ul>
 <p><strong>Data:</strong></p>
@@ -835,7 +835,7 @@ Why One-Tailed Test?
 <h3 class="unnumbered anchored" data-anchor-id="problem-2-binomial-test-for-candidate-support-2">Problem 2: Binomial Test for Candidate Support (2)</h3>
 <section id="problem-statement-1" class="level4" data-number="21.6.0.7">
 <h4 data-number="21.6.0.7" class="anchored" data-anchor-id="problem-statement-1"><span class="header-section-number">21.6.0.7</span> Problem Statement</h4>
-<p>An election candidate believes she has the support of 40% (<span class="math inline">p = 0.4</span>) of the residents in a particular town. A researcher wants to test whether the candidate is over-estimating her support. The researcher asks 20 people whether they support the candidate or not; 3 people say that they do (15% in a sample). Calculate the p-value and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
+<p>An election candidate believes she has the support of 40% (<span class="math inline">p = 0.4</span>) of the residents in a particular town. A researcher suspects this might be an <strong>overestimation</strong> and conducts a survey. The researcher asks 20 people whether they support the candidate or not; 3 people say that they do (15% in a sample). Calculate the p-value and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
 </section>
 <section id="setup-1" class="level4" data-number="21.6.0.8">
 <h4 data-number="21.6.0.8" class="anchored" data-anchor-id="setup-1"><span class="header-section-number">21.6.0.8</span> Setup</h4>
@@ -901,7 +901,7 @@ Why One-Tailed Test?
 <h3 class="unnumbered anchored" data-anchor-id="problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</h3>
 <section id="problem-statement-2" class="level4" data-number="21.6.0.13">
 <h4 data-number="21.6.0.13" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.6.0.13</span> Problem Statement</h4>
-<p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is overestimating this level of support.</p>
+<p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is <strong>overestimating</strong> this level of support.</p>
 <p>In a sample of 15 people (<span class="math inline">n = 15</span>), the researcher observes that 13 people support membership. Let’s define the random variable X as the number of people in the sample who support EU membership. We observed <span class="math inline">X = 13</span> “successes” in 15 Bernoulli trials.</p>
 <p>Is there enough evidence to reject the claim that the support is 98%?</p>
 </section>
@@ -922,8 +922,11 @@ Why One-Tailed Test?
 </section>
 <section id="finding-the-p-value-2" class="level4" data-number="21.6.0.15">
 <h4 data-number="21.6.0.15" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.6.0.15</span> Finding the P-value</h4>
-<p>For this left-tailed test, we need <span class="math inline">P(X \leq 13)</span>. Given the high value of <span class="math inline">p_0</span>, it’s more efficient to use the complement rule:</p>
+<p>For this left-tailed test, we need <span class="math inline">P(X \leq 13)</span>. Given the high value of <span class="math inline">p_0</span>, it’s more efficient to use <strong>the complement rule</strong>:</p>
 <p><span class="math inline">P(X \leq 13) = 1 - P(X \geq 14)</span></p>
+<blockquote class="blockquote">
+<p>The complement rule in probability states that P(A) = 1 - P(not A), because P(A) + P(not A) = 1. For a left-tailed test, we need P(X ≤ 13). Instead of summing P(X = 0) + P(X = 1) + … + P(X = 13), it’s easier to: calculate P(X ≤ 13) = 1 - P(X &gt; 13), or P(X ≤ 13) = 1 - P(X ≥ 14).</p>
+</blockquote>
 <p>For this left-tailed test: <span class="math display">P(X \leq 13) = 1 - P(X &gt; 13) = 1 - P(X = 14) - P(X = 15)</span></p>
 <p>Let’s calculate step by step:</p>
 <ol type="1">
@@ -968,6 +971,53 @@ Why One-Tailed Test?
 <li>We have a large number of outcomes in the “tail” we’re interested in</li>
 <li>The probability is concentrated in the other tail (here, high values due to <span class="math inline">p_0 = 0.98</span>)</li>
 </ol>
+</section>
+</section>
+<section id="problem-4-binomial-test-for-political-support" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="problem-4-binomial-test-for-political-support">Problem 4: Binomial Test for Political Support</h3>
+<section id="problem-statement-3" class="level4" data-number="21.6.0.19">
+<h4 data-number="21.6.0.19" class="anchored" data-anchor-id="problem-statement-3"><span class="header-section-number">21.6.0.19</span> Problem Statement</h4>
+<p>A political candidate claims that 40% of residents in a town support her campaign (<span class="math inline">p = 0.4</span>). A researcher suspects this might be an <strong>overestimation</strong> and conducts a survey. In a random sample of 12 residents, 1 person expresses support for the candidate. Test whether there is sufficient evidence to conclude that the candidate is overestimating her support level, using a significance level of 5%.</p>
+</section>
+<section id="hypotheses" class="level4" data-number="21.6.0.20">
+<h4 data-number="21.6.0.20" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">21.6.0.20</span> Hypotheses</h4>
+<p><span class="math display">
+\begin{align*}
+H_0&amp;: p = 0.4 \text{ (The candidate's claim is correct)} \\
+H_1&amp;: p &lt; 0.4 \text{ (The candidate is overestimating support)}
+\end{align*}
+</span></p>
+</section>
+<section id="given-information" class="level4" data-number="21.6.0.21">
+<h4 data-number="21.6.0.21" class="anchored" data-anchor-id="given-information"><span class="header-section-number">21.6.0.21</span> Given Information</h4>
+<ul>
+<li>Sample size: <span class="math inline">n = 12</span></li>
+<li>Number of successes: <span class="math inline">x = 1</span></li>
+<li>Hypothesized proportion: <span class="math inline">p_0 = 0.4</span></li>
+<li>Significance level: <span class="math inline">\alpha = 0.05</span></li>
+<li>Observed proportion: <span class="math inline">\hat{p} = \frac{1}{12} \approx 0.083</span></li>
+</ul>
+</section>
+<section id="solution" class="level4" data-number="21.6.0.22">
+<h4 data-number="21.6.0.22" class="anchored" data-anchor-id="solution"><span class="header-section-number">21.6.0.22</span> Solution</h4>
+<ol type="1">
+<li><p>For a left-tailed test, we calculate the probability of observing 1 or fewer successes under <span class="math inline">H_0</span>.</p></li>
+<li><p>Using the binomial probability formula: <span class="math display">P(X \leq 1) = \sum_{k=0}^{1} \binom{12}{k}(0.4)^k(0.6)^{12-k}</span></p></li>
+<li><p>We find: <span class="math display">P(X \leq 1) = 0.0196</span></p></li>
+<li><p>Decision Rule:</p>
+<ul>
+<li>Reject <span class="math inline">H_0</span> if p-value &lt; <span class="math inline">\alpha</span></li>
+<li>Since 0.0196 &lt; 0.05, we reject <span class="math inline">H_0</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="conclusion" class="level4" data-number="21.6.0.23">
+<h4 data-number="21.6.0.23" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">21.6.0.23</span> Conclusion</h4>
+<p>At a 5% significance level, there is sufficient evidence to conclude that the candidate is overestimating her support. The sample proportion (8.3%) is substantially lower than the claimed 40% support, and this difference is statistically significant (p = 0.0196).</p>
+</section>
+<section id="statistical-power-consideration" class="level4" data-number="21.6.0.24">
+<h4 data-number="21.6.0.24" class="anchored" data-anchor-id="statistical-power-consideration"><span class="header-section-number">21.6.0.24</span> Statistical Power Consideration</h4>
+<p>While the sample size (n = 12) is relatively small, we were still able to detect a significant difference. This is because the observed difference between the claimed proportion (40%) and sample proportion (8.3%) was quite large. However, a larger sample size would provide more reliable results and better estimation of the true support proportion.</p>
 
 
 </section>
