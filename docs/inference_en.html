@@ -326,7 +326,7 @@ window.Quarto = {
   <li><a href="#better-approach" id="toc-better-approach" class="nav-link" data-scroll-target="#better-approach"><span class="header-section-number">21.5.2</span> Better Approach:</a></li>
   <li><a href="#practical-significance" id="toc-practical-significance" class="nav-link" data-scroll-target="#practical-significance"><span class="header-section-number">21.5.3</span> Practical Significance</a></li>
   </ul></li>
-  <li><a href="#problem-solutions-1" id="toc-problem-solutions-1" class="nav-link" data-scroll-target="#problem-solutions-1"><span class="header-section-number">21.6</span> Problem Solutions (1)</a>
+  <li><a href="#problem-solutions-part-1" id="toc-problem-solutions-part-1" class="nav-link" data-scroll-target="#problem-solutions-part-1"><span class="header-section-number">21.6</span> Problem Solutions (part 1)</a>
   <ul class="collapse">
   <li><a href="#problem-1-binomial-test-for-candidate-support" id="toc-problem-1-binomial-test-for-candidate-support" class="nav-link" data-scroll-target="#problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</a></li>
   <li><a href="#problem-2-binomial-test-for-candidate-support-2" id="toc-problem-2-binomial-test-for-candidate-support-2" class="nav-link" data-scroll-target="#problem-2-binomial-test-for-candidate-support-2">Problem 2: Binomial Test for Candidate Support (2)</a></li>
@@ -421,7 +421,7 @@ The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Research Problem: Testing a Claim of Extrasensory Perception</strong></p>
-<p>A person claims to have ESP (extrasensory perception, also known as a sixth sense) abilities that allow them to predict coin flips. To test this claim scientifically, we design an experiment where a coin is flipped 100 times, and the person must predict each outcome before the flip.</p>
+<p>A person claims to have ESP (extrasensory perception, also known as a sixth sense) abilities that allow them to predict coin flips. To test this claim scientifically, we design <strong>an experiment where a coin is flipped 100 times</strong>, and the person must predict each outcome before the flip.</p>
 <p>They succeed in 70 out of 100 predictions. However, there’s a subtle but crucial consideration: high success could indicate either ESP ability OR a biased coin.</p>
 <p><strong>Defining the Base Probability and Expected Performance</strong></p>
 <p>If the person is merely guessing (no ESP), each prediction is equivalent to a random guess with 0.5 probability of success. If they truly have ESP, we would expect their success rate to exceed 0.5. This sets up our statistical investigation.</p>
@@ -433,14 +433,14 @@ The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
 </ol>
 <p><strong>Choosing Between One-tailed and Two-tailed Tests</strong></p>
 <p>In hypothesis testing, we must decide whether to test for an effect in one or both directions:</p>
-<p>One-tailed Test (Our Current Case):</p>
+<p><strong>One-tailed Test (Our Current Case)</strong>:</p>
 <ul>
 <li>Tests for an effect in only one direction (here: better than chance)</li>
 <li>More powerful for detecting a specific directional effect</li>
 <li>Appropriate when we only care about one direction</li>
-<li>Example: We only care if ESP performance is better than chance, not worse</li>
+<li><em>Example: We only care if ESP performance is better than chance, not worse</em></li>
 </ul>
-<p>Two-tailed Test (Alternative Approach):</p>
+<p><strong>Two-tailed Test (Alternative Approach)</strong>:</p>
 <ul>
 <li>Tests for an effect in either direction (both better and worse than chance)</li>
 <li>Less powerful but more comprehensive</li>
@@ -448,7 +448,7 @@ The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
 <li>Example: Testing if a coin is biased toward either heads OR tails</li>
 </ul>
 <p><strong>Selecting the Probability Model: The Binomial Distribution</strong></p>
-<p>Our ESP test fits the binomial probability model because:</p>
+<p>Our ESP test fits <strong>the binomial probability model</strong> because:</p>
 <ul>
 <li>Each prediction is independent</li>
 <li>Each prediction has exactly two possible outcomes (correct/incorrect)</li>
@@ -463,6 +463,9 @@ The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
 <li>A very small p-value suggests that such success would be rare under random guessing</li>
 <li>The conventional 0.05 threshold means we require results that would occur by chance less than 5% of the time</li>
 </ul>
+<blockquote class="blockquote">
+<p><strong>P-value</strong> (statistical significance): In statistical hypothesis significance testing, the p-value is the probability of obtaining test results (outcomes) at least as extreme as the result actually observed, under the assumption that the null hypothesis (H0) is correct. A very small p-value means that such an extreme observed outcome would be very unlikely under the null hypothesis.</p>
+</blockquote>
 <p><strong>Decision Rules and Potential Errors in ESP Testing</strong></p>
 <ol type="1">
 <li>Type I Error (False Positive):
@@ -640,12 +643,6 @@ Understanding Error Types in Hypothesis Testing
 <td>Miss disease</td>
 <td>0.01</td>
 </tr>
-<tr class="odd">
-<td>A/B Testing</td>
-<td>Implement worse version</td>
-<td>Miss improvement</td>
-<td>0.05-0.1</td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -755,8 +752,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 </ol>
 </section>
 </section>
-<section id="problem-solutions-1" class="level2" data-number="21.6">
-<h2 data-number="21.6" class="anchored" data-anchor-id="problem-solutions-1"><span class="header-section-number">21.6</span> Problem Solutions (1)</h2>
+<section id="problem-solutions-part-1" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="problem-solutions-part-1"><span class="header-section-number">21.6</span> Problem Solutions (part 1)</h2>
 <section id="problem-1-binomial-test-for-candidate-support" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</h3>
 <section id="problem-statement" class="level4" data-number="21.6.0.1">
