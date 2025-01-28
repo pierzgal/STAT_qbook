@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>21&nbsp; Introduction to Statistical Inference: The Logic of Statistical Hypothesis Testing – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
+<title>Statistical Hypothesis Testing: A Fundamental Logic – Social Data Analysis: An Introduction (Wprowadzenie do analizy danych społecznych)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -124,7 +158,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference_en.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Introduction to Statistical Inference: The Logic of Statistical Hypothesis Testing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inference_en.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Statistical Hypothesis Testing: A Fundamental Logic</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -278,7 +312,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./inference_en.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Introduction to Statistical Inference: The Logic of Statistical Hypothesis Testing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Statistical Hypothesis Testing: A Fundamental Logic</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -316,7 +350,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#the-logic-of-p-values" id="toc-the-logic-of-p-values" class="nav-link" data-scroll-target="#the-logic-of-p-values"><span class="header-section-number">21.3</span> The Logic of p-values</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-p-value" id="toc-what-is-a-p-value" class="nav-link" data-scroll-target="#what-is-a-p-value"><span class="header-section-number">21.3.1</span> What is a p-value?</a></li>
+  <li><a href="#what-is-a-p-value-1" id="toc-what-is-a-p-value-1" class="nav-link" data-scroll-target="#what-is-a-p-value-1"><span class="header-section-number">21.3.1</span> What is a p-value?</a></li>
   <li><a href="#example-step-by-step" id="toc-example-step-by-step" class="nav-link" data-scroll-target="#example-step-by-step"><span class="header-section-number">21.3.2</span> Example: Step by Step</a></li>
   </ul></li>
   <li><a href="#common-misunderstandings" id="toc-common-misunderstandings" class="nav-link" data-scroll-target="#common-misunderstandings"><span class="header-section-number">21.4</span> Common Misunderstandings</a></li>
@@ -330,8 +364,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#problem-1-binomial-test-for-candidate-support" id="toc-problem-1-binomial-test-for-candidate-support" class="nav-link" data-scroll-target="#problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</a></li>
   <li><a href="#problem-2-binomial-test-for-candidate-support-2" id="toc-problem-2-binomial-test-for-candidate-support-2" class="nav-link" data-scroll-target="#problem-2-binomial-test-for-candidate-support-2">Problem 2: Binomial Test for Candidate Support (2)</a></li>
-  <li><a href="#problem-3-binomial-test-for-eu-support" id="toc-problem-3-binomial-test-for-eu-support" class="nav-link" data-scroll-target="#problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</a></li>
-  <li><a href="#problem-4-binomial-test-for-political-support" id="toc-problem-4-binomial-test-for-political-support" class="nav-link" data-scroll-target="#problem-4-binomial-test-for-political-support">Problem 4: Binomial Test for Political Support</a></li>
+  <li><a href="#problem-3-binomial-test-for-candidate-support-3" id="toc-problem-3-binomial-test-for-candidate-support-3" class="nav-link" data-scroll-target="#problem-3-binomial-test-for-candidate-support-3">Problem 3: Binomial Test for Candidate Support (3)</a></li>
+  <li><a href="#problem-4-binomial-test-for-candidate-support-4" id="toc-problem-4-binomial-test-for-candidate-support-4" class="nav-link" data-scroll-target="#problem-4-binomial-test-for-candidate-support-4">Problem 4: Binomial Test for Candidate Support (4)</a></li>
+  <li><a href="#problem-5-binomial-test-for-eu-support" id="toc-problem-5-binomial-test-for-eu-support" class="nav-link" data-scroll-target="#problem-5-binomial-test-for-eu-support">Problem 5: Binomial Test for EU Support</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -341,7 +376,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Introduction to Statistical Inference: The Logic of Statistical Hypothesis Testing</span></h1>
+<h1 class="title">Statistical Hypothesis Testing: A Fundamental Logic</h1>
 </div>
 
 
@@ -417,109 +452,213 @@ Key Steps in Statistical Hypothesis Testing (general framework)
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The Basic Logic of Statistical Hypothesis Testing: Analyzing an ESP Claim
+The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradiction
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Research Problem: Testing a Claim of Extrasensory Perception</strong></p>
-<p>A person claims to have ESP (extrasensory perception, also known as a sixth sense) abilities that allow them to predict coin flips. To test this claim scientifically, we design <strong>an experiment where a coin is flipped 100 times</strong>, and the person must predict each outcome before the flip.</p>
-<p>They succeed in 70 out of 100 predictions. However, there’s a subtle but crucial consideration: high success could indicate either ESP ability OR a biased coin.</p>
-<p><strong>Defining the Base Probability and Expected Performance</strong></p>
-<p>If the person is merely guessing (no ESP), each prediction is equivalent to a random guess with 0.5 probability of success. If they truly have ESP, we would expect their success rate to exceed 0.5. This sets up our statistical investigation.</p>
-<p><strong>Establishing the System of Statistical Hypotheses</strong></p>
-<p>We establish two competing hypotheses:</p>
+<section id="research-context" class="level3" data-number="21.0.1">
+<h3 data-number="21.0.1" class="anchored" data-anchor-id="research-context"><span class="header-section-number">21.0.1</span> Research Context</h3>
+<p>A person claims to possess ESP (extrasensory perception) abilities that enable them to predict coin flips. This scenario illustrates the fundamental logic of statistical hypothesis testing.</p>
+<ul>
+<li><strong>Task</strong>: Predict 100 coin flips before each flip occurs</li>
+<li><strong>Observed Result</strong>: 70 correct predictions out of 100 attempts</li>
+<li><strong>Key Consideration</strong>: High success could indicate either ESP ability OR a biased coin</li>
+</ul>
+</section>
+<section id="the-core-logic" class="level3" data-number="21.0.2">
+<h3 data-number="21.0.2" class="anchored" data-anchor-id="the-core-logic"><span class="header-section-number">21.0.2</span> The Core Logic</h3>
+<p>Statistical hypothesis testing follows a logic similar to proof by contradiction in mathematics:</p>
 <ol type="1">
-<li><strong>Null Hypothesis</strong> (H₀): The predictions are based on random guessing with a fair coin (p = 0.5)</li>
-<li><strong>Alternative Hypothesis</strong> (H₁): Either the person has ESP abilities OR the coin is biased toward heads (p &gt; 0.5)</li>
+<li>We start by assuming what we want to disprove (the null hypothesis)</li>
+<li>Calculate the probability of our observed data under this assumption</li>
+<li>If this probability is extremely small, we reject the initial assumption</li>
 </ol>
-<p><strong>Choosing Between One-tailed and Two-tailed Tests</strong></p>
-<p>In hypothesis testing, we must decide whether to test for an effect in one or both directions:</p>
-<p><strong>One-tailed Test (Our Current Case)</strong>:</p>
+</section>
+<section id="statistical-framework" class="level3" data-number="21.0.3">
+<h3 data-number="21.0.3" class="anchored" data-anchor-id="statistical-framework"><span class="header-section-number">21.0.3</span> Statistical Framework</h3>
+<section id="the-null-hypothesis-mechanism" class="level4" data-number="21.0.3.1">
+<h4 data-number="21.0.3.1" class="anchored" data-anchor-id="the-null-hypothesis-mechanism"><span class="header-section-number">21.0.3.1</span> 1. The Null Hypothesis Mechanism</h4>
+<p>The null hypothesis (H₀) serves as our “assumption to be disproven” and typically represents:</p>
 <ul>
-<li>Tests for an effect in only one direction (here: better than chance)</li>
-<li>More powerful for detecting a specific directional effect</li>
-<li>Appropriate when we only care about one direction</li>
-<li><em>Example: We only care if ESP performance is better than chance, not worse</em></li>
+<li>No effect</li>
+<li>No difference</li>
+<li>Pure chance</li>
+<li>The status quo</li>
 </ul>
-<p><strong>Two-tailed Test (Alternative Approach)</strong>:</p>
+<p>In our ESP case: Random guessing (p = 0.5)</p>
+</section>
+<section id="the-alternative-hypothesis" class="level4" data-number="21.0.3.2">
+<h4 data-number="21.0.3.2" class="anchored" data-anchor-id="the-alternative-hypothesis"><span class="header-section-number">21.0.3.2</span> 2. The Alternative Hypothesis</h4>
+<p>The alternative hypothesis (H₁) represents what we suspect might be true:</p>
 <ul>
-<li>Tests for an effect in either direction (both better and worse than chance)</li>
-<li>Less powerful but more comprehensive</li>
-<li>Appropriate when any deviation from the null is interesting</li>
-<li>Example: Testing if a coin is biased toward either heads OR tails</li>
+<li>An effect exists</li>
+<li>A difference exists</li>
+<li>Not due to chance</li>
+<li>A deviation from status quo</li>
 </ul>
-<p><strong>Selecting the Probability Model: The Binomial Distribution</strong></p>
-<p>Our ESP test fits <strong>the binomial probability model</strong> because:</p>
+<p>In our ESP case: Better than random guessing (p &gt; 0.5)</p>
+</section>
+<section id="the-decision-rule" class="level4" data-number="21.0.3.3">
+<h4 data-number="21.0.3.3" class="anchored" data-anchor-id="the-decision-rule"><span class="header-section-number">21.0.3.3</span> 3. The Decision Rule</h4>
+<p>We establish a conventional cutoff point (α) that defines “extremely unlikely”:</p>
 <ul>
-<li>Each prediction is independent</li>
-<li>Each prediction has exactly two possible outcomes (correct/incorrect)</li>
-<li>The probability of success remains constant (0.5 under H₀)</li>
-<li>We’re counting total successes in a fixed number of trials</li>
+<li>Typically set at α = 0.05 (5%)</li>
+<li>Represents the threshold for “rare enough” to reject H₀</li>
+<li>A conventional threshold, not a mathematical necessity</li>
 </ul>
-<p>For our example, we calculate: <span class="math display">P(X \geq 70) = \sum_{k=70}^{100} \binom{100}{k}(0.5)^k(0.5)^{100-k}</span></p>
-<p><strong>Calculating and Interpreting the p-value</strong></p>
-<p>The p-value helps us assess how surprising our results would be if H₀ were true:</p>
+</section>
+<section id="the-p-value-mechanism" class="level4" data-number="21.0.3.4">
+<h4 data-number="21.0.3.4" class="anchored" data-anchor-id="the-p-value-mechanism"><span class="header-section-number">21.0.3.4</span> 4. The P-value Mechanism</h4>
+<p>The p-value quantifies the logical argument:</p>
 <ul>
-<li>It measures the probability of getting 70 or more correct predictions out of 100 by pure chance</li>
-<li>A very small p-value suggests that such success would be rare under random guessing</li>
-<li>The conventional 0.05 threshold means we require results that would occur by chance less than 5% of the time</li>
+<li>Assuming H₀ is true</li>
+<li>What’s the probability of our observed result or more extreme?</li>
+<li>Small p-value means either:
+<ul>
+<li>H₀ is false (our desired conclusion)</li>
+<li>A rare event occurred under H₀</li>
+</ul></li>
 </ul>
 <blockquote class="blockquote">
-<p><strong>P-value</strong> (statistical significance): In statistical hypothesis significance testing, the p-value is the probability of obtaining test results (outcomes) at least as extreme as the result actually observed, under the assumption that the null hypothesis (H0) is correct. A very small p-value means that such an extreme observed outcome would be very unlikely under the null hypothesis.</p>
+<p><strong>P-value</strong> (<em>statistical significance</em>): In statistical hypothesis significance testing, the p-value is the probability of obtaining test results (outcomes) at least as extreme as the result actually observed, under the assumption that the null hypothesis (H0) is correct. A very small p-value means that such an extreme observed outcome would be very unlikely under the null hypothesis.</p>
 </blockquote>
-<p><strong>Decision Rules and Potential Errors in ESP Testing</strong></p>
-<ol type="1">
-<li>Type I Error (False Positive):
-<ul>
-<li>Concluding someone has ESP when they’re actually lucky</li>
-<li>We limit this risk to 5% with our significance level</li>
-<li>This is like wrongly certifying someone as having ESP</li>
-</ul></li>
-<li>Type II Error (False Negative):
-<ul>
-<li>Failure to detect real ESP abilities, or the fact that the coin is biased</li>
-<li>More likely with:
-<ul>
-<li>Success rates just above 0.5</li>
-<li>Small number of trials</li>
-<li>Strict significance levels</li>
-</ul></li>
-</ul></li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-P-value Calculation for the ESP Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Computational Details</strong></p>
-<p>For our ESP test with 70 successes out of 100 trials, we calculate:</p>
-<p><span class="math display">P(X \geq 70) = \sum_{k=70}^{100} \binom{100}{k}(0.5)^k(0.5)^{100-k} \approx 0.0000393</span></p>
+</section>
+</section>
+<section id="application-to-esp-testing" class="level3" data-number="21.0.4">
+<h3 data-number="21.0.4" class="anchored" data-anchor-id="application-to-esp-testing"><span class="header-section-number">21.0.4</span> Application to ESP Testing</h3>
+<p><strong>Statistical Hypotheses</strong>: <span class="math display">
+\begin{align*}
+H_0&amp;: p = 0.5 \text{ (random guessing)} \\
+H_1&amp;: p &gt; 0.5 \text{ (better than guessing)}
+\end{align*}
+</span></p>
+<p><strong>Probability Calculation</strong>:</p>
+<p>For 70 successes out of 100 trials:</p>
+<p><span class="math display">\text{P-value} = P(X \geq 70) = \sum_{k=70}^{100} \binom{100}{k}(0.5)^k(0.5)^{100-k} \approx 0.0000393</span></p>
+<p><strong>Decision Framework</strong>: <span class="math display">
+\text{Decision Rule} = \begin{cases}
+\text{Reject H}_0 &amp; \text{if p-value} &lt; 0.05 \\
+\text{Fail to reject H}_0 &amp; \text{if p-value} \geq 0.05
+\end{cases}
+</span></p>
+<p>0.0000393 &lt; 0.05 (significance level)</p>
 <p>This means that under the null hypothesis (pure guessing):</p>
 <ul>
 <li>The probability of getting 70 or more correct predictions by chance is about 0.00393%</li>
 <li>Such extreme results would occur by chance only about 4 times in 100,000 trials</li>
 <li>This is far below our conventional significance level of 0.05 (5%)</li>
 </ul>
-<p><strong>Statistical Decision</strong></p>
-<p>Since our p-value (0.0000393) is much smaller than α = 0.05:</p>
+</section>
+<section id="the-general-pattern" class="level3" data-number="21.0.5">
+<h3 data-number="21.0.5" class="anchored" data-anchor-id="the-general-pattern"><span class="header-section-number">21.0.5</span> The General Pattern</h3>
+<ol type="1">
+<li>Assume the null (like assuming not-A in proof by contradiction)</li>
+<li>Calculate probability of data under null</li>
+<li>If probability &lt; α:
 <ul>
-<li>We reject the null hypothesis</li>
-<li>We conclude there is strong statistical evidence against random guessing</li>
-<li>The result is considered “highly statistically significant”</li>
-</ul>
-<p><strong>Cautious Interpretation</strong></p>
-<p>While our result is statistically significant, we should consider:</p>
+<li>Reject null</li>
+<li>Accept alternative</li>
+<li>Conclude evidence supports our suspicion</li>
+</ul></li>
+</ol>
+</section>
+<section id="key-distinctions-from-mathematical-proof" class="level3" data-number="21.0.6">
+<h3 data-number="21.0.6" class="anchored" data-anchor-id="key-distinctions-from-mathematical-proof"><span class="header-section-number">21.0.6</span> Key Distinctions from Mathematical Proof</h3>
+<ol type="1">
+<li>Probabilistic rather than deterministic</li>
+<li>Conclusions are “supported” rather than “proven”</li>
+<li>Uses conventional thresholds (α)</li>
+<li>Always includes uncertainty</li>
+</ol>
+</section>
+</div>
+</div>
+<p>You raise an excellent point. Let me revise the entire note, being more thoughtful about the appropriateness of two-tailed tests in this context:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is a P-value?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A p-value is a probability that captures how extreme our observed data is relative to a null hypothesis:</p>
+<blockquote class="blockquote">
+<p>The p-value is the probability of obtaining the observed outcome, or a more extreme one in the direction of the alternative hypothesis, assuming the null hypothesis (H₀) is true.</p>
+</blockquote>
+<section id="key-components" class="level3" data-number="21.0.7">
+<h3 data-number="21.0.7" class="anchored" data-anchor-id="key-components"><span class="header-section-number">21.0.7</span> Key Components</h3>
+<ol type="1">
+<li><strong>Observed outcome</strong>: The actual value or statistic computed from our sample data.</li>
+<li><strong>More extreme outcomes</strong>: Additional outcomes that provide even stronger evidence against H₀: <span class="math display">
+\begin{cases}
+\text{Values } \leq \text{ observed} &amp; \text{for } H_1\text{: parameter &lt; value} \\
+\text{Values } \geq \text{ observed} &amp; \text{for } H_1\text{: parameter &gt; value} \\
+\text{Values in both tails} &amp; \text{for } H_1\text{: parameter } \neq \text{ value}
+\end{cases}
+</span></li>
+<li><strong>Null hypothesis assumption</strong>: All probabilities are calculated using the parameter value specified in H₀.</li>
+</ol>
+</section>
+<section id="one-tailed-vs-two-tailed-tests" class="level3" data-number="21.0.8">
+<h3 data-number="21.0.8" class="anchored" data-anchor-id="one-tailed-vs-two-tailed-tests"><span class="header-section-number">21.0.8</span> One-Tailed vs Two-Tailed Tests</h3>
+<p>The choice between one-tailed and two-tailed tests depends on your alternative hypothesis and the context of your research question:</p>
+<p><strong>One-Tailed Tests</strong>:</p>
 <ul>
-<li>Statistical significance doesn’t prove ESP exists (the coin is biased?)</li>
-<li>The experiment should be replicable under controlled conditions</li>
+<li>Used when H₁ specifies a direction (&lt; or &gt;)</li>
+<li>P-value calculated from one tail of the distribution</li>
+<li>Higher power but requires strong directional justification</li>
+<li>Example hypotheses: <span class="math display">
+\begin{align*}
+H_0&amp;: \mu = \mu_0 \\
+H_1&amp;: \mu &gt; \mu_0 \text{ (right-tailed) or } \mu &lt; \mu_0 \text{ (left-tailed)}
+\end{align*}
+</span></li>
 </ul>
+<p><strong>Two-Tailed Tests</strong>:</p>
+<ul>
+<li>Used when H₁ is non-directional (≠)</li>
+<li>P-value includes both tails of the distribution</li>
+<li>More conservative, standard choice when direction uncertain</li>
+<li>Particularly suitable for symmetric distributions like the normal distribution</li>
+<li>Example hypotheses: <span class="math display">
+\begin{align*}
+H_0&amp;: \mu = \mu_0 \\
+H_1&amp;: \mu \neq \mu_0
+\end{align*}
+</span></li>
+</ul>
+</section>
+<section id="example-binomial-test" class="level3" data-number="21.0.9">
+<h3 data-number="21.0.9" class="anchored" data-anchor-id="example-binomial-test"><span class="header-section-number">21.0.9</span> Example: Binomial Test</h3>
+<p>Testing if a politician is overestimating 98% support (p = 0.98) when observing 13 supporters in n = 15 people. In this context, a one-tailed test is most appropriate because the research question is inherently directional (overestimating implies p &lt; 0.98).</p>
+<p><span class="math display">
+\begin{align*}
+H_0&amp;: p = 0.98 \\
+H_1&amp;: p &lt; 0.98
+\end{align*}
+</span></p>
+<p>P-value calculation: <span class="math display">
+\begin{align*}
+\text{p-value} &amp;= P(X \leq 13 \mid H_0) \\
+&amp;= 1 - P(X \geq 14 \mid p = 0.98) \\
+&amp;= 0.0353
+\end{align*}
+</span></p>
+</section>
+<section id="common-misconceptions-to-avoid" class="level3" data-number="21.0.10">
+<h3 data-number="21.0.10" class="anchored" data-anchor-id="common-misconceptions-to-avoid"><span class="header-section-number">21.0.10</span> Common Misconceptions to Avoid</h3>
+<ol type="1">
+<li>P-value ≠ Probability H₀ is true</li>
+<li>1 - p-value ≠ Probability H₁ is true</li>
+<li>Large p-value ≠ H₀ is true</li>
+<li>One-tailed tests aren’t automatically “better” despite higher power</li>
+<li>The choice between one-tailed and two-tailed tests should be based on the research context, not just statistical convenience</li>
+</ol>
+<p>Remember: The p-value quantifies evidence against H₀ but should be considered alongside practical significance and effect size.</p>
+</section>
 </div>
 </div>
 <section id="the-method-of-proof-by-contradiction" class="level2" data-number="21.1">
@@ -676,8 +815,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 </section>
 <section id="the-logic-of-p-values" class="level2" data-number="21.3">
 <h2 data-number="21.3" class="anchored" data-anchor-id="the-logic-of-p-values"><span class="header-section-number">21.3</span> The Logic of p-values</h2>
-<section id="what-is-a-p-value" class="level3" data-number="21.3.1">
-<h3 data-number="21.3.1" class="anchored" data-anchor-id="what-is-a-p-value"><span class="header-section-number">21.3.1</span> What is a p-value?</h3>
+<section id="what-is-a-p-value-1" class="level3" data-number="21.3.1">
+<h3 data-number="21.3.1" class="anchored" data-anchor-id="what-is-a-p-value-1"><span class="header-section-number">21.3.1</span> What is a p-value?</h3>
 <p>p-value = P(seeing this evidence or more extreme | H₀ is true)</p>
 <p>Like asking:</p>
 <ul>
@@ -897,16 +1036,147 @@ Why One-Tailed Test?
 <p>There is sufficient evidence at the 5% significance level to conclude that the candidate is overestimating her support. The sample shows only 15% support, which is significantly lower than the candidate’s belief of 40%. The probability of observing such low support (3 or fewer out of 20) would be only about 1.6% if the true support were actually 40%.</p>
 </section>
 </section>
-<section id="problem-3-binomial-test-for-eu-support" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="problem-3-binomial-test-for-eu-support">Problem 3: Binomial Test for EU Support</h3>
+<section id="problem-3-binomial-test-for-candidate-support-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="problem-3-binomial-test-for-candidate-support-3">Problem 3: Binomial Test for Candidate Support (3)</h3>
 <section id="problem-statement-2" class="level4" data-number="21.6.0.13">
 <h4 data-number="21.6.0.13" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.6.0.13</span> Problem Statement</h4>
+<p>A political candidate claims that 40% of residents in a town support her campaign (<span class="math inline">p = 0.4</span>). A researcher suspects this might be an <strong>overestimation</strong> and conducts a survey. In a random sample of 12 residents, 1 person expresses support for the candidate. Test whether there is sufficient evidence to conclude that the candidate is overestimating her support level, using a significance level of 5%.</p>
+</section>
+<section id="hypotheses" class="level4" data-number="21.6.0.14">
+<h4 data-number="21.6.0.14" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">21.6.0.14</span> Hypotheses</h4>
+<p><span class="math display">
+\begin{align*}
+H_0&amp;: p = 0.4 \text{ (The candidate's claim is correct)} \\
+H_1&amp;: p &lt; 0.4 \text{ (The candidate is overestimating support)}
+\end{align*}
+</span></p>
+</section>
+<section id="given-information" class="level4" data-number="21.6.0.15">
+<h4 data-number="21.6.0.15" class="anchored" data-anchor-id="given-information"><span class="header-section-number">21.6.0.15</span> Given Information</h4>
+<ul>
+<li>Sample size: <span class="math inline">n = 12</span></li>
+<li>Number of successes: <span class="math inline">x = 1</span></li>
+<li>Hypothesized proportion: <span class="math inline">p_0 = 0.4</span></li>
+<li>Significance level: <span class="math inline">\alpha = 0.05</span></li>
+<li>Observed proportion: <span class="math inline">\hat{p} = \frac{1}{12} \approx 0.083</span></li>
+</ul>
+</section>
+<section id="solution" class="level4" data-number="21.6.0.16">
+<h4 data-number="21.6.0.16" class="anchored" data-anchor-id="solution"><span class="header-section-number">21.6.0.16</span> Solution</h4>
+<ol type="1">
+<li><p>For a left-tailed test, we calculate the probability of observing 1 or fewer successes under <span class="math inline">H_0</span>.</p></li>
+<li><p>Using the binomial probability formula: <span class="math display">P(X \leq 1) = \sum_{k=0}^{1} \binom{12}{k}(0.4)^k(0.6)^{12-k}</span></p></li>
+<li><p>We find: <span class="math display">P(X \leq 1) = 0.0196</span></p></li>
+<li><p>Decision Rule:</p>
+<ul>
+<li>Reject <span class="math inline">H_0</span> if p-value &lt; <span class="math inline">\alpha</span></li>
+<li>Since 0.0196 &lt; 0.05, we reject <span class="math inline">H_0</span></li>
+</ul></li>
+</ol>
+</section>
+<section id="conclusion" class="level4" data-number="21.6.0.17">
+<h4 data-number="21.6.0.17" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">21.6.0.17</span> Conclusion</h4>
+<p>At a 5% significance level, there is sufficient evidence to conclude that the candidate is overestimating her support. The sample proportion (8.3%) is substantially lower than the claimed 40% support, and this difference is statistically significant (p = 0.0196).</p>
+</section>
+<section id="statistical-power-consideration" class="level4" data-number="21.6.0.18">
+<h4 data-number="21.6.0.18" class="anchored" data-anchor-id="statistical-power-consideration"><span class="header-section-number">21.6.0.18</span> Statistical Power Consideration</h4>
+<p>While the sample size (n = 12) is relatively small, we were still able to detect a significant difference. This is because the observed difference between the claimed proportion (40%) and sample proportion (8.3%) was quite large. However, a larger sample size would provide more reliable results and better estimation of the true support proportion.</p>
+</section>
+</section>
+<section id="problem-4-binomial-test-for-candidate-support-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="problem-4-binomial-test-for-candidate-support-4">Problem 4: Binomial Test for Candidate Support (4)</h3>
+<p>An election candidate claims that 20% of residents in a town support her campaign. A researcher believes the candidate might be over-estimating her support and wants to test this claim. In a random sample of 12 residents, 4 people express support for the candidate. Test whether there is sufficient evidence to conclude that the candidate is over-estimating her support level, using a significance level of 5%.</p>
+<p>Given:</p>
+<ul>
+<li>Claimed support: p = 0.2</li>
+<li>Sample size: n = 12</li>
+<li>Number of supporters in sample: x = 4</li>
+<li>Significance level: α = 0.05</li>
+</ul>
+<section id="solution-1" class="level4" data-number="21.6.0.19">
+<h4 data-number="21.6.0.19" class="anchored" data-anchor-id="solution-1"><span class="header-section-number">21.6.0.19</span> Solution</h4>
+<p><strong>Step 1: State the Hypotheses</strong></p>
+<p>Since we want to test if the candidate is over-estimating (true proportion is less than claimed):</p>
+<p><span class="math display">
+\begin{align*}
+H_0&amp;: p = 0.2 \text{ (The candidate's claim is correct)} \\
+H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
+\end{align*}
+</span></p>
+<p><strong>Step 2: Choose the Test Statistic</strong></p>
+<p>We use the number of successes (X) in the sample, where X follows a binomial distribution with n = 12 and p = 0.2 under H₀.</p>
+<p>Observed value: x = 4</p>
+<p><strong>Step 3: Calculate the Test Statistic and P-value</strong></p>
+<p>For a left-tailed test, we calculate:</p>
+<p><span class="math display">P(X \leq 4) = \sum_{k=0}^{4} \binom{12}{k}(0.2)^k(0.8)^{12-k}</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate p-value</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="dv">4</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">prob =</span> <span class="fl">0.2</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"P-value ="</span>, <span class="fu">round</span>(p_value, <span class="dv">4</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "P-value = 0.9274"</code></pre>
+</div>
+</div>
+<p>The p-value is 0.9274</p>
+<p><strong>Step 4: Decision Rule</strong></p>
+<ul>
+<li>Reject H₀ if p-value &lt; α</li>
+<li>Since 0.9274 &gt; 0.05, we fail to reject H₀</li>
+</ul>
+<p><strong>Step 5: Interpretation</strong></p>
+<p>At a 5% significance level, there is not enough evidence to conclude that the candidate is over-estimating her support. In fact, the sample data shows 4/12 ≈ 33.3% support, which is higher than her claimed 20%, going in the opposite direction of our alternative hypothesis.</p>
+</section>
+<section id="additional-notes" class="level4" data-number="21.6.0.20">
+<h4 data-number="21.6.0.20" class="anchored" data-anchor-id="additional-notes"><span class="header-section-number">21.6.0.20</span> Additional Notes</h4>
+<ol type="1">
+<li><p>Sample Proportion: <span class="math display">\hat{p} = \frac{x}{n} = \frac{4}{12} = 0.333</span></p></li>
+<li><p>The high p-value reflects that the sample proportion (33.3%) is actually higher than the hypothesized value (20%), not lower as we were testing for.</p></li>
+<li><p>If we had suspected under-estimation rather than over-estimation, we should have set up the test with H₁: p &gt; 0.2.</p></li>
+<li><p>Given the small sample size (n = 12), the power of this test to detect true differences is limited.</p></li>
+</ol>
+</section>
+<section id="r-code" class="level4" data-number="21.6.0.21">
+<h4 data-number="21.6.0.21" class="anchored" data-anchor-id="r-code"><span class="header-section-number">21.6.0.21</span> R Code</h4>
+<p>Here’s the complete R code for this analysis:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Given values</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">12</span>          <span class="co"># sample size</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span>           <span class="co"># number of successes</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>p0 <span class="ot">&lt;-</span> <span class="fl">0.2</span>        <span class="co"># hypothesized proportion</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span>    <span class="co"># significance level</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate p-value for left-tailed test</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>p_value <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(x, <span class="at">size =</span> n, <span class="at">prob =</span> p0)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate sample proportion</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>p_hat <span class="ot">&lt;-</span> x<span class="sc">/</span>n</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Sample proportion ="</span>, <span class="fu">round</span>(p_hat, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sample proportion = 0.333 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"P-value ="</span>, <span class="fu">round</span>(p_value, <span class="dv">4</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value = 0.9274 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Decision: "</span>, <span class="fu">ifelse</span>(p_value <span class="sc">&lt;</span> alpha, <span class="st">"Reject H0"</span>, <span class="st">"Fail to reject H0"</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Decision:  Fail to reject H0 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="problem-5-binomial-test-for-eu-support" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="problem-5-binomial-test-for-eu-support">Problem 5: Binomial Test for EU Support</h3>
+<section id="problem-statement-3" class="level4" data-number="21.6.0.22">
+<h4 data-number="21.6.0.22" class="anchored" data-anchor-id="problem-statement-3"><span class="header-section-number">21.6.0.22</span> Problem Statement</h4>
 <p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is <strong>overestimating</strong> this level of support.</p>
 <p>In a sample of 15 people (<span class="math inline">n = 15</span>), the researcher observes that 13 people support membership. Let’s define the random variable X as the number of people in the sample who support EU membership. We observed <span class="math inline">X = 13</span> “successes” in 15 Bernoulli trials.</p>
 <p>Is there enough evidence to reject the claim that the support is 98%?</p>
 </section>
-<section id="setup-2" class="level4" data-number="21.6.0.14">
-<h4 data-number="21.6.0.14" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.6.0.14</span> Setup</h4>
+<section id="setup-2" class="level4" data-number="21.6.0.23">
+<h4 data-number="21.6.0.23" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.6.0.23</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.98</span> (null hypothesis: true proportion is 98%)</li>
@@ -920,8 +1190,8 @@ Why One-Tailed Test?
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="finding-the-p-value-2" class="level4" data-number="21.6.0.15">
-<h4 data-number="21.6.0.15" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.6.0.15</span> Finding the P-value</h4>
+<section id="finding-the-p-value-2" class="level4" data-number="21.6.0.24">
+<h4 data-number="21.6.0.24" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.6.0.24</span> Finding the P-value</h4>
 <p>For this left-tailed test, we need <span class="math inline">P(X \leq 13)</span>. Given the high value of <span class="math inline">p_0</span>, it’s more efficient to use <strong>the complement rule</strong>:</p>
 <p><span class="math inline">P(X \leq 13) = 1 - P(X \geq 14)</span></p>
 <blockquote class="blockquote">
@@ -956,68 +1226,21 @@ Why One-Tailed Test?
 </ol>
 <p><span class="math display">P(X \leq 13) = 1 - P(X = 14) - P(X = 15)</span> <span class="math display">= 1 - 0.2252 - 0.7395</span> <span class="math display">\approx 0.0353</span></p>
 </section>
-<section id="decision-2" class="level4" data-number="21.6.0.16">
-<h4 data-number="21.6.0.16" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">21.6.0.16</span> Decision</h4>
+<section id="decision-2" class="level4" data-number="21.6.0.25">
+<h4 data-number="21.6.0.25" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">21.6.0.25</span> Decision</h4>
 <p>Since the p-value (0.0353) is less than the significance level (0.05), we reject the null hypothesis.</p>
 </section>
-<section id="interpretation-2" class="level4" data-number="21.6.0.17">
-<h4 data-number="21.6.0.17" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">21.6.0.17</span> Interpretation</h4>
+<section id="interpretation-2" class="level4" data-number="21.6.0.26">
+<h4 data-number="21.6.0.26" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">21.6.0.26</span> Interpretation</h4>
 <p>There is sufficient evidence to conclude that the politician is overestimating the support for EU membership. While 86.7% support in the sample is still very high, it’s significantly lower than the politician’s claim of 98%. Under the assumption that true support is 98%, the probability of observing 13 or fewer supporters in a sample of 15 people would be only about 3.53%.</p>
 </section>
-<section id="note-on-complement-rule" class="level4" data-number="21.6.0.18">
-<h4 data-number="21.6.0.18" class="anchored" data-anchor-id="note-on-complement-rule"><span class="header-section-number">21.6.0.18</span> Note on Complement Rule</h4>
+<section id="note-on-complement-rule" class="level4" data-number="21.6.0.27">
+<h4 data-number="21.6.0.27" class="anchored" data-anchor-id="note-on-complement-rule"><span class="header-section-number">21.6.0.27</span> Note on Complement Rule</h4>
 <p>This problem demonstrates the utility of the complement rule in probability calculations. Instead of calculating probabilities for outcomes 0 through 13 (14 calculations), we only needed to calculate probabilities for outcomes 14 and 15 (2 calculations). This is particularly efficient when:</p>
 <ol type="1">
 <li>We have a large number of outcomes in the “tail” we’re interested in</li>
 <li>The probability is concentrated in the other tail (here, high values due to <span class="math inline">p_0 = 0.98</span>)</li>
 </ol>
-</section>
-</section>
-<section id="problem-4-binomial-test-for-political-support" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="problem-4-binomial-test-for-political-support">Problem 4: Binomial Test for Political Support</h3>
-<section id="problem-statement-3" class="level4" data-number="21.6.0.19">
-<h4 data-number="21.6.0.19" class="anchored" data-anchor-id="problem-statement-3"><span class="header-section-number">21.6.0.19</span> Problem Statement</h4>
-<p>A political candidate claims that 40% of residents in a town support her campaign (<span class="math inline">p = 0.4</span>). A researcher suspects this might be an <strong>overestimation</strong> and conducts a survey. In a random sample of 12 residents, 1 person expresses support for the candidate. Test whether there is sufficient evidence to conclude that the candidate is overestimating her support level, using a significance level of 5%.</p>
-</section>
-<section id="hypotheses" class="level4" data-number="21.6.0.20">
-<h4 data-number="21.6.0.20" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">21.6.0.20</span> Hypotheses</h4>
-<p><span class="math display">
-\begin{align*}
-H_0&amp;: p = 0.4 \text{ (The candidate's claim is correct)} \\
-H_1&amp;: p &lt; 0.4 \text{ (The candidate is overestimating support)}
-\end{align*}
-</span></p>
-</section>
-<section id="given-information" class="level4" data-number="21.6.0.21">
-<h4 data-number="21.6.0.21" class="anchored" data-anchor-id="given-information"><span class="header-section-number">21.6.0.21</span> Given Information</h4>
-<ul>
-<li>Sample size: <span class="math inline">n = 12</span></li>
-<li>Number of successes: <span class="math inline">x = 1</span></li>
-<li>Hypothesized proportion: <span class="math inline">p_0 = 0.4</span></li>
-<li>Significance level: <span class="math inline">\alpha = 0.05</span></li>
-<li>Observed proportion: <span class="math inline">\hat{p} = \frac{1}{12} \approx 0.083</span></li>
-</ul>
-</section>
-<section id="solution" class="level4" data-number="21.6.0.22">
-<h4 data-number="21.6.0.22" class="anchored" data-anchor-id="solution"><span class="header-section-number">21.6.0.22</span> Solution</h4>
-<ol type="1">
-<li><p>For a left-tailed test, we calculate the probability of observing 1 or fewer successes under <span class="math inline">H_0</span>.</p></li>
-<li><p>Using the binomial probability formula: <span class="math display">P(X \leq 1) = \sum_{k=0}^{1} \binom{12}{k}(0.4)^k(0.6)^{12-k}</span></p></li>
-<li><p>We find: <span class="math display">P(X \leq 1) = 0.0196</span></p></li>
-<li><p>Decision Rule:</p>
-<ul>
-<li>Reject <span class="math inline">H_0</span> if p-value &lt; <span class="math inline">\alpha</span></li>
-<li>Since 0.0196 &lt; 0.05, we reject <span class="math inline">H_0</span></li>
-</ul></li>
-</ol>
-</section>
-<section id="conclusion" class="level4" data-number="21.6.0.23">
-<h4 data-number="21.6.0.23" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">21.6.0.23</span> Conclusion</h4>
-<p>At a 5% significance level, there is sufficient evidence to conclude that the candidate is overestimating her support. The sample proportion (8.3%) is substantially lower than the claimed 40% support, and this difference is statistically significant (p = 0.0196).</p>
-</section>
-<section id="statistical-power-consideration" class="level4" data-number="21.6.0.24">
-<h4 data-number="21.6.0.24" class="anchored" data-anchor-id="statistical-power-consideration"><span class="header-section-number">21.6.0.24</span> Statistical Power Consideration</h4>
-<p>While the sample size (n = 12) is relatively small, we were still able to detect a significant difference. This is because the observed difference between the claimed proportion (40%) and sample proportion (8.3%) was quite large. However, a larger sample size would provide more reliable results and better estimation of the true support proportion.</p>
 
 
 </section>
