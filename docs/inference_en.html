@@ -341,14 +341,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#the-method-of-proof-by-contradiction" id="toc-the-method-of-proof-by-contradiction" class="nav-link" data-scroll-target="#the-method-of-proof-by-contradiction"><span class="header-section-number">21.1.11</span> The Method of Proof by Contradiction</a></li>
   <li><a href="#the-null-hypothesis-framework" id="toc-the-null-hypothesis-framework" class="nav-link" data-scroll-target="#the-null-hypothesis-framework"><span class="header-section-number">21.1.12</span> The Null Hypothesis Framework</a></li>
+  <li><a href="#the-logic-of-p-values" id="toc-the-logic-of-p-values" class="nav-link" data-scroll-target="#the-logic-of-p-values"><span class="header-section-number">21.1.17</span> The Logic of P-values</a></li>
   </ul></li>
-  <li><a href="#the-logic-of-p-values" id="toc-the-logic-of-p-values" class="nav-link" data-scroll-target="#the-logic-of-p-values"><span class="header-section-number">21.2</span> The Logic of p-values</a>
-  <ul class="collapse">
-  <li><a href="#what-is-a-p-value-1" id="toc-what-is-a-p-value-1" class="nav-link" data-scroll-target="#what-is-a-p-value-1"><span class="header-section-number">21.2.1</span> What is a p-value?</a></li>
-  <li><a href="#example-step-by-step" id="toc-example-step-by-step" class="nav-link" data-scroll-target="#example-step-by-step"><span class="header-section-number">21.2.2</span> Example: Step by Step</a></li>
-  <li><a href="#common-misunderstandings" id="toc-common-misunderstandings" class="nav-link" data-scroll-target="#common-misunderstandings"><span class="header-section-number">21.2.3</span> Common Misunderstandings</a></li>
-  </ul></li>
-  <li><a href="#problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests" id="toc-problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests" class="nav-link" data-scroll-target="#problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests"><span class="header-section-number">21.3</span> Problem Solutions – part 1: the binomial tests (one-tailed/sided tests)</a>
+  <li><a href="#problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests" id="toc-problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests" class="nav-link" data-scroll-target="#problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests"><span class="header-section-number">21.2</span> Problem Solutions – part 1: the binomial tests (one-tailed/sided tests)</a>
   <ul class="collapse">
   <li><a href="#problem-1-binomial-test-for-candidate-support" id="toc-problem-1-binomial-test-for-candidate-support" class="nav-link" data-scroll-target="#problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</a></li>
   <li><a href="#problem-2-binomial-test-for-candidate-support-2" id="toc-problem-2-binomial-test-for-candidate-support-2" class="nav-link" data-scroll-target="#problem-2-binomial-test-for-candidate-support-2">Problem 2: Binomial Test for Candidate Support (2)</a></li>
@@ -356,8 +351,8 @@ window.Quarto = {
   <li><a href="#problem-4-binomial-test-for-candidate-support-4" id="toc-problem-4-binomial-test-for-candidate-support-4" class="nav-link" data-scroll-target="#problem-4-binomial-test-for-candidate-support-4">Problem 4: Binomial Test for Candidate Support (4)</a></li>
   <li><a href="#problem-5-binomial-test-for-eu-support" id="toc-problem-5-binomial-test-for-eu-support" class="nav-link" data-scroll-target="#problem-5-binomial-test-for-eu-support">Problem 5: Binomial Test for EU Support</a></li>
   </ul></li>
-  <li><a href="#problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" id="toc-problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" class="nav-link" data-scroll-target="#problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests"><span class="header-section-number">21.4</span> Problem Solutions – part 2: the binomial tests (two-tailed/sided tests*)</a></li>
-  <li><a href="#testing-ols-regression-parameter-significance-using-r" id="toc-testing-ols-regression-parameter-significance-using-r" class="nav-link" data-scroll-target="#testing-ols-regression-parameter-significance-using-r"><span class="header-section-number">21.5</span> Testing OLS Regression Parameter Significance Using R (*)</a></li>
+  <li><a href="#problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" id="toc-problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" class="nav-link" data-scroll-target="#problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests"><span class="header-section-number">21.3</span> Problem Solutions – part 2: the binomial tests (two-tailed/sided tests*)</a></li>
+  <li><a href="#testing-ols-regression-parameter-significance-using-r" id="toc-testing-ols-regression-parameter-significance-using-r" class="nav-link" data-scroll-target="#testing-ols-regression-parameter-significance-using-r"><span class="header-section-number">21.4</span> Testing OLS Regression Parameter Significance Using R (*)</a></li>
   </ul>
 </nav>
     </div>
@@ -824,11 +819,10 @@ Historical Note: Jerzy Neyman (1894-1981)
 </div>
 </section>
 </section>
-</section>
-<section id="the-logic-of-p-values" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="the-logic-of-p-values"><span class="header-section-number">21.2</span> The Logic of p-values</h2>
-<section id="what-is-a-p-value-1" class="level3" data-number="21.2.1">
-<h3 data-number="21.2.1" class="anchored" data-anchor-id="what-is-a-p-value-1"><span class="header-section-number">21.2.1</span> What is a p-value?</h3>
+<section id="the-logic-of-p-values" class="level3" data-number="21.1.17">
+<h3 data-number="21.1.17" class="anchored" data-anchor-id="the-logic-of-p-values"><span class="header-section-number">21.1.17</span> The Logic of P-values</h3>
+<section id="what-is-a-p-value-1" class="level4" data-number="21.1.17.1">
+<h4 data-number="21.1.17.1" class="anchored" data-anchor-id="what-is-a-p-value-1"><span class="header-section-number">21.1.17.1</span> What is a p-value?</h4>
 <p>p-value = P(seeing this evidence or more extreme | H₀ is true)</p>
 <p>Like asking:</p>
 <ul>
@@ -836,8 +830,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 <li>“Could this easily happen by chance?”</li>
 </ul>
 </section>
-<section id="example-step-by-step" class="level3" data-number="21.2.2">
-<h3 data-number="21.2.2" class="anchored" data-anchor-id="example-step-by-step"><span class="header-section-number">21.2.2</span> Example: Step by Step</h3>
+<section id="example-step-by-step" class="level4" data-number="21.1.17.2">
+<h4 data-number="21.1.17.2" class="anchored" data-anchor-id="example-step-by-step"><span class="header-section-number">21.1.17.2</span> Example: Step by Step</h4>
 <p>Observe 8 heads in 10 flips:</p>
 <ol type="1">
 <li><p>Assume H₀: p = 0.5 (fair coin)</p></li>
@@ -849,8 +843,8 @@ Historical Note: Jerzy Neyman (1894-1981)
 </ul></li>
 </ol>
 </section>
-<section id="common-misunderstandings" class="level3" data-number="21.2.3">
-<h3 data-number="21.2.3" class="anchored" data-anchor-id="common-misunderstandings"><span class="header-section-number">21.2.3</span> Common Misunderstandings</h3>
+<section id="common-misunderstandings" class="level4" data-number="21.1.17.3">
+<h4 data-number="21.1.17.3" class="anchored"><span class="header-section-number">21.1.17.3</span> Common Misunderstandings</h4>
 <ol type="1">
 <li>“p-value is probability H₀ is true”
 <ul>
@@ -878,8 +872,8 @@ Beyond Simple Significance Testing
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="why-not-just-use-5" class="level3" data-number="21.2.4">
-<h3 data-number="21.2.4" class="anchored" data-anchor-id="why-not-just-use-5"><span class="header-section-number">21.2.4</span> Why Not Just Use 5%?</h3>
+<section id="why-not-just-use-5" class="level3" data-number="21.1.18">
+<h3 data-number="21.1.18" class="anchored" data-anchor-id="why-not-just-use-5"><span class="header-section-number">21.1.18</span> Why Not Just Use 5%?</h3>
 <p>Historical reasons:</p>
 <ol type="1">
 <li>R.A. Fisher suggested as benchmark</li>
@@ -887,8 +881,8 @@ Beyond Simple Significance Testing
 <li>Became convention, not logical necessity</li>
 </ol>
 </section>
-<section id="better-approach" class="level3" data-number="21.2.5">
-<h3 data-number="21.2.5" class="anchored" data-anchor-id="better-approach"><span class="header-section-number">21.2.5</span> Better Approach:</h3>
+<section id="better-approach" class="level3" data-number="21.1.19">
+<h3 data-number="21.1.19" class="anchored" data-anchor-id="better-approach"><span class="header-section-number">21.1.19</span> Better Approach:</h3>
 <p>Consider p-value on continuous scale:</p>
 <ul>
 <li>p = 0.049 vs p = 0.051 are virtually same</li>
@@ -899,8 +893,8 @@ Beyond Simple Significance Testing
 </ul></li>
 </ul>
 </section>
-<section id="practical-significance" class="level3" data-number="21.2.6">
-<h3 data-number="21.2.6" class="anchored" data-anchor-id="practical-significance"><span class="header-section-number">21.2.6</span> Practical Significance</h3>
+<section id="practical-significance" class="level3" data-number="21.1.20">
+<h3 data-number="21.1.20" class="anchored" data-anchor-id="practical-significance"><span class="header-section-number">21.1.20</span> Practical Significance</h3>
 <p>Always consider:</p>
 <ol type="1">
 <li>Effect size (how big is the difference?)</li>
@@ -913,20 +907,21 @@ Beyond Simple Significance Testing
 </div>
 </section>
 </section>
-<section id="problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests"><span class="header-section-number">21.3</span> Problem Solutions – part 1: the binomial tests (one-tailed/sided tests)</h2>
+</section>
+<section id="problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="problem-solutions-part-1-the-binomial-tests-one-tailedsided-tests"><span class="header-section-number">21.2</span> Problem Solutions – part 1: the binomial tests (one-tailed/sided tests)</h2>
 <blockquote class="blockquote">
 <p>The binomial test is a statistical hypothesis test used when you have binary (two-outcome) trials, where each trial is independent and has the same probability of success. It tests whether the observed proportion of successes differs significantly from an expected probability under the null hypothesis. For example: Testing whether a coin is fair by checking if the proportion of heads in 100 flips differs significantly from the expected probability of 0.5 under the null hypothesis.</p>
 </blockquote>
 <section id="problem-1-binomial-test-for-candidate-support" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-1-binomial-test-for-candidate-support">Problem 1: Binomial Test for Candidate Support</h3>
-<section id="problem-statement" class="level4" data-number="21.3.0.1">
-<h4 data-number="21.3.0.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">21.3.0.1</span> Problem Statement</h4>
+<section id="problem-statement" class="level4" data-number="21.2.0.1">
+<h4 data-number="21.2.0.1" class="anchored" data-anchor-id="problem-statement"><span class="header-section-number">21.2.0.1</span> Problem Statement</h4>
 <p>An election candidate believes she has the support of 50% (<span class="math inline">p = 0.5</span>) of the residents in a particular town. A researcher suspects this might be an <strong>underestimation</strong> and conducts a survey. The researcher asks 10 people whether they support the candidate or not; 7 people say that they do (70% in a sample).</p>
 <p>Calculate the <strong>p-value</strong> and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
 </section>
-<section id="setup" class="level4" data-number="21.3.0.2">
-<h4 data-number="21.3.0.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">21.3.0.2</span> Setup</h4>
+<section id="setup" class="level4" data-number="21.2.0.2">
+<h4 data-number="21.2.0.2" class="anchored" data-anchor-id="setup"><span class="header-section-number">21.2.0.2</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.5</span> (null hypothesis: true proportion (support) is 50%)</li>
@@ -940,8 +935,8 @@ Beyond Simple Significance Testing
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="finding-the-p-value" class="level4" data-number="21.3.0.3">
-<h4 data-number="21.3.0.3" class="anchored" data-anchor-id="finding-the-p-value"><span class="header-section-number">21.3.0.3</span> Finding the P-value</h4>
+<section id="finding-the-p-value" class="level4" data-number="21.2.0.3">
+<h4 data-number="21.2.0.3" class="anchored" data-anchor-id="finding-the-p-value"><span class="header-section-number">21.2.0.3</span> Finding the P-value</h4>
 <p>For a one-sided test, the p-value is the probability of observing 7 or more successes out of 10 trials, assuming <span class="math inline">H_0</span> is true. Using the binomial distribution:</p>
 <p><span class="math inline">P(X \geq 7) = P(X = 7) + P(X = 8) + P(X = 9) + P(X = 10)</span></p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -960,8 +955,8 @@ Why One-Tailed Test?
 <li>If she believes support is 50% but it’s actually 60%, she’s <em>under-estimating</em> her support</li>
 </ul>
 <p>Our research question only concerns under-estimation, so we only need to consider evidence in that direction (values greater than 50%). This is reflected in our alternative hypothesis <span class="math inline">H_1: p &gt; 0.5</span>.</p>
-<section id="why-not-just-px-7" class="level4" data-number="21.3.0.4">
-<h4 data-number="21.3.0.4" class="anchored" data-anchor-id="why-not-just-px-7"><span class="header-section-number">21.3.0.4</span> Why Not Just P(X = 7)?</h4>
+<section id="why-not-just-px-7" class="level4" data-number="21.2.0.4">
+<h4 data-number="21.2.0.4" class="anchored" data-anchor-id="why-not-just-px-7"><span class="header-section-number">21.2.0.4</span> Why Not Just P(X = 7)?</h4>
 <p>We can’t just calculate <span class="math inline">P(X = 7)</span> because:</p>
 <ol type="1">
 <li>The p-value represents the probability of observing results <em>as extreme or more extreme</em> than what we saw, assuming <span class="math inline">H_0</span> is true</li>
@@ -985,23 +980,23 @@ Why One-Tailed Test?
 </ul>
 <p>P-value = 0.1172 + 0.0439 + 0.0098 + 0.0010 = 0.1719 (17.19%)</p>
 </section>
-<section id="decision" class="level4" data-number="21.3.0.5">
-<h4 data-number="21.3.0.5" class="anchored" data-anchor-id="decision"><span class="header-section-number">21.3.0.5</span> Decision</h4>
+<section id="decision" class="level4" data-number="21.2.0.5">
+<h4 data-number="21.2.0.5" class="anchored" data-anchor-id="decision"><span class="header-section-number">21.2.0.5</span> Decision</h4>
 <p>Since the p-value (0.1719) is greater than the significance level (0.05), we fail to reject the null hypothesis.</p>
 </section>
-<section id="interpretation" class="level4" data-number="21.3.0.6">
-<h4 data-number="21.3.0.6" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">21.3.0.6</span> Interpretation</h4>
+<section id="interpretation" class="level4" data-number="21.2.0.6">
+<h4 data-number="21.2.0.6" class="anchored" data-anchor-id="interpretation"><span class="header-section-number">21.2.0.6</span> Interpretation</h4>
 <p>There is not enough evidence to conclude that the candidate is under-estimating her support. While the sample shows 70% support (higher than 50%), this difference could reasonably occur by chance even if the true support was only 50%. The relatively small sample size (<span class="math inline">n = 10</span>) makes it harder to detect real differences.</p>
 </section>
 </section>
 <section id="problem-2-binomial-test-for-candidate-support-2" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-2-binomial-test-for-candidate-support-2">Problem 2: Binomial Test for Candidate Support (2)</h3>
-<section id="problem-statement-1" class="level4" data-number="21.3.0.7">
-<h4 data-number="21.3.0.7" class="anchored" data-anchor-id="problem-statement-1"><span class="header-section-number">21.3.0.7</span> Problem Statement</h4>
+<section id="problem-statement-1" class="level4" data-number="21.2.0.7">
+<h4 data-number="21.2.0.7" class="anchored" data-anchor-id="problem-statement-1"><span class="header-section-number">21.2.0.7</span> Problem Statement</h4>
 <p>An election candidate believes she has the support of 40% (<span class="math inline">p = 0.4</span>) of the residents in a particular town. A researcher suspects this might be an <strong>overestimation</strong> and conducts a survey. The researcher asks 20 people whether they support the candidate or not; 3 people say that they do (15% in a sample). Calculate the p-value and decide whether there is enough evidence to reject H0 using data from the sample (assuming the critical probability = 5%).</p>
 </section>
-<section id="setup-1" class="level4" data-number="21.3.0.8">
-<h4 data-number="21.3.0.8" class="anchored" data-anchor-id="setup-1"><span class="header-section-number">21.3.0.8</span> Setup</h4>
+<section id="setup-1" class="level4" data-number="21.2.0.8">
+<h4 data-number="21.2.0.8" class="anchored" data-anchor-id="setup-1"><span class="header-section-number">21.2.0.8</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.4</span> (null hypothesis: true proportion is 40%)</li>
@@ -1015,12 +1010,12 @@ Why One-Tailed Test?
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="why-one-tailed-test-1" class="level4" data-number="21.3.0.9">
-<h4 data-number="21.3.0.9" class="anchored" data-anchor-id="why-one-tailed-test-1"><span class="header-section-number">21.3.0.9</span> Why One-Tailed Test?</h4>
+<section id="why-one-tailed-test-1" class="level4" data-number="21.2.0.9">
+<h4 data-number="21.2.0.9" class="anchored" data-anchor-id="why-one-tailed-test-1"><span class="header-section-number">21.2.0.9</span> Why One-Tailed Test?</h4>
 <p>This is a one-tailed test because we’re specifically interested in whether the candidate is <em>over-estimating</em> her support. We only care about evidence suggesting the true proportion is less than 40%, leading to a left-tailed test.</p>
 </section>
-<section id="finding-the-p-value-1" class="level4" data-number="21.3.0.10">
-<h4 data-number="21.3.0.10" class="anchored" data-anchor-id="finding-the-p-value-1"><span class="header-section-number">21.3.0.10</span> Finding the P-value</h4>
+<section id="finding-the-p-value-1" class="level4" data-number="21.2.0.10">
+<h4 data-number="21.2.0.10" class="anchored" data-anchor-id="finding-the-p-value-1"><span class="header-section-number">21.2.0.10</span> Finding the P-value</h4>
 <p>For this left-tailed test, the p-value is the probability of observing 3 or fewer successes out of 20 trials, assuming <span class="math inline">H_0</span> is true. Using the binomial distribution:</p>
 <p><span class="math inline">P(X \leq 3) = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)</span></p>
 <p>For each value k, we use the binomial probability formula: <span class="math inline">P(X = k) = \binom{n}{k} p_0^k (1-p_0)^{n-k}</span></p>
@@ -1051,23 +1046,23 @@ Why One-Tailed Test?
 <li>Since <span class="math inline">0.0159612 &lt; 0.05</span>, we reject H₀.</li>
 </ul>
 </section>
-<section id="decision-1" class="level4" data-number="21.3.0.11">
-<h4 data-number="21.3.0.11" class="anchored" data-anchor-id="decision-1"><span class="header-section-number">21.3.0.11</span> Decision</h4>
+<section id="decision-1" class="level4" data-number="21.2.0.11">
+<h4 data-number="21.2.0.11" class="anchored" data-anchor-id="decision-1"><span class="header-section-number">21.2.0.11</span> Decision</h4>
 <p>Since the p-value is less than the significance level (0.05), we reject the null hypothesis.</p>
 </section>
-<section id="interpretation-1" class="level4" data-number="21.3.0.12">
-<h4 data-number="21.3.0.12" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">21.3.0.12</span> Interpretation</h4>
+<section id="interpretation-1" class="level4" data-number="21.2.0.12">
+<h4 data-number="21.2.0.12" class="anchored" data-anchor-id="interpretation-1"><span class="header-section-number">21.2.0.12</span> Interpretation</h4>
 <p>There is sufficient evidence at the 5% significance level to conclude that the candidate is overestimating her support. The sample shows only 15% support, which is significantly lower than the candidate’s belief of 40%. The probability of observing such low support (3 or fewer out of 20) would be only about 1.6% if the true support were actually 40%.</p>
 </section>
 </section>
 <section id="problem-3-binomial-test-for-candidate-support-3" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-3-binomial-test-for-candidate-support-3">Problem 3: Binomial Test for Candidate Support (3)</h3>
-<section id="problem-statement-2" class="level4" data-number="21.3.0.13">
-<h4 data-number="21.3.0.13" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.3.0.13</span> Problem Statement</h4>
+<section id="problem-statement-2" class="level4" data-number="21.2.0.13">
+<h4 data-number="21.2.0.13" class="anchored" data-anchor-id="problem-statement-2"><span class="header-section-number">21.2.0.13</span> Problem Statement</h4>
 <p>A political candidate claims that 40% of residents in a town support her campaign (<span class="math inline">p = 0.4</span>). A researcher suspects this might be an <strong>overestimation</strong> and conducts a survey. In a random sample of 12 residents, 1 person expresses support for the candidate. Test whether there is sufficient evidence to conclude that the candidate is overestimating her support level, using a significance level of 5%.</p>
 </section>
-<section id="hypotheses" class="level4" data-number="21.3.0.14">
-<h4 data-number="21.3.0.14" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">21.3.0.14</span> Hypotheses</h4>
+<section id="hypotheses" class="level4" data-number="21.2.0.14">
+<h4 data-number="21.2.0.14" class="anchored" data-anchor-id="hypotheses"><span class="header-section-number">21.2.0.14</span> Hypotheses</h4>
 <p><span class="math display">
 \begin{align*}
 H_0&amp;: p = 0.4 \text{ (The candidate's claim is correct)} \\
@@ -1075,8 +1070,8 @@ H_1&amp;: p &lt; 0.4 \text{ (The candidate is overestimating support)}
 \end{align*}
 </span></p>
 </section>
-<section id="given-information" class="level4" data-number="21.3.0.15">
-<h4 data-number="21.3.0.15" class="anchored" data-anchor-id="given-information"><span class="header-section-number">21.3.0.15</span> Given Information</h4>
+<section id="given-information" class="level4" data-number="21.2.0.15">
+<h4 data-number="21.2.0.15" class="anchored" data-anchor-id="given-information"><span class="header-section-number">21.2.0.15</span> Given Information</h4>
 <ul>
 <li>Sample size: <span class="math inline">n = 12</span></li>
 <li>Number of successes: <span class="math inline">x = 1</span></li>
@@ -1085,8 +1080,8 @@ H_1&amp;: p &lt; 0.4 \text{ (The candidate is overestimating support)}
 <li>Observed proportion: <span class="math inline">\hat{p} = \frac{1}{12} \approx 0.083</span></li>
 </ul>
 </section>
-<section id="solution" class="level4" data-number="21.3.0.16">
-<h4 data-number="21.3.0.16" class="anchored" data-anchor-id="solution"><span class="header-section-number">21.3.0.16</span> Solution</h4>
+<section id="solution" class="level4" data-number="21.2.0.16">
+<h4 data-number="21.2.0.16" class="anchored" data-anchor-id="solution"><span class="header-section-number">21.2.0.16</span> Solution</h4>
 <ol type="1">
 <li><p>For a left-tailed test, we calculate the probability of observing 1 or fewer successes under <span class="math inline">H_0</span>.</p></li>
 <li><p>Using the binomial probability formula: <span class="math display">P(X \leq 1) = \sum_{k=0}^{1} \binom{12}{k}(0.4)^k(0.6)^{12-k}</span></p></li>
@@ -1098,12 +1093,12 @@ H_1&amp;: p &lt; 0.4 \text{ (The candidate is overestimating support)}
 </ul></li>
 </ol>
 </section>
-<section id="conclusion" class="level4" data-number="21.3.0.17">
-<h4 data-number="21.3.0.17" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">21.3.0.17</span> Conclusion</h4>
+<section id="conclusion" class="level4" data-number="21.2.0.17">
+<h4 data-number="21.2.0.17" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">21.2.0.17</span> Conclusion</h4>
 <p>At a 5% significance level, there is sufficient evidence to conclude that the candidate is overestimating her support. The sample proportion (8.3%) is substantially lower than the claimed 40% support, and this difference is statistically significant (p = 0.0196).</p>
 </section>
-<section id="statistical-power-consideration" class="level4" data-number="21.3.0.18">
-<h4 data-number="21.3.0.18" class="anchored" data-anchor-id="statistical-power-consideration"><span class="header-section-number">21.3.0.18</span> Statistical Power Consideration</h4>
+<section id="statistical-power-consideration" class="level4" data-number="21.2.0.18">
+<h4 data-number="21.2.0.18" class="anchored" data-anchor-id="statistical-power-consideration"><span class="header-section-number">21.2.0.18</span> Statistical Power Consideration</h4>
 <p>While the sample size (n = 12) is relatively small, we were still able to detect a significant difference. This is because the observed difference between the claimed proportion (40%) and sample proportion (8.3%) was quite large. However, a larger sample size would provide more reliable results and better estimation of the true support proportion.</p>
 </section>
 </section>
@@ -1117,8 +1112,8 @@ H_1&amp;: p &lt; 0.4 \text{ (The candidate is overestimating support)}
 <li>Number of supporters in sample: x = 4</li>
 <li>Significance level: α = 0.05</li>
 </ul>
-<section id="solution-1" class="level4" data-number="21.3.0.19">
-<h4 data-number="21.3.0.19" class="anchored" data-anchor-id="solution-1"><span class="header-section-number">21.3.0.19</span> Solution</h4>
+<section id="solution-1" class="level4" data-number="21.2.0.19">
+<h4 data-number="21.2.0.19" class="anchored" data-anchor-id="solution-1"><span class="header-section-number">21.2.0.19</span> Solution</h4>
 <p><strong>Step 1: State the Hypotheses</strong></p>
 <p>Since we want to test if the candidate is over-estimating (true proportion is less than claimed):</p>
 <p><span class="math display">
@@ -1150,8 +1145,8 @@ H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
 <p><strong>Step 5: Interpretation</strong></p>
 <p>At a 5% significance level, there is not enough evidence to conclude that the candidate is over-estimating her support. In fact, the sample data shows 4/12 ≈ 33.3% support, which is higher than her claimed 20%, going in the opposite direction of our alternative hypothesis.</p>
 </section>
-<section id="additional-notes" class="level4" data-number="21.3.0.20">
-<h4 data-number="21.3.0.20" class="anchored" data-anchor-id="additional-notes"><span class="header-section-number">21.3.0.20</span> Additional Notes</h4>
+<section id="additional-notes" class="level4" data-number="21.2.0.20">
+<h4 data-number="21.2.0.20" class="anchored" data-anchor-id="additional-notes"><span class="header-section-number">21.2.0.20</span> Additional Notes</h4>
 <ol type="1">
 <li><p>Sample Proportion: <span class="math display">\hat{p} = \frac{x}{n} = \frac{4}{12} = 0.333</span></p></li>
 <li><p>The high p-value reflects that the sample proportion (33.3%) is actually higher than the hypothesized value (20%), not lower as we were testing for.</p></li>
@@ -1159,8 +1154,8 @@ H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
 <li><p>Given the small sample size (n = 12), the power of this test to detect true differences is limited.</p></li>
 </ol>
 </section>
-<section id="r-code" class="level4" data-number="21.3.0.21">
-<h4 data-number="21.3.0.21" class="anchored" data-anchor-id="r-code"><span class="header-section-number">21.3.0.21</span> R Code</h4>
+<section id="r-code" class="level4" data-number="21.2.0.21">
+<h4 data-number="21.2.0.21" class="anchored" data-anchor-id="r-code"><span class="header-section-number">21.2.0.21</span> R Code</h4>
 <p>Here’s the complete R code for this analysis:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Given values</span></span>
@@ -1193,14 +1188,14 @@ H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
 </section>
 <section id="problem-5-binomial-test-for-eu-support" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="problem-5-binomial-test-for-eu-support">Problem 5: Binomial Test for EU Support</h3>
-<section id="problem-statement-3" class="level4" data-number="21.3.0.22">
-<h4 data-number="21.3.0.22" class="anchored" data-anchor-id="problem-statement-3"><span class="header-section-number">21.3.0.22</span> Problem Statement</h4>
+<section id="problem-statement-3" class="level4" data-number="21.2.0.22">
+<h4 data-number="21.2.0.22" class="anchored" data-anchor-id="problem-statement-3"><span class="header-section-number">21.2.0.22</span> Problem Statement</h4>
 <p>A politician believes that support for his country’s EU membership is about 98% (<span class="math inline">p = 0.98</span>). A researcher wants to test whether the politician is <strong>overestimating</strong> this level of support.</p>
 <p>In a sample of 15 people (<span class="math inline">n = 15</span>), the researcher observes that 13 people support membership. Let’s define the random variable X as the number of people in the sample who support EU membership. We observed <span class="math inline">X = 13</span> “successes” in 15 Bernoulli trials.</p>
 <p>Is there enough evidence to reject the claim that the support is 98%?</p>
 </section>
-<section id="setup-2" class="level4" data-number="21.3.0.23">
-<h4 data-number="21.3.0.23" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.3.0.23</span> Setup</h4>
+<section id="setup-2" class="level4" data-number="21.2.0.23">
+<h4 data-number="21.2.0.23" class="anchored" data-anchor-id="setup-2"><span class="header-section-number">21.2.0.23</span> Setup</h4>
 <p><strong>Hypotheses:</strong></p>
 <ul>
 <li><span class="math inline">H_0: p = 0.98</span> (null hypothesis: true proportion is 98%)</li>
@@ -1214,8 +1209,8 @@ H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
 <li>Significance level: <span class="math inline">\alpha = 0.05</span> (5%)</li>
 </ul>
 </section>
-<section id="finding-the-p-value-2" class="level4" data-number="21.3.0.24">
-<h4 data-number="21.3.0.24" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.3.0.24</span> Finding the P-value</h4>
+<section id="finding-the-p-value-2" class="level4" data-number="21.2.0.24">
+<h4 data-number="21.2.0.24" class="anchored" data-anchor-id="finding-the-p-value-2"><span class="header-section-number">21.2.0.24</span> Finding the P-value</h4>
 <p>For this left-tailed test, we need <span class="math inline">P(X \leq 13)</span>. Given the high value of <span class="math inline">p_0</span>, it’s more efficient to use <strong>the complement rule</strong>:</p>
 <p><span class="math inline">P(X \leq 13) = 1 - P(X \geq 14)</span></p>
 <blockquote class="blockquote">
@@ -1250,12 +1245,12 @@ H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
 </ol>
 <p><span class="math display">P(X \leq 13) = 1 - P(X = 14) - P(X = 15)</span> <span class="math display">= 1 - 0.2252 - 0.7395</span> <span class="math display">\approx 0.0353</span></p>
 </section>
-<section id="decision-2" class="level4" data-number="21.3.0.25">
-<h4 data-number="21.3.0.25" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">21.3.0.25</span> Decision</h4>
+<section id="decision-2" class="level4" data-number="21.2.0.25">
+<h4 data-number="21.2.0.25" class="anchored" data-anchor-id="decision-2"><span class="header-section-number">21.2.0.25</span> Decision</h4>
 <p>Since the p-value (0.0353) is less than the significance level (0.05), we reject the null hypothesis.</p>
 </section>
-<section id="interpretation-2" class="level4" data-number="21.3.0.26">
-<h4 data-number="21.3.0.26" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">21.3.0.26</span> Interpretation</h4>
+<section id="interpretation-2" class="level4" data-number="21.2.0.26">
+<h4 data-number="21.2.0.26" class="anchored" data-anchor-id="interpretation-2"><span class="header-section-number">21.2.0.26</span> Interpretation</h4>
 <p>There is sufficient evidence to conclude that the politician is overestimating the support for EU membership. While 86.7% support in the sample is still very high, it’s significantly lower than the politician’s claim of 98%. Under the assumption that true support is 98%, the probability of observing 13 or fewer supporters in a sample of 15 people would be only about 3.53%.</p>
 <p><strong>Note on Complement Rule</strong></p>
 <p>This problem demonstrates the utility of the complement rule in probability calculations. Instead of calculating probabilities for outcomes 0 through 13 (14 calculations), we only needed to calculate probabilities for outcomes 14 and 15 (2 calculations). This is particularly efficient when:</p>
@@ -1266,12 +1261,12 @@ H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
 </section>
 </section>
 </section>
-<section id="problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests"><span class="header-section-number">21.4</span> Problem Solutions – part 2: the binomial tests (two-tailed/sided tests*)</h2>
+<section id="problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests"><span class="header-section-number">21.3</span> Problem Solutions – part 2: the binomial tests (two-tailed/sided tests*)</h2>
 <p>(…)</p>
 </section>
-<section id="testing-ols-regression-parameter-significance-using-r" class="level2" data-number="21.5">
-<h2 data-number="21.5" class="anchored" data-anchor-id="testing-ols-regression-parameter-significance-using-r"><span class="header-section-number">21.5</span> Testing OLS Regression Parameter Significance Using R (*)</h2>
+<section id="testing-ols-regression-parameter-significance-using-r" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="testing-ols-regression-parameter-significance-using-r"><span class="header-section-number">21.4</span> Testing OLS Regression Parameter Significance Using R (*)</h2>
 <p>(…)</p>
 
 
