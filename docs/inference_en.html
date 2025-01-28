@@ -337,10 +337,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-method-of-proof-by-contradiction" id="toc-the-method-of-proof-by-contradiction" class="nav-link active" data-scroll-target="#the-method-of-proof-by-contradiction"><span class="header-section-number">21.1</span> The Method of Proof by Contradiction</a>
+  <li><a href="#statistical-hypothesis-testing-general-framework" id="toc-statistical-hypothesis-testing-general-framework" class="nav-link active" data-scroll-target="#statistical-hypothesis-testing-general-framework"><span class="header-section-number">21.1</span> Statistical Hypothesis Testing (general framework)</a>
   <ul class="collapse">
-  <li><a href="#in-mathematics" id="toc-in-mathematics" class="nav-link" data-scroll-target="#in-mathematics"><span class="header-section-number">21.1.1</span> In Mathematics</a></li>
-  <li><a href="#in-statistics" id="toc-in-statistics" class="nav-link" data-scroll-target="#in-statistics"><span class="header-section-number">21.1.2</span> In Statistics</a></li>
+  <li><a href="#the-method-of-proof-by-contradiction" id="toc-the-method-of-proof-by-contradiction" class="nav-link" data-scroll-target="#the-method-of-proof-by-contradiction"><span class="header-section-number">21.1.11</span> The Method of Proof by Contradiction</a></li>
   </ul></li>
   <li><a href="#the-null-hypothesis-framework" id="toc-the-null-hypothesis-framework" class="nav-link" data-scroll-target="#the-null-hypothesis-framework"><span class="header-section-number">21.2</span> The Null Hypothesis Framework</a>
   <ul class="collapse">
@@ -363,7 +362,7 @@ window.Quarto = {
   <li><a href="#problem-5-binomial-test-for-eu-support" id="toc-problem-5-binomial-test-for-eu-support" class="nav-link" data-scroll-target="#problem-5-binomial-test-for-eu-support">Problem 5: Binomial Test for EU Support</a></li>
   </ul></li>
   <li><a href="#problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" id="toc-problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests" class="nav-link" data-scroll-target="#problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests"><span class="header-section-number">21.5</span> Problem Solutions – part 2: the binomial tests (two-tailed/sided tests*)</a></li>
-  <li><a href="#testing-ols-regression-parameter-significance" id="toc-testing-ols-regression-parameter-significance" class="nav-link" data-scroll-target="#testing-ols-regression-parameter-significance"><span class="header-section-number">21.6</span> Testing OLS Regression Parameter Significance (*)</a></li>
+  <li><a href="#testing-ols-regression-parameter-significance-using-r" id="toc-testing-ols-regression-parameter-significance-using-r" class="nav-link" data-scroll-target="#testing-ols-regression-parameter-significance-using-r"><span class="header-section-number">21.6</span> Testing OLS Regression Parameter Significance Using R (*)</a></li>
   </ul>
 </nav>
     </div>
@@ -389,6 +388,8 @@ window.Quarto = {
 </header>
 
 
+<section id="statistical-hypothesis-testing-general-framework" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="statistical-hypothesis-testing-general-framework"><span class="header-section-number">21.1</span> Statistical Hypothesis Testing (general framework)</h2>
 <p>Statistical inference is how we draw conclusions about a population from a sample. It’s like being a detective: we never have all the information, but we can make educated guesses based on the evidence we have.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -452,8 +453,8 @@ The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradict
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<section id="research-context" class="level3" data-number="21.0.1">
-<h3 data-number="21.0.1" class="anchored" data-anchor-id="research-context"><span class="header-section-number">21.0.1</span> Research Context</h3>
+<section id="research-context" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="research-context"><span class="header-section-number">21.1.1</span> Research Context</h3>
 <p>A person claims to possess ESP (extrasensory perception) abilities that enable them to predict coin flips. This scenario illustrates the fundamental logic of statistical hypothesis testing.</p>
 <ul>
 <li><strong>Task</strong>: Predict 100 coin flips before each flip occurs</li>
@@ -461,8 +462,8 @@ The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradict
 <li><strong>Key Consideration</strong>: High success could indicate either ESP ability OR a biased coin</li>
 </ul>
 </section>
-<section id="the-core-logic" class="level3" data-number="21.0.2">
-<h3 data-number="21.0.2" class="anchored" data-anchor-id="the-core-logic"><span class="header-section-number">21.0.2</span> The Core Logic</h3>
+<section id="the-core-logic" class="level3" data-number="21.1.2">
+<h3 data-number="21.1.2" class="anchored" data-anchor-id="the-core-logic"><span class="header-section-number">21.1.2</span> The Core Logic</h3>
 <p>Statistical hypothesis testing follows a logic similar to proof by contradiction in mathematics:</p>
 <ol type="1">
 <li>We start by assuming what we want to disprove (the null hypothesis)</li>
@@ -470,10 +471,10 @@ The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradict
 <li>If this probability is extremely small, we reject the initial assumption</li>
 </ol>
 </section>
-<section id="statistical-framework" class="level3" data-number="21.0.3">
-<h3 data-number="21.0.3" class="anchored" data-anchor-id="statistical-framework"><span class="header-section-number">21.0.3</span> Statistical Framework</h3>
-<section id="the-null-hypothesis-mechanism" class="level4" data-number="21.0.3.1">
-<h4 data-number="21.0.3.1" class="anchored" data-anchor-id="the-null-hypothesis-mechanism"><span class="header-section-number">21.0.3.1</span> 1. The Null Hypothesis Mechanism</h4>
+<section id="statistical-framework" class="level3" data-number="21.1.3">
+<h3 data-number="21.1.3" class="anchored" data-anchor-id="statistical-framework"><span class="header-section-number">21.1.3</span> Statistical Framework</h3>
+<section id="the-null-hypothesis-mechanism" class="level4" data-number="21.1.3.1">
+<h4 data-number="21.1.3.1" class="anchored" data-anchor-id="the-null-hypothesis-mechanism"><span class="header-section-number">21.1.3.1</span> 1. The Null Hypothesis Mechanism</h4>
 <p>The null hypothesis (H₀) serves as our “assumption to be disproven” and typically represents:</p>
 <ul>
 <li>No effect</li>
@@ -483,8 +484,8 @@ The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradict
 </ul>
 <p>In our ESP case: Random guessing (p = 0.5)</p>
 </section>
-<section id="the-alternative-hypothesis" class="level4" data-number="21.0.3.2">
-<h4 data-number="21.0.3.2" class="anchored" data-anchor-id="the-alternative-hypothesis"><span class="header-section-number">21.0.3.2</span> 2. The Alternative Hypothesis</h4>
+<section id="the-alternative-hypothesis" class="level4" data-number="21.1.3.2">
+<h4 data-number="21.1.3.2" class="anchored" data-anchor-id="the-alternative-hypothesis"><span class="header-section-number">21.1.3.2</span> 2. The Alternative Hypothesis</h4>
 <p>The alternative hypothesis (H₁) represents what we suspect might be true:</p>
 <ul>
 <li>An effect exists</li>
@@ -494,8 +495,8 @@ The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradict
 </ul>
 <p>In our ESP case: Better than random guessing (p &gt; 0.5)</p>
 </section>
-<section id="the-decision-rule" class="level4" data-number="21.0.3.3">
-<h4 data-number="21.0.3.3" class="anchored" data-anchor-id="the-decision-rule"><span class="header-section-number">21.0.3.3</span> 3. The Decision Rule</h4>
+<section id="the-decision-rule" class="level4" data-number="21.1.3.3">
+<h4 data-number="21.1.3.3" class="anchored" data-anchor-id="the-decision-rule"><span class="header-section-number">21.1.3.3</span> 3. The Decision Rule</h4>
 <p>We establish a conventional cutoff point (α) that defines “extremely unlikely”:</p>
 <ul>
 <li>Typically set at α = 0.05 (5%)</li>
@@ -503,8 +504,8 @@ The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradict
 <li>A conventional threshold, not a mathematical necessity</li>
 </ul>
 </section>
-<section id="the-p-value-mechanism" class="level4" data-number="21.0.3.4">
-<h4 data-number="21.0.3.4" class="anchored" data-anchor-id="the-p-value-mechanism"><span class="header-section-number">21.0.3.4</span> 4. The P-value Mechanism</h4>
+<section id="the-p-value-mechanism" class="level4" data-number="21.1.3.4">
+<h4 data-number="21.1.3.4" class="anchored" data-anchor-id="the-p-value-mechanism"><span class="header-section-number">21.1.3.4</span> 4. The P-value Mechanism</h4>
 <p>The p-value quantifies the logical argument:</p>
 <ul>
 <li>Assuming H₀ is true</li>
@@ -520,8 +521,8 @@ The Logic of Statistical Hypothesis Testing: A Probabilistic Proof by Contradict
 </blockquote>
 </section>
 </section>
-<section id="application-to-esp-testing" class="level3" data-number="21.0.4">
-<h3 data-number="21.0.4" class="anchored" data-anchor-id="application-to-esp-testing"><span class="header-section-number">21.0.4</span> Application to ESP Testing</h3>
+<section id="application-to-esp-testing" class="level3" data-number="21.1.4">
+<h3 data-number="21.1.4" class="anchored" data-anchor-id="application-to-esp-testing"><span class="header-section-number">21.1.4</span> Application to ESP Testing</h3>
 <p><strong>Statistical Hypotheses</strong>: <span class="math display">
 \begin{align*}
 H_0&amp;: p = 0.5 \text{ (random guessing)} \\
@@ -545,8 +546,8 @@ H_1&amp;: p &gt; 0.5 \text{ (better than guessing)}
 <li>This is far below our conventional significance level of 0.05 (5%)</li>
 </ul>
 </section>
-<section id="the-general-pattern" class="level3" data-number="21.0.5">
-<h3 data-number="21.0.5" class="anchored" data-anchor-id="the-general-pattern"><span class="header-section-number">21.0.5</span> The General Pattern</h3>
+<section id="the-general-pattern" class="level3" data-number="21.1.5">
+<h3 data-number="21.1.5" class="anchored" data-anchor-id="the-general-pattern"><span class="header-section-number">21.1.5</span> The General Pattern</h3>
 <ol type="1">
 <li>Assume the null (like assuming not-A in proof by contradiction)</li>
 <li>Calculate probability of data under null</li>
@@ -558,8 +559,8 @@ H_1&amp;: p &gt; 0.5 \text{ (better than guessing)}
 </ul></li>
 </ol>
 </section>
-<section id="key-distinctions-from-mathematical-proof" class="level3" data-number="21.0.6">
-<h3 data-number="21.0.6" class="anchored" data-anchor-id="key-distinctions-from-mathematical-proof"><span class="header-section-number">21.0.6</span> Key Distinctions from Mathematical Proof</h3>
+<section id="key-distinctions-from-mathematical-proof" class="level3" data-number="21.1.6">
+<h3 data-number="21.1.6" class="anchored" data-anchor-id="key-distinctions-from-mathematical-proof"><span class="header-section-number">21.1.6</span> Key Distinctions from Mathematical Proof</h3>
 <ol type="1">
 <li>Probabilistic rather than deterministic</li>
 <li>Conclusions are “supported” rather than “proven”</li>
@@ -586,8 +587,8 @@ What is a P-value?
 <blockquote class="blockquote">
 <p>The p-value is the probability of obtaining the observed outcome, or a more extreme one in the direction of the alternative hypothesis, assuming the null hypothesis (H₀) is true.</p>
 </blockquote>
-<section id="key-components" class="level3" data-number="21.0.7">
-<h3 data-number="21.0.7" class="anchored" data-anchor-id="key-components"><span class="header-section-number">21.0.7</span> Key Components</h3>
+<section id="key-components" class="level3" data-number="21.1.7">
+<h3 data-number="21.1.7" class="anchored" data-anchor-id="key-components"><span class="header-section-number">21.1.7</span> Key Components</h3>
 <ol type="1">
 <li><strong>Observed outcome</strong>: The actual value or statistic computed from our sample data.</li>
 <li><strong>More extreme outcomes</strong>: Additional outcomes that provide even stronger evidence against H₀: <span class="math display">
@@ -600,8 +601,8 @@ What is a P-value?
 <li><strong>Null hypothesis assumption</strong>: All probabilities are calculated using the parameter value specified in H₀.</li>
 </ol>
 </section>
-<section id="one-tailed-vs-two-tailed-tests" class="level3" data-number="21.0.8">
-<h3 data-number="21.0.8" class="anchored" data-anchor-id="one-tailed-vs-two-tailed-tests"><span class="header-section-number">21.0.8</span> One-Tailed vs Two-Tailed Tests</h3>
+<section id="one-tailed-vs-two-tailed-tests" class="level3" data-number="21.1.8">
+<h3 data-number="21.1.8" class="anchored" data-anchor-id="one-tailed-vs-two-tailed-tests"><span class="header-section-number">21.1.8</span> One-Tailed vs Two-Tailed Tests</h3>
 <p>The choice between one-tailed and two-tailed tests depends on your alternative hypothesis and the context of your research question:</p>
 <p><strong>One-Tailed Tests</strong>:</p>
 <ul>
@@ -629,8 +630,8 @@ H_1&amp;: \mu \neq \mu_0
 </span></li>
 </ul>
 </section>
-<section id="example-binomial-test" class="level3" data-number="21.0.9">
-<h3 data-number="21.0.9" class="anchored" data-anchor-id="example-binomial-test"><span class="header-section-number">21.0.9</span> Example: Binomial Test</h3>
+<section id="example-binomial-test" class="level3" data-number="21.1.9">
+<h3 data-number="21.1.9" class="anchored" data-anchor-id="example-binomial-test"><span class="header-section-number">21.1.9</span> Example: Binomial Test</h3>
 <p>Testing if a politician is overestimating 98% support (p = 0.98) when observing 13 supporters in n = 15 people. In this context, a one-tailed test is most appropriate because the research question is inherently directional (overestimating implies p &lt; 0.98).</p>
 <p><span class="math display">
 \begin{align*}
@@ -646,8 +647,8 @@ H_1&amp;: p &lt; 0.98
 \end{align*}
 </span></p>
 </section>
-<section id="common-misconceptions-to-avoid" class="level3" data-number="21.0.10">
-<h3 data-number="21.0.10" class="anchored" data-anchor-id="common-misconceptions-to-avoid"><span class="header-section-number">21.0.10</span> Common Misconceptions to Avoid</h3>
+<section id="common-misconceptions-to-avoid" class="level3" data-number="21.1.10">
+<h3 data-number="21.1.10" class="anchored" data-anchor-id="common-misconceptions-to-avoid"><span class="header-section-number">21.1.10</span> Common Misconceptions to Avoid</h3>
 <ol type="1">
 <li>P-value ≠ Probability H₀ is true</li>
 <li>1 - p-value ≠ Probability H₁ is true</li>
@@ -659,10 +660,10 @@ H_1&amp;: p &lt; 0.98
 </section>
 </div>
 </div>
-<section id="the-method-of-proof-by-contradiction" class="level2" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="the-method-of-proof-by-contradiction"><span class="header-section-number">21.1</span> The Method of Proof by Contradiction</h2>
-<section id="in-mathematics" class="level3" data-number="21.1.1">
-<h3 data-number="21.1.1" class="anchored" data-anchor-id="in-mathematics"><span class="header-section-number">21.1.1</span> In Mathematics</h3>
+<section id="the-method-of-proof-by-contradiction" class="level3" data-number="21.1.11">
+<h3 data-number="21.1.11" class="anchored" data-anchor-id="the-method-of-proof-by-contradiction"><span class="header-section-number">21.1.11</span> The Method of Proof by Contradiction</h3>
+<section id="in-mathematics" class="level4" data-number="21.1.11.1">
+<h4 data-number="21.1.11.1" class="anchored" data-anchor-id="in-mathematics"><span class="header-section-number">21.1.11.1</span> In Mathematics</h4>
 <p>Proof that <span class="math inline">\sqrt{2}</span> is Irrational</p>
 <p><strong>Initial Assumption</strong></p>
 <p>If <span class="math inline">\sqrt{2}</span> is rational, then <span class="math inline">\sqrt{2} = \frac{p}{q}</span> where:</p>
@@ -694,8 +695,8 @@ H_1&amp;: p &lt; 0.98
 </ul>
 <p>Thus, <span class="math inline">\sqrt{2}</span> is irrational.</p>
 </section>
-<section id="in-statistics" class="level3" data-number="21.1.2">
-<h3 data-number="21.1.2" class="anchored" data-anchor-id="in-statistics"><span class="header-section-number">21.1.2</span> In Statistics</h3>
+<section id="in-statistics" class="level4" data-number="21.1.11.2">
+<h4 data-number="21.1.11.2" class="anchored" data-anchor-id="in-statistics"><span class="header-section-number">21.1.11.2</span> In Statistics</h4>
 <p>We use a similar but probabilistic approach:</p>
 <ol type="1">
 <li>Make assumption (null hypothesis)</li>
@@ -703,6 +704,7 @@ H_1&amp;: p &lt; 0.98
 <li>If contradiction is strong enough, reject assumption</li>
 </ol>
 <p>Key Difference: We deal with probability, not certainty.</p>
+</section>
 </section>
 </section>
 <section id="the-null-hypothesis-framework" class="level2" data-number="21.2">
@@ -1273,8 +1275,8 @@ H_1&amp;: p &lt; 0.2 \text{ (The candidate is overestimating support)}
 <h2 data-number="21.5" class="anchored" data-anchor-id="problem-solutions-part-2-the-binomial-tests-two-tailedsided-tests"><span class="header-section-number">21.5</span> Problem Solutions – part 2: the binomial tests (two-tailed/sided tests*)</h2>
 <p>(…)</p>
 </section>
-<section id="testing-ols-regression-parameter-significance" class="level2" data-number="21.6">
-<h2 data-number="21.6" class="anchored" data-anchor-id="testing-ols-regression-parameter-significance"><span class="header-section-number">21.6</span> Testing OLS Regression Parameter Significance (*)</h2>
+<section id="testing-ols-regression-parameter-significance-using-r" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="testing-ols-regression-parameter-significance-using-r"><span class="header-section-number">21.6</span> Testing OLS Regression Parameter Significance Using R (*)</h2>
 <p>(…)</p>
 
 
