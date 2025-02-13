@@ -2164,13 +2164,14 @@ Dekompozycja Wariancji w Regresji Liniowej
 <div class="callout-body-container callout-body">
 <section id="dlaczego-to-jest-ważne-zrozumienie-poprawy-prognoz-poprzez-dodatkowe-informacje" class="level3" data-number="16.6.8">
 <h3 data-number="16.6.8" class="anchored" data-anchor-id="dlaczego-to-jest-ważne-zrozumienie-poprawy-prognoz-poprzez-dodatkowe-informacje"><span class="header-section-number">16.6.8</span> Dlaczego To Jest Ważne: Zrozumienie Poprawy Prognoz Poprzez Dodatkowe Informacje</h3>
-<p>Rozważmy wyzwanie związane z przewidywaniem cen nieruchomości na rynku mieszkaniowym. Na najbardziej podstawowym poziomie można oszacować cenę dowolnego domu, używając średniej ceny rynkowej. Jednakże takie podejście pomija potencjalnie wartościowe informacje. Gdy uwzględnimy dodatkowe zmienne, takie jak powierzchnia użytkowa, lokalizacja czy liczba sypialni, nasze prognozy zazwyczaj stają się bardziej precyzyjne. <strong>Dekompozycja wariancji</strong> dostarcza matematycznych ram do dokładnego określenia, o ile poprawia się trafność prognoz, gdy włączamy takie dodatkowe informacje.</p>
+<p>Rozważmy prbem zwizany z przewidywaniem cen nieruchomości na rynku mieszkaniowym. Na najbardziej podstawowym poziomie można oszacować cenę dowolnego domu, używając średniej ceny rynkowej. Jednakże takie podejście pomija potencjalnie wartościowe informacje. Gdy uwzględnimy dodatkowe zmienne, takie jak powierzchnia użytkowa, lokalizacja czy liczba sypialni, nasze prognozy zazwyczaj stają się bardziej precyzyjne.</p>
+<p><strong>Dekompozycja wariancji</strong> dostarcza matematycznych ram do dokładnego określenia, o ile poprawia się trafność prognoz, gdy włączamy takie dodatkowe informacje.</p>
 </section>
 <section id="udoskonalenie-estymacji" class="level3" data-number="16.6.9">
 <h3 data-number="16.6.9" class="anchored" data-anchor-id="udoskonalenie-estymacji"><span class="header-section-number">16.6.9</span> Udoskonalenie Estymacji</h3>
 <section id="podejście-początkowe-uniwersalna-średnia" class="level4" data-number="16.6.9.1">
 <h4 data-number="16.6.9.1" class="anchored" data-anchor-id="podejście-początkowe-uniwersalna-średnia"><span class="header-section-number">16.6.9.1</span> Podejście Początkowe: Uniwersalna Średnia</h4>
-<p>Nasza podróż rozpoczyna się od najprostszej możliwej prognozy: średniej wszystkich cen domów (<span class="math inline">\bar{y}</span>). Stanowi to nasz punkt wyjścia – prognozę dokonaną bez żadnych szczególnych informacji o poszczególnych nieruchomościach. Choć podejście to zapewnia rozsądny punkt odniesienia, traktuje każdy dom identycznie, prowadząc do tzw. <strong>błędów bazowych</strong>. Błędy te powstają właśnie dlatego, że ignorujemy unikalne cechy każdej nieruchomości.</p>
+<p>Zaczynamy od najprostszej możliwej prognozy: średniej wszystkich cen domów (<span class="math inline">\bar{y}</span>). Stanowi to nasz punkt wyjścia – prognozę dokonaną bez żadnych szczególnych informacji o poszczególnych nieruchomościach. Choć podejście to zapewnia rozsądny punkt odniesienia, traktuje każdy dom identycznie, prowadząc do tzw. <strong>błędów bazowych</strong>. Błędy te powstają właśnie dlatego, że ignorujemy unikalne cechy każdej nieruchomości.</p>
 </section>
 <section id="podejście-zaawansowane-włączenie-informacji-szczegółowych" class="level4" data-number="16.6.9.2">
 <h4 data-number="16.6.9.2" class="anchored" data-anchor-id="podejście-zaawansowane-włączenie-informacji-szczegółowych"><span class="header-section-number">16.6.9.2</span> Podejście Zaawansowane: Włączenie Informacji Szczegółowych</h4>
@@ -2202,7 +2203,7 @@ Dekompozycja Wariancji w Regresji Liniowej
 <li><strong>Interpretacja Praktyczna:</strong> Mniejsze SSE sugeruje, że nasz model wychwytuje większość głównych czynników wpływających na cenę</li>
 </ul></li>
 </ol>
-<p>Piękno tej dekompozycji tkwi w jej matematycznej kompletności: SST = SSR + SSE. Ta zależność mówi nam, że cała zmienność cen musi być albo wyjaśniona przez nasz model (SSR), albo pozostać niewyjaśniona (SSE), dostarczając kompleksowych ram do zrozumienia poprawy prognoz. Kolorowe linie na wykresie stanowią wizualne potwierdzenie tej zależności, pomagając zrozumieć, jak te komponenty współdziałają w praktyce.</p>
+<p>SST = SSR + SSE. Ta zależność mówi nam, że cała zmienność cen musi być albo wyjaśniona przez nasz model (SSR), albo pozostać niewyjaśniona (SSE), dostarczając kompleksowych ram do zrozumienia poprawy prognoz. Kolorowe linie na wykresie stanowią wizualne potwierdzenie tej zależności, pomagając zrozumieć, jak te komponenty współdziałają w praktyce.</p>
 <section id="wizualizacja-dekompozycji-wariancji" class="level4" data-number="16.6.10.1">
 <h4 data-number="16.6.10.1" class="anchored" data-anchor-id="wizualizacja-dekompozycji-wariancji"><span class="header-section-number">16.6.10.1</span> Wizualizacja Dekompozycji Wariancji</h4>
 <div class="cell">
