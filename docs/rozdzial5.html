@@ -869,237 +869,6 @@ Understanding Histograms and Density
 <section id="podsumowanie" class="level3" data-number="12.3.5">
 <h3 data-number="12.3.5" class="anchored" data-anchor-id="podsumowanie"><span class="header-section-number">12.3.5</span> Podsumowanie</h3>
 <p>Zrozumienie i wizualizacja rozkładów danych są kluczowe w analizie danych. ggplot2 zapewnia elastyczny i potężny zestaw narzędzi do tworzenia różnych typów wykresów rozkładów. Badając różne techniki wizualizacji, możemy uzyskać wgląd w podstawowe wzorce i charakterystyki naszych danych.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Rodzaje i Formaty Zbiorów Danych
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<section id="dane-przekrojowe" class="level3" data-number="12.3.6">
-<h3 data-number="12.3.6" class="anchored" data-anchor-id="dane-przekrojowe"><span class="header-section-number">12.3.6</span> Dane Przekrojowe</h3>
-<p>Obserwacje zebrane w jednym punkcie czasowym dla wielu podmiotów:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Osoba</th>
-<th>Wiek</th>
-<th>Dochód</th>
-<th>Wykształcenie</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>25</td>
-<td>5000</td>
-<td>Licencjat</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>35</td>
-<td>7500</td>
-<td>Magister</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>45</td>
-<td>9000</td>
-<td>Doktorat</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="szeregi-czasowe" class="level3" data-number="12.3.7">
-<h3 data-number="12.3.7" class="anchored" data-anchor-id="szeregi-czasowe"><span class="header-section-number">12.3.7</span> Szeregi Czasowe</h3>
-<p>Obserwacje jednego podmiotu w kolejnych punktach czasowych:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Rok</th>
-<th>PKB (w mld)</th>
-<th>Stopa Bezrobocia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2018</td>
-<td>20.580</td>
-<td>3,9%</td>
-</tr>
-<tr class="even">
-<td>2019</td>
-<td>21.433</td>
-<td>3,7%</td>
-</tr>
-<tr class="odd">
-<td>2020</td>
-<td>20.933</td>
-<td>8,1%</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="dane-panelowe-longitudinalne" class="level3" data-number="12.3.8">
-<h3 data-number="12.3.8" class="anchored" data-anchor-id="dane-panelowe-longitudinalne"><span class="header-section-number">12.3.8</span> Dane Panelowe (Longitudinalne)</h3>
-<p>Obserwacje wielu podmiotów w czasie:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Kraj</th>
-<th>Rok</th>
-<th>PKB per capita</th>
-<th>Długość życia</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Polska</td>
-<td>2018</td>
-<td>32.794</td>
-<td>76,7</td>
-</tr>
-<tr class="even">
-<td>Polska</td>
-<td>2019</td>
-<td>35.118</td>
-<td>76,8</td>
-</tr>
-<tr class="odd">
-<td>Niemcy</td>
-<td>2018</td>
-<td>46.194</td>
-<td>81,9</td>
-</tr>
-<tr class="even">
-<td>Niemcy</td>
-<td>2019</td>
-<td>46.194</td>
-<td>82,0</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="dane-przekrojowo-czasowe-tscs" class="level3" data-number="12.3.9">
-<h3 data-number="12.3.9" class="anchored" data-anchor-id="dane-przekrojowo-czasowe-tscs"><span class="header-section-number">12.3.9</span> Dane Przekrojowo-Czasowe (TSCS)</h3>
-<p>Szczególny przypadek danych panelowych gdzie:</p>
-<ul>
-<li>Liczba punktów czasowych &gt; liczba podmiotów</li>
-<li>Struktura podobna do danych panelowych</li>
-<li>Często stosowane w ekonomii i naukach politycznych</li>
-</ul>
-</section>
-<section id="formaty-danych" class="level3" data-number="12.3.10">
-<h3 data-number="12.3.10" class="anchored" data-anchor-id="formaty-danych"><span class="header-section-number">12.3.10</span> Formaty Danych</h3>
-<section id="format-szeroki" class="level4" data-number="12.3.10.1">
-<h4 data-number="12.3.10.1" class="anchored" data-anchor-id="format-szeroki"><span class="header-section-number">12.3.10.1</span> Format Szeroki</h4>
-<p>Każdy wiersz to podmiot; kolumny to zmienne/punkty czasowe:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Kraj</th>
-<th>PKB_2018</th>
-<th>PKB_2019</th>
-<th>DŻ_2018</th>
-<th>DŻ_2019</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Polska</td>
-<td>32.794</td>
-<td>35.118</td>
-<td>76,7</td>
-<td>76,8</td>
-</tr>
-<tr class="even">
-<td>Niemcy</td>
-<td>46.194</td>
-<td>46.194</td>
-<td>81,9</td>
-<td>82,0</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="format-długi" class="level4" data-number="12.3.10.2">
-<h4 data-number="12.3.10.2" class="anchored" data-anchor-id="format-długi"><span class="header-section-number">12.3.10.2</span> Format Długi</h4>
-<p>Każdy wiersz to unikalna kombinacja podmiot-czas-zmienna:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Kraj</th>
-<th>Rok</th>
-<th>Zmienna</th>
-<th>Wartość</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Polska</td>
-<td>2018</td>
-<td>PKB per capita</td>
-<td>32.794</td>
-</tr>
-<tr class="even">
-<td>Polska</td>
-<td>2019</td>
-<td>PKB per capita</td>
-<td>35.118</td>
-</tr>
-<tr class="odd">
-<td>Polska</td>
-<td>2018</td>
-<td>Długość życia</td>
-<td>76,7</td>
-</tr>
-<tr class="even">
-<td>Polska</td>
-<td>2019</td>
-<td>Długość życia</td>
-<td>76,8</td>
-</tr>
-<tr class="odd">
-<td>Niemcy</td>
-<td>2018</td>
-<td>PKB per capita</td>
-<td>46.194</td>
-</tr>
-<tr class="even">
-<td>Niemcy</td>
-<td>2019</td>
-<td>PKB per capita</td>
-<td>46.194</td>
-</tr>
-<tr class="odd">
-<td>Niemcy</td>
-<td>2018</td>
-<td>Długość życia</td>
-<td>81,9</td>
-</tr>
-<tr class="even">
-<td>Niemcy</td>
-<td>2019</td>
-<td>Długość życia</td>
-<td>82,0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Uwaga:</strong> Format długi jest zazwyczaj preferowany do:</p>
-<ul>
-<li>Manipulacji danymi w R i Pythonie</li>
-<li>Analiz statystycznych</li>
-<li>Wizualizacji danych</li>
-<li>Modelowania efektów mieszanych</li>
-<li>Analiz powtarzanych pomiarów</li>
-</ul>
-</section>
-</section>
-</div>
-</div>
 </section>
 </section>
 <section id="wartości-odstające-outliers" class="level2" data-number="12.4">
@@ -4926,7 +4695,7 @@ y
 <col style="width: 23%">
 <col style="width: 23%">
 <col style="width: 23%">
-<col style="width: 29%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4965,7 +4734,7 @@ y
 <col style="width: 23%">
 <col style="width: 23%">
 <col style="width: 23%">
-<col style="width: 29%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -5016,7 +4785,7 @@ y
 <col style="width: 23%">
 <col style="width: 23%">
 <col style="width: 23%">
-<col style="width: 29%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">

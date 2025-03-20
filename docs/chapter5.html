@@ -467,8 +467,7 @@ window.Quarto = {
 <section id="introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="introduction-to-sigma-notation-σ-wprowadzenie-do-notacji-sigma-σ"><span class="header-section-number">11.1</span> Introduction to Sigma Notation (Σ) | Wprowadzenie do Notacji Sigma (Σ)</h2>
 <ul>
-<li><p><strong>What is Sigma? | Co to jest notacja sumacyjna Sigma?</strong> Sigma (Σ) is a mathematical operator that tells us to sum (add up) a sequence of terms - it functions as an instruction to perform addition of all elements in a specified range. | Sigma (Σ) to operator matematyczny, który nakazuje nam zsumować (dodać) sekwencję wyrazów - działa jak instrukcja wykonania dodawania wszystkich elementów w określonym zakresie.</p></li>
-<li><p><strong>Purpose: | Cel:</strong> Provides a compact way to write sums of many similar terms using a single symbol, avoiding lengthy addition expressions. | Zapewnia zwięzły sposób zapisu sum wielu podobnych wyrazów za pomocą jednego symbolu, unikając długich wyrażeń dodawania.</p></li>
+<li><strong>What is Sigma? | Co to jest notacja sumacyjna Sigma?</strong> Sigma (Σ) is a mathematical operator that tells us to sum (add up) a sequence of terms - it functions as an instruction to perform addition of all elements in a specified range. | Sigma (Σ) to operator matematyczny, który nakazuje nam zsumować (dodać) sekwencję wyrazów - działa jak instrukcja wykonania dodawania wszystkich elementów w określonym zakresie.</li>
 </ul>
 <section id="basic-formula-podstawowa-formuła" class="level3" data-number="11.1.1">
 <h3 data-number="11.1.1" class="anchored" data-anchor-id="basic-formula-podstawowa-formuła"><span class="header-section-number">11.1.1</span> Basic Formula | Podstawowa formuła</h3>
@@ -869,237 +868,6 @@ Understanding Histograms and Density
 <section id="conclusion" class="level3" data-number="11.3.5">
 <h3 data-number="11.3.5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11.3.5</span> Conclusion</h3>
 <p>Understanding and visualizing data distributions is crucial in data analysis. ggplot2 provides a flexible and powerful toolkit for creating various types of distribution plots. By exploring different visualization techniques, we can gain insights into the underlying patterns and characteristics of our data.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Understanding Different Types of Data Sets and Their Formats
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<section id="cross-sectional-data" class="level3" data-number="11.3.6">
-<h3 data-number="11.3.6" class="anchored" data-anchor-id="cross-sectional-data"><span class="header-section-number">11.3.6</span> Cross-sectional Data</h3>
-<p>Observations collected at a single point in time across multiple entities/individuals:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Individual</th>
-<th>Age</th>
-<th>Income</th>
-<th>Education</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>25</td>
-<td>50000</td>
-<td>Bachelor’s</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>35</td>
-<td>75000</td>
-<td>Master’s</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>45</td>
-<td>90000</td>
-<td>PhD</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="time-series-data" class="level3" data-number="11.3.7">
-<h3 data-number="11.3.7" class="anchored" data-anchor-id="time-series-data"><span class="header-section-number">11.3.7</span> Time Series Data</h3>
-<p>Observations of a single entity tracked over multiple time points:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Year</th>
-<th>GDP (in billions)</th>
-<th>Unemployment Rate</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2018</td>
-<td>20,580</td>
-<td>3.9%</td>
-</tr>
-<tr class="even">
-<td>2019</td>
-<td>21,433</td>
-<td>3.7%</td>
-</tr>
-<tr class="odd">
-<td>2020</td>
-<td>20,933</td>
-<td>8.1%</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="panel-data-longitudinal-data" class="level3" data-number="11.3.8">
-<h3 data-number="11.3.8" class="anchored" data-anchor-id="panel-data-longitudinal-data"><span class="header-section-number">11.3.8</span> Panel Data (Longitudinal Data)</h3>
-<p>Observations of multiple entities tracked over time:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Country</th>
-<th>Year</th>
-<th>GDP per capita</th>
-<th>Life Expectancy</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>USA</td>
-<td>2018</td>
-<td>62,794</td>
-<td>78.7</td>
-</tr>
-<tr class="even">
-<td>USA</td>
-<td>2019</td>
-<td>65,118</td>
-<td>78.8</td>
-</tr>
-<tr class="odd">
-<td>Canada</td>
-<td>2018</td>
-<td>46,194</td>
-<td>81.9</td>
-</tr>
-<tr class="even">
-<td>Canada</td>
-<td>2019</td>
-<td>46,194</td>
-<td>82.0</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="time-series-cross-sectional-tscs-data" class="level3" data-number="11.3.9">
-<h3 data-number="11.3.9" class="anchored" data-anchor-id="time-series-cross-sectional-tscs-data"><span class="header-section-number">11.3.9</span> Time-series Cross-sectional (TSCS) Data</h3>
-<p>A special case of panel data where:</p>
-<ul>
-<li>Number of time points &gt; Number of entities</li>
-<li>Similar structure to panel data but with emphasis on temporal depth</li>
-<li>Common in political science and economics research</li>
-</ul>
-</section>
-<section id="data-formats" class="level3" data-number="11.3.10">
-<h3 data-number="11.3.10" class="anchored" data-anchor-id="data-formats"><span class="header-section-number">11.3.10</span> Data Formats</h3>
-<section id="wide-format" class="level4" data-number="11.3.10.1">
-<h4 data-number="11.3.10.1" class="anchored" data-anchor-id="wide-format"><span class="header-section-number">11.3.10.1</span> Wide Format</h4>
-<p>Each row represents an entity; columns represent variables/time points:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Country</th>
-<th>GDP_2018</th>
-<th>GDP_2019</th>
-<th>LE_2018</th>
-<th>LE_2019</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>USA</td>
-<td>62,794</td>
-<td>65,118</td>
-<td>78.7</td>
-<td>78.8</td>
-</tr>
-<tr class="even">
-<td>Canada</td>
-<td>46,194</td>
-<td>46,194</td>
-<td>81.9</td>
-<td>82.0</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="long-format" class="level4" data-number="11.3.10.2">
-<h4 data-number="11.3.10.2" class="anchored" data-anchor-id="long-format"><span class="header-section-number">11.3.10.2</span> Long Format</h4>
-<p>Each row represents a unique entity-time-variable combination:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Country</th>
-<th>Year</th>
-<th>Variable</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>USA</td>
-<td>2018</td>
-<td>GDP per capita</td>
-<td>62,794</td>
-</tr>
-<tr class="even">
-<td>USA</td>
-<td>2019</td>
-<td>GDP per capita</td>
-<td>65,118</td>
-</tr>
-<tr class="odd">
-<td>USA</td>
-<td>2018</td>
-<td>Life Expectancy</td>
-<td>78.7</td>
-</tr>
-<tr class="even">
-<td>USA</td>
-<td>2019</td>
-<td>Life Expectancy</td>
-<td>78.8</td>
-</tr>
-<tr class="odd">
-<td>Canada</td>
-<td>2018</td>
-<td>GDP per capita</td>
-<td>46,194</td>
-</tr>
-<tr class="even">
-<td>Canada</td>
-<td>2019</td>
-<td>GDP per capita</td>
-<td>46,194</td>
-</tr>
-<tr class="odd">
-<td>Canada</td>
-<td>2018</td>
-<td>Life Expectancy</td>
-<td>81.9</td>
-</tr>
-<tr class="even">
-<td>Canada</td>
-<td>2019</td>
-<td>Life Expectancy</td>
-<td>82.0</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Note:</strong> Long format is generally preferred for:</p>
-<ul>
-<li>Data manipulation in R and Python</li>
-<li>Statistical analysis</li>
-<li>Data visualization</li>
-<li>Mixed-effects modeling</li>
-<li>Repeated measures analyses</li>
-</ul>
-</section>
-</section>
-</div>
-</div>
 </section>
 </section>
 <section id="understanding-outliers" class="level2" data-number="11.4">
@@ -4695,7 +4463,7 @@ y
 <col style="width: 23%">
 <col style="width: 23%">
 <col style="width: 23%">
-<col style="width: 29%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4734,7 +4502,7 @@ y
 <col style="width: 23%">
 <col style="width: 23%">
 <col style="width: 23%">
-<col style="width: 29%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -4785,7 +4553,7 @@ y
 <col style="width: 23%">
 <col style="width: 23%">
 <col style="width: 23%">
-<col style="width: 29%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
